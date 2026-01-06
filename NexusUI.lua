@@ -628,28 +628,7 @@ function Nexus:Window(config)
     end
 
     local Funcs = {}
-    function AddGlow(parent, color, strength)
-        -- Add subtle glow effect to elements
-        local glow = Create("ImageLabel", {
-            Image = "rbxasset://textures/ElementGlow.png",
-            ImageColor3 = color,
-            Transparency = 0.8,
-            Size = UDim2.new(1, 4, 1, 4),
-            Position = UDim2.new(-0.02, 0, -0.02, 0),
-            BackgroundTransparency = 1,
-            Parent = parent
-        })
-        
-        -- Impulse effect
-        local function pulse()
-            Tween(glow, {ImageTransparency = 0.2}, 0.3)
-            task.wait(0.3)
-            Tween(glow, {ImageTransparency = 0.8}, 0.3)
-        end
-        
-        return {Pulse = pulse}
-    end
-
+    
     function Funcs:Divider()
         local div = Create("Frame", {BackgroundColor3 = Nexus.Theme.Outline, Size = UDim2.new(1, 0, 0, 1), Parent = TabContainer})
         Create("UIPadding", {PaddingTop=UDim.new(0,2), PaddingBottom=UDim.new(0,2), Parent=div}) 
