@@ -105,28 +105,9 @@ function Nexus:SetTheme(themeName)
         Light = { Accent = Color3.fromRGB(0, 120, 212), Background = Color3.fromRGB(240, 240, 240), Surface = Color3.fromRGB(255, 255, 255), SurfaceHigh = Color3.fromRGB(230, 230, 230), Text = Color3.fromRGB(20, 20, 20), Outline = Color3.fromRGB(200,200,200), Gradient1=Color3.fromRGB(0,120,212), Gradient2=Color3.fromRGB(0,200,255) },
         Ocean = { Accent = Color3.fromRGB(86, 224, 255), Background = Color3.fromRGB(13, 22, 35), Surface = Color3.fromRGB(20, 32, 48), SurfaceHigh = Color3.fromRGB(30, 45, 65), Text = Color3.fromRGB(220, 245, 255), Outline = Color3.fromRGB(40, 60, 80), Gradient1=Color3.fromRGB(86,224,255), Gradient2=Color3.fromRGB(50,100,200) },
         Midnight = { Accent = Color3.fromRGB(160, 130, 255), Background = Color3.fromRGB(15, 15, 20), Surface = Color3.fromRGB(25, 25, 30), SurfaceHigh = Color3.fromRGB(35, 35, 45), Text = Color3.fromRGB(240, 240, 255), Outline = Color3.fromRGB(50, 50, 70), Gradient1=Color3.fromRGB(160,130,255), Gradient2=Color3.fromRGB(100,50,200) }
-        
-        Custom = {
-            Accent = customColors.Accent or Color3.fromRGB(90, 150, 255),
-            Background = customColors.Background or Color3.fromRGB(15, 15, 25),
-            Surface = customColors.Surface or Color3.fromRGB(25, 25, 35),
-            SurfaceHigh = customColors.SurfaceHigh or Color3.fromRGB(35, 35, 45),
-            Text = customColors.Text or Color3.fromRGB(255, 255, 255),
-            TextSub = customColors.TextSub or Color3.fromRGB(180, 180, 200),
-            Outline = customColors.Outline or Color3.fromRGB(70, 70, 100),
-            Gradient1 = customColors.Gradient1 or Color3.fromRGB(90, 150, 255),
-            Gradient2 = customColors.Gradient2 or Color3.fromRGB(150, 80, 200)
-        }
     }
-    if themes[themeName] then
-        -- Merge with custom colors
-        if customColors then
-            for k, v in pairs(customColors) do
-                themes[themeName][k] = v
-            end
-        end
-        
-        for k, v in pairs(themes[themeName]) do
+    if Themes[themeName] then
+        for k, v in pairs(Themes[themeName]) do
             Nexus.Theme[k] = v
         end
         Nexus.ThemeChanged:Fire(Nexus.Theme)
@@ -416,15 +397,7 @@ function Nexus:Window(config)
             end)
             return CreateControls(content)
         end
-        
-                function Item:SearchableDropdown(cfg)
-            local f = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Surface,
-                Size = UDim2.new(1,0,0,42),
-                ClipsDescendants = true,
-                Parent = ParentFrame
-            })
-            
+        function Item:Dropdown(cfg)
             local f = Create("Frame", {
                 BackgroundColor3 = Nexus.Theme.Surface,
                 Size = UDim2.new(1,0,0,42),
@@ -520,30 +493,6 @@ function Nexus:Window(config)
                 label.TextColor3 = Nexus.Theme.Text
                 arrow.TextColor3 = Nexus.Theme.TextSub
             end)
-            
-            local searchBox = Create("TextBox", {
-                Text = "",
-                PlaceholderText = "Search options...",
-                PlaceholderColor3 = Nexus.Theme.TextSub,
-                Font = Enum.Font.Gotham,
-                TextSize = 13,
-                TextColor3 = Nexus.Theme.Text,
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, -12, 0, 28),
-                Position = UDim2.new(0, 6, 0, 14),
-                Parent = container
-            })
-            
-            -- Filter options based on search
-            searchBox:GetPropertyChangedSignal("Text"):Connect(function()
-                local searchTerm = searchBox.Text:lower()
-                for _, child in pairs(container:GetChildren()) do
-                    if child:IsA("TextButton") then
-                        local text = child.Text:lower()
-                        child.Visible = text:find(searchTerm) or searchTerm == ""
-                    end
-                end
-            end)
         end
 
         function Item:ServerCard()
@@ -578,43 +527,6 @@ function Nexus:Window(config)
             end)
         end
         
-        function Item:ProgressBar(cfg)
-            local bar = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Surface,
-                Size = UDim2.new(1, 0, 0, 20),
-                Parent = ParentFrame
-            })
-            AddCorner(bar, 10)
-            
-            local fill = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Accent,
-                Size = UDim2.new(0, 0, 1, 0),
-                Parent = bar
-            })
-            AddCorner(fill, 10)
-            
-            local label = Create("TextLabel", {
-                Text = cfg.Text or "",
-                TextColor3 = Nexus.Theme.Text,
-                BackgroundTransparency = 1,
-                Font = Enum.Font.Gotham,
-                TextSize = 12,
-                Position = UDim2.new(0, 5, 0, 0),
-                Size = UDim2.new(1, -10, 1, 0),
-                Parent = bar
-            })
-            
-            -- Animation effect
-            local function update(value)
-                local percent = math.clamp(value, 0, 100) / 100
-                Tween(fill, {Size = UDim2.new(percent, 0, 1, 0)}, 0.3)
-                label.Text = cfg.Text .. " (" .. math.floor(value) .. "%)"
-            end
-            
-            cfg.Callback = update
-            return {Set = update}
-        end
-
         function Item:ButtonCard(cfg)
             local Title, Desc = cfg.Title or "Card", cfg.Description or "Click"
             local Btn = Create("TextButton", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 70), AutoButtonColor = false, Parent = ParentFrame})
@@ -628,7 +540,6 @@ function Nexus:Window(config)
     end
 
     local Funcs = {}
-    
     function Funcs:Divider()
         local div = Create("Frame", {BackgroundColor3 = Nexus.Theme.Outline, Size = UDim2.new(1, 0, 0, 1), Parent = TabContainer})
         Create("UIPadding", {PaddingTop=UDim.new(0,2), PaddingBottom=UDim.new(0,2), Parent=div}) 
