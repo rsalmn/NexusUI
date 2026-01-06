@@ -456,9 +456,80 @@ end
 --// ================================
 
 function Nexus:Window(config)
-    local Core = getmetatable(self).__index.Window(self, config)
-    local Pages = Core._Pages
-    local Sidebar = Core._Sidebar
+    local Title = config.Title or "Nexus Hub"
+    local ScreenGui = Create("ScreenGui", {Name = "NexusUI", Parent = RunService:IsStudio() and Players.LocalPlayer.PlayerGui or CoreGui, ResetOnSpawn = false})
+    
+    -- Welcome Animation
+    if config.Welcome then
+        local IntroFrame = Create("Frame", {BackgroundColor3 = Nexus.Theme.Background, Size = UDim2.fromScale(1, 1), Position = UDim2.fromScale(0,0), ZIndex = 9999, Parent = ScreenGui})
+        local Logo = Create("ImageLabel", {Image = "rbxassetid://7072724536", ImageColor3 = Nexus.Theme.Accent, BackgroundTransparency = 1, Size = UDim2.fromOffset(0,0), Position = UDim2.fromScale(0.5, 0.45), AnchorPoint = Vector2.new(0.5, 0.5), Parent = IntroFrame})
+        local TitleLbl = Create("TextLabel", {Text = Title, Font = Enum.Font.GothamBold, TextSize = 24, TextColor3 = Nexus.Theme.Text, TextTransparency = 1, BackgroundTransparency = 1, Position = UDim2.fromScale(0.5, 0.55), AnchorPoint = Vector2.new(0.5, 0.5), Parent = IntroFrame})
+        Tween(Logo, {Size = UDim2.fromOffset(80, 80)}, 0.6) task.wait(0.3) Tween(TitleLbl, {TextTransparency = 0}, 0.5) task.wait(1.5)
+        Tween(Logo, {Size = UDim2.fromOffset(0,0), ImageTransparency = 1}, 0.4) Tween(TitleLbl, {TextTransparency = 1}, 0.4) Tween(IntroFrame, {BackgroundTransparency = 1}, 0.5) task.wait(0.5) IntroFrame:Destroy()
+    end
+    
+    -- Watermark
+    if config.Watermark then
+        local Wat = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(0, 200, 0, 30), Position = UDim2.new(0.02, 0, 0.02, 0), Parent = ScreenGui})
+        AddCorner(Wat, 6) AddStroke(Wat, Nexus.Theme.Accent, 1)
+        local WatText = Create("TextLabel", {BackgroundTransparency=1, Size=UDim2.new(1,0,1,0), Font=Enum.Font.GothamMedium, TextSize=13, TextColor3=Nexus.Theme.Text, Parent=Wat})
+        MakeDraggable(Wat)
+        local WConn; WConn = RunService.Heartbeat:Connect(function()
+            if not Wat.Parent then WConn:Disconnect() return end
+            local fps = math.floor(workspace:GetRealPhysicsFPS())
+            local ping = 0
+            pcall(function()
+                ping = Stats.Network.ServerStatsItem["Data Ping"]:GetValue()
+            end)
+            WatText.Text = string.format("FPS: %d  |  Ping: %dms  |  CPU: %d%%", fps, ping, math.min(fps/60*100, 100))
+        end)
+    end
+
+    -- Notifications
+    local NotifyList = Create("Frame", {BackgroundTransparency = 1, Position = UDim2.new(1, -320, 1, -20), Size = UDim2.new(0, 300, 1, 0), AnchorPoint = Vector2.new(0, 1), Parent = ScreenGui, ZIndex = 1000})
+    Create("UIListLayout", {Padding = UDim.new(0, 10), VerticalAlignment = Enum.VerticalAlignment.Bottom, SortOrder = Enum.SortOrder.LayoutOrder, Parent = NotifyList})
+
+    function Nexus:Notify(cfg)
+        local Frame = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 0), BackgroundTransparency = 1, ClipsDescendants = true, Parent = NotifyList})
+        AddCorner(Frame, 8) AddStroke(Frame, Nexus.Theme.Outline, 1)
+        Create("TextLabel", {Text = cfg.Title or "Notification", Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.Accent, BackgroundTransparency = 1, Position = UDim2.new(0, 12, 0, 10), Size = UDim2.new(1, -24, 0, 20), TextXAlignment = Enum.TextXAlignment.Left, Parent = Frame})
+        Create("TextLabel", {Text = cfg.Content or "", Font = Enum.Font.Gotham, TextSize = 13, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0, 12, 0, 30), Size = UDim2.new(1, -24, 0, 20), TextXAlignment = Enum.TextXAlignment.Left, Parent = Frame})
+        Tween(Frame, {Size = UDim2.new(1, 0, 0, 60), BackgroundTransparency = 0.1}, 0.3)
+        task.delay(cfg.Duration or 3, function() Tween(Frame, {Size = UDim2.new(1, 0, 0, 0), BackgroundTransparency = 1}, 0.3) task.wait(0.3) Frame:Destroy() end)
+    end
+
+    -- UI Setup
+    local OpenBtn = Create("TextButton", {Text = "N", Font = Enum.Font.GothamBold, TextSize = 24, TextColor3 = Nexus.Theme.Accent, BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(0, 50, 0, 50), Position = UDim2.new(0.1, 0, 0.1, 0), Visible = false, Parent = ScreenGui})
+    AddCorner(OpenBtn, 25) AddStroke(OpenBtn, Nexus.Theme.Accent, 2) MakeDraggable(OpenBtn)
+
+    local Main = Create("Frame", {BackgroundColor3 = Nexus.Theme.Background, BackgroundTransparency = 0.1, Size = UDim2.fromOffset(600, 350), Position = UDim2.fromScale(0.5, 0.5), AnchorPoint = Vector2.new(0.5, 0.5), ClipsDescendants = true, Parent = ScreenGui})
+    AddCorner(Main, 10) AddStroke(Main, Nexus.Theme.Outline, 1) MakeDraggable(Main) SetBlur(true)
+
+    local Sidebar = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, BackgroundTransparency = 0.5, Size = UDim2.new(0, 180, 1, 0), Parent = Main})
+    AddCorner(Sidebar, 10)
+    Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, BackgroundTransparency = 0.5, Position = UDim2.new(1, -10, 0, 0), Size = UDim2.new(0, 10, 1, 0), BorderSizePixel = 0, Parent = Sidebar})
+
+    local pImg = "rbxassetid://0" pcall(function() pImg = Players:GetUserThumbnailAsync(Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size48x48) end)
+    Create("ImageLabel", {Image = pImg, BackgroundTransparency=1, Position=UDim2.new(0,15,0,15), Size=UDim2.new(0,32,0,32), Parent=Sidebar})
+    Create("TextLabel", {Text=Title, Font=Enum.Font.GothamBold, TextSize=14, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,55,0,15), Size=UDim2.new(0,100,0,16), TextXAlignment=Enum.TextXAlignment.Left, Parent=Sidebar})
+    Create("TextLabel", {Text="@"..Players.LocalPlayer.Name, Font=Enum.Font.Gotham, TextSize=12, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(0,55,0,31), Size=UDim2.new(0,100,0,16), TextXAlignment=Enum.TextXAlignment.Left, Parent=Sidebar})
+
+    local TabContainer = Create("ScrollingFrame", {BackgroundTransparency=1, Position=UDim2.new(0,10,0,60), Size=UDim2.new(1,-20,1,-100), CanvasSize=UDim2.new(0,0,0,0), ScrollBarThickness=0, Parent=Sidebar})
+    local TabList = Create("UIListLayout", {Padding=UDim.new(0,5), SortOrder=Enum.SortOrder.LayoutOrder, Parent=TabContainer})
+    TabList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() TabContainer.CanvasSize = UDim2.new(0,0,0,TabList.AbsoluteContentSize.Y) end)
+    
+    local ContentArea = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,180,0,0), Size=UDim2.new(1,-180,1,0), Parent=Main})
+    local PagesFolder = Create("Folder", {Parent=ContentArea})
+
+    local ControlsFrame = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,10,1,-40), Size=UDim2.new(1,-20,0,30), Parent=Sidebar})
+    local HideBtn = Create("TextButton", {Text="Hide", Font=Enum.Font.GothamBold, BackgroundColor3=Nexus.Theme.SurfaceHigh, TextColor3=Nexus.Theme.Accent, Size=UDim2.new(0.5,-5,1,0), Parent=ControlsFrame}) AddCorner(HideBtn, 6)
+    local CloseBtn = Create("TextButton", {Text="Close", Font=Enum.Font.GothamBold, BackgroundColor3=Nexus.Theme.SurfaceHigh, TextColor3=Color3.fromRGB(255,80,80), Size=UDim2.new(0.5,-5,1,0), Position=UDim2.new(0.5,5,0,0), Parent=ControlsFrame}) AddCorner(CloseBtn, 6)
+
+    HideBtn.MouseButton1Click:Connect(function() Main.Visible = false OpenBtn.Visible = true SetBlur(false) end)
+    OpenBtn.MouseButton1Click:Connect(function() OpenBtn.Visible = false Main.Visible = true SetBlur(true) end)
+    CloseBtn.MouseButton1Click:Connect(function() SetBlur(false) ScreenGui:Destroy() end)
+
+    local Tabs, CurrentTab = {}, nil
 
     local TabButtons = Create("ScrollingFrame", {
         BackgroundTransparency = 1,
