@@ -105,27 +105,9 @@ function Nexus:SetTheme(themeName)
         Light = { Accent = Color3.fromRGB(0, 120, 212), Background = Color3.fromRGB(240, 240, 240), Surface = Color3.fromRGB(255, 255, 255), SurfaceHigh = Color3.fromRGB(230, 230, 230), Text = Color3.fromRGB(20, 20, 20), Outline = Color3.fromRGB(200,200,200), Gradient1=Color3.fromRGB(0,120,212), Gradient2=Color3.fromRGB(0,200,255) },
         Ocean = { Accent = Color3.fromRGB(86, 224, 255), Background = Color3.fromRGB(13, 22, 35), Surface = Color3.fromRGB(20, 32, 48), SurfaceHigh = Color3.fromRGB(30, 45, 65), Text = Color3.fromRGB(220, 245, 255), Outline = Color3.fromRGB(40, 60, 80), Gradient1=Color3.fromRGB(86,224,255), Gradient2=Color3.fromRGB(50,100,200) },
         Midnight = { Accent = Color3.fromRGB(160, 130, 255), Background = Color3.fromRGB(15, 15, 20), Surface = Color3.fromRGB(25, 25, 30), SurfaceHigh = Color3.fromRGB(35, 35, 45), Text = Color3.fromRGB(240, 240, 255), Outline = Color3.fromRGB(50, 50, 70), Gradient1=Color3.fromRGB(160,130,255), Gradient2=Color3.fromRGB(100,50,200) }
-        Custom = {
-            Accent = customColors.Accent or Color3.fromRGB(90, 150, 255),
-            Background = customColors.Background or Color3.fromRGB(15, 15, 25),
-            Surface = customColors.Surface or Color3.fromRGB(25, 25, 35),
-            SurfaceHigh = customColors.SurfaceHigh or Color3.fromRGB(35, 35, 45),
-            Text = customColors.Text or Color3.fromRGB(255, 255, 255),
-            TextSub = customColors.TextSub or Color3.fromRGB(180, 180, 200),
-            Outline = customColors.Outline or Color3.fromRGB(70, 70, 100),
-            Gradient1 = customColors.Gradient1 or Color3.fromRGB(90, 150, 255),
-            Gradient2 = customColors.Gradient2 or Color3.fromRGB(150, 80, 200)
-        }
     }
-    if themes[themeName] then
-        -- Merge with custom colors
-        if customColors then
-            for k, v in pairs(customColors) do
-                themes[themeName][k] = v
-            end
-        end
-        
-        for k, v in pairs(themes[themeName]) do
+    if Themes[themeName] then
+        for k, v in pairs(Themes[themeName]) do
             Nexus.Theme[k] = v
         end
         Nexus.ThemeChanged:Fire(Nexus.Theme)
