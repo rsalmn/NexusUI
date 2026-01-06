@@ -512,6 +512,110 @@ function Nexus:Window(config)
                 arrow.TextColor3 = Nexus.Theme.TextSub
             end)
         end
+        
+        function Item:SearchableDropdown(cfg)
+            local f = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Surface,
+                Size = UDim2.new(1,0,0,42),
+                ClipsDescendants = true,
+                Parent = ParentFrame
+            })
+            
+            AddCorner(f, 6)
+            
+            local label = Create("TextLabel", {
+                Text = cfg.Text or "Select...",
+                Font = Enum.Font.GothamMedium,
+                TextSize = 14,
+                TextColor3 = Nexus.Theme.Text,
+                BackgroundTransparency = 1,
+                Position = UDim2.new(0,12,0,0),
+                Size = UDim2.new(1,-24,0,42),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                Parent = f
+            })
+            
+            local btn = Create("TextButton", {
+                Text = "",
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1,0,0,42),
+                Parent = f
+            })
+            
+            local container = Create("Frame", {
+                BackgroundTransparency = 1,
+                Position = UDim2.new(0,0,0,42),
+                Size = UDim2.new(1,0,0,0),
+                Parent = f
+            })
+            
+            local contentList = Create("UIListLayout", {
+                Parent = container,
+                SortOrder = Enum.SortOrder.LayoutOrder
+            })
+            
+            local searchBox = Create("TextBox", {
+                Text = "",
+                PlaceholderText = "Search...",
+                PlaceholderColor3 = Nexus.Theme.TextSub,
+                Font = Enum.Font.Gotham,
+                TextSize = 13,
+                TextColor3 = Nexus.Theme.Text,
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1,-12,0,28),
+                Position = UDim2.new(0,6,0,14),
+                Parent = container
+            })
+            
+            local isOpen = false
+            local searchResults = {}
+            
+            -- Filter logic
+            searchBox:GetPropertyChangedSignal("Text"):Connect(function()
+                local searchTerm = searchBox.Text:lower()
+                for _, child in pairs(container:GetChildren()) do
+                    if child:IsA("TextButton") and child ~= searchBox then
+                        if searchTerm == "" then
+                            child.Visible = true
+                        else
+                            child.Visible = child.Text:lower():find(searchTerm) ~= nil
+                        end
+                    end
+                end
+            end)
+            
+            -- Selector behavior
+            btn.MouseButton1Click:Connect(function()
+                isOpen = not isOpen
+                Tween(f, {Size = UDim2.new(1,0,0, isOpen and (42 + #cfg.Options * 30 + 40) or 42)}, 0.2)
+            end)
+            
+            -- Add option buttons
+            for i, option in ipairs(cfg.Options) do
+                local optBtn = Create("TextButton", {
+                    Text = option,
+                    Font = Enum.Font.Gotham,
+                    TextSize = 13,
+                    TextColor3 = Nexus.Theme.TextSub,
+                    BackgroundColor3 = Nexus.Theme.Surface,
+                    BackgroundTransparency = 0.5,
+                    Size = UDim2.new(1,-12,0,30),
+                    Position = UDim2.new(0,0,0,0),
+                    Parent = container
+                })
+                AddCorner(optBtn, 4)
+                
+                optBtn.MouseButton1Click:Connect(function()
+                    label.Text = option
+                    isOpen = false
+                    Tween(f, {Size = UDim2.new(1,0,0,42)}, 0.2)
+                    cfg.Callback(option)
+                end)
+            end
+            
+            return f
+        end
+        
 
         -- FIXED VERSION:
         function Item:ServerCard()
