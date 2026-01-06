@@ -105,8 +105,14 @@ function Nexus:SetTheme(themeName)
         Ocean = { Accent = Color3.fromRGB(86, 224, 255), Background = Color3.fromRGB(13, 22, 35), Surface = Color3.fromRGB(20, 32, 48), SurfaceHigh = Color3.fromRGB(30, 45, 65), Text = Color3.fromRGB(220, 245, 255), Outline = Color3.fromRGB(40, 60, 80), Gradient1=Color3.fromRGB(86,224,255), Gradient2=Color3.fromRGB(50,100,200) },
         Midnight = { Accent = Color3.fromRGB(160, 130, 255), Background = Color3.fromRGB(15, 15, 20), Surface = Color3.fromRGB(25, 25, 30), SurfaceHigh = Color3.fromRGB(35, 35, 45), Text = Color3.fromRGB(240, 240, 255), Outline = Color3.fromRGB(50, 50, 70), Gradient1=Color3.fromRGB(160,130,255), Gradient2=Color3.fromRGB(100,50,200) }
     }
-    if Themes[themeName] then for k, v in pairs(Themes[themeName]) do Nexus.Theme[k] = v end end
+    if Themes[themeName] then
+        for k, v in pairs(Themes[themeName]) do
+            Nexus.Theme[k] = v
+        end
+        Nexus.ThemeChanged:Fire(Nexus.Theme)
+    end
 end
+Nexus.ThemeChanged = Instance.new("BindableEvent")
 
 --// Main Window
 function Nexus:Window(config)
@@ -131,7 +137,10 @@ function Nexus:Window(config)
         local WConn; WConn = RunService.Heartbeat:Connect(function()
             if not Wat.Parent then WConn:Disconnect() return end
             local fps = math.floor(workspace:GetRealPhysicsFPS())
-            local ping = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
+            local ping = 0
+            pcall(function()
+                ping = Stats.Network.ServerStatsItem["Data Ping"]:GetValue()
+            end)
             WatText.Text = string.format("FPS: %d  |  Ping: %dms  |  CPU: %d%%", fps, ping, math.min(fps/60*100, 100))
         end)
     end
@@ -222,30 +231,104 @@ function Nexus:Window(config)
             if on then update() end
         end
         function Item:Slider(cfg)
-            local f = Create("Frame", {BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,50), Parent=ParentFrame})
+            local f = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Surface,
+                Size = UDim2.new(1,0,0,50),
+                Parent = ParentFrame
+            })
             AddCorner(f, 6)
-            Create("TextLabel", {Text=cfg.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,5), Size=UDim2.new(1,-20,0,20), Font=Enum.Font.GothamMedium, TextSize=14, TextColor3=Nexus.Theme.Text, TextXAlignment=Enum.TextXAlignment.Left, Parent=f})
-            local valText = Create("TextLabel", {Text=cfg.Default or cfg.Min, BackgroundTransparency=1, Position=UDim2.new(1,-40,0,5), Size=UDim2.new(0,30,0,20), Font=Enum.Font.GothamBold, TextSize=14, TextColor3=Nexus.Theme.Text, Parent=f})
-            local bar = Create("TextButton", {Text="", BackgroundColor3=Nexus.Theme.SurfaceHigh, Size=UDim2.new(1,-20,0,6), Position=UDim2.new(0,10,0,35), AutoButtonColor=false, Parent=f})
+
+            local title = Create("TextLabel", {
+                Text = cfg.Text,
+                BackgroundTransparency = 1,
+                Position = UDim2.new(0,10,0,5),
+                Size = UDim2.new(1,-20,0,20),
+                Font = Enum.Font.GothamMedium,
+                TextSize = 14,
+                TextColor3 = Nexus.Theme.Text,
+                TextXAlignment = Enum.TextXAlignment.Left,
+                Parent = f
+            })
+
+            local valueLabel = Create("TextLabel", {
+                BackgroundTransparency = 1,
+                Position = UDim2.new(1,-40,0,5),
+                Size = UDim2.new(0,30,0,20),
+                Font = Enum.Font.GothamBold,
+                TextSize = 14,
+                TextColor3 = Nexus.Theme.Text,
+                Parent = f
+            })
+
+            local bar = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                Size = UDim2.new(1,-20,0,6),
+                Position = UDim2.new(0,10,0,35),
+                Parent = f
+            })
             AddCorner(bar, 3)
-            local fill = Create("Frame", {BackgroundColor3=Nexus.Theme.Accent, Size=UDim2.new(0,0,1,0), Parent=bar})
+
+            local fill = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Accent,
+                Size = UDim2.new(0,0,1,0),
+                Parent = bar
+            })
             AddCorner(fill, 3)
-            local min, max, val = cfg.Min, cfg.Max, cfg.Default or cfg.Min
-            local function set(v)
-                if type(v) ~= "number" then v = min end
-                val = math.clamp(v, min, max)
-                valText.Text = math.floor(val)
-                fill.Size = UDim2.new((val-min)/(max-min), 0, 1, 0)
-                cfg.Callback(val)
-                if cfg.Flag then Nexus.Flags[cfg.Flag] = val end
-            end
+
+            local min, max = cfg.Min, cfg.Max
+            local value = cfg.Default or min
             local dragging = false
-            bar.InputBegan:Connect(function(i) if i.UserInputType==Enum.UserInputType.MouseButton1 or i.UserInputType==Enum.UserInputType.Touch then dragging=true end end)
-            UserInputService.InputEnded:Connect(function(i) if i.UserInputType==Enum.UserInputType.MouseButton1 or i.UserInputType==Enum.UserInputType.Touch then dragging=false end end)
-            UserInputService.InputChanged:Connect(function(i) if dragging and (i.UserInputType==Enum.UserInputType.MouseMovement or i.UserInputType==Enum.UserInputType.Touch) then local p = math.clamp((i.Position.X - bar.AbsolutePosition.X)/bar.AbsoluteSize.X, 0, 1) set(min + (max-min)*p) end end)
-            if cfg.Flag then Nexus.Registry[cfg.Flag] = {Set = set} end
-            set(val)
+            local inputConn
+
+            local function set(val)
+                value = math.clamp(val, min, max)
+                valueLabel.Text = math.floor(value)
+                fill.Size = UDim2.new((value - min) / (max - min), 0, 1, 0)
+                cfg.Callback(value)
+                if cfg.Flag then Nexus.Flags[cfg.Flag] = value end
+            end
+
+            bar.InputBegan:Connect(function(i)
+                if i.UserInputType == Enum.UserInputType.MouseButton1 then
+                    dragging = true
+                    inputConn = UserInputService.InputChanged:Connect(function(input)
+                        if not dragging or not f.Parent then
+                            inputConn:Disconnect()
+                            return
+                        end
+                        if input.UserInputType == Enum.UserInputType.MouseMovement then
+                            local pct = math.clamp(
+                                (input.Position.X - bar.AbsolutePosition.X) / bar.AbsoluteSize.X,
+                                0, 1
+                            )
+                            set(min + (max - min) * pct)
+                        end
+                    end)
+                end
+            end)
+
+            UserInputService.InputEnded:Connect(function(i)
+                if i.UserInputType == Enum.UserInputType.MouseButton1 then
+                    dragging = false
+                    if inputConn then inputConn:Disconnect() end
+                end
+            end)
+
+            if cfg.Flag then
+                Nexus.Registry[cfg.Flag] = { Set = set }
+            end
+
+            set(value)
+
+            Nexus.ThemeChanged.Event:Connect(function()
+                f.BackgroundColor3 = Nexus.Theme.Surface
+                bar.BackgroundColor3 = Nexus.Theme.SurfaceHigh
+                fill.BackgroundColor3 = Nexus.Theme.Accent
+                title.TextColor3 = Nexus.Theme.Text
+                valueLabel.TextColor3 = Nexus.Theme.Text
+            end)
         end
+
         function Item:Input(cfg)
             local text, placeholder = cfg.Text or "Input", cfg.Placeholder or "Type here..."
             local f = Create("Frame", {BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,42), Parent=ParentFrame})
@@ -303,22 +386,103 @@ function Nexus:Window(config)
             return CreateControls(content)
         end
         function Item:Dropdown(cfg)
-            local text, options = cfg.Text or "Dropdown", cfg.Options or {}
-            local f = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1,0,0,42), ClipsDescendants = true, Parent = ParentFrame})
+            local f = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Surface,
+                Size = UDim2.new(1,0,0,42),
+                ClipsDescendants = true,
+                Parent = ParentFrame
+            })
             AddCorner(f, 6)
-            Create("TextLabel", {Text = text, Font = Enum.Font.GothamMedium, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,0), Size = UDim2.new(0.6,0,0,42), TextXAlignment=Enum.TextXAlignment.Left, Parent = f})
-            local arr = Create("TextLabel", {Text = "v", Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(1,-30,0,0), Size=UDim2.new(0,30,0,42), Parent=f})
-            local btn = Create("TextButton", {Text="", BackgroundTransparency=1, Size=UDim2.new(1,0,0,42), Parent=f})
-            local container = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,0,0,42), Size=UDim2.new(1,0,0,0), Parent=f})
-            Create("UIListLayout", {SortOrder=Enum.SortOrder.LayoutOrder, Parent=container})
+
+            local label = Create("TextLabel", {
+                Text = cfg.Text,
+                Font = Enum.Font.GothamMedium,
+                TextSize = 14,
+                TextColor3 = Nexus.Theme.Text,
+                BackgroundTransparency = 1,
+                Position = UDim2.new(0,12,0,0),
+                Size = UDim2.new(0.7,0,0,42),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                Parent = f
+            })
+
+            local arrow = Create("TextLabel", {
+                Text = "v",
+                Font = Enum.Font.GothamBold,
+                TextSize = 14,
+                TextColor3 = Nexus.Theme.TextSub,
+                BackgroundTransparency = 1,
+                Position = UDim2.new(1,-30,0,0),
+                Size = UDim2.new(0,30,0,42),
+                Parent = f
+            })
+
+            local button = Create("TextButton", {
+                Text = "",
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1,0,0,42),
+                Parent = f
+            })
+
+            local container = Create("Frame", {
+                BackgroundTransparency = 1,
+                Position = UDim2.new(0,0,0,42),
+                Size = UDim2.new(1,0,0,0),
+                Parent = f
+            })
+
+            local layout = Create("UIListLayout", {
+                Parent = container,
+                Padding = UDim.new(0,4)
+            })
+
             local open = false
-            btn.MouseButton1Click:Connect(function() open = not open Tween(arr, {Rotation=open and 180 or 0}, 0.2) Tween(f, {Size = UDim2.new(1,0,0, open and (42 + (#options*30) + 6) or 42)}, 0.3) end)
-            for _, opt in pairs(options) do
-                local oBtn = Create("TextButton", {Text=opt, Font=Enum.Font.Gotham, TextSize=13, TextColor3=Nexus.Theme.TextSub, BackgroundColor3=Nexus.Theme.Surface, BackgroundTransparency=0.5, Size=UDim2.new(1,-12,0,30), Parent=Container})
-                AddCorner(oBtn, 4)
-                oBtn.MouseButton1Click:Connect(function() cfg.Callback(opt); open=false; Tween(arr, {Rotation=0}, 0.2) Tween(f, {Size=UDim2.new(1,0,0,42)}, 0.3) end)
+
+            local function toggle()
+                open = not open
+                Tween(arrow, {Rotation = open and 180 or 0}, 0.2)
+                Tween(f, {
+                    Size = UDim2.new(1,0,0, open and (42 + (#cfg.Options * 30) + 8) or 42)
+                }, 0.25)
             end
+
+            button.MouseButton1Click:Connect(toggle)
+
+            for _, opt in ipairs(cfg.Options) do
+                local optBtn = Create("TextButton", {
+                    Text = opt,
+                    Font = Enum.Font.Gotham,
+                    TextSize = 13,
+                    TextColor3 = Nexus.Theme.TextSub,
+                    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                    Size = UDim2.new(1,-12,0,28),
+                    Parent = container
+                })
+                AddCorner(optBtn, 4)
+
+                optBtn.MouseButton1Click:Connect(function()
+                    label.Text = cfg.Text .. ": " .. opt
+                    toggle()
+                    cfg.Callback(opt)
+                    if cfg.Flag then Nexus.Flags[cfg.Flag] = opt end
+                end)
+            end
+
+            if cfg.Flag then
+                Nexus.Registry[cfg.Flag] = {
+                    Set = function(v)
+                        label.Text = cfg.Text .. ": " .. tostring(v)
+                    end
+                }
+            end
+
+            Nexus.ThemeChanged.Event:Connect(function()
+                f.BackgroundColor3 = Nexus.Theme.Surface
+                label.TextColor3 = Nexus.Theme.Text
+                arrow.TextColor3 = Nexus.Theme.TextSub
+            end)
         end
+
         function Item:ServerCard()
             local Card = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 130), Parent = ParentFrame})
             AddCorner(Card, 10) AddStroke(Card, Nexus.Theme.Outline, 1)
