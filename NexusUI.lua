@@ -98,6 +98,7 @@ function Nexus:Load(name)
 end
 
 --// Theme System
+Nexus.ThemeChanged = Instance.new("BindableEvent")
 function Nexus:SetTheme(themeName)
     local Themes = {
         Dark = { Accent = Color3.fromRGB(0, 120, 212), Background = Color3.fromRGB(25, 25, 25), Surface = Color3.fromRGB(32, 32, 32), SurfaceHigh = Color3.fromRGB(45, 45, 45), Text = Color3.fromRGB(240, 240, 240), Outline = Color3.fromRGB(60,60,60), Gradient1=Color3.fromRGB(0,120,212), Gradient2=Color3.fromRGB(100,50,255) },
@@ -112,7 +113,6 @@ function Nexus:SetTheme(themeName)
         Nexus.ThemeChanged:Fire(Nexus.Theme)
     end
 end
-Nexus.ThemeChanged = Instance.new("BindableEvent")
 
 --// Main Window
 function Nexus:Window(config)
