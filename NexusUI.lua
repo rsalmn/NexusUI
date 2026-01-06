@@ -229,24 +229,97 @@ function Nexus:Window(config)
             b.MouseButton1Click:Connect(function() Tween(b, {Size=UDim2.new(1,-4,0,36)}, 0.05) task.wait(0.05) Tween(b, {Size=UDim2.new(1,0,0,38)}, 0.05) cfg.Callback() end)
         end
         function Item:Toggle(cfg)
-            local t = Create("TextButton", {Text="", BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,38), Parent=ParentFrame})
-            AddCorner(t, 6)
-            Create("TextLabel", {Text=cfg.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,0), Size=UDim2.new(1,-60,1,0), Font=Enum.Font.GothamMedium, TextSize=14, TextColor3=Nexus.Theme.Text, TextXAlignment=Enum.TextXAlignment.Left, Parent=t})
-            local box = Create("Frame", {BackgroundColor3=Nexus.Theme.SurfaceHigh, Size=UDim2.new(0,40,0,20), Position=UDim2.new(1,-50,0.5,-10), Parent=t})
-            AddCorner(box, 10)
-            local knob = Create("Frame", {BackgroundColor3=Nexus.Theme.Text, Size=UDim2.new(0,16,0,16), Position=UDim2.new(0,2,0.5,-8), Parent=box})
-            AddCorner(knob, 8)
-            local on = cfg.Default or false
-            local function update()
-                Tween(knob, {Position=on and UDim2.new(1,-18,0.5,-8) or UDim2.new(0,2,0.5,-8)}, 0.2)
-                Tween(box, {BackgroundColor3=on and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh}, 0.2)
-                cfg.Callback(on)
-                if cfg.Flag then Nexus.Flags[cfg.Flag] = on end
+            -- Add proper validation
+            if not cfg then cfg = {} end
+            
+            -- Added safety check for ParentFrame
+            if not ParentFrame then 
+                warn("Toggle: ParentFrame is nil! Cannot create toggle item.")
+                return 
             end
-            t.MouseButton1Click:Connect(function() on = not on update() end)
-            if cfg.Flag then Nexus.Registry[cfg.Flag] = {Set = function(v) on = v update() end} end
-            if on then update() end
+            
+            local t = Create("TextButton", {
+                Text = "", 
+                BackgroundColor3 = Nexus.Theme.Surface, 
+                Size = UDim2.new(1,0,0,38), 
+                Parent = ParentFrame
+            })
+            
+            AddCorner(t, 6)
+            
+            -- Safety check for required elements
+            local textLabel = Create("TextLabel", {
+                Text = cfg.Text or "Toggle",
+                BackgroundTransparency = 1, 
+                Position = UDim2.new(0,10,0,0), 
+                Size = UDim2.new(1,-60,1,0), 
+                Font = Enum.Font.GothamMedium, 
+                TextSize = 14, 
+                TextColor3 = Nexus.Theme.Text, 
+                TextXAlignment = Enum.TextXAlignment.Left, 
+                Parent = t
+            })
+            
+            local box = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.SurfaceHigh, 
+                Size = UDim2.new(0,40,0,20), 
+                Position = UDim2.new(1,-50,0.5,-10), 
+                Parent = t
+            })
+            
+            AddCorner(box, 10)
+            
+            local knob = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Text, 
+                Size = UDim2.new(0,16,0,16), 
+                Position = UDim2.new(0,2,0.5,-8), 
+                Parent = box
+            })
+            
+            AddCorner(knob, 8)
+            
+            local on = cfg.Default or false
+            
+            local function update()
+                if not knob or not box then return end -- Safety check
+                Tween(knob, {Position = on and UDim2.new(1,-18,0.5,-8) or UDim2.new(0,2,0.5,-8)}, 0.2)
+                Tween(box, {BackgroundColor3 = on and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh}, 0.2)
+                
+                -- Safely call callback
+                if type(cfg.Callback) == "function" then
+                    cfg.Callback(on)
+                end
+                
+                if cfg.Flag then 
+                    Nexus.Flags[cfg.Flag] = on 
+                end
+            end
+            
+            -- Add safety check for click event
+            if t and t.MouseButton1Click then
+                t.MouseButton1Click:Connect(function() 
+                    on = not on 
+                    update() 
+                end)
+            end
+            
+            if cfg.Flag then 
+                Nexus.Registry[cfg.Flag] = {Set = function(v) 
+                    if type(v) == "boolean" then
+                        on = v 
+                        update() 
+                    end
+                end} 
+            end
+            
+            if on then 
+                update() 
+            end
+            
+            -- Return the created item for reference
+            return t
         end
+
         function Item:Slider(cfg)
             local f = Create("Frame", {
                 BackgroundColor3 = Nexus.Theme.Surface,
