@@ -1,6 +1,6 @@
 --[[ 
-    NEXUS UI (v3.3 - Multi-Select & Dividers)
-    Features: Multi-Dropdown, Dividers, Config, Watermark, Themes, Mobile Support
+    NEXUS UI (v3.4 - Dashboard Edition)
+    Features: Server Stats Card, Gradient Cards, Multi-Dropdown, Dividers, Config
 ]]
 
 local Nexus = {
@@ -8,12 +8,14 @@ local Nexus = {
     Registry = {}, 
     Theme = {
         Accent = Color3.fromRGB(0, 120, 212),
-        Background = Color3.fromRGB(25, 25, 25),
-        Surface = Color3.fromRGB(32, 32, 32),
-        SurfaceHigh = Color3.fromRGB(45, 45, 45),
+        Background = Color3.fromRGB(20, 20, 20),
+        Surface = Color3.fromRGB(30, 30, 30),
+        SurfaceHigh = Color3.fromRGB(40, 40, 40),
         Text = Color3.fromRGB(240, 240, 240),
         TextSub = Color3.fromRGB(170, 170, 170),
-        Outline = Color3.fromRGB(60, 60, 60)
+        Outline = Color3.fromRGB(60, 60, 60),
+        Gradient1 = Color3.fromRGB(0, 120, 212), -- For Dashboard Cards
+        Gradient2 = Color3.fromRGB(100, 50, 255)
     }
 }
 
@@ -98,10 +100,10 @@ end
 --// Theme System
 function Nexus:SetTheme(themeName)
     local Themes = {
-        Dark = { Accent = Color3.fromRGB(0, 120, 212), Background = Color3.fromRGB(25, 25, 25), Surface = Color3.fromRGB(32, 32, 32), SurfaceHigh = Color3.fromRGB(45, 45, 45), Text = Color3.fromRGB(240, 240, 240), Outline = Color3.fromRGB(60,60,60) },
-        Light = { Accent = Color3.fromRGB(0, 120, 212), Background = Color3.fromRGB(240, 240, 240), Surface = Color3.fromRGB(255, 255, 255), SurfaceHigh = Color3.fromRGB(230, 230, 230), Text = Color3.fromRGB(20, 20, 20), Outline = Color3.fromRGB(200,200,200) },
-        Ocean = { Accent = Color3.fromRGB(86, 224, 255), Background = Color3.fromRGB(13, 22, 35), Surface = Color3.fromRGB(20, 32, 48), SurfaceHigh = Color3.fromRGB(30, 45, 65), Text = Color3.fromRGB(220, 245, 255), Outline = Color3.fromRGB(40, 60, 80) },
-        Midnight = { Accent = Color3.fromRGB(160, 130, 255), Background = Color3.fromRGB(15, 15, 20), Surface = Color3.fromRGB(25, 25, 30), SurfaceHigh = Color3.fromRGB(35, 35, 45), Text = Color3.fromRGB(240, 240, 255), Outline = Color3.fromRGB(50, 50, 70) }
+        Dark = { Accent = Color3.fromRGB(0, 120, 212), Background = Color3.fromRGB(25, 25, 25), Surface = Color3.fromRGB(32, 32, 32), SurfaceHigh = Color3.fromRGB(45, 45, 45), Text = Color3.fromRGB(240, 240, 240), Outline = Color3.fromRGB(60,60,60), Gradient1=Color3.fromRGB(0,120,212), Gradient2=Color3.fromRGB(100,50,255) },
+        Light = { Accent = Color3.fromRGB(0, 120, 212), Background = Color3.fromRGB(240, 240, 240), Surface = Color3.fromRGB(255, 255, 255), SurfaceHigh = Color3.fromRGB(230, 230, 230), Text = Color3.fromRGB(20, 20, 20), Outline = Color3.fromRGB(200,200,200), Gradient1=Color3.fromRGB(0,120,212), Gradient2=Color3.fromRGB(0,200,255) },
+        Ocean = { Accent = Color3.fromRGB(86, 224, 255), Background = Color3.fromRGB(13, 22, 35), Surface = Color3.fromRGB(20, 32, 48), SurfaceHigh = Color3.fromRGB(30, 45, 65), Text = Color3.fromRGB(220, 245, 255), Outline = Color3.fromRGB(40, 60, 80), Gradient1=Color3.fromRGB(86,224,255), Gradient2=Color3.fromRGB(50,100,200) },
+        Midnight = { Accent = Color3.fromRGB(160, 130, 255), Background = Color3.fromRGB(15, 15, 20), Surface = Color3.fromRGB(25, 25, 30), SurfaceHigh = Color3.fromRGB(35, 35, 45), Text = Color3.fromRGB(240, 240, 255), Outline = Color3.fromRGB(50, 50, 70), Gradient1=Color3.fromRGB(160,130,255), Gradient2=Color3.fromRGB(100,50,200) }
     }
     if Themes[themeName] then for k, v in pairs(Themes[themeName]) do Nexus.Theme[k] = v end end
 end
@@ -180,10 +182,9 @@ function Nexus:Window(config)
     local Tabs, CurrentTab = {}, nil
     local Funcs = {}
 
-    --// SIDEBAR DIVIDER
     function Funcs:Divider()
         local div = Create("Frame", {BackgroundColor3 = Nexus.Theme.Outline, Size = UDim2.new(1, 0, 0, 1), Parent = TabContainer})
-        Create("UIPadding", {PaddingTop=UDim.new(0,2), PaddingBottom=UDim.new(0,2), Parent=div}) -- Spacing
+        Create("UIPadding", {PaddingTop=UDim.new(0,2), PaddingBottom=UDim.new(0,2), Parent=div}) 
     end
 
     function Funcs:Tab(name)
@@ -205,11 +206,65 @@ function Nexus:Window(config)
 
         local function CreateControls(ParentFrame)
             local Item = {}
-            --// CONTENT DIVIDER
             function Item:Divider()
                 local div = Create("Frame", {BackgroundColor3 = Nexus.Theme.Outline, Size = UDim2.new(1, -4, 0, 1), Parent = ParentFrame})
             end
             
+            --// DASHBOARD CARD (Server Stats)
+            function Item:ServerCard()
+                local Card = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 130), Parent = ParentFrame})
+                AddCorner(Card, 10) AddStroke(Card, Nexus.Theme.Outline, 1)
+                
+                -- Gradient Border
+                local Grad = Create("UIGradient", {Color=ColorSequence.new{ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1), ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)}, Rotation=45, Parent=Card:FindFirstChild("UIStroke")})
+                
+                Create("TextLabel", {Text="Server", Font=Enum.Font.GothamBold, TextSize=18, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,15,0,10), Size=UDim2.new(1,0,0,20), TextXAlignment=Enum.TextXAlignment.Left, Parent=Card})
+                Create("TextLabel", {Text="Session Information", Font=Enum.Font.Gotham, TextSize=12, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(0,15,0,30), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Card})
+                
+                local Grid = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,15,0,55), Size=UDim2.new(1,-30,1,-65), Parent=Card})
+                Create("UIGridLayout", {CellSize=UDim2.new(0.48,0,0.45,0), CellPadding=UDim2.new(0.04,0,0.1,0), SortOrder=Enum.SortOrder.LayoutOrder, Parent=Grid})
+                
+                local function AddStat(title, val)
+                    local Box = Create("Frame", {BackgroundColor3 = Nexus.Theme.SurfaceHigh, Parent = Grid})
+                    AddCorner(Box, 6)
+                    Create("TextLabel", {Text=title, Font=Enum.Font.GothamBold, TextSize=12, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,5), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Box})
+                    local vLbl = Create("TextLabel", {Text=val, Font=Enum.Font.Gotham, TextSize=11, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(0,10,0,22), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Box})
+                    return vLbl
+                end
+                
+                local pLbl = AddStat("Players", "0/0")
+                local piLbl = AddStat("Ping", "0ms")
+                local tLbl = AddStat("Time", "00:00:00")
+                local fLbl = AddStat("FPS", "60")
+                
+                RunService.Heartbeat:Connect(function()
+                    pLbl.Text = #Players:GetPlayers() .. "/" .. Players.MaxPlayers
+                    piLbl.Text = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue()) .. "ms"
+                    local t = workspace.DistributedGameTime
+                    tLbl.Text = string.format("%02d:%02d:%02d", math.floor(t/3600), math.floor((t%3600)/60), math.floor(t%60))
+                    fLbl.Text = math.floor(workspace:GetRealPhysicsFPS())
+                end)
+            end
+
+            --// BUTTON CARD (Discord/Wave Style)
+            function Item:ButtonCard(cfg)
+                local Title = cfg.Title or "Card"
+                local Desc = cfg.Description or "Click to interact"
+                local Btn = Create("TextButton", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 70), AutoButtonColor = false, Parent = ParentFrame})
+                AddCorner(Btn, 10) AddStroke(Btn, Nexus.Theme.Outline, 1)
+                
+                -- Gradient BG
+                Create("UIGradient", {Color=ColorSequence.new{ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1), ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)}, Rotation=0, Transparency=NumberSequence.new(0.6), Parent=Btn})
+                
+                Create("TextLabel", {Text=Title, Font=Enum.Font.GothamBold, TextSize=18, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,15,0,12), Size=UDim2.new(1,0,0,20), TextXAlignment=Enum.TextXAlignment.Left, Parent=Btn})
+                Create("TextLabel", {Text=Desc, Font=Enum.Font.Gotham, TextSize=12, TextColor3=Color3.new(1,1,1), BackgroundTransparency=1, Position=UDim2.new(0,15,0,35), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Btn})
+                
+                Btn.MouseButton1Click:Connect(function()
+                    Tween(Btn, {Size = UDim2.new(1,-4,0,68)}, 0.05) task.wait(0.05) Tween(Btn, {Size = UDim2.new(1,0,0,70)}, 0.05)
+                    cfg.Callback()
+                end)
+            end
+
             function Item:Section(text)
                 Create("TextLabel", {Text=text, Font=Enum.Font.GothamBold, TextSize=14, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Size=UDim2.new(1,0,0,24), TextXAlignment=Enum.TextXAlignment.Left, Parent=ParentFrame})
             end
@@ -279,7 +334,6 @@ function Nexus:Window(config)
                 local box = Create("TextBox", {Text="", PlaceholderText=placeholder, PlaceholderColor3=Nexus.Theme.TextSub, Font=Enum.Font.Gotham, TextSize=13, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Size=UDim2.new(1,-8,1,0), Position=UDim2.new(0,4,0,0), TextXAlignment=Enum.TextXAlignment.Left, ClearTextOnFocus=false, Parent=boxC})
                 box.FocusLost:Connect(function() cfg.Callback(box.Text) end)
             end
-            --// NEW FEATURE: MULTI-DROPDOWN
             function Item:MultiDropdown(cfg)
                 local text, options = cfg.Text or "Multi Dropdown", cfg.Options or {}
                 local default = cfg.Default or {}
@@ -330,7 +384,6 @@ function Nexus:Window(config)
                 list:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() if open then Tween(f, {Size=UDim2.new(1,0,0, 42+list.AbsoluteContentSize.Y+20)}, 0.1) end end)
                 return CreateControls(content)
             end
-            
             function Item:Dropdown(cfg)
                 local text, options = cfg.Text or "Dropdown", cfg.Options or {}
                 local f = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1,0,0,42), ClipsDescendants = true, Parent = ParentFrame})
