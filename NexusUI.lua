@@ -1,6 +1,6 @@
 --[[ 
-    NEXUS UI (v3.4 - Dashboard Edition)
-    Features: Server Stats Card, Gradient Cards, Multi-Dropdown, Dividers, Config
+    NEXUS UI (v3.5 - Stable Edition)
+    Fixes: Missing ServerCard, Memory Leaks, Dropdown Logic
 ]]
 
 local Nexus = {
@@ -14,7 +14,7 @@ local Nexus = {
         Text = Color3.fromRGB(240, 240, 240),
         TextSub = Color3.fromRGB(170, 170, 170),
         Outline = Color3.fromRGB(60, 60, 60),
-        Gradient1 = Color3.fromRGB(0, 120, 212), -- For Dashboard Cards
+        Gradient1 = Color3.fromRGB(0, 120, 212),
         Gradient2 = Color3.fromRGB(100, 50, 255)
     }
 }
@@ -128,7 +128,8 @@ function Nexus:Window(config)
         AddCorner(Wat, 6) AddStroke(Wat, Nexus.Theme.Accent, 1)
         local WatText = Create("TextLabel", {BackgroundTransparency=1, Size=UDim2.new(1,0,1,0), Font=Enum.Font.GothamMedium, TextSize=13, TextColor3=Nexus.Theme.Text, Parent=Wat})
         MakeDraggable(Wat)
-        RunService.Heartbeat:Connect(function()
+        local WConn; WConn = RunService.Heartbeat:Connect(function()
+            if not Wat.Parent then WConn:Disconnect() return end
             local fps = math.floor(workspace:GetRealPhysicsFPS())
             local ping = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
             WatText.Text = string.format("FPS: %d  |  Ping: %dms  |  CPU: %d%%", fps, ping, math.min(fps/60*100, 100))
@@ -180,230 +181,196 @@ function Nexus:Window(config)
     CloseBtn.MouseButton1Click:Connect(function() SetBlur(false) ScreenGui:Destroy() end)
 
     local Tabs, CurrentTab = {}, nil
-    local Funcs = {}
+    
+    local function CreateControls(ParentFrame)
+        local Item = {}
+        function Item:Divider()
+            local div = Create("Frame", {BackgroundColor3 = Nexus.Theme.Outline, Size = UDim2.new(1, -4, 0, 1), Parent = ParentFrame})
+        end
+        function Item:Section(text)
+            Create("TextLabel", {Text=text, Font=Enum.Font.GothamBold, TextSize=14, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Size=UDim2.new(1,0,0,24), TextXAlignment=Enum.TextXAlignment.Left, Parent=ParentFrame})
+        end
+        function Item:Paragraph(title, desc)
+            local c = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1,0,0,0), AutomaticSize = Enum.AutomaticSize.Y, Parent = ParentFrame})
+            AddCorner(c, 6) AddStroke(c, Nexus.Theme.Outline, 1)
+            Create("TextLabel", {Text = title, Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,12), Size = UDim2.new(1,-24,0,16), TextXAlignment = Enum.TextXAlignment.Left, Parent = c})
+            Create("TextLabel", {Text = desc, Font = Enum.Font.Gotham, TextSize = 12, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,32), Size = UDim2.new(1,-24,0,0), AutomaticSize = Enum.AutomaticSize.Y, TextXAlignment = Enum.TextXAlignment.Left, TextWrapped = true, Parent = c})
+            Create("Frame", {BackgroundTransparency=1, Size=UDim2.new(1,0,0,12), LayoutOrder=100, Parent=c})
+        end
+        function Item:Button(cfg)
+            local b = Create("TextButton", {Text=cfg.Text, BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,38), TextColor3=Nexus.Theme.Text, Font=Enum.Font.GothamMedium, TextSize=14, Parent=ParentFrame})
+            AddCorner(b, 6)
+            b.MouseButton1Click:Connect(function() Tween(b, {Size=UDim2.new(1,-4,0,36)}, 0.05) task.wait(0.05) Tween(b, {Size=UDim2.new(1,0,0,38)}, 0.05) cfg.Callback() end)
+        end
+        function Item:Toggle(cfg)
+            local t = Create("TextButton", {Text="", BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,38), Parent=ParentFrame})
+            AddCorner(t, 6)
+            Create("TextLabel", {Text=cfg.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,0), Size=UDim2.new(1,-60,1,0), Font=Enum.Font.GothamMedium, TextSize=14, TextColor3=Nexus.Theme.Text, TextXAlignment=Enum.TextXAlignment.Left, Parent=t})
+            local box = Create("Frame", {BackgroundColor3=Nexus.Theme.SurfaceHigh, Size=UDim2.new(0,40,0,20), Position=UDim2.new(1,-50,0.5,-10), Parent=t})
+            AddCorner(box, 10)
+            local knob = Create("Frame", {BackgroundColor3=Nexus.Theme.Text, Size=UDim2.new(0,16,0,16), Position=UDim2.new(0,2,0.5,-8), Parent=box})
+            AddCorner(knob, 8)
+            local on = cfg.Default or false
+            local function update()
+                Tween(knob, {Position=on and UDim2.new(1,-18,0.5,-8) or UDim2.new(0,2,0.5,-8)}, 0.2)
+                Tween(box, {BackgroundColor3=on and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh}, 0.2)
+                cfg.Callback(on)
+                if cfg.Flag then Nexus.Flags[cfg.Flag] = on end
+            end
+            t.MouseButton1Click:Connect(function() on = not on update() end)
+            if cfg.Flag then Nexus.Registry[cfg.Flag] = {Set = function(v) on = v update() end} end
+            if on then update() end
+        end
+        function Item:Slider(cfg)
+            local f = Create("Frame", {BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,50), Parent=ParentFrame})
+            AddCorner(f, 6)
+            Create("TextLabel", {Text=cfg.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,5), Size=UDim2.new(1,-20,0,20), Font=Enum.Font.GothamMedium, TextSize=14, TextColor3=Nexus.Theme.Text, TextXAlignment=Enum.TextXAlignment.Left, Parent=f})
+            local valText = Create("TextLabel", {Text=cfg.Default or cfg.Min, BackgroundTransparency=1, Position=UDim2.new(1,-40,0,5), Size=UDim2.new(0,30,0,20), Font=Enum.Font.GothamBold, TextSize=14, TextColor3=Nexus.Theme.Text, Parent=f})
+            local bar = Create("TextButton", {Text="", BackgroundColor3=Nexus.Theme.SurfaceHigh, Size=UDim2.new(1,-20,0,6), Position=UDim2.new(0,10,0,35), AutoButtonColor=false, Parent=f})
+            AddCorner(bar, 3)
+            local fill = Create("Frame", {BackgroundColor3=Nexus.Theme.Accent, Size=UDim2.new(0,0,1,0), Parent=bar})
+            AddCorner(fill, 3)
+            local min, max, val = cfg.Min, cfg.Max, cfg.Default or cfg.Min
+            local function set(v)
+                if type(v) ~= "number" then v = min end
+                val = math.clamp(v, min, max)
+                valText.Text = math.floor(val)
+                fill.Size = UDim2.new((val-min)/(max-min), 0, 1, 0)
+                cfg.Callback(val)
+                if cfg.Flag then Nexus.Flags[cfg.Flag] = val end
+            end
+            local dragging = false
+            bar.InputBegan:Connect(function(i) if i.UserInputType==Enum.UserInputType.MouseButton1 or i.UserInputType==Enum.UserInputType.Touch then dragging=true end end)
+            UserInputService.InputEnded:Connect(function(i) if i.UserInputType==Enum.UserInputType.MouseButton1 or i.UserInputType==Enum.UserInputType.Touch then dragging=false end end)
+            UserInputService.InputChanged:Connect(function(i) if dragging and (i.UserInputType==Enum.UserInputType.MouseMovement or i.UserInputType==Enum.UserInputType.Touch) then local p = math.clamp((i.Position.X - bar.AbsolutePosition.X)/bar.AbsoluteSize.X, 0, 1) set(min + (max-min)*p) end end)
+            if cfg.Flag then Nexus.Registry[cfg.Flag] = {Set = set} end
+            set(val)
+        end
+        function Item:Input(cfg)
+            local text, placeholder = cfg.Text or "Input", cfg.Placeholder or "Type here..."
+            local f = Create("Frame", {BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,42), Parent=ParentFrame})
+            AddCorner(f, 6)
+            Create("TextLabel", {Text=text, Font=Enum.Font.GothamMedium, TextSize=14, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,12,0,0), Size=UDim2.new(1,-24,0,20), TextXAlignment=Enum.TextXAlignment.Left, Parent=f})
+            local boxC = Create("Frame", {BackgroundColor3=Nexus.Theme.SurfaceHigh, Size=UDim2.new(1,-24,0,18), Position=UDim2.new(0,12,0,20), Parent=f})
+            AddCorner(boxC, 4) AddStroke(boxC, Nexus.Theme.Outline, 1)
+            local box = Create("TextBox", {Text="", PlaceholderText=placeholder, PlaceholderColor3=Nexus.Theme.TextSub, Font=Enum.Font.Gotham, TextSize=13, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Size=UDim2.new(1,-8,1,0), Position=UDim2.new(0,4,0,0), TextXAlignment=Enum.TextXAlignment.Left, ClearTextOnFocus=false, Parent=boxC})
+            box.FocusLost:Connect(function() cfg.Callback(box.Text) end)
+        end
+        function Item:MultiDropdown(cfg)
+            local text, options, default = cfg.Text or "Multi Dropdown", cfg.Options or {}, cfg.Default or {}
+            local f = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1,0,0,42), ClipsDescendants = true, Parent = ParentFrame})
+            AddCorner(f, 6)
+            local lbl = Create("TextLabel", {Text = text, Font = Enum.Font.GothamMedium, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,0), Size = UDim2.new(0.6,0,0,42), TextXAlignment=Enum.TextXAlignment.Left, Parent = f})
+            local arr = Create("TextLabel", {Text = "v", Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(1,-30,0,0), Size=UDim2.new(0,30,0,42), Parent=f})
+            local btn = Create("TextButton", {Text="", BackgroundTransparency=1, Size=UDim2.new(1,0,0,42), Parent=f})
+            local container = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,0,0,42), Size=UDim2.new(1,0,0,0), Parent=f})
+            Create("UIListLayout", {SortOrder=Enum.SortOrder.LayoutOrder, Parent=container})
+            
+            local selected = {}
+            for _,v in pairs(default) do selected[v] = true end
+            local function update()
+                local t = {}
+                for k,_ in pairs(selected) do table.insert(t, k) end
+                if #t == 0 then lbl.Text = text .. " (None)" else lbl.Text = text .. " (" .. table.concat(t, ", ") .. ")" end
+            end
+            update()
+            local open = false
+            btn.MouseButton1Click:Connect(function() open = not open Tween(arr, {Rotation=open and 180 or 0}, 0.2) Tween(f, {Size=UDim2.new(1,0,0, open and (42 + (#options*30) + 6) or 42)}, 0.3) end)
+            for _, opt in pairs(options) do
+                local ob = Create("TextButton", {Text=opt, Font=Enum.Font.Gotham, TextSize=13, TextColor3=Nexus.Theme.TextSub, BackgroundColor3=Nexus.Theme.Surface, BackgroundTransparency=0.5, Size=UDim2.new(1,-12,0,30), Parent=container})
+                AddCorner(ob, 4)
+                if selected[opt] then ob.TextColor3 = Nexus.Theme.Accent end
+                ob.MouseButton1Click:Connect(function() 
+                    if selected[opt] then selected[opt] = nil ob.TextColor3 = Nexus.Theme.TextSub else selected[opt] = true ob.TextColor3 = Nexus.Theme.Accent end
+                    update()
+                    local res = {} for k,_ in pairs(selected) do table.insert(res, k) end
+                    cfg.Callback(res)
+                end)
+            end
+        end
+        function Item:Collapsible(text)
+            local f = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 42), ClipsDescendants = true, Parent = ParentFrame})
+            AddCorner(f, 6)
+            local btn = Create("TextButton", {Text = "", BackgroundTransparency = 1, Size = UDim2.new(1, 0, 0, 42), Parent = f})
+            Create("TextLabel", {Text = text, Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0, 12, 0, 0), Size = UDim2.new(1, -40, 0, 42), TextXAlignment = Enum.TextXAlignment.Left, Parent = btn})
+            local arr = Create("TextLabel", {Text = ">", Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency = 1, Position = UDim2.new(1, -30, 0, 0), Size = UDim2.new(0, 30, 0, 42), Parent = btn})
+            local content = Create("Frame", {BackgroundTransparency = 1, Position = UDim2.new(0, 0, 0, 42), Size = UDim2.new(1, 0, 0, 0), Parent = f})
+            local list = Create("UIListLayout", {Padding = UDim.new(0, 8), SortOrder = Enum.SortOrder.LayoutOrder, Parent = content})
+            Create("UIPadding", {PaddingTop = UDim.new(0, 10), PaddingLeft = UDim.new(0, 10), PaddingRight = UDim.new(0, 10), PaddingBottom = UDim.new(0, 10), Parent = content})
+            local open = false
+            btn.MouseButton1Click:Connect(function() open = not open Tween(arr, {Rotation=open and 90 or 0}, 0.2) Tween(f, {Size=UDim2.new(1,0,0, open and (42+list.AbsoluteContentSize.Y+20) or 42)}, 0.3) end)
+            list:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() if open then Tween(f, {Size=UDim2.new(1,0,0, 42+list.AbsoluteContentSize.Y+20)}, 0.1) end end)
+            return CreateControls(content)
+        end
+        function Item:Dropdown(cfg)
+            local text, options = cfg.Text or "Dropdown", cfg.Options or {}
+            local f = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1,0,0,42), ClipsDescendants = true, Parent = ParentFrame})
+            AddCorner(f, 6)
+            Create("TextLabel", {Text = text, Font = Enum.Font.GothamMedium, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,0), Size = UDim2.new(0.6,0,0,42), TextXAlignment=Enum.TextXAlignment.Left, Parent = f})
+            local arr = Create("TextLabel", {Text = "v", Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(1,-30,0,0), Size=UDim2.new(0,30,0,42), Parent=f})
+            local btn = Create("TextButton", {Text="", BackgroundTransparency=1, Size=UDim2.new(1,0,0,42), Parent=f})
+            local container = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,0,0,42), Size=UDim2.new(1,0,0,0), Parent=f})
+            Create("UIListLayout", {SortOrder=Enum.SortOrder.LayoutOrder, Parent=container})
+            local open = false
+            btn.MouseButton1Click:Connect(function() open = not open Tween(arr, {Rotation=open and 180 or 0}, 0.2) Tween(f, {Size = UDim2.new(1,0,0, open and (42 + (#options*30) + 6) or 42)}, 0.3) end)
+            for _, opt in pairs(options) do
+                local oBtn = Create("TextButton", {Text=opt, Font=Enum.Font.Gotham, TextSize=13, TextColor3=Nexus.Theme.TextSub, BackgroundColor3=Nexus.Theme.Surface, BackgroundTransparency=0.5, Size=UDim2.new(1,-12,0,30), Parent=Container})
+                AddCorner(oBtn, 4)
+                oBtn.MouseButton1Click:Connect(function() cfg.Callback(opt); open=false; Tween(arr, {Rotation=0}, 0.2) Tween(f, {Size=UDim2.new(1,0,0,42)}, 0.3) end)
+            end
+        end
+        function Item:ServerCard()
+            local Card = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 130), Parent = ParentFrame})
+            AddCorner(Card, 10) AddStroke(Card, Nexus.Theme.Outline, 1)
+            local Grad = Create("UIGradient", {Color=ColorSequence.new{ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1), ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)}, Rotation=45, Parent=Card:FindFirstChild("UIStroke")})
+            Create("TextLabel", {Text="Server", Font=Enum.Font.GothamBold, TextSize=18, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,15,0,10), Size=UDim2.new(1,0,0,20), TextXAlignment=Enum.TextXAlignment.Left, Parent=Card})
+            Create("TextLabel", {Text="Session Information", Font=Enum.Font.Gotham, TextSize=12, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(0,15,0,30), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Card})
+            local Grid = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,15,0,55), Size=UDim2.new(1,-30,1,-65), Parent=Card})
+            Create("UIGridLayout", {CellSize=UDim2.new(0.48,0,0.45,0), CellPadding=UDim2.new(0.04,0,0.1,0), SortOrder=Enum.SortOrder.LayoutOrder, Parent=Grid})
+            local function AddStat(title, val)
+                local Box = Create("Frame", {BackgroundColor3 = Nexus.Theme.SurfaceHigh, Parent = Grid}) AddCorner(Box, 6)
+                Create("TextLabel", {Text=title, Font=Enum.Font.GothamBold, TextSize=12, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,5), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Box})
+                return Create("TextLabel", {Text=val, Font=Enum.Font.Gotham, TextSize=11, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(0,10,0,22), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Box})
+            end
+            local pLbl, piLbl, tLbl, fLbl = AddStat("Players", "0/0"), AddStat("Ping", "0ms"), AddStat("Time", "00:00:00"), AddStat("FPS", "60")
+            local SConn; SConn = RunService.Heartbeat:Connect(function()
+                if not Card.Parent then SConn:Disconnect() return end
+                pLbl.Text = #Players:GetPlayers() .. "/" .. Players.MaxPlayers
+                piLbl.Text = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue()) .. "ms"
+                local t = workspace.DistributedGameTime
+                tLbl.Text = string.format("%02d:%02d:%02d", math.floor(t/3600), math.floor((t%3600)/60), math.floor(t%60))
+                fLbl.Text = math.floor(workspace:GetRealPhysicsFPS())
+            end)
+        end
+        function Item:ButtonCard(cfg)
+            local Title, Desc = cfg.Title or "Card", cfg.Description or "Click"
+            local Btn = Create("TextButton", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 70), AutoButtonColor = false, Parent = ParentFrame})
+            AddCorner(Btn, 10) AddStroke(Btn, Nexus.Theme.Outline, 1)
+            Create("UIGradient", {Color=ColorSequence.new{ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1), ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)}, Rotation=0, Transparency=NumberSequence.new(0.6), Parent=Btn})
+            Create("TextLabel", {Text=Title, Font=Enum.Font.GothamBold, TextSize=18, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,15,0,12), Size=UDim2.new(1,0,0,20), TextXAlignment=Enum.TextXAlignment.Left, Parent=Btn})
+            Create("TextLabel", {Text=Desc, Font=Enum.Font.Gotham, TextSize=12, TextColor3=Color3.new(1,1,1), BackgroundTransparency=1, Position=UDim2.new(0,15,0,35), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Btn})
+            Btn.MouseButton1Click:Connect(function() Tween(Btn, {Size = UDim2.new(1,-4,0,68)}, 0.05) task.wait(0.05) Tween(Btn, {Size = UDim2.new(1,0,0,70)}, 0.05) cfg.Callback() end)
+        end
+        return Item
+    end
 
+    local Funcs = {}
     function Funcs:Divider()
         local div = Create("Frame", {BackgroundColor3 = Nexus.Theme.Outline, Size = UDim2.new(1, 0, 0, 1), Parent = TabContainer})
         Create("UIPadding", {PaddingTop=UDim.new(0,2), PaddingBottom=UDim.new(0,2), Parent=div}) 
     end
-
     function Funcs:Tab(name)
         local Page = Create("ScrollingFrame", {Visible=false, BackgroundTransparency=1, Size=UDim2.new(1,0,1,0), CanvasSize=UDim2.new(0,0,0,0), ScrollBarThickness=3, Parent=PagesFolder})
         local PList = Create("UIListLayout", {Padding=UDim.new(0,8), SortOrder=Enum.SortOrder.LayoutOrder, Parent=Page})
         Create("UIPadding", {PaddingTop=UDim.new(0,15), PaddingLeft=UDim.new(0,15), PaddingRight=UDim.new(0,15), Parent=Page})
         PList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() Page.CanvasSize = UDim2.new(0,0,0,PList.AbsoluteContentSize.Y+20) end)
-
         local Btn = Create("TextButton", {Text=name, Font=Enum.Font.GothamMedium, TextColor3=Nexus.Theme.TextSub, BackgroundColor3=Nexus.Theme.Surface, BackgroundTransparency=1, Size=UDim2.new(1,0,0,32), Parent=TabContainer})
         AddCorner(Btn, 6)
-
-        local function Show()
+        Btn.MouseButton1Click:Connect(function() 
             if CurrentTab then CurrentTab.Btn.BackgroundTransparency=1 CurrentTab.Btn.TextColor3=Nexus.Theme.TextSub CurrentTab.Page.Visible=false end
-            CurrentTab = {Btn=Btn, Page=Page}
-            Btn.BackgroundTransparency=0 Btn.TextColor3=Nexus.Theme.Text Page.Visible=true
-        end
-        Btn.MouseButton1Click:Connect(Show)
-        if not CurrentTab then Show() end
-
-        local function CreateControls(ParentFrame)
-            local Item = {}
-            function Item:Divider()
-                local div = Create("Frame", {BackgroundColor3 = Nexus.Theme.Outline, Size = UDim2.new(1, -4, 0, 1), Parent = ParentFrame})
-            end
-            
-            --// DASHBOARD CARD (Server Stats)
-            function Item:ServerCard()
-                local Card = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 130), Parent = ParentFrame})
-                AddCorner(Card, 10) AddStroke(Card, Nexus.Theme.Outline, 1)
-                
-                -- Gradient Border
-                local Grad = Create("UIGradient", {Color=ColorSequence.new{ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1), ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)}, Rotation=45, Parent=Card:FindFirstChild("UIStroke")})
-                
-                Create("TextLabel", {Text="Server", Font=Enum.Font.GothamBold, TextSize=18, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,15,0,10), Size=UDim2.new(1,0,0,20), TextXAlignment=Enum.TextXAlignment.Left, Parent=Card})
-                Create("TextLabel", {Text="Session Information", Font=Enum.Font.Gotham, TextSize=12, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(0,15,0,30), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Card})
-                
-                local Grid = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,15,0,55), Size=UDim2.new(1,-30,1,-65), Parent=Card})
-                Create("UIGridLayout", {CellSize=UDim2.new(0.48,0,0.45,0), CellPadding=UDim2.new(0.04,0,0.1,0), SortOrder=Enum.SortOrder.LayoutOrder, Parent=Grid})
-                
-                local function AddStat(title, val)
-                    local Box = Create("Frame", {BackgroundColor3 = Nexus.Theme.SurfaceHigh, Parent = Grid})
-                    AddCorner(Box, 6)
-                    Create("TextLabel", {Text=title, Font=Enum.Font.GothamBold, TextSize=12, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,5), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Box})
-                    local vLbl = Create("TextLabel", {Text=val, Font=Enum.Font.Gotham, TextSize=11, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(0,10,0,22), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Box})
-                    return vLbl
-                end
-                
-                local pLbl = AddStat("Players", "0/0")
-                local piLbl = AddStat("Ping", "0ms")
-                local tLbl = AddStat("Time", "00:00:00")
-                local fLbl = AddStat("FPS", "60")
-                
-                RunService.Heartbeat:Connect(function()
-                    pLbl.Text = #Players:GetPlayers() .. "/" .. Players.MaxPlayers
-                    piLbl.Text = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue()) .. "ms"
-                    local t = workspace.DistributedGameTime
-                    tLbl.Text = string.format("%02d:%02d:%02d", math.floor(t/3600), math.floor((t%3600)/60), math.floor(t%60))
-                    fLbl.Text = math.floor(workspace:GetRealPhysicsFPS())
-                end)
-            end
-
-            --// BUTTON CARD (Discord/Wave Style)
-            function Item:ButtonCard(cfg)
-                local Title = cfg.Title or "Card"
-                local Desc = cfg.Description or "Click to interact"
-                local Btn = Create("TextButton", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 70), AutoButtonColor = false, Parent = ParentFrame})
-                AddCorner(Btn, 10) AddStroke(Btn, Nexus.Theme.Outline, 1)
-                
-                -- Gradient BG
-                Create("UIGradient", {Color=ColorSequence.new{ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1), ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)}, Rotation=0, Transparency=NumberSequence.new(0.6), Parent=Btn})
-                
-                Create("TextLabel", {Text=Title, Font=Enum.Font.GothamBold, TextSize=18, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,15,0,12), Size=UDim2.new(1,0,0,20), TextXAlignment=Enum.TextXAlignment.Left, Parent=Btn})
-                Create("TextLabel", {Text=Desc, Font=Enum.Font.Gotham, TextSize=12, TextColor3=Color3.new(1,1,1), BackgroundTransparency=1, Position=UDim2.new(0,15,0,35), Size=UDim2.new(1,0,0,15), TextXAlignment=Enum.TextXAlignment.Left, Parent=Btn})
-                
-                Btn.MouseButton1Click:Connect(function()
-                    Tween(Btn, {Size = UDim2.new(1,-4,0,68)}, 0.05) task.wait(0.05) Tween(Btn, {Size = UDim2.new(1,0,0,70)}, 0.05)
-                    cfg.Callback()
-                end)
-            end
-
-            function Item:Section(text)
-                Create("TextLabel", {Text=text, Font=Enum.Font.GothamBold, TextSize=14, TextColor3=Nexus.Theme.TextSub, BackgroundTransparency=1, Size=UDim2.new(1,0,0,24), TextXAlignment=Enum.TextXAlignment.Left, Parent=ParentFrame})
-            end
-            function Item:Paragraph(title, desc)
-                local c = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1,0,0,0), AutomaticSize = Enum.AutomaticSize.Y, Parent = ParentFrame})
-                AddCorner(c, 6) AddStroke(c, Nexus.Theme.Outline, 1)
-                Create("TextLabel", {Text = title, Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,12), Size = UDim2.new(1,-24,0,16), TextXAlignment = Enum.TextXAlignment.Left, Parent = c})
-                Create("TextLabel", {Text = desc, Font = Enum.Font.Gotham, TextSize = 12, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,32), Size = UDim2.new(1,-24,0,0), AutomaticSize = Enum.AutomaticSize.Y, TextXAlignment = Enum.TextXAlignment.Left, TextWrapped = true, Parent = c})
-                Create("Frame", {BackgroundTransparency=1, Size=UDim2.new(1,0,0,12), LayoutOrder=100, Parent=c})
-            end
-            function Item:Button(cfg)
-                local b = Create("TextButton", {Text=cfg.Text, BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,38), TextColor3=Nexus.Theme.Text, Font=Enum.Font.GothamMedium, TextSize=14, Parent=ParentFrame})
-                AddCorner(b, 6)
-                b.MouseButton1Click:Connect(function() Tween(b, {Size=UDim2.new(1,-4,0,36)}, 0.05) task.wait(0.05) Tween(b, {Size=UDim2.new(1,0,0,38)}, 0.05) cfg.Callback() end)
-            end
-            function Item:Toggle(cfg)
-                local t = Create("TextButton", {Text="", BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,38), Parent=ParentFrame})
-                AddCorner(t, 6)
-                Create("TextLabel", {Text=cfg.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,0), Size=UDim2.new(1,-60,1,0), Font=Enum.Font.GothamMedium, TextSize=14, TextColor3=Nexus.Theme.Text, TextXAlignment=Enum.TextXAlignment.Left, Parent=t})
-                local box = Create("Frame", {BackgroundColor3=Nexus.Theme.SurfaceHigh, Size=UDim2.new(0,40,0,20), Position=UDim2.new(1,-50,0.5,-10), Parent=t})
-                AddCorner(box, 10)
-                local knob = Create("Frame", {BackgroundColor3=Nexus.Theme.Text, Size=UDim2.new(0,16,0,16), Position=UDim2.new(0,2,0.5,-8), Parent=box})
-                AddCorner(knob, 8)
-                local on = cfg.Default or false
-                local function update()
-                    Tween(knob, {Position=on and UDim2.new(1,-18,0.5,-8) or UDim2.new(0,2,0.5,-8)}, 0.2)
-                    Tween(box, {BackgroundColor3=on and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh}, 0.2)
-                    cfg.Callback(on)
-                    if cfg.Flag then Nexus.Flags[cfg.Flag] = on end
-                end
-                t.MouseButton1Click:Connect(function() on = not on update() end)
-                if cfg.Flag then Nexus.Registry[cfg.Flag] = {Set = function(v) on = v update() end} end
-                if on then update() end
-            end
-            function Item:Slider(cfg)
-                local f = Create("Frame", {BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,50), Parent=ParentFrame})
-                AddCorner(f, 6)
-                Create("TextLabel", {Text=cfg.Text, BackgroundTransparency=1, Position=UDim2.new(0,10,0,5), Size=UDim2.new(1,-20,0,20), Font=Enum.Font.GothamMedium, TextSize=14, TextColor3=Nexus.Theme.Text, TextXAlignment=Enum.TextXAlignment.Left, Parent=f})
-                local valText = Create("TextLabel", {Text=cfg.Default or cfg.Min, BackgroundTransparency=1, Position=UDim2.new(1,-40,0,5), Size=UDim2.new(0,30,0,20), Font=Enum.Font.GothamBold, TextSize=14, TextColor3=Nexus.Theme.Text, Parent=f})
-                local bar = Create("TextButton", {Text="", BackgroundColor3=Nexus.Theme.SurfaceHigh, Size=UDim2.new(1,-20,0,6), Position=UDim2.new(0,10,0,35), AutoButtonColor=false, Parent=f})
-                AddCorner(bar, 3)
-                local fill = Create("Frame", {BackgroundColor3=Nexus.Theme.Accent, Size=UDim2.new(0,0,1,0), Parent=bar})
-                AddCorner(fill, 3)
-                local min, max, val = cfg.Min, cfg.Max, cfg.Default or cfg.Min
-                local function set(v)
-                    if type(v) ~= "number" then v = min end
-                    val = math.clamp(v, min, max)
-                    valText.Text = math.floor(val)
-                    fill.Size = UDim2.new((val-min)/(max-min), 0, 1, 0)
-                    cfg.Callback(val)
-                    if cfg.Flag then Nexus.Flags[cfg.Flag] = val end
-                end
-                local dragging = false
-                bar.InputBegan:Connect(function(i) if i.UserInputType==Enum.UserInputType.MouseButton1 or i.UserInputType==Enum.UserInputType.Touch then dragging=true end end)
-                UserInputService.InputEnded:Connect(function(i) if i.UserInputType==Enum.UserInputType.MouseButton1 or i.UserInputType==Enum.UserInputType.Touch then dragging=false end end)
-                UserInputService.InputChanged:Connect(function(i) if dragging and (i.UserInputType==Enum.UserInputType.MouseMovement or i.UserInputType==Enum.UserInputType.Touch) then local p = math.clamp((i.Position.X - bar.AbsolutePosition.X)/bar.AbsoluteSize.X, 0, 1) set(min + (max-min)*p) end end)
-                if cfg.Flag then Nexus.Registry[cfg.Flag] = {Set = set} end
-                set(val)
-            end
-            function Item:Input(cfg)
-                local text, placeholder = cfg.Text or "Input", cfg.Placeholder or "Type here..."
-                local f = Create("Frame", {BackgroundColor3=Nexus.Theme.Surface, Size=UDim2.new(1,0,0,42), Parent=ParentFrame})
-                AddCorner(f, 6)
-                Create("TextLabel", {Text=text, Font=Enum.Font.GothamMedium, TextSize=14, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Position=UDim2.new(0,12,0,0), Size=UDim2.new(1,-24,0,20), TextXAlignment=Enum.TextXAlignment.Left, Parent=f})
-                local boxC = Create("Frame", {BackgroundColor3=Nexus.Theme.SurfaceHigh, Size=UDim2.new(1,-24,0,18), Position=UDim2.new(0,12,0,20), Parent=f})
-                AddCorner(boxC, 4) AddStroke(boxC, Nexus.Theme.Outline, 1)
-                local box = Create("TextBox", {Text="", PlaceholderText=placeholder, PlaceholderColor3=Nexus.Theme.TextSub, Font=Enum.Font.Gotham, TextSize=13, TextColor3=Nexus.Theme.Text, BackgroundTransparency=1, Size=UDim2.new(1,-8,1,0), Position=UDim2.new(0,4,0,0), TextXAlignment=Enum.TextXAlignment.Left, ClearTextOnFocus=false, Parent=boxC})
-                box.FocusLost:Connect(function() cfg.Callback(box.Text) end)
-            end
-            function Item:MultiDropdown(cfg)
-                local text, options = cfg.Text or "Multi Dropdown", cfg.Options or {}
-                local default = cfg.Default or {}
-                local f = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1,0,0,42), ClipsDescendants = true, Parent = ParentFrame})
-                AddCorner(f, 6)
-                local lbl = Create("TextLabel", {Text = text, Font = Enum.Font.GothamMedium, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,0), Size = UDim2.new(0.6,0,0,42), TextXAlignment=Enum.TextXAlignment.Left, Parent = f})
-                local arr = Create("TextLabel", {Text = "v", Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(1,-30,0,0), Size=UDim2.new(0,30,0,42), Parent=f})
-                local btn = Create("TextButton", {Text="", BackgroundTransparency=1, Size=UDim2.new(1,0,0,42), Parent=f})
-                local container = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,0,0,42), Size=UDim2.new(1,0,0,0), Parent=f})
-                Create("UIListLayout", {SortOrder=Enum.SortOrder.LayoutOrder, Parent=container})
-                
-                local selected = {}
-                for _,v in pairs(default) do selected[v] = true end
-                local function update()
-                    local t = {}
-                    for k,_ in pairs(selected) do table.insert(t, k) end
-                    if #t == 0 then lbl.Text = text .. " (None)" else lbl.Text = text .. " (" .. table.concat(t, ", ") .. ")" end
-                end
-                update()
-
-                local open = false
-                btn.MouseButton1Click:Connect(function() open = not open Tween(arr, {Rotation=open and 180 or 0}, 0.2) Tween(f, {Size=UDim2.new(1,0,0, open and (42 + (#options*30) + 6) or 42)}, 0.3) end)
-                
-                for _, opt in pairs(options) do
-                    local ob = Create("TextButton", {Text=opt, Font=Enum.Font.Gotham, TextSize=13, TextColor3=Nexus.Theme.TextSub, BackgroundColor3=Nexus.Theme.Surface, BackgroundTransparency=0.5, Size=UDim2.new(1,-12,0,30), Parent=container})
-                    AddCorner(ob, 4)
-                    if selected[opt] then ob.TextColor3 = Nexus.Theme.Accent end
-                    ob.MouseButton1Click:Connect(function() 
-                        if selected[opt] then selected[opt] = nil ob.TextColor3 = Nexus.Theme.TextSub else selected[opt] = true ob.TextColor3 = Nexus.Theme.Accent end
-                        update()
-                        local res = {} for k,_ in pairs(selected) do table.insert(res, k) end
-                        cfg.Callback(res)
-                    end)
-                end
-            end
-            
-            function Item:Collapsible(text)
-                local f = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 42), ClipsDescendants = true, Parent = ParentFrame})
-                AddCorner(f, 6)
-                local btn = Create("TextButton", {Text = "", BackgroundTransparency = 1, Size = UDim2.new(1, 0, 0, 42), Parent = f})
-                Create("TextLabel", {Text = text, Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0, 12, 0, 0), Size = UDim2.new(1, -40, 0, 42), TextXAlignment = Enum.TextXAlignment.Left, Parent = btn})
-                local arr = Create("TextLabel", {Text = ">", Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency = 1, Position = UDim2.new(1, -30, 0, 0), Size = UDim2.new(0, 30, 0, 42), Parent = btn})
-                local content = Create("Frame", {BackgroundTransparency = 1, Position = UDim2.new(0, 0, 0, 42), Size = UDim2.new(1, 0, 0, 0), Parent = f})
-                local list = Create("UIListLayout", {Padding = UDim.new(0, 8), SortOrder = Enum.SortOrder.LayoutOrder, Parent = content})
-                Create("UIPadding", {PaddingTop = UDim.new(0, 10), PaddingLeft = UDim.new(0, 10), PaddingRight = UDim.new(0, 10), PaddingBottom = UDim.new(0, 10), Parent = content})
-                local open = false
-                btn.MouseButton1Click:Connect(function() open = not open Tween(arr, {Rotation=open and 90 or 0}, 0.2) Tween(f, {Size=UDim2.new(1,0,0, open and (42+list.AbsoluteContentSize.Y+20) or 42)}, 0.3) end)
-                list:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() if open then Tween(f, {Size=UDim2.new(1,0,0, 42+list.AbsoluteContentSize.Y+20)}, 0.1) end end)
-                return CreateControls(content)
-            end
-            function Item:Dropdown(cfg)
-                local text, options = cfg.Text or "Dropdown", cfg.Options or {}
-                local f = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1,0,0,42), ClipsDescendants = true, Parent = ParentFrame})
-                AddCorner(f, 6)
-                Create("TextLabel", {Text = text, Font = Enum.Font.GothamMedium, TextSize = 14, TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1, Position = UDim2.new(0,12,0,0), Size = UDim2.new(0.6,0,0,42), TextXAlignment=Enum.TextXAlignment.Left, Parent = f})
-                local arr = Create("TextLabel", {Text = "v", Font = Enum.Font.GothamBold, TextSize = 14, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency=1, Position=UDim2.new(1,-30,0,0), Size=UDim2.new(0,30,0,42), Parent=f})
-                local btn = Create("TextButton", {Text="", BackgroundTransparency=1, Size=UDim2.new(1,0,0,42), Parent=f})
-                local container = Create("Frame", {BackgroundTransparency=1, Position=UDim2.new(0,0,0,42), Size=UDim2.new(1,0,0,0), Parent=f})
-                Create("UIListLayout", {SortOrder=Enum.SortOrder.LayoutOrder, Parent=container})
-                local open = false
-                btn.MouseButton1Click:Connect(function() open = not open Tween(arr, {Rotation=open and 180 or 0}, 0.2) Tween(f, {Size = UDim2.new(1,0,0, open and (42 + (#options*30) + 6) or 42)}, 0.3) end)
-                for _, opt in pairs(options) do
-                    local ob = Create("TextButton", {Text=opt, Font=Enum.Font.Gotham, TextSize=13, TextColor3=Nexus.Theme.TextSub, BackgroundColor3=Nexus.Theme.Surface, BackgroundTransparency=0.5, Size=UDim2.new(1,-12,0,30), Parent=container})
-                    AddCorner(ob, 4)
-                    ob.MouseButton1Click:Connect(function() cfg.Callback(opt); open=false; Tween(arr, {Rotation=0}, 0.2) Tween(f, {Size=UDim2.new(1,0,0,42)}, 0.3) end)
-                end
-            end
-            return Item
-        end
-
+            CurrentTab = {Btn=Btn, Page=Page} Btn.BackgroundTransparency=0 Btn.TextColor3=Nexus.Theme.Text Page.Visible=true
+        end)
+        if not CurrentTab then CurrentTab = {Btn=Btn, Page=Page} Btn.BackgroundTransparency=0 Btn.TextColor3=Nexus.Theme.Text Page.Visible=true end
         return CreateControls(Page)
     end
     return Funcs
