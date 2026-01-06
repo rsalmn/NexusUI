@@ -297,6 +297,7 @@ function Nexus:Window(config)
             local dragging = false
             local inputConn
 
+            -- Fixed in Slider component:
             local function set(val)
                 value = math.clamp(val, min, max)
                 valueLabel.Text = math.floor(value)
@@ -304,13 +305,14 @@ function Nexus:Window(config)
                 cfg.Callback(value)
                 if cfg.Flag then Nexus.Flags[cfg.Flag] = value end
             end
-
+            
             bar.InputBegan:Connect(function(i)
                 if i.UserInputType == Enum.UserInputType.MouseButton1 then
                     dragging = true
-                    inputConn = UserInputService.InputChanged:Connect(function(input)
+                    -- Fixed: Proper cleanup for input connection
+                    local inputConn = UserInputService.InputChanged:Connect(function(input)
                         if not dragging or not f.Parent then
-                            inputConn:Disconnect()
+                            if inputConn then inputConn:Disconnect() end
                             return
                         end
                         if input.UserInputType == Enum.UserInputType.MouseMovement then
@@ -321,8 +323,19 @@ function Nexus:Window(config)
                             set(min + (max - min) * pct)
                         end
                     end)
+                    
+                    -- Add cleanup connection
+                    UserInputService.InputEnded:Connect(function(i2)
+                        if i2.UserInputType == Enum.UserInputType.MouseButton1 then
+                            dragging = false
+                            if inputConn then 
+                                inputConn:Disconnect() 
+                            end
+                        end
+                    end)
                 end
             end)
+
 
             UserInputService.InputEnded:Connect(function(i)
                 if i.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -501,12 +514,12 @@ function Nexus:Window(config)
         end
 
         -- FIXED VERSION:
-function Item:ServerCard()
+        function Item:ServerCard()
             local Card = Create("Frame", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 130), Parent = ParentFrame})
             AddCorner(Card, 10) AddStroke(Card, Nexus.Theme.Outline, 1)
             
             -- FIXED: Properly create gradient on Card itself (not trying to parent to non-existent stroke)
-            local Gradt = Create("UIGradient", {
+            local Grad = Create("UIGradient", {
                 Color=ColorSequence.new{
                     ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1), 
                     ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)
