@@ -97,6 +97,8 @@ function Nexus:Load(name)
     end
 end
 
+-- Enhanced theme system with custom gradients
+
 --// Theme System
 Nexus.ThemeChanged = Instance.new("BindableEvent")
 function Nexus:SetTheme(themeName)
@@ -105,9 +107,27 @@ function Nexus:SetTheme(themeName)
         Light = { Accent = Color3.fromRGB(0, 120, 212), Background = Color3.fromRGB(240, 240, 240), Surface = Color3.fromRGB(255, 255, 255), SurfaceHigh = Color3.fromRGB(230, 230, 230), Text = Color3.fromRGB(20, 20, 20), Outline = Color3.fromRGB(200,200,200), Gradient1=Color3.fromRGB(0,120,212), Gradient2=Color3.fromRGB(0,200,255) },
         Ocean = { Accent = Color3.fromRGB(86, 224, 255), Background = Color3.fromRGB(13, 22, 35), Surface = Color3.fromRGB(20, 32, 48), SurfaceHigh = Color3.fromRGB(30, 45, 65), Text = Color3.fromRGB(220, 245, 255), Outline = Color3.fromRGB(40, 60, 80), Gradient1=Color3.fromRGB(86,224,255), Gradient2=Color3.fromRGB(50,100,200) },
         Midnight = { Accent = Color3.fromRGB(160, 130, 255), Background = Color3.fromRGB(15, 15, 20), Surface = Color3.fromRGB(25, 25, 30), SurfaceHigh = Color3.fromRGB(35, 35, 45), Text = Color3.fromRGB(240, 240, 255), Outline = Color3.fromRGB(50, 50, 70), Gradient1=Color3.fromRGB(160,130,255), Gradient2=Color3.fromRGB(100,50,200) }
+        Custom = {
+            Accent = customColors.Accent or Color3.fromRGB(90, 150, 255),
+            Background = customColors.Background or Color3.fromRGB(15, 15, 25),
+            Surface = customColors.Surface or Color3.fromRGB(25, 25, 35),
+            SurfaceHigh = customColors.SurfaceHigh or Color3.fromRGB(35, 35, 45),
+            Text = customColors.Text or Color3.fromRGB(255, 255, 255),
+            TextSub = customColors.TextSub or Color3.fromRGB(180, 180, 200),
+            Outline = customColors.Outline or Color3.fromRGB(70, 70, 100),
+            Gradient1 = customColors.Gradient1 or Color3.fromRGB(90, 150, 255),
+            Gradient2 = customColors.Gradient2 or Color3.fromRGB(150, 80, 200)
+        }
     }
-    if Themes[themeName] then
-        for k, v in pairs(Themes[themeName]) do
+    if themes[themeName] then
+        -- Merge with custom colors
+        if customColors then
+            for k, v in pairs(customColors) do
+                themes[themeName][k] = v
+            end
+        end
+        
+        for k, v in pairs(themes[themeName]) do
             Nexus.Theme[k] = v
         end
         Nexus.ThemeChanged:Fire(Nexus.Theme)
@@ -385,6 +405,137 @@ function Nexus:Window(config)
             list:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() if open then Tween(f, {Size=UDim2.new(1,0,0, 42+list.AbsoluteContentSize.Y+20)}, 0.1) end end)
             return CreateControls(content)
         end
+        
+        function Item:SearchableDropdown(cfg)
+            local f = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Surface,
+                Size = UDim2.new(1,0,0,42),
+                ClipsDescendants = true,
+                Parent = ParentFrame
+            })
+            
+            local f = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Surface,
+                Size = UDim2.new(1,0,0,42),
+                ClipsDescendants = true,
+                Parent = ParentFrame
+            })
+            AddCorner(f, 6)
+
+            local label = Create("TextLabel", {
+                Text = cfg.Text,
+                Font = Enum.Font.GothamMedium,
+                TextSize = 14,
+                TextColor3 = Nexus.Theme.Text,
+                BackgroundTransparency = 1,
+                Position = UDim2.new(0,12,0,0),
+                Size = UDim2.new(0.7,0,0,42),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                Parent = f
+            })
+
+            local arrow = Create("TextLabel", {
+                Text = "v",
+                Font = Enum.Font.GothamBold,
+                TextSize = 14,
+                TextColor3 = Nexus.Theme.TextSub,
+                BackgroundTransparency = 1,
+                Position = UDim2.new(1,-30,0,0),
+                Size = UDim2.new(0,30,0,42),
+                Parent = f
+            })
+
+            local button = Create("TextButton", {
+                Text = "",
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1,0,0,42),
+                Parent = f
+            })
+
+            local container = Create("Frame", {
+                BackgroundTransparency = 1,
+                Position = UDim2.new(0,0,0,42),
+                Size = UDim2.new(1,0,0,0),
+                Parent = f
+            })
+
+            local layout = Create("UIListLayout", {
+                Parent = container,
+                Padding = UDim.new(0,4)
+            })
+
+            local open = false
+
+            local function toggle()
+                open = not open
+                Tween(arrow, {Rotation = open and 180 or 0}, 0.2)
+                Tween(f, {
+                    Size = UDim2.new(1,0,0, open and (42 + (#cfg.Options * 30) + 8) or 42)
+                }, 0.25)
+            end
+
+            button.MouseButton1Click:Connect(toggle)
+
+            for _, opt in ipairs(cfg.Options) do
+                local optBtn = Create("TextButton", {
+                    Text = opt,
+                    Font = Enum.Font.Gotham,
+                    TextSize = 13,
+                    TextColor3 = Nexus.Theme.TextSub,
+                    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                    Size = UDim2.new(1,-12,0,28),
+                    Parent = container
+                })
+                AddCorner(optBtn, 4)
+
+                optBtn.MouseButton1Click:Connect(function()
+                    label.Text = cfg.Text .. ": " .. opt
+                    toggle()
+                    cfg.Callback(opt)
+                    if cfg.Flag then Nexus.Flags[cfg.Flag] = opt end
+                end)
+            end
+
+            if cfg.Flag then
+                Nexus.Registry[cfg.Flag] = {
+                    Set = function(v)
+                        label.Text = cfg.Text .. ": " .. tostring(v)
+                    end
+                }
+            end
+
+            Nexus.ThemeChanged.Event:Connect(function()
+                f.BackgroundColor3 = Nexus.Theme.Surface
+                label.TextColor3 = Nexus.Theme.Text
+                arrow.TextColor3 = Nexus.Theme.TextSub
+            end)
+            
+            local searchBox = Create("TextBox", {
+                Text = "",
+                PlaceholderText = "Search options...",
+                PlaceholderColor3 = Nexus.Theme.TextSub,
+                Font = Enum.Font.Gotham,
+                TextSize = 13,
+                TextColor3 = Nexus.Theme.Text,
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1, -12, 0, 28),
+                Position = UDim2.new(0, 6, 0, 14),
+                Parent = container
+            })
+            
+            -- Filter options based on search
+            searchBox:GetPropertyChangedSignal("Text"):Connect(function()
+                local searchTerm = searchBox.Text:lower()
+                for _, child in pairs(container:GetChildren()) do
+                    if child:IsA("TextButton") then
+                        local text = child.Text:lower()
+                        child.Visible = text:find(searchTerm) or searchTerm == ""
+                    end
+                end
+            end)
+        end
+        
+        
         function Item:Dropdown(cfg)
             local f = Create("Frame", {
                 BackgroundColor3 = Nexus.Theme.Surface,
@@ -506,6 +657,45 @@ function Nexus:Window(config)
                 fLbl.Text = math.floor(workspace:GetRealPhysicsFPS())
             end)
         end
+        
+        function Item:ProgressBar(cfg)
+            local bar = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Surface,
+                Size = UDim2.new(1, 0, 0, 20),
+                Parent = ParentFrame
+            })
+            AddCorner(bar, 10)
+            
+            local fill = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Accent,
+                Size = UDim2.new(0, 0, 1, 0),
+                Parent = bar
+            })
+            AddCorner(fill, 10)
+            
+            local label = Create("TextLabel", {
+                Text = cfg.Text or "",
+                TextColor3 = Nexus.Theme.Text,
+                BackgroundTransparency = 1,
+                Font = Enum.Font.Gotham,
+                TextSize = 12,
+                Position = UDim2.new(0, 5, 0, 0),
+                Size = UDim2.new(1, -10, 1, 0),
+                Parent = bar
+            })
+            
+            -- Animation effect
+            local function update(value)
+                local percent = math.clamp(value, 0, 100) / 100
+                Tween(fill, {Size = UDim2.new(percent, 0, 1, 0)}, 0.3)
+                label.Text = cfg.Text .. " (" .. math.floor(value) .. "%)"
+            end
+            
+            cfg.Callback = update
+            return {Set = update}
+        end
+
+        
         function Item:ButtonCard(cfg)
             local Title, Desc = cfg.Title or "Card", cfg.Description or "Click"
             local Btn = Create("TextButton", {BackgroundColor3 = Nexus.Theme.Surface, Size = UDim2.new(1, 0, 0, 70), AutoButtonColor = false, Parent = ParentFrame})
