@@ -490,254 +490,269 @@ function Nexus:Window(config)
         end
         
         function Item:Dropdown(cfg)
-    -- ========================================
-    -- SAFETY CHECKS
-    -- ========================================
-    if not cfg then 
-        warn("[Dropdown] Config is nil!")
-        return nil 
-    end
+    -- Validation
+    if not cfg then return nil end
+    if type(cfg) ~= "table" then return nil end
     
-    if not ParentFrame or not ParentFrame.Parent then
-        warn("[Dropdown] ParentFrame is invalid!")
-        return nil
-    end
-    
-    if not Create then
-        warn("[Dropdown] Create function not found!")
-        return nil
-    end
-    
-    if not Nexus or not Nexus.Theme then
-        warn("[Dropdown](Nexus.Theme) not initialized!")
-        return nil
-    end
-    
-    -- ========================================
-    -- INPUT VALIDATION
-    -- ========================================
+    -- Extract config
     local Text = cfg.Text or "Dropdown"
-    local Options = cfg.Options
+    local Options = cfg.Options or {"No Options"}
     local Default = cfg.Default
-    local Callback = cfg.Callback or function() end
+    local Callback = cfg.Callback
     local Flag = cfg.Flag
     
     -- Validate Options
-    if not Options or type(Options) ~= "table" or #Options == 0 then
-        Options = {"No Options"}
+    if type(Options) ~= "table" then
+        Options = {"Invalid Options"}
     end
     
-    -- Validate each option
-    local ValidOptions = {}
-    for i, opt in ipairs(Options) do
+    if #Options == 0 then
+        Options = {"Empty"}
+    end
+    
+    -- Clean options (remove nil values)
+    local CleanOptions = {}
+    for i = 1, #Options do
+        local opt = Options[i]
         if opt ~= nil then
-            table.insert(ValidOptions, tostring(opt))
+            table.insert(CleanOptions, tostring(opt))
         end
     end
     
-    if #ValidOptions == 0 then
-        ValidOptions = {"Empty"}
+    if #CleanOptions == 0 then
+        CleanOptions = {"No Valid Options"}
     end
     
     -- Validate Default
-    if Default then
-        local found = false
-        for _, v in ipairs(ValidOptions) do
-            if v == Default then found = true break end
+    local CurrentValue = CleanOptions[1]
+    if Default ~= nil then
+        for i = 1, #CleanOptions do
+            if CleanOptions[i] == Default then
+                CurrentValue = Default
+                break
+            end
         end
-        if not found then Default = ValidOptions[1] end
-    else
-        Default = ValidOptions[1]
     end
     
-    -- ========================================
-    -- CREATE GUI (WITH ERROR HANDLING)
-    -- ========================================
-    local success, f = pcall(function()
-        return Create("Frame", {
-            BackgroundColor3 = Nexus.Theme.Surface,
-            Size = UDim2.new(1,0,0,42),
-            ClipsDescendants = true,
-            Parent = ParentFrame
-        })
-    end)
+    -- Create main frame
+    local MainFrame = Instance.new("Frame")
+    MainFrame.BackgroundColor3 = Nexus.Theme.Surface
+    MainFrame.Size = UDim2.new(1, 0, 0, 42)
+    MainFrame.ClipsDescendants = true
+    MainFrame.Parent = ParentFrame
     
-    if not success or not f then
-        warn("[Dropdown] Failed to create frame:", f)
-        return nil
-    end
-    
-    -- Add corner safely
-    if AddCorner then pcall(AddCorner, f, 6) end
+    local MainCorner = Instance.new("UICorner")
+    MainCorner.CornerRadius = UDim.new(0, 6)
+    MainCorner.Parent = MainFrame
     
     -- Create label
-    local label = Create("TextLabel", {
-        Text = Text .. ": " .. tostring(Default),
-        Font = Enum.Font.GothamMedium,
-        TextSize = 14,
-        TextColor3 = Nexus.Theme.Text,
-        BackgroundTransparency = 1,
-        Position = UDim2.new(0,12,0,0),
-        Size = UDim2.new(0.7,0,0,42),
-        TextXAlignment = Enum.TextXAlignment.Left,
-        Parent = f
-    })
-
+    local Label = Instance.new("TextLabel")
+    Label.Text = Text .. ": " .. tostring(CurrentValue)
+    Label.Font = Enum.Font.GothamMedium
+    Label.TextSize = 14
+    Label.TextColor3 = Nexus.Theme.Text
+    Label.BackgroundTransparency = 1
+    Label.Position = UDim2.new(0, 12, 0, 0)
+    Label.Size = UDim2.new(0.7, 0, 0, 42)
+    Label.TextXAlignment = Enum.TextXAlignment.Left
+    Label.Parent = MainFrame
+    
     -- Create arrow
-    local arrow = Create("TextLabel", {
-        Text = "v",
-        Font = Enum.Font.GothamBold,
-        TextSize = 14,
-        TextColor3 = Nexus.Theme.TextSub,
-        BackgroundTransparency = 1,
-        Position = UDim2.new(1,-30,0,0),
-        Size = UDim2.new(0,30,0,42),
-        Parent = f
-    })
-
+    local Arrow = Instance.new("TextLabel")
+    Arrow.Text = "v"
+    Arrow.Font = Enum.Font.GothamBold
+    Arrow.TextSize = 14
+    Arrow.TextColor3 = Nexus.Theme.TextSub
+    Arrow.BackgroundTransparency = 1
+    Arrow.Position = UDim2.new(1, -30, 0, 0)
+    Arrow.Size = UDim2.new(0, 30, 0, 42)
+    Arrow.Parent = MainFrame
+    
     -- Create button
-    local button = Create("TextButton", {
-        Text = "",
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1,0,0,42),
-        Parent = f
-    })
-
+    local Button = Instance.new("TextButton")
+    Button.Text = ""
+    Button.BackgroundTransparency = 1
+    Button.Size = UDim2.new(1, 0, 0, 42)
+    Button.Parent = MainFrame
+    
     -- Create container
-    local container = Create("Frame", {
-        BackgroundTransparency = 1,
-        Position = UDim2.new(0,0,0,42),
-        Size = UDim2.new(1,0,0,0),
-        Parent = f
-    })
-
-    -- Create layout
-    local layout = Create("UIListLayout", {
-        Parent = container,
-        Padding = UDim.new(0,4)
-    })
-
-    -- ========================================
-    -- STATE & FUNCTIONS
-    -- ========================================
-    local CurrentValue = Default
+    local Container = Instance.new("Frame")
+    Container.BackgroundTransparency = 1
+    Container.Position = UDim2.new(0, 0, 0, 42)
+    Container.Size = UDim2.new(1, 0, 0, 0)
+    Container.Parent = MainFrame
+    
+    local Layout = Instance.new("UIListLayout")
+    Layout.Padding = UDim.new(0, 4)
+    Layout.Parent = Container
+    
+    -- State
     local IsOpen = false
     local OptionButtons = {}
     
-    -- Toggle function
-    local function Toggle()
-        IsOpen = not IsOpen
-        
-        local targetHeight = IsOpen and (42 + (#ValidOptions * 32) + 8) or 42
-        
-        if Tween then
-            pcall(Tween, arrow, {Rotation = IsOpen and 180 or 0}, 0.2)
-            pcall(Tween, f, {Size = UDim2.new(1,0,0, targetHeight)}, 0.25)
+    -- Calculate height function
+    local function CalculateHeight(isOpen)
+        if isOpen then
+            local optionCount = #CleanOptions
+            local baseHeight = 42
+            local optionHeight = 32
+            local padding = 8
+            return baseHeight + (optionCount * optionHeight) + padding
         else
-            arrow.Rotation = IsOpen and 180 or 0
-            f.Size = UDim2.new(1,0,0, targetHeight)
+            return 42
         end
     end
     
-    -- Render options
+    -- Toggle function
+    local function ToggleDropdown()
+        IsOpen = not IsOpen
+        
+        local targetHeight = CalculateHeight(IsOpen)
+        local targetRotation = 0
+        if IsOpen then
+            targetRotation = 180
+        end
+        
+        -- Animate arrow
+        game:GetService("TweenService"):Create(Arrow, TweenInfo.new(0.2), {
+            Rotation = targetRotation
+        }):Play()
+        
+        -- Animate frame
+        game:GetService("TweenService"):Create(MainFrame, TweenInfo.new(0.25), {
+            Size = UDim2.new(1, 0, 0, targetHeight)
+        }):Play()
+    end
+    
+    -- Render options function
     local function RenderOptions()
-        -- Clear old buttons
-        for _, btn in pairs(OptionButtons) do
-            pcall(function() if btn and btn.Parent then btn:Destroy() end end)
+        -- Clear existing buttons
+        for i = 1, #OptionButtons do
+            local btn = OptionButtons[i]
+            if btn and btn.Parent then
+                btn:Destroy()
+            end
         end
         OptionButtons = {}
         
         -- Create new buttons
-        for _, opt in ipairs(ValidOptions) do
-            if opt == nil then continue end
+        for i = 1, #CleanOptions do
+            local optionValue = CleanOptions[i]
             
-            local optBtn = Create("TextButton", {
-                Text = tostring(opt),
-                Font = Enum.Font.Gotham,
-                TextSize = 13,
-                TextColor3 = Nexus.Theme.TextSub,
-                BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-                Size = UDim2.new(1,-12,0,28),
-                Parent = container
-            })
+            local OptionButton = Instance.new("TextButton")
+            OptionButton.Text = tostring(optionValue)
+            OptionButton.Font = Enum.Font.Gotham
+            OptionButton.TextSize = 13
+            OptionButton.TextColor3 = Nexus.Theme.TextSub
+            OptionButton.BackgroundColor3 = Nexus.Theme.SurfaceHigh
+            OptionButton.Size = UDim2.new(1, -12, 0, 28)
+            OptionButton.Parent = Container
             
-            if AddCorner then pcall(AddCorner, optBtn, 4) end
+            local OptionCorner = Instance.new("UICorner")
+            OptionCorner.CornerRadius = UDim.new(0, 4)
+            OptionCorner.Parent = OptionButton
             
-            -- Highlight selected
-            if opt == CurrentValue then
-                optBtn.TextColor3 = Nexus.Theme.Accent
+            -- Highlight if selected
+            if optionValue == CurrentValue then
+                OptionButton.TextColor3 = Nexus.Theme.Accent
+                local r = Nexus.Theme.Accent.R * 255 * 0.2
+                local g = Nexus.Theme.Accent.G * 255 * 0.2
+                local b = Nexus.Theme.Accent.B * 255 * 0.2
+                OptionButton.BackgroundColor3 = Color3.fromRGB(r, g, b)
             end
-
+            
             -- Click handler
-            optBtn.MouseButton1Click:Connect(function()
-                CurrentValue = opt
-                label.Text = Text .. ": " .. tostring(opt)
-                Toggle()
+            OptionButton.MouseButton1Click:Connect(function()
+                CurrentValue = optionValue
+                Label.Text = Text .. ": " .. tostring(optionValue)
+                ToggleDropdown()
                 
-                -- Safe callback
-                pcall(function()
-                    if type(Callback) == "function" then
-                        Callback(opt)
+                -- Call callback safely
+                if Callback and type(Callback) == "function" then
+                    local success, err = pcall(function()
+                        Callback(optionValue)
+                    end)
+                    if not success then
+                        warn("[Dropdown] Callback error:", err)
                     end
-                end)
-                
-                if Flag then 
-                    Nexus.Flags[Flag] = opt 
                 end
                 
+                -- Update flag
+                if Flag then
+                    Nexus.Flags[Flag] = optionValue
+                end
+                
+                -- Re-render
                 RenderOptions()
             end)
             
-            table.insert(OptionButtons, optBtn)
+            table.insert(OptionButtons, OptionButton)
         end
     end
     
-    -- Connect toggle
-    button.MouseButton1Click:Connect(Toggle)
+    -- Connect button
+    Button.MouseButton1Click:Connect(ToggleDropdown)
     
     -- Initial render
     RenderOptions()
     
-    -- ========================================
-    -- PUBLIC API
-    -- ========================================
-    local DropdownAPI = {}
+    -- API
+    local API = {}
     
-    function DropdownAPI:Refresh(newOptions)
-        if not newOptions or type(newOptions) ~= "table" or #newOptions == 0 then
+    function API:Refresh(newOptions)
+        -- Validate input
+        if not newOptions then return false end
+        if type(newOptions) ~= "table" then return false end
+        if #newOptions == 0 then
             newOptions = {"No Options"}
         end
         
-        ValidOptions = {}
-        for _, opt in ipairs(newOptions) do
+        -- Clean new options
+        local newClean = {}
+        for i = 1, #newOptions do
+            local opt = newOptions[i]
             if opt ~= nil then
-                table.insert(ValidOptions, tostring(opt))
+                table.insert(newClean, tostring(opt))
             end
         end
         
-        if #ValidOptions == 0 then
-            ValidOptions = {"Empty"}
+        if #newClean == 0 then
+            newClean = {"Empty"}
         end
         
-        -- Reset if current value not in new options
+        -- Update options
+        CleanOptions = newClean
+        
+        -- Check if current value still exists
         local found = false
-        for _, v in ipairs(ValidOptions) do
-            if v == CurrentValue then found = true break end
+        for i = 1, #CleanOptions do
+            if CleanOptions[i] == CurrentValue then
+                found = true
+                break
+            end
         end
         
+        -- Reset if not found
         if not found then
-            CurrentValue = ValidOptions[1](label.Text) = Text .. ": " .. tostring(CurrentValue)
+            CurrentValue = CleanOptions[1](Label.Text) = Text .. ": " .. tostring(CurrentValue)
         end
         
-        if IsOpen then Toggle() end
+        -- Close if open
+        if IsOpen then
+            ToggleDropdown()
+        end
+        
+        -- Re-render
         RenderOptions()
+        
+        return true
     end
     
-    function DropdownAPI:Set(value)
-        for _, v in ipairs(ValidOptions) do
-            if v == value then
+    function API:Set(value)
+        for i = 1, #CleanOptions do
+            if CleanOptions[i] == value then
                 CurrentValue = value
-                label.Text = Text .. ": " .. tostring(value)
+                Label.Text = Text .. ": " .. tostring(value)
                 RenderOptions()
                 return true
             end
@@ -745,38 +760,35 @@ function Nexus:Window(config)
         return false
     end
     
-    function DropdownAPI:Get()
+    function API:Get()
         return CurrentValue
     end
     
-    function DropdownAPI:Destroy()
-        pcall(function()
-            if f and f.Parent then f:Destroy() end
-        end)
+    function API:Destroy()
+        if MainFrame and MainFrame.Parent then
+            MainFrame:Destroy()
+        end
     end
     
-    -- Register to flag system
+    -- Register flag
     if Flag then
-        Nexus.Registry[Flag] = DropdownAPI
+        Nexus.Registry[Flag] = API
     end
     
-    -- Theme updates (safe)
+    -- Theme updates
     if Nexus.ThemeChanged and Nexus.ThemeChanged.Event then
-        pcall(function()
-            Nexus.ThemeChanged.Event:Connect(function()
-                if not f or not f.Parent then return end
-                
-                pcall(function()
-                    f.BackgroundColor3 = Nexus.Theme.Surface
-                    label.TextColor3 = Nexus.Theme.Text
-                    arrow.TextColor3 = Nexus.Theme.TextSub
-                    RenderOptions()
-                end)
-            end)
+        Nexus.ThemeChanged.Event:Connect(function()
+            if not MainFrame or not MainFrame.Parent then return end
+            
+            MainFrame.BackgroundColor3 = Nexus.Theme.Surface
+            Label.TextColor3 = Nexus.Theme.Text
+            Arrow.TextColor3 = Nexus.Theme.TextSub
+            
+            RenderOptions()
         end)
     end
     
-    return DropdownAPI
+    return API
 end
 
         
