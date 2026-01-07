@@ -1510,30 +1510,56 @@ function Nexus:Window(config)
     local IsMinimized = false
     local OriginalSize = MainWindow.Size
     
-    -- Minimize functionality
+    -- Minimize functionality (FIXED)
     MinimizeButton.MouseButton1Click:Connect(function()
         IsMinimized = not IsMinimized
-        --PlaySound("6895079853", 0.1)
+        
+        local shadow = MainWindow:FindFirstChild("DropShadow") -- Cari shadow
         
         if IsMinimized then
+            -- [SAAT MINIMIZE]
+            -- 1. Nyalakan Clipping AGAR konten tidak bocor keluar saat mengecil
+            MainWindow.ClipsDescendants = true 
+            
+            -- 2. Hilangkan shadow pelan-pelan (opsional, biar rapi)
+            if shadow then Tween(shadow, {ImageTransparency = 1}, 0.2) end
+
             OriginalSize = MainWindow.Size
             Tween(MainWindow, {
                 Size = UDim2.new(OriginalSize.X.Scale, OriginalSize.X.Offset, 0, 48)
             }, 0.3, Enum.EasingStyle.Back)
             MinimizeButton.Text = "□"
         else
+            -- [SAAT RESTORE/MEMBESAR]
+            -- 1. Animasi membesar dulu
             Tween(MainWindow, {Size = OriginalSize}, 0.3, Enum.EasingStyle.Back)
             MinimizeButton.Text = "─"
+            
+            -- 2. Munculkan shadow lagi
+            if shadow then Tween(shadow, {ImageTransparency = 0.6}, 0.3) end
+
+            -- 3. [PENTING] Matikan Clipping SETELAH animasi selesai agar shadow muncul lagi
+            task.delay(0.3, function()
+                if not IsMinimized and MainWindow.Parent then
+                    MainWindow.ClipsDescendants = false
+                end
+            end)
         end
     end)
     
-    -- Close functionality with confirmation
+    -- Close functionality with confirmation (FIXED)
     CloseButton.MouseButton1Click:Connect(function()
-        --PlaySound("6895079725", 0.15)
+        -- [FIX] Nyalakan Clipping SEBELUM animasi tutup dimulai
+        -- Ini memotong semua tombol/teks agar tidak tertinggal saat window mengecil
+        MainWindow.ClipsDescendants = true 
+        
+        -- Sembunyikan shadow instan agar tidak aneh
+        local shadow = MainWindow:FindFirstChild("DropShadow")
+        if shadow then shadow.ImageTransparency = 1 end
         
         -- Smooth close animation
         Tween(MainWindow, {
-            Size = UDim2.fromOffset(0, 0),
+            Size = UDim2.fromOffset(0, 0), -- Mengecil sampai habis
             BackgroundTransparency = 1
         }, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In)
         
