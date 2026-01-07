@@ -572,53 +572,55 @@ local function CreateModernDropdown(cfg, ParentFrame)
         Parent = MainFrame
     })
     
+    -- Frame ini terpisah dari MainFrame secara visual. Posisinya melayang.
+    local DropdownContainer = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.new(1, 0, 0, 0), -- Mulai 0
+        Position = UDim2.new(0, 0, 1, 4), -- 4px di bawah header
+        ClipsDescendants = true,
+        Visible = false, 
+        Parent = MainFrame,
+        ZIndex = 50 -- Paling atas agar menutupi elemen lain
+    })
+    AddCorner(DropdownContainer, 8)
+    AddStroke(DropdownContainer, Nexus.Theme.Outline, 1, 0.4)
+    AddShadow(DropdownContainer, 8, 0.8)
+
     -- Search box (if enabled)
     local SearchBox = nil
     if SearchEnabled then
         local SearchContainer = Create("Frame", {
             BackgroundColor3 = Nexus.Theme.SurfaceHighest,
-            Size = UDim2.new(1, -8, 0, 32),
-            Position = UDim2.new(0, 4, 0, 4),
-            Parent = Content
+            Size = UDim2.new(1, -8, 0, 32), Position = UDim2.new(0, 4, 0, 4),
+            Parent = DropdownContainer, ZIndex = 51
         })
-        
         AddCorner(SearchContainer, 6)
         AddStroke(SearchContainer, Nexus.Theme.Accent, 1, 0.7)
         
         SearchBox = Create("TextBox", {
-            Text = "",
-            PlaceholderText = "🔍 Search options...",
-            PlaceholderColor3 = Nexus.Theme.TextMuted,
-            Font = Enum.Font.Gotham,
-            TextSize = 13,
-            TextColor3 = Nexus.Theme.Text,
-            BackgroundTransparency = 1,
-            Position = UDim2.new(0, 8, 0, 0),
-            Size = UDim2.new(1, -16, 1, 0),
-            TextXAlignment = Enum.TextXAlignment.Left,
-            ClearTextOnFocus = false,
-            Parent = SearchContainer
+            Text = "", PlaceholderText = "Search...", Font = Enum.Font.Gotham, TextSize = 13,
+            TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
+            Position = UDim2.new(0, 8, 0, 0), Size = UDim2.new(1, -16, 1, 0),
+            TextXAlignment = Enum.TextXAlignment.Left, Parent = SearchContainer, ZIndex = 52
         })
     end
     
-    -- Options container
     local OptionsContainer = Create("ScrollingFrame", {
         BackgroundTransparency = 1,
         Position = UDim2.new(0, 4, 0, SearchEnabled and 40 or 4),
         Size = UDim2.new(1, -8, 1, -(SearchEnabled and 44 or 8)),
-        CanvasSize = UDim2.new(0, 0, 0, 0),
-        ScrollBarThickness = 3,
-        ScrollBarImageColor3 = Nexus.Theme.Accent,
-        ScrollBarImageTransparency = 0.5,
-        ScrollingDirection = Enum.ScrollingDirection.Y,
-        Parent = Content
+        CanvasSize = UDim2.new(0, 0, 0, 0), ScrollBarThickness = 3,
+        ScrollBarImageColor3 = Nexus.Theme.Accent, Parent = DropdownContainer, ZIndex = 51
     })
+    local OptionsLayout = Create("UIListLayout", {Padding = UDim.new(0, 2), Parent = OptionsContainer})
     
-    local OptionsLayout = Create("UIListLayout", {
-        Padding = UDim.new(0, 2),
-        SortOrder = Enum.SortOrder.LayoutOrder,
-        Parent = OptionsContainer
-    })
+    local function FilterOptions(query)
+        query = query:lower(); FilteredOptions = {}
+        for _, opt in ipairs(CleanOptions) do
+            if query == "" or opt:lower():find(query, 1, true) then table.insert(FilteredOptions, opt) end
+        end
+        if #FilteredOptions == 0 then FilteredOptions = {"No matches"} end
+    end
     
     -- Update canvas size when content changes
     OptionsLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
@@ -627,290 +629,87 @@ local function CreateModernDropdown(cfg, ParentFrame)
         end
     end)
     
-    -- Filter options function
-    local function FilterOptions(query)
-        query = query:lower()
-        FilteredOptions = {}
-        
-        for _, option in ipairs(CleanOptions) do
-            if query == "" or option:lower():find(query, 1, true) then
-                table.insert(FilteredOptions, option)
-            end
-        end
-        
-        if #FilteredOptions == 0 then
-            FilteredOptions = {"No matches found"}
-        end
-    end
-    
-    -- Render options function
     local function RenderOptions()
-        -- Clear existing options
-        for _, child in ipairs(OptionsContainer:GetChildren()) do
-            if child:IsA("TextButton") or child:IsA("Frame") then
-                child:Destroy()
-            end
-        end
-        
-        -- Create option buttons
+        for _, c in ipairs(OptionsContainer:GetChildren()) do if c:IsA("GuiObject") then c:Destroy() end end
         for i, option in ipairs(FilteredOptions) do
-            if option == "No matches found" or option == "No Options Available" or option == "Empty" then
-                -- Disabled option
-                local DisabledOption = Create("Frame", {
-                    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-                    BackgroundTransparency = 0.5,
-                    Size = UDim2.new(1, 0, 0, optionHeight - 4),
-                    LayoutOrder = i,
-                    Parent = OptionsContainer
-                })
-                
-                AddCorner(DisabledOption, 6)
-                
-                Create("TextLabel", {
-                    Text = option,
-                    Font = Enum.Font.Gotham,
-                    TextSize = 13,
-                    TextColor3 = Nexus.Theme.TextMuted,
-                    BackgroundTransparency = 1,
-                    Size = UDim2.new(1, -16, 1, 0),
-                    Position = UDim2.new(0, 8, 0, 0),
-                    TextXAlignment = Enum.TextXAlignment.Left,
-                    Parent = DisabledOption
-                })
-                
-                continue
-            end
+            -- ZIndex harus lebih tinggi dari DropdownContainer
+            local OptBtn = Create("TextButton", {
+                Text = "", BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                BackgroundTransparency = (not MultiSelect and option == CurrentValue) and 0.1 or 0.8,
+                Size = UDim2.new(1, 0, 0, optionHeight - 4), Parent = OptionsContainer, ZIndex = 52
+            })
+            AddCorner(OptBtn, 6)
             
-            -- Regular option
-            local OptionButton = Create("TextButton", {
-                Text = "",
-                BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-                BackgroundTransparency = MultiSelect and (SelectedValues[option] and 0.1 or 0.8) or 
-                                        (option == CurrentValue and 0.1 or 0.8),
-                Size = UDim2.new(1, 0, 0, optionHeight - 4),
-                AutoButtonColor = false,
-                LayoutOrder = i,
-                Parent = OptionsContainer
+            if (MultiSelect and SelectedValues[option]) or (not MultiSelect and option == CurrentValue) then
+                AddStroke(OptBtn, Nexus.Theme.Accent, 1, 0.3)
+            end
+
+            local OptTxt = Create("TextLabel", {
+                Text = option, Font = Enum.Font.Gotham, TextSize = 13,
+                TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
+                Size = UDim2.new(1, -10, 1, 0), Position = UDim2.new(0, 10, 0, 0),
+                TextXAlignment = Enum.TextXAlignment.Left, Parent = OptBtn, ZIndex = 53
             })
             
-            AddCorner(OptionButton, 6)
-            
-            if MultiSelect and SelectedValues[option] then
-                AddStroke(OptionButton, Nexus.Theme.Accent, 1, 0.3)
-            elseif not MultiSelect and option == CurrentValue then
-                AddStroke(OptionButton, Nexus.Theme.Accent, 1, 0.3)
-            end
-            
-            -- Option content
-            local OptionContent = Create("Frame", {
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 1, 0),
-                Parent = OptionButton
-            })
-            
-            -- Checkmark for multiselect or selected indicator
-            if MultiSelect then
-                local Checkmark = Create("TextLabel", {
-                    Text = SelectedValues[option] and "✓" or "○",
-                    Font = Enum.Font.GothamBold,
-                    TextSize = 14,
-                    TextColor3 = SelectedValues[option] and Nexus.Theme.Accent or Nexus.Theme.TextMuted,
-                    BackgroundTransparency = 1,
-                    Position = UDim2.new(0, 8, 0, 0),
-                    Size = UDim2.new(0, 20, 1, 0),
-                    Parent = OptionContent
-                })
-            elseif option == CurrentValue then
-                Create("TextLabel", {
-                    Text = "●",
-                    Font = Enum.Font.GothamBold,
-                    TextSize = 12,
-                    TextColor3 = Nexus.Theme.Accent,
-                    BackgroundTransparency = 1,
-                    Position = UDim2.new(0, 8, 0, 0),
-                    Size = UDim2.new(0, 16, 1, 0),
-                    Parent = OptionContent
-                })
-            end
-            
-            -- Option text
-            local OptionText = Create("TextLabel", {
-                Text = option,
-                Font = Enum.Font.Gotham,
-                TextSize = 13,
-                TextColor3 = (MultiSelect and SelectedValues[option]) or (option == CurrentValue) and
-                            Nexus.Theme.Text or Nexus.Theme.TextSub,
-                BackgroundTransparency = 1,
-                Position = UDim2.new(0, MultiSelect and 32 or 28, 0, 0),
-                Size = UDim2.new(1, -(MultiSelect and 32 or 28), 1, 0),
-                TextXAlignment = Enum.TextXAlignment.Left,
-                TextTruncate = Enum.TextTruncate.AtEnd,
-                Parent = OptionContent
-            })
-            
-            -- Hover effects
-            local function OnHover(hovering)
-                if not OptionButton or not OptionButton.Parent then return end
-                
-                local targetTransparency = hovering and 0.3 or 
-                                          ((MultiSelect and SelectedValues[option]) or 
-                                           (option == CurrentValue)) and 0.1 or 0.8
-                
-                Tween(OptionButton, {BackgroundTransparency = targetTransparency}, 0.15)
-                
-                if hovering then
-                    Tween(OptionText, {TextColor3 = Nexus.Theme.Text}, 0.15)
-                else
-                    local targetColor = (MultiSelect and SelectedValues[option]) or 
-                                       (option == CurrentValue) and 
-                                       Nexus.Theme.Text or Nexus.Theme.TextSub
-                    Tween(OptionText, {TextColor3 = targetColor}, 0.15)
-                end
-            end
-            
-            OptionButton.MouseEnter:Connect(function() OnHover(true) end)
-            OptionButton.MouseLeave:Connect(function() OnHover(false) end)
-            
-            -- Click handler
-            OptionButton.MouseButton1Click:Connect(function()
-                --PlaySound("6895079853", 0.08) -- Selection sound
-                
+            OptBtn.MouseButton1Click:Connect(function()
                 if MultiSelect then
                     SelectedValues[option] = not SelectedValues[option]
-                    
-                    -- Get all selected values
-                    local selected = {}
-                    for value, isSelected in pairs(SelectedValues) do
-                        if isSelected then
-                            table.insert(selected, value)
-                        end
-                    end
-                    
-                    Label.Text = UpdateLabel()
-                    
-                    pcall(function()
-                        Callback(selected, option, SelectedValues[option])
-                    end)
-                    
-                    if Flag then
-                        Nexus.Flags[Flag] = selected
-                    end
-                    
-                    RenderOptions() -- Re-render to update checkmarks
+                    local sel = {}; for k,v in pairs(SelectedValues) do if v then table.insert(sel,k) end end
+                    Label.Text = UpdateLabel(); pcall(Callback, sel)
+                    if Flag then Nexus.Flags[Flag] = sel end
+                    RenderOptions()
                 else
-                    CurrentValue = option
-                    Label.Text = UpdateLabel()
-                    
-                    -- Close dropdown
+                    CurrentValue = option; Label.Text = UpdateLabel()
+                    -- Close Logic
                     IsOpen = false
-                    ToggleDropdown()
-                    
-                    pcall(function()
-                        Callback(option)
-                    end)
-                    
-                    if Flag then
-                        Nexus.Flags[Flag] = option
-                    end
+                    Tween(Arrow, {Rotation = 0}, 0.2)
+                    Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, 0)}, 0.2)
+                    task.wait(0.2)
+                    DropdownContainer.Visible = false
+                    pcall(Callback, option)
+                    if Flag then Nexus.Flags[Flag] = option end
                 end
             end)
         end
+        OptionsContainer.CanvasSize = UDim2.new(0, 0, 0, OptionsLayout.AbsoluteContentSize.Y + 4)
     end
     
     -- Toggle dropdown function
     local function ToggleDropdown()
         IsOpen = not IsOpen
         
-        -- Calculate target height
-        local targetHeight = baseHeight
+        local targetHeight = IsOpen and (math.min(#FilteredOptions, MaxVisible) * optionHeight + (SearchEnabled and 48 or 12)) or 0
+        
+        Tween(Arrow, {Rotation = IsOpen and 180 or 0, TextColor3 = IsOpen and Nexus.Theme.Accent or Nexus.Theme.TextSub}, 0.2)
+        
         if IsOpen then
-            local visibleOptions = math.min(#FilteredOptions, MaxVisible)
-            targetHeight = baseHeight + (visibleOptions * optionHeight) + (SearchEnabled and 48 or 12)
+            DropdownContainer.Visible = true
+            Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, targetHeight)}, 0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+        else
+            Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, 0)}, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
+            task.delay(0.2, function() if not IsOpen then DropdownContainer.Visible = false end end)
         end
-        
-        -- Animate arrow
-        Tween(Arrow, {
-            Rotation = IsOpen and 180 or 0,
-            TextColor3 = IsOpen and Nexus.Theme.Accent or Nexus.Theme.TextSub
-        }, 0.2)
-        
-        -- Animate icon
-        if MultiSelect then
-            Tween(Icon, {
-                TextColor3 = IsOpen and Nexus.Theme.AccentHover or Nexus.Theme.Accent,
-                Rotation = IsOpen and 90 or 0
-            }, 0.2)
-        end
-        
-        -- Animate main frame
-        Tween(MainFrame, {
-            Size = UDim2.new(1, 0, 0, targetHeight)
-        }, 0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
-        
-        -- Update stroke opacity
-        local strokeElement = MainFrame:FindFirstChild("UIStroke")
-        if strokeElement then
-            Tween(strokeElement, {
-                Transparency = IsOpen and 0.2 or 0.4,
-                Color = IsOpen and Nexus.Theme.Accent or Nexus.Theme.Outline
-            }, 0.2)
-        end
-        
-        -- Focus search box when opening
-        if IsOpen and SearchBox then
-            task.wait(0.1)
-            SearchBox:CaptureFocus()
-        end
-        
-        -- Play sound
-        --PlaySound(IsOpen and "6895079853" or "6895079725", 0.06, IsOpen and 1.2 or 0.8)
     end
     
     -- Search functionality
-    if SearchBox then
-        SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
-            SearchQuery = SearchBox.Text
-            FilterOptions(SearchQuery)
-            RenderOptions()
-        end)
-        
-        SearchBox.FocusLost:Connect(function()
-            if SearchBox.Text == "" then
-                FilterOptions("")
-                RenderOptions()
-            end
-        end)
-    end
-    
-    -- Main button click
-    Button.MouseButton1Click:Connect(function()
-        ToggleDropdown()
-    end)
+    if SearchBox then SearchBox:GetPropertyChangedSignal("Text"):Connect(function() SearchQuery=SearchBox.Text; FilterOptions(SearchQuery); RenderOptions() end) end
+    Button.MouseButton1Click:Connect(ToggleDropdown)
     
     -- Header hover effect
     local function OnHeaderHover(hovering)
         if not Header or not Header.Parent then return end
-        
-        Tween(Header, {
-            BackgroundColor3 = hovering and Nexus.Theme.SurfaceHighest or Nexus.Theme.SurfaceHigh
-        }, 0.15)
-        
-        -- KODE BARU (AMAN)
+        Tween(Header, {BackgroundColor3 = hovering and Nexus.Theme.SurfaceHighest or Nexus.Theme.SurfaceHigh}, 0.15)
         if HeaderGradient then
-            -- UIGradient tidak bisa di-tween, jadi kita set langsung
             HeaderGradient.Transparency = NumberSequence.new{
                 NumberSequenceKeypoint.new(0, hovering and 0.95 or 0.98),
                 NumberSequenceKeypoint.new(1, hovering and 0.90 or 0.95)
             }
         end
     end
-    
     Header.MouseEnter:Connect(function() OnHeaderHover(true) end)
     Header.MouseLeave:Connect(function() OnHeaderHover(false) end)
     
-    -- Initial render
-    FilterOptions("")
-    RenderOptions()
+    FilterOptions(""); RenderOptions()
     
     -- API
     local API = {}
