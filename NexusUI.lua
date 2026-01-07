@@ -2507,7 +2507,7 @@ function Nexus:Window(config)
             
             -- Callback
             Button.MouseButton1Click:Connect(function()
-                PlaySound("6895079853", 0.1)
+                --PlaySound("6895079853", 0.1)
                 pcall(Callback)
             end)
             
