@@ -899,13 +899,13 @@ local function CreateModernDropdown(cfg, ParentFrame)
             BackgroundColor3 = hovering and Nexus.Theme.SurfaceHighest or Nexus.Theme.SurfaceHigh
         }, 0.15)
         
+        -- KODE BARU (AMAN)
         if HeaderGradient then
-            Tween(HeaderGradient, {
-                Transparency = NumberSequence.new{
-                    NumberSequenceKeypoint.new(0, hovering and 0.95 or 0.98),
-                    NumberSequenceKeypoint.new(1, hovering and 0.90 or 0.95)
-                }
-            }, 0.15)
+            -- UIGradient tidak bisa di-tween, jadi kita set langsung
+            HeaderGradient.Transparency = NumberSequence.new{
+                NumberSequenceKeypoint.new(0, hovering and 0.95 or 0.98),
+                NumberSequenceKeypoint.new(1, hovering and 0.90 or 0.95)
+            }
         end
     end
     
@@ -2391,13 +2391,23 @@ function Nexus:Window(config)
             
             -- Hover state enhancement
             ButtonFrame.MouseEnter:Connect(function()
-                Tween(ButtonGradient, {
-                    Transparency = NumberSequence.new{
+                if ButtonGradient then
+                    ButtonGradient.Transparency = NumberSequence.new{
                         NumberSequenceKeypoint.new(0, 0.02),
                         NumberSequenceKeypoint.new(0.5, 0),
                         NumberSequenceKeypoint.new(1, 0.05)
                     }
-                }, 0.15)
+                end
+            end)
+            
+            ButtonFrame.MouseLeave:Connect(function()
+                if ButtonGradient then
+                    ButtonGradient.Transparency = NumberSequence.new{
+                        NumberSequenceKeypoint.new(0, 0.05),
+                        NumberSequenceKeypoint.new(0.5, 0.02),
+                        NumberSequenceKeypoint.new(1, 0.08)
+                    }
+                end
             end)
             
             ButtonFrame.MouseLeave:Connect(function()
