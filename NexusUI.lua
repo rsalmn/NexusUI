@@ -1134,9 +1134,9 @@ function Nexus:Window(config)
             },
             Rotation = 45,
             Transparency = NumberSequence.new{
-                ColorSequenceKeypoint.new(0, Color3.new(0.7, 0.7, 0.7)),
-                ColorSequenceKeypoint.new(0.5, 0),
-                ColorSequenceKeypoint.new(1, 0.7)
+                NumberSequenceKeypoint.new(0, 0.7),      -- BENAR: NumberSequenceKeypoint untuk transparency
+                NumberSequenceKeypoint.new(0.5, 0),      -- BENAR: NumberSequenceKeypoint untuk transparency
+                NumberSequenceKeypoint.new(1, 0.7)       -- BENAR: NumberSequenceKeypoint untuk transparency
             },
             Parent = IntroFrame
         })
