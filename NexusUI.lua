@@ -488,103 +488,200 @@ function Nexus:Window(config)
             list:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() if open then Tween(f, {Size=UDim2.new(1,0,0, 42+list.AbsoluteContentSize.Y+20)}, 0.1) end end)
             return CreateControls(content)
         end
+        
         function Item:Dropdown(cfg)
-            local f = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Surface,
-                Size = UDim2.new(1,0,0,42),
-                ClipsDescendants = true,
-                Parent = ParentFrame
-            })
-            AddCorner(f, 6)
+    -- Validation
+    if not cfg then return nil end
+    if not cfg.Options or type(cfg.Options) ~= "table" then
+        cfg.Options = {"No Options"}
+    end
+    
+    local f = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.new(1,0,0,42),
+        ClipsDescendants = true,
+        Parent = ParentFrame
+    })
+    AddCorner(f, 6)
 
-            local label = Create("TextLabel", {
-                Text = cfg.Text,
-                Font = Enum.Font.GothamMedium,
-                TextSize = 14,
-                TextColor3 = Nexus.Theme.Text,
-                BackgroundTransparency = 1,
-                Position = UDim2.new(0,12,0,0),
-                Size = UDim2.new(0.7,0,0,42),
-                TextXAlignment = Enum.TextXAlignment.Left,
-                Parent = f
-            })
+    local currentValue = cfg.Default or cfg.Options[1] or "Select"
+    
+    local label = Create("TextLabel", {
+        Text = cfg.Text .. ": " .. tostring(currentValue),
+        Font = Enum.Font.GothamMedium,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.Text,
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0,12,0,0),
+        Size = UDim2.new(0.7,0,0,42),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = f
+    })
 
-            local arrow = Create("TextLabel", {
-                Text = "v",
-                Font = Enum.Font.GothamBold,
-                TextSize = 14,
-                TextColor3 = Nexus.Theme.TextSub,
-                BackgroundTransparency = 1,
-                Position = UDim2.new(1,-30,0,0),
-                Size = UDim2.new(0,30,0,42),
-                Parent = f
-            })
+    local arrow = Create("TextLabel", {
+        Text = "v",
+        Font = Enum.Font.GothamBold,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.TextSub,
+        BackgroundTransparency = 1,
+        Position = UDim2.new(1,-30,0,0),
+        Size = UDim2.new(0,30,0,42),
+        Parent = f
+    })
 
-            local button = Create("TextButton", {
-                Text = "",
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1,0,0,42),
-                Parent = f
-            })
+    local button = Create("TextButton", {
+        Text = "",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1,0,0,42),
+        Parent = f
+    })
 
-            local container = Create("Frame", {
-                BackgroundTransparency = 1,
-                Position = UDim2.new(0,0,0,42),
-                Size = UDim2.new(1,0,0,0),
-                Parent = f
-            })
+    local container = Create("Frame", {
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0,0,0,42),
+        Size = UDim2.new(1,0,0,0),
+        Parent = f
+    })
 
-            local layout = Create("UIListLayout", {
-                Parent = container,
-                Padding = UDim.new(0,4)
-            })
+    local layout = Create("UIListLayout", {
+        Parent = container,
+        Padding = UDim.new(0,4)
+    })
 
-            local open = false
+    local isOpen = false
+    
+    -- FIXED: Pre-calculate heights to avoid inline expressions
+    local closedHeight = 42
+    local optionCount = #cfg.Options
+    local openHeight = 42 + (optionCount * 30) + 8
 
-            local function toggle()
-                open = not open
-                Tween(arrow, {Rotation = open and 180 or 0}, 0.2)
-                Tween(f, {
-                    Size = UDim2.new(1,0,0, open and (42 + (#cfg.Options * 30) + 8) or 42)
-                }, 0.25)
-            end
+    local function toggle()
+        isOpen = not isOpen
+        
+        local targetRotation = isOpen and 180 or 0
+        local targetHeight = isOpen and openHeight or closedHeight
+        
+        Tween(arrow, {Rotation = targetRotation}, 0.2)
+        Tween(f, {Size = UDim2.new(1, 0, 0, targetHeight)}, 0.25)
+    end
 
-            button.MouseButton1Click:Connect(toggle)
+    button.MouseButton1Click:Connect(toggle)
 
-            for _, opt in ipairs(cfg.Options) do
-                local optBtn = Create("TextButton", {
-                    Text = opt,
-                    Font = Enum.Font.Gotham,
-                    TextSize = 13,
-                    TextColor3 = Nexus.Theme.TextSub,
-                    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-                    Size = UDim2.new(1,-12,0,28),
-                    Parent = container
-                })
-                AddCorner(optBtn, 4)
+    -- Create option buttons
+    for i = 1, optionCount do
+        local opt = cfg.Options[i]
+        if not opt then continue end
+        
+        local optBtn = Create("TextButton", {
+            Text = tostring(opt),
+            Font = Enum.Font.Gotham,
+            TextSize = 13,
+            TextColor3 = Nexus.Theme.TextSub,
+            BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+            Size = UDim2.new(1,-12,0,28),
+            Parent = container
+        })
+        AddCorner(optBtn, 4)
 
-                optBtn.MouseButton1Click:Connect(function()
-                    label.Text = cfg.Text .. ": " .. opt
-                    toggle()
+        optBtn.MouseButton1Click:Connect(function()
+            currentValue = opt
+            label.Text = cfg.Text .. ": " .. tostring(opt)
+            toggle()
+            
+            -- Safe callback
+            if cfg.Callback and type(cfg.Callback) == "function" then
+                pcall(function()
                     cfg.Callback(opt)
-                    if cfg.Flag then Nexus.Flags[cfg.Flag] = opt end
                 end)
             end
-
-            if cfg.Flag then
-                Nexus.Registry[cfg.Flag] = {
-                    Set = function(v)
-                        label.Text = cfg.Text .. ": " .. tostring(v)
-                    end
-                }
+            
+            if cfg.Flag then 
+                Nexus.Flags[cfg.Flag] = opt 
             end
+        end)
+    end
 
-            Nexus.ThemeChanged.Event:Connect(function()
-                f.BackgroundColor3 = Nexus.Theme.Surface
-                label.TextColor3 = Nexus.Theme.Text
-                arrow.TextColor3 = Nexus.Theme.TextSub
-            end)
+    -- Registry support
+    if cfg.Flag then
+        Nexus.Registry[cfg.Flag] = {
+            Set = function(v)
+                currentValue = v
+                label.Text = cfg.Text .. ": " .. tostring(v)
+            end,
+            Get = function()
+                return currentValue
+            end,
+            Refresh = function(newOptions)
+                if not newOptions or type(newOptions) ~= "table" then return end
+                
+                -- Clear old options
+                for _, child in pairs(container:GetChildren()) do
+                    if child:IsA("TextButton") then
+                        child:Destroy()
+                    end
+                end
+                
+                -- Update options
+                cfg.Options = newOptions
+                optionCount = #newOptions
+                openHeight = 42 + (optionCount * 30) + 8
+                
+                -- Recreate buttons
+                for i = 1, optionCount do
+                    local opt = newOptions[i]
+                    if not opt then continue end
+                    
+                    local optBtn = Create("TextButton", {
+                        Text = tostring(opt),
+                        Font = Enum.Font.Gotham,
+                        TextSize = 13,
+                        TextColor3 = Nexus.Theme.TextSub,
+                        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                        Size = UDim2.new(1,-12,0,28),
+                        Parent = container
+                    })
+                    AddCorner(optBtn, 4)
+
+                    optBtn.MouseButton1Click:Connect(function()
+                        currentValue = opt
+                        label.Text = cfg.Text .. ": " .. tostring(opt)
+                        if isOpen then toggle() end
+                        
+                        if cfg.Callback and type(cfg.Callback) == "function" then
+                            pcall(function()
+                                cfg.Callback(opt)
+                            end)
+                        end
+                        
+                        if cfg.Flag then 
+                            Nexus.Flags[cfg.Flag] = opt 
+                        end
+                    end)
+                end
+            end
+        }
+    end
+
+    -- Theme updates
+    Nexus.ThemeChanged.Event:Connect(function()
+        if not f or not f.Parent then return end
+        
+        f.BackgroundColor3 = Nexus.Theme.Surface
+        label.TextColor3 = Nexus.Theme.Text
+        arrow.TextColor3 = Nexus.Theme.TextSub
+        
+        -- Update option button colors
+        for _, child in pairs(container:GetChildren()) do
+            if child:IsA("TextButton") then
+                child.BackgroundColor3 = Nexus.Theme.SurfaceHigh
+                child.TextColor3 = Nexus.Theme.TextSub
+            end
         end
+    end)
+    
+    return f
+end
+
         
         function Item:SearchableDropdown(cfg)
             local f = Create("Frame", {
