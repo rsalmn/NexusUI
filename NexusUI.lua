@@ -1,9 +1,3 @@
---[[ 
-    NEXUS UI (v4.0 - Enhanced Edition)
-    ✨ New Features: Modern Dropdown, Error Prevention, Performance Boost
-    🎨 Design: Glassmorphism, Smooth Animations, Better UX
-]]
-
 local Nexus = {
     Flags = {}, 
     Registry = {}, 
@@ -2217,6 +2211,16 @@ function Nexus:Window(config)
         })
         
         AddCorner(TabButton, 8)
+        -- [DESIGN BARU] Active Indicator Line
+        local ActiveLine = Create("Frame", {
+            BackgroundColor3 = Nexus.Theme.Accent,
+            Size = UDim2.new(0, 3, 0.6, 0), -- Garis vertikal kecil
+            Position = UDim2.new(0, 2, 0.2, 0), -- Di sisi kiri tombol
+            BackgroundTransparency = 1, -- Mulai invisible
+            Parent = TabButton
+        })
+        AddCorner(ActiveLine, 2)
+
         if not ActiveTab then
             AddStroke(TabButton, Nexus.Theme.Accent, 1, 0.4)
         end
@@ -2500,13 +2504,45 @@ function Nexus:Window(config)
             })
             
             -- Hover state enhancement
+            -- [DESIGN BARU] Interactive Gradient
             ButtonFrame.MouseEnter:Connect(function()
+                -- Geser gradien offset & rotasi sedikit
                 if ButtonGradient then
-                    ButtonGradient.Transparency = NumberSequence.new{
-                        NumberSequenceKeypoint.new(0, 0.02),
-                        NumberSequenceKeypoint.new(0.5, 0),
-                        NumberSequenceKeypoint.new(1, 0.05)
-                    }
+                    Tween(ButtonGradient, {
+                        Rotation = 135, -- Putar gradien
+                        Offset = Vector2.new(0.2, 0) -- Geser sedikit
+                    }, 0.4)
+                end
+                
+                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.2)
+                
+                -- Efek Stroke menyala
+                local stroke = ButtonFrame:FindFirstChild("UIStroke")
+                if stroke then
+                    Tween(stroke, {
+                        Color = Nexus.Theme.Accent,
+                        Transparency = 0.2
+                    }, 0.2)
+                end
+            end)
+            
+            ButtonFrame.MouseLeave:Connect(function()
+                -- Reset gradien
+                if ButtonGradient then
+                    Tween(ButtonGradient, {
+                        Rotation = 90,
+                        Offset = Vector2.new(0, 0)
+                    }, 0.4)
+                end
+                
+                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.2)
+                
+                local stroke = ButtonFrame:FindFirstChild("UIStroke")
+                if stroke then
+                    Tween(stroke, {
+                        Color = Nexus.Theme.Outline,
+                        Transparency = 0.4
+                    }, 0.2)
                 end
             end)
             
@@ -2696,52 +2732,60 @@ function Nexus:Window(config)
                 Parent = ToggleFrame
             })
             
-            -- Toggle switch container
+            -- [DESIGN BARU] Neon Tech Switch Container
             local SwitchContainer = Create("Frame", {
-                BackgroundColor3 = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh,
-                Size = UDim2.fromOffset(48, 24),
-                Position = UDim2.new(1, -64, 0.5, -12),
+                BackgroundColor3 = Nexus.Theme.SurfaceHighest, -- Warna Track Mati
+                Size = UDim2.fromOffset(44, 6), -- Lebih tipis (Garis)
+                Position = UDim2.new(1, -60, 0.5, -3),
                 Parent = ToggleFrame
             })
+            AddCorner(SwitchContainer, 3)
             
-            AddCorner(SwitchContainer, 12)
-            
-            -- Toggle switch handle
-            local SwitchHandle = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Text,
-                Size = UDim2.fromOffset(20, 20),
-                Position = UDim2.fromOffset(CurrentValue and 26 or 2, 2),
+            -- Bagian Fill (Isi Warna saat ON)
+            local SwitchFill = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Accent,
+                Size = UDim2.new(0, 0, 1, 0), -- Mulai dari 0
                 Parent = SwitchContainer
             })
+            AddCorner(SwitchFill, 3)
             
-            AddCorner(SwitchHandle, 10)
-            AddShadow(SwitchHandle, 2, 0.8)
-            
-            local ToggleButton = Create("TextButton", {
-                Text = "",
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 1, 0),
-                Parent = ToggleFrame
+            -- Handle (Kepala Toggle)
+            local SwitchHandle = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.TextSub, -- Warna mati
+                Size = UDim2.fromOffset(18, 18),
+                Position = UDim2.fromScale(0, 0.5),
+                AnchorPoint = Vector2.new(0, 0.5), -- Center Y
+                Parent = SwitchContainer
             })
+            AddCorner(SwitchHandle, 100) -- Bulat sempurna
             
+            -- Efek Glow/Shadow pada Handle
+            local HandleShadow = AddShadow(SwitchHandle, 8, 0.8)
+
             local function UpdateToggle(newValue)
                 CurrentValue = newValue
                 
-                Tween(SwitchContainer, {
-                    BackgroundColor3 = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh
-                }, 0.2)
+                -- Animasi Fill Track (Garis)
+                Tween(SwitchFill, {
+                    Size = UDim2.new(CurrentValue and 1 or 0, 0, 1, 0)
+                }, 0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
                 
+                -- Animasi Posisi Handle
                 Tween(SwitchHandle, {
-                    Position = UDim2.fromOffset(CurrentValue and 26 or 2, 2)
+                    Position = UDim2.new(CurrentValue and 1 or 0, CurrentValue and -18 or 0, 0.5, 0),
+                    BackgroundColor3 = CurrentValue and Nexus.Theme.Text or Nexus.Theme.TextSub
                 }, 0.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
                 
-                pcall(function()
-                    Callback(CurrentValue)
-                end)
-                
-                if Flag then
-                    Nexus.Flags[Flag] = CurrentValue
+                -- Animasi Warna Glow Shadow (Penting biar kerasa "Tech")
+                if HandleShadow then
+                    Tween(HandleShadow, {
+                        ImageColor3 = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.Shadow,
+                        ImageTransparency = CurrentValue and 0.2 or 0.8
+                    }, 0.2)
                 end
+                
+                pcall(function() Callback(CurrentValue) end)
+                if Flag then Nexus.Flags[Flag] = CurrentValue end
             end
             
             ToggleButton.MouseButton1Click:Connect(function()
