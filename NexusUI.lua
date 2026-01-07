@@ -1548,7 +1548,7 @@ function Nexus:Window(config)
         
         -- Logic Saat Tombol Bulat Ditekan (Buka Menu Kembali)
         ToggleButton.MouseButton1Click:Connect(function()
-            PlaySound("6895079853", 0.1)
+            --PlaySound("6895079853", 0.1)
             
             -- Animasi Tombol Menghilang
             Tween(ToggleButton, {Size = UDim2.fromOffset(0, 0)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
@@ -1582,7 +1582,7 @@ function Nexus:Window(config)
     -- Minimize functionality (FIXED)
     MinimizeButton.MouseButton1Click:Connect(function()
         IsMinimized = true
-        PlaySound("6895079853", 0.1)
+        --PlaySound("6895079853", 0.1)
         
         -- 1. Sembunyikan Menu Utama
         MainWindow.ClipsDescendants = true -- Potong konten biar ga bocor
