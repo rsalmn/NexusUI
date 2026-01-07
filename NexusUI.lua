@@ -225,7 +225,8 @@ local function SetBlur(enabled, intensity)
     if not BlurEffect then return end
     
     local targetSize = enabled and (intensity or 15) or 0
-    Tween(BlurEffect, {Size = targetSize}, 0.4)
+    -- Gunakan Quint untuk transisi blur yang lebih halus
+    Tween(BlurEffect, {Size = targetSize}, 0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out) 
 end
 
 --// Enhanced Config System
@@ -467,7 +468,8 @@ local function CreateModernDropdown(cfg, ParentFrame)
         BackgroundColor3 = Nexus.Theme.Surface,
         Size = UDim2.new(1, 0, 0, baseHeight),
         ClipsDescendants = true,
-        Parent = ParentFrame
+        Parent = ParentFrame,
+        ZIndex = 5
     })
     
     if not MainFrame then return nil end
@@ -480,7 +482,8 @@ local function CreateModernDropdown(cfg, ParentFrame)
     local Header = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.SurfaceHigh,
         Size = UDim2.new(1, 0, 0, baseHeight),
-        Parent = MainFrame
+        Parent = MainFrame,
+        ZIndex = 6
     })
     
     AddCorner(Header, 8)
@@ -2085,8 +2088,8 @@ function Nexus:Window(config)
         }
     end
     
-    -- Tab creation function
-    function Nexus:Tab(config)
+    -- Tab creation function (Ubah jadi local function CreateTab)
+    local function CreateTab(config) -- GANTI BARIS INI
         if not config then config = {} end
         
         local Name = config.Name or config.Text or "Tab"
@@ -3962,222 +3965,6 @@ function Nexus:Window(config)
     return WindowAPI
 end
 
--- Global Nexus Functions
-function Nexus:Notify(config)
-    if type(config) == "string" then
-        config = {Text = config}
-    end
-    if not config then config = {} end
-    
-    local Text = config.Text or "Notification"
-    local Duration = config.Duration or 3
-    local Type = config.Type or "Info" -- Info, Success, Warning, Error
-    local Callback = config.Callback
-    
-    -- Notification container
-    if not Nexus.NotificationContainer then
-        Nexus.NotificationContainer = Create("Frame", {
-            BackgroundTransparency = 1,
-            Size = UDim2.new(0, 320, 1, 0),
-            Position = UDim2.new(1, -340, 0, 20),
-            Parent = ScreenGui
-        })
-        
-        Create("UIListLayout", {
-            FillDirection = Enum.FillDirection.Vertical,
-            HorizontalAlignment = Enum.HorizontalAlignment.Right,
-            VerticalAlignment = Enum.VerticalAlignment.Top,
-            SortOrder = Enum.SortOrder.LayoutOrder,
-            Padding = UDim.new(0, 8),
-            Parent = Nexus.NotificationContainer
-        })
-    end
-    
-    -- Type colors and icons
-    local TypeData = {
-        Info = {Color = Color3.fromRGB(59, 130, 246), Icon = "ℹ️"},
-        Success = {Color = Color3.fromRGB(34, 197, 94), Icon = "✅"},
-        Warning = {Color = Color3.fromRGB(251, 191, 36), Icon = "⚠️"},
-        Error = {Color = Color3.fromRGB(239, 68, 68), Icon = "❌"}
-    }
-    
-    local typeInfo = TypeData[Type] or TypeData.Info
-    
-    -- Notification frame
-    local NotifFrame = Create("Frame", {
-        BackgroundColor3 = Nexus.Theme.Surface,
-        Size = UDim2.new(1, 0, 0, 0),
-        BackgroundTransparency = 1,
-        Parent = Nexus.NotificationContainer
-    })
-    
-    AddCorner(NotifFrame, 8)
-    AddStroke(NotifFrame, typeInfo.Color, 1, 0.4)
-    AddShadow(NotifFrame, 8, 0.6)
-    
-    -- Accent bar
-    local AccentBar = Create("Frame", {
-        BackgroundColor3 = typeInfo.Color,
-        Size = UDim2.new(0, 4, 1, 0),
-        Position = UDim2.fromOffset(0, 0),
-        Parent = NotifFrame
-    })
-    
-    AddCorner(AccentBar, 4)
-    
-    -- Content container
-    local ContentFrame = Create("Frame", {
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1, -16, 1, -16),
-        Position = UDim2.fromOffset(12, 8),
-        Parent = NotifFrame
-    })
-    
-    -- Icon
-    local NotifIcon = Create("TextLabel", {
-        Text = typeInfo.Icon,
-        Font = Enum.Font.GothamBold,
-        TextSize = 16,
-        TextColor3 = typeInfo.Color,
-        BackgroundTransparency = 1,
-        Size = UDim2.fromOffset(24, 24),
-        Position = UDim2.fromOffset(0, 0),
-        Parent = ContentFrame
-    })
-    
-    -- Text
-    local NotifText = Create("TextLabel", {
-        Text = Text,
-        Font = Enum.Font.Gotham,
-        TextSize = 13,
-        TextColor3 = Nexus.Theme.Text,
-        BackgroundTransparency = 1,
-        Position = UDim2.fromOffset(32, 0),
-        Size = UDim2.new(1, -64, 1, 0),
-        TextXAlignment = Enum.TextXAlignment.Left,
-        TextYAlignment = Enum.TextYAlignment.Center,
-        TextWrapped = true,
-        Parent = ContentFrame
-    })
-    
-    -- Close button
-    local CloseNotif = Create("TextButton", {
-        Text = "✕",
-        Font = Enum.Font.GothamBold,
-        TextSize = 12,
-        TextColor3 = Nexus.Theme.TextSub,
-        BackgroundTransparency = 1,
-        Size = UDim2.fromOffset(24, 24),
-        Position = UDim2.new(1, -24, 0, 0),
-        Parent = ContentFrame
-    })
-    
-    -- Progress bar
-    local ProgressBar = Create("Frame", {
-        BackgroundColor3 = typeInfo.Color,
-        BackgroundTransparency = 0.8,
-        Size = UDim2.new(1, 0, 0, 2),
-        Position = UDim2.new(0, 0, 1, -2),
-        Parent = NotifFrame
-    })
-    
-    AddCorner(ProgressBar, 1)
-    
-    -- Calculate text height
-    local textBounds = TextService:GetTextSize(Text, 13, Enum.Font.Gotham, Vector2.new(NotifText.AbsoluteSize.X, math.huge))
-    local frameHeight = math.max(48, textBounds.Y + 24)
-    
-    -- Animate in
-    Tween(NotifFrame, {
-        Size = UDim2.new(1, 0, 0, frameHeight),
-        BackgroundTransparency = 0
-    }, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
-    
-    -- Progress animation
-    Tween(ProgressBar, {
-        Size = UDim2.new(0, 0, 0, 2)
-    }, Duration, Enum.EasingStyle.Linear)
-    
-    -- Auto dismiss
-    local dismissConnection
-    dismissConnection = task.spawn(function()
-        task.wait(Duration)
-        
-        -- Animate out
-        Tween(NotifFrame, {
-            Size = UDim2.new(1, 0, 0, 0),
-            BackgroundTransparency = 1
-        }, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
-        
-        task.wait(0.2)
-        
-        if NotifFrame and NotifFrame.Parent then
-            NotifFrame:Destroy()
-        end
-        
-        if Callback then
-            pcall(Callback)
-        end
-    end)
-    
-    -- Click to dismiss
-    local clickConnection = NotifFrame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            task.cancel(dismissConnection)
-            
-            Tween(NotifFrame, {
-                Size = UDim2.new(1, 0, 0, 0),
-                BackgroundTransparency = 1
-            }, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
-            
-            task.wait(0.2)
-            
-            if NotifFrame and NotifFrame.Parent then
-                NotifFrame:Destroy()
-            end
-            
-            if Callback then
-                pcall(Callback)
-            end
-            
-            clickConnection:Disconnect()
-        end
-    end)
-    
-    -- Close button
-    CloseNotif.MouseButton1Click:Connect(function()
-        task.cancel(dismissConnection)
-        
-        Tween(NotifFrame, {
-            Size = UDim2.new(1, 0, 0, 0),
-            BackgroundTransparency = 1
-        }, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
-        
-        task.wait(0.2)
-        
-        if NotifFrame and NotifFrame.Parent then
-            NotifFrame:Destroy()
-        end
-        
-        if Callback then
-            pcall(Callback)
-        end
-        
-        clickConnection:Disconnect()
-    end)
-    
-    PlaySound("6895079853", 0.1)
-    
-    return {
-        Destroy = function()
-            task.cancel(dismissConnection)
-            if NotifFrame and NotifFrame.Parent then
-                NotifFrame:Destroy()
-            end
-            clickConnection:Disconnect()
-        end
-    }
-end
 
 -- Config System Functions
 function Nexus:SaveConfig(name)
