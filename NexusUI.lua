@@ -125,7 +125,11 @@ local function AddShadow(parent, size, transparency)
 end
 
 local function Tween(inst, props, time, style, direction, callback)
-    if not inst or not inst.Parent then return end
+    -- [GANTI] dengan baris baru ini:
+    if not inst or typeof(inst) ~= "Instance" or not inst.Parent then 
+        warn("[NexusUI] Tween Error: Object is not an Instance!") 
+        return 
+    end
     
     local info = TweenInfo.new(
         time or 0.25,
@@ -141,21 +145,6 @@ local function Tween(inst, props, time, style, direction, callback)
     end
     
     return tween
-end
-
-local function PlaySound(soundId, volume, pitch)
-    pcall(function()
-        local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://" .. tostring(soundId)
-        sound.Volume = volume or 0.1
-        sound.Pitch = pitch or 1
-        sound.Parent = SoundService
-        sound:Play()
-        
-        sound.Ended:Connect(function()
-            sound:Destroy()
-        end)
-    end)
 end
 
 local function MakeDraggable(gui, handle)
@@ -174,7 +163,7 @@ local function MakeDraggable(gui, handle)
             dragStart = input.Position
             startPos = gui.Position
             
-            PlaySound("6895079853", 0.05) -- Subtle click sound
+            --PlaySound("6895079853", 0.05) -- Subtle click sound
         end
     end
     
@@ -788,7 +777,7 @@ local function CreateModernDropdown(cfg, ParentFrame)
             
             -- Click handler
             OptionButton.MouseButton1Click:Connect(function()
-                PlaySound("6895079853", 0.08) -- Selection sound
+                --PlaySound("6895079853", 0.08) -- Selection sound
                 
                 if MultiSelect then
                     SelectedValues[option] = not SelectedValues[option]
@@ -878,7 +867,7 @@ local function CreateModernDropdown(cfg, ParentFrame)
         end
         
         -- Play sound
-        PlaySound(IsOpen and "6895079853" or "6895079725", 0.06, IsOpen and 1.2 or 0.8)
+        --PlaySound(IsOpen and "6895079853" or "6895079725", 0.06, IsOpen and 1.2 or 0.8)
     end
     
     -- Search functionality
@@ -1524,7 +1513,7 @@ function Nexus:Window(config)
     -- Minimize functionality
     MinimizeButton.MouseButton1Click:Connect(function()
         IsMinimized = not IsMinimized
-        PlaySound("6895079853", 0.1)
+        --PlaySound("6895079853", 0.1)
         
         if IsMinimized then
             OriginalSize = MainWindow.Size
@@ -1540,7 +1529,7 @@ function Nexus:Window(config)
     
     -- Close functionality with confirmation
     CloseButton.MouseButton1Click:Connect(function()
-        PlaySound("6895079725", 0.15)
+        --PlaySound("6895079725", 0.15)
         
         -- Smooth close animation
         Tween(MainWindow, {
@@ -1587,7 +1576,7 @@ function Nexus:Window(config)
             return
         end
         
-        PlaySound("6895079853", 0.08)
+        --PlaySound("6895079853", 0.08)
         SettingsOpen = true
         
         SettingsDropdown = Create("Frame", {
@@ -1680,7 +1669,7 @@ function Nexus:Window(config)
             end)
             
             optionButton.MouseButton1Click:Connect(function()
-                PlaySound("6895079853", 0.05)
+                --PlaySound("6895079853", 0.05)
                 if option.callback then
                     pcall(option.callback)
                 end
@@ -2023,7 +2012,7 @@ function Nexus:Window(config)
             Position = UDim2.fromOffset(0, 0)
         }, 0.4, Enum.EasingStyle.Back)
         
-        PlaySound("6895079853", 0.1, 1.2)
+        --PlaySound("6895079853", 0.1, 1.2)
         
         -- Auto dismiss
         local dismissTween = nil
@@ -2195,31 +2184,51 @@ function Nexus:Window(config)
         end
         
         -- Tab selection
+        -- Tab selection logic (Fixed)
         TabButton.MouseButton1Click:Connect(function()
-            -- Deactivate current tab
+            -- Play Sound
+            -- PlaySound("6895079853", 0.05, 1.1) 
+
+            -- 1. Matikan Tab Lama (Deactivate)
             if ActiveTab then
+                -- Animasi Button Background
                 Tween(ActiveTab.Button, {BackgroundTransparency = 0.8}, 0.2)
-                Tween(ActiveTab.Button:FindFirstChild("Frame"):FindFirstChild("TextLabel"), {TextColor3 = Nexus.Theme.TextSub}, 0.2)
-                Tween(ActiveTab.Button:FindFirstChild("Frame"):FindFirstChildOfClass("TextLabel"), {TextColor3 = Nexus.Theme.TextSub}, 0.2)
                 
+                -- Hapus Stroke (Garis Pinggir)
                 local oldStroke = ActiveTab.Button:FindFirstChild("UIStroke")
-                if oldStroke then
-                    oldStroke:Destroy()
+                if oldStroke then oldStroke:Destroy() end
+                
+                -- Animasi Warna Teks & Icon (Looping agar kena SEMUA)
+                local contentFrame = ActiveTab.Button:FindFirstChild("Frame")
+                if contentFrame then
+                    for _, child in ipairs(contentFrame:GetChildren()) do
+                        if child:IsA("TextLabel") then
+                            Tween(child, {TextColor3 = Nexus.Theme.TextSub}, 0.2)
+                        end
+                    end
                 end
                 
-                ActiveTab.Page.Visible = false
+                -- Sembunyikan Halaman Lama
+                if ActiveTab.Page then
+                    ActiveTab.Page.Visible = false
+                end
             end
             
-            -- Activate new tab
-            ActiveTab = Tab
+            -- 2. Aktifkan Tab Baru (Activate)
+            ActiveTab = Tab -- Simpan referensi tab sekarang
+            
+            -- Animasi Button Baru
             Tween(TabButton, {BackgroundTransparency = 0.3}, 0.2)
-            Tween(TabIcon, {TextColor3 = Nexus.Theme.Accent}, 0.2)
-            Tween(TabName, {TextColor3 = Nexus.Theme.Text}, 0.2)
-            
             AddStroke(TabButton, Nexus.Theme.Accent, 1, 0.4)
-            TabPage.Visible = true
             
-            PlaySound("6895079853", 0.05, 1.1)
+            -- Animasi Warna Teks & Icon Baru (Gunakan variabel lokal TabIcon/TabName yang sudah ada)
+            if TabIcon then Tween(TabIcon, {TextColor3 = Nexus.Theme.Accent}, 0.2) end
+            if TabName then Tween(TabName, {TextColor3 = Nexus.Theme.Text}, 0.2) end
+            
+            -- Tampilkan Halaman Baru
+            if TabPage then
+                TabPage.Visible = true
+            end
         end)
         
         -- Hover effects
@@ -2507,7 +2516,7 @@ function Nexus:Window(config)
             
             -- Callback
             Button.MouseButton1Click:Connect(function()
-                --PlaySound("6895079853", 0.1)
+                ----PlaySound("6895079853", 0.1)
                 pcall(Callback)
             end)
             
@@ -2628,7 +2637,7 @@ function Nexus:Window(config)
             end
             
             ToggleButton.MouseButton1Click:Connect(function()
-                PlaySound("6895079853", 0.08, CurrentValue and 0.9 or 1.1)
+                --PlaySound("6895079853", 0.08, CurrentValue and 0.9 or 1.1)
                 UpdateToggle(not CurrentValue)
             end)
             
@@ -2838,7 +2847,7 @@ function Nexus:Window(config)
                    input.UserInputType == Enum.UserInputType.Touch then
                     
                     Dragging = true
-                    PlaySound("6895079853", 0.05)
+                    --PlaySound("6895079853", 0.05)
                     
                     -- Handle glow animation
                     Tween(HandleGlow, {
@@ -2877,7 +2886,7 @@ function Nexus:Window(config)
                    input.UserInputType == Enum.UserInputType.Touch then
                     
                     Dragging = false
-                    PlaySound("6895079725", 0.03)
+                    --PlaySound("6895079725", 0.03)
                     
                     -- Reset handle glow
                     Tween(HandleGlow, {
@@ -3057,7 +3066,7 @@ function Nexus:Window(config)
             
             -- Focus effects
             TextBox.Focused:Connect(function()
-                PlaySound("6895079853", 0.04)
+                --PlaySound("6895079853", 0.04)
                 
                 local stroke = InputContainer:FindFirstChild("UIStroke")
                 if stroke then
@@ -3265,7 +3274,7 @@ function Nexus:Window(config)
                 if IsBinding then return end
                 
                 IsBinding = true
-                PlaySound("6895079853", 0.08)
+                --PlaySound("6895079853", 0.08)
                 UpdateKeyDisplay()
                 
                 local connection
@@ -3280,7 +3289,7 @@ function Nexus:Window(config)
                             IsBinding = false
                             
                             UpdateKeyDisplay()
-                            PlaySound("6895079725", 0.06)
+                            --PlaySound("6895079725", 0.06)
                             
                             if Flag then
                                 Nexus.Flags[Flag] = CurrentKey
@@ -3460,7 +3469,7 @@ function Nexus:Window(config)
                 if ColorPickerOpen then return end
                 
                 ColorPickerOpen = true
-                PlaySound("6895079853", 0.08)
+                --PlaySound("6895079853", 0.08)
                 
                 -- Create color picker popup
                 ColorPickerFrame = Create("Frame", {
@@ -3761,7 +3770,7 @@ function Nexus:Window(config)
                 end
                 
                 ClosePickerBtn.MouseButton1Click:Connect(function()
-                    PlaySound("6895079725", 0.06)
+                    --PlaySound("6895079725", 0.06)
                     ClosePicker()
                 end)
                 
@@ -3904,7 +3913,7 @@ function Nexus:Window(config)
         LoadConfig = Nexus.LoadConfig,
         GetConfigs = Nexus.GetConfigs,
         Destroy = function()
-            PlaySound("6895079725", 0.1, 0.8)
+            --PlaySound("6895079725", 0.1, 0.8)
             
             -- Cleanup connections
             for _, connection in pairs(Nexus.Connections) do
@@ -3947,7 +3956,7 @@ function Nexus:Window(config)
                 }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
                 MinimizeButton.Text = "□"
             end
-            PlaySound("6895079853", 0.06)
+            --PlaySound("6895079853", 0.06)
         end,
         GetFlag = function(flag)
             return Nexus.Flags[flag]
