@@ -1,3 +1,9 @@
+--[[ 
+    NEXUS UI (v4.0 - Enhanced Edition)
+    ✨ New Features: Modern Dropdown, Error Prevention, Performance Boost
+    🎨 Design: Glassmorphism, Smooth Animations, Better UX
+]]
+
 local Nexus = {
     Flags = {}, 
     Registry = {}, 
@@ -1509,11 +1515,11 @@ function Nexus:Window(config)
     -- Window state management
     local IsMinimized = false
     
-    -- [[ FITUR BARU: Floating Bubble Profile ]]
+    -- [[ FIX: Floating Bubble dengan UIScale ]]
     local ToggleButton = nil
     
     local function CreateMobileToggle()
-        if ToggleButton then return end -- Cegah duplikasi
+        if ToggleButton then return end
         
         -- Ambil Gambar Profil User (Headshot)
         local userId = Players.LocalPlayer.UserId
@@ -1524,57 +1530,56 @@ function Nexus:Window(config)
         -- Buat Tombol Bulat
         ToggleButton = Create("ImageButton", {
             Name = "NexusToggle",
-            Image = content, -- Gambar Profil
+            Image = content,
             BackgroundColor3 = Nexus.Theme.Surface,
-            Size = UDim2.fromOffset(0, 0), -- Mulai dari 0 untuk animasi pop-up
-            Position = UDim2.new(0.1, 0, 0.1, 0), -- Posisi awal (bisa diatur)
+            Size = UDim2.fromOffset(0, 0), -- Mulai 0
+            Position = UDim2.new(0.1, 0, 0.1, 0),
             Parent = ScreenGui,
             ZIndex = 9999
         })
         
-        -- Bikin Jadi Bulat Sempurna
         AddCorner(ToggleButton, 100) 
-        
-        -- Tambahkan Garis Pinggir (Stroke) biar keren
         AddStroke(ToggleButton, Nexus.Theme.Accent, 2, 0)
-        
-        -- Tambahkan Shadow/Glow di belakangnya
         AddShadow(ToggleButton, 10, 0.6)
-        
-        -- Buat Tombol Bisa Digeser (Draggable)
         MakeDraggable(ToggleButton, ToggleButton)
         
-        -- Animasi Muncul (Pop Up)
+        -- Animasi Bubble Muncul
         Tween(ToggleButton, {Size = UDim2.fromOffset(50, 50)}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
         
-        -- Logic Saat Tombol Bulat Ditekan (Buka Menu Kembali)
+        -- Logic Saat Bubble Ditekan (Buka Menu)
         ToggleButton.MouseButton1Click:Connect(function()
-            --PlaySound("6895079853", 0.1)
+            -- PlaySound("6895079853", 0.1)
             
-            -- Animasi Tombol Menghilang
-            Tween(ToggleButton, {Size = UDim2.fromOffset(0, 0)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
-            task.wait(0.3)
+            -- 1. Nyalakan Blur
+            SetBlur(true, 8)
             
-            if ToggleButton then ToggleButton:Destroy() end
-            ToggleButton = nil
+            -- 2. Hilangkan Bubble
+            if ToggleButton then
+                Tween(ToggleButton, {Size = UDim2.fromOffset(0, 0)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+                task.wait(0.25)
+                ToggleButton:Destroy()
+                ToggleButton = nil
+            end
+            
             IsMinimized = false
+            MinimizeButton.Text = "─"
             
-            -- Munculkan Menu Utama Kembali
+            -- 3. Munculkan Menu Utama
             MainWindow.Visible = true
             
-            -- Animasi Menu Membesar
-            Tween(MainWindow, {
-                Size = OriginalSize, -- Kembali ke ukuran asli
-                BackgroundTransparency = 0
-            }, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+            -- [PERBAIKAN] Pastikan ClipsDescendants SELALU False agar shadow tidak putus
+            MainWindow.ClipsDescendants = false 
             
-            -- Fix Shadow (Restore Clipping)
-            task.delay(0.4, function()
-                if MainWindow.Parent then MainWindow.ClipsDescendants = false end
-            end)
+            -- 4. Animasi Membesar menggunakan UIScale (Lebih mulus & aman)
+            -- Kita set Scale ke 0 dulu biar start dari kecil
+            MainScale.Scale = 0
+            Tween(MainScale, {Scale = 1}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
             
-            -- Kembalikan icon minimize
-            MinimizeButton.Text = "─"
+            -- 5. Restore Shadow (Animasi transparansi)
+            local shadow = MainWindow:FindFirstChild("DropShadow")
+            if shadow then 
+                Tween(shadow, {ImageTransparency = 0.6}, 0.4) 
+            end
         end)
     end
     
