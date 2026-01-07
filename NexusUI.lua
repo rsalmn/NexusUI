@@ -1370,16 +1370,31 @@ function Nexus:Window(config)
     local TitleGradient = Create("UIGradient", {
         Color = ColorSequence.new{
             ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1),
+            ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
             ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)
         },
         Rotation = 45,
         Transparency = NumberSequence.new{
-            NumberSequenceKeypoint.new(0, 0.85),
-            ColorSequenceKeypoint.new(1, 0.9)
+            NumberSequenceKeypoint.new(0, 0.1),
+            NumberSequenceKeypoint.new(0.5, 0.05),
+            NumberSequenceKeypoint.new(1, 0.15)
         },
         Parent = TitleBar
     })
     
+    -- Auto-update dengan theme changes
+    local titleGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
+        if TitleGradient and TitleGradient.Parent then
+            TitleGradient.Color = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1),
+                ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
+                ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)
+            }
+        end
+    end)
+    
+    table.insert(Nexus.Connections, titleGradientConnection)
+
     -- App Icon
     local AppIcon = Create("TextLabel", {
         Text = "🚀",
