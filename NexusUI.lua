@@ -1692,25 +1692,46 @@ function Nexus:Window(config)
         local outsideConnection
         outsideConnection = UserInputService.InputBegan:Connect(function(input)
             if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                
+                -- [PERBAIKAN 1] Cek dulu apakah dropdown ada. Jika tidak, putuskan koneksi dan berhenti.
+                if not SettingsDropdown or not SettingsDropdown.Parent then
+                    if outsideConnection then outsideConnection:Disconnect() end
+                    return
+                end
+
                 local mousePos = UserInputService:GetMouseLocation()
                 local dropdownPos = SettingsDropdown.AbsolutePosition
                 local dropdownSize = SettingsDropdown.AbsoluteSize
                 
+                -- Cek apakah klik berada DI LUAR (OUTSIDE) area
                 if mousePos.X < dropdownPos.X or mousePos.X > dropdownPos.X + dropdownSize.X or
-                   mousePos.Y < dropdownPos.Y or mousePos.Y > dropdownPos.Y + dropdownSize.Y then
+                mousePos.Y < dropdownPos.Y or mousePos.Y > dropdownPos.Y + dropdownSize.Y then
                     
                     SettingsOpen = false
-                    if SettingsDropdown then
-                        Tween(SettingsDropdown, {
+                    
+                    -- Simpan referensi ke objek saat ini untuk animasi
+                    local currentDropdown = SettingsDropdown
+                    
+                    if currentDropdown then
+                        Tween(currentDropdown, {
                             Size = UDim2.fromOffset(0, 0),
                             BackgroundTransparency = 1
                         }, 0.2)
-                        task.wait(0.2)
-                        SettingsDropdown:Destroy()
+                        
+                        -- Gunakan task.spawn atau delay agar input tidak macet (opsional tapi lebih baik)
+                        task.spawn(function()
+                            task.wait(0.2)
+                            -- [PERBAIKAN 2] Cek lagi apakah objek masih ada sebelum destroy
+                            if currentDropdown and currentDropdown.Parent then
+                                currentDropdown:Destroy()
+                            end
+                        end)
+                        
+                        -- Set nil global segera agar logika toggle tombol settings tidak bingung
                         SettingsDropdown = nil
                     end
                     
-                    outsideConnection:Disconnect()
+                    if outsideConnection then outsideConnection:Disconnect() end
                 end
             end
         end)
@@ -2839,25 +2860,33 @@ function Nexus:Window(config)
                 Parent = SliderFrame
             })
             
-            -- Mouse interaction
             local function OnInputBegan(input)
                 if input.UserInputType == Enum.UserInputType.MouseButton1 or
                    input.UserInputType == Enum.UserInputType.Touch then
                     
+                    -- [SAFETY CHECK 1] Pastikan elemen slider masih ada
+                    if not SliderTrack or not SliderTrack.Parent then return end
+
                     Dragging = true
-                    --PlaySound("6895079853", 0.05)
+                    -- PlaySound("6895079853", 0.05)
                     
-                    -- Handle glow animation
-                    Tween(HandleGlow, {
-                        Size = UDim2.fromOffset(32, 32),
-                        Position = UDim2.fromOffset(-8, -8),
-                        BackgroundTransparency = 0.6
-                    }, 0.15)
+                    -- Handle glow animation (Cek dulu apakah HandleGlow ada)
+                    if HandleGlow then
+                        Tween(HandleGlow, {
+                            Size = UDim2.fromOffset(32, 32),
+                            Position = UDim2.fromOffset(-8, -8),
+                            BackgroundTransparency = 0.6
+                        }, 0.15)
+                    end
                     
                     -- Calculate initial value
                     local mousePos = input.Position.X
                     local trackPos = SliderTrack.AbsolutePosition.X
                     local trackSize = SliderTrack.AbsoluteSize.X
+                    
+                    -- [SAFETY CHECK 2] Mencegah pembagian dengan nol (jarang terjadi, tapi aman)
+                    if trackSize == 0 then return end
+
                     local percentage = math.clamp((mousePos - trackPos) / trackSize, 0, 1)
                     local newValue = Min + (percentage * (Max - Min))
                     
@@ -2869,9 +2898,19 @@ function Nexus:Window(config)
                 if Dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or
                                 input.UserInputType == Enum.UserInputType.Touch) then
                     
+                    -- [SAFETY CHECK 3] PENTING: Cek lagi saat dragging
+                    -- Jika UI ditutup saat drag, hentikan drag dan return
+                    if not SliderTrack or not SliderTrack.Parent then 
+                        Dragging = false
+                        return 
+                    end
+
                     local mousePos = input.Position.X
                     local trackPos = SliderTrack.AbsolutePosition.X
                     local trackSize = SliderTrack.AbsoluteSize.X
+                    
+                    if trackSize == 0 then return end
+
                     local percentage = math.clamp((mousePos - trackPos) / trackSize, 0, 1)
                     local newValue = Min + (percentage * (Max - Min))
                     
@@ -3649,29 +3688,51 @@ function Nexus:Window(config)
                 
                 HueSlider.InputBegan:Connect(function(input)
                     if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                        -- [SAFETY 1] Cek apakah HueBar ada
+                        if not HueBar or not HueBar.Parent then return end
+
                         HueDragging = true
                         
+                        -- Definisi variabel koneksi dulu agar bisa saling akses
+                        local moveConnection, releaseConnection
+                        
                         local function UpdateHue()
+                            -- [SAFETY 2] Cek lagi saat update berjalan
+                            if not HueBar or not HueBar.Parent then
+                                -- Jika bar hilang saat drag, putuskan koneksi paksa
+                                if moveConnection then moveConnection:Disconnect() end
+                                if releaseConnection then releaseConnection:Disconnect() end
+                                HueDragging = false
+                                return
+                            end
+
                             local mouseY = UserInputService:GetMouseLocation().Y
                             local relativeY = mouseY - HueBar.AbsolutePosition.Y
-                            local percentage = math.clamp(relativeY / HueBar.AbsoluteSize.Y, 0, 1)
+                            
+                            -- [SAFETY 3] Hindari pembagian dengan nol
+                            local barSizeY = HueBar.AbsoluteSize.Y
+                            if barSizeY == 0 then return end
+
+                            local percentage = math.clamp(relativeY / barSizeY, 0, 1)
                             h = percentage
                             UpdatePickerColor()
                         end
                         
                         UpdateHue()
                         
-                        local moveConnection = UserInputService.InputChanged:Connect(function(input2)
+                        moveConnection = UserInputService.InputChanged:Connect(function(input2)
                             if input2.UserInputType == Enum.UserInputType.MouseMovement and HueDragging then
                                 UpdateHue()
                             end
                         end)
                         
-                        local releaseConnection = UserInputService.InputEnded:Connect(function(input2)
+                        releaseConnection = UserInputService.InputEnded:Connect(function(input2)
                             if input2.UserInputType == Enum.UserInputType.MouseButton1 then
                                 HueDragging = false
-                                moveConnection:Disconnect()
-                                releaseConnection:Disconnect()
+                                
+                                -- Putuskan koneksi agar memori bersih
+                                if moveConnection then moveConnection:Disconnect() end
+                                if releaseConnection then releaseConnection:Disconnect() end
                             end
                         end)
                     end
