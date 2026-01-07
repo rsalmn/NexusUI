@@ -2542,7 +2542,7 @@ function Nexus:Window(config)
         end
         
         -- Continue with other components in the next part...
-                function Tab:Toggle(config)
+        function Tab:Toggle(config)
             if type(config) == "string" then
                 config = {Text = config}
             end
@@ -3881,7 +3881,1262 @@ function Nexus:Window(config)
     
     table.insert(Nexus.Connections, windowThemeConnection)
     
+    
+    
     -- Window API
+    -- 🎯 CREATE TAB FUNCTION
+    local function CreateTab(config)
+        config = config or {}
+        local TabName = config.Name or "Tab"
+        local TabIcon = config.Icon or "📄"
+        
+        -- Create tab button
+        local TabButton = Create("TextButton", {
+            Name = TabName .. "Button",
+            Size = UDim2.new(1, 0, 0, 35),
+            BackgroundColor3 = Nexus.Theme.Surface,
+            BackgroundTransparency = 0.1,
+            BorderSizePixel = 0,
+            Text = TabIcon .. " " .. TabName,
+            TextColor3 = Nexus.Theme.TextSecondary,
+            TextScaled = true,
+            Font = Enum.Font.GothamMedium,
+            TextSize = 14,
+            Parent = TabContainer
+        })
+        
+        AddCorner(TabButton, 8)
+        
+        -- Create tab page
+        local TabPage = Create("ScrollingFrame", {
+            Name = TabName .. "Page",
+            Size = UDim2.new(1, 0, 1, 0),
+            BackgroundTransparency = 1,
+            BorderSizePixel = 0,
+            ScrollBarThickness = 4,
+            ScrollBarImageColor3 = Nexus.Theme.Accent,
+            TopImage = "",
+            MidImage = "",
+            BottomImage = "",
+            CanvasSize = UDim2.fromOffset(0, 0),
+            AutomaticCanvasSize = Enum.AutomaticSize.Y,
+            ScrollingDirection = Enum.ScrollingDirection.Y,
+            Visible = false,
+            Parent = PageContainer
+        })
+        
+        -- Page layout
+        local PageLayout = Create("UIListLayout", {
+            SortOrder = Enum.SortOrder.LayoutOrder,
+            Padding = UDim.new(0, 8),
+            Parent = TabPage
+        })
+        
+        local PagePadding = Create("UIPadding", {
+            PaddingTop = UDim.new(0, 15),
+            PaddingLeft = UDim.new(0, 15),
+            PaddingRight = UDim.new(0, 15),
+            PaddingBottom = UDim.new(0, 15),
+            Parent = TabPage
+        })
+        
+        -- Tab selection logic
+        TabButton.MouseButton1Click:Connect(function()
+            PlaySound("6895079853", 0.06)
+            
+            -- Hide all tabs
+            for _, page in pairs(PageContainer:GetChildren()) do
+                if page:IsA("ScrollingFrame") then
+                    page.Visible = false
+                end
+            end
+            
+            -- Reset all tab buttons
+            for _, button in pairs(TabContainer:GetChildren()) do
+                if button:IsA("TextButton") then
+                    button.BackgroundTransparency = 0.1
+                    button.TextColor3 = Nexus.Theme.TextSecondary
+                end
+            end
+            
+            -- Show selected tab
+            TabPage.Visible = true
+            TabButton.BackgroundTransparency = 0.05
+            TabButton.TextColor3 = Nexus.Theme.Text
+            
+            -- Update gradient
+            local TabGradient = Create("UIGradient", {
+                Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+                },
+                Rotation = 90,
+                Transparency = NumberSequence.new{
+                    NumberSequenceKeypoint.new(0, 0.1),
+                    NumberSequenceKeypoint.new(0.5, 0.05),
+                    NumberSequenceKeypoint.new(1, 0.15)
+                },
+                Parent = TabButton
+            })
+        end)
+        
+        -- Tab hover effects
+        TabButton.MouseEnter:Connect(function()
+            if TabPage.Visible then return end
+            Tween(TabButton, {BackgroundTransparency = 0.05}, 0.15)
+        end)
+        
+        TabButton.MouseLeave:Connect(function()
+            if TabPage.Visible then return end
+            Tween(TabButton, {BackgroundTransparency = 0.1}, 0.15)
+        end)
+        
+        -- If first tab, make it active
+        if #TabContainer:GetChildren() <= 2 then -- 1 for UIListLayout, 1 for this tab
+            TabPage.Visible = true
+            TabButton.BackgroundTransparency = 0.05
+            TabButton.TextColor3 = Nexus.Theme.Text
+        end
+        
+        -- Return Tab API
+        return CreateTabAPI(TabPage, TabName)
+    end
+    
+    
+    -- ====================================================================
+-- 🎨 NEXUS UI - ALL COMPONENT CREATION FUNCTIONS
+-- ====================================================================
+
+-- 🏷️ CREATE LABEL FUNCTION
+local function CreateLabel(parent, config)
+    config = config or {}
+    local Text = config.Text or "Label"
+    local Style = config.Style or "Default" -- Default, Title, Subtitle, Info
+    
+    local LabelFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 25),
+        BackgroundTransparency = 1,
+        Parent = parent
+    })
+    
+    local LabelText = Create("TextLabel", {
+        Size = UDim2.new(1, 0, 1, 0),
+        BackgroundTransparency = 1,
+        Text = Text,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = LabelFrame
+    })
+    
+    -- Style variations
+    if Style == "Title" then
+        LabelFrame.Size = UDim2.new(1, 0, 0, 35)
+        LabelText.Font = Enum.Font.GothamBold
+        LabelText.TextSize = 18
+        LabelText.TextColor3 = Nexus.Theme.Text
+    elseif Style == "Subtitle" then
+        LabelFrame.Size = UDim2.new(1, 0, 0, 28)
+        LabelText.Font = Enum.Font.GothamMedium
+        LabelText.TextSize = 16
+        LabelText.TextColor3 = Nexus.Theme.TextSecondary
+    elseif Style == "Info" then
+        LabelFrame.Size = UDim2.new(1, 0, 0, 22)
+        LabelText.Font = Enum.Font.Gotham
+        LabelText.TextSize = 12
+        LabelText.TextColor3 = Nexus.Theme.TextSecondary
+    end
+    
+    return {
+        Frame = LabelFrame,
+        Label = LabelText,
+        SetText = function(newText)
+            LabelText.Text = tostring(newText)
+        end,
+        SetStyle = function(newStyle)
+            Style = newStyle
+            -- Apply style changes
+        end
+    }
+end
+
+-- 🔘 CREATE BUTTON FUNCTION
+local function CreateButton(parent, config)
+    config = config or {}
+    local Text = config.Text or "Button"
+    local Callback = config.Callback or function() end
+    local Style = config.Style or "Default" -- Default, Primary, Success, Danger
+    
+    local ButtonFrame = Create("TextButton", {
+        Size = UDim2.new(1, 0, 0, 40),
+        BackgroundColor3 = Nexus.Theme.Surface,
+        BorderSizePixel = 0,
+        Text = "",
+        Parent = parent
+    })
+    
+    AddCorner(ButtonFrame, 8)
+    
+    local ButtonGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+        },
+        Rotation = 90,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(0.5, 0.02),
+            NumberSequenceKeypoint.new(1, 0.08)
+        },
+        Parent = ButtonFrame
+    })
+    
+    local ButtonStroke = Create("UIStroke", {
+        Color = Nexus.Theme.SurfaceHigh,
+        Thickness = 1,
+        Transparency = 0.7,
+        Parent = ButtonFrame
+    })
+    
+    local ButtonText = Create("TextLabel", {
+        Size = UDim2.new(1, -10, 1, 0),
+        Position = UDim2.fromOffset(5, 0),
+        BackgroundTransparency = 1,
+        Text = Text,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 14,
+        Parent = ButtonFrame
+    })
+    
+    -- Style variations
+    if Style == "Primary" then
+        ButtonGradient.Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Accent),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.Accent)
+        }
+        ButtonText.TextColor3 = Color3.new(1, 1, 1)
+    elseif Style == "Success" then
+        ButtonGradient.Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 197, 94)),
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(22, 163, 74))
+        }
+        ButtonText.TextColor3 = Color3.new(1, 1, 1)
+    elseif Style == "Danger" then
+        ButtonGradient.Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.fromRGB(239, 68, 68)),
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(220, 38, 38))
+        }
+        ButtonText.TextColor3 = Color3.new(1, 1, 1)
+    end
+    
+    -- Button interactions
+    ButtonFrame.MouseEnter:Connect(function()
+        Tween(ButtonFrame, {Size = UDim2.new(1, 0, 0, 42)}, 0.15)
+        Tween(ButtonStroke, {Transparency = 0.4}, 0.15)
+    end)
+    
+    ButtonFrame.MouseLeave:Connect(function()
+        Tween(ButtonFrame, {Size = UDim2.new(1, 0, 0, 40)}, 0.15)
+        Tween(ButtonStroke, {Transparency = 0.7}, 0.15)
+    end)
+    
+    ButtonFrame.MouseButton1Click:Connect(function()
+        PlaySound("6895079853", 0.08)
+        
+        -- Click animation
+        Tween(ButtonFrame, {Size = UDim2.new(1, 0, 0, 38)}, 0.1)
+        task.wait(0.1)
+        Tween(ButtonFrame, {Size = UDim2.new(1, 0, 0, 40)}, 0.1)
+        
+        -- Execute callback
+        pcall(Callback)
+    end)
+    
+    return {
+        Frame = ButtonFrame,
+        Text = ButtonText,
+        SetText = function(newText)
+            ButtonText.Text = tostring(newText)
+        end,
+        SetCallback = function(newCallback)
+            Callback = newCallback or function() end
+        end
+    }
+end
+
+-- 🔄 CREATE TOGGLE FUNCTION
+local function CreateToggle(parent, config)
+    config = config or {}
+    local Text = config.Text or "Toggle"
+    local Default = config.Default or false
+    local Callback = config.Callback or function() end
+    local Flag = config.Flag
+    
+    local ToggleValue = Default
+    
+    local ToggleFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 40),
+        BackgroundColor3 = Nexus.Theme.Surface,
+        BorderSizePixel = 0,
+        Parent = parent
+    })
+    
+    AddCorner(ToggleFrame, 8)
+    
+    local ToggleGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.SurfaceHigh)
+        },
+        Rotation = 90,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(1, 0.1)
+        },
+        Parent = ToggleFrame
+    })
+    
+    local ToggleStroke = Create("UIStroke", {
+        Color = Nexus.Theme.SurfaceHigh,
+        Thickness = 1,
+        Transparency = 0.7,
+        Parent = ToggleFrame
+    })
+    
+    local ToggleText = Create("TextLabel", {
+        Size = UDim2.new(1, -60, 1, 0),
+        Position = UDim2.fromOffset(15, 0),
+        BackgroundTransparency = 1,
+        Text = Text,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = ToggleFrame
+    })
+    
+    local ToggleButton = Create("TextButton", {
+        Size = UDim2.fromOffset(35, 20),
+        Position = UDim2.new(1, -45, 0.5, -10),
+        BackgroundColor3 = Color3.fromRGB(100, 100, 100),
+        BorderSizePixel = 0,
+        Text = "",
+        Parent = ToggleFrame
+    })
+    
+    AddCorner(ToggleButton, 10)
+    
+    local ToggleIndicator = Create("Frame", {
+        Size = UDim2.fromOffset(14, 14),
+        Position = UDim2.fromOffset(3, 3),
+        BackgroundColor3 = Color3.new(1, 1, 1),
+        BorderSizePixel = 0,
+        Parent = ToggleButton
+    })
+    
+    AddCorner(ToggleIndicator, 7)
+    
+    -- Update toggle visual
+    local function UpdateToggle()
+        if ToggleValue then
+            Tween(ToggleButton, {BackgroundColor3 = Nexus.Theme.Accent}, 0.2)
+            Tween(ToggleIndicator, {Position = UDim2.fromOffset(18, 3)}, 0.2)
+        else
+            Tween(ToggleButton, {BackgroundColor3 = Color3.fromRGB(100, 100, 100)}, 0.2)
+            Tween(ToggleIndicator, {Position = UDim2.fromOffset(3, 3)}, 0.2)
+        end
+    end
+    
+    -- Initialize
+    UpdateToggle()
+    
+    -- Toggle interaction
+    local ToggleConnection = ToggleButton.MouseButton1Click:Connect(function()
+        ToggleValue = not ToggleValue
+        UpdateToggle()
+        PlaySound("6895079853", 0.06)
+        
+        if Flag then
+            Nexus.Flags[Flag] = ToggleValue
+        end
+        
+        pcall(Callback, ToggleValue)
+    end)
+    
+    table.insert(Nexus.Connections, ToggleConnection)
+    
+    -- Register flag
+    if Flag then
+        Nexus.Registry[Flag] = {
+            Set = function(value)
+                ToggleValue = value
+                UpdateToggle()
+                pcall(Callback, ToggleValue)
+            end,
+            Get = function()
+                return ToggleValue
+            end
+        }
+        Nexus.Flags[Flag] = ToggleValue
+    end
+    
+    return {
+        Frame = ToggleFrame,
+        Set = function(value)
+            ToggleValue = value
+            UpdateToggle()
+        end,
+        Get = function()
+            return ToggleValue
+        end
+    }
+end
+
+-- 🎚️ CREATE SLIDER FUNCTION
+local function CreateSlider(parent, config)
+    config = config or {}
+    local Text = config.Text or "Slider"
+    local Min = config.Min or 0
+    local Max = config.Max or 100
+    local Default = config.Default or Min
+    local Callback = config.Callback or function() end
+    local Flag = config.Flag
+    
+    local SliderValue = Default
+    
+    local SliderFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 55),
+        BackgroundColor3 = Nexus.Theme.Surface,
+        BorderSizePixel = 0,
+        Parent = parent
+    })
+    
+    AddCorner(SliderFrame, 8)
+    
+    local SliderGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.SurfaceHigh)
+        },
+        Rotation = 90,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(1, 0.1)
+        },
+        Parent = SliderFrame
+    })
+    
+    local SliderText = Create("TextLabel", {
+        Size = UDim2.new(1, -15, 0, 20),
+        Position = UDim2.fromOffset(15, 8),
+        BackgroundTransparency = 1,
+        Text = Text,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = SliderFrame
+    })
+    
+    local SliderValueLabel = Create("TextLabel", {
+        Size = UDim2.fromOffset(60, 20),
+        Position = UDim2.new(1, -75, 0, 8),
+        BackgroundTransparency = 1,
+        Text = tostring(SliderValue),
+        TextColor3 = Nexus.Theme.Accent,
+        TextScaled = true,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 12,
+        TextXAlignment = Enum.TextXAlignment.Right,
+        Parent = SliderFrame
+    })
+    
+    local SliderTrack = Create("Frame", {
+        Size = UDim2.new(1, -30, 0, 6),
+        Position = UDim2.fromOffset(15, 35),
+        BackgroundColor3 = Color3.fromRGB(50, 50, 50),
+        BorderSizePixel = 0,
+        Parent = SliderFrame
+    })
+    
+    AddCorner(SliderTrack, 3)
+    
+    local SliderFill = Create("Frame", {
+        Size = UDim2.new(0, 0, 1, 0),
+        BackgroundColor3 = Nexus.Theme.Accent,
+        BorderSizePixel = 0,
+        Parent = SliderTrack
+    })
+    
+    AddCorner(SliderFill, 3)
+    
+    local SliderButton = Create("TextButton", {
+        Size = UDim2.fromOffset(16, 16),
+        Position = UDim2.fromOffset(-8, -5),
+        BackgroundColor3 = Nexus.Theme.Accent,
+        BorderSizePixel = 0,
+        Text = "",
+        Parent = SliderTrack
+    })
+    
+    AddCorner(SliderButton, 8)
+    
+    -- Update slider visual
+    local function UpdateSlider()
+        local percentage = (SliderValue - Min) / (Max - Min)
+        local fillSize = UDim2.new(percentage, 0, 1, 0)
+        local buttonPos = UDim2.new(percentage, -8, 0, -5)
+        
+        Tween(SliderFill, {Size = fillSize}, 0.1)
+        Tween(SliderButton, {Position = buttonPos}, 0.1)
+        SliderValueLabel.Text = tostring(SliderValue)
+    end
+    
+    -- Initialize
+    UpdateSlider()
+    
+    -- Slider interaction
+    local UserInputService = game:GetService("UserInputService")
+    local dragging = false
+    
+    local function UpdateValue(input)
+        local trackPos = SliderTrack.AbsolutePosition.X
+        local trackSize = SliderTrack.AbsoluteSize.X
+        local mousePos = input.Position.X
+        
+        local percentage = math.clamp((mousePos - trackPos) / trackSize, 0, 1)
+        SliderValue = math.floor(Min + (Max - Min) * percentage)
+        
+        UpdateSlider()
+        
+        if Flag then
+            Nexus.Flags[Flag] = SliderValue
+        end
+        
+        pcall(Callback, SliderValue)
+    end
+    
+    local SliderConnection1 = SliderButton.MouseButton1Down:Connect(function()
+        dragging = true
+        PlaySound("6895079853", 0.04)
+    end)
+    
+    local SliderConnection2 = UserInputService.InputChanged:Connect(function(input)
+        if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+            UpdateValue(input)
+        end
+    end)
+    
+    local SliderConnection3 = UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = false
+        end
+    end)
+    
+    local SliderConnection4 = SliderTrack.MouseButton1Click:Connect(function()
+        UpdateValue(UserInputService:GetMouseLocation())
+    end)
+    
+    table.insert(Nexus.Connections, SliderConnection1)
+    table.insert(Nexus.Connections, SliderConnection2)
+    table.insert(Nexus.Connections, SliderConnection3)
+    table.insert(Nexus.Connections, SliderConnection4)
+    
+    -- Register flag
+    if Flag then
+        Nexus.Registry[Flag] = {
+            Set = function(value)
+                SliderValue = math.clamp(value, Min, Max)
+                UpdateSlider()
+                pcall(Callback, SliderValue)
+            end,
+            Get = function()
+                return SliderValue
+            end
+        }
+        Nexus.Flags[Flag] = SliderValue
+    end
+    
+    return {
+        Frame = SliderFrame,
+        Set = function(value)
+            SliderValue = math.clamp(value, Min, Max)
+            UpdateSlider()
+        end,
+        Get = function()
+            return SliderValue
+        end
+    }
+end
+
+-- 📋 CREATE DROPDOWN FUNCTION
+local function CreateDropdown(parent, config)
+    config = config or {}
+    local Text = config.Text or "Dropdown"
+    local Options = config.Options or {"Option 1", "Option 2", "Option 3"}
+    local Default = config.Default or Options[1] or ""
+    local Callback = config.Callback or function() end
+    local Flag = config.Flag
+    
+    local SelectedValue = Default
+    local IsOpen = false
+    
+    local DropdownFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 40),
+        BackgroundColor3 = Nexus.Theme.Surface,
+        BorderSizePixel = 0,
+        Parent = parent
+    })
+    
+    AddCorner(DropdownFrame, 8)
+    
+    local DropdownGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.SurfaceHigh)
+        },
+        Rotation = 90,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(1, 0.1)
+        },
+        Parent = DropdownFrame
+    })
+    
+    local DropdownButton = Create("TextButton", {
+        Size = UDim2.new(1, 0, 1, 0),
+        BackgroundTransparency = 1,
+        Text = "",
+        Parent = DropdownFrame
+    })
+    
+    local DropdownText = Create("TextLabel", {
+        Size = UDim2.new(1, -50, 1, 0),
+        Position = UDim2.fromOffset(15, 0),
+        BackgroundTransparency = 1,
+        Text = Text,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = DropdownFrame
+    })
+    
+    local DropdownValue = Create("TextLabel", {
+        Size = UDim2.new(1, -50, 1, 0),
+        Position = UDim2.fromOffset(15, 0),
+        BackgroundTransparency = 1,
+        Text = SelectedValue,
+        TextColor3 = Nexus.Theme.Accent,
+        TextScaled = true,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 12,
+        TextXAlignment = Enum.TextXAlignment.Right,
+        Parent = DropdownFrame
+    })
+    
+    local DropdownArrow = Create("TextLabel", {
+        Size = UDim2.fromOffset(20, 20),
+        Position = UDim2.new(1, -30, 0.5, -10),
+        BackgroundTransparency = 1,
+        Text = "▼",
+        TextColor3 = Nexus.Theme.TextSecondary,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 12,
+        Parent = DropdownFrame
+    })
+    
+    local DropdownList = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 0),
+        Position = UDim2.fromOffset(0, 45),
+        BackgroundColor3 = Nexus.Theme.Surface,
+        BorderSizePixel = 0,
+        Visible = false,
+        ZIndex = 10,
+        Parent = DropdownFrame
+    })
+    
+    AddCorner(DropdownList, 8)
+    
+    local DropdownListLayout = Create("UIListLayout", {
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        Padding = UDim.new(0, 2),
+        Parent = DropdownList
+    })
+    
+    local DropdownListPadding = Create("UIPadding", {
+        PaddingAll = UDim.new(0, 8),
+        Parent = DropdownList
+    })
+    
+    -- Create option buttons
+    local function CreateOptions()
+        for _, child in pairs(DropdownList:GetChildren()) do
+            if child:IsA("TextButton") then
+                child:Destroy()
+            end
+        end
+        
+        for i, option in pairs(Options) do
+            local OptionButton = Create("TextButton", {
+                Size = UDim2.new(1, 0, 0, 30),
+                BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                BackgroundTransparency = 0.5,
+                BorderSizePixel = 0,
+                Text = tostring(option),
+                TextColor3 = Nexus.Theme.Text,
+                TextScaled = true,
+                Font = Enum.Font.Gotham,
+                TextSize = 12,
+                Parent = DropdownList
+            })
+            
+            AddCorner(OptionButton, 6)
+            
+            OptionButton.MouseButton1Click:Connect(function()
+                SelectedValue = option
+                DropdownValue.Text = SelectedValue
+                
+                -- Close dropdown
+                IsOpen = false
+                Tween(DropdownList, {Size = UDim2.new(1, 0, 0, 0)}, 0.2)
+                Tween(DropdownArrow, {Rotation = 0}, 0.2)
+                task.wait(0.2)
+                DropdownList.Visible = false
+                
+                PlaySound("6895079853", 0.06)
+                
+                if Flag then
+                    Nexus.Flags[Flag] = SelectedValue
+                end
+                
+                pcall(Callback, SelectedValue)
+            end)
+            
+            OptionButton.MouseEnter:Connect(function()
+                Tween(OptionButton, {BackgroundTransparency = 0.2}, 0.15)
+            end)
+            
+            OptionButton.MouseLeave:Connect(function()
+                Tween(OptionButton, {BackgroundTransparency = 0.5}, 0.15)
+            end)
+        end
+    end
+    
+    CreateOptions()
+    
+    -- Toggle dropdown
+    local DropdownConnection = DropdownButton.MouseButton1Click:Connect(function()
+        IsOpen = not IsOpen
+        PlaySound("6895079853", 0.06)
+        
+        if IsOpen then
+            DropdownList.Visible = true
+            local listHeight = math.min(#Options * 32 + 16, 200)
+            Tween(DropdownList, {Size = UDim2.new(1, 0, 0, listHeight)}, 0.2)
+            Tween(DropdownArrow, {Rotation = 180}, 0.2)
+        else
+            Tween(DropdownList, {Size = UDim2.new(1, 0, 0, 0)}, 0.2)
+            Tween(DropdownArrow, {Rotation = 0}, 0.2)
+            task.wait(0.2)
+            DropdownList.Visible = false
+        end
+    end)
+    
+    table.insert(Nexus.Connections, DropdownConnection)
+    
+    -- Register flag
+    if Flag then
+        Nexus.Registry[Flag] = {
+            Set = function(value)
+                if table.find(Options, value) then
+                    SelectedValue = value
+                    DropdownValue.Text = SelectedValue
+                    pcall(Callback, SelectedValue)
+                end
+            end,
+            Get = function()
+                return SelectedValue
+            end
+        }
+        Nexus.Flags[Flag] = SelectedValue
+    end
+    
+    return {
+        Frame = DropdownFrame,
+        Set = function(value)
+            if table.find(Options, value) then
+                SelectedValue = value
+                DropdownValue.Text = SelectedValue
+            end
+        end,
+        Get = function()
+            return SelectedValue
+        end,
+        SetOptions = function(newOptions)
+            Options = newOptions
+            CreateOptions()
+        end
+    }
+end
+
+-- 🎨 CREATE COLOR PICKER FUNCTION
+local function CreateColorPicker(parent, config)
+    config = config or {}
+    local Text = config.Text or "Color Picker"
+    local Default = config.Default or Color3.fromRGB(255, 0, 0)
+    local Callback = config.Callback or function() end
+    local Flag = config.Flag
+    
+    local SelectedColor = Default
+    
+    local ColorPickerFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 40),
+        BackgroundColor3 = Nexus.Theme.Surface,
+        BorderSizePixel = 0,
+        Parent = parent
+    })
+    
+    AddCorner(ColorPickerFrame, 8)
+    
+    local ColorPickerText = Create("TextLabel", {
+        Size = UDim2.new(1, -60, 1, 0),
+        Position = UDim2.fromOffset(15, 0),
+        BackgroundTransparency = 1,
+        Text = Text,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = ColorPickerFrame
+    })
+    
+    local ColorDisplay = Create("TextButton", {
+        Size = UDim2.fromOffset(30, 25),
+        Position = UDim2.new(1, -40, 0.5, -12.5),
+        BackgroundColor3 = SelectedColor,
+        BorderSizePixel = 0,
+        Text = "",
+        Parent = ColorPickerFrame
+    })
+    
+    AddCorner(ColorDisplay, 6)
+    
+    local ColorStroke = Create("UIStroke", {
+        Color = Nexus.Theme.SurfaceHigh,
+        Thickness = 2,
+        Parent = ColorDisplay
+    })
+    
+    -- Simple color picker (you can expand this)
+    local ColorConnection = ColorDisplay.MouseButton1Click:Connect(function()
+        PlaySound("6895079853", 0.06)
+        
+        -- Cycle through preset colors for demo
+        local presetColors = {
+            Color3.fromRGB(255, 0, 0),    -- Red
+            Color3.fromRGB(255, 165, 0),  -- Orange
+            Color3.fromRGB(255, 255, 0),  -- Yellow
+            Color3.fromRGB(0, 255, 0),    -- Green
+            Color3.fromRGB(0, 0, 255),    -- Blue
+            Color3.fromRGB(75, 0, 130),   -- Indigo
+            Color3.fromRGB(238, 130, 238) -- Violet
+        }
+        
+        local currentIndex = table.find(presetColors, SelectedColor) or 0
+        local nextIndex = (currentIndex % #presetColors) + 1
+        SelectedColor = presetColors[nextIndex]
+        
+        ColorDisplay.BackgroundColor3 = SelectedColor
+        
+        if Flag then
+            Nexus.Flags[Flag] = SelectedColor
+        end
+        
+        pcall(Callback, SelectedColor)
+    end)
+    
+    table.insert(Nexus.Connections, ColorConnection)
+    
+    -- Register flag
+    if Flag then
+        Nexus.Registry[Flag] = {
+            Set = function(value)
+                if typeof(value) == "Color3" then
+                    SelectedColor = value
+                    ColorDisplay.BackgroundColor3 = SelectedColor
+                    pcall(Callback, SelectedColor)
+                end
+            end,
+            Get = function()
+                return SelectedColor
+            end
+        }
+        Nexus.Flags[Flag] = SelectedColor
+    end
+    
+    return {
+        Frame = ColorPickerFrame,
+        Set = function(color)
+            if typeof(color) == "Color3" then
+                SelectedColor = color
+                ColorDisplay.BackgroundColor3 = SelectedColor
+            end
+        end,
+        Get = function()
+            return SelectedColor
+        end
+    }
+end
+
+-- 📝 CREATE TEXTBOX FUNCTION
+local function CreateTextBox(parent, config)
+    config = config or {}
+    local Text = config.Text or "TextBox"
+    local Placeholder = config.Placeholder or "Enter text..."
+    local Default = config.Default or ""
+    local Callback = config.Callback or function() end
+    local Flag = config.Flag
+    
+    local TextBoxValue = Default
+    
+    local TextBoxFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 40),
+        BackgroundColor3 = Nexus.Theme.Surface,
+        BorderSizePixel = 0,
+        Parent = parent
+    })
+    
+    AddCorner(TextBoxFrame, 8)
+    
+    local TextBoxLabel = Create("TextLabel", {
+        Size = UDim2.new(0.4, 0, 1, 0),
+        Position = UDim2.fromOffset(15, 0),
+        BackgroundTransparency = 1,
+        Text = Text,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = TextBoxFrame
+    })
+    
+    local TextBoxInput = Create("TextBox", {
+        Size = UDim2.new(0.55, -25, 0, 25),
+        Position = UDim2.new(0.45, 0, 0.5, -12.5),
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        BorderSizePixel = 0,
+        Text = TextBoxValue,
+        PlaceholderText = Placeholder,
+        TextColor3 = Nexus.Theme.Text,
+        PlaceholderColor3 = Nexus.Theme.TextSecondary,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 12,
+        ClearButtonOnFocus = false,
+        Parent = TextBoxFrame
+    })
+    
+    AddCorner(TextBoxInput, 6)
+    
+    local TextBoxStroke = Create("UIStroke", {
+        Color = Nexus.Theme.SurfaceHigh,
+        Thickness = 1,
+        Transparency = 0.7,
+        Parent = TextBoxInput
+    })
+    
+    -- TextBox interactions
+    local TextBoxConnection1 = TextBoxInput.Focused:Connect(function()
+        Tween(TextBoxStroke, {Color = Nexus.Theme.Accent, Transparency = 0.3}, 0.2)
+    end)
+    
+    local TextBoxConnection2 = TextBoxInput.FocusLost:Connect(function()
+        Tween(TextBoxStroke, {Color = Nexus.Theme.SurfaceHigh, Transparency = 0.7}, 0.2)
+        
+        TextBoxValue = TextBoxInput.Text
+        
+        if Flag then
+            Nexus.Flags[Flag] = TextBoxValue
+        end
+        
+        pcall(Callback, TextBoxValue)
+    end)
+    
+    table.insert(Nexus.Connections, TextBoxConnection1)
+    table.insert(Nexus.Connections, TextBoxConnection2)
+    
+    -- Register flag
+    if Flag then
+        Nexus.Registry[Flag] = {
+            Set = function(value)
+                TextBoxValue = tostring(value)
+                TextBoxInput.Text = TextBoxValue
+                pcall(Callback, TextBoxValue)
+            end,
+            Get = function()
+                return TextBoxValue
+            end
+        }
+        Nexus.Flags[Flag] = TextBoxValue
+    end
+    
+    return {
+        Frame = TextBoxFrame,
+        TextBox = TextBoxInput,
+        Set = function(value)
+            TextBoxValue = tostring(value)
+            TextBoxInput.Text = TextBoxValue
+        end,
+        Get = function()
+            return TextBoxValue
+        end
+    }
+end
+
+-- ⌨️ CREATE KEYBIND FUNCTION
+local function CreateKeybind(parent, config)
+    config = config or {}
+    local Text = config.Text or "Keybind"
+    local Default = config.Default or Enum.KeyCode.F
+    local Callback = config.Callback or function() end
+    local Flag = config.Flag
+    
+    local SelectedKey = Default
+    local IsBinding = false
+    
+    local KeybindFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 40),
+        BackgroundColor3 = Nexus.Theme.Surface,
+        BorderSizePixel = 0,
+        Parent = parent
+    })
+    
+    AddCorner(KeybindFrame, 8)
+    
+    local KeybindText = Create("TextLabel", {
+        Size = UDim2.new(1, -100, 1, 0),
+        Position = UDim2.fromOffset(15, 0),
+        BackgroundTransparency = 1,
+        Text = Text,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.Gotham,
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = KeybindFrame
+    })
+    
+    local KeybindButton = Create("TextButton", {
+        Size = UDim2.fromOffset(80, 25),
+        Position = UDim2.new(1, -90, 0.5, -12.5),
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        BorderSizePixel = 0,
+        Text = SelectedKey.Name,
+        TextColor3 = Nexus.Theme.Text,
+        TextScaled = true,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 12,
+        Parent = KeybindFrame
+    })
+    
+    AddCorner(KeybindButton, 6)
+    
+    local KeybindStroke = Create("UIStroke", {
+        Color = Nexus.Theme.SurfaceHigh,
+        Thickness = 1,
+        Transparency = 0.7,
+        Parent = KeybindButton
+    })
+    
+    local UserInputService = game:GetService("UserInputService")
+    
+    -- Keybind detection
+    local KeybindConnection1 = KeybindButton.MouseButton1Click:Connect(function()
+        IsBinding = true
+        KeybindButton.Text = "..."
+        Tween(KeybindStroke, {Color = Nexus.Theme.Accent, Transparency = 0.3}, 0.2)
+    end)
+    
+    local KeybindConnection2 = UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if IsBinding and input.UserInputType == Enum.UserInputType.Keyboard then
+            SelectedKey = input.KeyCode
+            KeybindButton.Text = SelectedKey.Name
+            IsBinding = false
+            Tween(KeybindStroke, {Color = Nexus.Theme.SurfaceHigh, Transparency = 0.7}, 0.2)
+            
+            if Flag then
+                Nexus.Flags[Flag] = SelectedKey
+            end
+        elseif not gameProcessed and input.KeyCode == SelectedKey then
+            pcall(Callback, SelectedKey)
+        end
+    end)
+    
+    table.insert(Nexus.Connections, KeybindConnection1)
+    table.insert(Nexus.Connections, KeybindConnection2)
+    
+    -- Register flag
+    if Flag then
+        Nexus.Registry[Flag] = {
+            Set = function(key)
+                if typeof(key) == "EnumItem" then
+                    SelectedKey = key
+                    KeybindButton.Text = SelectedKey.Name
+                end
+            end,
+            Get = function()
+                return SelectedKey
+            end
+        }
+        Nexus.Flags[Flag] = SelectedKey
+    end
+    
+    return {
+        Frame = KeybindFrame,
+        Set = function(key)
+            if typeof(key) == "EnumItem" then
+                SelectedKey = key
+                KeybindButton.Text = SelectedKey.Name
+            end
+        end,
+        Get = function()
+            return SelectedKey
+        end
+    }
+end
+
+-- 📋 CREATE SECTION FUNCTION
+local function CreateSection(parent, title)
+    title = title or "Section"
+    
+    local SectionFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 30),
+        BackgroundTransparency = 1,
+        Parent = parent
+    })
+    
+    local SectionLine = Create("Frame", {
+        Size = UDim2.new(1, -80, 0, 2),
+        Position = UDim2.fromOffset(0, 14),
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        BorderSizePixel = 0,
+        Parent = SectionFrame
+    })
+    
+    local SectionText = Create("TextLabel", {
+        Size = UDim2.fromOffset(70, 30),
+        Position = UDim2.new(1, -75, 0, 0),
+        BackgroundColor3 = Nexus.Theme.Background,
+        BorderSizePixel = 0,
+        Text = " " .. title .. " ",
+        TextColor3 = Nexus.Theme.Accent,
+        TextScaled = true,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 14,
+        Parent = SectionFrame
+    })
+    
+    AddCorner(SectionText, 4)
+    
+    return {
+        Frame = SectionFrame,
+        SetTitle = function(newTitle)
+            SectionText.Text = " " .. tostring(newTitle) .. " "
+        end
+    }
+end
+
+-- ➖ CREATE SEPARATOR FUNCTION
+local function CreateSeparator(parent)
+    local SeparatorFrame = Create("Frame", {
+        Size = UDim2.new(1, 0, 0, 15),
+        BackgroundTransparency = 1,
+        Parent = parent
+    })
+    
+    local SeparatorLine = Create("Frame", {
+        Size = UDim2.new(1, -30, 0, 1),
+        Position = UDim2.fromOffset(15, 7),
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        BackgroundTransparency = 0.5,
+        BorderSizePixel = 0,
+        Parent = SeparatorFrame
+    })
+    
+    return {
+        Frame = SeparatorFrame
+    }
+end
+
+    
+    
+    
+    
+    
+    -- 🛠️ CREATE TAB API FUNCTION
+    local function CreateTabAPI(TabPage, TabName)
+        local TabAPI = {
+            Page = TabPage,
+            Name = TabName,
+            
+            Label = function(config)
+                return CreateLabel(TabPage, config)
+            end,
+            
+            Button = function(config)
+                return CreateButton(TabPage, config)
+            end,
+            
+            Toggle = function(config)
+                return CreateToggle(TabPage, config)
+            end,
+            
+            Slider = function(config)
+                return CreateSlider(TabPage, config)
+            end,
+            
+            Dropdown = function(config)
+                return CreateDropdown(TabPage, config)
+            end,
+            
+            ColorPicker = function(config)
+                return CreateColorPicker(TabPage, config)
+            end,
+            
+            TextBox = function(config)
+                return CreateTextBox(TabPage, config)
+            end,
+            
+            Keybind = function(config)
+                return CreateKeybind(TabPage, config)
+            end,
+            
+            Section = function(title)
+                return CreateSection(TabPage, title or "Section")
+            end,
+            
+            Separator = function()
+                return CreateSeparator(TabPage)
+            end
+        }
+        
+        return TabAPI
+    end
+    
+    -- 📍 SEKARANG WINDOWAPI BISA MENGGUNAKAN CreateTab
     local WindowAPI = {
         SetTitle = function(newTitle)
             WindowTitle.Text = tostring(newTitle or "")
@@ -3893,7 +5148,7 @@ function Nexus:Window(config)
             AppIcon.Text = tostring(newIcon or "🚀")
         end,
         Tab = function(config)
-            return CreateTab(config)
+            return CreateTab(config)  -- ✅ SEKARANG BERFUNGSI
         end,
         Notify = Nexus.Notify,
         SetTheme = Nexus.SetTheme,
@@ -3906,6 +5161,8 @@ function Nexus:Window(config)
             -- Cleanup connections
             for _, connection in pairs(Nexus.Connections) do
                 if connection and typeof(connection) == "RBXScriptConnection" then
+                    connection:Disconnect()
+                elseif connection and connection.Disconnect then
                     connection:Disconnect()
                 end
             end
@@ -3955,6 +5212,7 @@ function Nexus:Window(config)
             end
         end
     }
+
     
     return WindowAPI
 end
