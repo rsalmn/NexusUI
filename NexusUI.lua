@@ -1508,7 +1508,7 @@ function Nexus:Window(config)
     
     -- Window state management
     local IsMinimized = false
-    -- [[ FIX: Floating Bubble Profile ]]
+    -- [[ FIX FINAL: Floating Bubble & Clipping ]]
     local ToggleButton = nil
     
     local function CreateMobileToggle()
@@ -1521,14 +1521,14 @@ function Nexus:Window(config)
         local content, isReady = pcall(function() 
             return Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
         end)
-        if not isReady then content = "rbxassetid://0" end -- Fallback jika gagal
+        if not isReady then content = "rbxassetid://0" end 
         
         -- Buat Tombol Bulat
         ToggleButton = Create("ImageButton", {
             Name = "NexusToggle",
             Image = content,
             BackgroundColor3 = Nexus.Theme.Surface,
-            Size = UDim2.fromOffset(0, 0), -- Mulai dari 0 untuk animasi pop-up
+            Size = UDim2.fromOffset(0, 0), 
             Position = UDim2.new(0.1, 0, 0.1, 0),
             Parent = ScreenGui,
             ZIndex = 9999
@@ -1539,48 +1539,57 @@ function Nexus:Window(config)
         AddShadow(ToggleButton, 10, 0.6)
         MakeDraggable(ToggleButton, ToggleButton)
         
-        -- Animasi Muncul
+        -- Animasi Muncul Bubble
         Tween(ToggleButton, {Size = UDim2.fromOffset(50, 50)}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
         
-        -- Logic Saat Tombol Bulat Ditekan (Restore Menu)
+        -- Logic Saat Bubble Ditekan (Buka Menu)
         ToggleButton.MouseButton1Click:Connect(function()
             --PlaySound("6895079853", 0.1)
             
-            -- 1. [FIX] Nyalakan Blur Kembali
+            -- 1. Nyalakan Blur
             SetBlur(true, 8)
             
-            -- Animasi Tombol Menghilang
-            Tween(ToggleButton, {Size = UDim2.fromOffset(0, 0)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
-            task.wait(0.3)
+            -- 2. Hancurkan Bubble
+            if ToggleButton then
+                Tween(ToggleButton, {Size = UDim2.fromOffset(0, 0)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+                task.wait(0.25)
+                ToggleButton:Destroy()
+                ToggleButton = nil
+            end
             
-            if ToggleButton then ToggleButton:Destroy() end
-            ToggleButton = nil
             IsMinimized = false
+            MinimizeButton.Text = "─"
             
-            -- Munculkan Menu Utama
+            -- 3. Persiapkan Menu Utama
             MainWindow.Visible = true
+            -- [PENTING] Set True dulu biar konten tidak berantakan saat membesar
+            MainWindow.ClipsDescendants = true 
             
-            -- Animasi Menu Membesar
+            -- 4. Animasi Membesar ke Ukuran Asli
             Tween(MainWindow, {
-                Size = OriginalSize,
+                Size = OriginalSize, -- Menggunakan ukuran asli yang disimpan
                 BackgroundTransparency = 0 
             }, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
             
-            -- [FIX] Munculkan Shadow Kembali (PENTING)
+            -- 5. Restore Shadow Transparency
             local shadow = MainWindow:FindFirstChild("DropShadow")
             if shadow then 
                 Tween(shadow, {ImageTransparency = 0.6}, 0.4) 
             end
             
-            -- [FIX] Matikan Clipping agar TIDAK TERPOTONG
-            -- Kita beri delay sedikit lebih lama dari animasi (0.4s) biar aman
-            task.delay(0.45, function()
-                if MainWindow and MainWindow.Parent then 
-                    MainWindow.ClipsDescendants = false 
+            -- 6. [FIX UTAMA] Matikan Clipping SETELAH animasi selesai
+            task.delay(0.4, function()
+                if MainWindow and MainWindow.Parent then
+                    -- Matikan clipping agar shadow/glow yang keluar frame terlihat lagi
+                    MainWindow.ClipsDescendants = false
+                    
+                    -- Force update (trik untuk memaksa Roblox render ulang shadow)
+                    local oldZ = MainWindow.ZIndex
+                    MainWindow.ZIndex = oldZ + 1
+                    task.wait()
+                    MainWindow.ZIndex = oldZ
                 end
             end)
-            
-            MinimizeButton.Text = "─"
         end)
     end
     
@@ -1589,27 +1598,30 @@ function Nexus:Window(config)
     -- Minimize functionality (Floating Bubble Mode)
     MinimizeButton.MouseButton1Click:Connect(function()
         IsMinimized = true
+        --PlaySound("6895079853", 0.1)
         
-        -- 1. [FIX] Matikan Blur saat minimize
+        -- 1. Matikan Blur
         SetBlur(false)
         
-        -- 2. Aktifkan Clipping biar konten rapi saat mengecil
+        -- 2. [PENTING] Potong konten yang keluar batas (Shadow, dll) sebelum mengecil
         MainWindow.ClipsDescendants = true 
         
-        -- Sembunyikan shadow
+        -- 3. Sembunyikan Shadow agar transisi mulus
         local shadow = MainWindow:FindFirstChild("DropShadow")
         if shadow then Tween(shadow, {ImageTransparency = 1}, 0.2) end
 
-        -- Animasi Menu Mengecil & Hilang
+        -- 4. Animasi Mengecil
         Tween(MainWindow, {
             Size = UDim2.fromOffset(0, 0),
             BackgroundTransparency = 1
         }, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In)
         
-        -- Tunggu animasi selesai, lalu munculkan Bubble
-        task.delay(0.3, function()
-            MainWindow.Visible = false
-            CreateMobileToggle()
+        -- 5. Tunggu animasi selesai, sembunyikan menu, munculkan bubble
+        task.delay(0.35, function()
+            if IsMinimized then -- Cek safety
+                MainWindow.Visible = false
+                CreateMobileToggle()
+            end
         end)
     end)
     
