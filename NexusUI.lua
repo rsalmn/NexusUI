@@ -2077,25 +2077,24 @@ function Nexus:Window(config)
         }
     end
     
-    -- Tab creation function (Ubah jadi local function CreateTab)
-    local function CreateTab(config) -- GANTI BARIS INI
+    local function CreateTab(config)
         if not config then config = {} end
         
         local Name = config.Name or config.Text or "Tab"
         local Icon = config.Icon or "📄"
         local Visible = config.Visible ~= false
         
-        -- Create tab data
+        -- [PERBAIKAN 1] Mengganti .Button menjadi .TabBtn agar tidak bentrok dengan fungsi Button()
         local Tab = {
             Name = Name,
             Icon = Icon,
             Visible = Visible,
             Elements = {},
             Page = nil,
-            Button = nil
+            TabBtn = nil 
         }
         
-        -- Tab button
+        -- Membuat Tombol Tab (Tab Button)
         local TabButton = Create("TextButton", {
             Text = "",
             BackgroundColor3 = Nexus.Theme.SurfaceHigh,
@@ -2112,15 +2111,14 @@ function Nexus:Window(config)
             AddStroke(TabButton, Nexus.Theme.Accent, 1, 0.4)
         end
         
-        -- Tab content container
         local TabContent = Create("Frame", {
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 1, 0),
             Parent = TabButton
         })
         
-        -- Tab icon
-        local TabIcon = Create("TextLabel", {
+        -- [PERBAIKAN 2] Rename variabel lokal agar jelas ini adalah Objek GUI
+        local TabIconObj = Create("TextLabel", {
             Text = Icon,
             Font = Enum.Font.GothamBold,
             TextSize = 16,
@@ -2131,8 +2129,7 @@ function Nexus:Window(config)
             Parent = TabContent
         })
         
-        -- Tab name
-        local TabName = Create("TextLabel", {
+        local TabNameObj = Create("TextLabel", {
             Text = Name,
             Font = Enum.Font.GothamMedium,
             TextSize = 14,
@@ -2145,7 +2142,7 @@ function Nexus:Window(config)
             Parent = TabContent
         })
         
-        -- Tab page
+        -- Membuat Halaman (Page) untuk Tab ini
         local TabPage = Create("ScrollingFrame", {
             BackgroundTransparency = 1,
             Size = UDim2.new(1, 0, 1, 0),
@@ -2164,87 +2161,78 @@ function Nexus:Window(config)
             Parent = TabPage
         })
         
-        -- Update page canvas
+        -- Auto-resize canvas saat konten bertambah
         PageLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
             if TabPage and TabPage.Parent then
                 TabPage.CanvasSize = UDim2.fromOffset(0, PageLayout.AbsoluteContentSize.Y + 32)
             end
         end)
         
-        Tab.Button = TabButton
+        -- Simpan referensi ke objek Tab (Gunakan .TabBtn)
+        Tab.TabBtn = TabButton
         Tab.Page = TabPage
         
-        -- Set as active if first tab
+        -- Set Tab Pertama sebagai Aktif Otomatis
         if not ActiveTab then
             ActiveTab = Tab
             TabButton.BackgroundTransparency = 0.3
-            TabIcon.TextColor3 = Nexus.Theme.Accent
-            TabName.TextColor3 = Nexus.Theme.Text
+            TabIconObj.TextColor3 = Nexus.Theme.Accent
+            TabNameObj.TextColor3 = Nexus.Theme.Text
             TabPage.Visible = true
         end
         
-        -- Tab selection
-        -- Tab selection logic (Fixed)
+        -- [PERBAIKAN 3] Logika Klik Tab (Menggunakan .TabBtn yang baru)
         TabButton.MouseButton1Click:Connect(function()
-            -- Play Sound
-            -- PlaySound("6895079853", 0.05, 1.1) 
+            -- Play Sound (Optional)
+            -- PlaySound("6895079853", 0.05, 1.1)
 
-            -- 1. Matikan Tab Lama (Deactivate)
+            -- Nonaktifkan Tab Lama
             if ActiveTab then
-                -- Animasi Button Background
-                Tween(ActiveTab.Button, {BackgroundTransparency = 0.8}, 0.2)
+                -- Gunakan ActiveTab.TabBtn (bukan .Button)
+                Tween(ActiveTab.TabBtn, {BackgroundTransparency = 0.8}, 0.2)
                 
-                -- Hapus Stroke (Garis Pinggir)
-                local oldStroke = ActiveTab.Button:FindFirstChild("UIStroke")
+                local oldStroke = ActiveTab.TabBtn:FindFirstChild("UIStroke")
                 if oldStroke then oldStroke:Destroy() end
                 
-                -- Animasi Warna Teks & Icon (Looping agar kena SEMUA)
-                local contentFrame = ActiveTab.Button:FindFirstChild("Frame")
-                if contentFrame then
-                    for _, child in ipairs(contentFrame:GetChildren()) do
+                -- Reset warna text & icon tab lama
+                local content = ActiveTab.TabBtn:FindFirstChild("Frame")
+                if content then
+                    for _, child in ipairs(content:GetChildren()) do
                         if child:IsA("TextLabel") then
                             Tween(child, {TextColor3 = Nexus.Theme.TextSub}, 0.2)
                         end
                     end
                 end
                 
-                -- Sembunyikan Halaman Lama
-                if ActiveTab.Page then
-                    ActiveTab.Page.Visible = false
-                end
+                if ActiveTab.Page then ActiveTab.Page.Visible = false end
             end
             
-            -- 2. Aktifkan Tab Baru (Activate)
-            ActiveTab = Tab -- Simpan referensi tab sekarang
+            -- Aktifkan Tab Baru (Tab yang diklik)
+            ActiveTab = Tab
             
-            -- Animasi Button Baru
             Tween(TabButton, {BackgroundTransparency = 0.3}, 0.2)
             AddStroke(TabButton, Nexus.Theme.Accent, 1, 0.4)
             
-            -- Animasi Warna Teks & Icon Baru (Gunakan variabel lokal TabIcon/TabName yang sudah ada)
-            if TabIcon then Tween(TabIcon, {TextColor3 = Nexus.Theme.Accent}, 0.2) end
-            if TabName then Tween(TabName, {TextColor3 = Nexus.Theme.Text}, 0.2) end
+            Tween(TabIconObj, {TextColor3 = Nexus.Theme.Accent}, 0.2)
+            Tween(TabNameObj, {TextColor3 = Nexus.Theme.Text}, 0.2)
             
-            -- Tampilkan Halaman Baru
-            if TabPage then
-                TabPage.Visible = true
-            end
+            TabPage.Visible = true
         end)
         
-        -- Hover effects
+        -- Hover Effects
         TabButton.MouseEnter:Connect(function()
             if ActiveTab ~= Tab then
                 Tween(TabButton, {BackgroundTransparency = 0.6}, 0.15)
-                Tween(TabIcon, {TextColor3 = Nexus.Theme.Accent}, 0.15)
-                Tween(TabName, {TextColor3 = Nexus.Theme.Text}, 0.15)
+                Tween(TabIconObj, {TextColor3 = Nexus.Theme.Accent}, 0.15)
+                Tween(TabNameObj, {TextColor3 = Nexus.Theme.Text}, 0.15)
             end
         end)
         
         TabButton.MouseLeave:Connect(function()
             if ActiveTab ~= Tab then
                 Tween(TabButton, {BackgroundTransparency = 0.8}, 0.15)
-                Tween(TabIcon, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
-                Tween(TabName, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
+                Tween(TabIconObj, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
+                Tween(TabNameObj, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
             end
         end)
         
