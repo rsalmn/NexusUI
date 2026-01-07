@@ -456,23 +456,23 @@ local function CreateModernDropdown(cfg, ParentFrame)
     local MainFrame = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.Surface,
         Size = UDim2.new(1, 0, 0, baseHeight),
-        ClipsDescendants = true,
+        ClipsDescendants = false, -- PENTING!
         Parent = ParentFrame,
-        ZIndex = 5
+        ZIndex = 20 -- ZIndex tinggi
     })
     
     if not MainFrame then return nil end
     
     AddCorner(MainFrame, 8)
     AddStroke(MainFrame, Nexus.Theme.Outline, 1, 0.4)
-    local shadow = AddShadow(MainFrame, 4, 0.9)
+    AddShadow(MainFrame, 4, 0.9) -- Shadow sekarang akan terlihat
     
     -- Header section
     local Header = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-        Size = UDim2.new(1, 0, 0, baseHeight),
+        Size = UDim2.new(1, 0, 1, 0), -- Full size dari MainFrame
         Parent = MainFrame,
-        ZIndex = 6
+        ZIndex = 21
     })
     
     AddCorner(Header, 8)
@@ -493,14 +493,10 @@ local function CreateModernDropdown(cfg, ParentFrame)
     
     -- Icon
     local Icon = Create("TextLabel", {
-        Text = MultiSelect and "☰" or "▼",
-        Font = Enum.Font.GothamBold,
-        TextSize = 14,
-        TextColor3 = Nexus.Theme.Accent,
-        BackgroundTransparency = 1,
-        Position = UDim2.new(0, 12, 0, 0),
-        Size = UDim2.new(0, 20, 1, 0),
-        Parent = Header
+        Text = MultiSelect and "☰" or "▼", Font = Enum.Font.GothamBold, TextSize = 14,
+        TextColor3 = Nexus.Theme.Accent, BackgroundTransparency = 1,
+        Position = UDim2.new(0, 12, 0, 0), Size = UDim2.new(0, 20, 1, 0),
+        Parent = Header, ZIndex = 22
     })
     
     -- Label
