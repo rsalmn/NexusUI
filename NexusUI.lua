@@ -1739,17 +1739,19 @@ function Nexus:Window(config)
     -- Tab Container Gradient
     local TabGradient = Create("UIGradient", {
         Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, Color3.new(1.02, 1.02, 1.02)),
-            ColorSequenceKeypoint.new(1, Color3.new(0.98, 0.98, 0.98))
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
         },
         Rotation = 90,
         Transparency = NumberSequence.new{
-            NumberSequenceKeypoint.new(0, 0.95),
-            NumberSequenceKeypoint.new(1, 0.98)
+            NumberSequenceKeypoint.new(0, 0.1),
+            NumberSequenceKeypoint.new(0.5, 0.05),
+            NumberSequenceKeypoint.new(1, 0.15)
         },
         Parent = TabContainer
     })
-    
+
     -- Tab List
     local TabList = Create("ScrollingFrame", {
         BackgroundTransparency = 1,
@@ -1787,16 +1789,32 @@ function Nexus:Window(config)
     -- Page Container Gradient
     local PageGradient = Create("UIGradient", {
         Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, Color3.new(1.01, 1.01, 1.01)),
-            ColorSequenceKeypoint.new(1, Color3.new(0.99, 0.99, 0.99))
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Background),
+            ColorSequenceKeypoint.new(0.5, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.Background)
         },
         Rotation = 180,
         Transparency = NumberSequence.new{
-            NumberSequenceKeypoint.new(0, 0.98),
-            NumberSequenceKeypoint.new(1, 0.96)
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(0.5, 0.02),
+            NumberSequenceKeypoint.new(1, 0.08)
         },
         Parent = PageContainer
     })
+    
+    -- Auto-update dengan theme changes
+    local pageGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
+        if PageGradient and PageGradient.Parent then
+            PageGradient.Color = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, Nexus.Theme.Background),
+                ColorSequenceKeypoint.new(0.5, Nexus.Theme.Surface),
+                ColorSequenceKeypoint.new(1, Nexus.Theme.Background)
+            }
+        end
+    end)
+    
+    table.insert(Nexus.Connections, pageGradientConnection)
+
     
     -- Page Padding
     local PagePadding = Create("UIPadding", {
@@ -1885,16 +1903,32 @@ function Nexus:Window(config)
         -- Gradient overlay
         local NotificationGradient = Create("UIGradient", {
             Color = ColorSequence.new{
-                ColorSequenceKeypoint.new(0, Color3.new(1.03, 1.03, 1.03)),
-                ColorSequenceKeypoint.new(1, Color3.new(0.97, 0.97, 0.97))
+                ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+                ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+                ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
             },
             Rotation = 45,
             Transparency = NumberSequence.new{
-                NumberSequenceKeypoint.new(0, 0.9),
-                NumberSequenceKeypoint.new(1, 0.85)
+                NumberSequenceKeypoint.new(0, 0.05),
+                NumberSequenceKeypoint.new(0.5, 0.02),
+                NumberSequenceKeypoint.new(1, 0.08)
             },
-            Parent = Notification
+            Parent = NotifFrame  -- Pastikan parent benar
         })
+        
+        -- Auto-update dengan theme changes
+        local notifGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
+            if NotificationGradient and NotificationGradient.Parent then
+                NotificationGradient.Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+                }
+            end
+        end)
+        
+        table.insert(Nexus.Connections, notifGradientConnection)
+
         
         -- Progress bar
         local ProgressBar = Create("Frame", {
@@ -2324,18 +2358,56 @@ function Nexus:Window(config)
             AddCorner(ButtonFrame, 8)
             AddStroke(ButtonFrame, Nexus.Theme.Outline, 1, 0.4)
             
+            -- Base gradient
             local ButtonGradient = Create("UIGradient", {
                 Color = ColorSequence.new{
-                    ColorSequenceKeypoint.new(0, Color3.new(1.02, 1.02, 1.02)),
-                    ColorSequenceKeypoint.new(1, Color3.new(0.98, 0.98, 0.98))
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
                 },
                 Rotation = 90,
                 Transparency = NumberSequence.new{
-                    NumberSequenceKeypoint.new(0, 0.95),
-                    NumberSequenceKeypoint.new(1, 0.9)
+                    NumberSequenceKeypoint.new(0, 0.05),
+                    NumberSequenceKeypoint.new(0.5, 0.02),
+                    NumberSequenceKeypoint.new(1, 0.08)
                 },
                 Parent = ButtonFrame
             })
+            
+            -- Hover state enhancement
+            ButtonFrame.MouseEnter:Connect(function()
+                Tween(ButtonGradient, {
+                    Transparency = NumberSequence.new{
+                        NumberSequenceKeypoint.new(0, 0.02),
+                        NumberSequenceKeypoint.new(0.5, 0),
+                        NumberSequenceKeypoint.new(1, 0.05)
+                    }
+                }, 0.15)
+            end)
+            
+            ButtonFrame.MouseLeave:Connect(function()
+                Tween(ButtonGradient, {
+                    Transparency = NumberSequence.new{
+                        NumberSequenceKeypoint.new(0, 0.05),
+                        NumberSequenceKeypoint.new(0.5, 0.02),
+                        NumberSequenceKeypoint.new(1, 0.08)
+                    }
+                }, 0.15)
+            end)
+            
+            -- Theme update connection
+            local buttonGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
+                if ButtonGradient and ButtonGradient.Parent then
+                    ButtonGradient.Color = ColorSequence.new{
+                        ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+                        ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+                        ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+                    }
+                end
+            end)
+            
+            table.insert(Nexus.Connections, buttonGradientConnection)
+
             
             local Button = Create("TextButton", {
                 Text = "",
