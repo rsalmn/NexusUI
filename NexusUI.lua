@@ -1336,7 +1336,7 @@ function Nexus:Window(config)
     -- Window Gradient Background
     local WindowGradient = Create("UIGradient", {
         Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, Color3.new(1.05, 1.05, 1.05)),
+            ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),      -- BENAR: maksimal 1.0
             ColorSequenceKeypoint.new(1, Color3.new(0.95, 0.95, 0.95))
         },
         Rotation = 135,
