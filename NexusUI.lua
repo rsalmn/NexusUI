@@ -488,103 +488,338 @@ function Nexus:Window(config)
             list:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function() if open then Tween(f, {Size=UDim2.new(1,0,0, 42+list.AbsoluteContentSize.Y+20)}, 0.1) end end)
             return CreateControls(content)
         end
+        
         function Item:Dropdown(cfg)
-            local f = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Surface,
-                Size = UDim2.new(1,0,0,42),
-                ClipsDescendants = true,
-                Parent = ParentFrame
-            })
-            AddCorner(f, 6)
-
-            local label = Create("TextLabel", {
-                Text = cfg.Text,
-                Font = Enum.Font.GothamMedium,
-                TextSize = 14,
-                TextColor3 = Nexus.Theme.Text,
-                BackgroundTransparency = 1,
-                Position = UDim2.new(0,12,0,0),
-                Size = UDim2.new(0.7,0,0,42),
-                TextXAlignment = Enum.TextXAlignment.Left,
-                Parent = f
-            })
-
-            local arrow = Create("TextLabel", {
-                Text = "v",
-                Font = Enum.Font.GothamBold,
-                TextSize = 14,
-                TextColor3 = Nexus.Theme.TextSub,
-                BackgroundTransparency = 1,
-                Position = UDim2.new(1,-30,0,0),
-                Size = UDim2.new(0,30,0,42),
-                Parent = f
-            })
-
-            local button = Create("TextButton", {
-                Text = "",
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1,0,0,42),
-                Parent = f
-            })
-
-            local container = Create("Frame", {
-                BackgroundTransparency = 1,
-                Position = UDim2.new(0,0,0,42),
-                Size = UDim2.new(1,0,0,0),
-                Parent = f
-            })
-
-            local layout = Create("UIListLayout", {
-                Parent = container,
-                Padding = UDim.new(0,4)
-            })
-
-            local open = false
-
-            local function toggle()
-                open = not open
-                Tween(arrow, {Rotation = open and 180 or 0}, 0.2)
-                Tween(f, {
-                    Size = UDim2.new(1,0,0, open and (42 + (#cfg.Options * 30) + 8) or 42)
-                }, 0.25)
+    -- ========================================
+    -- 1. INPUT VALIDATION & SANITIZATION
+    -- ========================================
+    if not cfg or type(cfg) ~= "table" then
+        warn("[NexusUI Dropdown] Invalid config")
+        return nil
+    end
+    
+    -- ✅ FIX: Validate Options is a table
+    local Options = cfg.Options
+    if not Options or type(Options) ~= "table" then
+        warn("[NexusUI Dropdown] Options must be a table, got: " .. type(Options))
+        Options = {"No Options"}
+    end
+    
+    -- ✅ FIX: Handle empty Options array
+    if #Options == 0 then
+        warn("[NexusUI Dropdown] Empty Options array, using placeholder")
+        Options = {"No Options Available"}
+    end
+    
+    -- ✅ FIX: Validate each option value
+    local ValidOptions = {}
+    for i, opt in ipairs(Options) do
+        if opt ~= nil then
+            table.insert(ValidOptions, tostring(opt))
+        else
+            warn("[NexusUI Dropdown] Skipping nil option at index " .. i)
+        end
+    end
+    
+    if #ValidOptions == 0 then
+        ValidOptions = {"No Valid Options"}
+    end
+    
+    local Text = cfg.Text or "Dropdown"
+    local Default = cfg.Default
+    local Callback = cfg.Callback
+    local Flag = cfg.Flag
+    
+    -- Validate Default exists in Options
+    if Default ~= nil then
+        local found = false
+        for _, v in ipairs(ValidOptions) do
+            if v == Default then
+                found = true
+                break
             end
+        end
+        if not found then
+            warn("[NexusUI Dropdown] Default '" .. tostring(Default) .. "' not in options")
+            Default = ValidOptions[1]
+        end
+    else
+        Default = ValidOptions[1]
+    end
+    
+    -- Validate Callback
+    if Callback and type(Callback) ~= "function" then
+        warn("[NexusUI Dropdown] Callback must be a function")
+        Callback = function() end
+    end
+    
+    -- ========================================
+    -- 2. GUI CREATION
+    -- ========================================
+    local f = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.new(1,0,0,42),
+        ClipsDescendants = true,
+        Parent = ParentFrame
+    })
+    AddCorner(f, 6)
 
-            button.MouseButton1Click:Connect(toggle)
+    local label = Create("TextLabel", {
+        Text = Text .. ": " .. tostring(Default),
+        Font = Enum.Font.GothamMedium,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.Text,
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0,12,0,0),
+        Size = UDim2.new(0.7,0,0,42),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = f
+    })
 
-            for _, opt in ipairs(cfg.Options) do
-                local optBtn = Create("TextButton", {
-                    Text = opt,
-                    Font = Enum.Font.Gotham,
-                    TextSize = 13,
-                    TextColor3 = Nexus.Theme.TextSub,
-                    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-                    Size = UDim2.new(1,-12,0,28),
-                    Parent = container
-                })
-                AddCorner(optBtn, 4)
+    local arrow = Create("TextLabel", {
+        Text = "v",
+        Font = Enum.Font.GothamBold,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.TextSub,
+        BackgroundTransparency = 1,
+        Position = UDim2.new(1,-30,0,0),
+        Size = UDim2.new(0,30,0,42),
+        Parent = f
+    })
 
-                optBtn.MouseButton1Click:Connect(function()
-                    label.Text = cfg.Text .. ": " .. opt
-                    toggle()
-                    cfg.Callback(opt)
-                    if cfg.Flag then Nexus.Flags[cfg.Flag] = opt end
-                end)
-            end
+    local button = Create("TextButton", {
+        Text = "",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1,0,0,42),
+        Parent = f
+    })
 
-            if cfg.Flag then
-                Nexus.Registry[cfg.Flag] = {
-                    Set = function(v)
-                        label.Text = cfg.Text .. ": " .. tostring(v)
-                    end
-                }
-            end
+    local container = Create("Frame", {
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0,0,0,42),
+        Size = UDim2.new(1,0,0,0),
+        Parent = f
+    })
 
-            Nexus.ThemeChanged.Event:Connect(function()
-                f.BackgroundColor3 = Nexus.Theme.Surface
-                label.TextColor3 = Nexus.Theme.Text
-                arrow.TextColor3 = Nexus.Theme.TextSub
+    local layout = Create("UIListLayout", {
+        Parent = container,
+        Padding = UDim.new(0,4)
+    })
+
+    -- ========================================
+    -- 3. STATE MANAGEMENT
+    -- ========================================
+    local CurrentValue = Default
+    local IsOpen = false
+    local OptionButtons = {}
+    
+    -- ========================================
+    -- 4. RENDER OPTIONS (SAFE ITERATION)
+    -- ========================================
+    local function RenderOptions()
+        -- Clear existing buttons
+        for _, btn in pairs(OptionButtons) do
+            pcall(function()
+                if btn and btn.Parent then
+                    btn:Destroy()
+                end
             end)
         end
+        OptionButtons = {}
+        
+        -- ✅ FIX: Safe iteration with nil checks
+        if not ValidOptions or type(ValidOptions) ~= "table" then
+            warn("[NexusUI Dropdown] Cannot render: ValidOptions invalid")
+            return
+        end
+        
+        for _, opt in ipairs(ValidOptions) do
+            if opt == nil then continue end -- Skip nil values
+            
+            local optBtn = Create("TextButton", {
+                Text = tostring(opt),
+                Font = Enum.Font.Gotham,
+                TextSize = 13,
+                TextColor3 = Nexus.Theme.TextSub,
+                BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                Size = UDim2.new(1,-12,0,28),
+                Parent = container
+            })
+            AddCorner(optBtn, 4)
+            
+            -- Highlight if selected
+            if opt == CurrentValue then
+                optBtn.TextColor3 = Nexus.Theme.Accent
+                optBtn.BackgroundColor3 = Color3.fromRGB(
+                    Nexus.Theme.Accent.R * 255 * 0.2,
+                    Nexus.Theme.Accent.G * 255 * 0.2,
+                    Nexus.Theme.Accent.B * 255 * 0.2
+                )
+            end
+
+            optBtn.MouseButton1Click:Connect(function()
+                CurrentValue = opt
+                label.Text = Text .. ": " .. tostring(opt)
+                Toggle()
+                
+                -- Safe callback execution
+                if Callback and type(Callback) == "function" then
+                    pcall(function()
+                        Callback(opt)
+                    end)
+                end
+                
+                if Flag then 
+                    Nexus.Flags[Flag] = opt 
+                end
+                
+                -- Re-render to update highlights
+                RenderOptions()
+            end)
+            
+            table.insert(OptionButtons, optBtn)
+        end
+    end
+    
+    -- ========================================
+    -- 5. TOGGLE FUNCTION
+    -- ========================================
+    function Toggle()
+        IsOpen = not IsOpen
+        
+        -- Safe height calculation
+        local optionCount = #ValidOptions
+        local targetHeight = IsOpen and (42 + (optionCount * 32) + 8) or 42
+        
+        Tween(arrow, {Rotation = IsOpen and 180 or 0}, 0.2)
+        Tween(f, {Size = UDim2.new(1,0,0, targetHeight)}, 0.25)
+    end
+
+    button.MouseButton1Click:Connect(Toggle)
+    
+    -- Initial render
+    RenderOptions()
+    
+    -- ========================================
+    -- 6. PUBLIC API (REFRESH METHOD)
+    -- ========================================
+    local DropdownInstance = {}
+    
+    function DropdownInstance:Refresh(newOptions)
+        -- Validate input
+        if not newOptions or type(newOptions) ~= "table" then
+            warn("[NexusUI Dropdown] Refresh failed: newOptions must be table")
+            return false
+        end
+        
+        -- Handle empty array
+        if #newOptions == 0 then
+            newOptions = {"No Options Available"}
+            warn("[NexusUI Dropdown] Refresh with empty array")
+        end
+        
+        -- Filter out nil values
+        local filteredOptions = {}
+        for _, opt in ipairs(newOptions) do
+            if opt ~= nil then
+                table.insert(filteredOptions, tostring(opt))
+            end
+        end
+        
+        if #filteredOptions == 0 then
+            filteredOptions = {"No Valid Options"}
+        end
+        
+        ValidOptions = filteredOptions
+        
+        -- Reset selection if current value no longer exists
+        local found = false
+        for _, v in ipairs(ValidOptions) do
+            if v == CurrentValue then
+                found = true
+                break
+            end
+        end
+        
+        if not found then
+            CurrentValue = ValidOptions[1](label.Text) = Text .. ": " .. tostring(CurrentValue)
+        end
+        
+        -- Close dropdown before refresh
+        if IsOpen then
+            Toggle()
+        end
+        
+        RenderOptions()
+        return true
+    end
+    
+    function DropdownInstance:Set(value)
+        local found = false
+        for _, v in ipairs(ValidOptions) do
+            if v == value then
+                found = true
+                break
+            end
+        end
+        
+        if found then
+            CurrentValue = value
+            label.Text = Text .. ": " .. tostring(value)
+            RenderOptions()
+            return true
+        else
+            warn("[NexusUI Dropdown] Set failed: value not in options")
+            return false
+        end
+    end
+    
+    function DropdownInstance:Get()
+        return CurrentValue
+    end
+    
+    function DropdownInstance:Destroy()
+        pcall(function()
+            if f and f.Parent then
+                f:Destroy()
+            end
+        end)
+    end
+    
+    -- ========================================
+    -- 7. FLAG REGISTRY
+    -- ========================================
+    if Flag then
+        Nexus.Registry[Flag] = DropdownInstance
+    end
+    
+    -- ========================================
+    -- 8. THEME UPDATES
+    -- ========================================
+    local themeConn = Nexus.ThemeChanged.Event:Connect(function()
+        if not f or not f.Parent then
+            themeConn:Disconnect()
+            return
+        end
+        
+        f.BackgroundColor3 = Nexus.Theme.Surface
+        label.TextColor3 = Nexus.Theme.Text
+        arrow.TextColor3 = Nexus.Theme.TextSub
+        
+        -- Update all option buttons
+        for _, btn in pairs(OptionButtons) do
+            if btn and btn.Parent then
+                btn.BackgroundColor3 = Nexus.Theme.SurfaceHigh
+                btn.TextColor3 = Nexus.Theme.TextSub
+            end
+        end
+        
+        RenderOptions() -- Re-render to apply theme
+    end)
+    
+    return DropdownInstance
+end
+
         
         function Item:SearchableDropdown(cfg)
             local f = Create("Frame", {
