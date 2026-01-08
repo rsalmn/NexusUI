@@ -581,7 +581,7 @@ local function CreateModernDropdown(cfg, ParentFrame)
         ClipsDescendants = true,
         Visible = false, 
         Parent = MainFrame,
-        ZIndex = 50 -- Paling atas agar menutupi elemen lain
+        ZIndex = 100 -- Paling atas agar menutupi elemen lain
     })
     AddCorner(DropdownContainer, 8)
     AddStroke(DropdownContainer, Nexus.Theme.Outline, 1, 0.4)
@@ -663,6 +663,8 @@ local function CreateModernDropdown(cfg, ParentFrame)
                     CurrentValue = option; Label.Text = UpdateLabel()
                     -- Close Logic
                     IsOpen = false
+                    MainFrame.ZIndex = 20
+
                     Tween(Arrow, {Rotation = 0}, 0.2)
                     Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, 0)}, 0.2)
                     task.wait(0.2)
@@ -684,11 +686,18 @@ local function CreateModernDropdown(cfg, ParentFrame)
         Tween(Arrow, {Rotation = IsOpen and 180 or 0, TextColor3 = IsOpen and Nexus.Theme.Accent or Nexus.Theme.TextSub}, 0.2)
         
         if IsOpen then
+            MainFrame.ZIndex = 200
             DropdownContainer.Visible = true
             Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, targetHeight)}, 0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
         else
             Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, 0)}, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
-            task.delay(0.2, function() if not IsOpen then DropdownContainer.Visible = false end end)
+            task.delay(0.2, function() 
+                if not IsOpen then 
+                    DropdownContainer.Visible = false 
+                    -- [FIX UTAMA] Kembalikan ZIndex normal setelah tutup
+                    MainFrame.ZIndex = 20 
+                end 
+            end)
         end
     end
     
