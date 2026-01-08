@@ -1,9 +1,3 @@
---[[ 
-    NEXUS UI (v4.0 - Enhanced Edition)
-    ✨ New Features: Modern Dropdown, Error Prevention, Performance Boost
-    🎨 Design: Glassmorphism, Smooth Animations, Better UX
-]]
-
 local Nexus = {
     Flags = {}, 
     Registry = {}, 
@@ -3154,10 +3148,7 @@ function Nexus:Window(config)
             }
         end
 
-        -- [[ FITUR COLLAPSIBLE (NESTED / BERSARANG) ]]
         function Tab:Collapsible(initialConfig)
-            
-            -- Kita buat fungsi lokal pembangun agar bisa dipanggil berulang kali (Rekursif)
             local function CreateCollapsibleRecursive(ParentContainer, config)
                 if type(config) == "string" then config = {Text = config} end
                 if not config then config = {} end
@@ -3165,13 +3156,12 @@ function Nexus:Window(config)
                 local Text = config.Text or "Collapsible"
                 local IsOpen = config.Open or false
                 
-                -- Container Utama (Header + Isi)
                 local CollapsibleFrame = Create("Frame", {
                     BackgroundColor3 = Nexus.Theme.Surface,
-                    Size = UDim2.new(1, 0, 0, 36), -- Tinggi awal hanya Header
+                    Size = UDim2.new(1, 0, 0, 36),
                     ClipsDescendants = true,
-                    ZIndex = 1, -- ZIndex standar
-                    Parent = ParentContainer -- [UBAH] Parent dinamis (bisa TabPage atau Collapsible lain)
+                    ZIndex = 1,
+                    Parent = ParentContainer
                 })
                 
                 AddCorner(CollapsibleFrame, 8)
@@ -3307,6 +3297,77 @@ function Nexus:Window(config)
                     return {
                         SetText = function(t) end, -- Implement if needed
                         SetCallback = function(c) Callback = c end
+                    }
+                end
+
+                -- [TAMBAHAN] Paragraph (Title + Content)
+                function Group:Paragraph(cfg)
+                    if type(cfg) == "string" then cfg = {Title = cfg} end
+                    if not cfg then cfg = {} end
+                    
+                    local TitleText = cfg.Title or "Paragraph"
+                    local ContentText = cfg.Content or cfg.Desc or ""
+                    
+                    -- Frame Container
+                    local ParaFrame = Create("Frame", {
+                        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                        Size = UDim2.new(1, 0, 0, 0), -- Tinggi akan otomatis
+                        AutomaticSize = Enum.AutomaticSize.Y, -- Agar menyesuaikan panjang teks
+                        Parent = ContentContainer
+                    })
+                    AddCorner(ParaFrame, 6)
+                    
+                    -- Padding agar teks tidak mepet pinggir
+                    Create("UIPadding", {
+                        PaddingTop = UDim.new(0, 10),
+                        PaddingBottom = UDim.new(0, 10),
+                        PaddingLeft = UDim.new(0, 12),
+                        PaddingRight = UDim.new(0, 12),
+                        Parent = ParaFrame
+                    })
+                    
+                    -- Layout untuk menyusun Judul dan Isi secara vertikal
+                    local ParaLayout = Create("UIListLayout", {
+                        Padding = UDim.new(0, 4),
+                        SortOrder = Enum.SortOrder.LayoutOrder,
+                        Parent = ParaFrame
+                    })
+                    
+                    -- Label Judul
+                    local TitleLbl = Create("TextLabel", {
+                        Text = TitleText,
+                        Font = Enum.Font.GothamBold,
+                        TextSize = 13,
+                        TextColor3 = Nexus.Theme.Text,
+                        BackgroundTransparency = 1,
+                        Size = UDim2.new(1, 0, 0, 0),
+                        AutomaticSize = Enum.AutomaticSize.Y,
+                        TextXAlignment = Enum.TextXAlignment.Left,
+                        TextWrapped = true,
+                        LayoutOrder = 1,
+                        Parent = ParaFrame
+                    })
+                    
+                    -- Label Isi (Content)
+                    local ContentLbl = Create("TextLabel", {
+                        Text = ContentText,
+                        Font = Enum.Font.Gotham,
+                        TextSize = 12,
+                        TextColor3 = Nexus.Theme.TextSub,
+                        BackgroundTransparency = 1,
+                        Size = UDim2.new(1, 0, 0, 0),
+                        AutomaticSize = Enum.AutomaticSize.Y,
+                        TextXAlignment = Enum.TextXAlignment.Left,
+                        TextWrapped = true,
+                        LayoutOrder = 2,
+                        Parent = ParaFrame
+                    })
+                    
+                    -- Return API untuk update teks nanti
+                    return {
+                        SetTitle = function(t) TitleLbl.Text = tostring(t) end,
+                        SetDesc = function(c) ContentLbl.Text = tostring(c) end,
+                        SetContent = function(c) ContentLbl.Text = tostring(c) end
                     }
                 end
                 
