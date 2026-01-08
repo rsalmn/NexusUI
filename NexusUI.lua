@@ -1983,6 +1983,11 @@ function Nexus:Window(config)
     end
     
     local function CreateTab(config)
+        -- Jika input adalah string (contoh: Window:Tab("Main")), ubah jadi table
+        if type(config) == "string" then
+            config = {Text = config}
+        end
+
         if not config then config = {} end
         
         local Name = config.Name or config.Text or "Tab"
