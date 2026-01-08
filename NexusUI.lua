@@ -2319,16 +2319,6 @@ function Nexus:Window(config)
                 end
             end)
             
-            ButtonFrame.MouseLeave:Connect(function()
-                Tween(ButtonGradient, {
-                    Transparency = NumberSequence.new{
-                        NumberSequenceKeypoint.new(0, 0.05),
-                        NumberSequenceKeypoint.new(0.5, 0.02),
-                        NumberSequenceKeypoint.new(1, 0.08)
-                    }
-                }, 0.15)
-            end)
-            
             -- Theme update connection
             local buttonGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
                 if ButtonGradient and ButtonGradient.Parent then
@@ -4195,8 +4185,15 @@ function Nexus:Window(config)
         SetIcon = function(newIcon)
             AppIcon.Text = tostring(newIcon or "🚀")
         end,
-        Tab = function(config)
-            return CreateTab(config)  -- ✅ SEKARANG BERFUNGSI
+        Tab = function(self, config)
+            -- Cek apakah dipanggil dengan titik dua (:) atau titik (.)
+            -- Jika self adalah tabel WindowAPI (punya fungsi SetTitle), maka argumen asli ada di 'config'
+            if type(self) == "table" and self.SetTitle then
+                return CreateTab(config)
+            else
+                -- Jika dipanggil dengan titik (Window.Tab), maka 'self' adalah config-nya
+                return CreateTab(self)
+            end
         end,
         Notify = Nexus.Notify,
         SetTheme = Nexus.SetTheme,
