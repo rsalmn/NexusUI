@@ -3466,6 +3466,71 @@ function Nexus:Window(config)
                     Set = function(v) Value = math.clamp(v, Min, Max); ValLabel.Text=tostring(Value); Fill.Size=UDim2.new((Value-Min)/(Max-Min),0,1,0) end
                 }
             end
+
+            -- [TAMBAHAN] Support untuk Input / TextBox di dalam Collapsible
+            function Group:Input(cfg)
+                if not config then config = {} end
+                local Text = cfg.Text or "Input"
+                local Placeholder = cfg.Placeholder or "Value..."
+                local Value = cfg.Value or ""
+                local Callback = cfg.Callback or function() end
+                
+                local InputFrame = Create("Frame", {
+                    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                    Size = UDim2.new(1, 0, 0, 50),
+                    Parent = ContentContainer
+                })
+                AddCorner(InputFrame, 6)
+                
+                local Label = Create("TextLabel", {
+                    Text = Text,
+                    Font = Enum.Font.GothamMedium,
+                    TextSize = 13,
+                    TextColor3 = Nexus.Theme.Text,
+                    BackgroundTransparency = 1,
+                    Position = UDim2.new(0, 12, 0, 8),
+                    Size = UDim2.new(1, -24, 0, 14),
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    Parent = InputFrame
+                })
+                
+                local InputContainer = Create("Frame", {
+                    BackgroundColor3 = Nexus.Theme.Surface,
+                    Size = UDim2.new(1, -24, 0, 24),
+                    Position = UDim2.new(0, 12, 0, 24),
+                    Parent = InputFrame
+                })
+                AddCorner(InputContainer, 4)
+                AddStroke(InputContainer, Nexus.Theme.Outline, 1, 0.5)
+                
+                local Box = Create("TextBox", {
+                    Text = tostring(Value),
+                    PlaceholderText = Placeholder,
+                    Font = Enum.Font.Gotham,
+                    TextSize = 12,
+                    TextColor3 = Nexus.Theme.Text,
+                    PlaceholderColor3 = Nexus.Theme.TextMuted,
+                    BackgroundTransparency = 1,
+                    Size = UDim2.new(1, -8, 1, 0),
+                    Position = UDim2.new(0, 4, 0, 0),
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    Parent = InputContainer
+                })
+                
+                Box.FocusLost:Connect(function()
+                    pcall(Callback, Box.Text)
+                    Tween(InputContainer, {BackgroundColor3 = Nexus.Theme.Surface}, 0.2)
+                end)
+                
+                Box.Focused:Connect(function()
+                    Tween(InputContainer, {BackgroundColor3 = Nexus.Theme.SurfaceHighest}, 0.2)
+                end)
+                
+                return {
+                    Set = function(v) Box.Text = tostring(v) end,
+                    Get = function() return Box.Text end
+                }
+            end
             
             function Group:Dropdown(cfg)
                 -- Menggunakan fungsi CreateModernDropdown yang sudah ada, cukup passing ContentContainer sebagai parent
