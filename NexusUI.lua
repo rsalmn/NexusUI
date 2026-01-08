@@ -1253,7 +1253,6 @@ function Nexus:Window(config)
     
     AddCorner(MinimizeButton, 6)
     
-    
     -- Close Button
     local CloseButton = Create("TextButton", {
         Text = "", -- Kosongkan teks karena kita pakai gambar
@@ -1277,27 +1276,19 @@ function Nexus:Window(config)
         Parent = CloseButton
     })
     
-    -- Button hover effects
-    local function CreateButtonHover(button, hoverColor)
-        button.MouseEnter:Connect(function()
-            Tween(button, {BackgroundTransparency = 0.2}, 0.15)
-            if hoverColor then
-                Tween(button, {TextColor3 = hoverColor}, 0.15)
-            end
-        end)
-        
-        button.MouseLeave:Connect(function()
-            Tween(button, {BackgroundTransparency = 0.8}, 0.15)
-            if button == CloseButton then
-                Tween(button, {TextColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
-            else
-                Tween(button, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
-            end
-        end)
-    end
+    -- 3. TERAKHIR, ANIMASI HOVER
+    CloseButton.MouseEnter:Connect(function()
+        Tween(CloseButton, {BackgroundTransparency = 0.2}, 0.15)
+        Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 50, 50)}, 0.15)
+    end)
+    
+    CloseButton.MouseLeave:Connect(function()
+        Tween(CloseButton, {BackgroundTransparency = 0.8}, 0.15)
+        Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
+    end)
     
     CreateButtonHover(MinimizeButton)
-    CreateButtonHover(SettingsButton)
+    --CreateButtonHover(SettingsButton)
     
     -- Window state management
     local IsMinimized = false
