@@ -1,3 +1,9 @@
+--[[ 
+    NEXUS UI (v4.0 - Enhanced Edition)
+    ✨ New Features: Modern Dropdown, Error Prevention, Performance Boost
+    🎨 Design: Glassmorphism, Smooth Animations, Better UX
+]]
+
 local Nexus = {
     Flags = {}, 
     Registry = {}, 
@@ -890,9 +896,35 @@ function Nexus:Window(config)
     
     local Title = config.Title or "Nexus Hub"
     local Subtitle = config.Subtitle or "Enhanced UI Library"
-    local Size = config.Size or {600, 380}
-    local MinSize = config.MinSize or {480, 320}
+    local BaseSize = config.Size or {600, 380} -- Ukuran asli (PC)
+    local MinSize = config.MinSize or {350, 220} -- Ukuran minimal agar tidak kekecilan
+
+    local Camera = workspace.CurrentCamera
+    local Viewport = Camera.ViewportSize
     
+    local FinalWidth = BaseSize[1]
+    local FinalHeight = BaseSize[2]
+
+    -- 1. Cek Lebar: Jika lebar UI > 85% lebar layar HP
+    if FinalWidth > Viewport.X * 0.85 then
+        local ratio = BaseSize[2] / BaseSize[1] -- Simpan rasio aspek
+        FinalWidth = math.floor(Viewport.X * 0.85) -- Kecilkan jadi 85% lebar layar
+        FinalHeight = math.floor(FinalWidth * ratio) -- Sesuaikan tinggi
+    end
+    
+    -- 2. Cek Tinggi: Jika tinggi UI > 80% tinggi layar HP (Landscape)
+    if FinalHeight > Viewport.Y * 0.8 then
+        local ratio = BaseSize[1] / BaseSize[2]
+        FinalHeight = math.floor(Viewport.Y * 0.8)
+        FinalWidth = math.floor(FinalHeight * ratio)
+    end
+    
+    -- 3. Terapkan Batas Minimal (Agar tidak terlalu kecil)
+    FinalWidth = math.max(FinalWidth, MinSize[1])
+    FinalHeight = math.max(FinalHeight, MinSize[2])
+    
+    local Size = {FinalWidth, FinalHeight}
+
     -- Create ScreenGui with better error handling
     local ScreenGui = Create("ScreenGui", {
         Name = "NexusUI_" .. HttpService:GenerateGUID(false):sub(1, 8),
@@ -1028,7 +1060,7 @@ function Nexus:Window(config)
         local WatermarkFrame = Create("Frame", {
             BackgroundColor3 = Nexus.Theme.Surface,
             Size = UDim2.new(0, 240, 0, 32),
-            Position = UDim2.new(0, 16, 0, 16),
+            Position = UDim2.new(0, 16, 0, (Viewport.Y < 600 and 50) or 16), 
             Parent = ScreenGui
         })
         
@@ -4127,9 +4159,6 @@ function Nexus:Window(config)
         LoadConfig = Nexus.LoadConfig,
         GetConfigs = Nexus.GetConfigs,
         Destroy = function()
-            --PlaySound("6895079725", 0.1, 0.8)
-            
-            -- Cleanup connections
             for _, connection in pairs(Nexus.Connections) do
                 if connection and typeof(connection) == "RBXScriptConnection" then
                     connection:Disconnect()
@@ -4156,21 +4185,18 @@ function Nexus:Window(config)
         end,
         Minimize = function()
             if WindowMinimized then
-                -- Restore
                 WindowMinimized = false
                 Tween(MainWindow, {
                     Size = WindowSize
                 }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
                 MinimizeButton.Text = "−"
             else
-                -- Minimize
                 WindowMinimized = true
                 Tween(MainWindow, {
                     Size = UDim2.new(0, WindowSize.X.Offset, 0, 40)
                 }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
                 MinimizeButton.Text = "□"
             end
-            --PlaySound("6895079853", 0.06)
         end,
         GetFlag = function(flag)
             return Nexus.Flags[flag]
