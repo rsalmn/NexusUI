@@ -1276,17 +1276,6 @@ function Nexus:Window(config)
         ImageColor3 = Color3.fromRGB(255, 100, 100), -- Warna Merah
         Parent = CloseButton
     })
-
-    -- Animasi Hover Khusus Close Button (Image)
-    CloseButton.MouseEnter:Connect(function()
-        Tween(CloseButton, {BackgroundTransparency = 0.2}, 0.15)
-        Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 50, 50)}, 0.15) -- Lebih merah menyala
-    end)
-
-    CloseButton.MouseLeave:Connect(function()
-        Tween(CloseButton, {BackgroundTransparency = 0.8}, 0.15)
-        Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 100, 100)}, 0.15) -- Kembali merah soft
-    end)
     
     -- Button hover effects
     local function CreateButtonHover(button, hoverColor)
