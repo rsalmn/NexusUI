@@ -1,9 +1,3 @@
---[[ 
-    NEXUS UI (v4.0 - Enhanced Edition)
-    ✨ New Features: Modern Dropdown, Error Prevention, Performance Boost
-    🎨 Design: Glassmorphism, Smooth Animations, Better UX
-]]
-
 local Nexus = {
     Flags = {}, 
     Registry = {}, 
@@ -1253,37 +1247,29 @@ function Nexus:Window(config)
     
     AddCorner(MinimizeButton, 6)
     
-    -- Settings Button
-    local SettingsButton = Create("TextButton", {
-        Text = "⚙",
-        Font = Enum.Font.GothamBold,
-        TextSize = 14,
-        TextColor3 = Nexus.Theme.TextSub,
-        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-        BackgroundTransparency = 0.8,
-        Size = UDim2.fromOffset(32, 28),
-        Position = UDim2.fromOffset(44, 10),
-        AutoButtonColor = false,
-        Parent = ControlsContainer
-    })
-    
-    AddCorner(SettingsButton, 6)
     
     -- Close Button
     local CloseButton = Create("TextButton", {
-        Text = "✕",
-        Font = Enum.Font.GothamBold,
-        TextSize = 12,
-        TextColor3 = Color3.fromRGB(255, 100, 100),
+        Text = "", -- Kosongkan teks karena kita pakai gambar
         BackgroundColor3 = Nexus.Theme.SurfaceHigh,
         BackgroundTransparency = 0.8,
         Size = UDim2.fromOffset(32, 28),
-        Position = UDim2.fromOffset(80, 10),
+        Position = UDim2.fromOffset(44, 10), -- Posisi di kiri (bekas Settings)
         AutoButtonColor = false,
         Parent = ControlsContainer
     })
     
     AddCorner(CloseButton, 6)
+
+    local CloseIcon = Create("ImageLabel", {
+        BackgroundTransparency = 1,
+        Size = UDim2.fromOffset(16, 16), -- Ukuran Icon
+        Position = UDim2.fromScale(0.5, 0.5),
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        Image = "rbxassetid://9886659671", -- Icon X Modern (Lucide)
+        ImageColor3 = Color3.fromRGB(255, 100, 100), -- Warna Merah
+        Parent = CloseButton
+    })
     
     -- Button hover effects
     local function CreateButtonHover(button, hoverColor)
@@ -1306,7 +1292,16 @@ function Nexus:Window(config)
     
     CreateButtonHover(MinimizeButton)
     CreateButtonHover(SettingsButton)
-    CreateButtonHover(CloseButton, Color3.fromRGB(255, 120, 120))
+    -- Animasi Hover Khusus Close Button (Image)
+    CloseButton.MouseEnter:Connect(function()
+        Tween(CloseButton, {BackgroundTransparency = 0.2}, 0.15)
+        Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 50, 50)}, 0.15) -- Lebih merah menyala
+    end)
+
+    CloseButton.MouseLeave:Connect(function()
+        Tween(CloseButton, {BackgroundTransparency = 0.8}, 0.15)
+        Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 100, 100)}, 0.15) -- Kembali merah soft
+    end)
     
     -- Window state management
     local IsMinimized = false
@@ -1442,185 +1437,6 @@ function Nexus:Window(config)
         Nexus.IsDestroyed = true
     end)
     
-    -- Settings dropdown functionality
-    local SettingsOpen = false
-    local SettingsDropdown = nil
-    
-    SettingsButton.MouseButton1Click:Connect(function()
-        if SettingsOpen then
-            if SettingsDropdown then
-                Tween(SettingsDropdown, {
-                    Size = UDim2.fromOffset(0, 0),
-                    BackgroundTransparency = 1
-                }, 0.2)
-                task.wait(0.2)
-                SettingsDropdown:Destroy()
-                SettingsDropdown = nil
-            end
-            SettingsOpen = false
-            return
-        end
-        
-        --PlaySound("6895079853", 0.08)
-        SettingsOpen = true
-        
-        SettingsDropdown = Create("Frame", {
-            BackgroundColor3 = Nexus.Theme.Surface,
-            Size = UDim2.fromOffset(0, 0),
-            Position = UDim2.fromOffset(-140, 40),
-            BackgroundTransparency = 1,
-            Parent = SettingsButton
-        })
-        
-        AddCorner(SettingsDropdown, 8)
-        AddStroke(SettingsDropdown, Nexus.Theme.Outline, 1, 0.4)
-        AddShadow(SettingsDropdown, 8, 0.7)
-        
-        -- Settings options
-        local settingsOptions = {
-            {text = "🎨 Dark Theme", callback = function() Nexus:SetTheme("Dark") end},
-            {text = "☀️ Light Theme", callback = function() Nexus:SetTheme("Light") end},
-            {text = "🌊 Ocean Theme", callback = function() Nexus:SetTheme("Ocean") end},
-            {text = "💫 Neon Theme", callback = function() Nexus:SetTheme("Neon") end},
-            {text = "📁 Export Config", callback = function() 
-                Nexus:SaveConfig("AutoSave_" .. os.date("%H%M%S"))
-                Nexus:Notify({
-                    Title = "Config Exported ✅",
-                    Content = "Saved to NexusConfig folder",
-                    Duration = 2
-                })
-            end},
-            {text = "🔄 Reset Settings", callback = function()
-                for flag, registry in pairs(Nexus.Registry) do
-                    if registry.Set then
-                        registry.Set(nil)
-                    end
-                end
-                Nexus:Notify({
-                    Title = "Reset Complete 🔄",
-                    Content = "All settings cleared",
-                    Duration = 2
-                })
-            end}
-        }
-        
-        local layout = Create("UIListLayout", {
-            Padding = UDim.new(0, 2),
-            Parent = SettingsDropdown
-        })
-        
-        -- Animate dropdown appearance
-        Tween(SettingsDropdown, {
-            Size = UDim2.fromOffset(180, (#settingsOptions * 32) + 8),
-            BackgroundTransparency = 0
-        }, 0.25, Enum.EasingStyle.Back)
-        
-        for i, option in ipairs(settingsOptions) do
-            local optionButton = Create("TextButton", {
-                Text = option.text,
-                Font = Enum.Font.Gotham,
-                TextSize = 13,
-                TextColor3 = Nexus.Theme.TextSub,
-                BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-                BackgroundTransparency = 0.8,
-                Size = UDim2.new(1, -8, 0, 28),
-                Position = UDim2.fromOffset(4, 0),
-                AutoButtonColor = false,
-                TextXAlignment = Enum.TextXAlignment.Left,
-                Parent = SettingsDropdown
-            })
-            
-            AddCorner(optionButton, 6)
-            
-            -- Padding for text
-            local textPadding = Create("UIPadding", {
-                PaddingLeft = UDim.new(0, 8),
-                Parent = optionButton
-            })
-            
-            -- Hover effect
-            optionButton.MouseEnter:Connect(function()
-                Tween(optionButton, {
-                    BackgroundTransparency = 0.2,
-                    TextColor3 = Nexus.Theme.Text
-                }, 0.15)
-            end)
-            
-            optionButton.MouseLeave:Connect(function()
-                Tween(optionButton, {
-                    BackgroundTransparency = 0.8,
-                    TextColor3 = Nexus.Theme.TextSub
-                }, 0.15)
-            end)
-            
-            optionButton.MouseButton1Click:Connect(function()
-                --PlaySound("6895079853", 0.05)
-                if option.callback then
-                    pcall(option.callback)
-                end
-                
-                -- Close dropdown
-                SettingsOpen = false
-                if SettingsDropdown then
-                    Tween(SettingsDropdown, {
-                        Size = UDim2.fromOffset(0, 0),
-                        BackgroundTransparency = 1
-                    }, 0.2)
-                    task.wait(0.2)
-                    SettingsDropdown:Destroy()
-                    SettingsDropdown = nil
-                end
-            end)
-        end
-        
-        -- Close dropdown when clicking outside
-        local outsideConnection
-        outsideConnection = UserInputService.InputBegan:Connect(function(input)
-            if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                
-                -- [PERBAIKAN 1] Cek dulu apakah dropdown ada. Jika tidak, putuskan koneksi dan berhenti.
-                if not SettingsDropdown or not SettingsDropdown.Parent then
-                    if outsideConnection then outsideConnection:Disconnect() end
-                    return
-                end
-
-                local mousePos = UserInputService:GetMouseLocation()
-                local dropdownPos = SettingsDropdown.AbsolutePosition
-                local dropdownSize = SettingsDropdown.AbsoluteSize
-                
-                -- Cek apakah klik berada DI LUAR (OUTSIDE) area
-                if mousePos.X < dropdownPos.X or mousePos.X > dropdownPos.X + dropdownSize.X or
-                mousePos.Y < dropdownPos.Y or mousePos.Y > dropdownPos.Y + dropdownSize.Y then
-                    
-                    SettingsOpen = false
-                    
-                    -- Simpan referensi ke objek saat ini untuk animasi
-                    local currentDropdown = SettingsDropdown
-                    
-                    if currentDropdown then
-                        Tween(currentDropdown, {
-                            Size = UDim2.fromOffset(0, 0),
-                            BackgroundTransparency = 1
-                        }, 0.2)
-                        
-                        -- Gunakan task.spawn atau delay agar input tidak macet (opsional tapi lebih baik)
-                        task.spawn(function()
-                            task.wait(0.2)
-                            -- [PERBAIKAN 2] Cek lagi apakah objek masih ada sebelum destroy
-                            if currentDropdown and currentDropdown.Parent then
-                                currentDropdown:Destroy()
-                            end
-                        end)
-                        
-                        -- Set nil global segera agar logika toggle tombol settings tidak bingung
-                        SettingsDropdown = nil
-                    end
-                    
-                    if outsideConnection then outsideConnection:Disconnect() end
-                end
-            end
-        end)
-    end)
     
     -- Content Container
     local ContentContainer = Create("Frame", {
@@ -3377,8 +3193,8 @@ function Nexus:Window(config)
             local ContentContainer = Create("Frame", {
                 BackgroundTransparency = 1,
                 Position = UDim2.new(0, 0, 0, 36), -- Di bawah header
-                Size = UDim2.new(1, 0, 0, 0),
-                ClipsDescendants = false,
+                Size = UDim2.new(1, 0, 1, -36), -- Mengisi sisa ruang
+                ClipsDescendants = false, -- [FIX] Biarkan konten terlihat!
                 Parent = CollapsibleFrame
             })
             
@@ -4158,9 +3974,7 @@ function Nexus:Window(config)
         
         -- Update control buttons
         MinimizeButton.TextColor3 = Nexus.Theme.TextSub
-        SettingsButton.TextColor3 = Nexus.Theme.TextSub
         MinimizeButton.BackgroundColor3 = Nexus.Theme.SurfaceHigh
-        SettingsButton.BackgroundColor3 = Nexus.Theme.SurfaceHigh
         CloseButton.BackgroundColor3 = Nexus.Theme.SurfaceHigh
         
         -- Update strokes
