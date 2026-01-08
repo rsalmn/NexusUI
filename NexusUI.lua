@@ -1825,7 +1825,7 @@ function Nexus:Window(config)
                 NumberSequenceKeypoint.new(0.5, 0.02),
                 NumberSequenceKeypoint.new(1, 0.08)
             },
-            Parent = NotifFrame  -- Pastikan parent benar
+            Parent = Notification  -- Pastikan parent benar
         })
         
         -- Auto-update dengan theme changes
@@ -3329,18 +3329,18 @@ function Nexus:Window(config)
             local Text = config.Text or "Collapsible"
             local IsOpen = config.Open or false
             
-            -- Container Utama (Header + Isi)
+            -- Frame Utama (Container Luar)
             local CollapsibleFrame = Create("Frame", {
                 BackgroundColor3 = Nexus.Theme.Surface,
-                Size = UDim2.new(1, 0, 0, 36), -- Tinggi awal hanya Header
-                ClipsDescendants = true,
+                Size = UDim2.new(1, 0, 0, 36), -- Tinggi awal
+                ClipsDescendants = true, -- Ini memotong saat animasi
                 Parent = TabPage
             })
             
             AddCorner(CollapsibleFrame, 8)
             AddStroke(CollapsibleFrame, Nexus.Theme.Outline, 1, 0.4)
             
-            -- Header Button (Bagian yang diklik)
+            -- Header Button
             local HeaderBtn = Create("TextButton", {
                 Text = "",
                 BackgroundTransparency = 1,
@@ -3372,12 +3372,12 @@ function Nexus:Window(config)
                 Parent = HeaderBtn
             })
             
-            -- Container untuk isi elemen (Button, Toggle, dll)
+            -- Container Isi (Content)
             local ContentContainer = Create("Frame", {
                 BackgroundTransparency = 1,
                 Position = UDim2.new(0, 0, 0, 36), -- Di bawah header
-                Size = UDim2.new(1, 0, 0, 0),
-                ClipsDescendants = true,
+                Size = UDim2.new(1, 0, 1, -36), -- Mengisi sisa ruang
+                ClipsDescendants = false, -- [FIX] Biarkan konten terlihat!
                 Parent = CollapsibleFrame
             })
             
@@ -3387,7 +3387,7 @@ function Nexus:Window(config)
                 Parent = ContentContainer
             })
             
-            local ContentPadding = Create("UIPadding", {
+            Create("UIPadding", {
                 PaddingTop = UDim.new(0, 8),
                 PaddingBottom = UDim.new(0, 8),
                 PaddingLeft = UDim.new(0, 8),
@@ -3395,10 +3395,10 @@ function Nexus:Window(config)
                 Parent = ContentContainer
             })
             
-            -- Fungsi Resize Otomatis
+            -- Fungsi Animasi Resize
             local function UpdateHeight()
                 local contentHeight = ContentLayout.AbsoluteContentSize.Y
-                local targetHeight = IsOpen and (contentHeight + 36 + 16) or 36 -- 36 Header + 16 Padding
+                local targetHeight = IsOpen and (contentHeight + 36 + 16) or 36
                 
                 Tween(CollapsibleFrame, {
                     Size = UDim2.new(1, 0, 0, targetHeight)
@@ -3410,47 +3410,28 @@ function Nexus:Window(config)
                 }, 0.3)
             end
             
-            -- Update saat ada elemen baru ditambahkan
             ContentLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
                 if IsOpen then UpdateHeight() end
             end)
             
-            -- Klik Header
             HeaderBtn.MouseButton1Click:Connect(function()
                 IsOpen = not IsOpen
                 UpdateHeight()
             end)
             
-            -- Hover Effects Header
-            HeaderBtn.MouseEnter:Connect(function()
-                Tween(CollapsibleFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.2)
-            end)
-            HeaderBtn.MouseLeave:Connect(function()
-                Tween(CollapsibleFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.2)
-            end)
-            
-            -- ==========================================================
-            -- API untuk menambahkan elemen ke dalam Collapsible
-            -- Kita perlu mendefinisikan ulang wrapper elemen agar Parent-nya ke ContentContainer
-            -- ==========================================================
+            -- [API] Memasukkan Elemen ke dalam Collapsible
             local Group = {}
             
             function Group:Button(cfg)
-                -- Kita gunakan logika Button yang sama tapi ganti Parent-nya
-                local Btn = Tab:Button(cfg)
-                -- Pindahkan Frame utamanya ke ContentContainer
-                -- Karena Tab:Button mengembalikan API wrapper, kita perlu akses objek GUI aslinya?
-                -- Karena Tab:Button di library ini tidak mengembalikan GUI object langsung di return,
-                -- melainkan wrapper {SetText, GetText}, kita tidak bisa memindahkan parent dengan mudah.
-                -- JADI: Kita harus membuat ulang tombol secara manual di sini agar parent-nya benar.
-                
+                -- Reuse fungsi Button tapi ganti Parent-nya
+                -- Kita harus membuat ulang logic di sini agar parent ke ContentContainer
                 if type(cfg) == "string" then cfg = {Text = cfg} end
                 local Text = cfg.Text or "Button"
                 local Callback = cfg.Callback or function() end
                 
                 local BtnFrame = Create("Frame", {
-                    BackgroundColor3 = Nexus.Theme.SurfaceHigh, -- Sedikit lebih terang di dalam collapsible
-                    Size = UDim2.new(1, 0, 0, 40), -- Sedikit lebih kecil
+                    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                    Size = UDim2.new(1, 0, 0, 40),
                     Parent = ContentContainer
                 })
                 AddCorner(BtnFrame, 6)
@@ -3459,21 +3440,17 @@ function Nexus:Window(config)
                     Text = "", BackgroundTransparency = 1, Size = UDim2.new(1, 0, 1, 0), Parent = BtnFrame
                 })
                 
-                local BtnLabel = Create("TextLabel", {
+                Create("TextLabel", {
                     Text = Text, Font = Enum.Font.GothamMedium, TextSize = 13,
                     TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
                     Size = UDim2.new(1, 0, 1, 0), Position = UDim2.new(0, 12, 0, 0),
                     TextXAlignment = Enum.TextXAlignment.Left, Parent = BtnFrame
                 })
                 
+                Btn.MouseButton1Click:Connect(function() pcall(Callback) end)
                 Btn.MouseEnter:Connect(function() Tween(BtnFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHighest}, 0.15) end)
                 Btn.MouseLeave:Connect(function() Tween(BtnFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15) end)
-                Btn.MouseButton1Click:Connect(function() pcall(Callback) end)
-                
-                return {
-                    SetText = function(t) BtnLabel.Text = t end,
-                    SetCallback = function(c) Callback = c end
-                }
+                return Btn
             end
             
             function Group:Toggle(cfg)
@@ -3491,7 +3468,7 @@ function Nexus:Window(config)
                 })
                 AddCorner(ToggleFrame, 6)
                 
-                local ToggleLabel = Create("TextLabel", {
+                Create("TextLabel", {
                     Text = Text, Font = Enum.Font.GothamMedium, TextSize = 13,
                     TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
                     Size = UDim2.new(1, -50, 1, 0), Position = UDim2.new(0, 12, 0, 0),
@@ -3500,159 +3477,33 @@ function Nexus:Window(config)
                 
                 local Switch = Create("Frame", {
                     BackgroundColor3 = Toggled and Nexus.Theme.Accent or Nexus.Theme.Surface,
-                    Size = UDim2.new(0, 36, 0, 18),
-                    Position = UDim2.new(1, -48, 0.5, -9),
-                    Parent = ToggleFrame
+                    Size = UDim2.new(0, 36, 0, 18), Position = UDim2.new(1, -48, 0.5, -9), Parent = ToggleFrame
                 })
                 AddCorner(Switch, 9)
                 
                 local Dot = Create("Frame", {
-                    BackgroundColor3 = Nexus.Theme.Text,
-                    Size = UDim2.new(0, 14, 0, 14),
-                    Position = UDim2.new(0, Toggled and 20 or 2, 0.5, -7),
-                    Parent = Switch
+                    BackgroundColor3 = Nexus.Theme.Text, Size = UDim2.new(0, 14, 0, 14),
+                    Position = UDim2.new(0, Toggled and 20 or 2, 0.5, -7), Parent = Switch
                 })
                 AddCorner(Dot, 7)
                 
-                local Btn = Create("TextButton", {
-                    Text = "", BackgroundTransparency = 1, Size = UDim2.new(1, 0, 1, 0), Parent = ToggleFrame
-                })
+                local Btn = Create("TextButton", {Text="", BackgroundTransparency=1, Size=UDim2.new(1,0,1,0), Parent=ToggleFrame})
                 
                 local function Update()
                     Tween(Switch, {BackgroundColor3 = Toggled and Nexus.Theme.Accent or Nexus.Theme.Surface}, 0.2)
-                    Tween(Dot, {Position = UDim2.new(0, Toggled and 20 or 2, 0.5, -7)}, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+                    Tween(Dot, {Position = UDim2.new(0, Toggled and 20 or 2, 0.5, -7)}, 0.2)
                     pcall(Callback, Toggled)
                     if Flag then Nexus.Flags[Flag] = Toggled end
                 end
                 
-                Btn.MouseButton1Click:Connect(function()
-                    Toggled = not Toggled
-                    Update()
-                end)
-                
-                if Flag then
-                    Nexus.Registry[Flag] = {
-                        Set = function(v) Toggled = v; Update() end,
-                        Get = function() return Toggled end
-                    }
-                end
-                
-                return {
-                    Set = function(v) Toggled = v; Update() end,
-                    Get = function() return Toggled end
-                }
-            end
-            
-            function Group:Slider(cfg)
-                -- Reuse logika Slider tapi parent ke ContentContainer
-                -- Karena slider cukup kompleks, kita salin logika dasar yang disederhanakan
-                local Text = cfg.Text or "Slider"
-                local Min, Max = cfg.Min or 0, cfg.Max or 100
-                local Default = cfg.Default or Min
-                local Callback = cfg.Callback or function() end
-                local Flag = cfg.Flag
-                local Value = math.clamp(Default, Min, Max)
-                
-                local SliderFrame = Create("Frame", {
-                    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-                    Size = UDim2.new(1, 0, 0, 50),
-                    Parent = ContentContainer
-                })
-                AddCorner(SliderFrame, 6)
-                
-                local Label = Create("TextLabel", {
-                    Text = Text, Font = Enum.Font.GothamMedium, TextSize = 13,
-                    TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
-                    Position = UDim2.new(0, 12, 0, 8), Size = UDim2.new(1, -24, 0, 14),
-                    TextXAlignment = Enum.TextXAlignment.Left, Parent = SliderFrame
-                })
-                
-                local ValLabel = Create("TextLabel", {
-                    Text = tostring(Value), Font = Enum.Font.GothamBold, TextSize = 12,
-                    TextColor3 = Nexus.Theme.Accent, BackgroundTransparency = 1,
-                    Position = UDim2.new(1, -12, 0, 8), Size = UDim2.new(0, 0, 0, 14),
-                    TextXAlignment = Enum.TextXAlignment.Right, Parent = SliderFrame
-                })
-                
-                local Track = Create("Frame", {
-                    BackgroundColor3 = Nexus.Theme.Surface,
-                    Size = UDim2.new(1, -24, 0, 4), Position = UDim2.new(0, 12, 0, 32),
-                    Parent = SliderFrame
-                })
-                AddCorner(Track, 2)
-                
-                local Fill = Create("Frame", {
-                    BackgroundColor3 = Nexus.Theme.Accent,
-                    Size = UDim2.new((Value - Min)/(Max - Min), 0, 1, 0),
-                    Parent = Track
-                })
-                AddCorner(Fill, 2)
-                
-                local Knob = Create("Frame", {
-                    BackgroundColor3 = Nexus.Theme.Text,
-                    Size = UDim2.new(0, 12, 0, 12),
-                    Position = UDim2.new(1, -6, 0.5, -6),
-                    Parent = Fill
-                })
-                AddCorner(Knob, 6)
-                
-                local Btn = Create("TextButton", {
-                    Text = "", BackgroundTransparency = 1, Size = UDim2.new(1, 0, 1, 0), Parent = SliderFrame
-                })
-                
-                local Dragging = false
-                local function Update(input)
-                    local pos = UDim2.new(math.clamp((input.Position.X - Track.AbsolutePosition.X) / Track.AbsoluteSize.X, 0, 1), 0, 1, 0)
-                    local newVal = math.floor(Min + ((Max - Min) * pos.X.Scale))
-                    Value = newVal
-                    ValLabel.Text = tostring(Value)
-                    Fill.Size = pos
-                    pcall(Callback, Value)
-                    if Flag then Nexus.Flags[Flag] = Value end
-                end
-                
-                Btn.InputBegan:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                        Dragging = true
-                        Update(input)
-                    end
-                end)
-                UserInputService.InputEnded:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then Dragging = false end
-                end)
-                UserInputService.InputChanged:Connect(function(input)
-                    if Dragging and input.UserInputType == Enum.UserInputType.MouseMovement then Update(input) end
-                end)
-                
-                if Flag then
-                    Nexus.Registry[Flag] = { Set = function(v) Value = math.clamp(v, Min, Max); ValLabel.Text=tostring(Value); Fill.Size=UDim2.new((Value-Min)/(Max-Min),0,1,0) end }
-                end
-                
-                return {
-                    Set = function(v) Value = math.clamp(v, Min, Max); ValLabel.Text=tostring(Value); Fill.Size=UDim2.new((Value-Min)/(Max-Min),0,1,0) end
-                }
+                Btn.MouseButton1Click:Connect(function() Toggled = not Toggled; Update() end)
+                if Flag then Nexus.Registry[Flag] = {Set = function(v) Toggled = v; Update() end, Get = function() return Toggled end} end
+                return {Set = function(v) Toggled = v; Update() end}
             end
             
             function Group:Dropdown(cfg)
-                -- Menggunakan fungsi CreateModernDropdown yang sudah ada, cukup passing ContentContainer sebagai parent
                 if not ContentContainer or not ContentContainer.Parent then return nil end
                 return CreateModernDropdown(cfg, ContentContainer)
-            end
-            
-            function Group:Label(cfg)
-                if type(cfg) == "string" then cfg = {Text = cfg} end
-                local Text = cfg.Text or "Label"
-                
-                local LabelFrame = Create("Frame", {
-                    BackgroundTransparency = 1, Size = UDim2.new(1, 0, 0, 24), Parent = ContentContainer
-                })
-                local Label = Create("TextLabel", {
-                    Text = Text, Font = Enum.Font.Gotham, TextSize = 12,
-                    TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency = 1,
-                    Size = UDim2.new(1, -16, 1, 0), Position = UDim2.new(0, 16, 0, 0),
-                    TextXAlignment = Enum.TextXAlignment.Left, TextWrapped = true, Parent = LabelFrame
-                })
-                return {SetText = function(t) Label.Text = t end}
             end
             
             return Group
