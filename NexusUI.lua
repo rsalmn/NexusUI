@@ -1,9 +1,3 @@
---[[ 
-    NEXUS UI (v4.0 - Enhanced Edition)
-    ✨ New Features: Modern Dropdown, Error Prevention, Performance Boost
-    🎨 Design: Glassmorphism, Smooth Animations, Better UX
-]]
-
 local Nexus = {
     Flags = {}, 
     Registry = {}, 
@@ -3157,6 +3151,7 @@ function Nexus:Window(config)
                 BackgroundColor3 = Nexus.Theme.Surface,
                 Size = UDim2.new(1, 0, 0, 36), -- Tinggi awal hanya Header
                 ClipsDescendants = true,
+                ZIndex = 1, -- ZIndex standar
                 Parent = TabPage
             })
             
@@ -3221,16 +3216,32 @@ function Nexus:Window(config)
             -- Fungsi Resize Otomatis
             local function UpdateHeight()
                 local contentHeight = ContentLayout.AbsoluteContentSize.Y
-                local targetHeight = IsOpen and (contentHeight + 36 + 16) or 36 -- 36 Header + 16 Padding
+                local targetHeight = IsOpen and (contentHeight + 36 + 16) or 36
                 
-                Tween(CollapsibleFrame, {
-                    Size = UDim2.new(1, 0, 0, targetHeight)
-                }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-                
-                Tween(Arrow, {
-                    Rotation = IsOpen and 180 or 0,
-                    TextColor3 = IsOpen and Nexus.Theme.Accent or Nexus.Theme.TextSub
-                }, 0.3)
+                if IsOpen then
+                    -- Saat Buka:
+                    -- 1. Naikkan ZIndex agar menimpa elemen di bawahnya (supaya dropdown tidak tertutup elemen lain)
+                    CollapsibleFrame.ZIndex = 5 
+                    
+                    Tween(CollapsibleFrame, {Size = UDim2.new(1, 0, 0, targetHeight)}, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+                    Tween(Arrow, {Rotation = 180, TextColor3 = Nexus.Theme.Accent}, 0.3)
+                    
+                    -- 2. Matikan ClipsDescendants SETELAH animasi (atau hampir selesai)
+                    --    Ini membiarkan Dropdown "terbang" keluar kotak tanpa terpotong
+                    task.delay(0.25, function()
+                        if IsOpen then CollapsibleFrame.ClipsDescendants = false end
+                    end)
+                else
+                    -- Saat Tutup:
+                    -- 1. Nyalakan ClipsDescendants SEGERA agar konten terpotong rapi saat mengecil
+                    CollapsibleFrame.ClipsDescendants = true
+                    
+                    -- 2. Kembalikan ZIndex normal
+                    CollapsibleFrame.ZIndex = 1
+                    
+                    Tween(CollapsibleFrame, {Size = UDim2.new(1, 0, 0, targetHeight)}, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+                    Tween(Arrow, {Rotation = 0, TextColor3 = Nexus.Theme.TextSub}, 0.3)
+                end
             end
             
             -- Update saat ada elemen baru ditambahkan
