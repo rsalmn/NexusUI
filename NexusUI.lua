@@ -1287,6 +1287,25 @@ function Nexus:Window(config)
         Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
     end)
     
+    -- Button hover effects
+    local function CreateButtonHover(button, hoverColor)
+        button.MouseEnter:Connect(function()
+            Tween(button, {BackgroundTransparency = 0.2}, 0.15)
+            if hoverColor then
+                Tween(button, {TextColor3 = hoverColor}, 0.15)
+            end
+        end)
+        
+        button.MouseLeave:Connect(function()
+            Tween(button, {BackgroundTransparency = 0.8}, 0.15)
+            if button == CloseButton then
+                Tween(button, {TextColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
+            else
+                Tween(button, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
+            end
+        end)
+    end
+
     CreateButtonHover(MinimizeButton)
     --CreateButtonHover(SettingsButton)
     
