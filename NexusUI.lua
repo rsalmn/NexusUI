@@ -545,13 +545,14 @@ local function CreateModernDropdown(cfg, ParentFrame)
     
     -- Arrow
     local Arrow = Create("TextLabel", {
-        Text = "⌄",
-        Font = Enum.Font.GothamBold,
-        TextSize = 16,
+        Text = "▼",
+        Font = Enum.Font.Gotham,
+        TextSize = 12,
         TextColor3 = Nexus.Theme.TextSub,
         BackgroundTransparency = 1,
         Position = UDim2.new(1, -32, 0, 0),
         Size = UDim2.new(0, 24, 1, 0),
+        Rotation = IsOpen and 180 or 0, -- Rotasi 180 derajat saat dibuka (jadi panah atas)
         Parent = Header
     })
     
@@ -3361,9 +3362,9 @@ function Nexus:Window(config)
             })
             
             local Arrow = Create("TextLabel", {
-                Text = "⌄",
-                Font = Enum.Font.GothamBold,
-                TextSize = 18,
+                Text = "▼",
+                Font = Enum.Font.Gotham,
+                TextSize = 12,
                 TextColor3 = Nexus.Theme.TextSub,
                 BackgroundTransparency = 1,
                 Position = UDim2.new(1, -32, 0, 0),
