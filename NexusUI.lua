@@ -125,25 +125,37 @@ local function AddShadow(parent, size, transparency)
 end
 
 local function Tween(inst, props, time, style, direction, callback)
-    -- [GANTI] dengan baris baru ini:
-    if not inst or typeof(inst) ~= "Instance" or not inst.Parent then 
-        warn("[NexusUI] Tween Error: Object is not an Instance!") 
-        return 
+    if typeof(inst) ~= "Instance" then
+        warn("[NexusUI] Tween Error: inst is not Instance")
+        return
     end
-    
+
+    if not inst:IsDescendantOf(game) then
+        -- object sudah di-destroy / belum masuk tree
+        return
+    end
+
     local info = TweenInfo.new(
         time or 0.25,
         style or Enum.EasingStyle.Quad,
         direction or Enum.EasingDirection.Out
     )
-    
-    local tween = TweenService:Create(inst, info, props)
-    tween:Play()
-    
-    if callback then
-        tween.Completed:Connect(callback)
+
+    local tween
+    local ok, err = pcall(function()
+        tween = TweenService:Create(inst, info, props)
+        tween:Play()
+    end)
+
+    if not ok then
+        warn("[NexusUI] Tween Create Failed:", err)
+        return
     end
-    
+
+    if callback then
+        tween.Completed:Once(callback)
+    end
+
     return tween
 end
 
@@ -218,68 +230,107 @@ local function SetBlur(enabled, intensity)
     Tween(BlurEffect, {Size = targetSize}, 0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out) 
 end
 
---// Enhanced Config System
+
+local CONFIG_FOLDER = "NexusConfig"
+local CONFIG_VERSION = 2
+
 function Nexus:SaveConfig(name)
     if not name or name == "" then return false end
-    
-    local success, result = pcall(function()
-        if not isfolder("NexusConfig") then 
-            makefolder("NexusConfig") 
+
+    if not isfolder(CONFIG_FOLDER) then
+        makefolder(CONFIG_FOLDER)
+    end
+
+    local data = {
+        Version = CONFIG_VERSION,
+        Flags = {},
+        SavedAt = os.time()
+    }
+
+    for flag, value in pairs(self.Flags) do
+        if typeof(value) == "Color3" then
+            data.Flags[flag] = {
+                Type = "Color3",
+                R = value.R,
+                G = value.G,
+                B = value.B
+            }
+        elseif typeof(value) == "EnumItem" then
+            data.Flags[flag] = {
+                Type = "EnumItem",
+                Enum = tostring(value.EnumType),
+                Name = value.Name
+            }
+        else
+            data.Flags[flag] = {
+                Type = typeof(value),
+                Value = value
+            }
         end
-        
-        local configData = {
-            flags = Nexus.Flags,
-            theme = "Custom", -- Could be expanded
-            timestamp = os.time(),
-            version = "4.0"
-        }
-        
-        local json = HttpService:JSONEncode(configData)
-        writefile("NexusConfig/" .. name .. ".json", json)
-        return true
-    end)
-    
-    return success and result
+    end
+
+    local ok, json = pcall(HttpService.JSONEncode, HttpService, data)
+    if not ok then return false end
+
+    writefile(CONFIG_FOLDER .. "/" .. name .. ".json", json)
+    return true
 end
 
 function Nexus:LoadConfig(name)
-    if not name or name == "" then return false end
-    
-    local success, result = pcall(function()
-        local filePath = "NexusConfig/" .. name .. ".json"
-        if not isfile(filePath) then return false end
-        
-        local json = readfile(filePath)
-        local data = HttpService:JSONDecode(json)
-        
-        if data.flags then
-            for flag, value in pairs(data.flags) do
-                if Nexus.Registry[flag] and Nexus.Registry[flag].Set then
-                    Nexus.Registry[flag].Set(value)
+    local path = CONFIG_FOLDER .. "/" .. name .. ".json"
+    if not isfile(path) then return false end
+
+    local ok, data = pcall(function()
+        return HttpService:JSONDecode(readfile(path))
+    end)
+    if not ok or not data then return false end
+
+    -- backward compatibility (old configs)
+    local flags = data.Flags or data.flags or data
+
+    local applied = 0
+    for flag, info in pairs(flags) do
+        local value = info
+
+        if typeof(info) == "table" and info.Type then
+            if info.Type == "Color3" then
+                value = Color3.new(info.R, info.G, info.B)
+            elseif info.Type == "EnumItem" then
+                local enumType = info.Enum or info.EnumType
+                if enumType == "Enum.KeyCode" then
+                    value = Enum.KeyCode[info.Name]
                 end
+            else
+                value = info.Value
             end
         end
-        
-        return true
-    end)
-    
-    return success and result
+
+        if self.Registry[flag] and self.Registry[flag].Set then
+            pcall(self.Registry[flag].Set, value)
+        else
+            self.Flags[flag] = value
+        end
+
+        applied += 1
+    end
+
+    return true
 end
 
 function Nexus:GetConfigs()
-    local configs = {}
-    pcall(function()
-        if isfolder("NexusConfig") then
-            for _, file in ipairs(listfiles("NexusConfig")) do
-                local name = file:match("([^/\\]+)%.json$")
-                if name then
-                    table.insert(configs, name)
-                end
-            end
+    if not isfolder(CONFIG_FOLDER) then return {} end
+
+    local list = {}
+    for _, file in ipairs(listfiles(CONFIG_FOLDER)) do
+        local name = file:match("([^/\\]+)%.json$")
+        if name then
+            table.insert(list, name)
         end
-    end)
-    return configs
+    end
+
+    return list
 end
+
 
 --// Enhanced Theme System
 Nexus.ThemeChanged = Instance.new("BindableEvent")
@@ -4212,153 +4263,6 @@ function Nexus:Window(config)
 
     
     return WindowAPI
-end
-
-
--- Config System Functions
-function Nexus:SaveConfig(name)
-    if not name or name == "" then
-        self:Notify({
-            Text = "Please provide a config name",
-            Type = "Warning"
-        })
-        return false
-    end
-    
-    local configData = {}
-    
-    for flag, value in pairs(self.Flags) do
-        -- Convert Color3 to RGB table for JSON compatibility
-        if typeof(value) == "Color3" then
-            configData[flag] = {
-                Type = "Color3",
-                R = value.R,
-                G = value.G,
-                B = value.B
-            }
-        elseif typeof(value) == "EnumItem" then
-            configData[flag] = {
-                Type = "EnumItem",
-                EnumType = tostring(value.EnumType),
-                Name = value.Name,
-                Value = value.Value
-            }
-        else
-            configData[flag] = {
-                Type = typeof(value),
-                Value = value
-            }
-        end
-    end
-    
-    local success, result = pcall(function()
-        return HttpService:JSONEncode(configData)
-    end)
-    
-    if success then
-        if not isfolder("NexusUI") then
-            makefolder("NexusUI")
-        end
-        
-        writefile("NexusUI/" .. name .. ".json", result)
-        
-        self:Notify({
-            Text = "Config '" .. name .. "' saved successfully",
-            Type = "Success"
-        })
-        return true
-    else
-        self:Notify({
-            Text = "Failed to save config: " .. tostring(result),
-            Type = "Error"
-        })
-        return false
-    end
-end
-
-function Nexus:LoadConfig(name)
-    if not name or name == "" then
-        self:Notify({
-            Text = "Please provide a config name",
-            Type = "Warning"
-        })
-        return false
-    end
-    
-    local filePath = "NexusUI/" .. name .. ".json"
-    
-    if not isfile(filePath) then
-        self:Notify({
-            Text = "Config '" .. name .. "' not found",
-            Type = "Error"
-        })
-        return false
-    end
-    
-    local success, configData = pcall(function()
-        return HttpService:JSONDecode(readfile(filePath))
-    end)
-    
-    if not success then
-        self:Notify({
-            Text = "Failed to load config: Invalid JSON",
-            Type = "Error"
-        })
-        return false
-    end
-    
-    local loadedCount = 0
-    
-    for flag, data in pairs(configData) do
-        if data.Type and data.Value ~= nil then
-            local value = data.Value
-            
-            -- Convert special types back
-            if data.Type == "Color3" then
-                value = Color3.new(data.R or 0, data.G or 0, data.B or 0)
-            elseif data.Type == "EnumItem" and data.EnumType and data.Name then
-                if data.EnumType == "Enum.KeyCode" then
-                    value = Enum.KeyCode[data.Name]
-                end
-            end
-            
-            -- Set the value
-            if self.Registry[flag] and self.Registry[flag].Set then
-                pcall(function()
-                    self.Registry[flag].Set(value)
-                    loadedCount = loadedCount + 1
-                end)
-            else
-                self.Flags[flag] = value
-                loadedCount = loadedCount + 1
-            end
-        end
-    end
-    
-    self:Notify({
-        Text = "Config '" .. name .. "' loaded (" .. loadedCount .. " settings)",
-        Type = "Success"
-    })
-    
-    return true
-end
-
-function Nexus:GetConfigs()
-    if not isfolder("NexusUI") then
-        return {}
-    end
-    
-    local configs = {}
-    local files = listfiles("NexusUI")
-    
-    for _, file in pairs(files) do
-        local name = file:match("NexusUI/(.+)%.json$")
-        if name then
-            table.insert(configs, name)
-        end
-    end
-    
-    return configs
 end
 
 -- Export Nexus
