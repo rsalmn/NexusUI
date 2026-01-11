@@ -314,6 +314,8 @@ function Nexus:LoadConfig(name)
         applied += 1
     end
 
+    self.AutoSave.ActiveConfig = name
+
     return true
 end
 
@@ -331,6 +333,40 @@ function Nexus:GetConfigs()
     return list
 end
 
+----------------------------------------------------------------
+-- AUTO SAVE STATE
+----------------------------------------------------------------
+Nexus.AutoSave = {
+    Enabled = true,
+    Delay = 2,              -- debounce delay (detik)
+    ActiveConfig = nil,     -- nama config yang sedang aktif
+    Dirty = false,
+    _task = nil
+}
+
+function Nexus:_ScheduleAutoSave()
+    if not self.AutoSave.Enabled then return end
+    if not self.AutoSave.ActiveConfig then return end
+
+    self.AutoSave.Dirty = true
+
+    -- cancel debounce lama
+    if self.AutoSave._task then
+        task.cancel(self.AutoSave._task)
+    end
+
+    -- buat debounce baru
+    self.AutoSave._task = task.spawn(function()
+        task.wait(self.AutoSave.Delay)
+
+        if self.AutoSave.Dirty and self.AutoSave.ActiveConfig then
+            self.AutoSave.Dirty = false
+            pcall(function()
+                self:SaveConfig(self.AutoSave.ActiveConfig)
+            end)
+        end
+    end)
+end
 
 --// Enhanced Theme System
 Nexus.ThemeChanged = Instance.new("BindableEvent")
@@ -4258,6 +4294,8 @@ function Nexus:Window(config)
             else
                 Nexus.Flags[flag] = value
             end
+
+            Nexus:_ScheduleAutoSave()
         end
     }
 
