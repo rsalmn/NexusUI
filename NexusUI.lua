@@ -36,17 +36,10 @@ local function GetService(serviceName)
         local success, service = pcall(function()
             return game:GetService(serviceName)
         end)
-        
-        if not success then
-            warn("[Nexus] Failed to get service:", serviceName)
-        end
-        
         Services[serviceName] = success and service or nil
     end
-    
     return Services[serviceName]
 end
-
 
 local TweenService = GetService("TweenService")
 local UserInputService = GetService("UserInputService")
@@ -131,14 +124,7 @@ local function AddShadow(parent, size, transparency)
     return shadow
 end
 
--- Tambah tracking
-Nexus.ActiveTweens = Nexus.ActiveTweens or {}
-
 local function Tween(inst, props, time, style, direction, callback)
-    if Nexus.ActiveTweens[inst] then
-        Nexus.ActiveTweens[inst]:Cancel()
-    end
-    
     if typeof(inst) ~= "Instance" then
         warn("[NexusUI] Tween Error: inst is not Instance")
         return
@@ -166,12 +152,9 @@ local function Tween(inst, props, time, style, direction, callback)
         return
     end
 
-    Nexus.ActiveTweens[inst] = tween
-    tween.Completed:Once(function()
-        Nexus.ActiveTweens[inst] = nil
-        if callback then callback() end
-    end)
-    
+    if callback then
+        tween.Completed:Once(callback)
+    end
 
     return tween
 end
@@ -230,16 +213,12 @@ local BlurEffect = nil
 local function InitializeBlur()
     if BlurEffect then return end
     
-    local success = pcall(function()
+    pcall(function()
         BlurEffect = Instance.new("BlurEffect")
         BlurEffect.Name = "NexusBlur"
         BlurEffect.Size = 0
         BlurEffect.Parent = Lighting
     end)
-    
-    if not success then
-        warn("[Nexus] Blur effect not supported in this environment")
-    end
 end
 
 local function SetBlur(enabled, intensity)
@@ -366,54 +345,27 @@ Nexus.AutoSave = {
 }
 
 function Nexus:_ScheduleAutoSave()
+    if not self.AutoSave.Enabled then return end
+    if not self.AutoSave.ActiveConfig then return end
+
     self.AutoSave.Dirty = true
-    
+
+    -- cancel debounce lama
     if self.AutoSave._task then
         task.cancel(self.AutoSave._task)
-        self.AutoSave._task = nil
     end
-    
-    self.AutoSave._task = task.delay(self.AutoSave.Delay, function()
-        if not self.AutoSave.Dirty or not self.AutoSave.ActiveConfig then 
-            return 
-        end
-        
-        self.AutoSave.Dirty = false
-        local success = pcall(function()
-            self:SaveConfig(self.AutoSave.ActiveConfig)
-        end)
-        
-        if not success then
-            self.AutoSave.Dirty = true -- Retry next time
+
+    -- buat debounce baru
+    self.AutoSave._task = task.spawn(function()
+        task.wait(self.AutoSave.Delay)
+
+        if self.AutoSave.Dirty and self.AutoSave.ActiveConfig then
+            self.AutoSave.Dirty = false
+            pcall(function()
+                self:SaveConfig(self.AutoSave.ActiveConfig)
+            end)
         end
     end)
-end
-
-function Nexus:Destroy()
-    self.IsDestroyed = true
-    
-    -- Disconnect all
-    for _, conn in ipairs(self.Connections) do
-        if conn and conn.Connected then
-            conn:Disconnect()
-        end
-    end
-    
-    -- Clear tweens
-    if self.ActiveTweens then
-        for _, tween in pairs(self.ActiveTweens) do
-            tween:Cancel()
-        end
-    end
-    
-    -- Remove blur
-    if BlurEffect then
-        BlurEffect:Destroy()
-    end
-    
-    table.clear(self.Connections)
-    table.clear(self.Registry)
-    table.clear(self.Flags)
 end
 
 --// Enhanced Theme System
@@ -534,597 +486,493 @@ end
 UpdateThemeColors()
 
 --// Enhanced Dropdown Component
-function Nexus:CreateModernDropdown(config)
-    -- Config validation (sesuai format lu)
-    local cfg = {
-        Text = config.Text or "Dropdown",
-        Parent = config.Parent,
-        Options = config.Options or {"No Options"},
-        Default = config.Default,
-        MultiSelect = config.MultiSelect or false,
-        Search = config.Search or false,
-        MaxVisible = config.MaxVisible or 6,
-        Placeholder = config.Placeholder or "Select option...",
-        Description = config.Description,
-        Callback = config.Callback or function() end,
-        Flag = config.Flag
-    }
-
+local function CreateModernDropdown(cfg, ParentFrame)
     -- Validation
-    if not cfg.Parent then
-        error("[Nexus] CreateModernDropdown: Parent is required")
+    if not cfg then cfg = {} end
+    if not ParentFrame or not ParentFrame.Parent then return nil end
+    
+    local Text = cfg.Text or "Dropdown"
+    local Options = cfg.Options or {"No Options"}
+    local Default = cfg.Default
+    local Callback = cfg.Callback or function() end
+    local Flag = cfg.Flag
+    local MultiSelect = cfg.MultiSelect or false
+    local SearchEnabled = cfg.Search or false
+    local MaxVisible = cfg.MaxVisible or 6
+    
+    -- Validate options
+    if type(Options) ~= "table" or #Options == 0 then
+        Options = {"No Options Available"}
     end
     
-    if type(cfg.Options) ~= "table" or #cfg.Options == 0 then
-        warn("[Nexus] CreateModernDropdown: Options should be a non-empty table")
-        cfg.Options = {"No Options"}
+    -- Clean options
+    local CleanOptions = {}
+    for i, option in ipairs(Options) do
+        if option ~= nil then
+            table.insert(CleanOptions, tostring(option))
+        end
     end
-
-    -- State management
-    local DropdownState = {
-        IsOpen = false,
-        Selected = cfg.MultiSelect and {} or (cfg.Default or cfg.Options[1]),
-        FilteredOptions = cfg.Options,
-        SearchText = "",
-        HoveredIndex = 1,
-        AnimationTween = nil,
-        SearchDebounce = nil
-    }
-
-    -- Create main container
-    local Container = Create("Frame", {
-        Name = "Dropdown_" .. cfg.Text,
-        Size = UDim2.new(1, 0, 0, 36),
-        BackgroundTransparency = 1,
-        Parent = cfg.Parent
-    })
-
-    -- Create dropdown button
-    local DropdownButton = Create("TextButton", {
-        Name = "Button",
-        Size = UDim2.new(1, 0, 1, 0),
+    
+    if #CleanOptions == 0 then
+        CleanOptions = {"Empty"}
+    end
+    
+    -- Initialize values
+    local SelectedValues = MultiSelect and {} or nil
+    local CurrentValue = Default and tostring(Default) or CleanOptions[1]
+    local IsOpen = false
+    local FilteredOptions = CleanOptions
+    local SearchQuery = ""
+    
+    if MultiSelect and Default then
+        if type(Default) == "table" then
+            for _, v in ipairs(Default) do
+                SelectedValues[tostring(v)] = true
+            end
+        else
+            SelectedValues[tostring(Default)] = true
+        end
+    end
+    
+    -- Calculate dimensions
+    local baseHeight = 44
+    local optionHeight = 36
+    local maxDropdownHeight = math.min(#CleanOptions, MaxVisible) * optionHeight + (SearchEnabled and 40 or 8)
+    
+    -- Main container
+    local MainFrame = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.Surface,
-        BorderSizePixel = 0,
-        Text = "",
-        AutoButtonColor = false,
-        ClipsDescendants = true,
-        Parent = Container
+        Size = UDim2.new(1, 0, 0, baseHeight),
+        ClipsDescendants = false, -- PENTING!
+        Parent = ParentFrame,
+        ZIndex = 20 -- ZIndex tinggi
     })
-
-    AddCorner(DropdownButton, 8)
-    AddStroke(DropdownButton, Nexus.Theme.Outline, 1, 0.7)
-
-    -- Gradient background
-    local ButtonGradient = Create("UIGradient", {
-        Color = ColorSequence.new({
+    
+    if not MainFrame then return nil end
+    
+    AddCorner(MainFrame, 8)
+    AddStroke(MainFrame, Nexus.Theme.Outline, 1, 0.4)
+    AddShadow(MainFrame, 4, 0.9) -- Shadow sekarang akan terlihat
+    
+    -- Header section
+    local Header = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        Size = UDim2.new(1, 0, 1, 0), -- Full size dari MainFrame
+        Parent = MainFrame,
+        ZIndex = 21
+    })
+    
+    AddCorner(Header, 8)
+    
+    -- Gradient overlay
+    local HeaderGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
             ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
-            ColorSequenceKeypoint.new(1, Color3.new(0.95, 0.95, 0.95))
-        }),
+            ColorSequenceKeypoint.new(1, Color3.fromRGB(0.95, 0.95, 0.95))
+        },
         Rotation = 90,
-        Transparency = NumberSequence.new(0.8),
-        Parent = DropdownButton
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.98),
+            NumberSequenceKeypoint.new(1, 0.95)
+        },
+        Parent = Header
     })
-
-    -- Button content frame
-    local ButtonContent = Create("Frame", {
-        Name = "Content",
-        Size = UDim2.new(1, -24, 1, 0),
-        Position = UDim2.new(0, 12, 0, 0),
-        BackgroundTransparency = 1,
-        Parent = DropdownButton
+    
+    -- Icon
+    local Icon = Create("TextLabel", {
+        Text = MultiSelect and "☰" or "▼", Font = Enum.Font.GothamBold, TextSize = 14,
+        TextColor3 = Nexus.Theme.Accent, BackgroundTransparency = 1,
+        Position = UDim2.new(0, 12, 0, 0), Size = UDim2.new(0, 20, 1, 0),
+        Parent = Header, ZIndex = 22
     })
-
-    -- Selected text display
-    local SelectedText = Create("TextLabel", {
-        Name = "SelectedText",
-        Size = UDim2.new(1, -24, 1, 0),
-        BackgroundTransparency = 1,
-        Text = cfg.Placeholder,
-        TextColor3 = Nexus.Theme.TextMuted,
-        TextSize = 14,
+    
+    -- Label
+    local function UpdateLabel()
+        local displayText = Text .. ": "
+        
+        if MultiSelect then
+            local selectedCount = 0
+            local selectedItems = {}
+            
+            for value, selected in pairs(SelectedValues or {}) do
+                if selected then
+                    selectedCount = selectedCount + 1
+                    table.insert(selectedItems, value)
+                end
+            end
+            
+            if selectedCount == 0 then
+                displayText = displayText .. "None Selected"
+            elseif selectedCount == 1 then
+                displayText = displayText .. selectedItems[1]
+            elseif selectedCount <= 3 then
+                displayText = displayText .. table.concat(selectedItems, ", ")
+            else
+                displayText = displayText .. selectedCount .. " Selected"
+            end
+        else
+            displayText = displayText .. (CurrentValue or "None")
+        end
+        
+        return displayText
+    end
+    
+    local Label = Create("TextLabel", {
+        Text = UpdateLabel(),
         Font = Enum.Font.GothamMedium,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.Text,
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0, 40, 0, 0),
+        Size = UDim2.new(1, -80, 1, 0),
         TextXAlignment = Enum.TextXAlignment.Left,
         TextTruncate = Enum.TextTruncate.AtEnd,
-        Parent = ButtonContent
+        Parent = Header
     })
-
-    -- Dropdown arrow
+    
+    -- Arrow
     local Arrow = Create("TextLabel", {
-        Name = "Arrow",
-        Size = UDim2.new(0, 20, 1, 0),
-        Position = UDim2.new(1, -20, 0, 0),
-        BackgroundTransparency = 1,
         Text = "▼",
-        TextColor3 = Nexus.Theme.TextSub,
+        Font = Enum.Font.Gotham,
         TextSize = 12,
-        Font = Enum.Font.GothamBold,
-        TextXAlignment = Enum.TextXAlignment.Center,
-        TextYAlignment = Enum.TextYAlignment.Center,
-        Parent = ButtonContent
+        TextColor3 = Nexus.Theme.TextSub,
+        BackgroundTransparency = 1,
+        Position = UDim2.new(1, -32, 0, 0),
+        Size = UDim2.new(0, 24, 1, 0),
+        Rotation = IsOpen and 180 or 0, -- Rotasi 180 derajat saat dibuka (jadi panah atas)
+        Parent = Header
     })
-
-    -- Create dropdown panel (initially hidden)
-    local Panel = Create("Frame", {
-        Name = "Panel",
+    
+    -- Button
+    local Button = Create("TextButton", {
+        Text = "",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 1, 0),
+        Parent = Header
+    })
+    
+    -- Dropdown content
+    local Content = Create("Frame", {
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0, 0, 0, baseHeight),
         Size = UDim2.new(1, 0, 0, 0),
-        Position = UDim2.new(0, 0, 1, 4),
-        BackgroundColor3 = Nexus.Theme.Surface,
-        BorderSizePixel = 0,
         ClipsDescendants = true,
-        Visible = false,
-        ZIndex = 100,
-        Parent = Container
+        Parent = MainFrame
     })
-
-    AddCorner(Panel, 8)
-    AddStroke(Panel, Nexus.Theme.Outline, 1, 0.5)
-    AddShadow(Panel, 8, 0.3)
+    
+    -- Frame ini terpisah dari MainFrame secara visual. Posisinya melayang.
+    local DropdownContainer = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.new(1, 0, 0, 0), -- Mulai 0
+        Position = UDim2.new(0, 0, 1, 4), -- 4px di bawah header
+        ClipsDescendants = true,
+        Visible = false, 
+        Parent = MainFrame,
+        ZIndex = 100 -- Paling atas agar menutupi elemen lain
+    })
+    AddCorner(DropdownContainer, 8)
+    AddStroke(DropdownContainer, Nexus.Theme.Outline, 1, 0.4)
+    AddShadow(DropdownContainer, 8, 0.8)
 
     -- Search box (if enabled)
     local SearchBox = nil
-    local OptionsOffset = 0
-    
-    if cfg.Search then
+    if SearchEnabled then
+        local SearchContainer = Create("Frame", {
+            BackgroundColor3 = Nexus.Theme.SurfaceHighest,
+            Size = UDim2.new(1, -8, 0, 32), Position = UDim2.new(0, 4, 0, 4),
+            Parent = DropdownContainer, ZIndex = 51
+        })
+        AddCorner(SearchContainer, 6)
+        AddStroke(SearchContainer, Nexus.Theme.Accent, 1, 0.7)
+        
         SearchBox = Create("TextBox", {
-            Name = "Search",
-            Size = UDim2.new(1, -16, 0, 32),
-            Position = UDim2.new(0, 8, 0, 8),
-            BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-            BorderSizePixel = 0,
-            Text = "",
-            PlaceholderText = "Search...",
-            PlaceholderColor3 = Nexus.Theme.TextMuted,
-            TextColor3 = Nexus.Theme.Text,
-            TextSize = 13,
-            Font = Enum.Font.Gotham,
-            TextXAlignment = Enum.TextXAlignment.Left,
-            ClearTextOnFocus = false,
-            Parent = Panel
+            Text = "", PlaceholderText = "Search...", Font = Enum.Font.Gotham, TextSize = 13,
+            TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
+            Position = UDim2.new(0, 8, 0, 0), Size = UDim2.new(1, -16, 1, 0),
+            TextXAlignment = Enum.TextXAlignment.Left, Parent = SearchContainer, ZIndex = 52
         })
-
-        AddCorner(SearchBox, 6)
-        AddStroke(SearchBox, Nexus.Theme.Outline, 1, 0.8)
-        OptionsOffset = 48
     end
-
-    -- Options container with scrolling
+    
     local OptionsContainer = Create("ScrollingFrame", {
-        Name = "Options",
-        Size = UDim2.new(1, 0, 1, -OptionsOffset),
-        Position = UDim2.new(0, 0, 0, OptionsOffset),
         BackgroundTransparency = 1,
-        BorderSizePixel = 0,
-        ScrollBarThickness = 4,
-        ScrollBarImageColor3 = Nexus.Theme.Accent,
-        ScrollingDirection = Enum.ScrollingDirection.Y,
-        CanvasSize = UDim2.new(0, 0, 0, 0),
-        AutomaticCanvasSize = Enum.AutomaticSize.Y,
-        ScrollingEnabled = true,
-        Parent = Panel
+        Position = UDim2.new(0, 4, 0, SearchEnabled and 40 or 4),
+        Size = UDim2.new(1, -8, 1, -(SearchEnabled and 44 or 8)),
+        CanvasSize = UDim2.new(0, 0, 0, 0), ScrollBarThickness = 3,
+        ScrollBarImageColor3 = Nexus.Theme.Accent, Parent = DropdownContainer, ZIndex = 51
     })
-
-    -- Options list layout
-    local OptionsLayout = Create("UIListLayout", {
-        SortOrder = Enum.SortOrder.LayoutOrder,
-        Padding = UDim.new(0, 2),
-        Parent = OptionsContainer
-    })
-
-    -- Create option items
-    local OptionItems = {}
-
-    local function CreateOptionItem(text, index)
-        local isSelected = cfg.MultiSelect and table.find(DropdownState.Selected, text) or DropdownState.Selected == text
-
-        local OptionItem = Create("TextButton", {
-            Name = "Option_" .. index,
-            Size = UDim2.new(1, -8, 0, 28),
-            BackgroundColor3 = isSelected and Nexus.Theme.Accent or Color3.new(0, 0, 0),
-            BackgroundTransparency = isSelected and 0.1 or 1,
-            BorderSizePixel = 0,
-            Text = "",
-            AutoButtonColor = false,
-            LayoutOrder = index,
-            Parent = OptionsContainer
-        })
-
-        AddCorner(OptionItem, 6)
-
-        -- Option text
-        local OptionText = Create("TextLabel", {
-            Name = "Text",
-            Size = UDim2.new(1, cfg.MultiSelect and -28 or -12, 1, 0),
-            Position = UDim2.new(0, 12, 0, 0),
-            BackgroundTransparency = 1,
-            Text = text,
-            TextColor3 = isSelected and Nexus.Theme.Text or Nexus.Theme.TextSub,
-            TextSize = 13,
-            Font = isSelected and Enum.Font.GothamMedium or Enum.Font.Gotham,
-            TextXAlignment = Enum.TextXAlignment.Left,
-            TextTruncate = Enum.TextTruncate.AtEnd,
-            Parent = OptionItem
-        })
-
-        -- Checkbox for multi-select
-        local Checkbox = nil
-        if cfg.MultiSelect then
-            Checkbox = Create("Frame", {
-                Name = "Checkbox",
-                Size = UDim2.new(0, 16, 0, 16),
-                Position = UDim2.new(1, -24, 0.5, -8),
-                BackgroundColor3 = isSelected and Nexus.Theme.Accent or Nexus.Theme.Surface,
-                BorderSizePixel = 0,
-                Parent = OptionItem
+    local OptionsLayout = Create("UIListLayout", {Padding = UDim.new(0, 2), Parent = OptionsContainer})
+    
+    local function FilterOptions(query)
+        query = query:lower(); FilteredOptions = {}
+        for _, opt in ipairs(CleanOptions) do
+            if query == "" or opt:lower():find(query, 1, true) then table.insert(FilteredOptions, opt) end
+        end
+        if #FilteredOptions == 0 then FilteredOptions = {"No matches"} end
+    end
+    
+    -- Update canvas size when content changes
+    OptionsLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        if OptionsContainer and OptionsContainer.Parent then
+            OptionsContainer.CanvasSize = UDim2.new(0, 0, 0, OptionsLayout.AbsoluteContentSize.Y + 4)
+        end
+    end)
+    
+    local function RenderOptions()
+        for _, c in ipairs(OptionsContainer:GetChildren()) do if c:IsA("GuiObject") then c:Destroy() end end
+        for i, option in ipairs(FilteredOptions) do
+            -- ZIndex harus lebih tinggi dari DropdownContainer
+            local OptBtn = Create("TextButton", {
+                Text = "", BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+                BackgroundTransparency = (not MultiSelect and option == CurrentValue) and 0.1 or 0.8,
+                Size = UDim2.new(1, 0, 0, optionHeight - 4), Parent = OptionsContainer, ZIndex = 52
             })
-
-            AddCorner(Checkbox, 4)
-            AddStroke(Checkbox, Nexus.Theme.Outline, 1, 0.6)
-
-            if isSelected then
-                local Checkmark = Create("TextLabel", {
-                    Size = UDim2.new(1, 0, 1, 0),
-                    BackgroundTransparency = 1,
-                    Text = "✓",
-                    TextColor3 = Nexus.Theme.Text,
-                    TextSize = 12,
-                    Font = Enum.Font.GothamBold,
-                    TextXAlignment = Enum.TextXAlignment.Center,
-                    TextYAlignment = Enum.TextYAlignment.Center,
-                    Parent = Checkbox
-                })
+            AddCorner(OptBtn, 6)
+            
+            if (MultiSelect and SelectedValues[option]) or (not MultiSelect and option == CurrentValue) then
+                AddStroke(OptBtn, Nexus.Theme.Accent, 1, 0.3)
             end
-        end
 
-        -- Hover effects
-        local function OnHover(hovering)
-            if not OptionItem.Parent then return end
+            local OptTxt = Create("TextLabel", {
+                Text = option, Font = Enum.Font.Gotham, TextSize = 13,
+                TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
+                Size = UDim2.new(1, -10, 1, 0), Position = UDim2.new(0, 10, 0, 0),
+                TextXAlignment = Enum.TextXAlignment.Left, Parent = OptBtn, ZIndex = 53
+            })
             
-            local targetColor = hovering and Nexus.Theme.SurfaceHigh or (isSelected and Nexus.Theme.Accent or Color3.new(0, 0, 0))
-            local targetTransparency = hovering and 0.3 or (isSelected and 0.1 or 1)
-            
-            Tween(OptionItem, {
-                BackgroundColor3 = targetColor,
-                BackgroundTransparency = targetTransparency
-            }, 0.15)
-            
-            if not isSelected then
-                Tween(OptionText, {
-                    TextColor3 = hovering and Nexus.Theme.Text or Nexus.Theme.TextSub
-                }, 0.15)
-            end
-        end
-
-        -- Click handling
-        local function OnClick()
-            if cfg.MultiSelect then
-                local selectedIndex = table.find(DropdownState.Selected, text)
-                if selectedIndex then
-                    table.remove(DropdownState.Selected, selectedIndex)
+            OptBtn.MouseButton1Click:Connect(function()
+                if MultiSelect then
+                    SelectedValues[option] = not SelectedValues[option]
+                    local sel = {}; for k,v in pairs(SelectedValues) do if v then table.insert(sel,k) end end
+                    Label.Text = UpdateLabel(); pcall(Callback, sel)
+                    if Flag then Nexus.Flags[Flag] = sel end
+                    RenderOptions()
                 else
-                    table.insert(DropdownState.Selected, text)
-                end
-                
-                -- Update display without closing
-                UpdateSelectedDisplay()
-                RefreshOptions()
-                
-                -- Callback
-                pcall(cfg.Callback, DropdownState.Selected)
-                
-                -- Auto save
-                if cfg.Flag then
-                    Nexus.Flags[cfg.Flag] = DropdownState.Selected
-                    Nexus:_ScheduleAutoSave()
-                end
-            else
-                DropdownState.Selected = text
-                UpdateSelectedDisplay()
-                CloseDropdown()
-                
-                -- Callback
-                pcall(cfg.Callback, text)
-                
-                -- Auto save
-                if cfg.Flag then
-                    Nexus.Flags[cfg.Flag] = text
-                    Nexus:_ScheduleAutoSave()
-                end
-            end
-        end
+                    CurrentValue = option; Label.Text = UpdateLabel()
+                    -- Close Logic
+                    IsOpen = false
+                    MainFrame.ZIndex = 20
 
-        -- Connect events
-        table.insert(Nexus.Connections, OptionItem.MouseEnter:Connect(function()
-            OnHover(true)
-        end))
-        
-        table.insert(Nexus.Connections, OptionItem.MouseLeave:Connect(function()
-            OnHover(false)
-        end))
-        
-        table.insert(Nexus.Connections, OptionItem.Activated:Connect(OnClick))
-
-        OptionItems[text] = {
-            Item = OptionItem,
-            Text = OptionText,
-            Checkbox = Checkbox,
-            OnHover = OnHover,
-            IsVisible = true
-        }
-
-        return OptionItem
-    end
-
-    -- Search functionality
-    local function FilterOptions(searchText)
-        searchText = searchText:lower()
-        DropdownState.FilteredOptions = {}
-        
-        for _, option in ipairs(cfg.Options) do
-            if searchText == "" or option:lower():find(searchText, 1, true) then
-                table.insert(DropdownState.FilteredOptions, option)
-            end
-        end
-        
-        RefreshOptions()
-    end
-
-    -- Refresh options display
-    function RefreshOptions()
-        -- Clear existing options
-        for _, data in pairs(OptionItems) do
-            if data.Item and data.Item.Parent then
-                data.Item:Destroy()
-            end
-        end
-        OptionItems = {}
-        
-        -- Create filtered options
-        for index, option in ipairs(DropdownState.FilteredOptions) do
-            CreateOptionItem(option, index)
-        end
-        
-        -- Update panel height
-        local optionCount = math.min(#DropdownState.FilteredOptions, cfg.MaxVisible)
-        local panelHeight = OptionsOffset + (optionCount * 30) + ((optionCount - 1) * 2) + 8
-        
-        if DropdownState.IsOpen then
-            Tween(Panel, {Size = UDim2.new(1, 0, 0, panelHeight)}, 0.25, Enum.EasingStyle.Quart)
-        end
-    end
-
-    -- Update selected display
-    function UpdateSelectedDisplay()
-        if cfg.MultiSelect then
-            if #DropdownState.Selected == 0 then
-                SelectedText.Text = cfg.Placeholder
-                SelectedText.TextColor3 = Nexus.Theme.TextMuted
-            elseif #DropdownState.Selected == 1 then
-                SelectedText.Text = DropdownState.Selected[1]
-                SelectedText.TextColor3 = Nexus.Theme.Text
-            else
-                SelectedText.Text = #DropdownState.Selected .. " items selected"
-                SelectedText.TextColor3 = Nexus.Theme.Text
-            end
-        else
-            SelectedText.Text = DropdownState.Selected or cfg.Placeholder
-            SelectedText.TextColor3 = DropdownState.Selected and Nexus.Theme.Text or Nexus.Theme.TextMuted
-        end
-    end
-
-    -- Open dropdown
-    local function OpenDropdown()
-        if DropdownState.IsOpen then return end
-        
-        DropdownState.IsOpen = true
-        Panel.Visible = true
-        
-        -- Calculate panel height
-        local optionCount = math.min(#DropdownState.FilteredOptions, cfg.MaxVisible)
-        local targetHeight = OptionsOffset + (optionCount * 30) + ((optionCount - 1) * 2) + 8
-        
-        -- Animate panel open
-        Panel.Size = UDim2.new(1, 0, 0, 0)
-        DropdownState.AnimationTween = Tween(Panel, {
-            Size = UDim2.new(1, 0, 0, targetHeight)
-        }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-        
-        -- Animate arrow
-        Tween(Arrow, {
-            Rotation = 180,
-            TextColor3 = Nexus.Theme.Accent
-        }, 0.25)
-        
-        -- Animate button
-        Tween(DropdownButton, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.2)
-        
-        -- Focus search if enabled
-        if SearchBox then
-            task.wait(0.3)
-            if SearchBox and SearchBox.Parent then
-                SearchBox:CaptureFocus()
-            end
-        end
-        
-        -- Enable blur
-        SetBlur(true, 8)
-    end
-
-    -- Close dropdown
-    function CloseDropdown()
-        if not DropdownState.IsOpen then return end
-        
-        DropdownState.IsOpen = false
-        
-        -- Cancel current animation
-        if DropdownState.AnimationTween then
-            DropdownState.AnimationTween:Cancel()
-        end
-        
-        -- Animate panel close
-        DropdownState.AnimationTween = Tween(Panel, {
-            Size = UDim2.new(1, 0, 0, 0)
-        }, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out, function()
-            Panel.Visible = false
-        end)
-        
-        -- Animate arrow
-        Tween(Arrow, {
-            Rotation = 0,
-            TextColor3 = Nexus.Theme.TextSub
-        }, 0.2)
-        
-        -- Animate button
-        Tween(DropdownButton, {BackgroundColor3 = Nexus.Theme.Surface}, 0.2)
-        
-        -- Clear search
-        if SearchBox then
-            SearchBox.Text = ""
-            DropdownState.SearchText = ""
-            FilterOptions("")
-        end
-        
-        -- Disable blur
-        SetBlur(false)
-    end
-
-    -- Search handling with debounce
-    if SearchBox then
-        table.insert(Nexus.Connections, SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
-            local searchText = SearchBox.Text
-            
-            -- Cancel previous debounce
-            if DropdownState.SearchDebounce then
-                task.cancel(DropdownState.SearchDebounce)
-            end
-            
-            -- Debounce search
-            DropdownState.SearchDebounce = task.spawn(function()
-                task.wait(0.3)
-                if SearchBox and SearchBox.Parent and SearchBox.Text == searchText then
-                    DropdownState.SearchText = searchText
-                    FilterOptions(searchText)
+                    Tween(Arrow, {Rotation = 0}, 0.2)
+                    Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, 0)}, 0.2)
+                    task.wait(0.2)
+                    DropdownContainer.Visible = false
+                    pcall(Callback, option)
+                    if Flag then Nexus.Flags[Flag] = option end
                 end
             end)
-        end))
-
-        -- Clear search on focus lost
-        table.insert(Nexus.Connections, SearchBox.FocusLost:Connect(function()
-            if SearchBox.Text == "" and DropdownState.IsOpen then
-                task.wait(0.1) -- Small delay to prevent immediate close
-                if not SearchBox:IsFocused() then
-                    CloseDropdown()
-                end
-            end
-        end))
-    end
-
-    -- Button click handling
-    table.insert(Nexus.Connections, DropdownButton.Activated:Connect(function()
-        if DropdownState.IsOpen then
-            CloseDropdown()
-        else
-            OpenDropdown()
         end
-    end))
-
-    -- Click outside to close
-    table.insert(Nexus.Connections, UserInputService.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 and DropdownState.IsOpen then
-            local mouse = Players.LocalPlayer:GetMouse()
-            local gui = Panel
-            
-            if gui and gui.Parent then
-                local pos = gui.AbsolutePosition
-                local size = gui.AbsoluteSize
-                
-                if mouse.X < pos.X or mouse.X > pos.X + size.X or 
-                   mouse.Y < pos.Y or mouse.Y > pos.Y + size.Y then
-                    
-                    -- Also check if clicking on button
-                    local buttonPos = DropdownButton.AbsolutePosition
-                    local buttonSize = DropdownButton.AbsoluteSize
-                    
-                    if not (mouse.X >= buttonPos.X and mouse.X <= buttonPos.X + buttonSize.X and
-                            mouse.Y >= buttonPos.Y and mouse.Y <= buttonPos.Y + buttonSize.Y) then
-                        CloseDropdown()
+        OptionsContainer.CanvasSize = UDim2.new(0, 0, 0, OptionsLayout.AbsoluteContentSize.Y + 4)
+    end
+    
+    -- Toggle dropdown function
+    local function ToggleDropdown()
+        IsOpen = not IsOpen
+        
+        local targetHeight = IsOpen and (math.min(#FilteredOptions, MaxVisible) * optionHeight + (SearchEnabled and 48 or 12)) or 0
+        
+        Tween(Arrow, {Rotation = IsOpen and 180 or 0, TextColor3 = IsOpen and Nexus.Theme.Accent or Nexus.Theme.TextSub}, 0.2)
+        
+        if IsOpen then
+            MainFrame.ZIndex = 200
+            DropdownContainer.Visible = true
+            Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, targetHeight)}, 0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+        else
+            Tween(DropdownContainer, {Size = UDim2.new(1, 0, 0, 0)}, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.In)
+            task.delay(0.2, function() 
+                if not IsOpen then 
+                    DropdownContainer.Visible = false 
+                    -- [FIX UTAMA] Kembalikan ZIndex normal setelah tutup
+                    MainFrame.ZIndex = 20 
+                end 
+            end)
+        end
+    end
+    
+    -- Search functionality
+    if SearchBox then SearchBox:GetPropertyChangedSignal("Text"):Connect(function() SearchQuery=SearchBox.Text; FilterOptions(SearchQuery); RenderOptions() end) end
+    Button.MouseButton1Click:Connect(ToggleDropdown)
+    
+    -- Header hover effect
+    local function OnHeaderHover(hovering)
+        if not Header or not Header.Parent then return end
+        Tween(Header, {BackgroundColor3 = hovering and Nexus.Theme.SurfaceHighest or Nexus.Theme.SurfaceHigh}, 0.15)
+        if HeaderGradient then
+            HeaderGradient.Transparency = NumberSequence.new{
+                NumberSequenceKeypoint.new(0, hovering and 0.95 or 0.98),
+                NumberSequenceKeypoint.new(1, hovering and 0.90 or 0.95)
+            }
+        end
+    end
+    Header.MouseEnter:Connect(function() OnHeaderHover(true) end)
+    Header.MouseLeave:Connect(function() OnHeaderHover(false) end)
+    
+    FilterOptions(""); RenderOptions()
+    
+    -- API
+    local API = {}
+    
+    function API:SetValue(value)
+        if MultiSelect then
+            if type(value) == "table" then
+                SelectedValues = {}
+                for _, v in ipairs(value) do
+                    local stringValue = tostring(v)
+                    if table.find(CleanOptions, stringValue) then
+                        SelectedValues[stringValue] = true
                     end
                 end
-            end
-        end
-    end))
-
-    -- Keyboard navigation
-    table.insert(Nexus.Connections, UserInputService.InputBegan:Connect(function(input)
-        if not DropdownState.IsOpen then return end
-        
-        if input.KeyCode == Enum.KeyCode.Escape then
-            CloseDropdown()
-        elseif input.KeyCode == Enum.KeyCode.Return then
-            if DropdownState.FilteredOptions[DropdownState.HoveredIndex] then
-                -- Simulate click on hovered option
-                local optionText = DropdownState.FilteredOptions[DropdownState.HoveredIndex]
-                local optionData = OptionItems[optionText]
-                if optionData and optionData.Item then
-                    optionData.Item.Activated:Fire()
+            else
+                local stringValue = tostring(value)
+                if table.find(CleanOptions, stringValue) then
+                    SelectedValues = {[stringValue] = true}
                 end
             end
-        end
-    end))
-
-    -- Initial setup
-    RefreshOptions()
-    UpdateSelectedDisplay()
-
-    -- Public methods
-    local DropdownAPI = {
-        SetOptions = function(self, newOptions)
-            cfg.Options = newOptions or {}
-            DropdownState.FilteredOptions = cfg.Options
-            RefreshOptions()
-        end,
-        
-        SetValue = function(self, value)
-            if cfg.MultiSelect then
-                DropdownState.Selected = type(value) == "table" and value or {}
-            else
-                DropdownState.Selected = value
-            end
-            UpdateSelectedDisplay()
-            RefreshOptions()
-        end,
-        
-        GetValue = function(self)
-            return DropdownState.Selected
-        end,
-        
-        Open = function(self)
-            OpenDropdown()
-        end,
-        
-        Close = function(self)
-            CloseDropdown()
-        end,
-        
-        Destroy = function(self)
-            CloseDropdown()
-            if Container and Container.Parent then
-                Container:Destroy()
+        else
+            local stringValue = tostring(value)
+            if table.find(CleanOptions, stringValue) then
+                CurrentValue = stringValue
             end
         end
-    }
-
-    -- Register for auto-save
-    if cfg.Flag then
-        Nexus.Registry[cfg.Flag] = {
-            Get = function() return DropdownState.Selected end,
-            Set = function(value) DropdownAPI:SetValue(value) end
-        }
-        Nexus.Flags[cfg.Flag] = DropdownState.Selected
+        
+        Label.Text = UpdateLabel()
+        RenderOptions()
+        
+        return true
     end
-
-    return DropdownAPI
+    
+    function API:GetValue()
+        if MultiSelect then
+            local selected = {}
+            for value, isSelected in pairs(SelectedValues or {}) do
+                if isSelected then
+                    table.insert(selected, value)
+                end
+            end
+            return selected
+        else
+            return CurrentValue
+        end
+    end
+    
+    function API:SetOptions(newOptions)
+        if not newOptions or type(newOptions) ~= "table" then
+            return false
+        end
+        
+        -- Validate and clean new options
+        local newCleanOptions = {}
+        for _, option in ipairs(newOptions) do
+            if option ~= nil then
+                table.insert(newCleanOptions, tostring(option))
+            end
+        end
+        
+        if #newCleanOptions == 0 then
+            newCleanOptions = {"Empty"}
+        end
+        
+        CleanOptions = newCleanOptions
+        
+        -- Reset selections if they're no longer valid
+        if MultiSelect then
+            local newSelectedValues = {}
+            for value, isSelected in pairs(SelectedValues or {}) do
+                if isSelected and table.find(CleanOptions, value) then
+                    newSelectedValues[value] = true
+                end
+            end
+            SelectedValues = newSelectedValues
+        else
+            if not table.find(CleanOptions, CurrentValue) then
+                CurrentValue = CleanOptions[1]
+            end
+        end
+        
+        -- Close dropdown and refresh
+        if IsOpen then
+            ToggleDropdown()
+        end
+        
+        FilterOptions(SearchQuery or "")
+        RenderOptions()
+        Label.Text = UpdateLabel()
+        
+        return true
+    end
+    
+    function API:Clear()
+        if MultiSelect then
+            SelectedValues = {}
+        else
+            CurrentValue = CleanOptions[1] or "None"
+        end
+        
+        Label.Text = UpdateLabel()
+        RenderOptions()
+        
+        return true
+    end
+    
+    function API:Close()
+        if IsOpen then
+            ToggleDropdown()
+        end
+    end
+    
+    function API:Open()
+        if not IsOpen then
+            ToggleDropdown()
+        end
+    end
+    
+    function API:Destroy()
+        if MainFrame and MainFrame.Parent then
+            MainFrame:Destroy()
+        end
+    end
+    
+    function API:SetEnabled(enabled)
+        if MainFrame then
+            MainFrame.Visible = enabled
+        end
+        return true
+    end
+    
+    -- Register with flag system
+    if Flag then
+        Nexus.Registry[Flag] = API
+    end
+    
+    -- Theme update handler
+    local themeConnection = Nexus.ThemeChanged.Event:Connect(function()
+        if not MainFrame or not MainFrame.Parent then return end
+        
+        -- Update colors
+        MainFrame.BackgroundColor3 = Nexus.Theme.Surface
+        Header.BackgroundColor3 = Nexus.Theme.SurfaceHigh
+        Label.TextColor3 = Nexus.Theme.Text
+        Icon.TextColor3 = Nexus.Theme.Accent
+        
+        local strokeElement = MainFrame:FindFirstChild("UIStroke")
+        if strokeElement then
+            strokeElement.Color = IsOpen and Nexus.Theme.Accent or Nexus.Theme.Outline
+        end
+        
+        if SearchBox then
+            SearchBox.TextColor3 = Nexus.Theme.Text
+            SearchBox.PlaceholderColor3 = Nexus.Theme.TextMuted
+            SearchBox.Parent.BackgroundColor3 = Nexus.Theme.SurfaceHighest
+        end
+        
+        -- Re-render options with new theme
+        RenderOptions()
+    end)
+    
+    -- Store connection for cleanup
+    table.insert(Nexus.Connections, themeConnection)
+    
+    return API
 end
-
 
 --// Main Window Function (continuing with all other components...)
 function Nexus:Window(config)
@@ -2542,24 +2390,10 @@ function Nexus:Window(config)
         end
         
         -- Enhanced Dropdown with the new system
-        function Tab:Dropdown(cfg)
-            if not TabPage or not TabPage.Parent then 
-                warn("[Nexus] Tab:Dropdown - TabPage is not available")
-                return nil 
-            end
-            
-            -- Create new config table to avoid modifying original
-            local dropdownConfig = {}
-            for key, value in pairs(cfg) do
-                dropdownConfig[key] = value
-            end
-            
-            -- Set parent if not specified
-            dropdownConfig.Parent = dropdownConfig.Parent or TabPage
-            
-            return Nexus:CreateModernDropdown(dropdownConfig)
+        function Tab:Dropdown(config)
+            if not TabPage or not TabPage.Parent then return nil end
+            return CreateModernDropdown(config, TabPage)
         end
-
         
         -- Continue with other components in the next part...
         function Tab:Toggle(config)
@@ -3842,13 +3676,8 @@ function Nexus:Window(config)
                 
                 function Group:Dropdown(cfg)
                     if not ContentContainer or not ContentContainer.Parent then return nil end
-                    
-                    -- Set parent ke ContentContainer kalo belum ada
-                    cfg.Parent = cfg.Parent or ContentContainer
-                    
-                    return Nexus:CreateModernDropdown(cfg)
+                    return CreateModernDropdown(cfg, ContentContainer)
                 end
-
                 
                 function Group:Label(cfg)
                     if type(cfg) == "string" then cfg = {Text = cfg} end
