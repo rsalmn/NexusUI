@@ -2666,7 +2666,7 @@ function Nexus:Window(config)
                 Parent = SectionFrame
             })
             
-            -- Section underline dengan gradient effect
+            -- Section underline
             local SectionLine = Create("Frame", {
                 BackgroundColor3 = Nexus.Theme.Accent,
                 Size = UDim2.new(0, 40, 0, 2),
@@ -2676,11 +2676,11 @@ function Nexus:Window(config)
             
             AddCorner(SectionLine, 1)
             
-            -- Enhanced gradient untuk section line
+            -- FIX: Safe gradient dengan fallback colors
             local SectionGradient = Create("UIGradient", {
                 Color = ColorSequence.new{
-                    ColorSequenceKeypoint.new(0, Nexus.Theme.Accent),
-                    ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient1)
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255)),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255))
                 },
                 Rotation = 0,
                 Transparency = NumberSequence.new{
@@ -2698,8 +2698,8 @@ function Nexus:Window(config)
                     SectionLine.BackgroundColor3 = Nexus.Theme.Accent
                     if SectionGradient and SectionGradient.Parent then
                         SectionGradient.Color = ColorSequence.new{
-                            ColorSequenceKeypoint.new(0, Nexus.Theme.Accent),
-                            ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient1)
+                            ColorSequenceKeypoint.new(0, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255)),
+                            ColorSequenceKeypoint.new(1, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255))
                         }
                     end
                 end)
@@ -2722,7 +2722,6 @@ function Nexus:Window(config)
                 Frame = SectionFrame
             }
         end
-
         
         function Tab:Divider()
             if Nexus.IsDestroyed then return end
@@ -2741,12 +2740,12 @@ function Nexus:Window(config)
                 Parent = DividerFrame
             })
             
-            -- Enhanced divider dengan subtle gradient
+            -- FIX: Safe gradient dengan fallback colors
             local DividerGradient = Create("UIGradient", {
                 Color = ColorSequence.new{
-                    ColorSequenceKeypoint.new(0, Nexus.Theme.Outline),
-                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
-                    ColorSequenceKeypoint.new(1, Nexus.Theme.Outline)
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Outline or Color3.fromRGB(60, 60, 60)),
+                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255)),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Outline or Color3.fromRGB(60, 60, 60))
                 },
                 Rotation = 0,
                 Transparency = NumberSequence.new{
@@ -2764,9 +2763,9 @@ function Nexus:Window(config)
                     DividerLine.BackgroundColor3 = Nexus.Theme.Outline
                     if DividerGradient and DividerGradient.Parent then
                         DividerGradient.Color = ColorSequence.new{
-                            ColorSequenceKeypoint.new(0, Nexus.Theme.Outline),
-                            ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
-                            ColorSequenceKeypoint.new(1, Nexus.Theme.Outline)
+                            ColorSequenceKeypoint.new(0, Nexus.Theme.Outline or Color3.fromRGB(60, 60, 60)),
+                            ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255)),
+                            ColorSequenceKeypoint.new(1, Nexus.Theme.Outline or Color3.fromRGB(60, 60, 60))
                         }
                     end
                 end)
@@ -2786,7 +2785,6 @@ function Nexus:Window(config)
                 end
             }
         end
-
         
         function Tab:Label(config)
             if Nexus.IsDestroyed then return end
