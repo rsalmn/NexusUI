@@ -1,7 +1,12 @@
 # NexusUI
 NexusUI is a open source UI library for Roblox Script Hubs
 
-This Script is created by
+> [!WARNING]
+> This Nexus UI was not inspired by Wind UI & Fluent UI
+
+### Links
+- [Discord Server](https://discord.gg/wdNb6t8gWC)
+
+## Helper for fixing some bug and enhanced some features
 - Gemini 3 Pro
-- ChatGPT 5.2
 - Claude 4.5
