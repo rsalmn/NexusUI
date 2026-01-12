@@ -535,14 +535,14 @@ UpdateThemeColors()
 
 --// Enhanced Dropdown Component
 function Nexus:CreateModernDropdown(config)
-    -- Config validation
+    -- Config validation (sesuai format lu)
     local cfg = {
-        Text = config.Text or config.Name or "Dropdown", -- Support both for backward compatibility
+        Text = config.Text or "Dropdown",
         Parent = config.Parent,
-        Options = config.Options or {},
+        Options = config.Options or {"No Options"},
         Default = config.Default,
-        Multi = config.Multi or false,
-        Search = config.Search ~= false, -- default true
+        MultiSelect = config.MultiSelect or false,
+        Search = config.Search or false,
         MaxVisible = config.MaxVisible or 6,
         Placeholder = config.Placeholder or "Select option...",
         Description = config.Description,
@@ -557,13 +557,13 @@ function Nexus:CreateModernDropdown(config)
     
     if type(cfg.Options) ~= "table" or #cfg.Options == 0 then
         warn("[Nexus] CreateModernDropdown: Options should be a non-empty table")
-        cfg.Options = {"No options"}
+        cfg.Options = {"No Options"}
     end
 
     -- State management
     local DropdownState = {
         IsOpen = false,
-        Selected = cfg.Multi and {} or (cfg.Default or cfg.Options[1]),
+        Selected = cfg.MultiSelect and {} or (cfg.Default or cfg.Options[1]),
         FilteredOptions = cfg.Options,
         SearchText = "",
         HoveredIndex = 1,
@@ -714,7 +714,7 @@ function Nexus:CreateModernDropdown(config)
     local OptionItems = {}
 
     local function CreateOptionItem(text, index)
-        local isSelected = cfg.Multi and table.find(DropdownState.Selected, text) or DropdownState.Selected == text
+        local isSelected = cfg.MultiSelect and table.find(DropdownState.Selected, text) or DropdownState.Selected == text
 
         local OptionItem = Create("TextButton", {
             Name = "Option_" .. index,
@@ -733,7 +733,7 @@ function Nexus:CreateModernDropdown(config)
         -- Option text
         local OptionText = Create("TextLabel", {
             Name = "Text",
-            Size = UDim2.new(1, cfg.Multi and -28 or -12, 1, 0),
+            Size = UDim2.new(1, cfg.MultiSelect and -28 or -12, 1, 0),
             Position = UDim2.new(0, 12, 0, 0),
             BackgroundTransparency = 1,
             Text = text,
@@ -747,7 +747,7 @@ function Nexus:CreateModernDropdown(config)
 
         -- Checkbox for multi-select
         local Checkbox = nil
-        if cfg.Multi then
+        if cfg.MultiSelect then
             Checkbox = Create("Frame", {
                 Name = "Checkbox",
                 Size = UDim2.new(0, 16, 0, 16),
@@ -796,7 +796,7 @@ function Nexus:CreateModernDropdown(config)
 
         -- Click handling
         local function OnClick()
-            if cfg.Multi then
+            if cfg.MultiSelect then
                 local selectedIndex = table.find(DropdownState.Selected, text)
                 if selectedIndex then
                     table.remove(DropdownState.Selected, selectedIndex)
@@ -894,7 +894,7 @@ function Nexus:CreateModernDropdown(config)
 
     -- Update selected display
     function UpdateSelectedDisplay()
-        if cfg.Multi then
+        if cfg.MultiSelect then
             if #DropdownState.Selected == 0 then
                 SelectedText.Text = cfg.Placeholder
                 SelectedText.TextColor3 = Nexus.Theme.TextMuted
@@ -1084,7 +1084,7 @@ function Nexus:CreateModernDropdown(config)
         end,
         
         SetValue = function(self, value)
-            if cfg.Multi then
+            if cfg.MultiSelect then
                 DropdownState.Selected = type(value) == "table" and value or {}
             else
                 DropdownState.Selected = value
@@ -1124,6 +1124,7 @@ function Nexus:CreateModernDropdown(config)
 
     return DropdownAPI
 end
+
 
 --// Main Window Function (continuing with all other components...)
 function Nexus:Window(config)
