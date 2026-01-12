@@ -29,6 +29,10 @@ local Nexus = {
     }
 }
 
+-- Tambahkan di bagian awal script setelah deklarasi Nexus
+local IS_MOBILE = (UserInputService.TouchEnabled and not UserInputService.MouseEnabled)
+local SCREEN_SIZE = workspace.CurrentCamera.ViewportSize
+
 --// Services with error handling
 local Services = {}
 local function GetService(serviceName)
@@ -81,8 +85,38 @@ local function SafeCreate(class, props, children)
     return inst
 end
 
+-- Modifikasi function Create untuk handle mobile scaling
 local function Create(class, props, children)
-    return SafeCreate(class, props, children)
+    local inst = SafeCreate(class, props, children)
+    if not inst then return nil end
+    
+    if IS_MOBILE and inst:IsA("GuiObject") then
+        -- Adjust size for mobile
+        if not props.Size then
+            inst.Size = UDim2.new(1, 0, 1, 0) -- Default fullscreen untuk mobile
+        else
+            -- Scale up untuk mobile
+            local scaleX = props.Size.X.Scale * 1.3
+            local scaleY = props.Size.Y.Scale * 1.3
+            inst.Size = UDim2.new(
+                math.min(scaleX, 0.95),  -- Batasi maksimal 95% screen width
+                props.Size.X.Offset * 1.5,
+                math.min(scaleY, 0.95),  -- Batasi maksimal 95% screen height
+                props.Size.Y.Offset * 1.5
+            )
+        end
+        
+        -- Adjust text size untuk mobile
+        if inst:IsA("TextButton") or inst:IsA("TextLabel") then
+            if not props.TextSize then
+                inst.TextSize = 24  -- Default lebih besar untuk mobile
+            else
+                inst.TextSize = props.TextSize * 1.5
+            end
+        end
+    end
+    
+    return inst
 end
 
 local function AddCorner(parent, radius)
@@ -159,6 +193,7 @@ local function Tween(inst, props, time, style, direction, callback)
     return tween
 end
 
+-- Modifikasi MakeDraggable untuk touch screen
 local function MakeDraggable(gui, handle)
     if not gui or not gui.Parent then return end
     
@@ -168,21 +203,28 @@ local function MakeDraggable(gui, handle)
     local startPos = nil
     
     local function onInputBegan(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or 
-           input.UserInputType == Enum.UserInputType.Touch then
-            
+        if input.UserInputType == Enum.UserInputType.Touch then
             dragging = true
             dragStart = input.Position
             startPos = gui.Position
             
-            --PlaySound("6895079853", 0.05) -- Subtle click sound
+            -- Untuk mobile, kita lock position Y agar tidak ketutupan virtual keyboard
+            if IS_MOBILE then
+                local maxY = SCREEN_SIZE.Y * 0.7  -- Maksimal 70% dari screen height
+                if startPos.Y.Offset > maxY then
+                    startPos = UDim2.new(
+                        startPos.X.Scale,
+                        startPos.X.Offset,
+                        0.5,  -- Center vertical
+                        -gui.AbsoluteSize.Y/2
+                    )
+                end
+            end
         end
     end
     
     local function onInputChanged(input)
-        if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or 
-                        input.UserInputType == Enum.UserInputType.Touch) then
-            
+        if dragging and input.UserInputType == Enum.UserInputType.Touch then
             local delta = input.Position - dragStart
             local newPos = UDim2.new(
                 startPos.X.Scale,
@@ -191,14 +233,28 @@ local function MakeDraggable(gui, handle)
                 startPos.Y.Offset + delta.Y
             )
             
+            -- Boundary check untuk mobile
+            if IS_MOBILE then
+                local absPos = newPos + gui.AbsoluteSize
+                if absPos.X.Offset > SCREEN_SIZE.X then
+                    newPos = UDim2.new(
+                        newPos.X.Scale,
+                        SCREEN_SIZE.X - gui.AbsoluteSize.X,
+                        newPos.Y.Scale,
+                        newPos.Y.Offset
+                    )
+                end
+                if absPos.Y.Offset > SCREEN_SIZE.Y * 0.8 then  -- Batas bawah
+                    newPos = UDim2.new(
+                        newPos.X.Scale,
+                        newPos.X.Offset,
+                        newPos.Y.Scale,
+                        SCREEN_SIZE.Y * 0.8 - gui.AbsoluteSize.Y
+                    )
+                end
+            end
+            
             Tween(gui, {Position = newPos}, 0.1)
-        end
-    end
-    
-    local function onInputEnded(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or
-           input.UserInputType == Enum.UserInputType.Touch then
-            dragging = false
         end
     end
     
@@ -206,6 +262,33 @@ local function MakeDraggable(gui, handle)
     table.insert(Nexus.Connections, dragHandle.InputBegan:Connect(onInputBegan))
     table.insert(Nexus.Connections, dragHandle.InputChanged:Connect(onInputChanged))
     table.insert(Nexus.Connections, UserInputService.InputEnded:Connect(onInputEnded))
+end
+
+-- Tambahkan function untuk mobile keyboard avoidance
+local function SetupKeyboardAvoidance(frame)
+    if not IS_MOBILE then return end
+    
+    local connection
+    connection = UserInputService.TextBoxFocused:Connect(function()
+        local keyboardHeight = 300  -- Default estimation
+        local absPos = frame.AbsolutePosition.Y + frame.AbsoluteSize.Y
+        
+        if absPos > (SCREEN_SIZE.Y - keyboardHeight) then
+            local offset = absPos - (SCREEN_SIZE.Y - keyboardHeight)
+            Tween(frame, {Position = UDim2.new(
+                frame.Position.X.Scale,
+                frame.Position.X.Offset,
+                frame.Position.Y.Scale,
+                frame.Position.Y.Offset - offset - 20  -- Beri margin 20px
+            )}, 0.25)
+        end
+    end)
+    
+    UserInputService.TextBoxFocusReleased:Connect(function()
+        Tween(frame, {Position = frame.Position}, 0.25)
+    end)
+    
+    table.insert(Nexus.Connections, connection)
 end
 
 --// Enhanced Blur System
@@ -542,11 +625,17 @@ local function CreateModernDropdown(cfg, ParentFrame)
     -- Main container
     local MainFrame = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.Surface,
-        Size = UDim2.new(1, 0, 0, baseHeight),
-        ClipsDescendants = false, -- PENTING!
+        Size = IS_MOBILE and UDim2.new(0.9, 0, 0, baseHeight * 1.5) or UDim2.new(1, 0, 0, baseHeight), -- Ukuran berbeda mobile/desktop
+        Position = IS_MOBILE and UDim2.new(0.05, 0, 0.1, 0) or UDim2.new(0, 0, 0, 0), -- Position lebih centered di mobile
+        ClipsDescendants = false,
         Parent = ParentFrame,
-        ZIndex = 20 -- ZIndex tinggi
+        ZIndex = 20
     })
+    
+    -- Wajib ditambahkan untuk window:
+    MakeDraggable(MainFrame)
+    SetupKeyboardAvoidance(MainFrame) -- Handle virtual keyboard
+
     
     if not MainFrame then return nil end
     
