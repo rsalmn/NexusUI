@@ -2646,6 +2646,8 @@ function Nexus:Window(config)
         
         -- Tab API methods
         function Tab:Section(text)
+            if Nexus.IsDestroyed then return end
+            
             local SectionFrame = Create("Frame", {
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 0, 32),
@@ -2660,10 +2662,11 @@ function Nexus:Window(config)
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 1, 0),
                 TextXAlignment = Enum.TextXAlignment.Left,
+                TextTruncate = Enum.TextTruncate.AtEnd,
                 Parent = SectionFrame
             })
             
-            -- Section underline
+            -- Section underline dengan gradient effect
             local SectionLine = Create("Frame", {
                 BackgroundColor3 = Nexus.Theme.Accent,
                 Size = UDim2.new(0, 40, 0, 2),
@@ -2673,10 +2676,57 @@ function Nexus:Window(config)
             
             AddCorner(SectionLine, 1)
             
-            return SectionFrame
+            -- Enhanced gradient untuk section line
+            local SectionGradient = Create("UIGradient", {
+                Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Accent),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient1)
+                },
+                Rotation = 0,
+                Transparency = NumberSequence.new{
+                    ColorSequenceKeypoint.new(0, 0),
+                    ColorSequenceKeypoint.new(1, 0.7)
+                },
+                Parent = SectionLine
+            })
+            
+            -- Theme update connection
+            local sectionThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
+                if Nexus.IsDestroyed or not SectionLabel or not SectionLabel.Parent then return end
+                pcall(function()
+                    SectionLabel.TextColor3 = Nexus.Theme.Text
+                    SectionLine.BackgroundColor3 = Nexus.Theme.Accent
+                    if SectionGradient and SectionGradient.Parent then
+                        SectionGradient.Color = ColorSequence.new{
+                            ColorSequenceKeypoint.new(0, Nexus.Theme.Accent),
+                            ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient1)
+                        }
+                    end
+                end)
+            end)
+            
+            table.insert(Nexus.Connections, sectionThemeConnection)
+            
+            return {
+                SetText = function(newText)
+                    if Nexus.IsDestroyed then return end
+                    pcall(function()
+                        if SectionLabel and SectionLabel.Parent then
+                            SectionLabel.Text = tostring(newText or "Section")
+                        end
+                    end)
+                end,
+                GetText = function()
+                    return (SectionLabel and SectionLabel.Text) or ""
+                end,
+                Frame = SectionFrame
+            }
         end
+
         
         function Tab:Divider()
+            if Nexus.IsDestroyed then return end
+            
             local DividerFrame = Create("Frame", {
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 0, 16),
@@ -2691,10 +2741,56 @@ function Nexus:Window(config)
                 Parent = DividerFrame
             })
             
-            return DividerFrame
+            -- Enhanced divider dengan subtle gradient
+            local DividerGradient = Create("UIGradient", {
+                Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Outline),
+                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Outline)
+                },
+                Rotation = 0,
+                Transparency = NumberSequence.new{
+                    ColorSequenceKeypoint.new(0, 0.9),
+                    ColorSequenceKeypoint.new(0.5, 0.3),
+                    ColorSequenceKeypoint.new(1, 0.9)
+                },
+                Parent = DividerLine
+            })
+            
+            -- Theme update connection
+            local dividerThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
+                if Nexus.IsDestroyed or not DividerLine or not DividerLine.Parent then return end
+                pcall(function()
+                    DividerLine.BackgroundColor3 = Nexus.Theme.Outline
+                    if DividerGradient and DividerGradient.Parent then
+                        DividerGradient.Color = ColorSequence.new{
+                            ColorSequenceKeypoint.new(0, Nexus.Theme.Outline),
+                            ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
+                            ColorSequenceKeypoint.new(1, Nexus.Theme.Outline)
+                        }
+                    end
+                end)
+            end)
+            
+            table.insert(Nexus.Connections, dividerThemeConnection)
+            
+            return {
+                Frame = DividerFrame,
+                SetVisible = function(visible)
+                    if Nexus.IsDestroyed then return end
+                    pcall(function()
+                        if DividerFrame and DividerFrame.Parent then
+                            DividerFrame.Visible = visible
+                        end
+                    end)
+                end
+            }
         end
+
         
         function Tab:Label(config)
+            if Nexus.IsDestroyed then return end
+            
             if type(config) == "string" then
                 config = {Text = config}
             end
@@ -2723,42 +2819,57 @@ function Nexus:Window(config)
                 Parent = LabelFrame
             })
             
-            -- Auto-resize based on text
             local function UpdateSize()
-                if Label and Label.Parent then
+                if Nexus.IsDestroyed or not Label or not Label.Parent then return end
+                
+                pcall(function()
                     local textSize = game:GetService("TextService"):GetTextSize(
                         Label.Text, Label.TextSize, Label.Font, 
                         Vector2.new(Label.AbsoluteSize.X, math.huge)
                     )
                     LabelFrame.Size = UDim2.new(1, 0, 0, math.max(24, textSize.Y + 4))
-                end
+                end)
             end
             
             UpdateSize()
             
             -- Theme update
             local labelThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
-                if Label and Label.Parent then
-                    Label.TextColor3 = Color == Nexus.Theme.TextSub and Nexus.Theme.TextSub or Color
-                end
+                if Nexus.IsDestroyed or not Label or not Label.Parent then return end
+                pcall(function()
+                    if Color == Nexus.Theme.TextSub then
+                        Label.TextColor3 = Nexus.Theme.TextSub
+                    end
+                end)
             end)
             
             table.insert(Nexus.Connections, labelThemeConnection)
             
             return {
                 SetText = function(newText)
-                    Label.Text = tostring(newText or "")
-                    UpdateSize()
+                    if Nexus.IsDestroyed then return end
+                    pcall(function()
+                        if Label and Label.Parent then
+                            Label.Text = tostring(newText or "")
+                            UpdateSize()
+                        end
+                    end)
                 end,
                 SetColor = function(newColor)
-                    Color = newColor
-                    Label.TextColor3 = newColor
+                    if Nexus.IsDestroyed then return end
+                    pcall(function()
+                        if Label and Label.Parent then
+                            Color = newColor
+                            Label.TextColor3 = newColor
+                        end
+                    end)
                 end,
                 GetText = function()
-                    return Label.Text
+                    return (Label and Label.Text) or ""
                 end
             }
         end
+
         
         function Tab:Button(config)
             if type(config) == "string" then
