@@ -2146,324 +2146,274 @@ function Nexus:Window(config)
     
     -- Enhanced Notification Function
     function Nexus:Notify(config)
-        if not config then config = {} end
-        
-        local Title = config.Title or "Notification"
-        local Content = config.Content or ""
-        local Duration = config.Duration or 3
-        local Type = config.Type or "Info" -- Info, Success, Warning, Error
-        local Callback = config.Callback
-        
-        -- Color scheme based on type
-        local Colors = {
-            Info = {
-                bg = Nexus.Theme.Surface,
-                accent = Nexus.Theme.Accent,
-                icon = "ℹ️"
-            },
-            Success = {
-                bg = Nexus.Theme.Surface,
-                accent = Nexus.Theme.Success,
-                icon = "✅"
-            },
-            Warning = {
-                bg = Nexus.Theme.Surface,
-                accent = Nexus.Theme.Warning,
-                icon = "⚠️"
-            },
-            Error = {
-                bg = Nexus.Theme.Surface,
-                accent = Nexus.Theme.Error,
-                icon = "❌"
-            }
+    if not config then config = {} end
+    
+    local Title = config.Title or "Notification"
+    local Content = config.Content or ""
+    local Duration = config.Duration or 3
+    local Type = config.Type or "Info" -- Info, Success, Warning, Error
+    local Callback = config.Callback
+    
+    -- Color scheme based on type
+    local Colors = {
+        Info = {
+            bg = Nexus.Theme.Surface,
+            accent = Nexus.Theme.Accent,
+            icon = "ℹ️"
+        },
+        Success = {
+            bg = Nexus.Theme.Surface,
+            accent = Nexus.Theme.Success,
+            icon = "✅"
+        },
+        Warning = {
+            bg = Nexus.Theme.Surface,
+            accent = Nexus.Theme.Warning,
+            icon = "⚠️"
+        },
+        Error = {
+            bg = Nexus.Theme.Surface,
+            accent = Nexus.Theme.Error,
+            icon = "❌"
         }
-        
-        local colorScheme = Colors[Type] or Colors.Info
-        
-        -- State management
-        local NotificationState = {
-            isDismissed = false,
-            progressTween = nil,
-            dismissTimeout = nil,
-            connections = {}
-        }
-        
-        -- Create notification dengan responsive positioning
-        local containerWidth = NotificationContainer.AbsoluteSize.X
-        local startPosition = UDim2.fromOffset(containerWidth + 20, 0) -- Dynamic start pos
-        
-        local Notification = Create("Frame", {
-            BackgroundColor3 = colorScheme.bg,
-            Size = UDim2.new(1, 0, 0, 0),
-            Position = startPosition,
-            BackgroundTransparency = 0.1,
-            LayoutOrder = 1,
-            Parent = NotificationContainer
-        })
-        
-        AddCorner(Notification, 10)
-        AddStroke(Notification, colorScheme.accent, 1, 0.3)
-        AddShadow(Notification, 8, 0.8)
-        
-        -- Gradient overlay with proper cleanup
-        local NotificationGradient = Create("UIGradient", {
-            Color = ColorSequence.new{
+    }
+    
+    local colorScheme = Colors[Type] or Colors.Info
+    
+    -- State management - FIX: Proper thread handling
+    local NotificationState = {
+        isDismissed = false,
+        progressTween = nil,
+        dismissThread = nil, -- Store thread reference
+        connections = {}
+    }
+    
+    -- Create notification dengan responsive positioning
+    local containerWidth = NotificationContainer.AbsoluteSize.X
+    local startPosition = UDim2.fromOffset(containerWidth + 20, 0)
+    
+    local Notification = Create("Frame", {
+        BackgroundColor3 = colorScheme.bg,
+        Size = UDim2.new(1, 0, 0, 0),
+        Position = startPosition,
+        BackgroundTransparency = 0.1,
+        LayoutOrder = 1,
+        Parent = NotificationContainer
+    })
+    
+    AddCorner(Notification, 10)
+    AddStroke(Notification, colorScheme.accent, 1, 0.3)
+    AddShadow(Notification, 8, 0.8)
+    
+    -- Gradient overlay
+    local NotificationGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+        },
+        Rotation = 45,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(0.5, 0.02),
+            NumberSequenceKeypoint.new(1, 0.08)
+        },
+        Parent = Notification
+    })
+    
+    -- Progress bar
+    local ProgressBar = Create("Frame", {
+        BackgroundColor3 = colorScheme.accent,
+        Size = UDim2.new(1, 0, 0, 3),
+        Position = UDim2.new(0, 0, 1, -3),
+        Parent = Notification
+    })
+    
+    AddCorner(ProgressBar, 2)
+    
+    -- Icon
+    local Icon = Create("TextLabel", {
+        Text = colorScheme.icon,
+        Font = Enum.Font.GothamBold,
+        TextSize = 16,
+        TextColor3 = colorScheme.accent,
+        BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(12, 12),
+        Size = UDim2.fromOffset(20, 20),
+        Parent = Notification
+    })
+    
+    -- Title
+    local TitleLabel = Create("TextLabel", {
+        Text = Title,
+        Font = Enum.Font.GothamBold,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.Text,
+        BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(40, 12),
+        Size = UDim2.new(1, -80, 0, 20),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        Parent = Notification
+    })
+    
+    -- Content
+    local ContentLabel = Create("TextLabel", {
+        Text = Content,
+        Font = Enum.Font.Gotham,
+        TextSize = 12,
+        TextColor3 = Nexus.Theme.TextSub,
+        BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(40, 32),
+        Size = UDim2.new(1, -80, 0, 16),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        TextWrapped = true,
+        Parent = Notification
+    })
+    
+    -- Close button
+    local CloseBtn = Create("TextButton", {
+        Text = "✕",
+        Font = Enum.Font.GothamBold,
+        TextSize = 12,
+        TextColor3 = Nexus.Theme.TextMuted,
+        BackgroundTransparency = 1,
+        Position = UDim2.new(1, -32, 0, 8),
+        Size = UDim2.fromOffset(24, 24),
+        Parent = Notification
+    })
+    
+    -- Calculate content height
+    local contentHeight = 56
+    if Content and Content:len() > 40 then
+        contentHeight = 72
+    end
+    
+    -- Theme change handler - FIX: Proper cleanup check
+    local themeConnection = Nexus.ThemeChanged.Event:Connect(function()
+        if NotificationState.isDismissed then return end
+        if NotificationGradient and NotificationGradient.Parent then
+            NotificationGradient.Color = ColorSequence.new{
                 ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
                 ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
                 ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-            },
-            Rotation = 45,
-            Transparency = NumberSequence.new{
-                NumberSequenceKeypoint.new(0, 0.05),
-                NumberSequenceKeypoint.new(0.5, 0.02),
-                NumberSequenceKeypoint.new(1, 0.08)
-            },
-            Parent = Notification
-        })
+            }
+        end
+    end)
+    NotificationState.connections[#NotificationState.connections + 1] = themeConnection
+    
+    -- FIX: Proper cleanup function
+    local function CleanupNotification()
+        if NotificationState.isDismissed then return end
+        NotificationState.isDismissed = true
         
-        -- Theme change handler dengan proper cleanup
-        local themeConnection = Nexus.ThemeChanged.Event:Connect(function()
-            if NotificationState.isDismissed then return end
-            if NotificationGradient and NotificationGradient.Parent then
-                NotificationGradient.Color = ColorSequence.new{
-                    ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
-                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
-                    ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-                }
-                -- Update other theme-dependent colors
-                Notification.BackgroundColor3 = colorScheme.bg
-                TitleLabel.TextColor3 = Nexus.Theme.Text
-                ContentLabel.TextColor3 = Nexus.Theme.TextSub
-                CloseBtn.TextColor3 = Nexus.Theme.TextMuted
-            end
-        end)
-        NotificationState.connections[#NotificationState.connections + 1] = themeConnection
-        
-        -- Progress bar
-        local ProgressBar = Create("Frame", {
-            BackgroundColor3 = colorScheme.accent,
-            Size = UDim2.new(1, 0, 0, 3),
-            Position = UDim2.new(0, 0, 1, -3),
-            Parent = Notification
-        })
-        
-        AddCorner(ProgressBar, 2)
-        
-        -- Icon dengan hover effect
-        local Icon = Create("TextLabel", {
-            Text = colorScheme.icon,
-            Font = Enum.Font.GothamBold,
-            TextSize = 16,
-            TextColor3 = colorScheme.accent,
-            BackgroundTransparency = 1,
-            Position = UDim2.fromOffset(12, 12),
-            Size = UDim2.fromOffset(20, 20),
-            Parent = Notification
-        })
-        
-        -- Title
-        local TitleLabel = Create("TextLabel", {
-            Text = Title,
-            Font = Enum.Font.GothamBold,
-            TextSize = 14,
-            TextColor3 = Nexus.Theme.Text,
-            BackgroundTransparency = 1,
-            Position = UDim2.fromOffset(40, 12),
-            Size = UDim2.new(1, -80, 0, 20),
-            TextXAlignment = Enum.TextXAlignment.Left,
-            TextTruncate = Enum.TextTruncate.AtEnd,
-            Parent = Notification
-        })
-        
-        -- Content dengan proper height calculation
-        local ContentLabel = Create("TextLabel", {
-            Text = Content,
-            Font = Enum.Font.Gotham,
-            TextSize = 12,
-            TextColor3 = Nexus.Theme.TextSub,
-            BackgroundTransparency = 1,
-            Position = UDim2.fromOffset(40, 32),
-            Size = UDim2.new(1, -80, 0, 16),
-            TextXAlignment = Enum.TextXAlignment.Left,
-            TextTruncate = Enum.TextTruncate.AtEnd,
-            TextWrapped = true,
-            Parent = Notification
-        })
-        
-        -- Close button dengan hover effects
-        local CloseBtn = Create("TextButton", {
-            Text = "✕",
-            Font = Enum.Font.GothamBold,
-            TextSize = 12,
-            TextColor3 = Nexus.Theme.TextMuted,
-            BackgroundTransparency = 1,
-            Position = UDim2.new(1, -32, 0, 8),
-            Size = UDim2.fromOffset(24, 24),
-            Parent = Notification
-        })
-        
-        -- Close button hover effects
-        local closeHoverConnection1 = CloseBtn.MouseEnter:Connect(function()
-            if NotificationState.isDismissed then return end
-            Tween(CloseBtn, {
-                TextColor3 = colorScheme.accent,
-                TextSize = 14
-            }, 0.15)
-        end)
-        
-        local closeHoverConnection2 = CloseBtn.MouseLeave:Connect(function()
-            if NotificationState.isDismissed then return end
-            Tween(CloseBtn, {
-                TextColor3 = Nexus.Theme.TextMuted,
-                TextSize = 12
-            }, 0.15)
-        end)
-        
-        NotificationState.connections[#NotificationState.connections + 1] = closeHoverConnection1
-        NotificationState.connections[#NotificationState.connections + 1] = closeHoverConnection2
-        
-        -- Better content height calculation
-        local function CalculateContentHeight()
-            local baseHeight = 56
-            local contentWidth = containerWidth - 120 -- Account for icon, padding, close btn
-            
-            if Content and #Content > 0 then
-                -- Rough calculation: chars per line based on width
-                local avgCharWidth = 7 -- Approximate for Gotham font size 12
-                local charsPerLine = math.floor(contentWidth / avgCharWidth)
-                local estimatedLines = math.ceil(#Content / charsPerLine)
-                
-                if estimatedLines > 1 then
-                    baseHeight = baseHeight + ((estimatedLines - 1) * 16) -- 16px per extra line
-                end
-                
-                -- Cap maximum height
-                baseHeight = math.min(baseHeight, 120)
-            end
-            
-            return baseHeight
+        -- Cancel tweens
+        if NotificationState.progressTween then
+            NotificationState.progressTween:Cancel()
+            NotificationState.progressTween = nil
         end
         
-        local contentHeight = CalculateContentHeight()
+        -- Cancel dismiss thread - FIX: Only cancel if it exists and is a thread
+        if NotificationState.dismissThread then
+            pcall(function()
+                task.cancel(NotificationState.dismissThread)
+            end)
+            NotificationState.dismissThread = nil
+        end
         
-        -- Cleanup function
-        local function CleanupNotification()
-            NotificationState.isDismissed = true
-            
-            -- Cancel all tweens
-            if NotificationState.progressTween then
-                NotificationState.progressTween:Cancel()
-            end
-            
-            if NotificationState.dismissTimeout then
-                task.cancel(NotificationState.dismissTimeout)
-            end
-            
-            -- Disconnect all connections
-            for _, connection in ipairs(NotificationState.connections) do
-                if connection and connection.Connected then
+        -- Disconnect all connections
+        for i, connection in ipairs(NotificationState.connections) do
+            if connection and connection.Connected then
+                pcall(function()
                     connection:Disconnect()
-                end
+                end)
             end
-            NotificationState.connections = {}
         end
+        NotificationState.connections = {}
+    end
+    
+    -- FIX: Enhanced dismiss function with proper error handling
+    local function DismissNotification()
+        if NotificationState.isDismissed then return end
         
-        -- Enhanced dismiss function
-        local function DismissNotification()
-            if NotificationState.isDismissed then return end
-            
-            CleanupNotification()
-            
-            -- Animate out
-            local dismissTween = Tween(Notification, {
+        CleanupNotification()
+        
+        -- Animate out with error handling
+        pcall(function()
+            Tween(Notification, {
                 Position = startPosition,
                 BackgroundTransparency = 1
             }, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
             
             Tween(ProgressBar, {BackgroundTransparency = 1}, 0.3)
-            
-            -- Wait for animation then destroy
-            task.spawn(function()
-                task.wait(0.35)
+        end)
+        
+        -- Destroy after animation with error handling
+        task.spawn(function()
+            task.wait(0.35)
+            pcall(function()
                 if Notification and Notification.Parent then
                     Notification:Destroy()
                 end
             end)
-        end
+        end)
+    end
+    
+    -- Animate notification appearance
+    Tween(Notification, {
+        Size = UDim2.new(1, 0, 0, contentHeight),
+        Position = UDim2.fromOffset(0, 0)
+    }, 0.4, Enum.EasingStyle.Back)
+    
+    -- Progress bar & auto dismiss - FIX: Store thread properly
+    if Duration > 0 then
+        NotificationState.progressTween = Tween(ProgressBar, {
+            Size = UDim2.new(0, 0, 0, 3)
+        }, Duration)
         
-        -- Animate notification appearance with better easing
-        Tween(Notification, {
-            Size = UDim2.new(1, 0, 0, contentHeight),
-            Position = UDim2.fromOffset(0, 0)
-        }, 0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
-        
-        -- Animate in the icon
-        Icon.TextTransparency = 1
-        task.spawn(function()
-            task.wait(0.2)
+        -- FIX: Properly store dismiss thread
+        NotificationState.dismissThread = task.spawn(function()
+            task.wait(Duration)
             if not NotificationState.isDismissed then
-                Tween(Icon, {TextTransparency = 0}, 0.3)
+                DismissNotification()
             end
         end)
-        
-        -- Progress bar & auto dismiss
-        if Duration > 0 then
-            NotificationState.progressTween = Tween(ProgressBar, {
-                Size = UDim2.new(0, 0, 0, 3)
-            }, Duration, Enum.EasingStyle.Linear)
-            
-            NotificationState.dismissTimeout = task.spawn(function()
-                task.wait(Duration)
-                if not NotificationState.isDismissed then
-                    DismissNotification()
-                end
-            end)
+    end
+    
+    -- Manual close - FIX: Add to connections array for proper cleanup
+    local closeConnection = CloseBtn.MouseButton1Click:Connect(function()
+        if Callback then
+            pcall(Callback)
         end
-        
-        -- Manual close
-        local closeConnection = CloseBtn.MouseButton1Click:Connect(function()
-            if Callback then
-                pcall(Callback)
-            end
-            DismissNotification()
-        end)
-        NotificationState.connections[#NotificationState.connections + 1] = closeConnection
-        
-        -- Click notification
-        local notifButton = Create("TextButton", {
-            Text = "",
-            BackgroundTransparency = 1,
-            Size = UDim2.new(1, -32, 1, 0),
-            Parent = Notification
-        })
-        
-        local clickConnection = notifButton.MouseButton1Click:Connect(function()
-            if Callback then
-                pcall(Callback)
-            end
-            DismissNotification()
-        end)
-        NotificationState.connections[#NotificationState.connections + 1] = clickConnection
-        
-        -- Notification hover effects
-        local hoverConnection1 = notifButton.MouseEnter:Connect(function()
+        DismissNotification()
+    end)
+    NotificationState.connections[#NotificationState.connections + 1] = closeConnection
+    
+    -- Click notification - FIX: Add to connections array
+    local notifButton = Create("TextButton", {
+        Text = "",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, -32, 1, 0),
+        Parent = Notification
+    })
+    
+    local clickConnection = notifButton.MouseButton1Click:Connect(function()
+        if Callback then
+            pcall(Callback)
+        end
+        DismissNotification()
+    end)
+    NotificationState.connections[#NotificationState.connections + 1] = clickConnection
+    
+    -- Return API with error handling
+    return {
+        Dismiss = function()
+            pcall(DismissNotification)
+        end,
+        SetProgress = function(progress)
             if NotificationState.isDismissed then return end
-            Tween(Notification, {BackgroundTransparency = 0.05}, 0.15)
-        end)
-        
-        local hoverConnection2 = notifButton.MouseLeave:Connect(function()
-            if NotificationState.isDismissed then return end
-            Tween(Notification, {BackgroundTransparency = 0.1}, 0.15)
-        end)
-        
-        NotificationState.connections[#NotificationState.connections + 1] = hoverConnection1
-        NotificationState.connections[#NotificationState.connections + 1] = hoverConnection2
-        
-        -- Return API
-        return {
-            Dismiss = DismissNotification,
-            SetProgress = function(progress)
-                if NotificationState.isDismissed then return end
+            pcall(function()
                 if ProgressBar and ProgressBar.Parent then
                     if NotificationState.progressTween then
                         NotificationState.progressTween:Cancel()
@@ -2472,12 +2422,14 @@ function Nexus:Window(config)
                         Size = UDim2.new(math.clamp(progress, 0, 1), 0, 0, 3)
                     }, 0.2)
                 end
-            end,
-            IsActive = function()
-                return not NotificationState.isDismissed
-            end
-        }
-    end
+            end)
+        end,
+        IsActive = function()
+            return not NotificationState.isDismissed
+        end
+    }
+end
+
     
     local function CreateTab(config)
         if type(config) == "string" then
