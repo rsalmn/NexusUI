@@ -718,7 +718,7 @@ function Nexus:CreateModernDropdown(config)
         closeText = "Done"
         closeColor = Nexus.Theme.Accent
     else
-        closeIcon = "✕"  -- X untuk cancel
+        closeIcon = "×"  -- X untuk cancel
         closeText = "Cancel" 
         closeColor = Nexus.Theme.TextSub
     end
@@ -2180,11 +2180,22 @@ function Nexus:Window(config)
         
         local colorScheme = Colors[Type] or Colors.Info
         
-        -- Create notification
+        -- State management
+        local NotificationState = {
+            isDismissed = false,
+            progressTween = nil,
+            dismissTimeout = nil,
+            connections = {}
+        }
+        
+        -- Create notification dengan responsive positioning
+        local containerWidth = NotificationContainer.AbsoluteSize.X
+        local startPosition = UDim2.fromOffset(containerWidth + 20, 0) -- Dynamic start pos
+        
         local Notification = Create("Frame", {
             BackgroundColor3 = colorScheme.bg,
             Size = UDim2.new(1, 0, 0, 0),
-            Position = UDim2.fromOffset(320, 0),
+            Position = startPosition,
             BackgroundTransparency = 0.1,
             LayoutOrder = 1,
             Parent = NotificationContainer
@@ -2194,7 +2205,7 @@ function Nexus:Window(config)
         AddStroke(Notification, colorScheme.accent, 1, 0.3)
         AddShadow(Notification, 8, 0.8)
         
-        -- Gradient overlay
+        -- Gradient overlay with proper cleanup
         local NotificationGradient = Create("UIGradient", {
             Color = ColorSequence.new{
                 ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
@@ -2207,22 +2218,26 @@ function Nexus:Window(config)
                 NumberSequenceKeypoint.new(0.5, 0.02),
                 NumberSequenceKeypoint.new(1, 0.08)
             },
-            Parent = Notification  -- Pastikan parent benar
+            Parent = Notification
         })
         
-        -- Auto-update dengan theme changes
-        local notifGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
+        -- Theme change handler dengan proper cleanup
+        local themeConnection = Nexus.ThemeChanged.Event:Connect(function()
+            if NotificationState.isDismissed then return end
             if NotificationGradient and NotificationGradient.Parent then
                 NotificationGradient.Color = ColorSequence.new{
                     ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
                     ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
                     ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
                 }
+                -- Update other theme-dependent colors
+                Notification.BackgroundColor3 = colorScheme.bg
+                TitleLabel.TextColor3 = Nexus.Theme.Text
+                ContentLabel.TextColor3 = Nexus.Theme.TextSub
+                CloseBtn.TextColor3 = Nexus.Theme.TextMuted
             end
         end)
-        
-        table.insert(Nexus.Connections, notifGradientConnection)
-
+        NotificationState.connections[#NotificationState.connections + 1] = themeConnection
         
         -- Progress bar
         local ProgressBar = Create("Frame", {
@@ -2234,7 +2249,7 @@ function Nexus:Window(config)
         
         AddCorner(ProgressBar, 2)
         
-        -- Icon
+        -- Icon dengan hover effect
         local Icon = Create("TextLabel", {
             Text = colorScheme.icon,
             Font = Enum.Font.GothamBold,
@@ -2260,7 +2275,7 @@ function Nexus:Window(config)
             Parent = Notification
         })
         
-        -- Content
+        -- Content dengan proper height calculation
         local ContentLabel = Create("TextLabel", {
             Text = Content,
             Font = Enum.Font.Gotham,
@@ -2275,7 +2290,7 @@ function Nexus:Window(config)
             Parent = Notification
         })
         
-        -- Close button
+        -- Close button dengan hover effects
         local CloseBtn = Create("TextButton", {
             Text = "✕",
             Font = Enum.Font.GothamBold,
@@ -2287,55 +2302,132 @@ function Nexus:Window(config)
             Parent = Notification
         })
         
-        -- Calculate content height
-        local contentHeight = 56
-        if Content and Content:len() > 40 then
-            contentHeight = 72
+        -- Close button hover effects
+        local closeHoverConnection1 = CloseBtn.MouseEnter:Connect(function()
+            if NotificationState.isDismissed then return end
+            Tween(CloseBtn, {
+                TextColor3 = colorScheme.accent,
+                TextSize = 14
+            }, 0.15)
+        end)
+        
+        local closeHoverConnection2 = CloseBtn.MouseLeave:Connect(function()
+            if NotificationState.isDismissed then return end
+            Tween(CloseBtn, {
+                TextColor3 = Nexus.Theme.TextMuted,
+                TextSize = 12
+            }, 0.15)
+        end)
+        
+        NotificationState.connections[#NotificationState.connections + 1] = closeHoverConnection1
+        NotificationState.connections[#NotificationState.connections + 1] = closeHoverConnection2
+        
+        -- Better content height calculation
+        local function CalculateContentHeight()
+            local baseHeight = 56
+            local contentWidth = containerWidth - 120 -- Account for icon, padding, close btn
+            
+            if Content and #Content > 0 then
+                -- Rough calculation: chars per line based on width
+                local avgCharWidth = 7 -- Approximate for Gotham font size 12
+                local charsPerLine = math.floor(contentWidth / avgCharWidth)
+                local estimatedLines = math.ceil(#Content / charsPerLine)
+                
+                if estimatedLines > 1 then
+                    baseHeight = baseHeight + ((estimatedLines - 1) * 16) -- 16px per extra line
+                end
+                
+                -- Cap maximum height
+                baseHeight = math.min(baseHeight, 120)
+            end
+            
+            return baseHeight
         end
         
-        -- Animate notification appearance
-        Tween(Notification, {
-            Size = UDim2.new(1, 0, 0, contentHeight),
-            Position = UDim2.fromOffset(0, 0)
-        }, 0.4, Enum.EasingStyle.Back)
+        local contentHeight = CalculateContentHeight()
         
-        --PlaySound("6895079853", 0.1, 1.2)
-        
-        -- Auto dismiss
-        local dismissTween = nil
-        local function DismissNotification()
-            if dismissTween then dismissTween:Cancel() end
+        -- Cleanup function
+        local function CleanupNotification()
+            NotificationState.isDismissed = true
             
-            Tween(Notification, {
-                Position = UDim2.fromOffset(320, 0),
+            -- Cancel all tweens
+            if NotificationState.progressTween then
+                NotificationState.progressTween:Cancel()
+            end
+            
+            if NotificationState.dismissTimeout then
+                task.cancel(NotificationState.dismissTimeout)
+            end
+            
+            -- Disconnect all connections
+            for _, connection in ipairs(NotificationState.connections) do
+                if connection and connection.Connected then
+                    connection:Disconnect()
+                end
+            end
+            NotificationState.connections = {}
+        end
+        
+        -- Enhanced dismiss function
+        local function DismissNotification()
+            if NotificationState.isDismissed then return end
+            
+            CleanupNotification()
+            
+            -- Animate out
+            local dismissTween = Tween(Notification, {
+                Position = startPosition,
                 BackgroundTransparency = 1
-            }, 0.3)
+            }, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
             
             Tween(ProgressBar, {BackgroundTransparency = 1}, 0.3)
             
-            task.wait(0.3)
-            if Notification and Notification.Parent then
-                Notification:Destroy()
-            end
+            -- Wait for animation then destroy
+            task.spawn(function()
+                task.wait(0.35)
+                if Notification and Notification.Parent then
+                    Notification:Destroy()
+                end
+            end)
         end
         
-        -- Progress bar animation
+        -- Animate notification appearance with better easing
+        Tween(Notification, {
+            Size = UDim2.new(1, 0, 0, contentHeight),
+            Position = UDim2.fromOffset(0, 0)
+        }, 0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+        
+        -- Animate in the icon
+        Icon.TextTransparency = 1
+        task.spawn(function()
+            task.wait(0.2)
+            if not NotificationState.isDismissed then
+                Tween(Icon, {TextTransparency = 0}, 0.3)
+            end
+        end)
+        
+        -- Progress bar & auto dismiss
         if Duration > 0 then
-            Tween(ProgressBar, {Size = UDim2.new(0, 0, 0, 3)}, Duration)
+            NotificationState.progressTween = Tween(ProgressBar, {
+                Size = UDim2.new(0, 0, 0, 3)
+            }, Duration, Enum.EasingStyle.Linear)
             
-            task.spawn(function()
+            NotificationState.dismissTimeout = task.spawn(function()
                 task.wait(Duration)
-                DismissNotification()
+                if not NotificationState.isDismissed then
+                    DismissNotification()
+                end
             end)
         end
         
         -- Manual close
-        CloseBtn.MouseButton1Click:Connect(function()
+        local closeConnection = CloseBtn.MouseButton1Click:Connect(function()
             if Callback then
                 pcall(Callback)
             end
             DismissNotification()
         end)
+        NotificationState.connections[#NotificationState.connections + 1] = closeConnection
         
         -- Click notification
         local notifButton = Create("TextButton", {
@@ -2345,21 +2437,44 @@ function Nexus:Window(config)
             Parent = Notification
         })
         
-        notifButton.MouseButton1Click:Connect(function()
+        local clickConnection = notifButton.MouseButton1Click:Connect(function()
             if Callback then
                 pcall(Callback)
             end
             DismissNotification()
         end)
+        NotificationState.connections[#NotificationState.connections + 1] = clickConnection
         
+        -- Notification hover effects
+        local hoverConnection1 = notifButton.MouseEnter:Connect(function()
+            if NotificationState.isDismissed then return end
+            Tween(Notification, {BackgroundTransparency = 0.05}, 0.15)
+        end)
+        
+        local hoverConnection2 = notifButton.MouseLeave:Connect(function()
+            if NotificationState.isDismissed then return end
+            Tween(Notification, {BackgroundTransparency = 0.1}, 0.15)
+        end)
+        
+        NotificationState.connections[#NotificationState.connections + 1] = hoverConnection1
+        NotificationState.connections[#NotificationState.connections + 1] = hoverConnection2
+        
+        -- Return API
         return {
             Dismiss = DismissNotification,
             SetProgress = function(progress)
+                if NotificationState.isDismissed then return end
                 if ProgressBar and ProgressBar.Parent then
-                    Tween(ProgressBar, {
+                    if NotificationState.progressTween then
+                        NotificationState.progressTween:Cancel()
+                    end
+                    NotificationState.progressTween = Tween(ProgressBar, {
                         Size = UDim2.new(math.clamp(progress, 0, 1), 0, 0, 3)
                     }, 0.2)
                 end
+            end,
+            IsActive = function()
+                return not NotificationState.isDismissed
             end
         }
     end
