@@ -2646,145 +2646,57 @@ function Nexus:Window(config)
         
         -- Tab API methods
         function Tab:Section(text)
-            if Nexus.IsDestroyed then return end
-            
-            local SectionFrame = Create("Frame", {
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 0, 32),
-                Parent = TabPage
-            })
-            
-            local SectionLabel = Create("TextLabel", {
-                Text = text or "Section",
-                Font = Enum.Font.GothamBold,
-                TextSize = 16,
-                TextColor3 = Nexus.Theme.Text,
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 1, 0),
-                TextXAlignment = Enum.TextXAlignment.Left,
-                TextTruncate = Enum.TextTruncate.AtEnd,
-                Parent = SectionFrame
-            })
-            
-            -- Section underline
-            local SectionLine = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Accent,
-                Size = UDim2.new(0, 40, 0, 2),
-                Position = UDim2.new(0, 0, 1, -4),
-                Parent = SectionFrame
-            })
-            
-            AddCorner(SectionLine, 1)
-            
-            -- FIX: Safe gradient dengan fallback colors
-            local SectionGradient = Create("UIGradient", {
-                Color = ColorSequence.new{
-                    ColorSequenceKeypoint.new(0, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255)),
-                    ColorSequenceKeypoint.new(1, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255))
-                },
-                Rotation = 0,
-                Transparency = NumberSequence.new{
-                    ColorSequenceKeypoint.new(0, 0),
-                    ColorSequenceKeypoint.new(1, 0.7)
-                },
-                Parent = SectionLine
-            })
-            
-            -- Theme update connection
-            local sectionThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
-                if Nexus.IsDestroyed or not SectionLabel or not SectionLabel.Parent then return end
-                pcall(function()
-                    SectionLabel.TextColor3 = Nexus.Theme.Text
-                    SectionLine.BackgroundColor3 = Nexus.Theme.Accent
-                    if SectionGradient and SectionGradient.Parent then
-                        SectionGradient.Color = ColorSequence.new{
-                            ColorSequenceKeypoint.new(0, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255)),
-                            ColorSequenceKeypoint.new(1, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255))
-                        }
-                    end
-                end)
-            end)
-            
-            table.insert(Nexus.Connections, sectionThemeConnection)
-            
-            return {
-                SetText = function(newText)
-                    if Nexus.IsDestroyed then return end
-                    pcall(function()
-                        if SectionLabel and SectionLabel.Parent then
-                            SectionLabel.Text = tostring(newText or "Section")
-                        end
-                    end)
-                end,
-                GetText = function()
-                    return (SectionLabel and SectionLabel.Text) or ""
-                end,
-                Frame = SectionFrame
-            }
-        end
-        
-        function Tab:Divider()
-            if Nexus.IsDestroyed then return end
-            
-            local DividerFrame = Create("Frame", {
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 0, 16),
-                Parent = TabPage
-            })
-            
-            local DividerLine = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Outline,
-                BackgroundTransparency = 0.6,
-                Size = UDim2.new(1, 0, 0, 1),
-                Position = UDim2.new(0, 0, 0.5, 0),
-                Parent = DividerFrame
-            })
-            
-            -- FIX: Safe gradient dengan fallback colors
-            local DividerGradient = Create("UIGradient", {
-                Color = ColorSequence.new{
-                    ColorSequenceKeypoint.new(0, Nexus.Theme.Outline or Color3.fromRGB(60, 60, 60)),
-                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255)),
-                    ColorSequenceKeypoint.new(1, Nexus.Theme.Outline or Color3.fromRGB(60, 60, 60))
-                },
-                Rotation = 0,
-                Transparency = NumberSequence.new{
-                    ColorSequenceKeypoint.new(0, 0.9),
-                    ColorSequenceKeypoint.new(0.5, 0.3),
-                    ColorSequenceKeypoint.new(1, 0.9)
-                },
-                Parent = DividerLine
-            })
-            
-            -- Theme update connection
-            local dividerThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
-                if Nexus.IsDestroyed or not DividerLine or not DividerLine.Parent then return end
-                pcall(function()
-                    DividerLine.BackgroundColor3 = Nexus.Theme.Outline
-                    if DividerGradient and DividerGradient.Parent then
-                        DividerGradient.Color = ColorSequence.new{
-                            ColorSequenceKeypoint.new(0, Nexus.Theme.Outline or Color3.fromRGB(60, 60, 60)),
-                            ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent or Color3.fromRGB(100, 150, 255)),
-                            ColorSequenceKeypoint.new(1, Nexus.Theme.Outline or Color3.fromRGB(60, 60, 60))
-                        }
-                    end
-                end)
-            end)
-            
-            table.insert(Nexus.Connections, dividerThemeConnection)
-            
-            return {
-                Frame = DividerFrame,
-                SetVisible = function(visible)
-                    if Nexus.IsDestroyed then return end
-                    pcall(function()
-                        if DividerFrame and DividerFrame.Parent then
-                            DividerFrame.Visible = visible
-                        end
-                    end)
-                end
-            }
-        end
+    if Nexus.IsDestroyed then return end
+    
+    local SectionFrame = Create("Frame", {
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 0, 32),
+        Parent = TabPage
+    })
+    
+    local SectionLabel = Create("TextLabel", {
+        Text = text or "Section",
+        Font = Enum.Font.GothamBold,
+        TextSize = 16,
+        TextColor3 = Nexus.Theme.Text,
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 1, 0),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = SectionFrame
+    })
+    
+    local SectionLine = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Accent,
+        Size = UDim2.new(0, 40, 0, 2),
+        Position = UDim2.new(0, 0, 1, -4),
+        Parent = SectionFrame
+    })
+    
+    AddCorner(SectionLine, 1)
+    
+    return SectionFrame
+end
+
+function Tab:Divider()
+    if Nexus.IsDestroyed then return end
+    
+    local DividerFrame = Create("Frame", {
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 0, 16),
+        Parent = TabPage
+    })
+    
+    local DividerLine = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Outline,
+        BackgroundTransparency = 0.6,
+        Size = UDim2.new(1, 0, 0, 1),
+        Position = UDim2.new(0, 0, 0.5, 0),
+        Parent = DividerFrame
+    })
+    
+    return DividerFrame
+end
+
         
         function Tab:Label(config)
             if Nexus.IsDestroyed then return end
