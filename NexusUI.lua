@@ -663,7 +663,7 @@ function Nexus:CreateModernDropdown(config)
         ZIndex = 1000,
         Parent = screenGui
     })
-    
+
     AddCorner(Panel, 8)
     AddStroke(Panel, Nexus.Theme.Outline, 1, 0.5)
 
@@ -685,15 +685,66 @@ function Nexus:CreateModernDropdown(config)
         end
     end
 
-    -- Search box (if enabled)
+    -- Add Close Button untuk MultiSelect (di bagian atas panel)
+    local CloseButtonFrame = nil
+    local CloseButtonHeight = 0
+
+    if cfg.MultiSelect then
+        CloseButtonHeight = 32
+        CloseButtonFrame = Create("Frame", {
+            Name = "CloseButton",
+            Size = UDim2.new(1, -16, 0, 28),
+            Position = UDim2.new(0, 8, 0, 4),
+            BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+            BorderSizePixel = 0,
+            Parent = Panel
+        })
+        
+        AddCorner(CloseButtonFrame, 6)
+        
+        local CloseButton = Create("TextButton", {
+            Name = "Close",
+            Size = UDim2.new(1, 0, 1, 0),
+            BackgroundTransparency = 1,
+            Text = "",
+            Parent = CloseButtonFrame
+        })
+        
+        Create("TextLabel", {
+            Size = UDim2.new(1, 0, 1, 0),
+            BackgroundTransparency = 1,
+            Text = "✕ Close",
+            TextColor3 = Nexus.Theme.TextSub,
+            TextSize = 12,
+            Font = Enum.Font.GothamMedium,
+            TextXAlignment = Enum.TextXAlignment.Center,
+            Parent = CloseButtonFrame
+        })
+        
+        -- Close button hover effects
+        table.insert(Nexus.Connections, CloseButton.MouseEnter:Connect(function()
+            Tween(CloseButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHighest}, 0.15)
+        end))
+        
+        table.insert(Nexus.Connections, CloseButton.MouseLeave:Connect(function()
+            Tween(CloseButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
+        end))
+        
+        -- Close button click
+        table.insert(Nexus.Connections, CloseButton.Activated:Connect(function()
+            CloseDropdown()
+        end))
+    end
+
+    -- Search box (if enabled) - UPDATED POSITION
     local SearchBox = nil
-    local OptionsOffset = 0
-    
+    local OptionsOffset = CloseButtonHeight + 8 -- Start from close button
+        
     if cfg.Search then
         SearchBox = Create("TextBox", {
             Name = "Search",
             Size = UDim2.new(1, -16, 0, 32),
-            Position = UDim2.new(0, 8, 0, 8),
+            Position = UDim2.new(0, 8, 0, OptionsOffset),
             BackgroundColor3 = Nexus.Theme.SurfaceHigh,
             BorderSizePixel = 0,
             Text = "",
@@ -709,7 +760,7 @@ function Nexus:CreateModernDropdown(config)
 
         AddCorner(SearchBox, 6)
         AddStroke(SearchBox, Nexus.Theme.Outline, 1, 0.8)
-        OptionsOffset = 48
+        OptionsOffset = OptionsOffset + 40 -- Add search height + padding
     end
 
     -- Options container with scrolling - UPDATED POSITION
@@ -727,7 +778,6 @@ function Nexus:CreateModernDropdown(config)
         ScrollingEnabled = true,
         Parent = Panel
     })
-
 
     -- Options list layout
     local OptionsLayout = Create("UIListLayout", {
@@ -752,7 +802,7 @@ function Nexus:CreateModernDropdown(config)
         else
             isSelected = DropdownState.Selected == text
         end
-    
+
         local OptionItem = Create("TextButton", {
             Name = "Option_" .. index,
             Size = UDim2.new(1, -8, 0, 28),
@@ -764,9 +814,9 @@ function Nexus:CreateModernDropdown(config)
             LayoutOrder = index,
             Parent = OptionsContainer
         })
-    
+
         AddCorner(OptionItem, 6)
-    
+
         -- Option text dengan warna yang benar
         local OptionText = Create("TextLabel", {
             Name = "Text",
@@ -781,56 +831,37 @@ function Nexus:CreateModernDropdown(config)
             TextTruncate = Enum.TextTruncate.AtEnd,
             Parent = OptionItem
         })
-    
+
         -- Checkbox for multi-select (FIX: Update checkbox state)
         local Checkbox = nil
         if cfg.MultiSelect then
-            CloseButtonHeight = 32
-            CloseButtonFrame = Create("Frame", {
-                Name = "CloseButton",
-                Size = UDim2.new(1, -16, 0, 28),
-                Position = UDim2.new(0, 8, 0, 4),
-                BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+            Checkbox = Create("Frame", {
+                Name = "Checkbox",
+                Size = UDim2.new(0, 16, 0, 16),
+                Position = UDim2.new(1, -24, 0.5, -8),
+                BackgroundColor3 = isSelected and Nexus.Theme.Accent or Nexus.Theme.Surface,
                 BorderSizePixel = 0,
-                Parent = Panel
+                Parent = OptionItem
             })
-            
-            AddCorner(CloseButtonFrame, 6)
-            
-            local CloseButton = Create("TextButton", {
-                Name = "Close",
-                Size = UDim2.new(1, 0, 1, 0),
-                BackgroundTransparency = 1,
-                Text = "",
-                Parent = CloseButtonFrame
-            })
-            
-            Create("TextLabel", {
-                Size = UDim2.new(1, 0, 1, 0),
-                BackgroundTransparency = 1,
-                Text = "✕ Close",
-                TextColor3 = Nexus.Theme.TextSub,
-                TextSize = 12,
-                Font = Enum.Font.GothamMedium,
-                TextXAlignment = Enum.TextXAlignment.Center,
-                Parent = CloseButtonFrame
-            })
-            
-            -- Close button hover effects
-            CloseButton.MouseEnter:Connect(function()
-                Tween(CloseButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHighest}, 0.15)
-            end)
-            
-            CloseButton.MouseLeave:Connect(function()
-                Tween(CloseButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
-            end)
-            
-            -- Close button click
-            CloseButton.Activated:Connect(function()
-                CloseDropdown()
-            end)
+
+            AddCorner(Checkbox, 4)
+            AddStroke(Checkbox, Nexus.Theme.Outline, 1, 0.6)
+
+            if isSelected then
+                Create("TextLabel", {
+                    Size = UDim2.new(1, 0, 1, 0),
+                    BackgroundTransparency = 1,
+                    Text = "✓",
+                    TextColor3 = Nexus.Theme.Text,
+                    TextSize = 12,
+                    Font = Enum.Font.GothamBold,
+                    TextXAlignment = Enum.TextXAlignment.Center,
+                    TextYAlignment = Enum.TextYAlignment.Center,
+                    Parent = Checkbox
+                })
+            end
         end
-    
+
         -- FIX: Update hover effects dengan selected state yang benar
         local function OnHover(hovering)
             if not OptionItem or not OptionItem.Parent then return end
@@ -870,7 +901,7 @@ function Nexus:CreateModernDropdown(config)
             -- Update font weight
             OptionText.Font = currentlySelected and Enum.Font.GothamMedium or Enum.Font.Gotham
         end
-    
+
         -- Click handling (FIX: Proper state update)
         local function OnClick()
             if cfg.MultiSelect then
@@ -904,7 +935,7 @@ function Nexus:CreateModernDropdown(config)
                 end
             end
         end
-    
+
         -- Connect events
         table.insert(Nexus.Connections, OptionItem.MouseEnter:Connect(function()
             OnHover(true)
@@ -915,7 +946,7 @@ function Nexus:CreateModernDropdown(config)
         end))
         
         table.insert(Nexus.Connections, OptionItem.Activated:Connect(OnClick))
-    
+
         OptionItems[text] = {
             Item = OptionItem,
             Text = OptionText,
@@ -930,7 +961,7 @@ function Nexus:CreateModernDropdown(config)
                 end
             end
         }
-    
+
         return OptionItem
     end
 
@@ -948,7 +979,7 @@ function Nexus:CreateModernDropdown(config)
         RefreshOptions()
     end
 
-    -- Update RefreshOptions function untuk height calculation
+    -- Refresh options display (ACCOUNT FOR CLOSE BUTTON)
     function RefreshOptions()
         -- Clear existing options
         for _, data in pairs(OptionItems) do
@@ -994,7 +1025,7 @@ function Nexus:CreateModernDropdown(config)
         end
     end
 
-    -- Open dropdown
+    -- Open dropdown (UPDATED height calculation)
     local function OpenDropdown()
         if DropdownState.IsOpen then return end
         
@@ -1035,7 +1066,7 @@ function Nexus:CreateModernDropdown(config)
         -- Enable blur
         SetBlur(true, 8)
     end
-    
+
     -- Close dropdown
     function CloseDropdown()
         if not DropdownState.IsOpen then return end
@@ -1116,7 +1147,7 @@ function Nexus:CreateModernDropdown(config)
         end
     end))
 
-    -- Click outside to close
+    -- Click outside to close (UPDATED & FIXED)
     table.insert(Nexus.Connections, UserInputService.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 and DropdownState.IsOpen then
             local mouse = Players.LocalPlayer:GetMouse()
@@ -1144,7 +1175,7 @@ function Nexus:CreateModernDropdown(config)
         end
     end))
 
-    -- Keyboard navigation
+    -- Keyboard navigation (UPDATED with better ESC handling)
     table.insert(Nexus.Connections, UserInputService.InputBegan:Connect(function(input)
         if not DropdownState.IsOpen then return end
         
@@ -1157,18 +1188,13 @@ function Nexus:CreateModernDropdown(config)
                 if optionData and optionData.Item then
                     optionData.Item.Activated:Fire()
                 end
+            elseif cfg.MultiSelect then
+                -- For multiselect, Enter key closes dropdown
+                CloseDropdown()
             end
         end
     end))
 
-    -- Update panel position on render step (for collapsible/scrolling)
-    local updateConnection = RunService.RenderStepped:Connect(function()
-        if DropdownState.IsOpen and Panel.Visible then
-            UpdatePanelPosition()
-        end
-    end)
-    table.insert(Nexus.Connections, updateConnection)
-    
     -- ========== COLLAPSIBLE STATE MONITORING ==========
     -- Monitor parent collapsible untuk auto-close
     local function MonitorCollapsibleState()
@@ -1266,10 +1292,18 @@ function Nexus:CreateModernDropdown(config)
         
         table.insert(Nexus.Connections, visibilityMonitor)
     end
-    
+
     -- Panggil monitoring
     MonitorCollapsibleState()
     -- ========== END COLLAPSIBLE MONITORING ==========
+
+    -- Update panel position on render step (for collapsible/scrolling)
+    local updateConnection = RunService.RenderStepped:Connect(function()
+        if DropdownState.IsOpen and Panel.Visible then
+            UpdatePanelPosition()
+        end
+    end)
+    table.insert(Nexus.Connections, updateConnection)
 
     -- Initial setup
     RefreshOptions()
