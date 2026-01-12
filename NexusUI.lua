@@ -688,6 +688,10 @@ function Nexus:CreateModernDropdown(config)
     -- Add Close Button untuk MultiSelect (di bagian atas panel)
     local CloseButtonFrame = nil
     local CloseButtonHeight = 0
+    
+    local RefreshOptions
+    local UpdateSelectedDisplay
+    local CloseDropdown
 
     if cfg.MultiSelect then
         CloseButtonHeight = 32
@@ -790,9 +794,7 @@ function Nexus:CreateModernDropdown(config)
     local OptionItems = {}
 
     -- Forward declarations
-    local RefreshOptions
-    local UpdateSelectedDisplay
-    local CloseDropdown
+    
 
     local function CreateOptionItem(text, index)
         -- FIX: Perbaiki logic selected detection
