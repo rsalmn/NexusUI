@@ -2542,10 +2542,24 @@ function Nexus:Window(config)
         end
         
         -- Enhanced Dropdown with the new system
-        function Tab:Dropdown(config)
-            if not TabPage or not TabPage.Parent then return nil end
-            return CreateModernDropdown(config, TabPage)
+        function Tab:Dropdown(cfg)
+            if not TabPage or not TabPage.Parent then 
+                warn("[Nexus] Tab:Dropdown - TabPage is not available")
+                return nil 
+            end
+            
+            -- Create new config table to avoid modifying original
+            local dropdownConfig = {}
+            for key, value in pairs(cfg) do
+                dropdownConfig[key] = value
+            end
+            
+            -- Set parent if not specified
+            dropdownConfig.Parent = dropdownConfig.Parent or TabPage
+            
+            return Nexus:CreateModernDropdown(dropdownConfig)
         end
+
         
         -- Continue with other components in the next part...
         function Tab:Toggle(config)
@@ -3828,8 +3842,13 @@ function Nexus:Window(config)
                 
                 function Group:Dropdown(cfg)
                     if not ContentContainer or not ContentContainer.Parent then return nil end
-                    return CreateModernDropdown(cfg, ContentContainer)
+                    
+                    -- Set parent ke ContentContainer kalo belum ada
+                    cfg.Parent = cfg.Parent or ContentContainer
+                    
+                    return Nexus:CreateModernDropdown(cfg)
                 end
+
                 
                 function Group:Label(cfg)
                     if type(cfg) == "string" then cfg = {Text = cfg} end
