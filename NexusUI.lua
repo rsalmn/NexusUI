@@ -666,7 +666,7 @@ function Nexus:CreateModernDropdown(config)
 
     AddCorner(Panel, 8)
     AddStroke(Panel, Nexus.Theme.Outline, 1, 0.5)
-    AddShadow(Panel, 8, 0.3)
+    --AddShadow(Panel, 8, 0.3)
 
     -- Function to update panel position
     local function UpdatePanelPosition()
@@ -745,8 +745,14 @@ function Nexus:CreateModernDropdown(config)
     local CloseDropdown
 
     local function CreateOptionItem(text, index)
-        local isSelected = cfg.MultiSelect and table.find(DropdownState.Selected, text) or DropdownState.Selected == text
-
+        -- FIX: Perbaiki logic selected detection
+        local isSelected = false
+        if cfg.MultiSelect then
+            isSelected = table.find(DropdownState.Selected, text) ~= nil
+        else
+            isSelected = DropdownState.Selected == text
+        end
+    
         local OptionItem = Create("TextButton", {
             Name = "Option_" .. index,
             Size = UDim2.new(1, -8, 0, 28),
@@ -758,10 +764,10 @@ function Nexus:CreateModernDropdown(config)
             LayoutOrder = index,
             Parent = OptionsContainer
         })
-
+    
         AddCorner(OptionItem, 6)
-
-        -- Option text
+    
+        -- Option text dengan warna yang benar
         local OptionText = Create("TextLabel", {
             Name = "Text",
             Size = UDim2.new(1, cfg.MultiSelect and -28 or -12, 1, 0),
@@ -775,8 +781,8 @@ function Nexus:CreateModernDropdown(config)
             TextTruncate = Enum.TextTruncate.AtEnd,
             Parent = OptionItem
         })
-
-        -- Checkbox for multi-select
+    
+        -- Checkbox for multi-select (FIX: Update checkbox state)
         local Checkbox = nil
         if cfg.MultiSelect then
             Checkbox = Create("Frame", {
@@ -787,12 +793,12 @@ function Nexus:CreateModernDropdown(config)
                 BorderSizePixel = 0,
                 Parent = OptionItem
             })
-
+    
             AddCorner(Checkbox, 4)
             AddStroke(Checkbox, Nexus.Theme.Outline, 1, 0.6)
-
+    
             if isSelected then
-                local Checkmark = Create("TextLabel", {
+                Create("TextLabel", {
                     Size = UDim2.new(1, 0, 1, 0),
                     BackgroundTransparency = 1,
                     Text = "✓",
@@ -805,27 +811,48 @@ function Nexus:CreateModernDropdown(config)
                 })
             end
         end
-
-        -- Hover effects
+    
+        -- FIX: Update hover effects dengan selected state yang benar
         local function OnHover(hovering)
-            if not OptionItem.Parent then return end
+            if not OptionItem or not OptionItem.Parent then return end
             
-            local targetColor = hovering and Nexus.Theme.SurfaceHigh or (isSelected and Nexus.Theme.Accent or Color3.new(0, 0, 0))
-            local targetTransparency = hovering and 0.3 or (isSelected and 0.1 or 1)
+            -- Re-check selected state (penting untuk real-time update)
+            local currentlySelected = false
+            if cfg.MultiSelect then
+                currentlySelected = table.find(DropdownState.Selected, text) ~= nil
+            else
+                currentlySelected = DropdownState.Selected == text
+            end
+            
+            local targetColor
+            local targetTransparency
+            
+            if hovering then
+                targetColor = Nexus.Theme.SurfaceHigh
+                targetTransparency = 0.3
+            elseif currentlySelected then
+                targetColor = Nexus.Theme.Accent
+                targetTransparency = 0.1
+            else
+                targetColor = Color3.new(0, 0, 0)
+                targetTransparency = 1
+            end
             
             Tween(OptionItem, {
                 BackgroundColor3 = targetColor,
                 BackgroundTransparency = targetTransparency
             }, 0.15)
             
-            if not isSelected then
-                Tween(OptionText, {
-                    TextColor3 = hovering and Nexus.Theme.Text or Nexus.Theme.TextSub
-                }, 0.15)
-            end
+            -- Update text color
+            Tween(OptionText, {
+                TextColor3 = (hovering or currentlySelected) and Nexus.Theme.Text or Nexus.Theme.TextSub
+            }, 0.15)
+            
+            -- Update font weight
+            OptionText.Font = currentlySelected and Enum.Font.GothamMedium or Enum.Font.Gotham
         end
-
-        -- Click handling
+    
+        -- Click handling (FIX: Proper state update)
         local function OnClick()
             if cfg.MultiSelect then
                 local selectedIndex = table.find(DropdownState.Selected, text)
@@ -835,14 +862,11 @@ function Nexus:CreateModernDropdown(config)
                     table.insert(DropdownState.Selected, text)
                 end
                 
-                -- Update display without closing
                 UpdateSelectedDisplay()
-                RefreshOptions()
+                RefreshOptions() -- Penting: refresh untuk update visual
                 
-                -- Callback
                 pcall(cfg.Callback, DropdownState.Selected)
                 
-                -- Auto save
                 if cfg.Flag then
                     Nexus.Flags[cfg.Flag] = DropdownState.Selected
                     Nexus:_ScheduleAutoSave()
@@ -850,19 +874,18 @@ function Nexus:CreateModernDropdown(config)
             else
                 DropdownState.Selected = text
                 UpdateSelectedDisplay()
+                RefreshOptions() -- Penting: refresh sebelum close
                 CloseDropdown()
                 
-                -- Callback
                 pcall(cfg.Callback, text)
                 
-                -- Auto save
                 if cfg.Flag then
                     Nexus.Flags[cfg.Flag] = text
                     Nexus:_ScheduleAutoSave()
                 end
             end
         end
-
+    
         -- Connect events
         table.insert(Nexus.Connections, OptionItem.MouseEnter:Connect(function()
             OnHover(true)
@@ -873,15 +896,22 @@ function Nexus:CreateModernDropdown(config)
         end))
         
         table.insert(Nexus.Connections, OptionItem.Activated:Connect(OnClick))
-
+    
         OptionItems[text] = {
             Item = OptionItem,
             Text = OptionText,
             Checkbox = Checkbox,
             OnHover = OnHover,
-            IsVisible = true
+            IsVisible = true,
+            IsSelected = function() 
+                if cfg.MultiSelect then
+                    return table.find(DropdownState.Selected, text) ~= nil
+                else
+                    return DropdownState.Selected == text
+                end
+            end
         }
-
+    
         return OptionItem
     end
 
@@ -1116,6 +1146,108 @@ function Nexus:CreateModernDropdown(config)
         end
     end)
     table.insert(Nexus.Connections, updateConnection)
+    
+    -- ========== COLLAPSIBLE STATE MONITORING ==========
+    -- Monitor parent collapsible untuk auto-close
+    local function MonitorCollapsibleState()
+        -- Method 1: Direct parent frame monitoring
+        local function FindCollapsibleParent(obj)
+            local current = obj.Parent
+            while current do
+                -- Cek apakah ini CollapsibleFrame (punya ClipsDescendants toggle behavior)
+                if current:IsA("Frame") and current:FindFirstChildOfClass("TextButton") then
+                    local hasArrow = false
+                    for _, child in ipairs(current:GetDescendants()) do
+                        if child:IsA("TextLabel") and (child.Text == "▼" or child.Text == "▲") then
+                            hasArrow = true
+                            break
+                        end
+                    end
+                    if hasArrow then
+                        return current
+                    end
+                end
+                current = current.Parent
+                if current == screenGui then break end
+            end
+            return nil
+        end
+        
+        local collapsibleFrame = FindCollapsibleParent(Container)
+        
+        if collapsibleFrame then
+            -- Monitor ClipsDescendants changes
+            local clipsConnection = collapsibleFrame:GetPropertyChangedSignal("ClipsDescendants"):Connect(function()
+                if collapsibleFrame.ClipsDescendants == true and DropdownState.IsOpen then
+                    task.wait(0.05) -- Small delay untuk smooth transition
+                    if DropdownState.IsOpen then
+                        CloseDropdown()
+                    end
+                end
+            end)
+            table.insert(Nexus.Connections, clipsConnection)
+            
+            -- Monitor Size changes (collapsible animation)
+            local lastHeight = collapsibleFrame.Size.Y.Offset
+            local sizeConnection = collapsibleFrame:GetPropertyChangedSignal("Size"):Connect(function()
+                local currentHeight = collapsibleFrame.Size.Y.Offset
+                -- Jika height berkurang signifikan (closing animation)
+                if currentHeight < lastHeight - 10 and DropdownState.IsOpen then
+                    -- Cek apakah dropdown masih visible
+                    local dropdownPos = DropdownButton.AbsolutePosition.Y + DropdownButton.AbsoluteSize.Y
+                    local collapsibleBottom = collapsibleFrame.AbsolutePosition.Y + currentHeight
+                    
+                    if dropdownPos > collapsibleBottom then
+                        CloseDropdown()
+                    end
+                end
+                lastHeight = currentHeight
+            end)
+            table.insert(Nexus.Connections, sizeConnection)
+        end
+        
+        -- Method 2: Universal visibility check via RenderStepped
+        local visibilityMonitor = RunService.RenderStepped:Connect(function()
+            if not DropdownState.IsOpen or not Panel.Visible then return end
+            
+            -- Check if dropdown button is actually visible
+            local isVisible = true
+            local checkParent = Container
+            
+            while checkParent and checkParent ~= screenGui do
+                if checkParent:IsA("GuiObject") then
+                    if not checkParent.Visible then
+                        isVisible = false
+                        break
+                    end
+                    
+                    -- Check clipping
+                    if checkParent.ClipsDescendants then
+                        local btnBottom = DropdownButton.AbsolutePosition.Y + DropdownButton.AbsoluteSize.Y
+                        local parentTop = checkParent.AbsolutePosition.Y
+                        local parentBottom = parentTop + checkParent.AbsoluteSize.Y
+                        
+                        -- Button terpotong = dropdown harus close
+                        if btnBottom > parentBottom + 5 then
+                            isVisible = false
+                            break
+                        end
+                    end
+                end
+                checkParent = checkParent.Parent
+            end
+            
+            if not isVisible then
+                CloseDropdown()
+            end
+        end)
+        
+        table.insert(Nexus.Connections, visibilityMonitor)
+    end
+    
+    -- Panggil monitoring
+    MonitorCollapsibleState()
+    -- ========== END COLLAPSIBLE MONITORING ==========
 
     -- Initial setup
     RefreshOptions()
