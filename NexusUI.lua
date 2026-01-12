@@ -685,60 +685,100 @@ function Nexus:CreateModernDropdown(config)
         end
     end
 
-    -- Add Close Button untuk MultiSelect (di bagian atas panel)
+    -- Add Close Button untuk SEMUA dropdown (Single & Multi Select) dengan styling berbeda
     local CloseButtonFrame = nil
-    local CloseButtonHeight = 0
-    
+    local CloseButtonHeight = 32
     local RefreshOptions
     local UpdateSelectedDisplay
     local CloseDropdown
 
+    CloseButtonFrame = Create("Frame", {
+        Name = "CloseButton",
+        Size = UDim2.new(1, -16, 0, 28),
+        Position = UDim2.new(0, 8, 0, 4),
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        BorderSizePixel = 0,
+        Parent = Panel
+    })
+
+    AddCorner(CloseButtonFrame, 6)
+
+    local CloseButton = Create("TextButton", {
+        Name = "Close",
+        Size = UDim2.new(1, 0, 1, 0),
+        BackgroundTransparency = 1,
+        Text = "",
+        Parent = CloseButtonFrame
+    })
+
+    -- Different styling for MultiSelect vs Single Select
+    local closeIcon, closeText, closeColor
     if cfg.MultiSelect then
-        CloseButtonHeight = 32
-        CloseButtonFrame = Create("Frame", {
-            Name = "CloseButton",
-            Size = UDim2.new(1, -16, 0, 28),
-            Position = UDim2.new(0, 8, 0, 4),
-            BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-            BorderSizePixel = 0,
-            Parent = Panel
-        })
-        
-        AddCorner(CloseButtonFrame, 6)
-        
-        local CloseButton = Create("TextButton", {
-            Name = "Close",
-            Size = UDim2.new(1, 0, 1, 0),
-            BackgroundTransparency = 1,
-            Text = "",
-            Parent = CloseButtonFrame
-        })
-        
-        Create("TextLabel", {
-            Size = UDim2.new(1, 0, 1, 0),
-            BackgroundTransparency = 1,
-            Text = "✕ Close",
-            TextColor3 = Nexus.Theme.TextSub,
-            TextSize = 12,
-            Font = Enum.Font.GothamMedium,
-            TextXAlignment = Enum.TextXAlignment.Center,
-            Parent = CloseButtonFrame
-        })
-        
-        -- Close button hover effects
-        table.insert(Nexus.Connections, CloseButton.MouseEnter:Connect(function()
-            Tween(CloseButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHighest}, 0.15)
-        end))
-        
-        table.insert(Nexus.Connections, CloseButton.MouseLeave:Connect(function()
-            Tween(CloseButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
-        end))
-        
-        -- Close button click
-        table.insert(Nexus.Connections, CloseButton.Activated:Connect(function()
-            CloseDropdown()
-        end))
+        closeIcon = "✓"  -- Checkmark untuk confirm selection
+        closeText = "Done"
+        closeColor = Nexus.Theme.Accent
+    else
+        closeIcon = "✕"  -- X untuk cancel
+        closeText = "Cancel" 
+        closeColor = Nexus.Theme.TextSub
     end
+
+    -- Icon
+    local CloseIcon = Create("TextLabel", {
+        Size = UDim2.new(0, 20, 1, 0),
+        Position = UDim2.new(0, 8, 0, 0),
+        BackgroundTransparency = 1,
+        Text = closeIcon,
+        TextColor3 = closeColor,
+        TextSize = 12,
+        Font = Enum.Font.GothamBold,
+        TextXAlignment = Enum.TextXAlignment.Center,
+        Parent = CloseButtonFrame
+    })
+
+    -- Text
+    local CloseText = Create("TextLabel", {
+        Size = UDim2.new(1, -28, 1, 0),
+        Position = UDim2.new(0, 24, 0, 0),
+        BackgroundTransparency = 1,
+        Text = closeText,
+        TextColor3 = closeColor,
+        TextSize = 12,
+        Font = Enum.Font.GothamMedium,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = CloseButtonFrame
+    })
+
+    -- Close button hover effects dengan warna conditional
+    table.insert(Nexus.Connections, CloseButton.MouseEnter:Connect(function()
+        local hoverColor = cfg.MultiSelect and Nexus.Theme.Accent or Nexus.Theme.SurfaceHighest
+        local hoverTransparency = cfg.MultiSelect and 0.1 or 0
+        
+        Tween(CloseButtonFrame, {
+            BackgroundColor3 = hoverColor,
+            BackgroundTransparency = hoverTransparency
+        }, 0.15)
+        
+        -- Animate icon and text color
+        Tween(CloseIcon, {TextColor3 = Nexus.Theme.Text}, 0.15)
+        Tween(CloseText, {TextColor3 = Nexus.Theme.Text}, 0.15)
+    end))
+
+    table.insert(Nexus.Connections, CloseButton.MouseLeave:Connect(function()
+        Tween(CloseButtonFrame, {
+            BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+            BackgroundTransparency = 0
+        }, 0.15)
+        
+        -- Reset icon and text color
+        Tween(CloseIcon, {TextColor3 = closeColor}, 0.15)
+        Tween(CloseText, {TextColor3 = closeColor}, 0.15)
+    end))
+
+    -- Close button click
+    table.insert(Nexus.Connections, CloseButton.Activated:Connect(function()
+        CloseDropdown()
+    end))
 
     -- Search box (if enabled) - UPDATED POSITION
     local SearchBox = nil
