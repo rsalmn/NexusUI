@@ -1420,8 +1420,8 @@ function Nexus:Window(config)
     
     local Title = config.Title or "Nexus Hub"
     local Subtitle = config.Subtitle or "Enhanced UI Library"
-    local BaseSize = config.Size or {600, 380} -- Ukuran asli (PC)
-    local MinSize = config.MinSize or {350, 220} -- Ukuran minimal agar tidak kekecilan
+    local BaseSize = config.Size or {600, 380}
+    local MinSize = config.MinSize or {350, 220}
 
     local Camera = workspace.CurrentCamera
     local Viewport = Camera.ViewportSize
@@ -1429,21 +1429,19 @@ function Nexus:Window(config)
     local FinalWidth = BaseSize[1]
     local FinalHeight = BaseSize[2]
 
-    -- 1. Cek Lebar: Jika lebar UI > 85% lebar layar HP
+    -- Responsive sizing logic (SAME - already good)
     if FinalWidth > Viewport.X * 0.85 then
-        local ratio = BaseSize[2] / BaseSize[1] -- Simpan rasio aspek
-        FinalWidth = math.floor(Viewport.X * 0.85) -- Kecilkan jadi 85% lebar layar
-        FinalHeight = math.floor(FinalWidth * ratio) -- Sesuaikan tinggi
+        local ratio = BaseSize[2] / BaseSize[1]
+        FinalWidth = math.floor(Viewport.X * 0.85)
+        FinalHeight = math.floor(FinalWidth * ratio)
     end
     
-    -- 2. Cek Tinggi: Jika tinggi UI > 80% tinggi layar HP (Landscape)
     if FinalHeight > Viewport.Y * 0.8 then
         local ratio = BaseSize[1] / BaseSize[2]
         FinalHeight = math.floor(Viewport.Y * 0.8)
         FinalWidth = math.floor(FinalHeight * ratio)
     end
     
-    -- 3. Terapkan Batas Minimal (Agar tidak terlalu kecil)
     FinalWidth = math.max(FinalWidth, MinSize[1])
     FinalHeight = math.max(FinalHeight, MinSize[2])
     
@@ -1462,8 +1460,16 @@ function Nexus:Window(config)
         warn("[Nexus] Failed to create ScreenGui")
         return nil
     end
-    
-    -- Enhanced Welcome Animation
+
+    -- FIX: Window state management untuk proper cleanup
+    local WindowState = {
+        isDestroyed = false,
+        animationThreads = {},
+        connections = {},
+        elements = {}
+    }
+
+    -- Enhanced Welcome Animation dengan proper cleanup
     if config.Welcome ~= false then
         local IntroFrame = Create("Frame", {
             BackgroundColor3 = Nexus.Theme.Background,
@@ -1473,6 +1479,8 @@ function Nexus:Window(config)
             Parent = ScreenGui
         })
         
+        WindowState.elements.IntroFrame = IntroFrame
+        
         local IntroGradient = Create("UIGradient", {
             Color = ColorSequence.new{
                 ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1),
@@ -1481,9 +1489,9 @@ function Nexus:Window(config)
             },
             Rotation = 45,
             Transparency = NumberSequence.new{
-                NumberSequenceKeypoint.new(0, 0.7),      -- BENAR: NumberSequenceKeypoint untuk transparency
-                NumberSequenceKeypoint.new(0.5, 0),      -- BENAR: NumberSequenceKeypoint untuk transparency
-                NumberSequenceKeypoint.new(1, 0.7)       -- BENAR: NumberSequenceKeypoint untuk transparency
+                NumberSequenceKeypoint.new(0, 0.7),
+                NumberSequenceKeypoint.new(0.5, 0),
+                NumberSequenceKeypoint.new(1, 0.7)
             },
             Parent = IntroFrame
         })
@@ -1534,28 +1542,44 @@ function Nexus:Window(config)
             Parent = IntroFrame
         })
         
-        -- Enhanced animation sequence
-        task.spawn(function()
+        -- FIX: Track animation thread for proper cleanup
+        local animationThread = task.spawn(function()
+            -- Check if destroyed during animation
+            local function checkDestroyed()
+                return WindowState.isDestroyed or not IntroFrame or not IntroFrame.Parent
+            end
+            
             -- Logo border animation
-            Tween(LogoContainer:FindFirstChild("UIStroke"), {Transparency = 0}, 0.6)
-            task.wait(0.2)
+            if not checkDestroyed() then
+                Tween(LogoContainer:FindFirstChild("UIStroke"), {Transparency = 0}, 0.6)
+                task.wait(0.2)
+            end
             
             -- Logo text fade in
-            Tween(Logo, {TextTransparency = 0}, 0.5)
-            task.wait(0.3)
+            if not checkDestroyed() then
+                Tween(Logo, {TextTransparency = 0}, 0.5)
+                task.wait(0.3)
+            end
             
             -- Title animations
-            Tween(TitleLabel, {TextTransparency = 0}, 0.4)
-            task.wait(0.2)
-            Tween(SubtitleLabel, {TextTransparency = 0}, 0.4)
+            if not checkDestroyed() then
+                Tween(TitleLabel, {TextTransparency = 0}, 0.4)
+                task.wait(0.2)
+                Tween(SubtitleLabel, {TextTransparency = 0}, 0.4)
+            end
             
             -- Logo pulse effect
             for i = 1, 2 do
+                if checkDestroyed() then break end
+                
                 Tween(Logo, {
                     TextSize = 78,
                     TextColor3 = Nexus.Theme.AccentHover
                 }, 0.3)
                 task.wait(0.3)
+                
+                if checkDestroyed() then break end
+                
                 Tween(Logo, {
                     TextSize = 72,
                     TextColor3 = Nexus.Theme.Accent
@@ -1563,23 +1587,32 @@ function Nexus:Window(config)
                 task.wait(0.3)
             end
             
-            task.wait(0.8)
-            
-            -- Fade out animation
-            Tween(Logo, {TextTransparency = 1, TextSize = 0}, 0.4)
-            Tween(TitleLabel, {TextTransparency = 1}, 0.3)
-            Tween(SubtitleLabel, {TextTransparency = 1}, 0.3)
-            Tween(LogoContainer:FindFirstChild("UIStroke"), {Transparency = 1}, 0.4)
-            Tween(IntroFrame, {BackgroundTransparency = 1}, 0.5)
-            
-            task.wait(0.6)
-            if IntroFrame and IntroFrame.Parent then
-                IntroFrame:Destroy()
+            if not checkDestroyed() then
+                task.wait(0.8)
+                
+                -- Fade out animation
+                Tween(Logo, {TextTransparency = 1, TextSize = 0}, 0.4)
+                Tween(TitleLabel, {TextTransparency = 1}, 0.3)
+                Tween(SubtitleLabel, {TextTransparency = 1}, 0.3)
+                Tween(LogoContainer:FindFirstChild("UIStroke"), {Transparency = 1}, 0.4)
+                Tween(IntroFrame, {BackgroundTransparency = 1}, 0.5)
+                
+                task.wait(0.6)
             end
+            
+            -- Clean destroy
+            pcall(function()
+                if IntroFrame and IntroFrame.Parent then
+                    IntroFrame:Destroy()
+                end
+                WindowState.elements.IntroFrame = nil
+            end)
         end)
+        
+        WindowState.animationThreads[#WindowState.animationThreads + 1] = animationThread
     end
     
-    -- Enhanced Watermark
+    -- Enhanced Watermark dengan optimized updates
     if config.Watermark ~= false then
         local WatermarkFrame = Create("Frame", {
             BackgroundColor3 = Nexus.Theme.Surface,
@@ -1587,6 +1620,8 @@ function Nexus:Window(config)
             Position = UDim2.new(0, 16, 0, (Viewport.Y < 600 and 50) or 16), 
             Parent = ScreenGui
         })
+        
+        WindowState.elements.WatermarkFrame = WatermarkFrame
         
         AddCorner(WatermarkFrame, 8)
         AddStroke(WatermarkFrame, Nexus.Theme.Accent, 1, 0.5)
@@ -1618,9 +1653,20 @@ function Nexus:Window(config)
         
         MakeDraggable(WatermarkFrame)
         
-        -- Enhanced watermark data
+        -- FIX: Optimized watermark update dengan throttling
+        local lastWatermarkUpdate = 0
+        local watermarkUpdateInterval = 1 -- Update setiap 1 detik, bukan 60fps
+        
         local function UpdateWatermark()
-            if not WatermarkFrame or not WatermarkFrame.Parent then return end
+            local currentTime = tick()
+            if currentTime - lastWatermarkUpdate < watermarkUpdateInterval then
+                return -- Skip update jika belum waktunya
+            end
+            lastWatermarkUpdate = currentTime
+            
+            if WindowState.isDestroyed or not WatermarkFrame or not WatermarkFrame.Parent then 
+                return 
+            end
             
             local fps = math.floor(workspace:GetRealPhysicsFPS())
             local ping = 0
@@ -1632,35 +1678,38 @@ function Nexus:Window(config)
             local time = os.date("%H:%M:%S")
             local playerCount = #Players:GetPlayers()
             
-            WatermarkText.Text = string.format("🚀 %d FPS | 📡 %dms | 👥 %d | %s", 
-                fps, math.floor(ping), playerCount, time)
+            pcall(function()
+                WatermarkText.Text = string.format("🚀 %d FPS | 📡 %dms | 👥 %d | %s", 
+                    fps, math.floor(ping), playerCount, time)
+            end)
         end
         
-        -- Update watermark every second
-        --// Continue from Watermark section...
-
-        -- Update watermark every second
-        local watermarkConnection = RunService.Heartbeat:Connect(UpdateWatermark)
-        table.insert(Nexus.Connections, watermarkConnection)
+        -- FIX: Use RenderStepped tapi dengan throttling yang proper
+        local watermarkConnection = RunService.RenderStepped:Connect(UpdateWatermark)
+        WindowState.connections[#WindowState.connections + 1] = watermarkConnection
         
         UpdateWatermark()
         
-        -- Theme update for watermark
+        -- FIX: Safe theme update dengan existence check
         local watermarkThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
-            if WatermarkFrame and WatermarkFrame.Parent then
-                WatermarkFrame.BackgroundColor3 = Nexus.Theme.Surface
-                WatermarkText.TextColor3 = Nexus.Theme.Text
-                
-                local strokeElement = WatermarkFrame:FindFirstChild("UIStroke")
-                if strokeElement then
-                    strokeElement.Color = Nexus.Theme.Accent
+            if WindowState.isDestroyed then return end
+            
+            pcall(function()
+                if WatermarkFrame and WatermarkFrame.Parent then
+                    WatermarkFrame.BackgroundColor3 = Nexus.Theme.Surface
+                    WatermarkText.TextColor3 = Nexus.Theme.Text
+                    
+                    local strokeElement = WatermarkFrame:FindFirstChild("UIStroke")
+                    if strokeElement then
+                        strokeElement.Color = Nexus.Theme.Accent
+                    end
                 end
-            end
+            end)
         end)
         
-        table.insert(Nexus.Connections, watermarkThemeConnection)
+        WindowState.connections[#WindowState.connections + 1] = watermarkThemeConnection
     end
-    
+
     -- Main Window Frame
     local MainWindow = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.Background,
@@ -2146,290 +2195,289 @@ function Nexus:Window(config)
     
     -- Enhanced Notification Function
     function Nexus:Notify(config)
-    if not config then config = {} end
-    
-    local Title = config.Title or "Notification"
-    local Content = config.Content or ""
-    local Duration = config.Duration or 3
-    local Type = config.Type or "Info" -- Info, Success, Warning, Error
-    local Callback = config.Callback
-    
-    -- Color scheme based on type
-    local Colors = {
-        Info = {
-            bg = Nexus.Theme.Surface,
-            accent = Nexus.Theme.Accent,
-            icon = "ℹ️"
-        },
-        Success = {
-            bg = Nexus.Theme.Surface,
-            accent = Nexus.Theme.Success,
-            icon = "✅"
-        },
-        Warning = {
-            bg = Nexus.Theme.Surface,
-            accent = Nexus.Theme.Warning,
-            icon = "⚠️"
-        },
-        Error = {
-            bg = Nexus.Theme.Surface,
-            accent = Nexus.Theme.Error,
-            icon = "❌"
+        if not config then config = {} end
+        
+        local Title = config.Title or "Notification"
+        local Content = config.Content or ""
+        local Duration = config.Duration or 3
+        local Type = config.Type or "Info" -- Info, Success, Warning, Error
+        local Callback = config.Callback
+        
+        -- Color scheme based on type
+        local Colors = {
+            Info = {
+                bg = Nexus.Theme.Surface,
+                accent = Nexus.Theme.Accent,
+                icon = "ℹ️"
+            },
+            Success = {
+                bg = Nexus.Theme.Surface,
+                accent = Nexus.Theme.Success,
+                icon = "✅"
+            },
+            Warning = {
+                bg = Nexus.Theme.Surface,
+                accent = Nexus.Theme.Warning,
+                icon = "⚠️"
+            },
+            Error = {
+                bg = Nexus.Theme.Surface,
+                accent = Nexus.Theme.Error,
+                icon = "❌"
+            }
         }
-    }
-    
-    local colorScheme = Colors[Type] or Colors.Info
-    
-    -- State management - FIX: Proper thread handling
-    local NotificationState = {
-        isDismissed = false,
-        progressTween = nil,
-        dismissThread = nil, -- Store thread reference
-        connections = {}
-    }
-    
-    -- Create notification dengan responsive positioning
-    local containerWidth = NotificationContainer.AbsoluteSize.X
-    local startPosition = UDim2.fromOffset(containerWidth + 20, 0)
-    
-    local Notification = Create("Frame", {
-        BackgroundColor3 = colorScheme.bg,
-        Size = UDim2.new(1, 0, 0, 0),
-        Position = startPosition,
-        BackgroundTransparency = 0.1,
-        LayoutOrder = 1,
-        Parent = NotificationContainer
-    })
-    
-    AddCorner(Notification, 10)
-    AddStroke(Notification, colorScheme.accent, 1, 0.3)
-    AddShadow(Notification, 8, 0.8)
-    
-    -- Gradient overlay
-    local NotificationGradient = Create("UIGradient", {
-        Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
-            ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
-            ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-        },
-        Rotation = 45,
-        Transparency = NumberSequence.new{
-            NumberSequenceKeypoint.new(0, 0.05),
-            NumberSequenceKeypoint.new(0.5, 0.02),
-            NumberSequenceKeypoint.new(1, 0.08)
-        },
-        Parent = Notification
-    })
-    
-    -- Progress bar
-    local ProgressBar = Create("Frame", {
-        BackgroundColor3 = colorScheme.accent,
-        Size = UDim2.new(1, 0, 0, 3),
-        Position = UDim2.new(0, 0, 1, -3),
-        Parent = Notification
-    })
-    
-    AddCorner(ProgressBar, 2)
-    
-    -- Icon
-    local Icon = Create("TextLabel", {
-        Text = colorScheme.icon,
-        Font = Enum.Font.GothamBold,
-        TextSize = 16,
-        TextColor3 = colorScheme.accent,
-        BackgroundTransparency = 1,
-        Position = UDim2.fromOffset(12, 12),
-        Size = UDim2.fromOffset(20, 20),
-        Parent = Notification
-    })
-    
-    -- Title
-    local TitleLabel = Create("TextLabel", {
-        Text = Title,
-        Font = Enum.Font.GothamBold,
-        TextSize = 14,
-        TextColor3 = Nexus.Theme.Text,
-        BackgroundTransparency = 1,
-        Position = UDim2.fromOffset(40, 12),
-        Size = UDim2.new(1, -80, 0, 20),
-        TextXAlignment = Enum.TextXAlignment.Left,
-        TextTruncate = Enum.TextTruncate.AtEnd,
-        Parent = Notification
-    })
-    
-    -- Content
-    local ContentLabel = Create("TextLabel", {
-        Text = Content,
-        Font = Enum.Font.Gotham,
-        TextSize = 12,
-        TextColor3 = Nexus.Theme.TextSub,
-        BackgroundTransparency = 1,
-        Position = UDim2.fromOffset(40, 32),
-        Size = UDim2.new(1, -80, 0, 16),
-        TextXAlignment = Enum.TextXAlignment.Left,
-        TextTruncate = Enum.TextTruncate.AtEnd,
-        TextWrapped = true,
-        Parent = Notification
-    })
-    
-    -- Close button
-    local CloseBtn = Create("TextButton", {
-        Text = "✕",
-        Font = Enum.Font.GothamBold,
-        TextSize = 12,
-        TextColor3 = Nexus.Theme.TextMuted,
-        BackgroundTransparency = 1,
-        Position = UDim2.new(1, -32, 0, 8),
-        Size = UDim2.fromOffset(24, 24),
-        Parent = Notification
-    })
-    
-    -- Calculate content height
-    local contentHeight = 56
-    if Content and Content:len() > 40 then
-        contentHeight = 72
-    end
-    
-    -- Theme change handler - FIX: Proper cleanup check
-    local themeConnection = Nexus.ThemeChanged.Event:Connect(function()
-        if NotificationState.isDismissed then return end
-        if NotificationGradient and NotificationGradient.Parent then
-            NotificationGradient.Color = ColorSequence.new{
+        
+        local colorScheme = Colors[Type] or Colors.Info
+        
+        -- State management - FIX: Proper thread handling
+        local NotificationState = {
+            isDismissed = false,
+            progressTween = nil,
+            dismissThread = nil, -- Store thread reference
+            connections = {}
+        }
+        
+        -- Create notification dengan responsive positioning
+        local containerWidth = NotificationContainer.AbsoluteSize.X
+        local startPosition = UDim2.fromOffset(containerWidth + 20, 0)
+        
+        local Notification = Create("Frame", {
+            BackgroundColor3 = colorScheme.bg,
+            Size = UDim2.new(1, 0, 0, 0),
+            Position = startPosition,
+            BackgroundTransparency = 0.1,
+            LayoutOrder = 1,
+            Parent = NotificationContainer
+        })
+        
+        AddCorner(Notification, 10)
+        AddStroke(Notification, colorScheme.accent, 1, 0.3)
+        AddShadow(Notification, 8, 0.8)
+        
+        -- Gradient overlay
+        local NotificationGradient = Create("UIGradient", {
+            Color = ColorSequence.new{
                 ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
                 ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
                 ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-            }
+            },
+            Rotation = 45,
+            Transparency = NumberSequence.new{
+                NumberSequenceKeypoint.new(0, 0.05),
+                NumberSequenceKeypoint.new(0.5, 0.02),
+                NumberSequenceKeypoint.new(1, 0.08)
+            },
+            Parent = Notification
+        })
+        
+        -- Progress bar
+        local ProgressBar = Create("Frame", {
+            BackgroundColor3 = colorScheme.accent,
+            Size = UDim2.new(1, 0, 0, 3),
+            Position = UDim2.new(0, 0, 1, -3),
+            Parent = Notification
+        })
+        
+        AddCorner(ProgressBar, 2)
+        
+        -- Icon
+        local Icon = Create("TextLabel", {
+            Text = colorScheme.icon,
+            Font = Enum.Font.GothamBold,
+            TextSize = 16,
+            TextColor3 = colorScheme.accent,
+            BackgroundTransparency = 1,
+            Position = UDim2.fromOffset(12, 12),
+            Size = UDim2.fromOffset(20, 20),
+            Parent = Notification
+        })
+        
+        -- Title
+        local TitleLabel = Create("TextLabel", {
+            Text = Title,
+            Font = Enum.Font.GothamBold,
+            TextSize = 14,
+            TextColor3 = Nexus.Theme.Text,
+            BackgroundTransparency = 1,
+            Position = UDim2.fromOffset(40, 12),
+            Size = UDim2.new(1, -80, 0, 20),
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextTruncate = Enum.TextTruncate.AtEnd,
+            Parent = Notification
+        })
+        
+        -- Content
+        local ContentLabel = Create("TextLabel", {
+            Text = Content,
+            Font = Enum.Font.Gotham,
+            TextSize = 12,
+            TextColor3 = Nexus.Theme.TextSub,
+            BackgroundTransparency = 1,
+            Position = UDim2.fromOffset(40, 32),
+            Size = UDim2.new(1, -80, 0, 16),
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextTruncate = Enum.TextTruncate.AtEnd,
+            TextWrapped = true,
+            Parent = Notification
+        })
+        
+        -- Close button
+        local CloseBtn = Create("TextButton", {
+            Text = "✕",
+            Font = Enum.Font.GothamBold,
+            TextSize = 12,
+            TextColor3 = Nexus.Theme.TextMuted,
+            BackgroundTransparency = 1,
+            Position = UDim2.new(1, -32, 0, 8),
+            Size = UDim2.fromOffset(24, 24),
+            Parent = Notification
+        })
+        
+        -- Calculate content height
+        local contentHeight = 56
+        if Content and Content:len() > 40 then
+            contentHeight = 72
         end
-    end)
-    NotificationState.connections[#NotificationState.connections + 1] = themeConnection
-    
-    -- FIX: Proper cleanup function
-    local function CleanupNotification()
-        if NotificationState.isDismissed then return end
-        NotificationState.isDismissed = true
         
-        -- Cancel tweens
-        if NotificationState.progressTween then
-            NotificationState.progressTween:Cancel()
-            NotificationState.progressTween = nil
-        end
-        
-        -- Cancel dismiss thread - FIX: Only cancel if it exists and is a thread
-        if NotificationState.dismissThread then
-            pcall(function()
-                task.cancel(NotificationState.dismissThread)
-            end)
-            NotificationState.dismissThread = nil
-        end
-        
-        -- Disconnect all connections
-        for i, connection in ipairs(NotificationState.connections) do
-            if connection and connection.Connected then
-                pcall(function()
-                    connection:Disconnect()
-                end)
-            end
-        end
-        NotificationState.connections = {}
-    end
-    
-    -- FIX: Enhanced dismiss function with proper error handling
-    local function DismissNotification()
-        if NotificationState.isDismissed then return end
-        
-        CleanupNotification()
-        
-        -- Animate out with error handling
-        pcall(function()
-            Tween(Notification, {
-                Position = startPosition,
-                BackgroundTransparency = 1
-            }, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
-            
-            Tween(ProgressBar, {BackgroundTransparency = 1}, 0.3)
-        end)
-        
-        -- Destroy after animation with error handling
-        task.spawn(function()
-            task.wait(0.35)
-            pcall(function()
-                if Notification and Notification.Parent then
-                    Notification:Destroy()
-                end
-            end)
-        end)
-    end
-    
-    -- Animate notification appearance
-    Tween(Notification, {
-        Size = UDim2.new(1, 0, 0, contentHeight),
-        Position = UDim2.fromOffset(0, 0)
-    }, 0.4, Enum.EasingStyle.Back)
-    
-    -- Progress bar & auto dismiss - FIX: Store thread properly
-    if Duration > 0 then
-        NotificationState.progressTween = Tween(ProgressBar, {
-            Size = UDim2.new(0, 0, 0, 3)
-        }, Duration)
-        
-        -- FIX: Properly store dismiss thread
-        NotificationState.dismissThread = task.spawn(function()
-            task.wait(Duration)
-            if not NotificationState.isDismissed then
-                DismissNotification()
-            end
-        end)
-    end
-    
-    -- Manual close - FIX: Add to connections array for proper cleanup
-    local closeConnection = CloseBtn.MouseButton1Click:Connect(function()
-        if Callback then
-            pcall(Callback)
-        end
-        DismissNotification()
-    end)
-    NotificationState.connections[#NotificationState.connections + 1] = closeConnection
-    
-    -- Click notification - FIX: Add to connections array
-    local notifButton = Create("TextButton", {
-        Text = "",
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1, -32, 1, 0),
-        Parent = Notification
-    })
-    
-    local clickConnection = notifButton.MouseButton1Click:Connect(function()
-        if Callback then
-            pcall(Callback)
-        end
-        DismissNotification()
-    end)
-    NotificationState.connections[#NotificationState.connections + 1] = clickConnection
-    
-    -- Return API with error handling
-    return {
-        Dismiss = function()
-            pcall(DismissNotification)
-        end,
-        SetProgress = function(progress)
+        -- Theme change handler - FIX: Proper cleanup check
+        local themeConnection = Nexus.ThemeChanged.Event:Connect(function()
             if NotificationState.isDismissed then return end
+            if NotificationGradient and NotificationGradient.Parent then
+                NotificationGradient.Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+                }
+            end
+        end)
+        NotificationState.connections[#NotificationState.connections + 1] = themeConnection
+        
+        -- FIX: Proper cleanup function
+        local function CleanupNotification()
+            if NotificationState.isDismissed then return end
+            NotificationState.isDismissed = true
+            
+            -- Cancel tweens
+            if NotificationState.progressTween then
+                NotificationState.progressTween:Cancel()
+                NotificationState.progressTween = nil
+            end
+            
+            -- Cancel dismiss thread - FIX: Only cancel if it exists and is a thread
+            if NotificationState.dismissThread then
+                pcall(function()
+                    task.cancel(NotificationState.dismissThread)
+                end)
+                NotificationState.dismissThread = nil
+            end
+            
+            -- Disconnect all connections
+            for i, connection in ipairs(NotificationState.connections) do
+                if connection and connection.Connected then
+                    pcall(function()
+                        connection:Disconnect()
+                    end)
+                end
+            end
+            NotificationState.connections = {}
+        end
+        
+        -- FIX: Enhanced dismiss function with proper error handling
+        local function DismissNotification()
+            if NotificationState.isDismissed then return end
+            
+            CleanupNotification()
+            
+            -- Animate out with error handling
             pcall(function()
-                if ProgressBar and ProgressBar.Parent then
-                    if NotificationState.progressTween then
-                        NotificationState.progressTween:Cancel()
+                Tween(Notification, {
+                    Position = startPosition,
+                    BackgroundTransparency = 1
+                }, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+                
+                Tween(ProgressBar, {BackgroundTransparency = 1}, 0.3)
+            end)
+            
+            -- Destroy after animation with error handling
+            task.spawn(function()
+                task.wait(0.35)
+                pcall(function()
+                    if Notification and Notification.Parent then
+                        Notification:Destroy()
                     end
-                    NotificationState.progressTween = Tween(ProgressBar, {
-                        Size = UDim2.new(math.clamp(progress, 0, 1), 0, 0, 3)
-                    }, 0.2)
+                end)
+            end)
+        end
+        
+        -- Animate notification appearance
+        Tween(Notification, {
+            Size = UDim2.new(1, 0, 0, contentHeight),
+            Position = UDim2.fromOffset(0, 0)
+        }, 0.4, Enum.EasingStyle.Back)
+        
+        -- Progress bar & auto dismiss - FIX: Store thread properly
+        if Duration > 0 then
+            NotificationState.progressTween = Tween(ProgressBar, {
+                Size = UDim2.new(0, 0, 0, 3)
+            }, Duration)
+            
+            -- FIX: Properly store dismiss thread
+            NotificationState.dismissThread = task.spawn(function()
+                task.wait(Duration)
+                if not NotificationState.isDismissed then
+                    DismissNotification()
                 end
             end)
-        end,
-        IsActive = function()
-            return not NotificationState.isDismissed
         end
-    }
-end
-
+        
+        -- Manual close - FIX: Add to connections array for proper cleanup
+        local closeConnection = CloseBtn.MouseButton1Click:Connect(function()
+            if Callback then
+                pcall(Callback)
+            end
+            DismissNotification()
+        end)
+        NotificationState.connections[#NotificationState.connections + 1] = closeConnection
+        
+        -- Click notification - FIX: Add to connections array
+        local notifButton = Create("TextButton", {
+            Text = "",
+            BackgroundTransparency = 1,
+            Size = UDim2.new(1, -32, 1, 0),
+            Parent = Notification
+        })
+        
+        local clickConnection = notifButton.MouseButton1Click:Connect(function()
+            if Callback then
+                pcall(Callback)
+            end
+            DismissNotification()
+        end)
+        NotificationState.connections[#NotificationState.connections + 1] = clickConnection
+        
+        -- Return API with error handling
+        return {
+            Dismiss = function()
+                pcall(DismissNotification)
+            end,
+            SetProgress = function(progress)
+                if NotificationState.isDismissed then return end
+                pcall(function()
+                    if ProgressBar and ProgressBar.Parent then
+                        if NotificationState.progressTween then
+                            NotificationState.progressTween:Cancel()
+                        end
+                        NotificationState.progressTween = Tween(ProgressBar, {
+                            Size = UDim2.new(math.clamp(progress, 0, 1), 0, 0, 3)
+                        }, 0.2)
+                    end
+                end)
+            end,
+            IsActive = function()
+                return not NotificationState.isDismissed
+            end
+        }
+    end
     
     local function CreateTab(config)
         if type(config) == "string" then
