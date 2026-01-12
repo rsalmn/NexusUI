@@ -1710,539 +1710,491 @@ function Nexus:Window(config)
         WindowState.connections[#WindowState.connections + 1] = watermarkThemeConnection
     end
 
-    -- CONTINUATION dari Bagian A - Ambil WindowState yang sudah ada
--- return dari Bagian A: { ScreenGui, WindowState, Size }
-
--- Main Window Frame
-local MainWindow = Create("Frame", {
-    BackgroundColor3 = Nexus.Theme.Background,
-    Size = UDim2.fromOffset(Size[1], Size[2]),
-    Position = UDim2.fromScale(0.5, 0.5),
-    AnchorPoint = Vector2.new(0.5, 0.5),
-    BorderSizePixel = 0,
-    Parent = ScreenGui
-})
-
--- FIX: Add MainWindow to WindowState untuk tracking
-WindowState.elements.MainWindow = MainWindow
-
--- Kita gunakan UIScale untuk animasi resize yang lebih aman dan mulus
-local MainScale = Create("UIScale", {
-    Parent = MainWindow,
-    Scale = 1
-})
-
-WindowState.elements.MainScale = MainScale
-
-if not MainWindow then
-    warn("[Nexus] Failed to create main window")
-    return nil
-end
-
-AddCorner(MainWindow, 12)
-AddStroke(MainWindow, Nexus.Theme.Outline, 1, 0.3)
-AddShadow(MainWindow, 12, 0.6)
-
--- Window Gradient Background
-local WindowGradient = Create("UIGradient", {
-    Color = ColorSequence.new{
-        ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
-        ColorSequenceKeypoint.new(1, Color3.new(0.95, 0.95, 0.95))
-    },
-    Rotation = 135,
-    Transparency = NumberSequence.new{
-        NumberSequenceKeypoint.new(0, 0.95),
-        NumberSequenceKeypoint.new(1, 0.98)
-    },
-    Parent = MainWindow
-})
-
--- Title Bar
-local TitleBar = Create("Frame", {
-    BackgroundColor3 = Nexus.Theme.Surface,
-    Size = UDim2.new(1, 0, 0, 48),
-    Position = UDim2.fromOffset(0, 0),
-    Parent = MainWindow
-})
-
-WindowState.elements.TitleBar = TitleBar
-
-AddCorner(TitleBar, 12)
-
--- Title Bar Bottom Corner Fix
-local TitleBarFix = Create("Frame", {
-    BackgroundColor3 = Nexus.Theme.Surface,
-    Size = UDim2.new(1, 0, 0, 12),
-    Position = UDim2.new(0, 0, 1, -12),
-    BorderSizePixel = 0,
-    Parent = TitleBar
-})
-
--- Title Bar Gradient
-local TitleGradient = Create("UIGradient", {
-    Color = ColorSequence.new{
-        ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1),
-        ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
-        ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)
-    },
-    Rotation = 45,
-    Transparency = NumberSequence.new{
-        NumberSequenceKeypoint.new(0, 0.1),
-        NumberSequenceKeypoint.new(0.5, 0.05),
-        NumberSequenceKeypoint.new(1, 0.15)
-    },
-    Parent = TitleBar
-})
-
--- FIX: Use WindowState.connections instead of global
-local titleGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
-    if WindowState.isDestroyed then return end
-    if TitleGradient and TitleGradient.Parent then
-        TitleGradient.Color = ColorSequence.new{
+    -- Main Window Frame
+    local MainWindow = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Background,
+        Size = UDim2.fromOffset(Size[1], Size[2]),
+        Position = UDim2.fromScale(0.5, 0.5),
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        BorderSizePixel = 0,
+        Parent = ScreenGui
+    })
+    
+    -- Kita gunakan UIScale untuk animasi resize yang lebih aman dan mulus
+    local MainScale = Create("UIScale", {
+        Parent = MainWindow,
+        Scale = 1
+    })
+    
+    if not MainWindow then
+        warn("[Nexus] Failed to create main window")
+        return nil
+    end
+    
+    AddCorner(MainWindow, 12)
+    AddStroke(MainWindow, Nexus.Theme.Outline, 1, 0.3)
+    AddShadow(MainWindow, 12, 0.6)
+    
+    -- Window Gradient Background
+    local WindowGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),      -- BENAR: maksimal 1.0
+            ColorSequenceKeypoint.new(1, Color3.new(0.95, 0.95, 0.95))
+        },
+        Rotation = 135,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.95),
+            NumberSequenceKeypoint.new(1, 0.98)
+        },
+        Parent = MainWindow
+    })
+    
+    -- Title Bar
+    local TitleBar = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.new(1, 0, 0, 48),
+        Position = UDim2.fromOffset(0, 0),
+        Parent = MainWindow
+    })
+    
+    AddCorner(TitleBar, 12)
+    
+    -- Title Bar Bottom Corner Fix
+    local TitleBarFix = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.new(1, 0, 0, 12),
+        Position = UDim2.new(0, 0, 1, -12),
+        BorderSizePixel = 0,
+        Parent = TitleBar
+    })
+    
+    -- Title Bar Gradient
+    local TitleGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
             ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1),
             ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
             ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)
-        }
-    end
-end)
-
-WindowState.connections[#WindowState.connections + 1] = titleGradientConnection
-
--- App Icon
-local AppIcon = Create("TextLabel", {
-    Text = "🚀",
-    Font = Enum.Font.GothamBold,
-    TextSize = 20,
-    TextColor3 = Nexus.Theme.Accent,
-    BackgroundTransparency = 1,
-    Position = UDim2.fromOffset(16, 0),
-    Size = UDim2.fromOffset(32, 48),
-    Parent = TitleBar
-})
-
--- Window Title
-local WindowTitle = Create("TextLabel", {
-    Text = Title,
-    Font = Enum.Font.GothamBold,
-    TextSize = 16,
-    TextColor3 = Nexus.Theme.Text,
-    BackgroundTransparency = 1,
-    Position = UDim2.fromOffset(56, 0),
-    Size = UDim2.new(1, -200, 1, 0),
-    TextXAlignment = Enum.TextXAlignment.Left,
-    TextTruncate = Enum.TextTruncate.AtEnd,
-    Parent = TitleBar
-})
-
--- Window Subtitle
-local WindowSubtitle = Create("TextLabel", {
-    Text = Subtitle,
-    Font = Enum.Font.Gotham,
-    TextSize = 12,
-    TextColor3 = Nexus.Theme.TextSub,
-    BackgroundTransparency = 1,
-    Position = UDim2.fromOffset(56, 24),
-    Size = UDim2.new(1, -200, 0, 20),
-    TextXAlignment = Enum.TextXAlignment.Left,
-    TextTruncate = Enum.TextTruncate.AtEnd,
-    Parent = TitleBar
-})
-
--- Window Controls Container
-local ControlsContainer = Create("Frame", {
-    BackgroundTransparency = 1,
-    Size = UDim2.fromOffset(120, 48),
-    Position = UDim2.new(1, -128, 0, 0),
-    Parent = TitleBar
-})
-
--- Minimize Button
-local MinimizeButton = Create("TextButton", {
-    Text = "─",
-    Font = Enum.Font.GothamBold,
-    TextSize = 14,
-    TextColor3 = Nexus.Theme.TextSub,
-    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-    BackgroundTransparency = 0.8,
-    Size = UDim2.fromOffset(32, 28),
-    Position = UDim2.fromOffset(8, 10),
-    AutoButtonColor = false,
-    Parent = ControlsContainer
-})
-
-AddCorner(MinimizeButton, 6)
-
--- Close Button
-local CloseButton = Create("TextButton", {
-    Text = "",
-    BackgroundColor3 = Nexus.Theme.SurfaceHigh,
-    BackgroundTransparency = 0.8,
-    Size = UDim2.fromOffset(32, 28),
-    Position = UDim2.fromOffset(44, 10),
-    AutoButtonColor = false,
-    Parent = ControlsContainer
-})
-
-AddCorner(CloseButton, 6)
-
-local CloseIcon = Create("ImageLabel", {
-    BackgroundTransparency = 1,
-    Size = UDim2.fromOffset(16, 16),
-    Position = UDim2.fromScale(0.5, 0.5),
-    AnchorPoint = Vector2.new(0.5, 0.5),
-    Image = "rbxassetid://9886659671",
-    ImageColor3 = Color3.fromRGB(255, 100, 100),
-    Parent = CloseButton
-})
-
--- FIX: Enhanced button hover dengan proper cleanup
-local function CreateButtonHover(button, hoverColor)
-    local enterConnection = button.MouseEnter:Connect(function()
-        if WindowState.isDestroyed then return end
-        Tween(button, {BackgroundTransparency = 0.2}, 0.15)
-        if hoverColor then
-            Tween(button, {TextColor3 = hoverColor}, 0.15)
-        end
-    end)
-    
-    local leaveConnection = button.MouseLeave:Connect(function()
-        if WindowState.isDestroyed then return end
-        Tween(button, {BackgroundTransparency = 0.8}, 0.15)
-        if button == CloseButton then
-            Tween(button, {TextColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
-        else
-            Tween(button, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
-        end
-    end)
-    
-    WindowState.connections[#WindowState.connections + 1] = enterConnection
-    WindowState.connections[#WindowState.connections + 1] = leaveConnection
-end
-
--- Close button hover effects - FIX: Use WindowState
-local closeEnterConnection = CloseButton.MouseEnter:Connect(function()
-    if WindowState.isDestroyed then return end
-    Tween(CloseButton, {BackgroundTransparency = 0.2}, 0.15)
-    Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 50, 50)}, 0.15)
-end)
-
-local closeLeaveConnection = CloseButton.MouseLeave:Connect(function()
-    if WindowState.isDestroyed then return end
-    Tween(CloseButton, {BackgroundTransparency = 0.8}, 0.15)
-    Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
-end)
-
-WindowState.connections[#WindowState.connections + 1] = closeEnterConnection
-WindowState.connections[#WindowState.connections + 1] = closeLeaveConnection
-
-CreateButtonHover(MinimizeButton)
-
--- FIX: Window state management - Use WindowState
-WindowState.isMinimized = false
-
--- FIX: Enhanced floating bubble dengan proper state management
-local function CreateMobileToggle()
-    if WindowState.elements.ToggleButton or WindowState.isDestroyed then return end
-    
-    local userId = Players.LocalPlayer.UserId
-    local thumbType = Enum.ThumbnailType.HeadShot
-    local thumbSize = Enum.ThumbnailSize.Size48x48
-    local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
-    
-    local ToggleButton = Create("ImageButton", {
-        Name = "NexusToggle",
-        Image = content,
-        BackgroundColor3 = Nexus.Theme.Surface,
-        Size = UDim2.fromOffset(0, 0),
-        Position = UDim2.new(0.1, 0, 0.1, 0),
-        Parent = ScreenGui,
-        ZIndex = 9999
+        },
+        Rotation = 45,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.1),
+            NumberSequenceKeypoint.new(0.5, 0.05),
+            NumberSequenceKeypoint.new(1, 0.15)
+        },
+        Parent = TitleBar
     })
     
-    WindowState.elements.ToggleButton = ToggleButton
+    -- Auto-update dengan theme changes
+    local titleGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
+        if TitleGradient and TitleGradient.Parent then
+            TitleGradient.Color = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, Nexus.Theme.Gradient1),
+                ColorSequenceKeypoint.new(0.5, Nexus.Theme.Accent),
+                ColorSequenceKeypoint.new(1, Nexus.Theme.Gradient2)
+            }
+        end
+    end)
     
-    AddCorner(ToggleButton, 100) 
-    AddStroke(ToggleButton, Nexus.Theme.Accent, 2, 0)
-    AddShadow(ToggleButton, 10, 0.6)
-    MakeDraggable(ToggleButton, ToggleButton)
+    table.insert(Nexus.Connections, titleGradientConnection)
+
+    -- App Icon
+    local AppIcon = Create("TextLabel", {
+        Text = "🚀",
+        Font = Enum.Font.GothamBold,
+        TextSize = 20,
+        TextColor3 = Nexus.Theme.Accent,
+        BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(16, 0),
+        Size = UDim2.fromOffset(32, 48),
+        Parent = TitleBar
+    })
     
-    Tween(ToggleButton, {Size = UDim2.fromOffset(50, 50)}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+    -- Window Title
+    local WindowTitle = Create("TextLabel", {
+        Text = Title,
+        Font = Enum.Font.GothamBold,
+        TextSize = 16,
+        TextColor3 = Nexus.Theme.Text,
+        BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(56, 0),
+        Size = UDim2.new(1, -200, 1, 0),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        Parent = TitleBar
+    })
     
-    local toggleClickConnection = ToggleButton.MouseButton1Click:Connect(function()
-        if WindowState.isDestroyed then return end
+    -- Window Subtitle
+    local WindowSubtitle = Create("TextLabel", {
+        Text = Subtitle,
+        Font = Enum.Font.Gotham,
+        TextSize = 12,
+        TextColor3 = Nexus.Theme.TextSub,
+        BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(56, 24),
+        Size = UDim2.new(1, -200, 0, 20),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        Parent = TitleBar
+    })
+    
+    -- Window Controls Container
+    local ControlsContainer = Create("Frame", {
+        BackgroundTransparency = 1,
+        Size = UDim2.fromOffset(120, 48),
+        Position = UDim2.new(1, -128, 0, 0),
+        Parent = TitleBar
+    })
+    
+    -- Minimize Button
+    local MinimizeButton = Create("TextButton", {
+        Text = "─",
+        Font = Enum.Font.GothamBold,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.TextSub,
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        BackgroundTransparency = 0.8,
+        Size = UDim2.fromOffset(32, 28),
+        Position = UDim2.fromOffset(8, 10),
+        AutoButtonColor = false,
+        Parent = ControlsContainer
+    })
+    
+    AddCorner(MinimizeButton, 6)
+    
+    -- Close Button
+    local CloseButton = Create("TextButton", {
+        Text = "", -- Kosongkan teks karena kita pakai gambar
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        BackgroundTransparency = 0.8,
+        Size = UDim2.fromOffset(32, 28),
+        Position = UDim2.fromOffset(44, 10), -- Posisi di kiri (bekas Settings)
+        AutoButtonColor = false,
+        Parent = ControlsContainer
+    })
+    
+    AddCorner(CloseButton, 6)
+
+    local CloseIcon = Create("ImageLabel", {
+        BackgroundTransparency = 1,
+        Size = UDim2.fromOffset(16, 16), -- Ukuran Icon
+        Position = UDim2.fromScale(0.5, 0.5),
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        Image = "rbxassetid://9886659671", -- Icon X Modern (Lucide)
+        ImageColor3 = Color3.fromRGB(255, 100, 100), -- Warna Merah
+        Parent = CloseButton
+    })
+    
+    -- 3. TERAKHIR, ANIMASI HOVER
+    CloseButton.MouseEnter:Connect(function()
+        Tween(CloseButton, {BackgroundTransparency = 0.2}, 0.15)
+        Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 50, 50)}, 0.15)
+    end)
+    
+    CloseButton.MouseLeave:Connect(function()
+        Tween(CloseButton, {BackgroundTransparency = 0.8}, 0.15)
+        Tween(CloseIcon, {ImageColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
+    end)
+    
+    -- Button hover effects
+    local function CreateButtonHover(button, hoverColor)
+        button.MouseEnter:Connect(function()
+            Tween(button, {BackgroundTransparency = 0.2}, 0.15)
+            if hoverColor then
+                Tween(button, {TextColor3 = hoverColor}, 0.15)
+            end
+        end)
         
-        SetBlur(true, 8)
+        button.MouseLeave:Connect(function()
+            Tween(button, {BackgroundTransparency = 0.8}, 0.15)
+            if button == CloseButton then
+                Tween(button, {TextColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
+            else
+                Tween(button, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
+            end
+        end)
+    end
+
+    CreateButtonHover(MinimizeButton)
+    --CreateButtonHover(SettingsButton)
+    
+    -- Window state management
+    local IsMinimized = false
+    
+    -- [[ FIX: Floating Bubble dengan UIScale ]]
+    local ToggleButton = nil
+    
+    local function CreateMobileToggle()
+        if ToggleButton then return end
         
-        if WindowState.elements.ToggleButton then
-            Tween(WindowState.elements.ToggleButton, {Size = UDim2.fromOffset(0, 0)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
-            task.wait(0.25)
-            if WindowState.elements.ToggleButton then
-                WindowState.elements.ToggleButton:Destroy()
-                WindowState.elements.ToggleButton = nil
+        -- Ambil Gambar Profil User (Headshot)
+        local userId = Players.LocalPlayer.UserId
+        local thumbType = Enum.ThumbnailType.HeadShot
+        local thumbSize = Enum.ThumbnailSize.Size48x48
+        local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
+        
+        -- Buat Tombol Bulat
+        ToggleButton = Create("ImageButton", {
+            Name = "NexusToggle",
+            Image = content,
+            BackgroundColor3 = Nexus.Theme.Surface,
+            Size = UDim2.fromOffset(0, 0), -- Mulai 0
+            Position = UDim2.new(0.1, 0, 0.1, 0),
+            Parent = ScreenGui,
+            ZIndex = 9999
+        })
+        
+        AddCorner(ToggleButton, 100) 
+        AddStroke(ToggleButton, Nexus.Theme.Accent, 2, 0)
+        AddShadow(ToggleButton, 10, 0.6)
+        MakeDraggable(ToggleButton, ToggleButton)
+        
+        -- Animasi Bubble Muncul
+        Tween(ToggleButton, {Size = UDim2.fromOffset(50, 50)}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+        
+        -- Logic Saat Bubble Ditekan (Buka Menu)
+        ToggleButton.MouseButton1Click:Connect(function()
+            -- PlaySound("6895079853", 0.1)
+            
+            -- 1. Nyalakan Blur
+            SetBlur(true, 8)
+            
+            -- 2. Hilangkan Bubble
+            if ToggleButton then
+                Tween(ToggleButton, {Size = UDim2.fromOffset(0, 0)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+                task.wait(0.25)
+                ToggleButton:Destroy()
+                ToggleButton = nil
+            end
+            
+            IsMinimized = false
+            MinimizeButton.Text = "─"
+            
+            -- 3. Munculkan Menu Utama
+            MainWindow.Visible = true
+            
+            -- [PERBAIKAN] Pastikan ClipsDescendants SELALU False agar shadow tidak putus
+            MainWindow.ClipsDescendants = false 
+            
+            -- 4. Animasi Membesar menggunakan UIScale (Lebih mulus & aman)
+            -- Kita set Scale ke 0 dulu biar start dari kecil
+            MainScale.Scale = 0
+            Tween(MainScale, {Scale = 1}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+            
+            -- 5. Restore Shadow (Animasi transparansi)
+            local shadow = MainWindow:FindFirstChild("DropShadow")
+            if shadow then 
+                Tween(shadow, {ImageTransparency = 0.6}, 0.4) 
+            end
+        end)
+    end
+    
+    local OriginalSize = MainWindow.Size
+    
+    -- Minimize functionality (Floating Bubble Mode)
+    MinimizeButton.MouseButton1Click:Connect(function()
+        IsMinimized = true
+        -- PlaySound("6895079853", 0.1)
+        
+        -- 1. Matikan Blur
+        SetBlur(false)
+        
+        -- 2. Sembunyikan Shadow
+        local shadow = MainWindow:FindFirstChild("DropShadow")
+        if shadow then Tween(shadow, {ImageTransparency = 1}, 0.2) end
+
+        -- 3. Animasi Mengecil menggunakan UIScale
+        -- Kita TIDAK resize frame, tapi mengubah skala-nya. Konten tidak akan bocor.
+        Tween(MainScale, {Scale = 0}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+        
+        -- 4. Tunggu animasi selesai
+        task.delay(0.35, function()
+            if IsMinimized then
+                MainWindow.Visible = false
+                CreateMobileToggle()
+            end
+        end)
+    end)
+    
+    -- Close functionality with confirmation (FIXED)
+    CloseButton.MouseButton1Click:Connect(function()
+        -- [FIX] Nyalakan Clipping SEBELUM animasi tutup dimulai
+        -- Ini memotong semua tombol/teks agar tidak tertinggal saat window mengecil
+        MainWindow.ClipsDescendants = true 
+        
+        -- Sembunyikan shadow instan agar tidak aneh
+        local shadow = MainWindow:FindFirstChild("DropShadow")
+        if shadow then shadow.ImageTransparency = 1 end
+        
+        -- Smooth close animation
+        Tween(MainWindow, {
+            Size = UDim2.fromOffset(0, 0), -- Mengecil sampai habis
+            BackgroundTransparency = 1
+        }, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+        
+        task.wait(0.4)
+        
+        -- Cleanup connections
+        for _, connection in ipairs(Nexus.Connections) do
+            if connection then
+                connection:Disconnect()
             end
         end
         
-        WindowState.isMinimized = false
-        MinimizeButton.Text = "─"
+        -- Cleanup blur
+        SetBlur(false)
         
-        MainWindow.Visible = true
-        MainWindow.ClipsDescendants = false 
-        
-        MainScale.Scale = 0
-        Tween(MainScale, {Scale = 1}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
-        
-        local shadow = MainWindow:FindFirstChild("DropShadow")
-        if shadow then 
-            Tween(shadow, {ImageTransparency = 0.6}, 0.4) 
-        end
-    end)
-    
-    WindowState.connections[#WindowState.connections + 1] = toggleClickConnection
-end
-
-local OriginalSize = MainWindow.Size
-
--- FIX: Enhanced minimize functionality
-local minimizeConnection = MinimizeButton.MouseButton1Click:Connect(function()
-    if WindowState.isDestroyed then return end
-    
-    WindowState.isMinimized = true
-    
-    SetBlur(false)
-    
-    local shadow = MainWindow:FindFirstChild("DropShadow")
-    if shadow then Tween(shadow, {ImageTransparency = 1}, 0.2) end
-
-    Tween(MainScale, {Scale = 0}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In)
-    
-    task.delay(0.35, function()
-        if WindowState.isMinimized and not WindowState.isDestroyed then
-            MainWindow.Visible = false
-            CreateMobileToggle()
-        end
-    end)
-end)
-
-WindowState.connections[#WindowState.connections + 1] = minimizeConnection
-
--- FIX: Enhanced close functionality dengan proper cleanup
-local function DestroyWindow()
-    if WindowState.isDestroyed then return end
-    
-    -- Set destroyed state immediately
-    WindowState.isDestroyed = true
-    
-    -- Cancel all animation threads
-    for _, thread in ipairs(WindowState.animationThreads) do
-        if thread then
-            pcall(function()
-                task.cancel(thread)
-            end)
-        end
-    end
-    WindowState.animationThreads = {}
-    
-    -- Disconnect all connections
-    for _, connection in ipairs(WindowState.connections) do
-        if connection and connection.Connected then
-            pcall(function()
-                connection:Disconnect()
-            end)
-        end
-    end
-    WindowState.connections = {}
-    
-    -- Cleanup blur
-    SetBlur(false)
-    
-    -- Destroy GUI
-    pcall(function()
+        -- Destroy GUI
         if ScreenGui and ScreenGui.Parent then
             ScreenGui:Destroy()
         end
+        
+        Nexus.IsDestroyed = true
     end)
     
-    -- Set global destroyed state
-    Nexus.IsDestroyed = true
-end
-
-local closeConnection = CloseButton.MouseButton1Click:Connect(function()
-    if WindowState.isDestroyed then return end
     
-    MainWindow.ClipsDescendants = true 
+    -- Content Container
+    local ContentContainer = Create("Frame", {
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 1, -48),
+        Position = UDim2.fromOffset(0, 48),
+        Parent = MainWindow
+    })
     
-    local shadow = MainWindow:FindFirstChild("DropShadow")
-    if shadow then shadow.ImageTransparency = 1 end
+    -- Tab Container
+    local TabContainer = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.fromOffset(200, 0),
+        Position = UDim2.fromOffset(0, 0),
+        Parent = ContentContainer
+    })
     
-    Tween(MainWindow, {
-        Size = UDim2.fromOffset(0, 0),
-        BackgroundTransparency = 1
-    }, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In)
-    
-    task.spawn(function()
-        task.wait(0.4)
-        DestroyWindow()
+    -- Fix for tab container height
+    local tabContainerHeightConnection = ContentContainer:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+        if TabContainer and TabContainer.Parent then
+            TabContainer.Size = UDim2.fromOffset(200, ContentContainer.AbsoluteSize.Y)
+        end
     end)
-end)
+    
+    table.insert(Nexus.Connections, tabContainerHeightConnection)
+    
+    AddStroke(TabContainer, Nexus.Theme.Outline, 1, 0.6)
+    
+    -- Tab Container Gradient
+    local TabGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+        },
+        Rotation = 90,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.1),
+            NumberSequenceKeypoint.new(0.5, 0.05),
+            NumberSequenceKeypoint.new(1, 0.15)
+        },
+        Parent = TabContainer
+    })
 
-WindowState.connections[#WindowState.connections + 1] = closeConnection
-
--- Content Container
-local ContentContainer = Create("Frame", {
-    BackgroundTransparency = 1,
-    Size = UDim2.new(1, 0, 1, -48),
-    Position = UDim2.fromOffset(0, 48),
-    Parent = MainWindow
-})
-
-WindowState.elements.ContentContainer = ContentContainer
-
--- Tab Container
-local TabContainer = Create("Frame", {
-    BackgroundColor3 = Nexus.Theme.Surface,
-    Size = UDim2.fromOffset(200, 0),
-    Position = UDim2.fromOffset(0, 0),
-    Parent = ContentContainer
-})
-
-WindowState.elements.TabContainer = TabContainer
-
--- Fix for tab container height
-local tabContainerHeightConnection = ContentContainer:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
-    if WindowState.isDestroyed then return end
-    if TabContainer and TabContainer.Parent then
-        TabContainer.Size = UDim2.fromOffset(200, ContentContainer.AbsoluteSize.Y)
-    end
-end)
-
-WindowState.connections[#WindowState.connections + 1] = tabContainerHeightConnection
-
-AddStroke(TabContainer, Nexus.Theme.Outline, 1, 0.6)
-
--- Tab Container Gradient
-local TabGradient = Create("UIGradient", {
-    Color = ColorSequence.new{
-        ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
-        ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
-        ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-    },
-    Rotation = 90,
-    Transparency = NumberSequence.new{
-        NumberSequenceKeypoint.new(0, 0.1),
-        NumberSequenceKeypoint.new(0.5, 0.05),
-        NumberSequenceKeypoint.new(1, 0.15)
-    },
-    Parent = TabContainer
-})
-
--- Tab List
-local TabList = Create("ScrollingFrame", {
-    BackgroundTransparency = 1,
-    Size = UDim2.new(1, 0, 1, -16),
-    Position = UDim2.fromOffset(0, 8),
-    CanvasSize = UDim2.fromOffset(0, 0),
-    ScrollBarThickness = 3,
-    ScrollBarImageColor3 = Nexus.Theme.Accent,
-    ScrollBarImageTransparency = 0.7,
-    ScrollingDirection = Enum.ScrollingDirection.Y,
-    Parent = TabContainer
-})
-
-WindowState.elements.TabList = TabList
-
-local TabLayout = Create("UIListLayout", {
-    Padding = UDim.new(0, 4),
-    SortOrder = Enum.SortOrder.LayoutOrder,
-    Parent = TabList
-})
-
--- Update tab canvas size
-local tabLayoutConnection = TabLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-    if WindowState.isDestroyed then return end
-    if TabList and TabList.Parent then
-        TabList.CanvasSize = UDim2.fromOffset(0, TabLayout.AbsoluteContentSize.Y + 16)
-    end
-end)
-
-WindowState.connections[#WindowState.connections + 1] = tabLayoutConnection
-
--- Page Container
-local PageContainer = Create("Frame", {
-    BackgroundColor3 = Nexus.Theme.Background,
-    Size = UDim2.new(1, -200, 1, 0),
-    Position = UDim2.fromOffset(200, 0),
-    Parent = ContentContainer
-})
-
-WindowState.elements.PageContainer = PageContainer
-
--- Page Container Gradient
-local PageGradient = Create("UIGradient", {
-    Color = ColorSequence.new{
-        ColorSequenceKeypoint.new(0, Nexus.Theme.Background),
-        ColorSequenceKeypoint.new(0.5, Nexus.Theme.Surface),
-        ColorSequenceKeypoint.new(1, Nexus.Theme.Background)
-    },
-    Rotation = 180,
-    Transparency = NumberSequence.new{
-        NumberSequenceKeypoint.new(0, 0.05),
-        NumberSequenceKeypoint.new(0.5, 0.02),
-        NumberSequenceKeypoint.new(1, 0.08)
-    },
-    Parent = PageContainer
-})
-
--- Auto-update dengan theme changes
-local pageGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
-    if WindowState.isDestroyed then return end
-    if PageGradient and PageGradient.Parent then
-        PageGradient.Color = ColorSequence.new{
+    -- Tab List
+    local TabList = Create("ScrollingFrame", {
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 1, -16),
+        Position = UDim2.fromOffset(0, 8),
+        CanvasSize = UDim2.fromOffset(0, 0),
+        ScrollBarThickness = 3,
+        ScrollBarImageColor3 = Nexus.Theme.Accent,
+        ScrollBarImageTransparency = 0.7,
+        ScrollingDirection = Enum.ScrollingDirection.Y,
+        Parent = TabContainer
+    })
+    
+    local TabLayout = Create("UIListLayout", {
+        Padding = UDim.new(0, 4),
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        Parent = TabList
+    })
+    
+    -- Update tab canvas size
+    TabLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        if TabList and TabList.Parent then
+            TabList.CanvasSize = UDim2.fromOffset(0, TabLayout.AbsoluteContentSize.Y + 16)
+        end
+    end)
+    
+    -- Page Container
+    local PageContainer = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Background,
+        Size = UDim2.new(1, -200, 1, 0),
+        Position = UDim2.fromOffset(200, 0),
+        Parent = ContentContainer
+    })
+    
+    -- Page Container Gradient
+    local PageGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
             ColorSequenceKeypoint.new(0, Nexus.Theme.Background),
             ColorSequenceKeypoint.new(0.5, Nexus.Theme.Surface),
             ColorSequenceKeypoint.new(1, Nexus.Theme.Background)
-        }
-    end
-end)
+        },
+        Rotation = 180,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(0.5, 0.02),
+            NumberSequenceKeypoint.new(1, 0.08)
+        },
+        Parent = PageContainer
+    })
+    
+    -- Auto-update dengan theme changes
+    local pageGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
+        if PageGradient and PageGradient.Parent then
+            PageGradient.Color = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, Nexus.Theme.Background),
+                ColorSequenceKeypoint.new(0.5, Nexus.Theme.Surface),
+                ColorSequenceKeypoint.new(1, Nexus.Theme.Background)
+            }
+        end
+    end)
+    
+    table.insert(Nexus.Connections, pageGradientConnection)
 
-WindowState.connections[#WindowState.connections + 1] = pageGradientConnection
-
--- Page Padding
-local PagePadding = Create("UIPadding", {
-    PaddingTop = UDim.new(0, 16),
-    PaddingBottom = UDim.new(0, 16),
-    PaddingLeft = UDim.new(0, 16),
-    PaddingRight = UDim.new(0, 16),
-    Parent = PageContainer
-})
-
--- FIX: Tab management di WindowState
-WindowState.Tabs = {}
-WindowState.ActiveTab = nil
-
--- Make window draggable
-MakeDraggable(MainWindow, TitleBar)
-
--- Blur effect
-SetBlur(true, 8)
-
--- FIX: Enhanced notification container setup (REMOVE duplicate notification function!)
-local NotificationContainer = Create("Frame", {
-    BackgroundTransparency = 1,
-    Size = UDim2.new(0, 320, 1, 0),
-    Position = UDim2.new(1, -336, 0, 16),
-    Parent = ScreenGui
-})
-
-WindowState.elements.NotificationContainer = NotificationContainer
-
-local NotificationLayout = Create("UIListLayout", {
-    Padding = UDim.new(0, 8),
-    SortOrder = Enum.SortOrder.LayoutOrder,
-    VerticalAlignment = Enum.VerticalAlignment.Top,
-    Parent = NotificationContainer
-})
-
-function Nexus:Notify(config)
+    
+    -- Page Padding
+    local PagePadding = Create("UIPadding", {
+        PaddingTop = UDim.new(0, 16),
+        PaddingBottom = UDim.new(0, 16),
+        PaddingLeft = UDim.new(0, 16),
+        PaddingRight = UDim.new(0, 16),
+        Parent = PageContainer
+    })
+    
+    -- Tab management
+    local Tabs = {}
+    local ActiveTab = nil
+    
+    -- Make window draggable
+    MakeDraggable(MainWindow, TitleBar)
+    
+    -- Blur effect
+    SetBlur(true, 8)
+    
+    -- Enhanced notification system
+    local NotificationContainer = Create("Frame", {
+        BackgroundTransparency = 1,
+        Size = UDim2.new(0, 320, 1, 0),
+        Position = UDim2.new(1, -336, 0, 16),
+        Parent = ScreenGui
+    })
+    
+    local NotificationLayout = Create("UIListLayout", {
+        Padding = UDim.new(0, 8),
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        VerticalAlignment = Enum.VerticalAlignment.Top,
+        Parent = NotificationContainer
+    })
+    
+    -- Enhanced Notification Function
+    function Nexus:Notify(config)
         if not config then config = {} end
         
         local Title = config.Title or "Notification"
@@ -2526,22 +2478,6 @@ function Nexus:Notify(config)
             end
         }
     end
-
--- Return enhanced window state
-WindowState.elements.NotificationContainer = NotificationContainer
-return {
-    ScreenGui = ScreenGui,
-    WindowState = WindowState,
-    Size = Size,
-    MainWindow = MainWindow,
-    MainScale = MainScale,
-    ContentContainer = ContentContainer,
-    TabContainer = TabContainer,
-    TabList = TabList,
-    PageContainer = PageContainer,
-    DestroyWindow = DestroyWindow
-}
-
     
     local function CreateTab(config)
         if type(config) == "string" then
