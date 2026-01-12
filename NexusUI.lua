@@ -535,7 +535,7 @@ UpdateThemeColors()
 
 --// Enhanced Dropdown Component
 function Nexus:CreateModernDropdown(config)
-    -- Config validation (sesuai format lu)
+    -- Config validation
     local cfg = {
         Text = config.Text or "Dropdown",
         Parent = config.Parent,
@@ -643,22 +643,48 @@ function Nexus:CreateModernDropdown(config)
         Parent = ButtonContent
     })
 
-    -- Create dropdown panel (initially hidden)
+    -- Get root ScreenGui for panel
+    local screenGui = Container:FindFirstAncestorOfClass("ScreenGui")
+    if not screenGui then
+        warn("[Nexus] CreateModernDropdown: No ScreenGui found, panel may clip")
+        screenGui = Container
+    end
+
+    -- Create dropdown panel (initially hidden) - parented to ScreenGui
     local Panel = Create("Frame", {
-        Name = "Panel",
-        Size = UDim2.new(1, 0, 0, 0),
-        Position = UDim2.new(0, 0, 1, 4),
+        Name = "DropdownPanel_" .. cfg.Text,
+        Size = UDim2.fromOffset(0, 0),
+        Position = UDim2.fromOffset(0, 0),
+        AnchorPoint = Vector2.new(0, 0),
         BackgroundColor3 = Nexus.Theme.Surface,
         BorderSizePixel = 0,
         ClipsDescendants = true,
         Visible = false,
-        ZIndex = 100,
-        Parent = Container
+        ZIndex = 1000,
+        Parent = screenGui
     })
 
     AddCorner(Panel, 8)
     AddStroke(Panel, Nexus.Theme.Outline, 1, 0.5)
     AddShadow(Panel, 8, 0.3)
+
+    -- Function to update panel position
+    local function UpdatePanelPosition()
+        if not DropdownButton or not DropdownButton.Parent then return end
+        
+        local buttonPos = DropdownButton.AbsolutePosition
+        local buttonSize = DropdownButton.AbsoluteSize
+        
+        Panel.Position = UDim2.fromOffset(
+            buttonPos.X,
+            buttonPos.Y + buttonSize.Y + 4
+        )
+        
+        -- Update width to match button
+        if DropdownState.IsOpen then
+            Panel.Size = UDim2.fromOffset(buttonSize.X, Panel.Size.Y.Offset)
+        end
+    end
 
     -- Search box (if enabled)
     local SearchBox = nil
@@ -712,6 +738,11 @@ function Nexus:CreateModernDropdown(config)
 
     -- Create option items
     local OptionItems = {}
+
+    -- Forward declarations
+    local RefreshOptions
+    local UpdateSelectedDisplay
+    local CloseDropdown
 
     local function CreateOptionItem(text, index)
         local isSelected = cfg.MultiSelect and table.find(DropdownState.Selected, text) or DropdownState.Selected == text
@@ -888,7 +919,10 @@ function Nexus:CreateModernDropdown(config)
         local panelHeight = OptionsOffset + (optionCount * 30) + ((optionCount - 1) * 2) + 8
         
         if DropdownState.IsOpen then
-            Tween(Panel, {Size = UDim2.new(1, 0, 0, panelHeight)}, 0.25, Enum.EasingStyle.Quart)
+            local buttonWidth = DropdownButton.AbsoluteSize.X
+            Tween(Panel, {
+                Size = UDim2.fromOffset(buttonWidth, panelHeight)
+            }, 0.25, Enum.EasingStyle.Quart)
         end
     end
 
@@ -918,14 +952,18 @@ function Nexus:CreateModernDropdown(config)
         DropdownState.IsOpen = true
         Panel.Visible = true
         
+        -- Update position
+        UpdatePanelPosition()
+        
         -- Calculate panel height
         local optionCount = math.min(#DropdownState.FilteredOptions, cfg.MaxVisible)
         local targetHeight = OptionsOffset + (optionCount * 30) + ((optionCount - 1) * 2) + 8
+        local buttonWidth = DropdownButton.AbsoluteSize.X
         
         -- Animate panel open
-        Panel.Size = UDim2.new(1, 0, 0, 0)
+        Panel.Size = UDim2.fromOffset(buttonWidth, 0)
         DropdownState.AnimationTween = Tween(Panel, {
-            Size = UDim2.new(1, 0, 0, targetHeight)
+            Size = UDim2.fromOffset(buttonWidth, targetHeight)
         }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
         
         -- Animate arrow
@@ -960,9 +998,11 @@ function Nexus:CreateModernDropdown(config)
             DropdownState.AnimationTween:Cancel()
         end
         
+        local buttonWidth = DropdownButton.AbsoluteSize.X
+        
         -- Animate panel close
         DropdownState.AnimationTween = Tween(Panel, {
-            Size = UDim2.new(1, 0, 0, 0)
+            Size = UDim2.fromOffset(buttonWidth, 0)
         }, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out, function()
             Panel.Visible = false
         end)
@@ -1010,7 +1050,7 @@ function Nexus:CreateModernDropdown(config)
         -- Clear search on focus lost
         table.insert(Nexus.Connections, SearchBox.FocusLost:Connect(function()
             if SearchBox.Text == "" and DropdownState.IsOpen then
-                task.wait(0.1) -- Small delay to prevent immediate close
+                task.wait(0.1)
                 if not SearchBox:IsFocused() then
                     CloseDropdown()
                 end
@@ -1031,11 +1071,10 @@ function Nexus:CreateModernDropdown(config)
     table.insert(Nexus.Connections, UserInputService.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 and DropdownState.IsOpen then
             local mouse = Players.LocalPlayer:GetMouse()
-            local gui = Panel
             
-            if gui and gui.Parent then
-                local pos = gui.AbsolutePosition
-                local size = gui.AbsoluteSize
+            if Panel and Panel.Parent then
+                local pos = Panel.AbsolutePosition
+                local size = Panel.AbsoluteSize
                 
                 if mouse.X < pos.X or mouse.X > pos.X + size.X or 
                    mouse.Y < pos.Y or mouse.Y > pos.Y + size.Y then
@@ -1061,7 +1100,6 @@ function Nexus:CreateModernDropdown(config)
             CloseDropdown()
         elseif input.KeyCode == Enum.KeyCode.Return then
             if DropdownState.FilteredOptions[DropdownState.HoveredIndex] then
-                -- Simulate click on hovered option
                 local optionText = DropdownState.FilteredOptions[DropdownState.HoveredIndex]
                 local optionData = OptionItems[optionText]
                 if optionData and optionData.Item then
@@ -1070,6 +1108,14 @@ function Nexus:CreateModernDropdown(config)
             end
         end
     end))
+
+    -- Update panel position on render step (for collapsible/scrolling)
+    local updateConnection = RunService.RenderStepped:Connect(function()
+        if DropdownState.IsOpen and Panel.Visible then
+            UpdatePanelPosition()
+        end
+    end)
+    table.insert(Nexus.Connections, updateConnection)
 
     -- Initial setup
     RefreshOptions()
@@ -1107,8 +1153,18 @@ function Nexus:CreateModernDropdown(config)
         
         Destroy = function(self)
             CloseDropdown()
+            
+            -- Disconnect update connection
+            if updateConnection and updateConnection.Connected then
+                updateConnection:Disconnect()
+            end
+            
             if Container and Container.Parent then
                 Container:Destroy()
+            end
+            
+            if Panel and Panel.Parent then
+                Panel:Destroy()
             end
         end
     }
@@ -1124,7 +1180,6 @@ function Nexus:CreateModernDropdown(config)
 
     return DropdownAPI
 end
-
 
 --// Main Window Function (continuing with all other components...)
 function Nexus:Window(config)
