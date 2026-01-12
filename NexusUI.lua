@@ -29,10 +29,6 @@ local Nexus = {
     }
 }
 
--- Tambahkan di bagian awal script setelah deklarasi Nexus
-local IS_MOBILE = (UserInputService.TouchEnabled and not UserInputService.MouseEnabled)
-local SCREEN_SIZE = workspace.CurrentCamera.ViewportSize
-
 --// Services with error handling
 local Services = {}
 local function GetService(serviceName)
@@ -54,6 +50,10 @@ local CoreGui = GetService("CoreGui")
 local Lighting = GetService("Lighting")
 local Stats = GetService("Stats")
 local SoundService = GetService("SoundService")
+
+-- Tambahkan di bagian awal script setelah deklarasi Nexus
+local IS_MOBILE = (UserInputService.TouchEnabled and not UserInputService.MouseEnabled)
+local SCREEN_SIZE = workspace.CurrentCamera.ViewportSize
 
 --// Enhanced Helpers with error handling
 local function SafeCreate(class, props, children)
