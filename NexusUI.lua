@@ -663,10 +663,9 @@ function Nexus:CreateModernDropdown(config)
         ZIndex = 1000,
         Parent = screenGui
     })
-
+    
     AddCorner(Panel, 8)
     AddStroke(Panel, Nexus.Theme.Outline, 1, 0.5)
-    --AddShadow(Panel, 8, 0.3)
 
     -- Function to update panel position
     local function UpdatePanelPosition()
@@ -713,10 +712,10 @@ function Nexus:CreateModernDropdown(config)
         OptionsOffset = 48
     end
 
-    -- Options container with scrolling
+    -- Options container with scrolling - UPDATED POSITION
     local OptionsContainer = Create("ScrollingFrame", {
         Name = "Options",
-        Size = UDim2.new(1, 0, 1, -OptionsOffset),
+        Size = UDim2.new(1, 0, 1, -OptionsOffset - 8), -- Account for close button
         Position = UDim2.new(0, 0, 0, OptionsOffset),
         BackgroundTransparency = 1,
         BorderSizePixel = 0,
@@ -728,6 +727,7 @@ function Nexus:CreateModernDropdown(config)
         ScrollingEnabled = true,
         Parent = Panel
     })
+
 
     -- Options list layout
     local OptionsLayout = Create("UIListLayout", {
@@ -785,31 +785,50 @@ function Nexus:CreateModernDropdown(config)
         -- Checkbox for multi-select (FIX: Update checkbox state)
         local Checkbox = nil
         if cfg.MultiSelect then
-            Checkbox = Create("Frame", {
-                Name = "Checkbox",
-                Size = UDim2.new(0, 16, 0, 16),
-                Position = UDim2.new(1, -24, 0.5, -8),
-                BackgroundColor3 = isSelected and Nexus.Theme.Accent or Nexus.Theme.Surface,
+            CloseButtonHeight = 32
+            CloseButtonFrame = Create("Frame", {
+                Name = "CloseButton",
+                Size = UDim2.new(1, -16, 0, 28),
+                Position = UDim2.new(0, 8, 0, 4),
+                BackgroundColor3 = Nexus.Theme.SurfaceHigh,
                 BorderSizePixel = 0,
-                Parent = OptionItem
+                Parent = Panel
             })
-    
-            AddCorner(Checkbox, 4)
-            AddStroke(Checkbox, Nexus.Theme.Outline, 1, 0.6)
-    
-            if isSelected then
-                Create("TextLabel", {
-                    Size = UDim2.new(1, 0, 1, 0),
-                    BackgroundTransparency = 1,
-                    Text = "✓",
-                    TextColor3 = Nexus.Theme.Text,
-                    TextSize = 12,
-                    Font = Enum.Font.GothamBold,
-                    TextXAlignment = Enum.TextXAlignment.Center,
-                    TextYAlignment = Enum.TextYAlignment.Center,
-                    Parent = Checkbox
-                })
-            end
+            
+            AddCorner(CloseButtonFrame, 6)
+            
+            local CloseButton = Create("TextButton", {
+                Name = "Close",
+                Size = UDim2.new(1, 0, 1, 0),
+                BackgroundTransparency = 1,
+                Text = "",
+                Parent = CloseButtonFrame
+            })
+            
+            Create("TextLabel", {
+                Size = UDim2.new(1, 0, 1, 0),
+                BackgroundTransparency = 1,
+                Text = "✕ Close",
+                TextColor3 = Nexus.Theme.TextSub,
+                TextSize = 12,
+                Font = Enum.Font.GothamMedium,
+                TextXAlignment = Enum.TextXAlignment.Center,
+                Parent = CloseButtonFrame
+            })
+            
+            -- Close button hover effects
+            CloseButton.MouseEnter:Connect(function()
+                Tween(CloseButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHighest}, 0.15)
+            end)
+            
+            CloseButton.MouseLeave:Connect(function()
+                Tween(CloseButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
+            end)
+            
+            -- Close button click
+            CloseButton.Activated:Connect(function()
+                CloseDropdown()
+            end)
         end
     
         -- FIX: Update hover effects dengan selected state yang benar
@@ -929,7 +948,7 @@ function Nexus:CreateModernDropdown(config)
         RefreshOptions()
     end
 
-    -- Refresh options display
+    -- Update RefreshOptions function untuk height calculation
     function RefreshOptions()
         -- Clear existing options
         for _, data in pairs(OptionItems) do
@@ -944,9 +963,9 @@ function Nexus:CreateModernDropdown(config)
             CreateOptionItem(option, index)
         end
         
-        -- Update panel height
+        -- Update panel height (ACCOUNT FOR CLOSE BUTTON)
         local optionCount = math.min(#DropdownState.FilteredOptions, cfg.MaxVisible)
-        local panelHeight = OptionsOffset + (optionCount * 30) + ((optionCount - 1) * 2) + 8
+        local panelHeight = OptionsOffset + (optionCount * 30) + ((optionCount - 1) * 2) + 16
         
         if DropdownState.IsOpen then
             local buttonWidth = DropdownButton.AbsoluteSize.X
@@ -985,9 +1004,9 @@ function Nexus:CreateModernDropdown(config)
         -- Update position
         UpdatePanelPosition()
         
-        -- Calculate panel height
+        -- Calculate panel height (INCLUDE CLOSE BUTTON)
         local optionCount = math.min(#DropdownState.FilteredOptions, cfg.MaxVisible)
-        local targetHeight = OptionsOffset + (optionCount * 30) + ((optionCount - 1) * 2) + 8
+        local targetHeight = OptionsOffset + (optionCount * 30) + ((optionCount - 1) * 2) + 16
         local buttonWidth = DropdownButton.AbsoluteSize.X
         
         -- Animate panel open
@@ -1016,7 +1035,7 @@ function Nexus:CreateModernDropdown(config)
         -- Enable blur
         SetBlur(true, 8)
     end
-
+    
     -- Close dropdown
     function CloseDropdown()
         if not DropdownState.IsOpen then return end
@@ -1101,23 +1120,26 @@ function Nexus:CreateModernDropdown(config)
     table.insert(Nexus.Connections, UserInputService.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 and DropdownState.IsOpen then
             local mouse = Players.LocalPlayer:GetMouse()
+            local mouseX, mouseY = mouse.X, mouse.Y
             
-            if Panel and Panel.Parent then
-                local pos = Panel.AbsolutePosition
-                local size = Panel.AbsoluteSize
-                
-                if mouse.X < pos.X or mouse.X > pos.X + size.X or 
-                   mouse.Y < pos.Y or mouse.Y > pos.Y + size.Y then
-                    
-                    -- Also check if clicking on button
-                    local buttonPos = DropdownButton.AbsolutePosition
-                    local buttonSize = DropdownButton.AbsoluteSize
-                    
-                    if not (mouse.X >= buttonPos.X and mouse.X <= buttonPos.X + buttonSize.X and
-                            mouse.Y >= buttonPos.Y and mouse.Y <= buttonPos.Y + buttonSize.Y) then
-                        CloseDropdown()
-                    end
-                end
+            -- Check if clicking on dropdown button
+            local buttonPos = DropdownButton.AbsolutePosition
+            local buttonSize = DropdownButton.AbsoluteSize
+            local onButton = (mouseX >= buttonPos.X and mouseX <= buttonPos.X + buttonSize.X and
+                             mouseY >= buttonPos.Y and mouseY <= buttonPos.Y + buttonSize.Y)
+            
+            -- Check if clicking on dropdown panel
+            local onPanel = false
+            if Panel and Panel.Visible then
+                local panelPos = Panel.AbsolutePosition
+                local panelSize = Panel.AbsoluteSize
+                onPanel = (mouseX >= panelPos.X and mouseX <= panelPos.X + panelSize.X and
+                          mouseY >= panelPos.Y and mouseY <= panelPos.Y + panelSize.Y)
+            end
+            
+            -- Close dropdown if clicking outside both button and panel
+            if not onButton and not onPanel then
+                CloseDropdown()
             end
         end
     end))
