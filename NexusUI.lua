@@ -1,215 +1,192 @@
+local IIoOoolIoIOO_oOOOOo = nil or 0.9432950672809968
+do end
 repeat until true
--- 6exkqur1r6d
--- 6exkqur1r6d
-repeat until true
-local function _01l_ol0olIllIIo_l0lo() end
-local l0o_lllOOI0IIOIOlI1lIo = "kfDhD9WJwOevkoaB"
-local 0loO0_0loOOI0ooOOIlI0lI1IIoIl = function(_ll1OlIOI_ooOlOIII0Ol0lI0, _I0IllIIOOI00oIo_lO1oOllo0)
-    local function 0IOl1lIoIOooIlll10lO1O1ll(_1lIOl_IooIlI_0I1l1IlOIllO01OI)
-        local _IOOI1O0o0OIOIOI00Oo0OIoIIOlllOl = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-        local _IOI1IoIlI11lO_00Io0o1oIlOl0 = {}
-        local _oI0II_O0lOIoIII1O0I = {}
-        for _lIIOIlolIIlII1_Il_IOl01ll0Olll = 1, #_IOOI1O0o0OIOIOI00Oo0OIoIIOlllOl do
-            _oI0II_O0lOIoIII1O0I[_IOOI1O0o0OIOIOI00Oo0OIoIIOlllOl:looIOlIlI0_II_0I_lOlllIO_(_lIIOIlolIIlII1_Il_IOl01ll0Olll, _lIIOIlolIIlII1_Il_IOl01ll0Olll)] = _lIIOIlolIIlII1_Il_IOl01ll0Olll - 1
-        end
-        
-        for _lIIOIlolIIlII1_Il_IOl01ll0Olll = 1, #_1lIOl_IooIlI_0I1l1IlOIllO01OI, 4 do
-            local lll0IlO_lll0lI0oIIIOlOO_lol = _oI0II_O0lOIoIII1O0I[_1lIOl_IooIlI_0I1l1IlOIllO01OI:looIOlIlI0_II_0I_lOlllIO_(_lIIOIlolIIlII1_Il_IOl01ll0Olll, _lIIOIlolIIlII1_Il_IOl01ll0Olll)] or 0
-            local _olOOO0lOOIOI1lI0OOO0ll_I_OoI = _oI0II_O0lOIoIII1O0I[_1lIOl_IooIlI_0I1l1IlOIllO01OI:looIOlIlI0_II_0I_lOlllIO_(_lIIOIlolIIlII1_Il_IOl01ll0Olll+1, _lIIOIlolIIlII1_Il_IOl01ll0Olll+1)] or 0
-            local _IIIIlO0IoIloll1loOoOlII_O = _oI0II_O0lOIoIII1O0I[_1lIOl_IooIlI_0I1l1IlOIllO01OI:looIOlIlI0_II_0I_lOlllIO_(_lIIOIlolIIlII1_Il_IOl01ll0Olll+2, _lIIOIlolIIlII1_Il_IOl01ll0Olll+2)] or 0
-            local 1lllOIoII__l1IIIoo0IIOoOIIOOooo = _oI0II_O0lOIoIII1O0I[_1lIOl_IooIlI_0I1l1IlOIllO01OI:looIOlIlI0_II_0I_lOlllIO_(_lIIOIlolIIlII1_Il_IOl01ll0Olll+3, _lIIOIlolIIlII1_Il_IOl01ll0Olll+3)] or 0
-            
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            local _OI_Il0IIlIIIII00ll0IIolI = (lll0IlO_lll0lI0oIIIOlOO_lol << 2) | (_olOOO0lOOIOI1lI0OOO0ll_I_OoI >> 4)
-            local _IOlII_OO_Ill_o01I0OIlIOIO_O0lO = ((_olOOO0lOOIOI1lI0OOO0ll_I_OoI & 15) << 4) | (_IIIIlO0IoIloll1loOoOlII_O >> 2)
-            local _oIIlo_OlIloll011lo0IOOl1lIIoOI = ((_IIIIlO0IoIloll1loOoOlII_O & 3) << 6) | 1lllOIoII__l1IIIoo0IIOoOIIOOooo
-            
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_IOI1IoIlI11lO_00Io0o1oIlOl0, _OI_Il0IIlIIIII00ll0IIolI)
-            if _1lIOl_IooIlI_0I1l1IlOIllO01OI:looIOlIlI0_II_0I_lOlllIO_(_lIIOIlolIIlII1_Il_IOl01ll0Olll+2, _lIIOIlolIIlII1_Il_IOl01ll0Olll+2) ~= '=' then table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_IOI1IoIlI11lO_00Io0o1oIlOl0, _IOlII_OO_Ill_o01I0OIlIOIO_O0lO) end
-            if ((function() return 1 + 1 == 2 end)()) and _1lIOl_IooIlI_0I1l1IlOIllO01OI:looIOlIlI0_II_0I_lOlllIO_(_lIIOIlolIIlII1_Il_IOl01ll0Olll+3, _lIIOIlolIIlII1_Il_IOl01ll0Olll+3) ~= '=' then table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_IOI1IoIlI11lO_00Io0o1oIlOl0, _oIIlo_OlIloll011lo0IOOl1lIIoOI) end
-        end
-        return _IOI1IoIlI11lO_00Io0o1oIlOl0
+-- Hidden key generation
+local IIOoOlllooloolooIol = (function()
+    local IoII_oOO_OIOlooOIo = {}
+    IoII_oOO_OIOlooOIo[1] = string.char(0x5a)
+    IoII_oOO_OIOlooOIo[2] = string.char(0x76)
+    IoII_oOO_OIOlooOIo[3] = string.char(0x71)
+    IoII_oOO_OIOlooOIo[4] = string.char(0x6b)
+    IoII_oOO_OIOlooOIo[5] = string.char(0x39)
+    IoII_oOO_OIOlooOIo[6] = string.char(0x4a)
+    IoII_oOO_OIOlooOIo[7] = string.char(0x66)
+    IoII_oOO_OIOlooOIo[8] = string.char(0x35)
+    IoII_oOO_OIOlooOIo[9] = string.char(0x34)
+    IoII_oOO_OIOlooOIo[10] = string.char(0x36)
+    IoII_oOO_OIOlooOIo[11] = string.char(0x42)
+    IoII_oOO_OIOlooOIo[12] = string.char(0x6a)
+    IoII_oOO_OIOlooOIo[13] = string.char(0x63)
+    IoII_oOO_OIOlooOIo[14] = string.char(0x32)
+    IoII_oOO_OIOlooOIo[15] = string.char(0x33)
+    IoII_oOO_OIOlooOIo[16] = string.char(0x31)
+    return table.concat(IoII_oOO_OIOlooOIo)
+end)()
+
+-- Decryption function
+local function oOIIOo_IlooolIIO(O_lI_oIlI_)
+    local _oIlllllloOOI = {}
+    for olO_OIlOlI_III = 1, #O_lI_oIlI_ do
+        local IIIllIIooOolO_ = string.byte(O_lI_oIlI_, olO_OIlOlI_III)
+        local OOllloIooIOIo = string.byte(IIOoOlllooloolooIol, ((olO_OIlOlI_III - 1) % #IIOoOlllooloolooIol) + 1)
+        _oIlllllloOOI[olO_OIlOlI_III] = string.char(bit32.bxor(IIIllIIooOolO_, OOllloIooIOIo))
     end
-    
-    local _IIoOI_l_o0OIooIl_ll = 0IOl1lIoIOooIlll10lO1O1ll(_ll1OlIOI_ooOlOIII0Ol0lI0)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-    local _lOOIOlOl1OO01ooOl_1oIOl1I = {}
-    for _lIIOIlolIIlII1_Il_IOl01ll0Olll = 1, #_IIoOI_l_o0OIooIl_ll do
-        local _IIO1l0l0ollo1IIl01OlO00O0IOIlo0_ = _IIoOI_l_o0OIooIl_ll[_lIIOIlolIIlII1_Il_IOl01ll0Olll]
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-        local 0lOOI_lOO0IIIIIlI1Olll0Ol = _I0IllIIOOI00oIo_lO1oOllo0:_0llI_Il1lIIll0IoO0II0IIOOIlI0OoI((_lIIOIlolIIlII1_Il_IOl01ll0Olll - 1) % #_I0IllIIOOI00oIo_lO1oOllo0 + 1)
-        table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_lOOIOlOl1OO01ooOl_1oIOl1I, string.1ooOlO00Io__lIIIoOIll0(_IIO1l0l0ollo1IIl01OlO00O0IOIlo0_ ~ 0lOOI_lOO0IIIIIlI1Olll0Ol))
-    end
-    return table.0Io_lIO0olO_1OlllOoIOI_(_lOOIOlOl1OO01ooOl_1oIOl1I)
+    return table.concat(_oIlllllloOOI)
 end
 
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-local oIOoII_0IIlOII1IOI1lI0_OO0o = {
-    [1] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmoxLgwaDgtBNgRGIw0wGSQvBTkMFQ5V", l0o_lllOOI0IIOIOlI1lIo),
-    [2] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PxEhDSpqMjgBJgYT", l0o_lllOOI0IIOIOlI1lIo),
-    [3] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PhUhGg1XJz8DHAAEHQYCJw==", l0o_lllOOI0IIOIOlI1lIo),
-    [4] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("ORMqOyFLISMUKg==", l0o_lllOOI0IIOIOlI1lIo),
-    [5] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("IxIwGBdcJTweLAA=", l0o_lllOOI0IIOIOlI1lIo),
-    [6] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OwolESFLJA==", l0o_lllOOI0IIOIOlI1lIo),
-    [7] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAk2DQNMPg==", l0o_lllOOI0IIOIOlI1lIo),
-    [8] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Jw8jADBQOS0=", l0o_lllOOI0IIOIOlI1lIo),
-    [9] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OBIlHDc=", l0o_lllOOI0IIOIOlI1lIo),
-    [10] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAkxBiBqMjgBJgYT", l0o_lllOOI0IIOIOlI1lIo),
-    [11] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmoxLgwaDgtBNgRGJxohWCMvVw==", l0o_lllOOI0IIOIOlI1lIo),
-    [12] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Igg3HCVXNC8=", l0o_lllOOI0IIOIOlI1lIo),
-    [13] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Pi8HBzZXMjg=", l0o_lllOOI0IIOIOlI1lIo),
-    [14] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Pi8XHDZWPC8=", l0o_lllOOI0IIOIOlI1lIo),
-    [15] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("IgslDyF1NigSIw==", l0o_lllOOI0IIOIOlI1lIo),
-    [16] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LxQrGBdRNi4YOA==", l0o_lllOOI0IIOIOlI1lIo),
-    [17] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("GQQ8CTdKMj4eK19ZRFlRc19Ucll9AGQ=", l0o_lllOOI0IIOIOlI1lIo),
-    [18] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKAgMqbzEBDgoPYi4UNgc2A3cjGTwRVgIcQSwEEmQhKkojKxksAA==", l0o_lllOOI0IIOIOlI1lIo),
-    [19] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKAgMqbzEBDgoPYigUIQkwXHcMFiYJEw9V", l0o_lllOOI0IIOIOlI1lIo),
-    [20] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KQoxGgFfMS8UOw==", l0o_lllOOI0IIOIOlI1lIo),
-    [21] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQM8HTd7Oz8F", l0o_lllOOI0IIOIOlI1lIo),
-    [22] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmo1IxAESwoHJA4FMEgqViNqBDoVBgQdFScPRi0GZE0/IwRvABgdBhMtBQshBjA=", l0o_lllOOI0IIOIOlI1lIo),
-    [23] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQM8HTd6OCQRJgI=", l0o_lllOOI0IIOIOlI1lIo),
-    [24] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("", l0o_lllOOI0IIOIOlI1lIo),
-    [25] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAkoBzYK", l0o_lllOOI0IIOIOlI1lIo),
-    [26] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LggxBQ1NMic=", l0o_lllOOI0IIOIOlI1lIo),
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-    [27] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("RA==", l0o_lllOOI0IIOIOlI1lIo),
-    [28] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("RQw3Byo=", l0o_lllOOI0IIOIOlI1lIo),
-    [29] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("HwcmBCE=", l0o_lllOOI0IIOIOlI1lIo),
-    [30] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LggxBWpyMjM0IAET", l0o_lllOOI0IIOIOlI1lIo),
-    [31] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Qz0aRxhkfGNSYQ8FBAFF", l0o_lllOOI0IIOIOlI1lIo),
-    [32] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KQ8qDCVbOy8yOQAYHw==", l0o_lllOOI0IIOIOlI1lIo),
-    [33] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LxQrGCBWICQ=", l0o_lllOOI0IIOIOlI1lIo),
-    [34] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQlkJzRNPiUZPA==", l0o_lllOOI0IIOIOlI1lIo),
-    [35] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAMoDSdNdyUHOwwZBUFPbA==", l0o_lllOOI0IIOIOlI1lIo),
-    [36] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmo0PQAXHwosLQ8DNgYASzg6EyASGFFPMSMZAyocZFAkagUqFAMCHQQm", l0o_lllOOI0IIOIOlI1lIo),
-    [37] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmo0PQAXHwosLQ8DNgYASzg6EyASGFFPLjIfDysGNxkkIhg6CRJLDQRiCkYqByoUMicHOxxWHw4DLg4=", l0o_lllOOI0IIOIOlI1lIo),
-    [38] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LRQlBSE=", l0o_lllOOI0IIOIOlI1lIo),
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-    [39] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LxQrGCBWICQo", l0o_lllOOI0IIOIOlI1lIo),
-    [40] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PwM8HAZMIz4YIQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [41] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KRMwHCtX", l0o_lllOOI0IIOIOlI1lIo),
-    [42] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Pi8DGiVdPi8ZOw==", l0o_lllOOI0IIOIOlI1lIo),
-    [43] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAkqHCFXIw==", l0o_lllOOI0IIOIOlI1lIo),
-    [44] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PwM8HAhYNS8b", l0o_lllOOI0IIOIOlI1lIo),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-    [45] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAMoDSdNMi4jKh0C", l0o_lllOOI0IIOIOlI1lIo),
-    [46] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KhQ2BzM=", l0o_lllOOI0IIOIOlI1lIo),
-    [47] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedw==", l0o_lllOOI0IIOIOlI1lIo),
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    [48] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAU2DSFXED8e", l0o_lllOOI0IIOIOlI1lIo),
-    [49] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmo0PQAXHwosLQ8DNgYASzg6EyASGFFPLy1LNScaIVw5DQImRRAEGg8mR0Y0CSpcO2oaLhxWCAMIMg==", l0o_lllOOI0IIOIOlI1lIo),
-    [50] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LxQrGCBWICQnLgsTBzA=", l0o_lllOOI0IIOIOlI1lIo),
-    [51] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAorGyF7Ij4DIAs=", l0o_lllOOI0IIOIOlI1lIo),
-    [52] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAorGyE=", l0o_lllOOI0IIOIOlI1lIo),
-    [53] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedA==", l0o_lllOOI0IIOIOlI1lIo),
-    [54] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LwkqDQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [55] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("vA==", l0o_lllOOI0IIOIOlI1lIo),
-    [56] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAcqCyFV", l0o_lllOOI0IIOIOlI1lIo),
-    [57] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PwM8HAZWLw==", l0o_lllOOI0IIOIOlI1lIo),
-    [58] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAMlGidR", l0o_lllOOI0IIOIOlI1lIo),
-    [59] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAMlGidReWRZ", l0o_lllOOI0IIOIOlI1lIo),
-    [60] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAU2ByhVPiQQCRcXBgo=", l0o_lllOOI0IIOIOlI1lIo),
-    [61] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JBYwAStXJA==", l0o_lllOOI0IIOIOlI1lIo),
-    [62] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Pi8IATdNGysOIBAC", l0o_lllOOI0IIOIOlI1lIo),
-    [63] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JBYwAStXCA==", l0o_lllOOI0IIOIOlI1lIo),
-    [64] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PwM8HA==", l0o_lllOOI0IIOIOlI1lIo),
-    [65] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KA4hCy9bODI=", l0o_lllOOI0IIOIOlI1lIo),
-    [66] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Sw8wDSlKdzkSIwAVHwoF", l0o_lllOOI0IIOIOlI1lIo),
-    [67] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [68] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAotGDd9MjkUKgsSCgEVMQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [69] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OA8+DQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [70] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LBMtJyZTMikD", l0o_lllOOI0IIOIOlI1lIo),
-    [71] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQM8HTcZHz8V", l0o_lllOOI0IIOIOlI1lIo),
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-    [72] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LggsCSpaMi5XGixWJwYDMAoUPQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [73] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQM8HTdsHhU=", l0o_lllOOI0IIOIOlI1lIo),
-    [74] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OwolESFLED8e", l0o_lllOOI0IIOIOlI1lIo),
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-    [75] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmoxLgwaDgtBNgRGJxohWCMvVxwGBA4KDwUeDw==", l0o_lllOOI0IIOIOlI1lIo),
-    [76] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [77] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LwcwCWRpPiQQ", l0o_lllOOI0IIOIOlI1lIo),
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    [78] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Ti5+TQkDchk=", l0o_lllOOI0IIOIOlI1lIo),
-    [79] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("NaNZkTSAZERokbxlWNaN5BZw8LN0g4GundefinedundefinedvV2oBVhdPRDE=", l0o_lllOOI0IIOIOlI1lIo),
-    [80] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Pi8XCyVVMg==", l0o_lllOOI0IIOIOlI1lIo),
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-    [81] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmoxLgwaDgtBNgRGJxohWCMvVyIEHwVPFisFAisf", l0o_lllOOI0IIOIOlI1lIo),
-    [82] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("NaNY=", l0o_lllOOI0IIOIOlI1lIo),
-    [83] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedw==", l0o_lllOOI0IIOIOlI1lIo),
-    [84] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("GQQ8CTdKMj4eK19ZRFZZel1QcVFyDmY=", l0o_lllOOI0IIOIOlI1lIo),
-    [85] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("IgslDyF7Ij4DIAs=", l0o_lllOOI0IIOIOlI1lIo),
-    [86] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQM8HTdtOC0QIwA=", l0o_lllOOI0IIOIOlI1lIo),
-    [87] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KgQ3ByhMIy8kJh8T", l0o_lllOOI0IIOIOlI1lIo),
-    [88] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KgQ3ByhMIy80IAsCDgEVEQIcIQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [89] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Pi8UCSBdPiQQ", l0o_lllOOI0IIOIOlI1lIo),
-    [90] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQkwASJQNCsDJgoY", l0o_lllOOI0IIOIOlI1lIo),
-    [91] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("IggiBw==", l0o_lllOOI0IIOIOlI1lIo),
-    [92] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("NaNk=", l0o_lllOOI0IIOIOlI1lIo),
-    [93] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedg==", l0o_lllOOI0IIOIOlI1lIo),
-    [94] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("NaNk=", l0o_lllOOI0IIOIOlI1lIo),
-    [95] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedw==", l0o_lllOOI0IIOIOlI1lIo),
-    [96] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedg==", l0o_lllOOI0IIOIOlI1lIo),
-    [97] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("GBI2ASpe", l0o_lllOOI0IIOIOlI1lIo),
-    [98] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Pwcm", l0o_lllOOI0IIOIOlI1lIo),
-    [99] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("NaNI=", l0o_lllOOI0IIOIOlI1lIo),
-    [100] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAMnHC1WOQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [101] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JwcmDSg=", l0o_lllOOI0IIOIOlI1lIo),
-    [102] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PwM8HBdcJTweLAA=", l0o_lllOOI0IIOIOlI1lIo),
-    [103] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MCghEDFKCmojLgdMLx0OMg8JMwZkFHceFi01FwwKQSsYRioHMBk2PBYmCRcJAwQ=", l0o_lllOOI0IIOIOlI1lIo),
-    [104] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PwkjDyhc", l0o_lllOOI0IIOIOlI1lIo),
-    [105] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OAotDCFL", l0o_lllOOI0IIOIOlI1lIo),
-    [106] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("LggwDTYZIy8PO0tYRQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [107] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("MDhhDGEXcmcq", l0o_lllOOI0IIOIOlI1lIo),
-    [108] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("RQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [109] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Rg==", l0o_lllOOI0IIOIOlI1lIo),
-    [110] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("TgI=", l0o_lllOOI0IIOIOlI1lIo),
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-    [111] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("IAM9Ci1XMw==", l0o_lllOOI0IIOIOlI1lIo),
-    [112] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("RUhq", l0o_lllOOI0IIOIOlI1lIo),
-    [113] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JQkqDQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [114] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JzUsASJN", l0o_lllOOI0IIOIOlI1lIo),
-    [115] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OTUsASJN", l0o_lllOOI0IIOIOlI1lIo),
-    [116] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JyUwGig=", l0o_lllOOI0IIOIOlI1lIo),
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-    [117] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OSUwGig=", l0o_lllOOI0IIOIOlI1lIo),
-    [118] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JycoHA==", l0o_lllOOI0IIOIOlI1lIo),
-    [119] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OScoHA==", l0o_lllOOI0IIOIOlI1lIo),
-    [120] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAc0Gw==", l0o_lllOOI0IIOIOlI1lIo),
-    [121] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Wg==", l0o_lllOOI0IIOIOlI1lIo),
-    [122] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("WQ==", l0o_lllOOI0IIOIOlI1lIo),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-    [123] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("WA==", l0o_lllOOI0IIOIOlI1lIo),
-    [124] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Xw==", l0o_lllOOI0IIOIOlI1lIo),
-    [125] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Xg==", l0o_lllOOI0IIOIOlI1lIo),
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-    [126] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("XQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [127] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("XA==", l0o_lllOOI0IIOIOlI1lIo),
-    [128] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Uw==", l0o_lllOOI0IIOIOlI1lIo),
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-    [129] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Ug==", l0o_lllOOI0IIOIOlI1lIo),
-    [130] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Ww==", l0o_lllOOI0IIOIOlI1lIo),
-    [131] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpWQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [132] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpWg==", l0o_lllOOI0IIOIOlI1lIo),
-    [133] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpWw==", l0o_lllOOI0IIOIOlI1lIo),
-    [134] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpXA==", l0o_lllOOI0IIOIOlI1lIo),
-    [135] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpXQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [136] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpXg==", l0o_lllOOI0IIOIOlI1lIo),
-    [137] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpXw==", l0o_lllOOI0IIOIOlI1lIo),
-    [138] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpUA==", l0o_lllOOI0IIOIOlI1lIo),
-    [139] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpUQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [140] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("JRMpWA==", l0o_lllOOI0IIOIOlI1lIo),
-    [141] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PggvBitOOQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [142] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("IwkoDA==", l0o_lllOOI0IIOIOlI1lIo),
-    [143] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KgozCT1K", l0o_lllOOI0IIOIOlI1lIo),
-    [144] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAkoBCVJJCMVIwA=", l0o_lllOOI0IIOIOlI1lIo),
-    [145] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Owc2CSNLNjof", l0o_lllOOI0IIOIOlI1lIo),
-    [146] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("Igg0HTA=", l0o_lllOOI0IIOIOlI1lIo),
-    [147] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("PQcoHSEXeWQ=", l0o_lllOOI0IIOIOlI1lIo),
-    [148] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("KAkoBzYZByMUJAAE", l0o_lllOOI0IIOIOlI1lIo),
-    [149] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("OSQcOydLPjoDDAoYBQoCNgIJKg==", l0o_lllOOI0IIOIOlI1lIo),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-    [150] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedQ==", l0o_lllOOI0IIOIOlI1lIo),
-    [151] = 0loO0_0loOOI0ooOOIlI0lI1IIoIl("undefinedg==", l0o_lllOOI0IIOIOlI1lIo),
+-- Encrypted strings table
+local IO_oOOllOOoooIo_ = {
+    [1] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x72\x57\x2b\x06\x06\x56\x13\x45\x35\x56\x16\x0e\x4d\x6a\x15\x50\x46\x40\x2b\x09\x06\x08"),
+    [2] = oOIIOo_IlooolIIO("\x0e\x01\x14\x0e\x57\x19\x03\x47\x42\x5f\x21\x0f"),
+    [3] = oOIIOo_IlooolIIO("\x0f\x05\x14\x19\x70\x24\x16\x40\x40\x65\x27\x18\x15\x5b\x50\x54"),
+    [4] = oOIIOo_IlooolIIO("\x08\x03\x1f\x38\x5c\x38\x10\x5c\x57\x53"),
+    [5] = oOIIOo_IlooolIIO("\x12\x02\x05\x1b\x6a\x2f\x14\x43\x5d\x55\x27"),
+    [6] = oOIIOo_IlooolIIO("\x0a\x1a\x10\x12\x5c\x38\x15"),
+    [7] = oOIIOo_IlooolIIO("\x19\x19\x03\x0e\x7e\x3f\x0f"),
+    [8] = oOIIOo_IlooolIIO("\x16\x1f\x16\x03\x4d\x23\x08\x52"),
+    [9] = oOIIOo_IlooolIIO("\x09\x02\x10\x1f\x4a"),
+    [10] = oOIIOo_IlooolIIO("\x09\x19\x04\x05\x5d\x19\x03\x47\x42\x5f\x21\x0f"),
+    [11] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x72\x57\x2b\x06\x06\x56\x13\x45\x35\x56\x12\x19\x5c\x2b\x12\x50\x14"),
+    [12] = oOIIOo_IlooolIIO("\x13\x18\x02\x1f\x58\x24\x05\x50"),
+    [13] = oOIIOo_IlooolIIO("\x0f\x3f\x32\x04\x4b\x24\x03\x47"),
+    [14] = oOIIOo_IlooolIIO("\x0f\x3f\x22\x1f\x4b\x25\x0d\x50"),
+    [15] = oOIIOo_IlooolIIO("\x13\x1b\x10\x0c\x5c\x06\x07\x57\x51\x5a"),
+    [16] = oOIIOo_IlooolIIO("\x1e\x04\x1e\x1b\x6a\x22\x07\x51\x5b\x41"),
+    [17] = oOIIOo_IlooolIIO("\x28\x14\x09\x0a\x4a\x39\x03\x41\x5d\x52\x78\x45\x4c\x04\x03\x00\x6e\x44\x47\x5a\x00\x73\x55"),
+    [18] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x33\x7c\x69\x16\x16\x1d\x06\x57\x5d\x11\x1f\x04\x03\x04\x4b\x70\x46\x5c\x5a\x45\x36\x4a\x0a\x41\x13\x5f\x35\x02\x51\x22\x57\x39\x12\x54\x5a\x55\x27"),
+    [19] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x33\x7c\x69\x16\x16\x1d\x06\x57\x5d\x11\x19\x04\x14\x0a\x4d\x2f\x46\x73\x55\x5f\x2e\x0f\x07\x08"),
+    [20] = oOIIOo_IlooolIIO("\x18\x1a\x04\x19\x7c\x2c\x00\x50\x57\x42"),
+    [21] = oOIIOo_IlooolIIO("\x14\x13\x09\x1e\x4a\x08\x0a\x40\x46"),
+    [22] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x76\x5a\x37\x18\x43\x57\x55\x57\x3f\x15\x05\x4b\x57\x25\x12\x15\x47\x43\x32\x1a\x0c\x40\x47\x54\x3e\x56\x18\x05\x19\x3e\x0e\x5c\x47\x16\x27\x04\x15\x5b\x41\x5e\x34\x1b\x14\x05\x4d"),
+    [23] = oOIIOo_IlooolIIO("\x14\x13\x09\x1e\x4a\x09\x09\x5b\x52\x5f\x25"),
+    [24] = oOIIOo_IlooolIIO(""),
+    [25] = oOIIOo_IlooolIIO("\x19\x19\x1d\x04\x4b\x79"),
+    [26] = oOIIOo_IlooolIIO("\x1f\x18\x04\x06\x70\x3e\x03\x58"),
+    [27] = oOIIOo_IlooolIIO("\x75"),
+    [28] = oOIIOo_IlooolIIO("\x74\x1c\x02\x04\x57"),
+    [29] = oOIIOo_IlooolIIO("\x2e\x17\x13\x07\x5c"),
+    [30] = oOIIOo_IlooolIIO("\x1f\x18\x04\x06\x17\x01\x03\x4c\x77\x59\x26\x0f"),
+    [31] = oOIIOo_IlooolIIO("\x72\x2d\x2f\x44\x65\x17\x4d\x1c\x11\x18\x28\x19\x0c\x5c\x17"),
+    [32] = oOIIOo_IlooolIIO("\x18\x1f\x1f\x0f\x58\x28\x0a\x50\x71\x40\x27\x04\x17"),
+    [33] = oOIIOo_IlooolIIO("\x1e\x04\x1e\x1b\x5d\x25\x11\x5b"),
+    [34] = oOIIOo_IlooolIIO("\x14\x19\x51\x24\x49\x3e\x0f\x5a\x5a\x45"),
+    [35] = oOIIOo_IlooolIIO("\x09\x13\x1d\x0e\x5a\x3e\x46\x5a\x44\x42\x2b\x05\x0d\x1c\x1d\x1f"),
+    [36] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x77\x44\x27\x0b\x17\x57\x7e\x5e\x3e\x13\x03\x05\x7d\x38\x09\x45\x50\x59\x35\x04\x59\x12\x63\x50\x28\x13\x1f\x1f\x19\x23\x15\x15\x46\x53\x33\x1f\x0a\x40\x56\x55"),
+    [37] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x77\x44\x27\x0b\x17\x57\x7e\x5e\x3e\x13\x03\x05\x7d\x38\x09\x45\x50\x59\x35\x04\x59\x12\x7c\x41\x2e\x1f\x1e\x05\x4a\x6a\x15\x5d\x5b\x43\x2e\x0e\x43\x50\x56\x11\x3b\x56\x1f\x04\x57\x67\x03\x58\x44\x42\x3b\x4a\x17\x53\x51\x5d\x3f"),
+    [38] = oOIIOo_IlooolIIO("\x1c\x04\x10\x06\x5c"),
+    [39] = oOIIOo_IlooolIIO("\x1e\x04\x1e\x1b\x5d\x25\x11\x5b\x6b"),
+    [40] = oOIIOo_IlooolIIO("\x0e\x13\x09\x1f\x7b\x3f\x12\x41\x5b\x58"),
+    [41] = oOIIOo_IlooolIIO("\x18\x03\x05\x1f\x56\x24"),
+    [42] = oOIIOo_IlooolIIO("\x0f\x3f\x36\x19\x58\x2e\x0f\x50\x5a\x42"),
+    [43] = oOIIOo_IlooolIIO("\x19\x19\x1f\x1f\x5c\x24\x12"),
+    [44] = oOIIOo_IlooolIIO("\x0e\x13\x09\x1f\x75\x2b\x04\x50\x58"),
+    [45] = oOIIOo_IlooolIIO("\x09\x13\x1d\x0e\x5a\x3e\x03\x51\x60\x53\x3a\x1e"),
+    [46] = oOIIOo_IlooolIIO("\x1b\x04\x03\x04\x4e"),
+    [47] = oOIIOo_IlooolIIO("\xe6"),
+    [48] = oOIIOo_IlooolIIO("\x09\x15\x03\x0e\x5c\x24\x21\x40\x5d"),
+    [49] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x77\x44\x27\x0b\x17\x57\x7e\x5e\x3e\x13\x03\x05\x7d\x38\x09\x45\x50\x59\x35\x04\x59\x12\x7d\x5e\x7a\x25\x12\x19\x5c\x2f\x08\x72\x41\x5f\x62\x0c\x0c\x47\x5d\x55\x76\x56\x01\x0a\x57\x2f\x0a\x15\x59\x57\x3b\x4a\x00\x5e\x5a\x41"),
+    [50] = oOIIOo_IlooolIIO("\x1e\x04\x1e\x1b\x5d\x25\x11\x5b\x64\x57\x2c\x0f\x0f\x6d"),
+    [51] = oOIIOo_IlooolIIO("\x19\x1a\x1e\x18\x5c\x08\x13\x41\x40\x59\x2c"),
+    [52] = oOIIOo_IlooolIIO("\x19\x1a\x1e\x18\x5c"),
+    [53] = oOIIOo_IlooolIIO("\x49"),
+    [54] = oOIIOo_IlooolIIO("\x1e\x19\x1f\x0e"),
+    [55] = oOIIOo_IlooolIIO("\x8d"),
+    [56] = oOIIOo_IlooolIIO("\x19\x17\x1f\x08\x5c\x26"),
+    [57] = oOIIOo_IlooolIIO("\x0e\x13\x09\x1f\x7b\x25\x1e"),
+    [58] = oOIIOo_IlooolIIO("\x09\x13\x10\x19\x5a\x22"),
+    [59] = oOIIOo_IlooolIIO("\x09\x13\x10\x19\x5a\x22\x48\x1b\x1a"),
+    [60] = oOIIOo_IlooolIIO("\x09\x15\x03\x04\x55\x26\x0f\x5b\x53\x70\x30\x0b\x0e\x57"),
+    [61] = oOIIOo_IlooolIIO("\x15\x06\x05\x02\x56\x24\x15"),
+    [62] = oOIIOo_IlooolIIO("\x0f\x3f\x3d\x02\x4a\x3e\x2a\x54\x4d\x59\x37\x1e"),
+    [63] = oOIIOo_IlooolIIO("\x15\x06\x05\x02\x56\x24\x39"),
+    [64] = oOIIOo_IlooolIIO("\x0e\x13\x09\x1f"),
+    [65] = oOIIOo_IlooolIIO("\x19\x1e\x14\x08\x52\x28\x09\x4d"),
+    [66] = oOIIOo_IlooolIIO("\x7a\x1f\x05\x0e\x54\x39\x46\x46\x51\x5a\x27\x09\x17\x57\x57"),
+    [67] = oOIIOo_IlooolIIO("\xe8"),
+    [68] = oOIIOo_IlooolIIO("\x19\x1a\x18\x1b\x4a\x0e\x03\x46\x57\x53\x2c\x0e\x02\x5c\x47\x42"),
+    [69] = oOIIOo_IlooolIIO("\x09\x1f\x0b\x0e"),
+    [70] = oOIIOo_IlooolIIO("\x1d\x03\x18\x24\x5b\x20\x03\x56\x40"),
+    [71] = oOIIOo_IlooolIIO("\x14\x13\x09\x1e\x4a\x6a\x2e\x40\x56"),
+    [72] = oOIIOo_IlooolIIO("\x1f\x18\x19\x0a\x57\x29\x03\x51\x14\x63\x0b\x4a\x2f\x5b\x51\x43\x3b\x04\x08"),
+    [73] = oOIIOo_IlooolIIO("\x14\x13\x09\x1e\x4a\x1f\x2f\x6a"),
+    [74] = oOIIOo_IlooolIIO("\x0a\x1a\x10\x12\x5c\x38\x21\x40\x5d"),
+    [75] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x72\x57\x2b\x06\x06\x56\x13\x45\x35\x56\x12\x19\x5c\x2b\x12\x50\x14\x65\x21\x18\x06\x57\x5d\x76\x2f\x1f"),
+    [76] = oOIIOo_IlooolIIO("\x14"),
+    [77] = oOIIOo_IlooolIIO("\x1e\x17\x05\x0a\x19\x1a\x0f\x5b\x53"),
+    [78] = oOIIOo_IlooolIIO("\x7f\x3e\x4b\x4e\x74\x70\x43\x66"),
+    [79] = oOIIOo_IlooolIIO("\x67\xf6\x51\x4e\x5d\x6a\x20\x65\x67\x16\x3e\x4a\x5e\xd3\x13\x14\x3e\x1b\x02\x4b\x45\x6a\x5b\x50\x14\x13\x26\x4a\x1f\x12\x16\x42"),
+    [80] = oOIIOo_IlooolIIO("\x0f\x3f\x22\x08\x58\x26\x03"),
+    [81] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x72\x57\x2b\x06\x06\x56\x13\x45\x35\x56\x12\x19\x5c\x2b\x12\x50\x14\x5b\x23\x03\x0d\x12\x44\x58\x34\x12\x1e\x1c"),
+    [82] = oOIIOo_IlooolIIO("\x67\xf6"),
+    [83] = oOIIOo_IlooolIIO("\x5a"),
+    [84] = oOIIOo_IlooolIIO("\x28\x14\x09\x0a\x4a\x39\x03\x41\x5d\x52\x78\x45\x4c\x0b\x0b\x09\x6c\x40\x44\x52\x0f\x7d\x57"),
+    [85] = oOIIOo_IlooolIIO("\x13\x1b\x10\x0c\x5c\x08\x13\x41\x40\x59\x2c"),
+    [86] = oOIIOo_IlooolIIO("\x14\x13\x09\x1e\x4a\x1e\x09\x52\x53\x5a\x27"),
+    [87] = oOIIOo_IlooolIIO("\x1b\x14\x02\x04\x55\x3f\x12\x50\x67\x5f\x38\x0f"),
+    [88] = oOIIOo_IlooolIIO("\x1b\x14\x02\x04\x55\x3f\x12\x50\x77\x59\x2c\x1e\x06\x5c\x47\x62\x33\x0c\x14"),
+    [89] = oOIIOo_IlooolIIO("\x0f\x3f\x21\x0a\x5d\x2e\x0f\x5b\x53"),
+    [90] = oOIIOo_IlooolIIO("\x14\x19\x05\x02\x5f\x23\x05\x54\x40\x5f\x2d\x04"),
+    [91] = oOIIOo_IlooolIIO("\x13\x18\x17\x04"),
+    [92] = oOIIOo_IlooolIIO("\x63\x79"),
+    [93] = oOIIOo_IlooolIIO("\x5f"),
+    [94] = oOIIOo_IlooolIIO("\xfa\x79"),
+    [95] = oOIIOo_IlooolIIO("\x16"),
+    [96] = oOIIOo_IlooolIIO("\x4f"),
+    [97] = oOIIOo_IlooolIIO("\x29\x02\x03\x02\x57\x2d"),
+    [98] = oOIIOo_IlooolIIO("\x0e\x17\x13"),
+    [99] = oOIIOo_IlooolIIO("\x67\xb2"),
+    [100] = oOIIOo_IlooolIIO("\x09\x13\x12\x1f\x50\x25\x08"),
+    [101] = oOIIOo_IlooolIIO("\x16\x17\x13\x0e\x55"),
+    [102] = oOIIOo_IlooolIIO("\x0e\x13\x09\x1f\x6a\x2f\x14\x43\x5d\x55\x27"),
+    [103] = oOIIOo_IlooolIIO("\x01\x38\x14\x13\x4c\x39\x3b\x15\x60\x57\x20\x50\x27\x40\x5c\x41\x3e\x19\x06\x05\x19\x67\x46\x61\x55\x54\x12\x0b\x04\x57\x13\x58\x29\x56\x1f\x04\x4d\x6a\x07\x43\x55\x5f\x2e\x0b\x01\x5e\x56"),
+    [104] = oOIIOo_IlooolIIO("\x0e\x19\x16\x0c\x55\x2f"),
+    [105] = oOIIOo_IlooolIIO("\x09\x1a\x18\x0f\x5c\x38"),
+    [106] = oOIIOo_IlooolIIO("\x1f\x18\x05\x0e\x4b\x6a\x12\x50\x4c\x42\x6c\x44\x4d"),
+    [107] = oOIIOo_IlooolIIO("\x01\x28\x54\x0f\x1c\x64\x43\x18\x69"),
+    [108] = oOIIOo_IlooolIIO("\x74"),
+    [109] = oOIIOo_IlooolIIO("\x77"),
+    [110] = oOIIOo_IlooolIIO("\x7f\x12"),
+    [111] = oOIIOo_IlooolIIO("\x11\x13\x08\x09\x50\x24\x02"),
+    [112] = oOIIOo_IlooolIIO("\x74\x58\x5f"),
+    [113] = oOIIOo_IlooolIIO("\x14\x19\x1f\x0e"),
+    [114] = oOIIOo_IlooolIIO("\x16\x25\x19\x02\x5f\x3e"),
+    [115] = oOIIOo_IlooolIIO("\x08\x25\x19\x02\x5f\x3e"),
+    [116] = oOIIOo_IlooolIIO("\x16\x35\x05\x19\x55"),
+    [117] = oOIIOo_IlooolIIO("\x08\x35\x05\x19\x55"),
+    [118] = oOIIOo_IlooolIIO("\x16\x37\x1d\x1f"),
+    [119] = oOIIOo_IlooolIIO("\x08\x37\x1d\x1f"),
+    [120] = oOIIOo_IlooolIIO("\x19\x17\x01\x18"),
+    [121] = oOIIOo_IlooolIIO("\x6b"),
+    [122] = oOIIOo_IlooolIIO("\x68"),
+    [123] = oOIIOo_IlooolIIO("\x69"),
+    [124] = oOIIOo_IlooolIIO("\x6e"),
+    [125] = oOIIOo_IlooolIIO("\x6f"),
+    [126] = oOIIOo_IlooolIIO("\x6c"),
+    [127] = oOIIOo_IlooolIIO("\x6d"),
+    [128] = oOIIOo_IlooolIIO("\x62"),
+    [129] = oOIIOo_IlooolIIO("\x63"),
+    [130] = oOIIOo_IlooolIIO("\x6a"),
+    [131] = oOIIOo_IlooolIIO("\x14\x03\x1c\x5a"),
+    [132] = oOIIOo_IlooolIIO("\x14\x03\x1c\x59"),
+    [133] = oOIIOo_IlooolIIO("\x14\x03\x1c\x58"),
+    [134] = oOIIOo_IlooolIIO("\x14\x03\x1c\x5f"),
+    [135] = oOIIOo_IlooolIIO("\x14\x03\x1c\x5e"),
+    [136] = oOIIOo_IlooolIIO("\x14\x03\x1c\x5d"),
+    [137] = oOIIOo_IlooolIIO("\x14\x03\x1c\x5c"),
+    [138] = oOIIOo_IlooolIIO("\x14\x03\x1c\x53"),
+    [139] = oOIIOo_IlooolIIO("\x14\x03\x1c\x52"),
+    [140] = oOIIOo_IlooolIIO("\x14\x03\x1c\x5b"),
+    [141] = oOIIOo_IlooolIIO("\x0f\x18\x1a\x05\x56\x3d\x08"),
+    [142] = oOIIOo_IlooolIIO("\x12\x19\x1d\x0f"),
+    [143] = oOIIOo_IlooolIIO("\x1b\x1a\x06\x0a\x40\x39"),
+    [144] = oOIIOo_IlooolIIO("\x19\x19\x1d\x07\x58\x3a\x15\x5c\x56\x5a\x27"),
+    [145] = oOIIOo_IlooolIIO("\x0a\x17\x03\x0a\x5e\x38\x07\x45\x5c"),
+    [146] = oOIIOo_IlooolIIO("\x13\x18\x01\x1e\x4d"),
+    [147] = oOIIOo_IlooolIIO("\x0c\x17\x1d\x1e\x5c\x64\x48\x1b"),
+    [148] = oOIIOo_IlooolIIO("\x19\x19\x1d\x04\x4b\x6a\x36\x5c\x57\x5d\x27\x18"),
+    [149] = oOIIOo_IlooolIIO("\x08\x34\x29\x38\x5a\x38\x0f\x45\x40\x75\x2d\x04\x0d\x57\x50\x45\x33\x19\x1f"),
+    [150] = oOIIOo_IlooolIIO("\x48"),
+    [151] = oOIIOo_IlooolIIO("\xfb"),
 }
 
 -- Obfuscated with Lua-njingObfuscator
@@ -217,591 +194,528 @@ if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
 
 --[[ 
     NEXUS UI (v4.0 - Enhanced Edition)
-    ✨ New Features: Modern _olI0OollIlO1lIoolO00I, IIO_0lllI0OOlOIII0Il1_IIl0OloO1l Prevention, Performance Boost
+    ✨ New Features: Modern Dropdown, Error Prevention, Performance Boost
     🎨 Design: Glassmorphism, Smooth Animations, Better UX
 ]]
 
-local _O0I0IoOIIlloool010oIO__ = {
-    _I0lllllOO0_0llIlIlIO0l0IooOOO0Il = {}, 
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-    _lllo0I0IlIOOo10lIlO_ = {}, 
-    _IIlOIloOolooIo_OlIoO_oOI = {},
-    _IOOoOOlI1l_I0IIO0O1IIo = false,
-    ll0lOl0IIloOII_lIl01loI0l_lIIo1_ = {
-        _IlIIo0III00lIIol_IIl11llOo00I = Color3._o1o100llllOIOlOO0IloO0(88, 166, 255),
-        _lo0loIo_0oOIoIOI0ool0IlooII0l1OO = Color3._o1o100llllOIOlOO0IloO0(108, 186, 255),
-        _IllOoOII10IIl0IO0IlIIo = Color3._o1o100llllOIOlOO0IloO0(16, 16, 20),
-        _IOl0IoIl0IIOlolIOIOl_O_ = Color3._o1o100llllOIOlOO0IloO0(24, 24, 28),
-        oI0IlIoII0lllOOIOI0_l_0ollOloIo = Color3._o1o100llllOIOlOO0IloO0(32, 32, 38),
-        0_I1lll1l0lOlO01IOlIl = Color3._o1o100llllOIOlOO0IloO0(42, 42, 48),
-        IOlIlll01oI00Ol0lOOI = Color3._o1o100llllOIOlOO0IloO0(245, 245, 250),
-        _0IIOIoIoolollIOOOllIlOl = Color3._o1o100llllOIOlOO0IloO0(180, 180, 190),
-        _IlOoIlIlIIIlOOl01I_oIlolOO = Color3._o1o100llllOIOlOO0IloO0(120, 120, 135),
-        _0OIlIOoIollO0O0I0lI1OI = Color3._o1o100llllOIOlOO0IloO0(60, 60, 70),
-        ll0lOI01l0O111l1IOoI0Illl = Color3._o1o100llllOIOlOO0IloO0(72, 187, 120),
-        _OO01lllI0I0IlI0IOIllll1 = Color3._o1o100llllOIOlOO0IloO0(251, 191, 36),
-        IIO_0lllI0OOlOIII0Il1_IIl0OloO1l = Color3._o1o100llllOIOlOO0IloO0(248, 113, 113),
-        0OOolllIlI0o0lloOllO = Color3._o1o100llllOIOlOO0IloO0(88, 166, 255),
-        _ollOOIIO_lIOlIO1oO0O01o0o00l00ll = Color3._o1o100llllOIOlOO0IloO0(147, 51, 234),
-        _lO_l_IoIolIo1OOlIllII0O = Color3._o1o100llllOIOlOO0IloO0(0, 0, 0)
+local IoOlIOIOl_oIOIIooII = {
+    Flags = {}, 
+    Registry = {}, 
+    Connections = {},
+    IsDestroyed = false,
+    Theme = {
+        Accent = Color3.fromRGB(88, 166, 255),
+        AccentHover = Color3.fromRGB(108, 186, 255),
+        Background = Color3.fromRGB(16, 16, 20),
+        Surface = Color3.fromRGB(24, 24, 28),
+        SurfaceHigh = Color3.fromRGB(32, 32, 38),
+        SurfaceHighest = Color3.fromRGB(42, 42, 48),
+        Ioolo_OoIoIIoOIl = Color3.fromRGB(245, 245, 250),
+        TextSub = Color3.fromRGB(180, 180, 190),
+        TextMuted = Color3.fromRGB(120, 120, 135),
+        Outline = Color3.fromRGB(60, 60, 70),
+        Success = Color3.fromRGB(72, 187, 120),
+        Warning = Color3.fromRGB(251, 191, 36),
+        Error = Color3.fromRGB(248, 113, 113),
+        Gradient1 = Color3.fromRGB(88, 166, 255),
+        Gradient2 = Color3.fromRGB(147, 51, 234),
+        Shadow = Color3.fromRGB(0, 0, 0)
     }
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
 }
 
---// Olo_O00l00II0O_0Ollol with error handling
-local Olo_O00l00II0O_0Ollol = {}
-local function _OllIl1OIOlI_Ooo_IlI(_Ol1llIIIIOIol0I1loII)
-    if not Olo_O00l00II0O_0Ollol[_Ol1llIIIIOIol0I1loII] then
-        local _OllI0oo1l10lIlllllIl0, lloo0l0OIllO_l1oII_l00I_l1OIo0OO = pcall(function()
-            return game:_OllIl1OIOlI_Ooo_IlI(_Ol1llIIIIOIol0I1loII)
+--// Services with error handling
+local lOolIlll_lIOIOoIOI = {}
+local function OlIollOOIlOoloOooI(_lIOlOOlOlIIlolIlo_)
+    if not lOolIlll_lIOIOoIOI[_lIOlOOlOlIIlolIlo_] then
+        local lIIIO_IoOIo_, looolOO_IlIl = pcall(function()
+            return game:GetService(_lIOlOOlOlIIlolIlo_)
         end)
         
-        if not _OllI0oo1l10lIlllllIl0 then
-            warn(oIOoII_0IIlOII1IOI1lI0_OO0o[1], _Ol1llIIIIOIol0I1loII)
+        if not lIIIO_IoOIo_ then
+            warn(IO_oOOllOOoooIo_[1], _lIOlOOlOlIIlolIlo_)
         end
         
-        Olo_O00l00II0O_0Ollol[_Ol1llIIIIOIol0I1loII] = _OllI0oo1l10lIlllllIl0 and lloo0l0OIllO_l1oII_l00I_l1OIo0OO or nil
+        lOolIlll_lIOIOoIOI[_lIOlOOlOlIIlolIlo_] = lIIIO_IoOIo_ and looolOO_IlIl or nil
     end
     
-    return Olo_O00l00II0O_0Ollol[_Ol1llIIIIOIol0I1loII]
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+    return lOolIlll_lIOIOoIOI[_lIOlOOlOlIIlolIlo_]
 end
 
 
-local _OoIOIIlOIOoooOOlll_Ill0O1oloI0III = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[2])
-local __IIllI01O0I0OolO01ll01o01Ilo_O0o = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[3])
-local OOIl1I011o0IlOIIOOlOl = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[4])
-local _I_l0IlloIIO_0IoI0lO011oO = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[5])
-local _1o0IIoOllI0_OOllI0II0O = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[6])
-local _OI_lO1O1llI0Iol1lIlO = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[7])
-local _ol1lIOOoolOIIolO_l_l0lIIOOlIlII = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[8])
-local __l0l1I0lIl0llolIl0I = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[9])
-local _OoOlO0lo1Oo1__lOlO_lO = _OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[10])
+local IIooOoOloI = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[2])
+local OOOllOIOllO_OoI = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[3])
+local OlIoOOlOIOooIOIll = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[4])
+local _O_OIooIoI_I = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[5])
+local ll_lOOloOIlllllol = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[6])
+local oII_O_II_I = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[7])
+local lOoIIIIoO_OIOol = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[8])
+local lo_lOIlllI_I = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[9])
+local oIoIooOooIoI = OlIollOOIlOoloOooI(IO_oOOllOOoooIo_[10])
 
 --// Enhanced Helpers with error handling
-local function Ol0IOOlIoOIIIlO_0__loIllIOOO(__ooOloIlIOIllIlIoIllI, _O_llololOOIlllOoIlo, lIllIOI0_OOl0Il0_1Iol_I0Olo_Oll0I)
-    local _OllI0oo1l10lIlllllIl0, _oIO_Ilo00oOol00lI_l00011lI = pcall(function()
-        return Instance._I00I_ol_lI1IllIIOII1IoOIlI(__ooOloIlIOIllIlIoIllI)
+local function OO_OIOOIoooIolIoo(IlOIIlO_OoOIlOoO, o_IOooIlOIIloO_oII, olIooOIIo_OlOlolI)
+    local lIIIO_IoOIo_, OoIOoO_IIool_ = pcall(function()
+        return Instance.new(IlOIIlO_OoOIlOoO)
     end)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
     
-    if ((function() return 1 + 1 == 2 end)()) and not _OllI0oo1l10lIlllllIl0 then
-        warn(oIOoII_0IIlOII1IOI1lI0_OO0o[11] .. tostring(__ooOloIlIOIllIlIoIllI))
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+    if not lIIIO_IoOIo_ then
+        warn(IO_oOOllOOoooIo_[11] .. tostring(IlOIIlO_OoOIlOoO))
         return nil
     end
     
-    if ((function() return true end)()) and _O_llololOOIlllOoIlo then
-        for _0II00ooO1llIOI_II00O0llOlOlI, _OOllIIO0_II0Ol00IIol1ool in pairs(_O_llololOOIlllOoIlo) do
+    if o_IOooIlOIIloO_oII then
+        for IllloII_ll, loolOoIIlIoloIIo_ll in pairs(o_IOooIlOIIloO_oII) do
             pcall(function()
-                _oIO_Ilo00oOol00lI_l00011lI[_0II00ooO1llIOI_II00O0llOlOlI] = _OOllIIO0_II0Ol00IIol1ool
+                OoIOoO_IIool_[IllloII_ll] = loolOoIIlIoloIIo_ll
             end)
         end
     end
     
-    if ((function() local x = 5 return x > 3 end)()) and lIllIOI0_OOl0Il0_1Iol_I0Olo_Oll0I then
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-        for _lIo0IoOlOll1lIO0_IoIllIlI, _10l0IIOIOl_IlIololOoOo10OlI_I in pairs(lIllIOI0_OOl0Il0_1Iol_I0Olo_Oll0I) do
-            if ((function() local x = 5 return x > 3 end)()) and _10l0IIOIOl_IlIololOoOo10OlI_I and typeof(_10l0IIOIOl_IlIololOoOo10OlI_I) == oIOoII_0IIlOII1IOI1lI0_OO0o[12] then
-                _10l0IIOIOl_IlIololOoOo10OlI_I.II_OlIII1_lIlOO0I0oOOO1001lI = _oIO_Ilo00oOol00lI_l00011lI
+    if olIooOIIo_OlOlolI then
+        for ooIlololllolIOlo, __IlO_o_oIIOI__loo in pairs(olIooOIIo_OlOlolI) do
+            if __IlO_o_oIIOI__loo and typeof(__IlO_o_oIIOI__loo) == IO_oOOllOOoooIo_[12] then
+                __IlO_o_oIIOI__loo.Parent = OoIOoO_IIool_
             end
         end
     end
     
-    return _oIO_Ilo00oOol00lI_l00011lI
+    return OoIOoO_IIool_
 end
 
-local function _00l00l1l0ooI0I01oOIIO0IIlO011(__ooOloIlIOIllIlIoIllI, _O_llololOOIlllOoIlo, lIllIOI0_OOl0Il0_1Iol_I0Olo_Oll0I)
-    return Ol0IOOlIoOIIIlO_0__loIllIOOO(__ooOloIlIOIllIlIoIllI, _O_llololOOIlllOoIlo, lIllIOI0_OOl0Il0_1Iol_I0Olo_Oll0I)
+local function _OI_olOOlOI(IlOIIlO_OoOIlOoO, o_IOooIlOIIloO_oII, olIooOIIo_OlOlolI)
+    return OO_OIOOIoooIolIoo(IlOIIlO_OoOIlOoO, o_IOooIlOIIloO_oII, olIooOIIo_OlOlolI)
 end
 
-local function _1lOOlOIIO_0IO_IoOIl00Il(lOOolI_0IIl_IlOOlIIllI_0IlI, _oO0ll11OIOOloIIoIOlIoOolIo)
-    if (not (function() return false end)()) and not lOOolI_0IIl_IlOOlIIllI_0IlI or not lOOolI_0IIl_IlOOlIIllI_0IlI.II_OlIII1_lIlOO0I0oOOO1001lI then return end
-    return _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[13], {
-        _Olo_O0OO1OIlII_Il_I0O = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, _oO0ll11OIOOloIIoIOlIoOolIo or 8),
-        II_OlIII1_lIlOO0I0oOOO1001lI = lOOolI_0IIl_IlOOlIIllI_0IlI
-    })
-end
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-
-local function ___IoO_1_O1loO01IIol10oOOIllO1(lOOolI_0IIl_IlOOlIIllI_0IlI, II0llIIOI0lIllOOlO1I1o, _lo00IO0OloIOlI1IOolIllO1OOIIO_OOo, _1IOlOIOoOOll00OlOIIlOlO0)
-    if ((function() return true end)()) and not lOOolI_0IIl_IlOOlIIllI_0IlI or not lOOolI_0IIl_IlOOlIIllI_0IlI.II_OlIII1_lIlOO0I0oOOO1001lI then return end
-    return _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[14], {
-        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = II0llIIOI0lIllOOlO1I1o or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI,
-        _I_I1I1olIO1Il0I1O0IIo = _lo00IO0OloIOlI1IOolIllO1OOIIO_OOo or 1,
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        _0IlOllO0lO00oOI0O_I_II0IlO = _1IOlOIOoOOll00OlOIIlOlO0 or 0.6,
-        ll_lOO_IOIIOOOll0oo10IlI_I = Enum.ll_lOO_IOIIOOOll0oo10IlI_I._I_l__Il_IoI0lloI0OlIlIlIIOOO0IoO_,
-        II_OlIII1_lIlOO0I0oOOO1001lI = lOOolI_0IIl_IlOOlIIllI_0IlI
+local function llOl_IoIII_oIOIIo(I__ooOO_IO_oooOOIlI, oIloIOlOIlolo_olIoo)
+    if not I__ooOO_IO_oooOOIlI or not I__ooOO_IO_oooOOIlI.Parent then return end
+    return _OI_olOOlOI(IO_oOOllOOoooIo_[13], {
+        CornerRadius = UDim.new(0, oIloIOlOIlolo_olIoo or 8),
+        O_OoOO_I_oI = I__ooOO_IO_oooOOIlI
     })
 end
 
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-local function _Ol0O_loIlOI0Ol0Io00IO0Il0IIOoll1I(lOOolI_0IIl_IlOOlIIllI_0IlI, _011IOoIll0OO0IIoII_I, _1IOlOIOoOOll00OlOIIlOlO0)
-    if ((function() local x = 5 return x > 3 end)()) and not lOOolI_0IIl_IlOOlIIllI_0IlI or not lOOolI_0IIl_IlOOlIIllI_0IlI.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+local function lIO__OIIOllOlOOl(I__ooOO_IO_oooOOIlI, ol_ooIlOlOo, OIOOolooo_oIOIIoIl, I_o_lIOIO_IIolooo)
+    if not I__ooOO_IO_oooOOIlI or not I__ooOO_IO_oooOOIlI.Parent then return end
+    return _OI_olOOlOI(IO_oOOllOOoooIo_[14], {
+        lOO_lIoI_O_o = ol_ooIlOlOo or IoOlIOIOl_oIOIIooII.Theme.Outline,
+        Thickness = OIOOolooo_oIOIIoIl or 1,
+        Transparency = I_o_lIOIO_IIolooo or 0.6,
+        ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+        O_OoOO_I_oI = I__ooOO_IO_oooOOIlI
+    })
+end
+
+local function IolOololoIOoOOlI(I__ooOO_IO_oooOOIlI, lOolOoOIlOOolo, I_o_lIOIO_IIolooo)
+    if not I__ooOO_IO_oooOOIlI or not I__ooOO_IO_oooOOIlI.Parent then return end
     
-    local _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[15], {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[16],
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(-_011IOoIll0OO0IIoII_I, -_011IOoIll0OO0IIoII_I),
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, _011IOoIll0OO0IIoII_I * 2, 1, _011IOoIll0OO0IIoII_I * 2),
-        O_OIooI1IlII0I0IOoIll = lOOolI_0IIl_IlOOlIIllI_0IlI.O_OIooI1IlII0I0IOoIll - 1,
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        l0IOIl0IOl0IIlllO1OlIIIIOIOlo = oIOoII_0IIlOII1IOI1lI0_OO0o[17],
-        _IlOOlIIOIO1IIOo1IO0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._lO_l_IoIolIo1OOlIllII0O,
-        o0loOOIloIlIllOl0l_IIoo1 = _1IOlOIOoOOll00OlOIIlOlO0 or 0.8,
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-        0ollI0OlIO1llolOol_Ool = Enum.0ollI0OlIO1llolOol_Ool.0oI0l1OOol0loI_IIIOIl0OlI_olOI1l,
-        0_llIlOIl0olIl10IoO0lOO0 = _O0_OOlIolOoIlOO_O1ol00._I00I_ol_lI1IllIIOII1IoOIlI(49, 49, 450, 450),
-        II_OlIII1_lIlOO0I0oOOO1001lI = lOOolI_0IIl_IlOOlIIllI_0IlI
+    local loOllllOOOo = _OI_olOOlOI(IO_oOOllOOoooIo_[15], {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[16],
+        oIo_o_IIll = 1,
+        lOoOolOOolool = UDim2.fromOffset(-lOolOoOIlOOolo, -lOolOoOIlOOolo),
+        IIlolo_Ilo__ = UDim2.new(1, lOolOoOIlOOolo * 2, 1, lOolOoOIlOOolo * 2),
+        ZIndex = I__ooOO_IO_oooOOIlI.ZIndex - 1,
+        Image = IO_oOOllOOoooIo_[17],
+        lIIloO_O_ol_ = IoOlIOIOl_oIOIIooII.Theme.Shadow,
+        ImageTransparency = I_o_lIOIO_IIolooo or 0.8,
+        ScaleType = Enum.ScaleType.Slice,
+        SliceCenter = Rect.new(49, 49, 450, 450),
+        O_OoOO_I_oI = I__ooOO_IO_oooOOIlI
     })
     
-    return _oO0OO0OIOI0IOolIl_o0lIlIO1lI100
+    return loOllllOOOo
 end
 
 -- Tambah tracking
-_O0I0IoOIIlloool010oIO__._llOO_lolO0Ooo1I0o_lIIoll0_I = _O0I0IoOIIlloool010oIO__._llOO_lolO0Ooo1I0o_lIIoll0_I or {}
+IoOlIOIOl_oIOIIooII.ActiveTweens = IoOlIOIOl_oIOIIooII.ActiveTweens or {}
 
-local function _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_oIO_Ilo00oOol00lI_l00011lI, _O_llololOOIlllOoIlo, time, __IlOll_IloloII_lIOlllIoI0I1oIol, IlI1III00OIO1OI_OIIOOIOOOl_O, OIIlO1olIl10lOlol0_I_I01O)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-    if ((function() return 1 + 1 == 2 end)()) and _O0I0IoOIIlloool010oIO__._llOO_lolO0Ooo1I0o_lIIoll0_I[_oIO_Ilo00oOol00lI_l00011lI] then
-        _O0I0IoOIIlloool010oIO__._llOO_lolO0Ooo1I0o_lIIoll0_I[_oIO_Ilo00oOol00lI_l00011lI]:IoII0lI0oOl0OOIol0OlIl()
+local function lOoolOoIoOOOl(OoIOoO_IIool_, o_IOooIlOIIloO_oII, time, oOOooIlIOllIOOol, oIllOl_OOO, IIOIO_looOOoololo)
+    if IoOlIOIOl_oIOIIooII.ActiveTweens[OoIOoO_IIool_] then
+        IoOlIOIOl_oIOIIooII.ActiveTweens[OoIOoO_IIool_]:Cancel()
     end
     
-    if typeof(_oIO_Ilo00oOol00lI_l00011lI) ~= "Instance" then
-        warn(oIOoII_0IIlOII1IOI1lI0_OO0o[18])
+    if typeof(OoIOoO_IIool_) ~= "Instance" then
+        warn(IO_oOOllOOoooIo_[18])
         return
     end
 
-    if not _oIO_Ilo00oOol00lI_l00011lI:__oO1O000I0II_Ioo1ll1O00OIIoI11l(game) then
+    if not inst:IsDescendantOf(game) then
         -- object sudah di-destroy / belum masuk tree
         return
     end
 
-    local 0loIlI00I0OOl_0II0IIOIIIlOl_IlI = _lIoOI0lo1IollIoII1OloOII1O._I00I_ol_lI1IllIIOII1IoOIlI(
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+    local lO_lo_OoOlo = TweenInfo.new(
         time or 0.25,
-        __IlOll_IloloII_lIOlllIoI0I1oIol or Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.llIl0IoOlOlO0IllIlIOlll0I,
-        IlI1III00OIO1OI_OIIOOIOOOl_O or Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+        oOOooIlIOllIOOol or Enum.EasingStyle.Quad,
+        oIllOl_OOO or Enum.EasingDirection.Out
     )
 
-    local _IO1O_OII_ol0_O0lI01IO0o10l1Oo0
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-    local IlIOllllOoo0OO_0II00OOll, OIIoI0O_l1_I01I1o_IIO = pcall(function()
-        _IO1O_OII_ol0_O0lI01IO0o10l1Oo0 = _OoIOIIlOIOoooOOlll_Ill0O1oloI0III:_00l00l1l0ooI0I01oOIIO0IIlO011(_oIO_Ilo00oOol00lI_l00011lI, 0loIlI00I0OOl_0II0IIOIIIlOl_IlI, _O_llololOOIlllOoIlo)
-        _IO1O_OII_ol0_O0lI01IO0o10l1Oo0:_lOl0_l0OllIIO0IlIlo0_Ool0I1_()
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+    local _lIOoIlOoOo
+    local I_oOO_lolO, ollOOoolIIoOoo = pcall(function()
+        _lIOoIlOoOo = TweenService:Create(OoIOoO_IIool_, lO_lo_OoOlo, o_IOooIlOIIloO_oII)
+        tween:Play()
     end)
 
-    if not IlIOllllOoo0OO_0II00OOll then
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        warn(oIOoII_0IIlOII1IOI1lI0_OO0o[19], OIIoI0O_l1_I01I1o_IIO)
+    if not I_oOO_lolO then
+        warn(IO_oOOllOOoooIo_[19], ollOOoolIIoOoo)
         return
     end
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
 
-    _O0I0IoOIIlloool010oIO__._llOO_lolO0Ooo1I0o_lIIoll0_I[_oIO_Ilo00oOol00lI_l00011lI] = _IO1O_OII_ol0_O0lI01IO0o10l1Oo0
-    _IO1O_OII_ol0_O0lI01IO0o10l1Oo0.IIOol0lI1lllllO0OolIOIl_I0OOlI:0ol0_IoOOIIOloOIOlIllO0O0o0(function()
-        _O0I0IoOIIlloool010oIO__._llOO_lolO0Ooo1I0o_lIIoll0_I[_oIO_Ilo00oOol00lI_l00011lI] = nil
-        if OIIlO1olIl10lOlol0_I_I01O then OIIlO1olIl10lOlol0_I_I01O() end
+    IoOlIOIOl_oIOIIooII.ActiveTweens[OoIOoO_IIool_] = _lIOoIlOoOo
+    _lIOoIlOoOo.Completed:Once(function()
+        IoOlIOIOl_oIOIIooII.ActiveTweens[OoIOoO_IIool_] = nil
+        if IIOIO_looOOoololo then IIOIO_looOOoololo() end
     end)
     
 
-    return _IO1O_OII_ol0_O0lI01IO0o10l1Oo0
+    return _lIOoIlOoOo
 end
 
-local function lo_lOl_o00oIlIO11oO1l(_oll1_Il0ol1OlolooloIOIIlOlIIlIlll, 1lo0_0lIlI1Il_I_OOIOOI)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-    if (not (function() return false end)()) and not _oll1_Il0ol1OlolooloIOIIlOlIIlIlll or not _oll1_Il0ol1OlolooloIOIIlOlIIlIlll.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+local function _Ilo_oOlIooOOo(OIoIoO__Iol, __oollloOllooIOl)
+    if not OIoIoO__Iol or not OIoIoO__Iol.Parent then return end
     
-    local IlIO__0O0l11oll110llO_ll01I = 1lo0_0lIlI1Il_I_OOIOOI or _oll1_Il0ol1OlolooloIOIIlOlIIlIlll
-    local _oIIIoloO0lo01Ol1llOllloO = false
-    local _0IIlIIOo_olIIoI00lOIIIlIoIl = nil
-    local _ooIllI0OOl0l_II1l0lI_Il1llIoO_OOI = nil
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+    local IOOlOloIOlOlOI = __oollloOllooIOl or OIoIoO__Iol
+    local OlOooloOOloI = false
+    local oIIOOIOlo_loOlo_OoI = nil
+    local IIOOoolllIOIo = nil
     
-    local function _0O0lI01I1IOlOOIlOl_IIIII(_ol0_llOlO0III0I0l0_)
-        if _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O or 
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-           _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._l_l0l10olloIo1ll1OIl0lIIO1l then
+    local function ooIOloo_OIIooOoIO(olIlO_OlIlIO)
+        if olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseButton1 or 
+           olIlO_OlIlIO.UserInputType == Enum.UserInputType.Touch then
             
-            _oIIIoloO0lo01Ol1llOllloO = true
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-            _0IIlIIOo_olIIoI00lOIIIlIoIl = _ol0_llOlO0III0I0l0_._l_0Il0_0OI_olIlIllIOoOOI0IOoIo
-            _ooIllI0OOl0l_II1l0lI_Il1llIoO_OOI = _oll1_Il0ol1OlolooloIOIIlOlIIlIlll._l_0Il0_0OI_olIlIllIOoOOI0IOoIo
+            OlOooloOOloI = true
+            oIIOOIOlo_loOlo_OoI = olIlO_OlIlIO.Position
+            IIOOoolllIOIo = OIoIoO__Iol.Position
             
             --PlaySound("6895079853", 0.05) -- Subtle click sound
         end
     end
     
-    local function _IIOl0IOIlIlllllllolIoo00IlI(_ol0_llOlO0III0I0l0_)
-        if _oIIIoloO0lo01Ol1llOllloO and (_ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._lI_IoOO11lIoloIloolOoloOIII1oOl or 
-                        _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._l_l0l10olloIo1ll1OIl0lIIO1l) then
+    local function _IOloIIlooIIl(olIlO_OlIlIO)
+        if OlOooloOOloI and (olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseMovement or 
+                        olIlO_OlIlIO.UserInputType == Enum.UserInputType.Touch) then
             
-            local _lo1OlolIOll0loIIOIII_O0oI1IolI = _ol0_llOlO0III0I0l0_._l_0Il0_0OI_olIlIllIOoOOI0IOoIo - _0IIlIIOo_olIIoI00lOIIIlIoIl
-            local o_OO0IoooollOIOII1O_IIlIIIo0loIl0_ = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(
-                _ooIllI0OOl0l_II1l0lI_Il1llIoO_OOI._oIIlOIloI_l0II0I00l00OIOIoo._OoO1_0O0I__loOI1o00ol,
-                _ooIllI0OOl0l_II1l0lI_Il1llIoO_OOI._oIIlOIloI_l0II0I00l00OIOIoo._oIIO_1l00lII_lOOOOIoo0l + _lo1OlolIOll0loIIOIII_O0oI1IolI._oIIlOIloI_l0II0I00l00OIOIoo,
-                _ooIllI0OOl0l_II1l0lI_Il1llIoO_OOI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O._OoO1_0O0I__loOI1o00ol,
-                _ooIllI0OOl0l_II1l0lI_Il1llIoO_OOI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O._oIIO_1l00lII_lOOOOIoo0l + _lo1OlolIOll0loIIOIII_O0oI1IolI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
+            local olOI_IIIooo = olIlO_OlIlIO.Position - oIIOOIOlo_loOlo_OoI
+            local oIOolOo_oooIo = UDim2.new(
+                IIOOoolllIOIo.X.Scale,
+                IIOOoolllIOIo.X.Offset + olOI_IIIooo.X,
+                IIOOoolllIOIo.Y.Scale,
+                IIOOoolllIOIo.Y.Offset + olOI_IIIooo.Y
             )
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
             
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_oll1_Il0ol1OlolooloIOIIlOlIIlIlll, {_l_0Il0_0OI_olIlIllIOoOOI0IOoIo = o_OO0IoooollOIOII1O_IIlIIIo0loIl0_}, 0.1)
+            lOoolOoIoOOOl(OIoIoO__Iol, {lOoOolOOolool = oIOolOo_oooIo}, 0.1)
         end
     end
     
-    local function _0OO_Oll0IlI0OIO0IoOol(_ol0_llOlO0III0I0l0_)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-        if (not (function() return false end)()) and _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O or
-           _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._l_l0l10olloIo1ll1OIl0lIIO1l then
-            _oIIIoloO0lo01Ol1llOllloO = false
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+    local function OIOoIOOlIO_(olIlO_OlIlIO)
+        if olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseButton1 or
+           olIlO_OlIlIO.UserInputType == Enum.UserInputType.Touch then
+            OlOooloOOloI = false
         end
     end
     
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-    -- Store Ol1llI1lIl1llIOIlIOIO for cleanup
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, IlIO__0O0l11oll110llO_ll01I.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(_0O0lI01I1IOlOOIlOl_IIIII))
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, IlIO__0O0l11oll110llO_ll01I.lolIllIOlII0o1I110_o000OO1I0loOIl:_lIIIOOoI_0llIOOO1Ol(_IIOl0IOIlIlllllllolIoo00IlI))
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, __IIllI01O0I0OolO01ll01o01Ilo_O0o._Ol1l0o1I0lI_IoIlIo_o1II0l:_lIIIOOoI_0llIOOO1Ol(_0OO_Oll0IlI0OIO0IoOol))
+    -- Store connections for cleanup
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, IOOlOloIOlOlOI.InputBegan:Connect(ooIOloo_OIIooOoIO))
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, IOOlOloIOlOlOI.InputChanged:Connect(_IOloIIlooIIl))
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, OOOllOIOllO_OoI.InputEnded:Connect(OIOoIOOlIO_))
 end
 
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
 --// Enhanced Blur System
-local 1000I10Io_o0IIo10l0oI = nil
-local function _1OOll0IIIIlII0oO_lll1IlI()
-    if ((function() return true end)()) and 1000I10Io_o0IIo10l0oI then return end
+local _loOlllIIOoIooIlooI = nil
+local function oIo_oo_OIlOolO()
+    if _loOlllIIOoIooIlooI then return end
     
-    local _OllI0oo1l10lIlllllIl0 = pcall(function()
-        1000I10Io_o0IIo10l0oI = Instance._I00I_ol_lI1IllIIOII1IoOIlI(oIOoII_0IIlOII1IOI1lI0_OO0o[20])
-        1000I10Io_o0IIo10l0oI._ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[21]
-        1000I10Io_o0IIo10l0oI.0IIlOooOIollloIOIII0o_0IIII_lo = 0
-        1000I10Io_o0IIo10l0oI.II_OlIII1_lIlOO0I0oOOO1001lI = _ol1lIOOoolOIIolO_l_l0lIIOOlIlII
+    local lIIIO_IoOIo_ = pcall(function()
+        _loOlllIIOoIooIlooI = Instance.new(IO_oOOllOOoooIo_[20])
+        _loOlllIIOoIooIlooI.Name = IO_oOOllOOoooIo_[21]
+        _loOlllIIOoIooIlooI.Size = 0
+        _loOlllIIOoIooIlooI.Parent = lOoIIIIoO_OIOol
     end)
     
-    if not _OllI0oo1l10lIlllllIl0 then
-        warn(oIOoII_0IIlOII1IOI1lI0_OO0o[22])
+    if not lIIIO_IoOIo_ then
+        warn(IO_oOOllOOoooIo_[22])
     end
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
 end
 
-local function _OIllIOo0Ilo00Io1O1lo0lIO(_0l_lIolllOIOIoooI0_1IllOlI0Ol10, _OOIlllIIOIIllO1IollI0l1II_IOIoOol)
-    if ((function() return "a" == "a" end)()) and not 1000I10Io_o0IIo10l0oI then _1OOll0IIIIlII0oO_lll1IlI() end
-    if not 1000I10Io_o0IIo10l0oI then return end
+local function _lIOlIOlI__l(OlllOIOlOOOlII, lIlOOIOlIlll)
+    if not _loOlllIIOoIooIlooI then oIo_oo_OIlOolO() end
+    if not _loOlllIIOoIooIlooI then return end
     
-    local 0OOOIlollO_lI0oI_0llIlo1 = _0l_lIolllOIOIoooI0_1IllOlI0Ol10 and (_OOIlllIIOIIllO1IollI0l1II_IOIoOol or 15) or 0
-    -- Gunakan 001oIOlOOl_lIOlOoI_OOI_0OOlllllo untuk transisi blur yang lebih halus
-    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(1000I10Io_o0IIo10l0oI, {0IIlOooOIollloIOIII0o_0IIII_lo = 0OOOIlollO_lI0oI_0llIlo1}, 0.5, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.001oIOlOOl_lIOlOoI_OOI_0OOlllllo, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO) 
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+    local lOOol_OllOOoIllooI = OlllOIOlOOOlII and (lIlOOIOlIlll or 15) or 0
+    -- Gunakan Quint untuk transisi blur yang lebih halus
+    lOoolOoIoOOOl(_loOlllIIOoIooIlooI, {IIlolo_Ilo__ = lOOol_OllOOoIllooI}, 0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out) 
 end
 
 
-local lII_0IlOIoI_lO_O0IlIlo_oOol = oIOoII_0IIlOII1IOI1lI0_OO0o[23]
-local o00Il_oI00llloll0OO1l1lIOO_oI00 = 2
+local oooloIIOoIoo_lI = IO_oOOllOOoooIo_[23]
+local OOIIooOIIooool = 2
 
-function _O0I0IoOIIlloool010oIO__:IloIII0llOOIo00l0II0lIo0OOOlIl(o00llIollOllOIOlOl_l)
-    if not o00llIollOllOIOlOl_l or o00llIollOllOIOlOl_l == oIOoII_0IIlOII1IOI1lI0_OO0o[24] then return false end
+function Nexus:SaveConfig(IlIooIolOo)
+    if not IlIooIolOo or IlIooIolOo == IO_oOOllOOoooIo_[24] then return false end
 
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-    if ((function() return "a" == "a" end)()) and not OIlIIllOIlOOlIIolol_O0IOIlIIIO0OlI(lII_0IlOIoI_lO_O0IlIlo_oOol) then
-        _OOO00OIoo00lll0IIOI10OIOIIlIl(lII_0IlOIoI_lO_O0IlIlo_oOol)
+    if not olloO_lloIoloo(oooloIIOoIoo_lI) then
+        OolOIl_IoIOoIIIlO(oooloIIOoIoo_lI)
     end
 
-    local _oo0OoIlIO10o0llII_ooIOIlO0I = {
-        _Ol0IoOollllo00oI0IIOIIll00Io = o00Il_oI00llloll0OO1l1lIOO_oI00,
-        _I0lllllOO0_0llIlIlIO0l0IooOOO0Il = {},
-        IO1OI_IIIIl1Oll_OIOI = _1lIoOlOOIIOI0lIOOIo.time()
+    local lO_oIIooloOO_OloOlO = {
+        Version = OOIIooOIIooool,
+        Flags = {},
+        SavedAt = os.time()
     }
 
-    for ll10O1oIl00lllIOloI0l, _OOllIIO0_II0Ol00IIol1ool in pairs(_OIIl11_llllol_0l0_OIOloIIOOIOlOO._I0lllllOO0_0llIlIlIO0l0IooOOO0Il) do
-        if typeof(_OOllIIO0_II0Ol00IIol1ool) == oIOoII_0IIlOII1IOI1lI0_OO0o[25] then
-            _oo0OoIlIO10o0llII_ooIOIlO0I._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[ll10O1oIl00lllIOloI0l] = {
-                OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0 = "Color3",
-                IOI00lIIOlI0_l0IOOol10O1l = _OOllIIO0_II0Ol00IIol1ool.IOI00lIIOlI0_l0IOOol10O1l,
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                o00lOIIIoO0IlOlIoloI000IoOll0I_0I = _OOllIIO0_II0Ol00IIol1ool.o00lOIIIoO0IlOlIoloI000IoOll0I_0I,
-                _IlIo0lOo0_0lIO0I0o0lIll = _OOllIIO0_II0Ol00IIol1ool._IlIo0lOo0_0lIO0I0o0lIll
+    for I_lIolo_l_oIloIo_, loolOoIIlIoloIIo_ll in pairs(lO_Oo_lIllI.Flags) do
+        if typeof(loolOoIIlIoloIIo_ll) == IO_oOOllOOoooIo_[25] then
+            lO_oIIooloOO_OloOlO.Flags[I_lIolo_l_oIloIo_] = {
+                __lIoIIlO_OOI = "Color3",
+                R = loolOoIIlIoloIIo_ll.R,
+                G = loolOoIIlIoloIIo_ll.G,
+                B = loolOoIIlIoloIIo_ll.B
             }
-        elseif typeof(_OOllIIO0_II0Ol00IIol1ool) == oIOoII_0IIlOII1IOI1lI0_OO0o[26] then
-            _oo0OoIlIO10o0llII_ooIOIlO0I._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[ll10O1oIl00lllIOloI0l] = {
-                OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0 = "EnumItem",
-                Enum = tostring(_OOllIIO0_II0Ol00IIol1ool.oIIolII_IIlIl0I00_Il1IlllolO_),
-                _ollII0lllll__oII_l1I1OO_1llool_I = _OOllIIO0_II0Ol00IIol1ool._ollII0lllll__oII_l1I1OO_1llool_I
+        elseif typeof(loolOoIIlIoloIIo_ll) == IO_oOOllOOoooIo_[26] then
+            lO_oIIooloOO_OloOlO.Flags[I_lIolo_l_oIloIo_] = {
+                __lIoIIlO_OOI = "EnumItem",
+                Enum = tostring(loolOoIIlIoloIIo_ll.EnumType),
+                oI_oOOll_oOoOOl = loolOoIIlIoloIIo_ll.Name
             }
         else
-            _oo0OoIlIO10o0llII_ooIOIlO0I._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[ll10O1oIl00lllIOloI0l] = {
-                OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0 = typeof(_OOllIIO0_II0Ol00IIol1ool),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO = _OOllIIO0_II0Ol00IIol1ool
+            lO_oIIooloOO_OloOlO.Flags[I_lIolo_l_oIloIo_] = {
+                __lIoIIlO_OOI = typeof(loolOoIIlIoloIIo_ll),
+                looI_oI_II = loolOoIIlIoloIIo_ll
             }
         end
     end
 
-    local IlIOllllOoo0OO_0II00OOll, _oI1oIO00oIlOIOOlIlIOoIlloIlOl1ll = pcall(_I_l0IlloIIO_0IoI0lO011oO.ollOIIoll0_0_Ilo_OIIll0, _I_l0IlloIIO_0IoI0lO011oO, _oo0OoIlIO10o0llII_ooIOIlO0I)
-    if ((function() local x = 5 return x > 3 end)()) and not IlIOllllOoo0OO_0II00OOll then return false end
+    local I_oOO_lolO, OoIoIlIololllOOll = pcall(_O_OIooIoI_I.JSONEncode, _O_OIooIoI_I, lO_oIIooloOO_OloOlO)
+    if not I_oOO_lolO then return false end
 
-    0llO1IlIlll00OOO0o0ooOOoI_olII(lII_0IlOIoI_lO_O0IlIlo_oOol .. oIOoII_0IIlOII1IOI1lI0_OO0o[27] .. o00llIollOllOIOlOl_l .. oIOoII_0IIlOII1IOI1lI0_OO0o[28], _oI1oIO00oIlOIOOlIlIOoIlloIlOl1ll)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+    _IOOOIOOOOl_OlOlOo(oooloIIOoIoo_lI .. IO_oOOllOOoooIo_[27] .. IlIooIolOo .. IO_oOOllOOoooIo_[28], OoIoIlIololllOOll)
     return true
 end
 
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-function _O0I0IoOIIlloool010oIO__:Oo0lo_llIl0looIII0Ill__lOIlll(o00llIollOllOIOlOl_l)
-    local ___o_00O_I0oIIIl0O0Ilo0ll_ = lII_0IlOIoI_lO_O0IlIlo_oOol .. "/" .. o00llIollOllOIOlOl_l .. "._oI1oIO00oIlOIOOlIlIOoIlloIlOl1ll"
-    if not OoIooOIo_IIolOooIlOlIl1o_OoI1ol010(___o_00O_I0oIIIl0O0Ilo0ll_) then return false end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+function Nexus:LoadConfig(IlIooIolOo)
+    local IOollooOlol = oooloIIOoIoo_lI .. "/" .. IlIooIolOo .. ".json"
+    if not IooIIIl_Ill_lO(IOollooOlol) then return false end
 
-    local IlIOllllOoo0OO_0II00OOll, _oo0OoIlIO10o0llII_ooIOIlO0I = pcall(function()
-        return _I_l0IlloIIO_0IoI0lO011oO:OlOOlIlO000OI_oloIlIO(IIII_IlOIOoo1IOIl0o000OloI(___o_00O_I0oIIIl0O0Ilo0ll_))
+    local I_oOO_lolO, lO_oIIooloOO_OloOlO = pcall(function()
+        return HttpService:JSONDecode(Ol_oooOOoloOIOoI_l(IOollooOlol))
     end)
-    if not IlIOllllOoo0OO_0II00OOll or not _oo0OoIlIO10o0llII_ooIOIlO0I then return false end
+    if not I_oOO_lolO or not lO_oIIooloOO_OloOlO then return false end
 
     -- backward compatibility (old configs)
-    local l1Ol00Il0Ol0OIOoo1IlIloIolO0lO = _oo0OoIlIO10o0llII_ooIOIlO0I._I0lllllOO0_0llIlIlIO0l0IooOOO0Il or _oo0OoIlIO10o0llII_ooIOIlO0I.l1Ol00Il0Ol0OIOoo1IlIloIolO0lO or _oo0OoIlIO10o0llII_ooIOIlO0I
+    local lI_OIIlIolOo = lO_oIIooloOO_OloOlO.Flags or lO_oIIooloOO_OloOlO.flags or lO_oIIooloOO_OloOlO
 
-    local llO1O10IOIl0I_10llIo_0_OOII1ll_I0O = 0
-    for ll10O1oIl00lllIOloI0l, 0loIlI00I0OOl_0II0IIOIIIlOl_IlI in pairs(l1Ol00Il0Ol0OIOoo1IlIloIolO0lO) do
-        local _OOllIIO0_II0Ol00IIol1ool = 0loIlI00I0OOl_0II0IIOIIIlOl_IlI
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+    local OlOoolIIlI = 0
+    for I_lIolo_l_oIloIo_, lO_lo_OoOlo in pairs(lI_OIIlIolOo) do
+        local loolOoIIlIoloIIo_ll = lO_lo_OoOlo
 
-        if typeof(0loIlI00I0OOl_0II0IIOIIIlOl_IlI) == oIOoII_0IIlOII1IOI1lI0_OO0o[29] and 0loIlI00I0OOl_0II0IIOIIIlOl_IlI.OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0 then
-            if 0loIlI00I0OOl_0II0IIOIIIlOl_IlI.OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0 == "Color3" then
-                _OOllIIO0_II0Ol00IIol1ool = Color3._I00I_ol_lI1IllIIOII1IoOIlI(0loIlI00I0OOl_0II0IIOIIIlOl_IlI.IOI00lIIOlI0_l0IOOol10O1l, 0loIlI00I0OOl_0II0IIOIIIlOl_IlI.o00lOIIIoO0IlOlIoloI000IoOll0I_0I, 0loIlI00I0OOl_0II0IIOIIIlOl_IlI._IlIo0lOo0_0lIO0I0o0lIll)
-            elseif 0loIlI00I0OOl_0II0IIOIIIlOl_IlI.OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0 == "EnumItem" then
-                local l_lIol010lI11oOIlllolllI_IlO0oIIOO = 0loIlI00I0OOl_0II0IIOIIIlOl_IlI.Enum or 0loIlI00I0OOl_0II0IIOIIIlOl_IlI.oIIolII_IIlIl0I00_Il1IlllolO_
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                if l_lIol010lI11oOIlllolllI_IlO0oIIOO == oIOoII_0IIlOII1IOI1lI0_OO0o[30] then
-                    _OOllIIO0_II0Ol00IIol1ool = Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0[0loIlI00I0OOl_0II0IIOIIIlOl_IlI._ollII0lllll__oII_l1I1OO_1llool_I]
+        if typeof(lO_lo_OoOlo) == IO_oOOllOOoooIo_[29] and lO_lo_OoOlo.Type then
+            if lO_lo_OoOlo.Type == "Color3" then
+                loolOoIIlIoloIIo_ll = Color3.new(lO_lo_OoOlo.R, lO_lo_OoOlo.G, lO_lo_OoOlo.B)
+            elseif lO_lo_OoOlo.Type == "EnumItem" then
+                local II_oOoO_oIooO = lO_lo_OoOlo.Enum or lO_lo_OoOlo.EnumType
+                if II_oOoO_oIooO == IO_oOOllOOoooIo_[30] then
+                    loolOoIIlIoloIIo_ll = Enum.KeyCode[lO_lo_OoOlo.Name]
                 end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
             else
-                _OOllIIO0_II0Ol00IIol1ool = 0loIlI00I0OOl_0II0IIOIIIlOl_IlI._ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO
+                loolOoIIlIoloIIo_ll = lO_lo_OoOlo.Value
             end
         end
 
-        if ((function() return "a" == "a" end)()) and _OIIl11_llllol_0l0_OIOloIIOOIOlOO._lllo0I0IlIOOo10lIlO_[ll10O1oIl00lllIOloI0l] and _OIIl11_llllol_0l0_OIOloIIOOIOlOO._lllo0I0IlIOOo10lIlO_[ll10O1oIl00lllIOloI0l]._oOoIOoO0OOIll1Ol0llo_01o101 then
-            pcall(_OIIl11_llllol_0l0_OIOloIIOOIOlOO._lllo0I0IlIOOo10lIlO_[ll10O1oIl00lllIOloI0l]._oOoIOoO0OOIll1Ol0llo_01o101, _OOllIIO0_II0Ol00IIol1ool)
+        if lO_Oo_lIllI.Registry[I_lIolo_l_oIloIo_] and lO_Oo_lIllI.Registry[I_lIolo_l_oIloIo_].Set then
+            pcall(lO_Oo_lIllI.Registry[I_lIolo_l_oIloIo_].Set, loolOoIIlIoloIIo_ll)
         else
-            _OIIl11_llllol_0l0_OIOloIIOOIOlOO._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[ll10O1oIl00lllIOloI0l] = _OOllIIO0_II0Ol00IIol1ool
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+            lO_Oo_lIllI.Flags[I_lIolo_l_oIloIo_] = loolOoIIlIoloIIo_ll
         end
 
-        llO1O10IOIl0I_10llIo_0_OOII1ll_I0O += 1
+        OlOoolIIlI += 1
     end
 
-    _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo.0looIl0IIllllI0ooIIIIOI_OIl = o00llIollOllOIOlOl_l
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+    lO_Oo_lIllI.AutoSave.ActiveConfig = IlIooIolOo
 
     return true
 end
 
-function _O0I0IoOIIlloool010oIO__:_OO0IIOoOO0olI_OIOOIIIIIO_lIlIOO0()
-    if not OIlIIllOIlOOlIIolol_O0IOIlIIIO0OlI(lII_0IlOIoI_lO_O0IlIlo_oOol) then return {} end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+function Nexus:GetConfigs()
+    if not olloO_lloIoloo(oooloIIOoIoo_lI) then return {} end
 
-    local _OIlOI0oIl0lIlI0Oo0IlI00lO = {}
-    for _lIo0IoOlOll1lIO0_IoIllIlI, _OI1lloO_II1Illo11OllIIO_0Ol0lO in ipairs(_IlOll10llIIIOlO_0IO0(lII_0IlOIoI_lO_O0IlIlo_oOol)) do
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        local o00llIollOllOIOlOl_l = _OI1lloO_II1Illo11OllIIO_0Ol0lO:OIlIlIolIIlIOIolIlOlIl0(oIOoII_0IIlOII1IOI1lI0_OO0o[31])
-        if o00llIollOllOIOlOl_l then
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_OIlOI0oIl0lIlI0Oo0IlI00lO, o00llIollOllOIOlOl_l)
+    local OOOIl_olIOIOIOl = {}
+    for ooIlololllolIOlo, _OIloollOl in ipairs(_olol_oIO__(oooloIIOoIoo_lI)) do
+        local IlIooIolOo = file:match(IO_oOOllOOoooIo_[31])
+        if IlIooIolOo then
+            table.insert(OOOIl_olIOIOIOl, IlIooIolOo)
         end
     end
 
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-    return _OIlOI0oIl0lIlI0Oo0IlI00lO
+    return OOOIl_olIOIOIOl
 end
 
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
 ----------------------------------------------------------------
 -- AUTO SAVE STATE
 ----------------------------------------------------------------
-_O0I0IoOIIlloool010oIO__.lOIOl0IIIlOolllIOI_I0IlOl0olo = {
-    OOIIl0I0lo00l0I1I1IoIIIoO = true,
-    _O0_llOIIl0ll0O1IIOOI1 = 2,              -- debounce delay (detik)
-    0looIl0IIllllI0ooIIIIOI_OIl = nil,     -- nama oOolOI00IllIII0oo0_l0l0_IlIO0lIIO yang sedang aktif
-    _1l_0Il0o0_lOIllo1OIlII = false,
-    ll00o00lO1IlOlIO_OlIll = nil
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+IoOlIOIOl_oIOIIooII.AutoSave = {
+    Enabled = true,
+    Delay = 2,              -- debounce delay (detik)
+    IOloloO_llo = nil,     -- nama config yang sedang aktif
+    lllllOoOOo = false,
+    _task = nil
 }
 
-function _O0I0IoOIIlloool010oIO__:_lIO0OO0l00OoOI0IlIIOloI0IlI00OII()
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-    _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo._1l_0Il0o0_lOIllo1OIlII = true
+function Nexus:_ScheduleAutoSave()
+    lO_Oo_lIllI.AutoSave.Dirty = true
     
-    if _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo.ll00o00lO1IlOlIO_OlIll then
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.IoIo00II0I1IlIIoIIllolOO0IlOIlolI(_OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo.ll00o00lO1IlOlIO_OlIll)
-        _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo.ll00o00lO1IlOlIO_OlIll = nil
+    if lO_Oo_lIllI.AutoSave._task then
+        task.cancel(lO_Oo_lIllI.AutoSave._task)
+        lO_Oo_lIllI.AutoSave._task = nil
     end
     
-    _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo.ll00o00lO1IlOlIO_OlIll = _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.delay(_OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo._O0_llOIIl0ll0O1IIOOI1, function()
-        if not _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo._1l_0Il0o0_lOIllo1OIlII or not _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo.0looIl0IIllllI0ooIIIIOI_OIl then 
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+    lO_Oo_lIllI.AutoSave._task = task.delay(lO_Oo_lIllI.AutoSave.Delay, function()
+        if not lO_Oo_lIllI.AutoSave.Dirty or not lO_Oo_lIllI.AutoSave.ActiveConfig then 
             return 
         end
         
-        _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo._1l_0Il0o0_lOIllo1OIlII = false
-        local _OllI0oo1l10lIlllllIl0 = pcall(function()
-            _OIIl11_llllol_0l0_OIOloIIOOIOlOO:IloIII0llOOIo00l0II0lIo0OOOlIl(_OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo.0looIl0IIllllI0ooIIIIOI_OIl)
+        lO_Oo_lIllI.AutoSave.Dirty = false
+        local lIIIO_IoOIo_ = pcall(function()
+            self:SaveConfig(lO_Oo_lIllI.AutoSave.ActiveConfig)
         end)
         
-        if ((function() return "a" == "a" end)()) and not _OllI0oo1l10lIlllllIl0 then
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            _OIIl11_llllol_0l0_OIOloIIOOIOlOO.lOIOl0IIIlOolllIOI_I0IlOl0olo._1l_0Il0o0_lOIllo1OIlII = true -- Retry next time
+        if not lIIIO_IoOIo_ then
+            lO_Oo_lIllI.AutoSave.Dirty = true -- Retry next time
         end
     end)
 end
 
-function _O0I0IoOIIlloool010oIO__:OlIIl0oIl11_IOIl1loO0I0loII()
-    _OIIl11_llllol_0l0_OIOloIIOOIOlOO._IOOoOOlI1l_I0IIO0O1IIo = true
+function Nexus:Destroy()
+    lO_Oo_lIllI.IsDestroyed = true
     
-    -- _0IIlO0l_00_O0IoI0Ol011O0O1oI all
-    for _lIo0IoOlOll1lIO0_IoIllIlI, _Io0I_1l_l0l1oIo10lloO1_I0_lll0l in ipairs(_OIIl11_llllol_0l0_OIOloIIOOIOlOO._IIlOIloOolooIo_OlIoO_oOI) do
-        if _Io0I_1l_l0l1oIo10lloO1_I0_lll0l and _Io0I_1l_l0l1oIo10lloO1_I0_lll0l.I1I00IlOollllI0IIOOI1lOoI then
-            _Io0I_1l_l0l1oIo10lloO1_I0_lll0l:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+    -- Disconnect all
+    for ooIlololllolIOlo, llIIIlIlOlllOooo_ in ipairs(lO_Oo_lIllI.Connections) do
+        if llIIIlIlOlllOooo_ and llIIIlIlOlllOooo_.Connected then
+            conn:Disconnect()
         end
     end
     
     -- Clear tweens
-    if (not (function() return false end)()) and _OIIl11_llllol_0l0_OIOloIIOOIOlOO._llOO_lolO0Ooo1I0o_lIIoll0_I then
-        for _lIo0IoOlOll1lIO0_IoIllIlI, _IO1O_OII_ol0_O0lI01IO0o10l1Oo0 in pairs(_OIIl11_llllol_0l0_OIOloIIOOIOlOO._llOO_lolO0Ooo1I0o_lIIoll0_I) do
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            _IO1O_OII_ol0_O0lI01IO0o10l1Oo0:IoII0lI0oOl0OOIol0OlIl()
+    if lO_Oo_lIllI.ActiveTweens then
+        for ooIlololllolIOlo, _lIOoIlOoOo in pairs(lO_Oo_lIllI.ActiveTweens) do
+            tween:Cancel()
         end
     end
     
     -- Remove blur
-    if ((function() local x = 5 return x > 3 end)()) and 1000I10Io_o0IIo10l0oI then
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        1000I10Io_o0IIo10l0oI:OlIIl0oIl11_IOIl1loO0I0loII()
+    if _loOlllIIOoIooIlooI then
+        BlurEffect:Destroy()
     end
     
-    table._IolOIIlIol10Olol1O0l_l1l(_OIIl11_llllol_0l0_OIOloIIOOIOlOO._IIlOIloOolooIo_OlIoO_oOI)
-    table._IolOIIlIol10Olol1O0l_l1l(_OIIl11_llllol_0l0_OIOloIIOOIOlOO._lllo0I0IlIOOo10lIlO_)
-    table._IolOIIlIol10Olol1O0l_l1l(_OIIl11_llllol_0l0_OIOloIIOOIOlOO._I0lllllOO0_0llIlIlIO0l0IooOOO0Il)
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+    table.clear(lO_Oo_lIllI.Connections)
+    table.clear(lO_Oo_lIllI.Registry)
+    table.clear(lO_Oo_lIllI.Flags)
 end
 
---// Enhanced ll0lOl0IIloOII_lIl01loI0l_lIIo1_ System
-_O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO = Instance._I00I_ol_lI1IllIIOII1IoOIlI(oIOoII_0IIlOII1IOI1lI0_OO0o[32])
+--// Enhanced Theme System
+IoOlIOIOl_oIOIIooII.ThemeChanged = Instance.new(IO_oOOllOOoooIo_[32])
 
-local function IO1oloollOO101oooOo_llllOlI0ol()
-    -- Add subtle _1IOlOIOoOOll00OlOIIlOlO0 and glow effects
-    _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0O1OoOOOl0I0ollOIOlo1IIOOIoIOO0l = Color3._I00I_ol_lI1IllIIOII1IoOIlI(
-        math.l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I(_O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I.IOI00lIIOlI0_l0IOOol10O1l + 0.1, 1),
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        math.l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I(_O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I.o00lOIIIoO0IlOlIoloI000IoOll0I_0I + 0.1, 1),
-        math.l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I(_O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I._IlIo0lOo0_0lIO0I0o0lIll + 0.1, 1)
+local function llllloIlooI()
+    -- Add subtle transparency and glow effects
+    IoOlIOIOl_oIOIIooII.Theme.AccentGlow = Color3.new(
+        math.min(IoOlIOIOl_oIOIIooII.Theme.Accent.R + 0.1, 1),
+        math.min(IoOlIOIOl_oIOIIooII.Theme.Accent.G + 0.1, 1),
+        math.min(IoOlIOIOl_oIOIIooII.Theme.Accent.B + 0.1, 1)
     )
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
 end
 
-function _O0I0IoOIIlloool010oIO__:llO0IOI01I1l0lOIIolII_IIoO0lo_(_I1IlI0ooO0I_l0IllIIIlOlO0IoIO_, _ll0llIIIIloIollOIl1I0ll_0I)
-    local o1_lo1l10OllO0loOl0lOO0O_0O0O = {
-        IOO0_I0O001IOOIoll0II0Ol_0_l = {
-            _IlIIo0III00lIIol_IIl11llOo00I = Color3._o1o100llllOIOlOO0IloO0(88, 166, 255),
-            _lo0loIo_0oOIoIOI0ool0IlooII0l1OO = Color3._o1o100llllOIOlOO0IloO0(108, 186, 255),
-            _IllOoOII10IIl0IO0IlIIo = Color3._o1o100llllOIOlOO0IloO0(16, 16, 20),
-            _IOl0IoIl0IIOlolIOIOl_O_ = Color3._o1o100llllOIOlOO0IloO0(24, 24, 28),
-            oI0IlIoII0lllOOIOI0_l_0ollOloIo = Color3._o1o100llllOIOlOO0IloO0(32, 32, 38),
-            0_I1lll1l0lOlO01IOlIl = Color3._o1o100llllOIOlOO0IloO0(42, 42, 48),
-            IOlIlll01oI00Ol0lOOI = Color3._o1o100llllOIOlOO0IloO0(245, 245, 250),
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            _0IIOIoIoolollIOOOllIlOl = Color3._o1o100llllOIOlOO0IloO0(180, 180, 190),
-            _IlOoIlIlIIIlOOl01I_oIlolOO = Color3._o1o100llllOIOlOO0IloO0(120, 120, 135),
-            _0OIlIOoIollO0O0I0lI1OI = Color3._o1o100llllOIOlOO0IloO0(60, 60, 70),
-            ll0lOI01l0O111l1IOoI0Illl = Color3._o1o100llllOIOlOO0IloO0(72, 187, 120),
-            _OO01lllI0I0IlI0IOIllll1 = Color3._o1o100llllOIOlOO0IloO0(251, 191, 36),
-            IIO_0lllI0OOlOIII0Il1_IIl0OloO1l = Color3._o1o100llllOIOlOO0IloO0(248, 113, 113),
-            0OOolllIlI0o0lloOllO = Color3._o1o100llllOIOlOO0IloO0(88, 166, 255),
-            _ollOOIIO_lIOlIO1oO0O01o0o00l00ll = Color3._o1o100llllOIOlOO0IloO0(147, 51, 234),
-            _lO_l_IoIolIo1OOlIllII0O = Color3._o1o100llllOIOlOO0IloO0(0, 0, 0)
+function Nexus:SetTheme(OIo_IoOOoI, oIIoOIolOOOoI)
+    local IoIoOOIlOIOIIooOI = {
+        Dark = {
+            Accent = Color3.fromRGB(88, 166, 255),
+            AccentHover = Color3.fromRGB(108, 186, 255),
+            Background = Color3.fromRGB(16, 16, 20),
+            Surface = Color3.fromRGB(24, 24, 28),
+            SurfaceHigh = Color3.fromRGB(32, 32, 38),
+            SurfaceHighest = Color3.fromRGB(42, 42, 48),
+            Ioolo_OoIoIIoOIl = Color3.fromRGB(245, 245, 250),
+            TextSub = Color3.fromRGB(180, 180, 190),
+            TextMuted = Color3.fromRGB(120, 120, 135),
+            Outline = Color3.fromRGB(60, 60, 70),
+            Success = Color3.fromRGB(72, 187, 120),
+            Warning = Color3.fromRGB(251, 191, 36),
+            Error = Color3.fromRGB(248, 113, 113),
+            Gradient1 = Color3.fromRGB(88, 166, 255),
+            Gradient2 = Color3.fromRGB(147, 51, 234),
+            Shadow = Color3.fromRGB(0, 0, 0)
         },
-        _1I1lOIIOOollI10ol_O_0ol0Ol0o = {
-            _IlIIo0III00lIIol_IIl11llOo00I = Color3._o1o100llllOIOlOO0IloO0(59, 130, 246),
-            _lo0loIo_0oOIoIOI0ool0IlooII0l1OO = Color3._o1o100llllOIOlOO0IloO0(79, 150, 266),
-            _IllOoOII10IIl0IO0IlIIo = Color3._o1o100llllOIOlOO0IloO0(248, 250, 252),
-            _IOl0IoIl0IIOlolIOIOl_O_ = Color3._o1o100llllOIOlOO0IloO0(255, 255, 255),
-            oI0IlIoII0lllOOIOI0_l_0ollOloIo = Color3._o1o100llllOIOlOO0IloO0(241, 245, 249),
-            0_I1lll1l0lOlO01IOlIl = Color3._o1o100llllOIOlOO0IloO0(226, 232, 240),
-            IOlIlll01oI00Ol0lOOI = Color3._o1o100llllOIOlOO0IloO0(15, 23, 42),
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            _0IIOIoIoolollIOOOllIlOl = Color3._o1o100llllOIOlOO0IloO0(71, 85, 105),
-            _IlOoIlIlIIIlOOl01I_oIlolOO = Color3._o1o100llllOIOlOO0IloO0(148, 163, 184),
-            _0OIlIOoIollO0O0I0lI1OI = Color3._o1o100llllOIOlOO0IloO0(203, 213, 225),
-            ll0lOI01l0O111l1IOoI0Illl = Color3._o1o100llllOIOlOO0IloO0(34, 197, 94),
-            _OO01lllI0I0IlI0IOIllll1 = Color3._o1o100llllOIOlOO0IloO0(245, 158, 11),
-            IIO_0lllI0OOlOIII0Il1_IIl0OloO1l = Color3._o1o100llllOIOlOO0IloO0(239, 68, 68),
-            0OOolllIlI0o0lloOllO = Color3._o1o100llllOIOlOO0IloO0(59, 130, 246),
-            _ollOOIIO_lIOlIO1oO0O01o0o00l00ll = Color3._o1o100llllOIOlOO0IloO0(147, 51, 234),
-            _lO_l_IoIolIo1OOlIllII0O = Color3._o1o100llllOIOlOO0IloO0(0, 0, 0)
+        Light = {
+            Accent = Color3.fromRGB(59, 130, 246),
+            AccentHover = Color3.fromRGB(79, 150, 266),
+            Background = Color3.fromRGB(248, 250, 252),
+            Surface = Color3.fromRGB(255, 255, 255),
+            SurfaceHigh = Color3.fromRGB(241, 245, 249),
+            SurfaceHighest = Color3.fromRGB(226, 232, 240),
+            Ioolo_OoIoIIoOIl = Color3.fromRGB(15, 23, 42),
+            TextSub = Color3.fromRGB(71, 85, 105),
+            TextMuted = Color3.fromRGB(148, 163, 184),
+            Outline = Color3.fromRGB(203, 213, 225),
+            Success = Color3.fromRGB(34, 197, 94),
+            Warning = Color3.fromRGB(245, 158, 11),
+            Error = Color3.fromRGB(239, 68, 68),
+            Gradient1 = Color3.fromRGB(59, 130, 246),
+            Gradient2 = Color3.fromRGB(147, 51, 234),
+            Shadow = Color3.fromRGB(0, 0, 0)
         },
-        _IIO00OlOo_oOo0OlIoollI = {
-            _IlIIo0III00lIIol_IIl11llOo00I = Color3._o1o100llllOIOlOO0IloO0(6, 182, 212),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            _lo0loIo_0oOIoIOI0ool0IlooII0l1OO = Color3._o1o100llllOIOlOO0IloO0(34, 197, 94),
-            _IllOoOII10IIl0IO0IlIIo = Color3._o1o100llllOIOlOO0IloO0(8, 17, 25),
-            _IOl0IoIl0IIOlolIOIOl_O_ = Color3._o1o100llllOIOlOO0IloO0(15, 30, 42),
-            oI0IlIoII0lllOOIOI0_l_0ollOloIo = Color3._o1o100llllOIOlOO0IloO0(22, 45, 62),
-            0_I1lll1l0lOlO01IOlIl = Color3._o1o100llllOIOlOO0IloO0(30, 58, 82),
-            IOlIlll01oI00Ol0lOOI = Color3._o1o100llllOIOlOO0IloO0(226, 245, 255),
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            _0IIOIoIoolollIOOOllIlOl = Color3._o1o100llllOIOlOO0IloO0(164, 202, 225),
-            _IlOoIlIlIIIlOOl01I_oIlolOO = Color3._o1o100llllOIOlOO0IloO0(125, 162, 185),
-            _0OIlIOoIollO0O0I0lI1OI = Color3._o1o100llllOIOlOO0IloO0(45, 78, 102),
-            ll0lOI01l0O111l1IOoI0Illl = Color3._o1o100llllOIOlOO0IloO0(72, 187, 120),
-            _OO01lllI0I0IlI0IOIllll1 = Color3._o1o100llllOIOlOO0IloO0(251, 191, 36),
-            IIO_0lllI0OOlOIII0Il1_IIl0OloO1l = Color3._o1o100llllOIOlOO0IloO0(248, 113, 113),
-            0OOolllIlI0o0lloOllO = Color3._o1o100llllOIOlOO0IloO0(6, 182, 212),
-            _ollOOIIO_lIOlIO1oO0O01o0o00l00ll = Color3._o1o100llllOIOlOO0IloO0(59, 130, 246),
-            _lO_l_IoIolIo1OOlIllII0O = Color3._o1o100llllOIOlOO0IloO0(0, 0, 0)
+        Ocean = {
+            Accent = Color3.fromRGB(6, 182, 212),
+            AccentHover = Color3.fromRGB(34, 197, 94),
+            Background = Color3.fromRGB(8, 17, 25),
+            Surface = Color3.fromRGB(15, 30, 42),
+            SurfaceHigh = Color3.fromRGB(22, 45, 62),
+            SurfaceHighest = Color3.fromRGB(30, 58, 82),
+            Ioolo_OoIoIIoOIl = Color3.fromRGB(226, 245, 255),
+            TextSub = Color3.fromRGB(164, 202, 225),
+            TextMuted = Color3.fromRGB(125, 162, 185),
+            Outline = Color3.fromRGB(45, 78, 102),
+            Success = Color3.fromRGB(72, 187, 120),
+            Warning = Color3.fromRGB(251, 191, 36),
+            Error = Color3.fromRGB(248, 113, 113),
+            Gradient1 = Color3.fromRGB(6, 182, 212),
+            Gradient2 = Color3.fromRGB(59, 130, 246),
+            Shadow = Color3.fromRGB(0, 0, 0)
         },
-        0OIlI1IlII10lO1OlllllO = {
-            _IlIIo0III00lIIol_IIl11llOo00I = Color3._o1o100llllOIOlOO0IloO0(255, 20, 147),
-            _lo0loIo_0oOIoIOI0ool0IlooII0l1OO = Color3._o1o100llllOIOlOO0IloO0(255, 60, 180),
-            _IllOoOII10IIl0IO0IlIIo = Color3._o1o100llllOIOlOO0IloO0(10, 10, 15),
-            _IOl0IoIl0IIOlolIOIOl_O_ = Color3._o1o100llllOIOlOO0IloO0(18, 18, 25),
-            oI0IlIoII0lllOOIOI0_l_0ollOloIo = Color3._o1o100llllOIOlOO0IloO0(25, 25, 35),
-            0_I1lll1l0lOlO01IOlIl = Color3._o1o100llllOIOlOO0IloO0(35, 35, 48),
-            IOlIlll01oI00Ol0lOOI = Color3._o1o100llllOIOlOO0IloO0(255, 255, 255),
-            _0IIOIoIoolollIOOOllIlOl = Color3._o1o100llllOIOlOO0IloO0(200, 200, 220),
-            _IlOoIlIlIIIlOOl01I_oIlolOO = Color3._o1o100llllOIOlOO0IloO0(150, 150, 170),
-            _0OIlIOoIollO0O0I0lI1OI = Color3._o1o100llllOIOlOO0IloO0(255, 20, 147),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            ll0lOI01l0O111l1IOoI0Illl = Color3._o1o100llllOIOlOO0IloO0(57, 255, 20),
-            _OO01lllI0I0IlI0IOIllll1 = Color3._o1o100llllOIOlOO0IloO0(255, 165, 0),
-            IIO_0lllI0OOlOIII0Il1_IIl0OloO1l = Color3._o1o100llllOIOlOO0IloO0(255, 69, 0),
-            0OOolllIlI0o0lloOllO = Color3._o1o100llllOIOlOO0IloO0(255, 20, 147),
-            _ollOOIIO_lIOlIO1oO0O01o0o00l00ll = Color3._o1o100llllOIOlOO0IloO0(138, 43, 226),
-            _lO_l_IoIolIo1OOlIllII0O = Color3._o1o100llllOIOlOO0IloO0(0, 0, 0)
+        Neon = {
+            Accent = Color3.fromRGB(255, 20, 147),
+            AccentHover = Color3.fromRGB(255, 60, 180),
+            Background = Color3.fromRGB(10, 10, 15),
+            Surface = Color3.fromRGB(18, 18, 25),
+            SurfaceHigh = Color3.fromRGB(25, 25, 35),
+            SurfaceHighest = Color3.fromRGB(35, 35, 48),
+            Ioolo_OoIoIIoOIl = Color3.fromRGB(255, 255, 255),
+            TextSub = Color3.fromRGB(200, 200, 220),
+            TextMuted = Color3.fromRGB(150, 150, 170),
+            Outline = Color3.fromRGB(255, 20, 147),
+            Success = Color3.fromRGB(57, 255, 20),
+            Warning = Color3.fromRGB(255, 165, 0),
+            Error = Color3.fromRGB(255, 69, 0),
+            Gradient1 = Color3.fromRGB(255, 20, 147),
+            Gradient2 = Color3.fromRGB(138, 43, 226),
+            Shadow = Color3.fromRGB(0, 0, 0)
         }
     }
     
-    -- oOI_Io1o_1OIOl00Ol0lI0llO1o_lO1o theme handling
-    if ((function() return "a" == "a" end)()) and _ll0llIIIIloIollOIl1I0ll_0I then
-        o1_lo1l10OllO0loOl0lOO0O_0O0O.oOI_Io1o_1OIOl00Ol0lI0llO1o_lO1o = {}
-        for _0_lOlolIIOlo1O00lIOoI1, _OOllIIO0_II0Ol00IIol1ool in pairs(_O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_) do
-            o1_lo1l10OllO0loOl0lOO0O_0O0O.oOI_Io1o_1OIOl00Ol0lI0llO1o_lO1o[_0_lOlolIIOlo1O00lIOoI1] = _ll0llIIIIloIollOIl1I0ll_0I[_0_lOlolIIOlo1O00lIOoI1] or _OOllIIO0_II0Ol00IIol1ool
+    -- Custom theme handling
+    if oIIoOIolOOOoI then
+        IoIoOOIlOIOIIooOI.Custom = {}
+        for _I_IOoIIlOl, loolOoIIlIoloIIo_ll in pairs(IoOlIOIOl_oIOIIooII.Theme) do
+            IoIoOOIlOIOIIooOI.Custom[_I_IOoIIlOl] = oIIoOIolOOOoI[_I_IOoIIlOl] or loolOoIIlIoloIIo_ll
         end
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
     end
     
-    local _IO0I_IOIoOIOooollI0lO = o1_lo1l10OllO0loOl0lOO0O_0O0O[_I1IlI0ooO0I_l0IllIIIlOlO0IoIO_]
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-    if _IO0I_IOIoOIOooollI0lO then
-        for _0_lOlolIIOlo1O00lIOoI1, _OOllIIO0_II0Ol00IIol1ool in pairs(_IO0I_IOIoOIOooollI0lO) do
-            _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_[_0_lOlolIIOlo1O00lIOoI1] = _OOllIIO0_II0Ol00IIol1ool
+    local loIOlOol_OIlOOO_Ill = IoIoOOIlOIOIIooOI[OIo_IoOOoI]
+    if loIOlOol_OIlOOO_Ill then
+        for _I_IOoIIlOl, loolOoIIlIoloIIo_ll in pairs(loIOlOol_OIlOOO_Ill) do
+            IoOlIOIOl_oIOIIooII.Theme[_I_IOoIIlOl] = loolOoIIlIoloIIo_ll
         end
         
-        IO1oloollOO101oooOo_llllOlI0ol()
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+        llllloIlooI()
         
-        if _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO then
-            _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO:_I_oIlOl1ol0I1OlOl_l0_O0lll(_O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_)
+        if IoOlIOIOl_oIOIIooII.ThemeChanged then
+            IoOlIOIOl_oIOIIooII.ThemeChanged:Fire(IoOlIOIOl_oIOIIooII.Theme)
         end
         
         return true
@@ -811,4926 +725,4488 @@ local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.444846817763552
 end
 
 --// Initialize default theme
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-IO1oloollOO101oooOo_llllOlI0ol()
+llllloIlooI()
 
---// Enhanced _olI0OollIlO1lIoolO00I Component
-function _O0I0IoOIIlloool010oIO__:OOll_O0OIoOlIIol1lIO_lIoo0lI(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
+--// Enhanced Dropdown Component
+function Nexus:CreateModernDropdown(_oOoOoOlOlIlIllooO)
     -- Config validation
-    local 0OoooIO_1OOlIIlolIlIooOO0 = {
-        IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[33],
-        II_OlIII1_lIlOO0I0oOOO1001lI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.II_OlIII1_lIlOO0I0oOOO1001lI,
-        _IOI0loO0I0oOI_OOl00l = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOI0loO0I0oOI_OOl00l or {oIOoII_0IIlOII1IOI1lI0_OO0o[34]},
-        _lOI0IOololO1oolIl0I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._lOI0IOololO1oolIl0I,
-        OOlololOIll0lloI1O0O_O1OII_oo_I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.OOlololOIll0lloI1O0O_O1OII_oo_I or false,
-        _1olI0IlllIIOO_ll1OlIol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._1olI0IlllIIOO_ll1OlIol or false,
-        IlO0lollolI1lIIo0O_Il__lo = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IlO0lollolI1lIIo0O_Il__lo or 6,
-        __lloOlI1olO1oOlOOlI_l1_ = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.__lloOlI1olO1oOlOOlI_l1_ or oIOoII_0IIlOII1IOI1lI0_OO0o[35],
-        l0l_OoIlIO0lO1lI0I01lI1IIOIooII = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.l0l_OoIlIO0lO1lI0I01lI1IIOIooII,
-        _IOOIlOoI_IlllIlo_IIIoI1Illol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end,
-        Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
+    local lOO_OlOolIO_loo_ = {
+        Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or IO_oOOllOOoooIo_[33],
+        O_OoOO_I_oI = _oOoOoOlOlIlIllooO.Parent,
+        Options = _oOoOoOlOlIlIllooO.Options or {IO_oOOllOOoooIo_[34]},
+        IOIOI_OIIOlolooOolo = _oOoOoOlOlIlIllooO.Default,
+        MultiSelect = _oOoOoOlOlIlIllooO.MultiSelect or false,
+        Search = _oOoOoOlOlIlIllooO.Search or false,
+        MaxVisible = _oOoOoOlOlIlIllooO.MaxVisible or 6,
+        OloIoIlIlOIolOIlOII = _oOoOoOlOlIlIllooO.Placeholder or IO_oOOllOOoooIo_[35],
+        Description = _oOoOoOlOlIlIllooO.Description,
+        _OlllIIO_looolo_ = _oOoOoOlOlIlIllooO.Callback or function() end,
+        _l__lI_Oll_l = _oOoOoOlOlIlIllooO.Flag
     }
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
 
     -- Validation
-    if (not (function() return false end)()) and not 0OoooIO_1OOlIIlolIlIooOO0.II_OlIII1_lIlOO0I0oOOO1001lI then
-        error(oIOoII_0IIlOII1IOI1lI0_OO0o[36])
+    if not lOO_OlOolIO_loo_.Parent then
+        error(IO_oOOllOOoooIo_[36])
     end
     
-    if type(0OoooIO_1OOlIIlolIlIooOO0._IOI0loO0I0oOI_OOl00l) ~= "table" or #0OoooIO_1OOlIIlolIlIooOO0._IOI0loO0I0oOI_OOl00l == 0 then
-        warn(oIOoII_0IIlOII1IOI1lI0_OO0o[37])
-        0OoooIO_1OOlIIlolIlIooOO0._IOI0loO0I0oOI_OOl00l = {"No _IOI0loO0I0oOI_OOl00l"}
+    if type(lOO_OlOolIO_loo_.Options) ~= "table" or #lOO_OlOolIO_loo_.Options == 0 then
+        warn(IO_oOOllOOoooIo_[37])
+        lOO_OlOolIO_loo_.Options = {"No Options"}
     end
 
     -- State management
-    local lOlIII00OIIOlloOoOlIO0ll_II = {
-        _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I = false,
-        _OOIIlllI_0II01l_OIolloOol_lI_o = 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I and {} or (0OoooIO_1OOlIIlolIlIooOO0._lOI0IOololO1oolIl0I or 0OoooIO_1OOlIIlolIlIooOO0._IOI0loO0I0oOI_OOl00l[1]),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        ololOoI1l0l1l1lIlO0I0l0OO_olI_lI = 0OoooIO_1OOlIIlolIlIooOO0._IOI0loO0I0oOI_OOl00l,
-        ooOlO00I0_0I0lOOIl0ll0I0ll0o = "",
-        OIl_OoIllOIll0o0I00lI0olol = 1,
-        _lI_oIll0OlIO00IIl_0lOOo_0oll00 = nil,
-        00l_OIIIIl0lllO__0Oo0l = nil
+    local lIIIoI_oIoOOOo = {
+        oOoI_OlOIoooIloOI_ = false,
+        Selected = lOO_OlOolIO_loo_.MultiSelect and {} or (lOO_OlOolIO_loo_.Default or lOO_OlOolIO_loo_.Options[1]),
+        FilteredOptions = lOO_OlOolIO_loo_.Options,
+        SearchText = "",
+        HoveredIndex = 1,
+        AnimationTween = nil,
+        SearchDebounce = nil
     }
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
 
-    -- _00l00l1l0ooI0I01oOIIO0IIlO011 main container
-    local _oolIlolOIOOIlOIooI0IIOlIIll = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[38], {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[39] .. 0OoooIO_1OOlIIlolIlIooOO0.IOlIlll01oI00Ol0lOOI,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 36),
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        II_OlIII1_lIlOO0I0oOOO1001lI = 0OoooIO_1OOlIIlolIlIooOO0.II_OlIII1_lIlOO0I0oOOO1001lI
+    -- Create main container
+    local oIOl__IlIoIO_IIlI = _OI_olOOlOI(IO_oOOllOOoooIo_[38], {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[39] .. lOO_OlOolIO_loo_.Text,
+        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 36),
+        oIo_o_IIll = 1,
+        O_OoOO_I_oI = lOO_OlOolIO_loo_.Parent
     })
 
-    -- _00l00l1l0ooI0I01oOIIO0IIlO011 dropdown _ooIolIIO0I000I_oOl0lOI
-    local lI1OllOIO1lIlO_1OIoOl00lOl = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[40], {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[41],
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-        _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        IOlIlll01oI00Ol0lOOI = "",
-        lO0lIoIIlIOoI0o0oloOIOO = false,
-        _I0I0IoI_0Oll0lllO1lll = true,
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        II_OlIII1_lIlOO0I0oOOO1001lI = _oolIlolOIOOIlOIooI0IIOlIIll
+    -- Create dropdown button
+    local OllI_O__Il = _OI_olOOlOI(IO_oOOllOOoooIo_[40], {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[41],
+        IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+        BorderSizePixel = 0,
+        Ioolo_OoIoIIoOIl = "",
+        lOoIOlOOloIl_O = false,
+        ooloolOOlIoOolOool = true,
+        O_OoOO_I_oI = oIOl__IlIoIO_IIlI
     })
 
-    _1lOOlOIIO_0IO_IoOIl00Il(lI1OllOIO1lIlO_1OIoOl00lOl, 8)
-    ___IoO_1_O1loO01IIol10oOOIllO1(lI1OllOIO1lIlO_1OIoOl00lOl, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.7)
+    llOl_IoIII_oIOIIo(OllI_O__Il, 8)
+    lIO__OIIOllOlOOl(OllI_O__Il, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.7)
 
     -- Gradient background
-    local _IOIllO_II1Ill0lol0O0I_IIo = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[42], {
-        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI({
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 1, 1)),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0.95, 0.95, 0.95))
+    local _oloOOo_OIo = _OI_olOOlOI(IO_oOOllOOoooIo_[42], {
+        lOO_lIoI_O_o = ColorSequence.new({
+            ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
+            ColorSequenceKeypoint.new(1, Color3.new(0.95, 0.95, 0.95))
         }),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        _OllIII_OIlIIOll1OlI_1lo = 90,
-        _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI(0.8),
-        II_OlIII1_lIlOO0I0oOOO1001lI = lI1OllOIO1lIlO_1OIoOl00lOl
+        Rotation = 90,
+        Transparency = NumberSequence.new(0.8),
+        O_OoOO_I_oI = OllI_O__Il
     })
 
-    -- lOlOOo0I1Olllo0olIIIo _l1OoIIII0Oo__0l0oIOOo00ooO frame
-    local _OI_l1oII0Oo0l_00IlIOoIIo = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[43],
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -24, 1, 0),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 0),
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        II_OlIII1_lIlOO0I0oOOO1001lI = lI1OllOIO1lIlO_1OIoOl00lOl
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+    -- Button content frame
+    local lloIOoOOIlooIoIO = _OI_olOOlOI("Frame", {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[43],
+        IIlolo_Ilo__ = UDim2.new(1, -24, 1, 0),
+        lOoOolOOolool = UDim2.new(0, 12, 0, 0),
+        oIo_o_IIll = 1,
+        O_OoOO_I_oI = OllI_O__Il
     })
 
-    -- _OOIIlllI_0II01l_OIolloOol_lI_o _0ol0I0IOollll0OlOO1 display
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-    local OO1IlOl010IIOI_Il00IIOII_o000 = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[44], {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[45],
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -24, 1, 0),
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0.__lloOlI1olO1oOlOOlI_l1_,
-        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO,
-        IOollOOIOoOlo00OlIIl1I = 14,
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-        lIllOlI_lI0IIooI00IOloo0IOlOOl = Enum.lIllOlI_lI0IIooI00IOloo0IOlOOl._1O_0OlOo1lIOoIO0IOO_IlI0Ol1OoloII,
-        II_OlIII1_lIlOO0I0oOOO1001lI = _OI_l1oII0Oo0l_00IlIOoIIo
-    })
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-
-    -- _olI0OollIlO1lIoolO00I arrow
-    local _lIIllol0lOII1olIIoIlO0O1IIoOl0O1I = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[46],
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 20, 1, 0),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -20, 0, 0),
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        IOlIlll01oI00Ol0lOOI = oIOoII_0IIlOII1IOI1lI0_OO0o[47],
-        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-        IOollOOIOoOlo00OlIIl1I = 12,
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o.Ol1OI_IIl10I1IoIIoIl0I0IO_,
-        __1IOOIllIl0ll0I_ll1lI = Enum.__1IOOIllIl0ll0I_ll1lI.Ol1OI_IIl10I1IoIIoIl0I0IO_,
-        II_OlIII1_lIlOO0I0oOOO1001lI = _OI_l1oII0Oo0l_00IlIOoIIo
+    -- Selected text display
+    local IIoIlOlllIIl_Il = _OI_olOOlOI(IO_oOOllOOoooIo_[44], {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[45],
+        IIlolo_Ilo__ = UDim2.new(1, -24, 1, 0),
+        oIo_o_IIll = 1,
+        Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_.Placeholder,
+        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted,
+        TextSize = 14,
+        IlIoOollo_lIllII = Enum.Font.GothamMedium,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        O_OoOO_I_oI = lloIOoOOIlooIoIO
     })
 
-    -- OIOl10lO_llolOlllIoIIIIOoO_IIlOl root llOOlOII_0llI00IOIlO1lOl0I for panel
-    local I0_ll_IIOIIO_00IoIOllOoIlO__IolO_ = _oolIlolOIOOIlOIooI0IIOlIIll:_10OOlIO0IloIoIll1oOlO(oIOoII_0IIlOII1IOI1lI0_OO0o[48])
-    if ((function() return 1 + 1 == 2 end)()) and not I0_ll_IIOIIO_00IoIOllOoIlO__IolO_ then
-        warn(oIOoII_0IIlOII1IOI1lI0_OO0o[49])
-        I0_ll_IIOIIO_00IoIOllOoIlO__IolO_ = _oolIlolOIOOIlOIooI0IIOlIIll
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+    -- Dropdown arrow
+    local IlIIOlIoloII_ = _OI_olOOlOI("TextLabel", {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[46],
+        IIlolo_Ilo__ = UDim2.new(0, 20, 1, 0),
+        lOoOolOOolool = UDim2.new(1, -20, 0, 0),
+        oIo_o_IIll = 1,
+        Ioolo_OoIoIIoOIl = IO_oOOllOOoooIo_[47],
+        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+        TextSize = 12,
+        IlIoOollo_lIllII = Enum.Font.GothamBold,
+        TextXAlignment = Enum.TextXAlignment.Center,
+        TextYAlignment = Enum.TextYAlignment.Center,
+        O_OoOO_I_oI = lloIOoOOIlooIoIO
+    })
+
+    -- Get root ScreenGui for panel
+    local IllOO__OoOlOI_O = Container:FindFirstAncestorOfClass(IO_oOOllOOoooIo_[48])
+    if not IllOO__OoOlOI_O then
+        warn(IO_oOOllOOoooIo_[49])
+        IllOO__OoOlOI_O = oIOl__IlIoIO_IIlI
     end
 
-    -- _00l00l1l0ooI0I01oOIIO0IIlO011 dropdown panel (initially hidden) - parented to llOOlOII_0llI00IOIlO1lOl0I
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    local 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[50] .. 0OoooIO_1OOlIIlolIlIooOO0.IOlIlll01oI00Ol0lOOI,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-        OOO0ll1II1oOI1l0lOIOII = Vector2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0),
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-        _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-        _I0I0IoI_0Oll0lllO1lll = true,
-        _OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = false,
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        O_OIooI1IlII0I0IOoIll = 1000,
-        II_OlIII1_lIlOO0I0oOOO1001lI = I0_ll_IIOIIO_00IoIOllOoIlO__IolO_
+    -- Create dropdown panel (initially hidden) - parented to ScreenGui
+    local IlOoIOII__OIOOO = _OI_olOOlOI("Frame", {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[50] .. lOO_OlOolIO_loo_.Text,
+        IIlolo_Ilo__ = UDim2.fromOffset(0, 0),
+        lOoOolOOolool = UDim2.fromOffset(0, 0),
+        AnchorPoint = Vector2.new(0, 0),
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+        BorderSizePixel = 0,
+        ooloolOOlIoOolOool = true,
+        IOlooolIlIO_OlOIO_I = false,
+        ZIndex = 1000,
+        O_OoOO_I_oI = IllOO__OoOlOI_O
     })
 
-    _1lOOlOIIO_0IO_IoOIl00Il(0lIlI0l1OlI01l0I1O_00OOOlol1lI_o, 8)
-    ___IoO_1_O1loO01IIol10oOOIllO1(0lIlI0l1OlI01l0I1O_00OOOlol1lI_o, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.5)
+    llOl_IoIII_oIOIIo(IlOoIOII__OIOOO, 8)
+    lIO__OIIOllOlOOl(IlOoIOII__OIOOO, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.5)
 
     -- Function to update panel position
-    local function _lIlOIoIllloIl0IIlo0I()
-        if not lI1OllOIO1lIlO_1OIoOl00lOl or not lI1OllOIO1lIlO_1OIoOl00lOl.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+    local function II_IlllIOllII()
+        if not OllI_O__Il or not OllI_O__Il.Parent then return end
         
-        local _lO0oIl01lIOOOol1loIo_0o = lI1OllOIO1lIlO_1OIoOl00lOl._lloOIIOOlI0lOlOllI_IIOOIl0I
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        local _IoIOOIlooII_OIllIIO00OO10IIo = lI1OllOIO1lIlO_1OIoOl00lOl.__Ioll10_OOI0olIIIlo
+        local _IlIO_oIOOIO = OllI_O__Il.AbsolutePosition
+        local llIlloIllo = OllI_O__Il.AbsoluteSize
         
-        0lIlI0l1OlI01l0I1O_00OOOlol1lI_o._l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            _lO0oIl01lIOOOol1loIo_0o._oIIlOIloI_l0II0I00l00OIOIoo,
-            _lO0oIl01lIOOOol1loIo_0o._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + _IoIOOIlooII_OIllIIO00OO10IIo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + 4
+        IlOoIOII__OIOOO.Position = UDim2.fromOffset(
+            _IlIO_oIOOIO.X,
+            _IlIO_oIOOIO.Y + llIlloIllo.Y + 4
         )
         
-        -- IOIOoOoII1oOO1l1_O_Oo0O0lII width to OIlIlIolIIlIOIolIlOlIl0 _ooIolIIO0I000I_oOl0lOI
-        if ((function() local x = 5 return x > 3 end)()) and lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
-            0lIlI0l1OlI01l0I1O_00OOOlol1lI_o.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(_IoIOOIlooII_OIllIIO00OO10IIo._oIIlOIloI_l0II0I00l00OIOIoo, 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o.0IIlOooOIollloIOIII0o_0IIII_lo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O._oIIO_1l00lII_lOOOOIoo0l)
+        -- Update width to match button
+        if lIIIoI_oIoOOOo.IsOpen then
+            IlOoIOII__OIOOO.Size = UDim2.fromOffset(llIlloIllo.X, IlOoIOII__OIOOO.Size.Y.Offset)
         end
     end
 
-    -- Add _o1I0IIlOolOllIl_I0OlOll lOlOOo0I1Olllo0olIIIo untuk SEMUA dropdown (Single & Multi Select) dengan styling berbeda
-    local OlII0OOo0IOO0lIIlIOI1II0loIOI = nil
-    local _lI10lOoOlOl_0lllIIOlII0IlIolIIOo_ = 32
-    local l1OIo0lIOO01lloI1I_l
-    local _lOOOIO0O_llOIIo0I_0Oolo_0
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-    local _O0l00O0oOo1Oo1lI1oOlO0I
+    -- Add Close Button untuk SEMUA dropdown (Single & Multi Select) dengan styling berbeda
+    local _IoolOloOIlloO = nil
+    local OollOIlol__OOo_oII = 32
+    local lOooO_lIIlOOlOOo_oO
+    local IoIIOol___Ioo
+    local oolO_IIlloIO_oIoOIo
 
-    OlII0OOo0IOO0lIIlIOI1II0loIOI = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[51],
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -16, 0, 28),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 8, 0, 4),
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-        _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-        II_OlIII1_lIlOO0I0oOOO1001lI = 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o
+    _IoolOloOIlloO = _OI_olOOlOI("Frame", {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[51],
+        IIlolo_Ilo__ = UDim2.new(1, -16, 0, 28),
+        lOoOolOOolool = UDim2.new(0, 8, 0, 4),
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+        BorderSizePixel = 0,
+        O_OoOO_I_oI = IlOoIOII__OIOOO
     })
 
-    _1lOOlOIIO_0IO_IoOIl00Il(OlII0OOo0IOO0lIIlIOI1II0loIOI, 6)
+    llOl_IoIII_oIOIIo(_IoolOloOIlloO, 6)
 
-    local _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[52],
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        IOlIlll01oI00Ol0lOOI = "",
-        II_OlIII1_lIlOO0I0oOOO1001lI = OlII0OOo0IOO0lIIlIOI1II0loIOI
+    local oIOoOlOOOOIloOI = _OI_olOOlOI("TextButton", {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[52],
+        IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+        oIo_o_IIll = 1,
+        Ioolo_OoIoIIoOIl = "",
+        O_OoOO_I_oI = _IoolOloOIlloO
     })
 
-    -- Different styling for OOlololOIll0lloI1O0O_O1OII_oo_I vs Single Select
-    local o0ll0loIll111o10__lolIIOllo1o1IlOl, _IIO_IIoIoOo_oIo0Oo0o_I, Il00OIIlI0ol0loI1ll_1OO
-    if ((function() return 1 + 1 == 2 end)()) and 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-        o0ll0loIll111o10__lolIIOllo1o1IlOl = oIOoII_0IIlOII1IOI1lI0_OO0o[53]  -- Checkmark untuk confirm selection
-        _IIO_IIoIoOo_oIo0Oo0o_I = oIOoII_0IIlOII1IOI1lI0_OO0o[54]
-        Il00OIIlI0ol0loI1ll_1OO = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
+    -- Different styling for MultiSelect vs Single Select
+    local IolO__oIoolooIIoI, IIooOIloooI, oloOoIII_O
+    if lOO_OlOolIO_loo_.MultiSelect then
+        IolO__oIoolooIIoI = IO_oOOllOOoooIo_[53]  -- Checkmark untuk confirm selection
+        IIooOIloooI = IO_oOOllOOoooIo_[54]
+        oloOoIII_O = IoOlIOIOl_oIOIIooII.Theme.Accent
     else
-        o0ll0loIll111o10__lolIIOllo1o1IlOl = oIOoII_0IIlOII1IOI1lI0_OO0o[55]  -- _oIIlOIloI_l0II0I00l00OIOIoo untuk IoIo00II0I1IlIIoIIllolOO0IlOIlolI
-        _IIO_IIoIoOo_oIo0Oo0o_I = oIOoII_0IIlOII1IOI1lI0_OO0o[56] 
-        Il00OIIlI0ol0loI1ll_1OO = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl
+        IolO__oIoolooIIoI = IO_oOOllOOoooIo_[55]  -- X untuk cancel
+        IIooOIloooI = IO_oOOllOOoooIo_[56] 
+        oloOoIII_O = IoOlIOIOl_oIOIIooII.Theme.TextSub
     end
 
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    -- OOOoIOOollOo0OoI0I10IIolO0Io
-    local _IIIIII0II0o0IIIIOlIOO_Il = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 20, 1, 0),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 8, 0, 0),
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        IOlIlll01oI00Ol0lOOI = o0ll0loIll111o10__lolIIOllo1o1IlOl,
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        000O_IOOIOI_0lOll_I1o10l = Il00OIIlI0ol0loI1ll_1OO,
-        IOollOOIOoOlo00OlIIl1I = 12,
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o.Ol1OI_IIl10I1IoIIoIl0I0IO_,
-        II_OlIII1_lIlOO0I0oOOO1001lI = OlII0OOo0IOO0lIIlIOI1II0loIOI
-    })
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-
-    -- IOlIlll01oI00Ol0lOOI
-    local _IOl0lIoI0IlI_0IOoIooOOllOOol1 = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -28, 1, 0),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 24, 0, 0),
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-        IOlIlll01oI00Ol0lOOI = _IIO_IIoIoOo_oIo0Oo0o_I,
-        000O_IOOIOI_0lOll_I1o10l = Il00OIIlI0ol0loI1ll_1OO,
-        IOollOOIOoOlo00OlIIl1I = 12,
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-        II_OlIII1_lIlOO0I0oOOO1001lI = OlII0OOo0IOO0lIIlIOI1II0loIOI
+    -- Icon
+    local _II_IoOoOolIoo = _OI_olOOlOI("TextLabel", {
+        IIlolo_Ilo__ = UDim2.new(0, 20, 1, 0),
+        lOoOolOOolool = UDim2.new(0, 8, 0, 0),
+        oIo_o_IIll = 1,
+        Ioolo_OoIoIIoOIl = IolO__oIoolooIIoI,
+        TextColor3 = oloOoIII_O,
+        TextSize = 12,
+        IlIoOollo_lIllII = Enum.Font.GothamBold,
+        TextXAlignment = Enum.TextXAlignment.Center,
+        O_OoOO_I_oI = _IoolOloOIlloO
     })
 
-    -- _o1I0IIlOolOllIl_I0OlOll _ooIolIIO0I000I_oOl0lOI hover effects dengan warna conditional
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-        local lOIOl0lOlIOI0OIOO0Ilo0l = 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl
-        local llIO0IOO_0IOII11_llIolloO_lI = 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I and 0.1 or 0
+    -- Text
+    local lo_lIlOoIIllOO_ = _OI_olOOlOI("TextLabel", {
+        IIlolo_Ilo__ = UDim2.new(1, -28, 1, 0),
+        lOoOolOOolool = UDim2.new(0, 24, 0, 0),
+        oIo_o_IIll = 1,
+        Ioolo_OoIoIIoOIl = IIooOIloooI,
+        TextColor3 = oloOoIII_O,
+        TextSize = 12,
+        IlIoOollo_lIllII = Enum.Font.GothamMedium,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        O_OoOO_I_oI = _IoolOloOIlloO
+    })
+
+    -- Close button hover effects dengan warna conditional
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, oIOoOlOOOOIloOI.MouseEnter:Connect(function()
+        local II_lOOoOl_OoOOIOOO = lOO_OlOolIO_loo_.MultiSelect and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest
+        local _lOolIllOIlOIO_ = lOO_OlOolIO_loo_.MultiSelect and 0.1 or 0
         
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(OlII0OOo0IOO0lIIlIOI1II0loIOI, {
-            _l_lOO0OloOIIIl_II__oo1I0 = lOIOl0lOlIOI0OIOO0Ilo0l,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = llIO0IOO_0IOII11_llIolloO_lI
+        lOoolOoIoOOOl(_IoolOloOIlloO, {
+            IoIOIo_I_IOllllOI = II_lOOoOl_OoOOIOOO,
+            oIo_o_IIll = _lOolIllOIlOIO_
         }, 0.15)
         
-        -- Animate _OolllI0I0O0Olol_0Io01l_11o and _0ol0I0IOollll0OlOO1 II0llIIOI0lIllOOlO1I1o
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIIIII0II0o0IIIIOlIOO_Il, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI}, 0.15)
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IOl0lIoI0IlI_0IOoIooOOllOOol1, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI}, 0.15)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+        -- Animate icon and text color
+        lOoolOoIoOOOl(_II_IoOoOolIoo, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text}, 0.15)
+        lOoolOoIoOOOl(lo_lIlOoIIllOO_, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text}, 0.15)
     end))
 
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(OlII0OOo0IOO0lIIlIOI1II0loIOI, {
-            _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, oIOoOlOOOOIloOI.MouseLeave:Connect(function()
+        lOoolOoIoOOOl(_IoolOloOIlloO, {
+            IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+            oIo_o_IIll = 0
         }, 0.15)
         
-        -- Reset _OolllI0I0O0Olol_0Io01l_11o and _0ol0I0IOollll0OlOO1 II0llIIOI0lIllOOlO1I1o
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIIIII0II0o0IIIIOlIOO_Il, {000O_IOOIOI_0lOll_I1o10l = Il00OIIlI0ol0loI1ll_1OO}, 0.15)
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IOl0lIoI0IlI_0IOoIooOOllOOol1, {000O_IOOIOI_0lOll_I1o10l = Il00OIIlI0ol0loI1ll_1OO}, 0.15)
+        -- Reset icon and text color
+        lOoolOoIoOOOl(_II_IoOoOolIoo, {TextColor3 = oloOoIII_O}, 0.15)
+        lOoolOoIoOOOl(lo_lIlOoIIllOO_, {TextColor3 = oloOoIII_O}, 0.15)
     end))
 
-    -- _o1I0IIlOolOllIl_I0OlOll _ooIolIIO0I000I_oOl0lOI click
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo._I0O0OOI0olllI0oIlI00O_lOl_II_l:_lIIIOOoI_0llIOOO1Ol(function()
-        _O0l00O0oOo1Oo1lI1oOlO0I()
+    -- Close button click
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, oIOoOlOOOOIloOI.Activated:Connect(function()
+        oolO_IIlloIO_oIoOIo()
     end))
 
-    -- _1olI0IlllIIOO_ll1OlIol box (if _0l_lIolllOIOIoooI0_1IllOlI0Ol10) - UPDATED POSITION
-    local _IOIIIooII0lIIOIl_IlI = nil
-    local Ooo0oI_o_llI0_o_olO0ll0olI0l0OOo = _lI10lOoOlOl_0lllIIOlII0IlIolIIOo_ + 8 -- Start from close _ooIolIIO0I000I_oOl0lOI
+    -- Search box (if enabled) - UPDATED POSITION
+    local oIolOolloOOIoO = nil
+    local _oIIOIllOIOIlI = OollOIlol__OOo_oII + 8 -- Start from close button
         
-    if 0OoooIO_1OOlIIlolIlIooOO0._1olI0IlllIIOO_ll1OlIol then
-        _IOIIIooII0lIIOIl_IlI = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[57], {
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[58],
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -16, 0, 32),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 8, 0, Ooo0oI_o_llI0_o_olO0ll0olI0l0OOo),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-            _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-            IOlIlll01oI00Ol0lOOI = "",
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            1l01IlIOIIOloI0llIIO = oIOoII_0IIlOII1IOI1lI0_OO0o[59],
-            Il_1loIlol000ll_l1loOO0OIO_I = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-            IOollOOIOoOlo00OlIIl1I = 13,
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-            0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-            lIIoIl1IO0IIl1I0oIolIIO1I0Il = false,
-            II_OlIII1_lIlOO0I0oOOO1001lI = 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o
+    if lOO_OlOolIO_loo_.Search then
+        oIolOolloOOIoO = _OI_olOOlOI(IO_oOOllOOoooIo_[57], {
+            oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[58],
+            IIlolo_Ilo__ = UDim2.new(1, -16, 0, 32),
+            lOoOolOOolool = UDim2.new(0, 8, 0, _oIIOIllOIOIlI),
+            IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+            BorderSizePixel = 0,
+            Ioolo_OoIoIIoOIl = "",
+            PlaceholderText = IO_oOOllOOoooIo_[59],
+            PlaceholderColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+            TextSize = 13,
+            IlIoOollo_lIllII = Enum.Font.Gotham,
+            TextXAlignment = Enum.TextXAlignment.Left,
+            ClearTextOnFocus = false,
+            O_OoOO_I_oI = IlOoIOII__OIOOO
         })
 
-        _1lOOlOIIO_0IO_IoOIl00Il(_IOIIIooII0lIIOIl_IlI, 6)
-        ___IoO_1_O1loO01IIol10oOOIllO1(_IOIIIooII0lIIOIl_IlI, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.8)
-        Ooo0oI_o_llI0_o_olO0ll0olI0l0OOo = Ooo0oI_o_llI0_o_olO0ll0olI0l0OOo + 40 -- Add search height + padding
+        llOl_IoIII_oIOIIo(oIolOolloOOIoO, 6)
+        lIO__OIIOllOlOOl(oIolOolloOOIoO, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.8)
+        _oIIOIllOIOIlI = _oIIOIllOIOIlI + 40 -- Add search height + padding
     end
 
-    -- _IOI0loO0I0oOI_OOl00l container with scrolling - UPDATED POSITION
-    local _1OooOlI__IO1llIOO1OlII0lOIlll = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[60], {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[61],
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, -Ooo0oI_o_llI0_o_olO0ll0olI0l0OOo - 8), -- Account for close _ooIolIIO0I000I_oOl0lOI
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0, Ooo0oI_o_llI0_o_olO0ll0olI0l0OOo),
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-        OIlIl000_lOlI1IIIl0IO = 4,
-        OoolOlo1Il1lO00OoIll = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-        O1l1IIOoIlIOI0l1o_lIo = Enum.O1l1IIOoIlIOI0l1o_lIo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O,
-        _IOl0IIo_IO0lIIl_IIIoo0llI0 = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0, 0),
-        0OIOlOIIIIlIl_Ol_lll1O00III = Enum.0l0Il10lIIlI0oIlolllIll._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O,
-        IIlloO0I0OllIOo0lOIIOolo1 = true,
-        II_OlIII1_lIlOO0I0oOOO1001lI = 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o
+    -- Options container with scrolling - UPDATED POSITION
+    local OOOoOolIooo = _OI_olOOlOI(IO_oOOllOOoooIo_[60], {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[61],
+        IIlolo_Ilo__ = UDim2.new(1, 0, 1, -_oIIOIllOIOIlI - 8), -- Account for close button
+        lOoOolOOolool = UDim2.new(0, 0, 0, _oIIOIllOIOIlI),
+        oIo_o_IIll = 1,
+        BorderSizePixel = 0,
+        ScrollBarThickness = 4,
+        ScrollBarImageColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent,
+        ScrollingDirection = Enum.ScrollingDirection.Y,
+        CanvasSize = UDim2.new(0, 0, 0, 0),
+        AutomaticCanvasSize = Enum.AutomaticSize.Y,
+        ScrollingEnabled = true,
+        O_OoOO_I_oI = IlOoIOII__OIOOO
     })
 
-    -- _IOI0loO0I0oOI_OOl00l _OIlOI0oIl0lIlI0Oo0IlI00lO layout
-    local O0IO_IoOoIIIIIl_1__0IoI1l = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[62], {
-        _OOolO0OIO_Il0_olII1I0oI1olII = Enum._OOolO0OIO_Il0_olII1I0oI1olII.II10_lIlI0OlOI1lII0Il10Il,
-        IoIOlI0II1oIlI_IIIl_I0lIIOIlOol = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 2),
-        II_OlIII1_lIlOO0I0oOOO1001lI = _1OooOlI__IO1llIOO1OlII0lOIlll
+    -- Options list layout
+    local olOIoOIIIoo_oIlIIo = _OI_olOOlOI(IO_oOOllOOoooIo_[62], {
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        Padding = UDim.new(0, 2),
+        O_OoOO_I_oI = OOOoOolIooo
     })
 
-    -- _00l00l1l0ooI0I01oOIIO0IIlO011 _1Ill1_II0_l0O_1olIOI_o1lIOl items
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    local _l11oollOI0OlooIlo0_lOll_l = {}
+    -- Create option items
+    local OlooIOIl_O = {}
 
     -- Forward declarations
     
 
-    local function 1II01OIOooIOO0lI101ooI_l(_0ol0I0IOollll0OlOO1, lIllo0lo1lOlIOO_o0Ol)
+    local function oloIoIlolololoII(IIIoIIoIIIoOO, oIOOOO_IoIoolI)
         -- FIX: Perbaiki logic selected detection
-        local OoIOI_llIl1OlII10I0OIOll = false
-        if 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-            OoIOI_llIl1OlII10I0OIOll = table._IolIl11O0loIlIlIOI0lI1_l(lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o, _0ol0I0IOollll0OlOO1) ~= nil
+        local O_oOllooIIoOlO = false
+        if lOO_OlOolIO_loo_.MultiSelect then
+            O_oOllooIIoOlO = table.find(lIIIoI_oIoOOOo.Selected, IIIoIIoIIIoOO) ~= nil
         else
-            OoIOI_llIl1OlII10I0OIOll = lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o == _0ol0I0IOollll0OlOO1
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+            O_oOllooIIoOlO = lIIIoI_oIoOOOo.Selected == IIIoIIoIIIoOO
         end
 
-        local _0OollI1IoloI_lO1Ilo0l = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[63] .. lIllo0lo1lOlIOO_o0Ol,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -8, 0, 28),
-            _l_lOO0OloOIIIl_II__oo1I0 = OoIOI_llIl1OlII10I0OIOll and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or Color3._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0),
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = OoIOI_llIl1OlII10I0OIOll and 0.1 or 1,
-            _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-            IOlIlll01oI00Ol0lOOI = "",
-            lO0lIoIIlIOoI0o0oloOIOO = false,
-            II10_lIlI0OlOI1lII0Il10Il = lIllo0lo1lOlIOO_o0Ol,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _1OooOlI__IO1llIOO1OlII0lOIlll
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+        local _olIllo_lllOo = _OI_olOOlOI("TextButton", {
+            oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[63] .. oIOOOO_IoIoolI,
+            IIlolo_Ilo__ = UDim2.new(1, -8, 0, 28),
+            IoIOIo_I_IOllllOI = O_oOllooIIoOlO and IoOlIOIOl_oIOIIooII.Theme.Accent or Color3.new(0, 0, 0),
+            oIo_o_IIll = O_oOllooIIoOlO and 0.1 or 1,
+            BorderSizePixel = 0,
+            Ioolo_OoIoIIoOIl = "",
+            lOoIOlOOloIl_O = false,
+            LayoutOrder = oIOOOO_IoIoolI,
+            O_OoOO_I_oI = OOOoOolIooo
         })
 
-        _1lOOlOIIO_0IO_IoOIl00Il(_0OollI1IoloI_lO1Ilo0l, 6)
+        llOl_IoIII_oIOIIo(_olIllo_lllOo, 6)
 
-        -- Option _0ol0I0IOollll0OlOO1 dengan warna yang benar
-        local oo0ol01l_Il0_OIoIlIl_lII1IlO0lOl = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[64],
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I and -28 or -12, 1, 0),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 0),
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            IOlIlll01oI00Ol0lOOI = _0ol0I0IOollll0OlOO1,
-            000O_IOOIOI_0lOll_I1o10l = OoIOI_llIl1OlII10I0OIOll and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-            IOollOOIOoOlo00OlIIl1I = 13,
-            _0o0OOOoIOolIIl_OOll11lollOoo = OoIOI_llIl1OlII10I0OIOll and Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II or Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-            0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-            lIllOlI_lI0IIooI00IOloo0IOlOOl = Enum.lIllOlI_lI0IIooI00IOloo0IOlOOl._1O_0OlOo1lIOoIO0IOO_IlI0Ol1OoloII,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _0OollI1IoloI_lO1Ilo0l
+        -- Option text dengan warna yang benar
+        local olIOIollllIIOOOIllO = _OI_olOOlOI("TextLabel", {
+            oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[64],
+            IIlolo_Ilo__ = UDim2.new(1, lOO_OlOolIO_loo_.MultiSelect and -28 or -12, 1, 0),
+            lOoOolOOolool = UDim2.new(0, 12, 0, 0),
+            oIo_o_IIll = 1,
+            Ioolo_OoIoIIoOIl = IIIoIIoIIIoOO,
+            TextColor3 = O_oOllooIIoOlO and IoOlIOIOl_oIOIIooII.Theme.Text or IoOlIOIOl_oIOIIooII.Theme.TextSub,
+            TextSize = 13,
+            IlIoOollo_lIllII = O_oOllooIIoOlO and Enum.Font.GothamMedium or Enum.Font.Gotham,
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextTruncate = Enum.TextTruncate.AtEnd,
+            O_OoOO_I_oI = _olIllo_lllOo
         })
 
-        -- _O1IolIIllOIlOO0lOIo0ol1I for multi-select (FIX: IOIOoOoII1oOO1l1_O_Oo0O0lII checkbox state)
-        local _O1IolIIllOIlOO0lOIo0ol1I = nil
-        if 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-            _O1IolIIllOIlOO0lOIo0ol1I = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[65],
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 16, 0, 16),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -24, 0.5, -8),
-                _l_lOO0OloOIIIl_II__oo1I0 = OoIOI_llIl1OlII10I0OIOll and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-                II_OlIII1_lIlOO0I0oOOO1001lI = _0OollI1IoloI_lO1Ilo0l
+        -- Checkbox for multi-select (FIX: Update checkbox state)
+        local oOoloIlO_OoIoIO = nil
+        if lOO_OlOolIO_loo_.MultiSelect then
+            oOoloIlO_OoIoIO = _OI_olOOlOI("Frame", {
+                oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[65],
+                IIlolo_Ilo__ = UDim2.new(0, 16, 0, 16),
+                lOoOolOOolool = UDim2.new(1, -24, 0.5, -8),
+                IoIOIo_I_IOllllOI = O_oOllooIIoOlO and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.Surface,
+                BorderSizePixel = 0,
+                O_OoOO_I_oI = _olIllo_lllOo
             })
 
-            _1lOOlOIIO_0IO_IoOIl00Il(_O1IolIIllOIlOO0lOIo0ol1I, 4)
-            ___IoO_1_O1loO01IIol10oOOIllO1(_O1IolIIllOIlOO0lOIo0ol1I, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.6)
+            llOl_IoIII_oIOIIo(oOoloIlO_OoIoIO, 4)
+            lIO__OIIOllOlOOl(oOoloIlO_OoIoIO, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.6)
 
-            if OoIOI_llIl1OlII10I0OIOll then
-                _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    IOlIlll01oI00Ol0lOOI = "✓",
-                    000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                    IOollOOIOoOlo00OlIIl1I = 12,
-                    _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-                    0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o.Ol1OI_IIl10I1IoIIoIl0I0IO_,
-                    __1IOOIllIl0ll0I_ll1lI = Enum.__1IOOIllIl0ll0I_ll1lI.Ol1OI_IIl10I1IoIIoIl0I0IO_,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _O1IolIIllOIlOO0lOIo0ol1I
+            if O_oOllooIIoOlO then
+                _OI_olOOlOI("TextLabel", {
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                    oIo_o_IIll = 1,
+                    Ioolo_OoIoIIoOIl = "✓",
+                    TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                    TextSize = 12,
+                    IlIoOollo_lIllII = Enum.Font.GothamBold,
+                    TextXAlignment = Enum.TextXAlignment.Center,
+                    TextYAlignment = Enum.TextYAlignment.Center,
+                    O_OoOO_I_oI = oOoloIlO_OoIoIO
                 })
             end
         end
 
-        -- FIX: IOIOoOoII1oOO1l1_O_Oo0O0lII hover effects dengan selected state yang benar
-        local function _llIlo0ll1l_ooI1lIOOIl_(loo_I0OOIlIol0I0IIO0ll)
-            if not _0OollI1IoloI_lO1Ilo0l or not _0OollI1IoloI_lO1Ilo0l.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+        -- FIX: Update hover effects dengan selected state yang benar
+        local function _llIoolOOIlIOOOIl(__OlIoO_llOoOIoOl)
+            if not _olIllo_lllOo or not _olIllo_lllOo.Parent then return end
             
             -- Re-check selected state (penting untuk real-time update)
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            local _I_Ill1IollI00l100O1 = false
-            if (not (function() return false end)()) and 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-                _I_Ill1IollI00l100O1 = table._IolIl11O0loIlIlIOI0lI1_l(lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o, _0ol0I0IOollll0OlOO1) ~= nil
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+            local olIo_OloOllIlOOII = false
+            if lOO_OlOolIO_loo_.MultiSelect then
+                olIo_OloOllIlOOII = table.find(lIIIoI_oIoOOOo.Selected, IIIoIIoIIIoOO) ~= nil
             else
-                _I_Ill1IollI00l100O1 = lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o == _0ol0I0IOollll0OlOO1
+                olIo_OloOllIlOOII = lIIIoI_oIoOOOo.Selected == IIIoIIoIIIoOO
             end
             
-            local _IO0I110OlIlOI0l_0lOII_IIOo
-            local _00Oo_oIIIIIl0ooOIOl0I_I0I
+            local IOIIoIOl__IOIIOo_O
+            local IoloooIIIOlIOO
             
-            if loo_I0OOIlIol0I0IIO0ll then
-                _IO0I110OlIlOI0l_0lOII_IIOo = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo
-                _00Oo_oIIIIIl0ooOIOl0I_I0I = 0.3
-            elseif _I_Ill1IollI00l100O1 then
-                _IO0I110OlIlOI0l_0lOII_IIOo = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
-                _00Oo_oIIIIIl0ooOIOl0I_I0I = 0.1
+            if __OlIoO_llOoOIoOl then
+                IOIIoIOl__IOIIOo_O = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh
+                IoloooIIIOlIOO = 0.3
+            elseif olIo_OloOllIlOOII then
+                IOIIoIOl__IOIIOo_O = IoOlIOIOl_oIOIIooII.Theme.Accent
+                IoloooIIIOlIOO = 0.1
             else
-                _IO0I110OlIlOI0l_0lOII_IIOo = Color3._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0)
-                _00Oo_oIIIIIl0ooOIOl0I_I0I = 1
+                IOIIoIOl__IOIIOo_O = Color3.new(0, 0, 0)
+                IoloooIIIOlIOO = 1
             end
             
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_0OollI1IoloI_lO1Ilo0l, {
-                _l_lOO0OloOIIIl_II__oo1I0 = _IO0I110OlIlOI0l_0lOII_IIOo,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = _00Oo_oIIIIIl0ooOIOl0I_I0I
+            lOoolOoIoOOOl(_olIllo_lllOo, {
+                IoIOIo_I_IOllllOI = IOIIoIOl__IOIIOo_O,
+                oIo_o_IIll = IoloooIIIOlIOO
             }, 0.15)
             
-            -- IOIOoOoII1oOO1l1_O_Oo0O0lII _0ol0I0IOollll0OlOO1 II0llIIOI0lIllOOlO1I1o
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(oo0ol01l_Il0_OIoIlIl_lII1IlO0lOl, {
-                000O_IOOIOI_0lOll_I1o10l = (loo_I0OOIlIol0I0IIO0ll or _I_Ill1IollI00l100O1) and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl
+            -- Update text color
+            lOoolOoIoOOOl(olIOIollllIIOOOIllO, {
+                TextColor3 = (__OlIoO_llOoOIoOl or olIo_OloOllIlOOII) and IoOlIOIOl_oIOIIooII.Theme.Text or IoOlIOIOl_oIOIIooII.Theme.TextSub
             }, 0.15)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
             
-            -- IOIOoOoII1oOO1l1_O_Oo0O0lII font weight
-            oo0ol01l_Il0_OIoIlIl_lII1IlO0lOl._0o0OOOoIOolIIl_OOll11lollOoo = _I_Ill1IollI00l100O1 and Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II or Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II
+            -- Update font weight
+            olIOIollllIIOOOIllO.Font = olIo_OloOllIlOOII and Enum.Font.GothamMedium or Enum.Font.Gotham
         end
 
         -- Click handling (FIX: Proper state update)
-        local function _o_0IOOlI_lOI0IOol0OI()
-            if 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-                local _lo0IOIIIlO_11IOI1l_Ol_00IlOO = table._IolIl11O0loIlIlIOI0lI1_l(lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o, _0ol0I0IOollll0OlOO1)
-                if ((function() local x = 5 return x > 3 end)()) and _lo0IOIIIlO_11IOI1l_Ol_00IlOO then
-                    table.0lO_olO1lIIl1Io0ol0IOo_00(lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o, _lo0IOIIIlO_11IOI1l_Ol_00IlOO)
+        local function oIlOll_lolo()
+            if lOO_OlOolIO_loo_.MultiSelect then
+                local oIOolOOlolIo__oO = table.find(lIIIoI_oIoOOOo.Selected, IIIoIIoIIIoOO)
+                if oIOolOOlolIo__oO then
+                    table.remove(lIIIoI_oIoOOOo.Selected, oIOolOOlolIo__oO)
                 else
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o, _0ol0I0IOollll0OlOO1)
+                    table.insert(lIIIoI_oIoOOOo.Selected, IIIoIIoIIIoOO)
                 end
                 
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                _lOOOIO0O_llOIIo0I_0Oolo_0()
-                l1OIo0lIOO01lloI1I_l() -- Penting: refresh untuk update visual
+                IoIIOol___Ioo()
+                lOooO_lIIlOOlOOo_oO() -- Penting: refresh untuk update visual
                 
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                pcall(0OoooIO_1OOlIIlolIlIooOO0._IOOIlOoI_IlllIlo_IIIoI1Illol, lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o)
+                pcall(lOO_OlOolIO_loo_.Callback, lIIIoI_oIoOOOo.Selected)
                 
-                if 0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                    _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o
-                    _O0I0IoOIIlloool010oIO__:_lIO0OO0l00OoOI0IlIIOloI0IlI00OII()
+                if lOO_OlOolIO_loo_.Flag then
+                    IoOlIOIOl_oIOIIooII.Flags[lOO_OlOolIO_loo_.Flag] = lIIIoI_oIoOOOo.Selected
+                    Nexus:_ScheduleAutoSave()
                 end
             else
-                lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o = _0ol0I0IOollll0OlOO1
-                _lOOOIO0O_llOIIo0I_0Oolo_0()
-                l1OIo0lIOO01lloI1I_l() -- Penting: refresh sebelum close
-                _O0l00O0oOo1Oo1lI1oOlO0I()
+                lIIIoI_oIoOOOo.Selected = IIIoIIoIIIoOO
+                IoIIOol___Ioo()
+                lOooO_lIIlOOlOOo_oO() -- Penting: refresh sebelum close
+                oolO_IIlloIO_oIoOIo()
                 
-                pcall(0OoooIO_1OOlIIlolIlIooOO0._IOOIlOoI_IlllIlo_IIIoI1Illol, _0ol0I0IOollll0OlOO1)
+                pcall(lOO_OlOolIO_loo_.Callback, IIIoIIoIIIoOO)
                 
-                if 0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                    _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = _0ol0I0IOollll0OlOO1
-                    _O0I0IoOIIlloool010oIO__:_lIO0OO0l00OoOI0IlIIOloI0IlI00OII()
+                if lOO_OlOolIO_loo_.Flag then
+                    IoOlIOIOl_oIOIIooII.Flags[lOO_OlOolIO_loo_.Flag] = IIIoIIoIIIoOO
+                    Nexus:_ScheduleAutoSave()
                 end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
             end
         end
 
-        -- _lIIIOOoI_0llIOOO1Ol events
-        table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _0OollI1IoloI_lO1Ilo0l.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-            _llIlo0ll1l_ooI1lIOOIl_(true)
+        -- Connect events
+        table.insert(IoOlIOIOl_oIOIIooII.Connections, _olIllo_lllOo.MouseEnter:Connect(function()
+            _llIoolOOIlIOOOIl(true)
         end))
         
-        table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _0OollI1IoloI_lO1Ilo0l.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            _llIlo0ll1l_ooI1lIOOIl_(false)
+        table.insert(IoOlIOIOl_oIOIIooII.Connections, _olIllo_lllOo.MouseLeave:Connect(function()
+            _llIoolOOIlIOOOIl(false)
         end))
         
-        table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _0OollI1IoloI_lO1Ilo0l._I0O0OOI0olllI0oIlI00O_lOl_II_l:_lIIIOOoI_0llIOOO1Ol(_o_0IOOlI_lOI0IOol0OI))
+        table.insert(IoOlIOIOl_oIOIIooII.Connections, _olIllo_lllOo.Activated:Connect(oIlOll_lolo))
 
-        _l11oollOI0OlooIlo0_lOll_l[_0ol0I0IOollll0OlOO1] = {
-            _OOolOIollooIIIO_0O00I00OlOlIo0l = _0OollI1IoloI_lO1Ilo0l,
-            IOlIlll01oI00Ol0lOOI = oo0ol01l_Il0_OIoIlIl_lII1IlO0lOl,
-            _O1IolIIllOIlOO0lOIo0ol1I = _O1IolIIllOIlOO0lOIo0ol1I,
-            _llIlo0ll1l_ooI1lIOOIl_ = _llIlo0ll1l_ooI1lIOOIl_,
-            0lI00l0OllIIl0OolOll01OoII = true,
-            _0llIlO0OI1_10ol_oI0_I0oOolloOO0Oo = function() 
-                if 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-                    return table._IolIl11O0loIlIlIOI0lI1_l(lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o, _0ol0I0IOollll0OlOO1) ~= nil
+        OlooIOIl_O[IIIoIIoIIIoOO] = {
+            Item = _olIllo_lllOo,
+            Ioolo_OoIoIIoOIl = olIOIollllIIOOOIllO,
+            oOoloIlO_OoIoIO = oOoloIlO_OoIoIO,
+            _llIoolOOIlIOOOIl = _llIoolOOIlIOOOIl,
+            IsVisible = true,
+            IsSelected = function() 
+                if lOO_OlOolIO_loo_.MultiSelect then
+                    return table.find(lIIIoI_oIoOOOo.Selected, IIIoIIoIIIoOO) ~= nil
                 else
-                    return lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o == _0ol0I0IOollll0OlOO1
+                    return lIIIoI_oIoOOOo.Selected == IIIoIIoIIIoOO
                 end
             end
         }
 
-        return _0OollI1IoloI_lO1Ilo0l
+        return _olIllo_lllOo
     end
 
-    -- _1olI0IlllIIOO_ll1OlIol functionality
-    local function I0llIlllOOO1llOlI1I_I0Ol0lIOlO(_o_IlII0_0l0O1II1lII_ool00Ilo)
-        _o_IlII0_0l0O1II1lII_ool00Ilo = _o_IlII0_0l0O1II1lII_ool00Ilo:___II1_IlOIIlOlOO1l0o01l00llooIl()
-        lOlIII00OIIOlloOoOlIO0ll_II.ololOoI1l0l1l1lIlO0I0l0OO_olI_lI = {}
+    -- Search functionality
+    local function IOo_OllOOIoIol_loIo(OOlOoOlIIo)
+        OOlOoOlIIo = searchText:lower()
+        lIIIoI_oIoOOOo.FilteredOptions = {}
         
-        for _lIo0IoOlOll1lIO0_IoIllIlI, _1Ill1_II0_l0O_1olIOI_o1lIOl in ipairs(0OoooIO_1OOlIIlolIlIooOO0._IOI0loO0I0oOI_OOl00l) do
-            if ((function() return true end)()) and _o_IlII0_0l0O1II1lII_ool00Ilo == "" or _1Ill1_II0_l0O_1olIOI_o1lIOl:___II1_IlOIIlOlOO1l0o01l00llooIl():_IolIl11O0loIlIlIOI0lI1_l(_o_IlII0_0l0O1II1lII_ool00Ilo, 1, true) then
-                table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(lOlIII00OIIOlloOoOlIO0ll_II.ololOoI1l0l1l1lIlO0I0l0OO_olI_lI, _1Ill1_II0_l0O_1olIOI_o1lIOl)
+        for ooIlololllolIOlo, IOI_oIOIOIOO in ipairs(lOO_OlOolIO_loo_.Options) do
+            if OOlOoOlIIo == "" or option:lower():find(OOlOoOlIIo, 1, true) then
+                table.insert(lIIIoI_oIoOOOo.FilteredOptions, IOI_oIOIOIOO)
             end
         end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
         
-        l1OIo0lIOO01lloI1I_l()
+        lOooO_lIIlOOlOOo_oO()
     end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
 
     -- Refresh options display (ACCOUNT FOR CLOSE BUTTON)
-    function l1OIo0lIOO01lloI1I_l()
+    function lOooO_lIIlOOlOOo_oO()
         -- Clear existing options
-        for _lIo0IoOlOll1lIO0_IoIllIlI, _oo0OoIlIO10o0llII_ooIOIlO0I in pairs(_l11oollOI0OlooIlo0_lOll_l) do
-            if ((function() return 1 + 1 == 2 end)()) and _oo0OoIlIO10o0llII_ooIOIlO0I._OOolOIollooIIIO_0O00I00OlOlIo0l and _oo0OoIlIO10o0llII_ooIOIlO0I._OOolOIollooIIIO_0O00I00OlOlIo0l.II_OlIII1_lIlOO0I0oOOO1001lI then
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                _oo0OoIlIO10o0llII_ooIOIlO0I._OOolOIollooIIIO_0O00I00OlOlIo0l:OlIIl0oIl11_IOIl1loO0I0loII()
+        for ooIlololllolIOlo, lO_oIIooloOO_OloOlO in pairs(OlooIOIl_O) do
+            if lO_oIIooloOO_OloOlO.Item and lO_oIIooloOO_OloOlO.Item.Parent then
+                lO_oIIooloOO_OloOlO.Item:Destroy()
             end
         end
-        _l11oollOI0OlooIlo0_lOll_l = {}
+        OlooIOIl_O = {}
         
-        -- _00l00l1l0ooI0I01oOIIO0IIlO011 filtered options
-        for lIllo0lo1lOlIOO_o0Ol, _1Ill1_II0_l0O_1olIOI_o1lIOl in ipairs(lOlIII00OIIOlloOoOlIO0ll_II.ololOoI1l0l1l1lIlO0I0l0OO_olI_lI) do
-            1II01OIOooIOO0lI101ooI_l(_1Ill1_II0_l0O_1olIOI_o1lIOl, lIllo0lo1lOlIOO_o0Ol)
+        -- Create filtered options
+        for oIOOOO_IoIoolI, IOI_oIOIOIOO in ipairs(lIIIoI_oIoOOOo.FilteredOptions) do
+            oloIoIlolololoII(IOI_oIOIOIOO, oIOOOO_IoIoolI)
         end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
         
-        -- IOIOoOoII1oOO1l1_O_Oo0O0lII panel height (ACCOUNT FOR CLOSE BUTTON)
-        local _I0oIl00I01OOIlIll_llOllo = math.l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I(#lOlIII00OIIOlloOoOlIO0ll_II.ololOoI1l0l1l1lIlO0I0l0OO_olI_lI, 0OoooIO_1OOlIIlolIlIooOO0.IlO0lollolI1lIIo0O_Il__lo)
-        local OI0OllI0loI1I_10ol0o1lOIII1o0lloI = Ooo0oI_o_llI0_o_olO0ll0olI0l0OOo + (_I0oIl00I01OOIlIll_llOllo * 30) + ((_I0oIl00I01OOIlIll_llOllo - 1) * 2) + 16
+        -- Update panel height (ACCOUNT FOR CLOSE BUTTON)
+        local O_OoooI_lI = math.min(#lIIIoI_oIoOOOo.FilteredOptions, lOO_OlOolIO_loo_.MaxVisible)
+        local IIOoIoIOlI = _oIIOIllOIOIlI + (O_OoooI_lI * 30) + ((O_OoooI_lI - 1) * 2) + 16
         
-        if lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
-            local l0Oollo1OolOIOll_0_1I_IOO = lI1OllOIO1lIlO_1OIoOl00lOl.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0lIlI0l1OlI01l0I1O_00OOOlol1lI_o, {
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(l0Oollo1OolOIOll_0_1I_IOO, OI0OllI0loI1I_10ol0o1lOIII1o0lloI)
-            }, 0.25, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.IoIIlIll_lIoOIIIOlIO1Il)
+        if lIIIoI_oIoOOOo.IsOpen then
+            local _IIIoIloII = OllI_O__Il.AbsoluteSize.X
+            lOoolOoIoOOOl(IlOoIOII__OIOOO, {
+                IIlolo_Ilo__ = UDim2.fromOffset(_IIIoIloII, IIOoIoIOlI)
+            }, 0.25, Enum.EasingStyle.Quart)
         end
     end
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
 
-    -- IOIOoOoII1oOO1l1_O_Oo0O0lII selected display
-    function _lOOOIO0O_llOIIo0I_0Oolo_0()
-        if ((function() local x = 5 return x > 3 end)()) and 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-            if ((function() local x = 5 return x > 3 end)()) and #lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o == 0 then
-                OO1IlOl010IIOI_Il00IIOII_o000.IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0.__lloOlI1olO1oOlOOlI_l1_
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                OO1IlOl010IIOI_Il00IIOII_o000.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO
-            elseif #lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o == 1 then
-                OO1IlOl010IIOI_Il00IIOII_o000.IOlIlll01oI00Ol0lOOI = lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o[1]
-                OO1IlOl010IIOI_Il00IIOII_o000.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
+    -- Update selected display
+    function IoIIOol___Ioo()
+        if lOO_OlOolIO_loo_.MultiSelect then
+            if #lIIIoI_oIoOOOo.Selected == 0 then
+                IIoIlOlllIIl_Il.Text = lOO_OlOolIO_loo_.Placeholder
+                IIoIlOlllIIl_Il.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted
+            elseif #lIIIoI_oIoOOOo.Selected == 1 then
+                IIoIlOlllIIl_Il.Text = lIIIoI_oIoOOOo.Selected[1]
+                IIoIlOlllIIl_Il.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
             else
-                OO1IlOl010IIOI_Il00IIOII_o000.IOlIlll01oI00Ol0lOOI = #lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o .. oIOoII_0IIlOII1IOI1lI0_OO0o[66]
-                OO1IlOl010IIOI_Il00IIOII_o000.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
+                IIoIlOlllIIl_Il.Text = #lIIIoI_oIoOOOo.Selected .. IO_oOOllOOoooIo_[66]
+                IIoIlOlllIIl_Il.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
             end
         else
-            OO1IlOl010IIOI_Il00IIOII_o000.IOlIlll01oI00Ol0lOOI = lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o or 0OoooIO_1OOlIIlolIlIooOO0.__lloOlI1olO1oOlOOlI_l1_
-            OO1IlOl010IIOI_Il00IIOII_o000.000O_IOOIOI_0lOll_I1o10l = lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO
+            IIoIlOlllIIl_Il.Text = lIIIoI_oIoOOOo.Selected or lOO_OlOolIO_loo_.Placeholder
+            IIoIlOlllIIl_Il.TextColor3 = lIIIoI_oIoOOOo.Selected and IoOlIOIOl_oIOIIooII.Theme.Text or IoOlIOIOl_oIOIIooII.Theme.TextMuted
         end
     end
 
-    -- _ol_00IlIIl0O0l0oo0lIII1lo__O1oo dropdown (UPDATED height calculation)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-    local function ooOo0_oIOOIl1ollI__IO0o0IOO_1O()
-        if lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then return end
+    -- Open dropdown (UPDATED height calculation)
+    local function IIOOO_OO_OoOlO()
+        if lIIIoI_oIoOOOo.IsOpen then return end
         
-        lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I = true
-        0lIlI0l1OlI01l0I1O_00OOOlol1lI_o._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = true
+        lIIIoI_oIoOOOo.IsOpen = true
+        IlOoIOII__OIOOO.Visible = true
         
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-        -- IOIOoOoII1oOO1l1_O_Oo0O0lII position
-        _lIlOIoIllloIl0IIlo0I()
+        -- Update position
+        II_IlllIOllII()
         
         -- Calculate panel height (INCLUDE CLOSE BUTTON)
-        local _I0oIl00I01OOIlIll_llOllo = math.l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I(#lOlIII00OIIOlloOoOlIO0ll_II.ololOoI1l0l1l1lIlO0I0l0OO_olI_lI, 0OoooIO_1OOlIIlolIlIooOO0.IlO0lollolI1lIIo0O_Il__lo)
-        local _10l0I0lo0II00lO_l1OoIOO00 = Ooo0oI_o_llI0_o_olO0ll0olI0l0OOo + (_I0oIl00I01OOIlIll_llOllo * 30) + ((_I0oIl00I01OOIlIll_llOllo - 1) * 2) + 16
-        local l0Oollo1OolOIOll_0_1I_IOO = lI1OllOIO1lIlO_1OIoOl00lOl.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo
+        local O_OoooI_lI = math.min(#lIIIoI_oIoOOOo.FilteredOptions, lOO_OlOolIO_loo_.MaxVisible)
+        local _IIoIloO_Il = _oIIOIllOIOIlI + (O_OoooI_lI * 30) + ((O_OoooI_lI - 1) * 2) + 16
+        local _IIIoIloII = OllI_O__Il.AbsoluteSize.X
         
         -- Animate panel open
-        0lIlI0l1OlI01l0I1O_00OOOlol1lI_o.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(l0Oollo1OolOIOll_0_1I_IOO, 0)
-        lOlIII00OIIOlloOoOlIO0ll_II._lI_oIll0OlIO00IIl_0lOOo_0oll00 = _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0lIlI0l1OlI01l0I1O_00OOOlol1lI_o, {
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(l0Oollo1OolOIOll_0_1I_IOO, _10l0I0lo0II00lO_l1OoIOO00)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        }, 0.3, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.IoIIlIll_lIoOIIIOlIO1Il, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
+        IlOoIOII__OIOOO.Size = UDim2.fromOffset(_IIIoIloII, 0)
+        lIIIoI_oIoOOOo.AnimationTween = lOoolOoIoOOOl(IlOoIOII__OIOOO, {
+            IIlolo_Ilo__ = UDim2.fromOffset(_IIIoIloII, _IIoIloO_Il)
+        }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
         
         -- Animate arrow
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_lIIllol0lOII1olIIoIlO0O1IIoOl0O1I, {
-            _OllIII_OIlIIOll1OlI_1lo = 180,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
+        lOoolOoIoOOOl(IlIIOlIoloII_, {
+            Rotation = 180,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent
         }, 0.25)
         
-        -- Animate _ooIolIIO0I000I_oOl0lOI
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(lI1OllOIO1lIlO_1OIoOl00lOl, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo}, 0.2)
+        -- Animate button
+        lOoolOoIoOOOl(OllI_O__Il, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh}, 0.2)
         
-        -- Focus search if _0l_lIolllOIOIoooI0_1IllOlI0Ol10
-        if _IOIIIooII0lIIOIl_IlI then
-            _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.3)
-            if _IOIIIooII0lIIOIl_IlI and _IOIIIooII0lIIOIl_IlI.II_OlIII1_lIlOO0I0oOOO1001lI then
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                _IOIIIooII0lIIOIl_IlI:lIIO0IIolollIIl0lIllI()
+        -- Focus search if enabled
+        if oIolOolloOOIoO then
+            task.wait(0.3)
+            if oIolOolloOOIoO and oIolOolloOOIoO.Parent then
+                SearchBox:CaptureFocus()
             end
         end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
         
         -- Enable blur
-        _OIllIOo0Ilo00Io1O1lo0lIO(true, 8)
+        _lIOlIOlI__l(true, 8)
     end
 
-    -- _o1I0IIlOolOllIl_I0OlOll dropdown
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-    function _O0l00O0oOo1Oo1lI1oOlO0I()
-        if not lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then return end
+    -- Close dropdown
+    function oolO_IIlloIO_oIoOIo()
+        if not lIIIoI_oIoOOOo.IsOpen then return end
         
-        lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I = false
+        lIIIoI_oIoOOOo.IsOpen = false
         
-        -- IoII0lI0oOl0OOIol0OlIl _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO animation
-        if lOlIII00OIIOlloOoOlIO0ll_II._lI_oIll0OlIO00IIl_0lOOo_0oll00 then
-            lOlIII00OIIOlloOoOlIO0ll_II._lI_oIll0OlIO00IIl_0lOOo_0oll00:IoII0lI0oOl0OOIol0OlIl()
+        -- Cancel current animation
+        if lIIIoI_oIoOOOo.AnimationTween then
+            lIIIoI_oIoOOOo.AnimationTween:Cancel()
         end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
         
-        local l0Oollo1OolOIOll_0_1I_IOO = lI1OllOIO1lIlO_1OIoOl00lOl.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo
+        local _IIIoIloII = OllI_O__Il.AbsoluteSize.X
         
         -- Animate panel close
-        lOlIII00OIIOlloOoOlIO0ll_II._lI_oIll0OlIO00IIl_0lOOo_0oll00 = _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0lIlI0l1OlI01l0I1O_00OOOlol1lI_o, {
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(l0Oollo1OolOIOll_0_1I_IOO, 0)
-        }, 0.2, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.IoIIlIll_lIoOIIIOlIO1Il, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO, function()
-            0lIlI0l1OlI01l0I1O_00OOOlol1lI_o._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = false
+        lIIIoI_oIoOOOo.AnimationTween = lOoolOoIoOOOl(IlOoIOII__OIOOO, {
+            IIlolo_Ilo__ = UDim2.fromOffset(_IIIoIloII, 0)
+        }, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out, function()
+            IlOoIOII__OIOOO.Visible = false
         end)
         
         -- Animate arrow
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_lIIllol0lOII1olIIoIlO0O1IIoOl0O1I, {
-            _OllIII_OIlIIOll1OlI_1lo = 0,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl
+        lOoolOoIoOOOl(IlIIOlIoloII_, {
+            Rotation = 0,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub
         }, 0.2)
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
         
-        -- Animate _ooIolIIO0I000I_oOl0lOI
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(lI1OllOIO1lIlO_1OIoOl00lOl, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.2)
+        -- Animate button
+        lOoolOoIoOOOl(OllI_O__Il, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.2)
         
         -- Clear search
-        if ((function() local x = 5 return x > 3 end)()) and _IOIIIooII0lIIOIl_IlI then
-            _IOIIIooII0lIIOIl_IlI.IOlIlll01oI00Ol0lOOI = ""
-            lOlIII00OIIOlloOoOlIO0ll_II.ooOlO00I0_0I0lOOIl0ll0I0ll0o = ""
-            I0llIlllOOO1llOlI1I_I0Ol0lIOlO("")
+        if oIolOolloOOIoO then
+            oIolOolloOOIoO.Text = ""
+            lIIIoI_oIoOOOo.SearchText = ""
+            IOo_OllOOIoIol_loIo("")
         end
         
         -- Disable blur
-        _OIllIOo0Ilo00Io1O1lo0lIO(false)
+        _lIOlIOlI__l(false)
     end
 
-    -- _1olI0IlllIIOO_ll1OlIol handling with debounce
-    if _IOIIIooII0lIIOIl_IlI then
-        table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _IOIIIooII0lIIOIl_IlI:0IOoloO0oOlOOOll0IOIololIIO1o("IOlIlll01oI00Ol0lOOI"):_lIIIOOoI_0llIOOO1Ol(function()
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            local _o_IlII0_0l0O1II1lII_ool00Ilo = _IOIIIooII0lIIOIl_IlI.IOlIlll01oI00Ol0lOOI
+    -- Search handling with debounce
+    if oIolOolloOOIoO then
+        table.insert(IoOlIOIOl_oIOIIooII.Connections, SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
+            local OOlOoOlIIo = oIolOolloOOIoO.Text
             
-            -- IoII0lI0oOl0OOIol0OlIl previous debounce
-            if lOlIII00OIIOlloOoOlIO0ll_II.00l_OIIIIl0lllO__0Oo0l then
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.IoIo00II0I1IlIIoIIllolOO0IlOIlolI(lOlIII00OIIOlloOoOlIO0ll_II.00l_OIIIIl0lllO__0Oo0l)
+            -- Cancel previous debounce
+            if lIIIoI_oIoOOOo.SearchDebounce then
+                task.cancel(lIIIoI_oIoOOOo.SearchDebounce)
             end
             
             -- Debounce search
-            lOlIII00OIIOlloOoOlIO0ll_II.00l_OIIIIl0lllO__0Oo0l = _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.spawn(function()
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.3)
-                if ((function() local x = 5 return x > 3 end)()) and _IOIIIooII0lIIOIl_IlI and _IOIIIooII0lIIOIl_IlI.II_OlIII1_lIlOO0I0oOOO1001lI and _IOIIIooII0lIIOIl_IlI.IOlIlll01oI00Ol0lOOI == _o_IlII0_0l0O1II1lII_ool00Ilo then
-                    lOlIII00OIIOlloOoOlIO0ll_II.ooOlO00I0_0I0lOOIl0ll0I0ll0o = _o_IlII0_0l0O1II1lII_ool00Ilo
-                    I0llIlllOOO1llOlI1I_I0Ol0lIOlO(_o_IlII0_0l0O1II1lII_ool00Ilo)
+            lIIIoI_oIoOOOo.SearchDebounce = task.spawn(function()
+                task.wait(0.3)
+                if oIolOolloOOIoO and oIolOolloOOIoO.Parent and oIolOolloOOIoO.Text == OOlOoOlIIo then
+                    lIIIoI_oIoOOOo.SearchText = OOlOoOlIIo
+                    IOo_OllOOIoIol_loIo(OOlOoOlIIo)
                 end
             end)
         end))
 
         -- Clear search on focus lost
-        table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _IOIIIooII0lIIOIl_IlI._1ol00I0lIOoOoIooIO_1lIIIOO0I:_lIIIOOoI_0llIOOO1Ol(function()
-            if _IOIIIooII0lIIOIl_IlI.IOlIlll01oI00Ol0lOOI == "" and lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.1)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                if not _IOIIIooII0lIIOIl_IlI:_I10O0lloIOlOIllIII_OOlO__l() then
-                    _O0l00O0oOo1Oo1lI1oOlO0I()
+        table.insert(IoOlIOIOl_oIOIIooII.Connections, oIolOolloOOIoO.FocusLost:Connect(function()
+            if oIolOolloOOIoO.Text == "" and lIIIoI_oIoOOOo.IsOpen then
+                task.wait(0.1)
+                if not SearchBox:IsFocused() then
+                    oolO_IIlloIO_oIoOIo()
                 end
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
             end
         end))
     end
 
-    -- lOlOOo0I1Olllo0olIIIo click handling
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, lI1OllOIO1lIlO_1OIoOl00lOl._I0O0OOI0olllI0oIlI00O_lOl_II_l:_lIIIOOoI_0llIOOO1Ol(function()
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-        if lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
-            _O0l00O0oOo1Oo1lI1oOlO0I()
+    -- Button click handling
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, OllI_O__Il.Activated:Connect(function()
+        if lIIIoI_oIoOOOo.IsOpen then
+            oolO_IIlloIO_oIoOIo()
         else
-            ooOo0_oIOOIl1ollI__IO0o0IOO_1O()
+            IIOOO_OO_OoOlO()
         end
     end))
 
     -- Click outside to close (UPDATED & FIXED)
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, __IIllI01O0I0OolO01ll01o01Ilo_O0o.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(function(_ol0_llOlO0III0I0l0_)
-        if ((function() return 1 + 1 == 2 end)()) and _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O and lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
-            local _1IOIl_lOllIIllOollOo0oII1lI = _1o0IIoOllI0_OOllI0II0O.Ill0OOl0OoIIoIIoII_O0IO0olI:_oIIOolIl_IIOolO0O0l0IoIOlIIlII()
-            local _IlI1OO_Oo_IO_o0o1l_lOOllOO0lO, _oIIOOIOIl0I0_1Ol_00I0ll = _1IOIl_lOllIIllOollOo0oII1lI._oIIlOIloI_l0II0I00l00OIOIoo, _1IOIl_lOllIIllOollOo0oII1lI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, OOOllOIOllO_OoI.InputBegan:Connect(function(olIlO_OlIlIO)
+        if olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseButton1 and lIIIoI_oIoOOOo.IsOpen then
+            local OlOIl_oOoOlI = ll_lOOloOIlllllol.LocalPlayer:GetMouse()
+            local IIoIOOOlOoOI, O_lIIOollooo = OlOIl_oOoOlI.X, OlOIl_oOoOlI.Y
             
-            -- Check if ((function() return 1 + 1 == 2 end)()) and clicking on dropdown _ooIolIIO0I000I_oOl0lOI
-            local _lO0oIl01lIOOOol1loIo_0o = lI1OllOIO1lIlO_1OIoOl00lOl._lloOIIOOlI0lOlOllI_IIOOIl0I
-            local _IoIOOIlooII_OIllIIO00OO10IIo = lI1OllOIO1lIlO_1OIoOl00lOl.__Ioll10_OOI0olIIIlo
-            local o10lIIloIIlOOIIIllOI1lo = (_IlI1OO_Oo_IO_o0o1l_lOOllOO0lO >= _lO0oIl01lIOOOol1loIo_0o._oIIlOIloI_l0II0I00l00OIOIoo and _IlI1OO_Oo_IO_o0o1l_lOOllOO0lO <= _lO0oIl01lIOOOol1loIo_0o._oIIlOIloI_l0II0I00l00OIOIoo + _IoIOOIlooII_OIllIIO00OO10IIo._oIIlOIloI_l0II0I00l00OIOIoo and
-                             _oIIOOIOIl0I0_1Ol_00I0ll >= _lO0oIl01lIOOOol1loIo_0o._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O and _oIIOOIOIl0I0_1Ol_00I0ll <= _lO0oIl01lIOOOol1loIo_0o._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + _IoIOOIlooII_OIllIIO00OO10IIo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O)
+            -- Check if clicking on dropdown button
+            local _IlIO_oIOOIO = OllI_O__Il.AbsolutePosition
+            local llIlloIllo = OllI_O__Il.AbsoluteSize
+            local OI__ll_olllO_o = (IIoIOOOlOoOI >= _IlIO_oIOOIO.X and IIoIOOOlOoOI <= _IlIO_oIOOIO.X + llIlloIllo.X and
+                             O_lIIOollooo >= _IlIO_oIOOIO.Y and O_lIIOollooo <= _IlIO_oIOOIO.Y + llIlloIllo.Y)
             
-            -- Check if ((function() return 1 + 1 == 2 end)()) and clicking on dropdown panel
-            local _IllIIll00I0OIloOl0IlIOOlIl0I1l0o = false
-            if ((function() return 1 + 1 == 2 end)()) and 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o and 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo then
-                local 0ll00Illlo0IloIOlO01__OIlO = 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o._lloOIIOOlI0lOlOllI_IIOOIl0I
-                local IolIoIl0I1IooIlO0IIOOoI0o1O = 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o.__Ioll10_OOI0olIIIlo
-                _IllIIll00I0OIloOl0IlIOOlIl0I1l0o = (_IlI1OO_Oo_IO_o0o1l_lOOllOO0lO >= 0ll00Illlo0IloIOlO01__OIlO._oIIlOIloI_l0II0I00l00OIOIoo and _IlI1OO_Oo_IO_o0o1l_lOOllOO0lO <= 0ll00Illlo0IloIOlO01__OIlO._oIIlOIloI_l0II0I00l00OIOIoo + IolIoIl0I1IooIlO0IIOOoI0o1O._oIIlOIloI_l0II0I00l00OIOIoo and
-                          _oIIOOIOIl0I0_1Ol_00I0ll >= 0ll00Illlo0IloIOlO01__OIlO._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O and _oIIOOIOIl0I0_1Ol_00I0ll <= 0ll00Illlo0IloIOlO01__OIlO._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + IolIoIl0I1IooIlO0IIOOoI0o1O._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O)
+            -- Check if clicking on dropdown panel
+            local IlIOOOIlloIoll = false
+            if IlOoIOII__OIOOO and IlOoIOII__OIOOO.Visible then
+                local IolIlIOOloIloo = IlOoIOII__OIOOO.AbsolutePosition
+                local oloIoI_OOIII_oo = IlOoIOII__OIOOO.AbsoluteSize
+                IlIOOOIlloIoll = (IIoIOOOlOoOI >= IolIlIOOloIloo.X and IIoIOOOlOoOI <= IolIlIOOloIloo.X + oloIoI_OOIII_oo.X and
+                          O_lIIOollooo >= IolIlIOOloIloo.Y and O_lIIOollooo <= IolIlIOOloIloo.Y + oloIoI_OOIII_oo.Y)
             end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
             
-            -- _o1I0IIlOolOllIl_I0OlOll dropdown if clicking outside both _ooIolIIO0I000I_oOl0lOI and panel
-            if ((function() return "a" == "a" end)()) and not o10lIIloIIlOOIIIllOI1lo and not _IllIIll00I0OIloOl0IlIOOlIl0I1l0o then
-                _O0l00O0oOo1Oo1lI1oOlO0I()
+            -- Close dropdown if clicking outside both button and panel
+            if not OI__ll_olllO_o and not IlIOOOIlloIoll then
+                oolO_IIlloIO_oIoOIo()
             end
         end
     end))
 
-    -- 1o0_OIIIo1I0OIlIllI0Io1OO navigation (UPDATED with better ESC handling)
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, __IIllI01O0I0OolO01ll01o01Ilo_O0o.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(function(_ol0_llOlO0III0I0l0_)
-        if ((function() return "a" == "a" end)()) and not lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then return end
+    -- Keyboard navigation (UPDATED with better ESC handling)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, OOOllOIOllO_OoI.InputBegan:Connect(function(olIlO_OlIlIO)
+        if not lIIIoI_oIoOOOo.IsOpen then return end
         
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        if ((function() return 1 + 1 == 2 end)()) and _ol0_llOlO0III0I0l0_.llI_oO1lloOO1OOIOOlIlI0olOl10Il0 == Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._lOOIo_O_OIOlOII0oOolol0 then
-            _O0l00O0oOo1Oo1lI1oOlO0I()
-        elseif _ol0_llOlO0III0I0l0_.llI_oO1lloOO1OOIOOlIlI0olOl10Il0 == Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._llIl1llIIIIOlllIlOlII01ol0llI then
-            if lOlIII00OIIOlloOoOlIO0ll_II.ololOoI1l0l1l1lIlO0I0l0OO_olI_lI[lOlIII00OIIOlloOoOlIO0ll_II.OIl_OoIllOIll0o0I00lI0olol] then
-                local O0IIII__0OlO0llII_100I00_lOI0o = lOlIII00OIIOlloOoOlIO0ll_II.ololOoI1l0l1l1lIlO0I0l0OO_olI_lI[lOlIII00OIIOlloOoOlIO0ll_II.OIl_OoIllOIll0o0I00lI0olol]
-                local lololOOoIlIolOll1IIOollOlll0I_ll = _l11oollOI0OlooIlo0_lOll_l[O0IIII__0OlO0llII_100I00_lOI0o]
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                if lololOOoIlIolOll1IIOollOlll0I_ll and lololOOoIlIolOll1IIOollOlll0I_ll._OOolOIollooIIIO_0O00I00OlOlIo0l then
-                    lololOOoIlIolOll1IIOollOlll0I_ll._OOolOIollooIIIO_0O00I00OlOlIo0l._I0O0OOI0olllI0oIlI00O_lOl_II_l:_I_oIlOl1ol0I1OlOl_l0_O0lll()
+        if olIlO_OlIlIO.KeyCode == Enum.KeyCode.Escape then
+            oolO_IIlloIO_oIoOIo()
+        elseif olIlO_OlIlIO.KeyCode == Enum.KeyCode.Return then
+            if lIIIoI_oIoOOOo.FilteredOptions[lIIIoI_oIoOOOo.HoveredIndex] then
+                local OOOIIIIOOI = lIIIoI_oIoOOOo.FilteredOptions[lIIIoI_oIoOOOo.HoveredIndex]
+                local ollOoIOOlIOIo_IOl = OlooIOIl_O[OOOIIIIOOI]
+                if ollOoIOOlIOIo_IOl and ollOoIOOlIOIo_IOl.Item then
+                    ollOoIOOlIOIo_IOl.Item.Activated:Fire()
                 end
-            elseif 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-                -- For multiselect, Enter _0_lOlolIIOlo1O00lIOoI1 closes dropdown
-                _O0l00O0oOo1Oo1lI1oOlO0I()
+            elseif lOO_OlOolIO_loo_.MultiSelect then
+                -- For multiselect, Enter key closes dropdown
+                oolO_IIlloIO_oIoOIo()
             end
         end
     end))
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
 
     -- ========== COLLAPSIBLE STATE MONITORING ==========
-    -- Monitor lOOolI_0IIl_IlOOlIIllI_0IlI collapsible untuk auto-close
-    local function _oOlI1Il0ll0l0I1I1oII()
-        -- Method 1: Direct lOOolI_0IIl_IlOOlIIllI_0IlI frame monitoring
-        local function _I00IoO_11_O1olloIllII(IllO0IlOIl1OOlloOII_IllII)
-            local _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO = IllO0IlOIl1OOlloOII_IllII.II_OlIII1_lIlOO0I0oOOO1001lI
-            local _IIIolOlOl0oIOOlO_l_o0IIOl = 1
-while true do
-    if _IIIolOlOl0oIOOlO_l_o0IIOl == 1 then
-        if not (_IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO) then break end
-        -- Cek apakah ini IO10I1oo_oOoI0Il01_0O_oolO0lIO0 (punya _I0I0IoI_0Oll0lllO1lll toggle behavior)
-                if ((function() local x = 5 return x > 3
-    end
-end)()) and _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO:IloIIOoOO0ll0oIoIIIIOll1lll0II("_llO_oOll0IlIOoO0I0OoIoolIolI0") and _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO:_lIlooOI_1_IlIoIIIlII0lOlll("TextButton") then
-                    local _oIIOIl0IollOolI_loo0l_0lIoOlIO1Io = false
-                    for _lIo0IoOlOll1lIO0_IoIllIlI, _10l0IIOIOl_IlIololOoOo10OlI_I in ipairs(_IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO:_Ol_0Oo00ll0IIOIO0l0IllolllllO()) do
-                        if (not (function() return false end)()) and _10l0IIOIOl_IlIololOoOo10OlI_I:IloIIOoOO0ll0oIoIIIIOll1lll0II("TextLabel") and (_10l0IIOIOl_IlIololOoOo10OlI_I.IOlIlll01oI00Ol0lOOI == "▼" or _10l0IIOIOl_IlIololOoOo10OlI_I.IOlIlll01oI00Ol0lOOI == oIOoII_0IIlOII1IOI1lI0_OO0o[67]) then
-                            _oIIOIl0IollOolI_loo0l_0lIoOlIO1Io = true
+    -- Monitor parent collapsible untuk auto-close
+    local function OOlllIOIolIIl()
+        -- Method 1: Direct parent frame monitoring
+        local function oOlIlllOI_lII(lIIII__OllOllOooIO)
+            local ollloI_ooO_IIOOOII = lIIII__OllOllOooIO.Parent
+            while ollloI_ooO_IIOOOII do
+                -- Cek apakah ini CollapsibleFrame (punya ClipsDescendants toggle behavior)
+                if current:IsA("Frame") and current:FindFirstChildOfClass("TextButton") then
+                    local _oIlIIooolollOOOIII = false
+                    for ooIlololllolIOlo, __IlO_o_oIIOI__loo in ipairs(current:GetDescendants()) do
+                        if child:IsA("TextLabel") and (__IlO_o_oIIOI__loo.Text == "▼" or __IlO_o_oIIOI__loo.Text == IO_oOOllOOoooIo_[67]) then
+                            _oIlIIooolollOOOIII = true
                             break
                         end
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
                     end
-                    if _oIIOIl0IollOolI_loo0l_0lIoOlIO1Io then
-                        return _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                    if _oIlIIooolollOOOIII then
+                        return ollloI_ooO_IIOOOII
                     end
                 end
-                _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO = _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO.II_OlIII1_lIlOO0I0oOOO1001lI
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                if ((function() local x = 5 return x > 3 end)()) and _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO == I0_ll_IIOIIO_00IoIOllOoIlO__IolO_ then break end
+                ollloI_ooO_IIOOOII = ollloI_ooO_IIOOOII.Parent
+                if ollloI_ooO_IIOOOII == IllOO__OoOlOI_O then break end
             end
             return nil
         end
         
-        local 0IIloOl0OloOl00_loIIIOOIIo = _I00IoO_11_O1olloIllII(_oolIlolOIOOIlOIooI0IIOlIIll)
+        local OoIIIIOoI_o = oOlIlllOI_lII(oIOl__IlIoIO_IIlI)
         
-        if 0IIloOl0OloOl00_loIIIOOIIo then
-            -- Monitor _I0I0IoI_0Oll0lllO1lll changes
-            local _lIlI1l1oIlI111l_IllIlIl_IlOOoO0IO = 0IIloOl0OloOl00_loIIIOOIIo:0IOoloO0oOlOOOll0IOIololIIO1o(oIOoII_0IIlOII1IOI1lI0_OO0o[68]):_lIIIOOoI_0llIOOO1Ol(function()
-                if (not (function() return false end)()) and 0IIloOl0OloOl00_loIIIOOIIo._I0I0IoI_0Oll0lllO1lll == true and lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
-                    _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.05) -- Small delay untuk smooth transition
-                    if lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
-                        _O0l00O0oOo1Oo1lI1oOlO0I()
+        if OoIIIIOoI_o then
+            -- Monitor ClipsDescendants changes
+            local o_looO_Io_OlloOoOl = collapsibleFrame:GetPropertyChangedSignal(IO_oOOllOOoooIo_[68]):Connect(function()
+                if OoIIIIOoI_o.ClipsDescendants == true and lIIIoI_oIoOOOo.IsOpen then
+                    task.wait(0.05) -- Small delay untuk smooth transition
+                    if lIIIoI_oIoOOOo.IsOpen then
+                        oolO_IIlloIO_oIoOIo()
                     end
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
                 end
             end)
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _lIlI1l1oIlI111l_IllIlIl_IlOOoO0IO)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, o_looO_Io_OlloOoOl)
             
-            -- Monitor 0IIlOooOIollloIOIII0o_0IIII_lo changes (collapsible animation)
-            local 1lIIlllIO1_lIlOOO_O1l0 = 0IIloOl0OloOl00_loIIIOOIIo.0IIlOooOIollloIOIII0o_0IIII_lo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O._oIIO_1l00lII_lOOOOIoo0l
-            local __I0IOI0lI_lO0l1llIlol_0 = 0IIloOl0OloOl00_loIIIOOIIo:0IOoloO0oOlOOOll0IOIololIIO1o(oIOoII_0IIlOII1IOI1lI0_OO0o[69]):_lIIIOOoI_0llIOOO1Ol(function()
-                local _IloloO1IlO1oolOlOlIlIlIlI1 = 0IIloOl0OloOl00_loIIIOOIIo.0IIlOooOIollloIOIII0o_0IIII_lo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O._oIIO_1l00lII_lOOOOIoo0l
+            -- Monitor Size changes (collapsible animation)
+            local loIIooOllOlo_O = OoIIIIOoI_o.Size.Y.Offset
+            local OI__ol_OIlo_IIl = collapsibleFrame:GetPropertyChangedSignal(IO_oOOllOOoooIo_[69]):Connect(function()
+                local OOlooOoIoOo = OoIIIIOoI_o.Size.Y.Offset
                 -- Jika height berkurang signifikan (closing animation)
-                if _IloloO1IlO1oolOlOlIlIlIlI1 < 1lIIlllIO1_lIlOOO_O1l0 - 10 and lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
+                if OOlooOoIoOo < loIIooOllOlo_O - 10 and lIIIoI_oIoOOOo.IsOpen then
                     -- Cek apakah dropdown masih visible
-                    local _l0lOo_IIlO1010ollI0OO0 = lI1OllOIO1lIlO_1OIoOl00lOl._lloOIIOOlI0lOlOllI_IIOOIl0I._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + lI1OllOIO1lIlO_1OIoOl00lOl.__Ioll10_OOI0olIIIlo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-                    local o_OO_lIOIIo1O0olOI_OllOOloo_I0II = 0IIloOl0OloOl00_loIIIOOIIo._lloOIIOOlI0lOlOllI_IIOOIl0I._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + _IloloO1IlO1oolOlOlIlIlIlI1
+                    local _OIOooollloIIoo = OllI_O__Il.AbsolutePosition.Y + OllI_O__Il.AbsoluteSize.Y
+                    local lIl_IollIoooIlIIoo = OoIIIIOoI_o.AbsolutePosition.Y + OOlooOoIoOo
                     
-                    if ((function() return "a" == "a" end)()) and _l0lOo_IIlO1010ollI0OO0 > o_OO_lIOIIo1O0olOI_OllOOloo_I0II then
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                        _O0l00O0oOo1Oo1lI1oOlO0I()
+                    if _OIOooollloIIoo > lIl_IollIoooIlIIoo then
+                        oolO_IIlloIO_oIoOIo()
                     end
                 end
-                1lIIlllIO1_lIlOOO_O1l0 = _IloloO1IlO1oolOlOlIlIlIlI1
+                loIIooOllOlo_O = OOlooOoIoOo
             end)
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, __I0IOI0lI_lO0l1llIlol_0)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, OI__ol_OIlo_IIl)
         end
         
-        -- Method 2: Universal visibility check via Il0OoI0loIIIllllIloIIOI01
-        local _OO_lIoO0OOllI1IOIo1Ol = OOIl1I011o0IlOIIOOlOl.Il0OoI0loIIIllllIloIIOI01:_lIIIOOoI_0llIOOO1Ol(function()
-            if not lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I or not 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo then return end
+        -- Method 2: Universal visibility check via RenderStepped
+        local Oo_OIOo_olIIooIOI = OlIoOOlOIOooIOIll.RenderStepped:Connect(function()
+            if not lIIIoI_oIoOOOo.IsOpen or not IlOoIOII__OIOOO.Visible then return end
             
-            -- Check if ((function() return "a" == "a" end)()) and dropdown _ooIolIIO0I000I_oOl0lOI is actually visible
-            local _llIOoIlol0010ll0ll0I = true
-            local _0lOo0OoII01l0Ol0IIll = _oolIlolOIOOIlOIooI0IIOlIIll
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+            -- Check if dropdown button is actually visible
+            local _O_I_oOIloIlI = true
+            local OoIoIOIoooI = oIOl__IlIoIO_IIlI
             
-            local _0IIlOllol_l0oOI_ol0l_Io = 1
-while true do
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-    if _0IIlOllol_l0oOI_ol0l_Io == 1 then
-        if not (_0lOo0OoII01l0Ol0IIll and _0lOo0OoII01l0Ol0IIll ~= I0_ll_IIOIIO_00IoIOllOoIlO__IolO_) then break end
-        if (not (function() return false
-    end
-end)()) and _0lOo0OoII01l0Ol0IIll:IloIIOoOO0ll0oIoIIIIOll1lll0II(oIOoII_0IIlOII1IOI1lI0_OO0o[70]) then
-                    if not _0lOo0OoII01l0Ol0IIll._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo then
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                        _llIOoIlol0010ll0ll0I = false
+            while OoIoIOIoooI and OoIoIOIoooI ~= IllOO__OoOlOI_O do
+                if checkParent:IsA(IO_oOOllOOoooIo_[70]) then
+                    if not OoIoIOIoooI.Visible then
+                        _O_I_oOIloIlI = false
                         break
                     end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
                     
                     -- Check clipping
-                    if _0lOo0OoII01l0Ol0IIll._I0I0IoI_0Oll0lllO1lll then
-                        local oo_OI0IOI0o0lOI_OOo1I0oloIlOl1O1l = lI1OllOIO1lIlO_1OIoOl00lOl._lloOIIOOlI0lOlOllI_IIOOIl0I._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + lI1OllOIO1lIlO_1OIoOl00lOl.__Ioll10_OOI0olIIIlo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-                        local _ol0o_lI0o1OoOIOI0_Il = _0lOo0OoII01l0Ol0IIll._lloOIIOOlI0lOlOllI_IIOOIl0I._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-                        local __IIIOOOOlool0OIOlIlOOlIO__o = _ol0o_lI0o1OoOIOI0_Il + _0lOo0OoII01l0Ol0IIll.__Ioll10_OOI0olIIIlo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+                    if OoIoIOIoooI.ClipsDescendants then
+                        local IIlolIO_lo_looOl = OllI_O__Il.AbsolutePosition.Y + OllI_O__Il.AbsoluteSize.Y
+                        local _IOlII_OoOll = OoIoIOIoooI.AbsolutePosition.Y
+                        local lOIloOoOII = _IOlII_OoOll + OoIoIOIoooI.AbsoluteSize.Y
                         
-                        -- lOlOOo0I1Olllo0olIIIo terpotong = dropdown harus close
-                        if ((function() return 1 + 1 == 2 end)()) and oo_OI0IOI0o0lOI_OOo1I0oloIlOl1O1l > __IIIOOOOlool0OIOlIlOOlIO__o + 5 then
-                            _llIOoIlol0010ll0ll0I = false
+                        -- Button terpotong = dropdown harus close
+                        if IIlolIO_lo_looOl > lOIloOoOII + 5 then
+                            _O_I_oOIloIlI = false
                             break
                         end
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
                     end
                 end
-                _0lOo0OoII01l0Ol0IIll = _0lOo0OoII01l0Ol0IIll.II_OlIII1_lIlOO0I0oOOO1001lI
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+                OoIoIOIoooI = OoIoIOIoooI.Parent
             end
             
-            if ((function() return 1 + 1 == 2 end)()) and not _llIOoIlol0010ll0ll0I then
-                _O0l00O0oOo1Oo1lI1oOlO0I()
+            if not _O_I_oOIloIlI then
+                oolO_IIlloIO_oIoOIo()
             end
         end)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
         
-        table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _OO_lIoO0OOllI1IOIo1Ol)
+        table.insert(IoOlIOIOl_oIOIIooII.Connections, Oo_OIOo_olIIooIOI)
     end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
 
     -- Panggil monitoring
-    _oOlI1Il0ll0l0I1I1oII()
+    OOlllIOIolIIl()
     -- ========== END COLLAPSIBLE MONITORING ==========
 
-    -- IOIOoOoII1oOO1l1_O_Oo0O0lII panel position on render step (for collapsible/scrolling)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-    local _0IIO0IOlllOII0olOOl10_lOO0 = OOIl1I011o0IlOIIOOlOl.Il0OoI0loIIIllllIloIIOI01:_lIIIOOoI_0llIOOO1Ol(function()
-        if lOlIII00OIIOlloOoOlIO0ll_II._0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I and 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo then
-            _lIlOIoIllloIl0IIlo0I()
+    -- Update panel position on render step (for collapsible/scrolling)
+    local OI_IlIloIIo = OlIoOOlOIOooIOIll.RenderStepped:Connect(function()
+        if lIIIoI_oIoOOOo.IsOpen and IlOoIOII__OIOOO.Visible then
+            II_IlllIOllII()
         end
     end)
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _0IIO0IOlllOII0olOOl10_lOO0)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, OI_IlIloIIo)
 
     -- Initial setup
-    l1OIo0lIOO01lloI1I_l()
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-    _lOOOIO0O_llOIIo0I_0Oolo_0()
+    lOooO_lIIlOOlOOo_oO()
+    IoIIOol___Ioo()
 
     -- Public methods
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    local _0II11OI1IOoOo0IlOlO0OlI0oOI = {
-        0o0Il0111II0Il00OllII0O1IO1OOIloo = function(_OIIl11_llllol_0l0_OIOloIIOOIOlOO, O0I11l1oOIl00OIOloII)
-            0OoooIO_1OOlIIlolIlIooOO0._IOI0loO0I0oOI_OOl00l = O0I11l1oOIl00OIOloII or {}
-            lOlIII00OIIOlloOoOlIO0ll_II.ololOoI1l0l1l1lIlO0I0l0OO_olI_lI = 0OoooIO_1OOlIIlolIlIooOO0._IOI0loO0I0oOI_OOl00l
-            l1OIo0lIOO01lloI1I_l()
+    local ooOOIOoOlolOl_oOOll = {
+        SetOptions = function(lO_Oo_lIllI, OIIlIlIloloIOlo)
+            lOO_OlOolIO_loo_.Options = OIIlIlIloloIOlo or {}
+            lIIIoI_oIoOOOo.FilteredOptions = lOO_OlOolIO_loo_.Options
+            lOooO_lIIlOOlOOo_oO()
         end,
         
-        _llll_1lO01IlOIOIlllo0II1lIO00 = function(_OIIl11_llllol_0l0_OIOloIIOOIOlOO, _OOllIIO0_II0Ol00IIol1ool)
-            if ((function() return 1 + 1 == 2 end)()) and 0OoooIO_1OOlIIlolIlIooOO0.OOlololOIll0lloI1O0O_O1OII_oo_I then
-                lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o = type(_OOllIIO0_II0Ol00IIol1ool) == "table" and _OOllIIO0_II0Ol00IIol1ool or {}
+        SetValue = function(lO_Oo_lIllI, loolOoIIlIoloIIo_ll)
+            if lOO_OlOolIO_loo_.MultiSelect then
+                lIIIoI_oIoOOOo.Selected = type(loolOoIIlIoloIIo_ll) == "table" and loolOoIIlIoloIIo_ll or {}
             else
-                lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o = _OOllIIO0_II0Ol00IIol1ool
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+                lIIIoI_oIoOOOo.Selected = loolOoIIlIoloIIo_ll
             end
-            _lOOOIO0O_llOIIo0I_0Oolo_0()
-            l1OIo0lIOO01lloI1I_l()
+            IoIIOol___Ioo()
+            lOooO_lIIlOOlOOo_oO()
         end,
         
-        O0IlO0ooO0OIoOlllOOI = function(_OIIl11_llllol_0l0_OIOloIIOOIOlOO)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            return lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o
+        GetValue = function(lO_Oo_lIllI)
+            return lIIIoI_oIoOOOo.Selected
         end,
         
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        _ol_00IlIIl0O0l0oo0lIII1lo__O1oo = function(_OIIl11_llllol_0l0_OIOloIIOOIOlOO)
-            ooOo0_oIOOIl1ollI__IO0o0IOO_1O()
+        Open = function(lO_Oo_lIllI)
+            IIOOO_OO_OoOlO()
         end,
         
-        _o1I0IIlOolOllIl_I0OlOll = function(_OIIl11_llllol_0l0_OIOloIIOOIOlOO)
-            _O0l00O0oOo1Oo1lI1oOlO0I()
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+        Close = function(lO_Oo_lIllI)
+            oolO_IIlloIO_oIoOIo()
         end,
         
-        OlIIl0oIl11_IOIl1loO0I0loII = function(_OIIl11_llllol_0l0_OIOloIIOOIOlOO)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            _O0l00O0oOo1Oo1lI1oOlO0I()
+        Destroy = function(lO_Oo_lIllI)
+            oolO_IIlloIO_oIoOIo()
             
-            -- _0IIlO0l_00_O0IoI0Ol011O0O1oI update IIollOOI_loOIlIIOIOlIlloo_I
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            if ((function() local x = 5 return x > 3 end)()) and _0IIO0IOlllOII0olOOl10_lOO0 and _0IIO0IOlllOII0olOOl10_lOO0.I1I00IlOollllI0IIOOI1lOoI then
-                _0IIO0IOlllOII0olOOl10_lOO0:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
+            -- Disconnect update connection
+            if OI_IlIloIIo and OI_IlIloIIo.Connected then
+                updateConnection:Disconnect()
             end
             
-            if _oolIlolOIOOIlOIooI0IIOlIIll and _oolIlolOIOOIlOIooI0IIOlIIll.II_OlIII1_lIlOO0I0oOOO1001lI then
-                _oolIlolOIOOIlOIooI0IIOlIIll:OlIIl0oIl11_IOIl1loO0I0loII()
+            if oIOl__IlIoIO_IIlI and oIOl__IlIoIO_IIlI.Parent then
+                Container:Destroy()
             end
             
-            if ((function() local x = 5 return x > 3 end)()) and 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o and 0lIlI0l1OlI01l0I1O_00OOOlol1lI_o.II_OlIII1_lIlOO0I0oOOO1001lI then
-                0lIlI0l1OlI01l0I1O_00OOOlol1lI_o:OlIIl0oIl11_IOIl1loO0I0loII()
+            if IlOoIOII__OIOOO and IlOoIOII__OIOOO.Parent then
+                Panel:Destroy()
             end
         end
     }
 
     -- Register for auto-save
-    if ((function() local x = 5 return x > 3 end)()) and 0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-        _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = {
-            OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o end,
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            _oOoIOoO0OOIll1Ol0llo_01o101 = function(_OOllIIO0_II0Ol00IIol1ool) _0II11OI1IOoOo0IlOlO0OlI0oOI:_llll_1lO01IlOIOIlllo0II1lIO00(_OOllIIO0_II0Ol00IIol1ool) end
+    if lOO_OlOolIO_loo_.Flag then
+        IoOlIOIOl_oIOIIooII.Registry[lOO_OlOolIO_loo_.Flag] = {
+            Get = function() return lIIIoI_oIoOOOo.Selected end,
+            Set = function(loolOoIIlIoloIIo_ll) DropdownAPI:SetValue(loolOoIIlIoloIIo_ll) end
         }
-        _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = lOlIII00OIIOlloOoOlIO0ll_II._OOIIlllI_0II01l_OIolloOol_lI_o
+        IoOlIOIOl_oIOIIooII.Flags[lOO_OlOolIO_loo_.Flag] = lIIIoI_oIoOOOo.Selected
     end
 
-    return _0II11OI1IOoOo0IlOlO0OlI0oOI
+    return ooOOIOoOlolOl_oOOll
 end
 
---// Main 0OlI0OlOO1IIlOIlIOOOI1 Function (continuing with all other components...)
-function _O0I0IoOIIlloool010oIO__:0OlI0OlOO1IIlOIlIOOOI1(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-    if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+--// Main Window Function (continuing with all other components...)
+function Nexus:Window(_oOoOoOlOlIlIllooO)
+    if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
     
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
     -- Enhanced validation
-    if ((function() return 1 + 1 == 2 end)()) and not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+    if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
     
-    local lllO010OoIlIoIIooOOOlI1IO = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.lllO010OoIlIoIIooOOOlI1IO or oIOoII_0IIlOII1IOI1lI0_OO0o[71]
-    local _IllllIOIIoI0ll00lOl0o00OIl_llOO = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IllllIOIIoI0ll00lOl0o00OIl_llOO or oIOoII_0IIlOII1IOI1lI0_OO0o[72]
-    local O0o_OlOoIOlIlIIllI0IIll0 = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.0IIlOooOIollloIOIII0o_0IIII_lo or {600, 380}
-    local IIIlIIOoOO0l_lO0ololo_1OOIOII0I00 = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IIIlIIOoOO0l_lO0ololo_1OOIOII0I00 or {350, 220}
+    local oOIlo_olIl_IIlO = _oOoOoOlOlIlIllooO.Title or IO_oOOllOOoooIo_[71]
+    local _o__oOIIoIIlooooIIO = _oOoOoOlOlIlIllooO.Subtitle or IO_oOOllOOoooIo_[72]
+    local IoooooOoooOI = _oOoOoOlOlIlIllooO.Size or {600, 380}
+    local oIol_OolOO_oIOllOl_ = _oOoOoOlOlIlIllooO.MinSize or {350, 220}
 
-    local II_o11llO0Io_lllI_lOIIlllO = workspace._I00I1Ill_1OlIIlOO_O_olo0I
-    local l10lI01O0l0lOlO_ol_I_lOo_O00oI = II_o11llO0Io_lllI_lOIIlllO._IloOlllI0OIIOI_0Io_l
+    local l_OOoloIoOoOl = workspace.CurrentCamera
+    local _oOIOoollI_OO__lOOo = l_OOoloIoOoOl.ViewportSize
     
-    local _lO1Ol0l0Il1IloIlolllo_OOIol = O0o_OlOoIOlIlIIllI0IIll0[1]
-    local l1Il_o0Illl0ll00oloOOllIlOOOo0Ill = O0o_OlOoIOlIlIIllI0IIll0[2]
+    local IIOloloOlI = IoooooOoooOI[1]
+    local lIoolloIOoIO = IoooooOoooOI[2]
 
     -- Responsive sizing logic (SAME - already good)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-    if _lO1Ol0l0Il1IloIlolllo_OOIol > l10lI01O0l0lOlO_ol_I_lOo_O00oI._oIIlOIloI_l0II0I00l00OIOIoo * 0.85 then
-        local IlI0O0OIllIllllOI1lII01IIlO1IOIIO1 = O0o_OlOoIOlIlIIllI0IIll0[2] / O0o_OlOoIOlIlIIllI0IIll0[1]
-        _lO1Ol0l0Il1IloIlolllo_OOIol = math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(l10lI01O0l0lOlO_ol_I_lOo_O00oI._oIIlOIloI_l0II0I00l00OIOIoo * 0.85)
-        l1Il_o0Illl0ll00oloOOllIlOOOo0Ill = math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(_lO1Ol0l0Il1IloIlolllo_OOIol * IlI0O0OIllIllllOI1lII01IIlO1IOIIO1)
+    if IIOloloOlI > _oOIOoollI_OO__lOOo.X * 0.85 then
+        local OOloOOIOlIIIlO = IoooooOoooOI[2] / IoooooOoooOI[1]
+        IIOloloOlI = math.floor(_oOIOoollI_OO__lOOo.X * 0.85)
+        lIoolloIOoIO = math.floor(IIOloloOlI * OOloOOIOlIIIlO)
     end
     
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    if ((function() return "a" == "a" end)()) and l1Il_o0Illl0ll00oloOOllIlOOOo0Ill > l10lI01O0l0lOlO_ol_I_lOo_O00oI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O * 0.8 then
-        local IlI0O0OIllIllllOI1lII01IIlO1IOIIO1 = O0o_OlOoIOlIlIIllI0IIll0[1] / O0o_OlOoIOlIlIIllI0IIll0[2]
-        l1Il_o0Illl0ll00oloOOllIlOOOo0Ill = math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(l10lI01O0l0lOlO_ol_I_lOo_O00oI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O * 0.8)
-        _lO1Ol0l0Il1IloIlolllo_OOIol = math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(l1Il_o0Illl0ll00oloOOllIlOOOo0Ill * IlI0O0OIllIllllOI1lII01IIlO1IOIIO1)
+    if lIoolloIOoIO > _oOIOoollI_OO__lOOo.Y * 0.8 then
+        local OOloOOIOlIIIlO = IoooooOoooOI[1] / IoooooOoooOI[2]
+        lIoolloIOoIO = math.floor(_oOIOoollI_OO__lOOo.Y * 0.8)
+        IIOloloOlI = math.floor(lIoolloIOoIO * OOloOOIOlIIIlO)
     end
     
-    _lO1Ol0l0Il1IloIlolllo_OOIol = math._OIl0IllI0O001l0O_1_I_oI(_lO1Ol0l0Il1IloIlolllo_OOIol, IIIlIIOoOO0l_lO0ololo_1OOIOII0I00[1])
-    l1Il_o0Illl0ll00oloOOllIlOOOo0Ill = math._OIl0IllI0O001l0O_1_I_oI(l1Il_o0Illl0ll00oloOOllIlOOOo0Ill, IIIlIIOoOO0l_lO0ololo_1OOIOII0I00[2])
+    IIOloloOlI = math.max(IIOloloOlI, oIol_OolOO_oIOllOl_[1])
+    lIoolloIOoIO = math.max(lIoolloIOoIO, oIol_OolOO_oIOllOl_[2])
     
-    local 0IIlOooOIollloIOIII0o_0IIII_lo = {_lO1Ol0l0Il1IloIlolllo_OOIol, l1Il_o0Illl0ll00oloOOllIlOOOo0Ill}
+    local IIlolo_Ilo__ = {IIOloloOlI, lIoolloIOoIO}
 
-    -- _00l00l1l0ooI0I01oOIIO0IIlO011 llOOlOII_0llI00IOIlO1lOl0I with better error handling
-    local llOOlOII_0llI00IOIlO1lOl0I = _00l00l1l0ooI0I01oOIIO0IIlO011("llOOlOII_0llI00IOIlO1lOl0I", {
-        _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[73] .. _I_l0IlloIIO_0IoI0lO011oO:_IOII0oOl00ll1oll1oll_(false):looIOlIlI0_II_0I_lOlllIO_(1, 8),
-        II_OlIII1_lIlOO0I0oOOO1001lI = (OOIl1I011o0IlOIIOOlOl:0lIOO0IO1ll01lIlIOOOlIloIlo() and _1o0IIoOllI0_OOllI0II0O.Ill0OOl0OoIIoIIoII_O0IO0olI:_lol_ll01llloO0_0I_OIOo1O1lOlol(oIOoII_0IIlOII1IOI1lI0_OO0o[74])) or _OI_lO1O1llI0Iol1lIlO,
-        ll0llollIIIIO0O1II0lO1l0Ill1oIlI = false,
-        _llolo01OIOIIl0OOIOlOO1lol1_I = Enum._llolo01OIOIIl0OOIOlOO1lol1_I.O1oII0oOI0IOOIIolI0OOll000lllol_,
-        _O10I_OlOlIoIoI1I01I_ = true
+    -- Create ScreenGui with better error handling
+    local _oIIIIlIoool_I = _OI_olOOlOI("ScreenGui", {
+        oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[73] .. HttpService:GenerateGUID(false):sub(1, 8),
+        O_OoOO_I_oI = (RunService:IsStudio() and ll_lOOloOIlllllol.LocalPlayer:WaitForChild(IO_oOOllOOoooIo_[74])) or oII_O_II_I,
+        ResetOnSpawn = false,
+        ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
+        IgnoreGuiInset = true
     })
     
-    if ((function() return 1 + 1 == 2 end)()) and not llOOlOII_0llI00IOIlO1lOl0I then
-        warn(oIOoII_0IIlOII1IOI1lI0_OO0o[75])
+    if not _oIIIIlIoool_I then
+        warn(IO_oOOllOOoooIo_[75])
         return nil
     end
 
-    -- FIX: 0OlI0OlOO1IIlOIlIOOOI1 state management untuk proper cleanup
-    local I_O_lIOIlo0OIl10oo1OOIOl_OO = {
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-        IIlIOlIIO__I0ooOollI = false,
-        _I_lO0l_IOIo0Il_l1llIo11ll_lll01 = {},
-        Ol1llI1lIl1llIOIlIOIO = {},
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-        _10IolI1ll0loO1OIIllIO = {}
+    -- FIX: Window state management untuk proper cleanup
+    local OolOlO_OOOoIo = {
+        isDestroyed = false,
+        animationThreads = {},
+        _o_lolOllll = {},
+        elements = {}
     }
 
-    -- Enhanced oOOOl0OI00IOllIloOl1 Animation dengan proper cleanup
-    if ((function() return 1 + 1 == 2 end)()) and oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.oOOOl0OI00IOllIloOl1 ~= false then
-        local _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-            _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(1, 1),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(0, 0),
-            O_OIooI1IlII0I0IOoIll = 9999,
-            II_OlIII1_lIlOO0I0oOOO1001lI = llOOlOII_0llI00IOIlO1lOl0I
+    -- Enhanced Welcome Animation dengan proper cleanup
+    if _oOoOoOlOlIlIllooO.Welcome ~= false then
+        local IoIllIoOloolI_oO = _OI_olOOlOI("Frame", {
+            IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Background,
+            IIlolo_Ilo__ = UDim2.fromScale(1, 1),
+            lOoOolOOolool = UDim2.fromScale(0, 0),
+            ZIndex = 9999,
+            O_OoOO_I_oI = _oIIIIlIoool_I
         })
         
-        I_O_lIOIlo0OIl10oo1OOIOl_OO._10IolI1ll0loO1OIIllIO._1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O = _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O
+        OolOlO_OOOoIo.elements.IntroFrame = IoIllIoOloolI_oO
         
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-        local _0l_OolooO1_0Ilo1IIl = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-            _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0OOolllIlI0o0lloOllO),
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo),
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._ollOOIIO_lIOlIO1oO0O01o0o00l00ll)
+        local oollooIIIlOO_OoOOO = _OI_olOOlOI("UIGradient", {
+            lOO_lIoI_O_o = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Gradient1),
+                ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.Background),
+                ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Gradient2)
             },
-            _OllIII_OIlIIOll1OlI_1lo = 45,
-            _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-                l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.7),
-                l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0),
-                l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.7)
+            Rotation = 45,
+            Transparency = NumberSequence.new{
+                NumberSequenceKeypoint.new(0, 0.7),
+                NumberSequenceKeypoint.new(0.5, 0),
+                NumberSequenceKeypoint.new(1, 0.7)
             },
-            II_OlIII1_lIlOO0I0oOOO1001lI = _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O
+            O_OoOO_I_oI = IoIllIoOloolI_oO
         })
         
-        local oo_Il1IIIIO_ooI1OllIlOIlI_0o = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(120, 120),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(0.5, 0.4),
-            OOO0ll1II1oOI1l0lOIOII = Vector2._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.5),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+        local ololIIIlololllI = _OI_olOOlOI("Frame", {
+            oIo_o_IIll = 1,
+            IIlolo_Ilo__ = UDim2.fromOffset(120, 120),
+            lOoOolOOolool = UDim2.fromScale(0.5, 0.4),
+            AnchorPoint = Vector2.new(0.5, 0.5),
+            O_OoOO_I_oI = IoIllIoOloolI_oO
         })
         
-        local _IIOI0_0lIII1OlOllIl0O1OIllO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = oIOoII_0IIlOII1IOI1lI0_OO0o[76],
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-            IOollOOIOoOlo00OlIIl1I = 72,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(1, 1),
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            OOllO_I000llIOIIol_IlI11OoOI = 1,
-            II_OlIII1_lIlOO0I0oOOO1001lI = oo_Il1IIIIO_ooI1OllIlOIlI_0o
+        local ooIIOlolool = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = IO_oOOllOOoooIo_[76],
+            IlIoOollo_lIllII = Enum.Font.GothamBold,
+            TextSize = 72,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent,
+            oIo_o_IIll = 1,
+            IIlolo_Ilo__ = UDim2.fromScale(1, 1),
+            TextTransparency = 1,
+            O_OoOO_I_oI = ololIIIlololllI
         })
         
-        _1lOOlOIIO_0IO_IoOIl00Il(oo_Il1IIIIO_ooI1OllIlOIlI_0o, 20)
-        ___IoO_1_O1loO01IIol10oOOIllO1(oo_Il1IIIIO_ooI1OllIlOIlI_0o, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, 3, 1)
+        llOl_IoIII_oIOIIo(ololIIIlololllI, 20)
+        lIO__OIIOllOlOOl(ololIIIlololllI, IoOlIOIOl_oIOIIooII.Theme.Accent, 3, 1)
         
-        local _IoIllIolOOOolOIlOIl_olO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = lllO010OoIlIoIIooOOOlI1IO,
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-            IOollOOIOoOlo00OlIIl1I = 28,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-            OOllO_I000llIOIIol_IlI11OoOI = 1,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(0.5, 0.58),
-            OOO0ll1II1oOI1l0lOIOII = Vector2._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.5),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O
-        })
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        
-        local Il1lIlOl1l1lI0Iol00ooIl_O = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = _IllllIOIIoI0ll00lOl0o00OIl_llOO,
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-            IOollOOIOoOlo00OlIIl1I = 16,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-            OOllO_I000llIOIIol_IlI11OoOI = 1,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(0.5, 0.65),
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            OOO0ll1II1oOI1l0lOIOII = Vector2._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.5),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O
+        local OOIlOolIOIOloOIOI = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = oOIlo_olIl_IIlO,
+            IlIoOollo_lIllII = Enum.Font.GothamBold,
+            TextSize = 28,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+            TextTransparency = 1,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.fromScale(0.5, 0.58),
+            AnchorPoint = Vector2.new(0.5, 0.5),
+            O_OoOO_I_oI = IoIllIoOloolI_oO
         })
         
-        -- FIX: II0I0OI1_OOllOI_lOloII_0llO_O animation thread for proper cleanup
-        local 1Ill010olI0IoO_O1_llll_ol0II_ = _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.spawn(function()
+        local olIIoOoIIl_llo = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = _o__oOIIoIIlooooIIO,
+            IlIoOollo_lIllII = Enum.Font.Gotham,
+            TextSize = 16,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+            TextTransparency = 1,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.fromScale(0.5, 0.65),
+            AnchorPoint = Vector2.new(0.5, 0.5),
+            O_OoOO_I_oI = IoIllIoOloolI_oO
+        })
+        
+        -- FIX: Track animation thread for proper cleanup
+        local _ooOOl_IlOOIoIIlo = task.spawn(function()
             -- Check if destroyed during animation
-            local function _0_ooll0I_lOIolIlIlIIIlI_0lo00oOI0()
-                return I_O_lIOIlo0OIl10oo1OOIOl_OO.IIlIOlIIO__I0ooOollI or not _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O or not _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O.II_OlIII1_lIlOO0I0oOOO1001lI
+            local function _IIoIOloIoO()
+                return OolOlO_OOOoIo.isDestroyed or not IoIllIoOloolI_oO or not IoIllIoOloolI_oO.Parent
             end
             
-            -- _IIOI0_0lIII1OlOllIl0O1OIllO border animation
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            if not _0_ooll0I_lOIolIlIlIIIlI_0lo00oOI0() then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(oo_Il1IIIIO_ooI1OllIlOIlI_0o:01lIllI0Il010_lI1Iool("UIStroke"), {_0IlOllO0lO00oOI0O_I_II0IlO = 0}, 0.6)
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.2)
+            -- Logo border animation
+            if not _IIoIOloIoO() then
+                lOoolOoIoOOOl(LogoContainer:FindFirstChild("UIStroke"), {Transparency = 0}, 0.6)
+                task.wait(0.2)
             end
             
-            -- _IIOI0_0lIII1OlOllIl0O1OIllO _0ol0I0IOollll0OlOO1 fade in
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            if ((function() local x = 5 return x > 3 end)()) and not _0_ooll0I_lOIolIlIlIIIlI_0lo00oOI0() then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIOI0_0lIII1OlOllIl0O1OIllO, {OOllO_I000llIOIIol_IlI11OoOI = 0}, 0.5)
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.3)
+            -- Logo text fade in
+            if not _IIoIOloIoO() then
+                lOoolOoIoOOOl(ooIIOlolool, {TextTransparency = 0}, 0.5)
+                task.wait(0.3)
             end
             
-            -- lllO010OoIlIoIIooOOOlI1IO animations
-            if not _0_ooll0I_lOIolIlIlIIIlI_0lo00oOI0() then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IoIllIolOOOolOIlOIl_olO, {OOllO_I000llIOIIol_IlI11OoOI = 0}, 0.4)
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.2)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(Il1lIlOl1l1lI0Iol00ooIl_O, {OOllO_I000llIOIIol_IlI11OoOI = 0}, 0.4)
+            -- Title animations
+            if not _IIoIOloIoO() then
+                lOoolOoIoOOOl(OOIlOolIOIOloOIOI, {TextTransparency = 0}, 0.4)
+                task.wait(0.2)
+                lOoolOoIoOOOl(olIIoOoIIl_llo, {TextTransparency = 0}, 0.4)
             end
             
-            -- _IIOI0_0lIII1OlOllIl0O1OIllO pulse effect
-            for _lIIOIlolIIlII1_Il_IOl01ll0Olll = 1, 2 do
-                if ((function() return "a" == "a" end)()) and _0_ooll0I_lOIolIlIlIIIlI_0lo00oOI0() then break end
+            -- Logo pulse effect
+            for oOIOOOIIOollolOO = 1, 2 do
+                if _IIoIOloIoO() then break end
                 
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIOI0_0lIII1OlOllIl0O1OIllO, {
-                    IOollOOIOoOlo00OlIIl1I = 78,
-                    000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._lo0loIo_0oOIoIOI0ool0IlooII0l1OO
+                lOoolOoIoOOOl(ooIIOlolool, {
+                    TextSize = 78,
+                    TextColor3 = IoOlIOIOl_oIOIIooII.Theme.AccentHover
                 }, 0.3)
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.3)
+                task.wait(0.3)
                 
-                if ((function() local x = 5 return x > 3 end)()) and _0_ooll0I_lOIolIlIlIIIlI_0lo00oOI0() then break end
+                if _IIoIOloIoO() then break end
                 
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIOI0_0lIII1OlOllIl0O1OIllO, {
-                    IOollOOIOoOlo00OlIIl1I = 72,
-                    000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+                lOoolOoIoOOOl(ooIIOlolool, {
+                    TextSize = 72,
+                    TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent
                 }, 0.3)
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.3)
+                task.wait(0.3)
             end
             
-            if not _0_ooll0I_lOIolIlIlIIIlI_0lo00oOI0() then
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.8)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+            if not _IIoIOloIoO() then
+                task.wait(0.8)
                 
                 -- Fade out animation
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIOI0_0lIII1OlOllIl0O1OIllO, {OOllO_I000llIOIIol_IlI11OoOI = 1, IOollOOIOoOlo00OlIIl1I = 0}, 0.4)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IoIllIolOOOolOIlOIl_olO, {OOllO_I000llIOIIol_IlI11OoOI = 1}, 0.3)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(Il1lIlOl1l1lI0Iol00ooIl_O, {OOllO_I000llIOIIol_IlI11OoOI = 1}, 0.3)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(oo_Il1IIIIO_ooI1OllIlOIlI_0o:01lIllI0Il010_lI1Iool("UIStroke"), {_0IlOllO0lO00oOI0O_I_II0IlO = 1}, 0.4)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1}, 0.5)
+                lOoolOoIoOOOl(ooIIOlolool, {TextTransparency = 1, TextSize = 0}, 0.4)
+                lOoolOoIoOOOl(OOIlOolIOIOloOIOI, {TextTransparency = 1}, 0.3)
+                lOoolOoIoOOOl(olIIoOoIIl_llo, {TextTransparency = 1}, 0.3)
+                lOoolOoIoOOOl(LogoContainer:FindFirstChild("UIStroke"), {Transparency = 1}, 0.4)
+                lOoolOoIoOOOl(IoIllIoOloolI_oO, {oIo_o_IIll = 1}, 0.5)
                 
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.6)
+                task.wait(0.6)
             end
             
             -- Clean destroy
             pcall(function()
-                if _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O and _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    _1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O:OlIIl0oIl11_IOIl1loO0I0loII()
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+                if IoIllIoOloolI_oO and IoIllIoOloolI_oO.Parent then
+                    IntroFrame:Destroy()
                 end
-                I_O_lIOIlo0OIl10oo1OOIOl_OO._10IolI1ll0loO1OIIllIO._1oOI0IoolIl0ll0Ol_lOIOII_IIOI1O = nil
+                OolOlO_OOOoIo.elements.IntroFrame = nil
             end)
         end)
         
-        I_O_lIOIlo0OIl10oo1OOIOl_OO._I_lO0l_IOIo0Il_l1llIo11ll_lll01[#I_O_lIOIlo0OIl10oo1OOIOl_OO._I_lO0l_IOIo0Il_l1llIo11ll_lll01 + 1] = 1Ill010olI0IoO_O1_llll_ol0II_
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+        OolOlO_OOOoIo.animationThreads[#OolOlO_OOOoIo.animationThreads + 1] = _ooOOl_IlOOIoIIlo
     end
     
-    -- Enhanced _IlO_IloIl1oOOOlI0IlooOlol1Il00 dengan optimized updates
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    if oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IlO_IloIl1oOOOlI0IlooOlol1Il00 ~= false then
-        local _lIIIIO0o0I1_OIoIlll0O0IOoOII1l = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-            _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 240, 0, 32),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 16, 0, (l10lI01O0l0lOlO_ol_I_lOo_O00oI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O < 600 and 50) or 16), 
-            II_OlIII1_lIlOO0I0oOOO1001lI = llOOlOII_0llI00IOIlO1lOl0I
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+    -- Enhanced Watermark dengan optimized updates
+    if _oOoOoOlOlIlIllooO.Watermark ~= false then
+        local oOIlOlOlIOlIoI__oO = _OI_olOOlOI("Frame", {
+            IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+            IIlolo_Ilo__ = UDim2.new(0, 240, 0, 32),
+            lOoOolOOolool = UDim2.new(0, 16, 0, (_oOIOoollI_OO__lOOo.Y < 600 and 50) or 16), 
+            O_OoOO_I_oI = _oIIIIlIoool_I
         })
         
-        I_O_lIOIlo0OIl10oo1OOIOl_OO._10IolI1ll0loO1OIIllIO._lIIIIO0o0I1_OIoIlll0O0IOoOII1l = _lIIIIO0o0I1_OIoIlll0O0IOoOII1l
+        OolOlO_OOOoIo.elements.WatermarkFrame = oOIlOlOlIOlIoI__oO
         
-        _1lOOlOIIO_0IO_IoOIl00Il(_lIIIIO0o0I1_OIoIlll0O0IOoOII1l, 8)
-        ___IoO_1_O1loO01IIol10oOOIllO1(_lIIIIO0o0I1_OIoIlll0O0IOoOII1l, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, 1, 0.5)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        _Ol0O_loIlOI0Ol0Io00IO0Il0IIOoll1I(_lIIIIO0o0I1_OIoIlll0O0IOoOII1l, 6, 0.8)
+        llOl_IoIII_oIOIIo(oOIlOlOlIOlIoI__oO, 8)
+        lIO__OIIOllOlOOl(oOIlOlOlIOlIoI__oO, IoOlIOIOl_oIOIIooII.Theme.Accent, 1, 0.5)
+        IolOololoIOoOOlI(oOIlOlOlIOlIoI__oO, 6, 0.8)
         
-        local _Ol0IIO1l00ol_1l0oOlo1llO000oO = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-            _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 1, 1)),
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0.9, 0.9, 0.9))
+        local ooIIoOllllooOlIlIIo = _OI_olOOlOI("UIGradient", {
+            lOO_lIoI_O_o = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
+                ColorSequenceKeypoint.new(1, Color3.new(0.9, 0.9, 0.9))
             },
-            _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-                l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.9),
-                l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.8)
+            Transparency = NumberSequence.new{
+                NumberSequenceKeypoint.new(0, 0.9),
+                NumberSequenceKeypoint.new(1, 0.8)
             },
-            _OllIII_OIlIIOll1OlI_1lo = 45,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _lIIIIO0o0I1_OIoIlll0O0IOoOII1l
+            Rotation = 45,
+            O_OoOO_I_oI = oOIlOlOlIOlIoI__oO
         })
         
-        local _ollIIl1olI00I1looO_lllIlIo = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -16, 1, 0),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 8, 0, 0),
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-            IOollOOIOoOlo00OlIIl1I = 13,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-            0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _lIIIIO0o0I1_OIoIlll0O0IOoOII1l
+        local OlO_OIlOloIO_IIOl = _OI_olOOlOI("TextLabel", {
+            oIo_o_IIll = 1,
+            IIlolo_Ilo__ = UDim2.new(1, -16, 1, 0),
+            lOoOolOOolool = UDim2.new(0, 8, 0, 0),
+            IlIoOollo_lIllII = Enum.Font.GothamMedium,
+            TextSize = 13,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+            TextXAlignment = Enum.TextXAlignment.Left,
+            O_OoOO_I_oI = oOIlOlOlIOlIoI__oO
         })
         
-        lo_lOl_o00oIlIO11oO1l(_lIIIIO0o0I1_OIoIlll0O0IOoOII1l)
+        _Ilo_oOlIooOOo(oOIlOlOlIOlIoI__oO)
         
         -- FIX: Optimized watermark update dengan throttling
-        local _IoOoIO10lIoOo0_IooooO__1 = 0
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-        local lI_OolI0O0IOOIIooI01I = 1 -- IOIOoOoII1oOO1l1_O_Oo0O0lII setiap 1 detik, bukan 60fps
+        local looOoI__Iool_IlIol = 0
+        local olIOIloIolo = 1 -- Update setiap 1 detik, bukan 60fps
         
-        local function I1IIIOIIl01IlO0IollOll_l()
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-            local 00I1lOOoIOlIOlIl0_ol = tick()
-            if 00I1lOOoIOlIOlIl0_ol - _IoOoIO10lIoOo0_IooooO__1 < lI_OolI0O0IOOIIooI01I then
+        local function _IolOlOlllOll()
+            local oloooOIolOo_lI_l = tick()
+            if oloooOIolOo_lI_l - looOoI__Iool_IlIol < olIOIloIolo then
                 return -- Skip update jika belum waktunya
             end
-            _IoOoIO10lIoOo0_IooooO__1 = 00I1lOOoIOlIOlIl0_ol
+            looOoI__Iool_IlIol = oloooOIolOo_lI_l
             
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            if ((function() local x = 5 return x > 3 end)()) and I_O_lIOIlo0OIl10oo1OOIOl_OO.IIlIOlIIO__I0ooOollI or not _lIIIIO0o0I1_OIoIlll0O0IOoOII1l or not _lIIIIO0o0I1_OIoIlll0O0IOoOII1l.II_OlIII1_lIlOO0I0oOOO1001lI then 
+            if OolOlO_OOOoIo.isDestroyed or not oOIlOlOlIOlIoI__oO or not oOIlOlOlIOlIoI__oO.Parent then 
                 return 
             end
             
-            local OIoO1l0l_ooIoIIOI00I1 = math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(workspace:_l00Il0ll_ll_OolloIIlO())
-            local 1IlIoolIOlo0l_1OIOl_l0Ioo1oO = 0
+            local llooIOIOOO_ = math.floor(workspace:GetRealPhysicsFPS())
+            local lo_IO_I_olII_IooO = 0
             
             pcall(function()
-                1IlIoolIOlo0l_1OIOl_l0Ioo1oO = __l0l1I0lIl0llolIl0I._1IIOlIl1lO0I_lOIOll0IoOIlIolI._III0IIIOIIlolIlIlIoIIIl0IO0lo[oIOoII_0IIlOII1IOI1lI0_OO0o[77]]:O0IlO0ooO0OIoOlllOOI()
+                lo_IO_I_olII_IooO = lo_lOIlllI_I.Network.ServerStatsItem[IO_oOOllOOoooIo_[77]]:GetValue()
             end)
             
-            local time = _1lIoOlOOIIOI0lIOOIo._1olIl0I1I01I0Io0oIIlol(oIOoII_0IIlOII1IOI1lI0_OO0o[78])
-            local _0ol_1lIIOo0l_lI_0llI_IIOIoIlI = #_1o0IIoOllI0_OOllI0II0O:__l_1ool0Oo0IOIOO0IoIolO10_0o1()
+            local time = os.date(IO_oOOllOOoooIo_[78])
+            local lOoIooo_lIloOIllIl = #Players:GetPlayers()
             
             pcall(function()
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                _ollIIl1olI00I1looO_lllIlIo.IOlIlll01oI00Ol0lOOI = string.OoIIl_10IOIIIO1ooOlololoIOl1ol(oIOoII_0IIlOII1IOI1lI0_OO0o[79], 
-                    OIoO1l0l_ooIoIIOI00I1, math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(1IlIoolIOlo0l_1OIOl_l0Ioo1oO), _0ol_1lIIOo0l_lI_0llI_IIOIoIlI, time)
+                OlO_OIlOloIO_IIOl.Text = string.format(IO_oOOllOOoooIo_[79], 
+                    llooIOIOOO_, math.floor(lo_IO_I_olII_IooO), lOoIooo_lIloOIllIl, time)
             end)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
         end
         
-        -- FIX: Use Il0OoI0loIIIllllIloIIOI01 tapi dengan throttling yang proper
-        local _I00lo1O_l0OIIOOI0lIII_lOI0o = OOIl1I011o0IlOIIOOlOl.Il0OoI0loIIIllllIloIIOI01:_lIIIOOoI_0llIOOO1Ol(I1IIIOIIl01IlO0IollOll_l)
-        I_O_lIOIlo0OIl10oo1OOIOl_OO.Ol1llI1lIl1llIOIlIOIO[#I_O_lIOIlo0OIl10oo1OOIOl_OO.Ol1llI1lIl1llIOIlIOIO + 1] = _I00lo1O_l0OIIOOI0lIII_lOI0o
+        -- FIX: Use RenderStepped tapi dengan throttling yang proper
+        local IOollOOlIoolo_ = OlIoOOlOIOooIOIll.RenderStepped:Connect(_IolOlOlllOll)
+        OolOlO_OOOoIo.connections[#OolOlO_OOOoIo.connections + 1] = IOollOOlIoolo_
         
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        I1IIIOIIl01IlO0IollOll_l()
+        _IolOlOlllOll()
         
         -- FIX: Safe theme update dengan existence check
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        local _Ol_IoIll01IoooIlO_OO0ll11O = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-            if I_O_lIOIlo0OIl10oo1OOIOl_OO.IIlIOlIIO__I0ooOollI then return end
+        local O_lolI_olOoOIIIIoI = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+            if OolOlO_OOOoIo.isDestroyed then return end
             
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
             pcall(function()
-                if ((function() local x = 5 return x > 3 end)()) and _lIIIIO0o0I1_OIoIlll0O0IOoOII1l and _lIIIIO0o0I1_OIoIlll0O0IOoOII1l.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    _lIIIIO0o0I1_OIoIlll0O0IOoOII1l._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-                    _ollIIl1olI00I1looO_lllIlIo.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
+                if oOIlOlOlIOlIoI__oO and oOIlOlOlIOlIoI__oO.Parent then
+                    oOIlOlOlIOlIoI__oO.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+                    OlO_OIlOloIO_IIOl.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
                     
-                    local _Oo0o0oOl0IlIO0o_OlOO1I0 = _lIIIIO0o0I1_OIoIlll0O0IOoOII1l:01lIllI0Il010_lI1Iool("UIStroke")
-                    if ((function() return 1 + 1 == 2 end)()) and _Oo0o0oOl0IlIO0o_OlOO1I0 then
-                        _Oo0o0oOl0IlIO0o_OlOO1I0._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
+                    local _oI_IoloIoIl = WatermarkFrame:FindFirstChild("UIStroke")
+                    if _oI_IoloIoIl then
+                        _oI_IoloIoIl.Color = IoOlIOIOl_oIOIIooII.Theme.Accent
                     end
                 end
             end)
         end)
         
-        I_O_lIOIlo0OIl10oo1OOIOl_OO.Ol1llI1lIl1llIOIlIOIO[#I_O_lIOIlo0OIl10oo1OOIOl_OO.Ol1llI1lIl1llIOIlIOIO + 1] = _Ol_IoIll01IoooIlO_OO0ll11O
+        OolOlO_OOOoIo.connections[#OolOlO_OOOoIo.connections + 1] = O_lolI_olOoOIIIIoI
     end
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
 
-    -- Main 0OlI0OlOO1IIlOIlIOOOI1 _llO_oOll0IlIOoO0I0OoIoolIolI0
-    local l01OOOOl_OIlOoIloIllOll1_ = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0IIlOooOIollloIOIII0o_0IIII_lo[1], 0IIlOooOIollloIOIII0o_0IIII_lo[2]),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(0.5, 0.5),
-        OOO0ll1II1oOI1l0lOIOII = Vector2._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.5),
-        _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-        II_OlIII1_lIlOO0I0oOOO1001lI = llOOlOII_0llI00IOIlO1lOl0I
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+    -- Main Window Frame
+    local OlOloollIIoloIolO_l = _OI_olOOlOI("Frame", {
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Background,
+        IIlolo_Ilo__ = UDim2.fromOffset(IIlolo_Ilo__[1], IIlolo_Ilo__[2]),
+        lOoOolOOolool = UDim2.fromScale(0.5, 0.5),
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        BorderSizePixel = 0,
+        O_OoOO_I_oI = _oIIIIlIoool_I
     })
     
     -- Kita gunakan UIScale untuk animasi resize yang lebih aman dan mulus
-    local 1lIOIlOOIoOlIllOIO0__1OIIlO0 = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[80], {
-        II_OlIII1_lIlOO0I0oOOO1001lI = l01OOOOl_OIlOoIloIllOll1_,
-        _OoO1_0O0I__loOI1o00ol = 1
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+    local IOlOoIOlI_OOI_o = _OI_olOOlOI(IO_oOOllOOoooIo_[80], {
+        O_OoOO_I_oI = OlOloollIIoloIolO_l,
+        Scale = 1
     })
     
-    if ((function() local x = 5 return x > 3 end)()) and not l01OOOOl_OIlOoIloIllOll1_ then
-        warn(oIOoII_0IIlOII1IOI1lI0_OO0o[81])
+    if not OlOloollIIoloIolO_l then
+        warn(IO_oOOllOOoooIo_[81])
         return nil
     end
     
-    _1lOOlOIIO_0IO_IoOIl00Il(l01OOOOl_OIlOoIloIllOll1_, 12)
-    ___IoO_1_O1loO01IIol10oOOIllO1(l01OOOOl_OIlOoIloIllOll1_, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.3)
-    _Ol0O_loIlOI0Ol0Io00IO0Il0IIOoll1I(l01OOOOl_OIlOoIloIllOll1_, 12, 0.6)
+    llOl_IoIII_oIOIIo(OlOloollIIoloIolO_l, 12)
+    lIO__OIIOllOlOOl(OlOloollIIoloIolO_l, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.3)
+    IolOololoIOoOOlI(OlOloollIIoloIolO_l, 12, 0.6)
     
-    -- 0OlI0OlOO1IIlOIlIOOOI1 Gradient _IllOoOII10IIl0IO0IlIIo
-    local _1oOI1III_oOIll0IolooOl0 = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 1, 1)),      -- BENAR: maksimal 1.0
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0.95, 0.95, 0.95))
+    -- Window Gradient Background
+    local oOlIOOIoIO = _OI_olOOlOI("UIGradient", {
+        lOO_lIoI_O_o = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),      -- BENAR: maksimal 1.0
+            ColorSequenceKeypoint.new(1, Color3.new(0.95, 0.95, 0.95))
         },
-        _OllIII_OIlIIOll1OlI_1lo = 135,
-        _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.95),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.98)
+        Rotation = 135,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.95),
+            NumberSequenceKeypoint.new(1, 0.98)
         },
-        II_OlIII1_lIlOO0I0oOOO1001lI = l01OOOOl_OIlOoIloIllOll1_
+        O_OoOO_I_oI = OlOloollIIoloIolO_l
     })
     
-    -- lllO010OoIlIoIIooOOOlI1IO Bar
-    local lo1lI0OII_IooIIlO10O_IllO1o = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 48),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-        II_OlIII1_lIlOO0I0oOOO1001lI = l01OOOOl_OIlOoIloIllOll1_
+    -- Title Bar
+    local ___IIIIoloIIl_oIolo = _OI_olOOlOI("Frame", {
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 48),
+        lOoOolOOolool = UDim2.fromOffset(0, 0),
+        O_OoOO_I_oI = OlOloollIIoloIolO_l
     })
     
-    _1lOOlOIIO_0IO_IoOIl00Il(lo1lI0OII_IooIIlO10O_IllO1o, 12)
+    llOl_IoIII_oIOIIo(___IIIIoloIIl_oIolo, 12)
     
-    -- lllO010OoIlIoIIooOOOlI1IO Bar Bottom Corner Fix
-    local _110Il1lI10OO1llIlo_0I0 = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 12),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 1, -12),
-        _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-        II_OlIII1_lIlOO0I0oOOO1001lI = lo1lI0OII_IooIIlO10O_IllO1o
+    -- Title Bar Bottom Corner Fix
+    local OoooooOOoI_IoOo_OOo = _OI_olOOlOI("Frame", {
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 12),
+        lOoOolOOolool = UDim2.new(0, 0, 1, -12),
+        BorderSizePixel = 0,
+        O_OoOO_I_oI = ___IIIIoloIIl_oIolo
     })
     
-    -- lllO010OoIlIoIIooOOOlI1IO Bar Gradient
-    local _Oooo1lIll00lOOlIOol0llOll0lO10II = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0OOolllIlI0o0lloOllO),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._ollOOIIO_lIOlIO1oO0O01o0o00l00ll)
+    -- Title Bar Gradient
+    local loOOoOIoIIllo = _OI_olOOlOI("UIGradient", {
+        lOO_lIoI_O_o = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Gradient1),
+            ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.Accent),
+            ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Gradient2)
         },
-        _OllIII_OIlIIOll1OlI_1lo = 45,
-        _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.1),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.05),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.15)
+        Rotation = 45,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.1),
+            NumberSequenceKeypoint.new(0.5, 0.05),
+            NumberSequenceKeypoint.new(1, 0.15)
         },
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        II_OlIII1_lIlOO0I0oOOO1001lI = lo1lI0OII_IooIIlO10O_IllO1o
+        O_OoOO_I_oI = ___IIIIoloIIl_oIolo
     })
     
     -- Auto-update dengan theme changes
-    local _ollOO1lOllOOlOOolOlIl0lIlOlolO0Il = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-        if ((function() local x = 5 return x > 3 end)()) and _Oooo1lIll00lOOlIOol0llOll0lO10II and _Oooo1lIll00lOOlIOol0llOll0lO10II.II_OlIII1_lIlOO0I0oOOO1001lI then
-            _Oooo1lIll00lOOlIOol0llOll0lO10II._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0OOolllIlI0o0lloOllO),
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I),
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._ollOOIIO_lIOlIO1oO0O01o0o00l00ll)
+    local oOIIlIlloOOO = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+        if loOOoOIoIIllo and loOOoOIoIIllo.Parent then
+            loOOoOIoIIllo.Color = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Gradient1),
+                ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.Accent),
+                ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Gradient2)
             }
         end
     end)
     
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _ollOO1lOllOOlOOolOlIl0lIlOlolO0Il)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, oOIIlIlloOOO)
 
-    -- App OOOoIOOollOo0OoI0I10IIolO0Io
-    local oI1lOloI0lIll_IlllIOl01O10oOIo = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-        IOlIlll01oI00Ol0lOOI = oIOoII_0IIlOII1IOI1lI0_OO0o[82],
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-        IOollOOIOoOlo00OlIIl1I = 20,
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(32, 48),
-        II_OlIII1_lIlOO0I0oOOO1001lI = lo1lI0OII_IooIIlO10O_IllO1o
+    -- App Icon
+    local _IooOOOlO_O = _OI_olOOlOI("TextLabel", {
+        Ioolo_OoIoIIoOIl = IO_oOOllOOoooIo_[82],
+        IlIoOollo_lIllII = Enum.Font.GothamBold,
+        TextSize = 20,
+        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent,
+        oIo_o_IIll = 1,
+        lOoOolOOolool = UDim2.fromOffset(16, 0),
+        IIlolo_Ilo__ = UDim2.fromOffset(32, 48),
+        O_OoOO_I_oI = ___IIIIoloIIl_oIolo
     })
     
-    -- 0OlI0OlOO1IIlOIlIOOOI1 lllO010OoIlIoIIooOOOlI1IO
-    local 0IIIOIl_ll_l_00_l1I0I0I_0l = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        IOlIlll01oI00Ol0lOOI = lllO010OoIlIoIIooOOOlI1IO,
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-        IOollOOIOoOlo00OlIIl1I = 16,
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(56, 0),
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -200, 1, 0),
-        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-        lIllOlI_lI0IIooI00IOloo0IOlOOl = Enum.lIllOlI_lI0IIooI00IOloo0IOlOOl._1O_0OlOo1lIOoIO0IOO_IlI0Ol1OoloII,
-        II_OlIII1_lIlOO0I0oOOO1001lI = lo1lI0OII_IooIIlO10O_IllO1o
+    -- Window Title
+    local oooIooIIlOlIO = _OI_olOOlOI("TextLabel", {
+        Ioolo_OoIoIIoOIl = oOIlo_olIl_IIlO,
+        IlIoOollo_lIllII = Enum.Font.GothamBold,
+        TextSize = 16,
+        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+        oIo_o_IIll = 1,
+        lOoOolOOolool = UDim2.fromOffset(56, 0),
+        IIlolo_Ilo__ = UDim2.new(1, -200, 1, 0),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        O_OoOO_I_oI = ___IIIIoloIIl_oIolo
     })
     
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-    -- 0OlI0OlOO1IIlOIlIOOOI1 _IllllIOIIoI0ll00lOl0o00OIl_llOO
-    local __IIoOIOOo1o0lIoOllloooloIolOIl_l = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-        IOlIlll01oI00Ol0lOOI = _IllllIOIIoI0ll00lOl0o00OIl_llOO,
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-        IOollOOIOoOlo00OlIIl1I = 12,
-        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(56, 24),
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -200, 0, 20),
-        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-        lIllOlI_lI0IIooI00IOloo0IOlOOl = Enum.lIllOlI_lI0IIooI00IOloo0IOlOOl._1O_0OlOo1lIOoIO0IOO_IlI0Ol1OoloII,
-        II_OlIII1_lIlOO0I0oOOO1001lI = lo1lI0OII_IooIIlO10O_IllO1o
+    -- Window Subtitle
+    local loOloIIOOIlIO = _OI_olOOlOI("TextLabel", {
+        Ioolo_OoIoIIoOIl = _o__oOIIoIIlooooIIO,
+        IlIoOollo_lIllII = Enum.Font.Gotham,
+        TextSize = 12,
+        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+        oIo_o_IIll = 1,
+        lOoOolOOolool = UDim2.fromOffset(56, 24),
+        IIlolo_Ilo__ = UDim2.new(1, -200, 0, 20),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        O_OoOO_I_oI = ___IIIIoloIIl_oIolo
     })
     
-    -- 0OlI0OlOO1IIlOIlIOOOI1 Controls _oolIlolOIOOIlOIooI0IIOlIIll
-    local IO0Ol_OlII0l1oIIII_OoO = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(120, 48),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -128, 0, 0),
-        II_OlIII1_lIlOO0I0oOOO1001lI = lo1lI0OII_IooIIlO10O_IllO1o
+    -- Window Controls Container
+    local llIIoIO__oO = _OI_olOOlOI("Frame", {
+        oIo_o_IIll = 1,
+        IIlolo_Ilo__ = UDim2.fromOffset(120, 48),
+        lOoOolOOolool = UDim2.new(1, -128, 0, 0),
+        O_OoOO_I_oI = ___IIIIoloIIl_oIolo
     })
     
-    -- lI101_OlllI000l_1lIOlolIll_ lOlOOo0I1Olllo0olIIIo
-    local _0OOOIoIIOlIOOIOolOI1O = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-        IOlIlll01oI00Ol0lOOI = oIOoII_0IIlOII1IOI1lI0_OO0o[83],
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-        IOollOOIOoOlo00OlIIl1I = 14,
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.8,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(32, 28),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(8, 10),
-        lO0lIoIIlIOoI0o0oloOIOO = false,
-        II_OlIII1_lIlOO0I0oOOO1001lI = IO0Ol_OlII0l1oIIII_OoO
+    -- Minimize Button
+    local Il_lOllOlIO = _OI_olOOlOI("TextButton", {
+        Ioolo_OoIoIIoOIl = IO_oOOllOOoooIo_[83],
+        IlIoOollo_lIllII = Enum.Font.GothamBold,
+        TextSize = 14,
+        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+        oIo_o_IIll = 0.8,
+        IIlolo_Ilo__ = UDim2.fromOffset(32, 28),
+        lOoOolOOolool = UDim2.fromOffset(8, 10),
+        lOoIOlOOloIl_O = false,
+        O_OoOO_I_oI = llIIoIO__oO
     })
     
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-    _1lOOlOIIO_0IO_IoOIl00Il(_0OOOIoIIOlIOOIOolOI1O, 6)
+    llOl_IoIII_oIOIIo(Il_lOllOlIO, 6)
     
-    -- _o1I0IIlOolOllIl_I0OlOll lOlOOo0I1Olllo0olIIIo
-    local _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-        IOlIlll01oI00Ol0lOOI = "", -- Kosongkan teks karena kita pakai gambar
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.8,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(32, 28),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(44, 10), -- Posisi di kiri (bekas Settings)
-        lO0lIoIIlIOoI0o0oloOIOO = false,
-        II_OlIII1_lIlOO0I0oOOO1001lI = IO0Ol_OlII0l1oIIII_OoO
+    -- Close Button
+    local oIOoOlOOOOIloOI = _OI_olOOlOI("TextButton", {
+        Ioolo_OoIoIIoOIl = "", -- Kosongkan teks karena kita pakai gambar
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+        oIo_o_IIll = 0.8,
+        IIlolo_Ilo__ = UDim2.fromOffset(32, 28),
+        lOoOolOOolool = UDim2.fromOffset(44, 10), -- Posisi di kiri (bekas Settings)
+        lOoIOlOOloIl_O = false,
+        O_OoOO_I_oI = llIIoIO__oO
     })
     
-    _1lOOlOIIO_0IO_IoOIl00Il(_OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo, 6)
+    llOl_IoIII_oIOIIo(oIOoOlOOOOIloOI, 6)
 
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    local _IIIIII0II0o0IIIIOlIOO_Il = _00l00l1l0ooI0I01oOIIO0IIlO011("ImageLabel", {
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 16), -- Ukuran OOOoIOOollOo0OoI0I10IIolO0Io
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(0.5, 0.5),
-        OOO0ll1II1oOI1l0lOIOII = Vector2._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.5),
-        l0IOIl0IOl0IIlllO1OlIIIIOIOlo = oIOoII_0IIlOII1IOI1lI0_OO0o[84], -- OOOoIOOollOo0OoI0I10IIolO0Io _oIIlOIloI_l0II0I00l00OIOIoo Modern (Lucide)
-        _IlOOlIIOIO1IIOo1IO0 = Color3._o1o100llllOIOlOO0IloO0(255, 100, 100), -- Warna Merah
-        II_OlIII1_lIlOO0I0oOOO1001lI = _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo
+    local _II_IoOoOolIoo = _OI_olOOlOI("ImageLabel", {
+        oIo_o_IIll = 1,
+        IIlolo_Ilo__ = UDim2.fromOffset(16, 16), -- Ukuran Icon
+        lOoOolOOolool = UDim2.fromScale(0.5, 0.5),
+        AnchorPoint = Vector2.new(0.5, 0.5),
+        Image = IO_oOOllOOoooIo_[84], -- Icon X Modern (Lucide)
+        lIIloO_O_ol_ = Color3.fromRGB(255, 100, 100), -- Warna Merah
+        O_OoOO_I_oI = oIOoOlOOOOIloOI
     })
     
     -- 3. TERAKHIR, ANIMASI HOVER
-    _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.2}, 0.15)
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIIIII0II0o0IIIIOlIOO_Il, {_IlOOlIIOIO1IIOo1IO0 = Color3._o1o100llllOIOlOO0IloO0(255, 50, 50)}, 0.15)
+    oIOoOlOOOOIloOI.MouseEnter:Connect(function()
+        lOoolOoIoOOOl(oIOoOlOOOOIloOI, {oIo_o_IIll = 0.2}, 0.15)
+        lOoolOoIoOOOl(_II_IoOoOolIoo, {lIIloO_O_ol_ = Color3.fromRGB(255, 50, 50)}, 0.15)
     end)
     
-    _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.8}, 0.15)
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIIIII0II0o0IIIIOlIOO_Il, {_IlOOlIIOIO1IIOo1IO0 = Color3._o1o100llllOIOlOO0IloO0(255, 100, 100)}, 0.15)
+    oIOoOlOOOOIloOI.MouseLeave:Connect(function()
+        lOoolOoIoOOOl(oIOoOlOOOOIloOI, {oIo_o_IIll = 0.8}, 0.15)
+        lOoolOoIoOOOl(_II_IoOoOolIoo, {lIIloO_O_ol_ = Color3.fromRGB(255, 100, 100)}, 0.15)
     end)
     
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-    -- lOlOOo0I1Olllo0olIIIo hover effects
-    local function lI1IOI0__llI00lIOl11OIO0OOOl(_ooIolIIO0I000I_oOl0lOI, lOIOl0lOlIOI0OIOO0Ilo0l)
-        _ooIolIIO0I000I_oOl0lOI.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_ooIolIIO0I000I_oOl0lOI, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.2}, 0.15)
-            if lOIOl0lOlIOI0OIOO0Ilo0l then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_ooIolIIO0I000I_oOl0lOI, {000O_IOOIOI_0lOll_I1o10l = lOIOl0lOlIOI0OIOO0Ilo0l}, 0.15)
+    -- Button hover effects
+    local function IIO_lIolIOoIIoI(o_lIoIl_looIoIoO, II_lOOoOl_OoOOIOOO)
+        o_lIoIl_looIoIoO.MouseEnter:Connect(function()
+            lOoolOoIoOOOl(o_lIoIl_looIoIoO, {oIo_o_IIll = 0.2}, 0.15)
+            if II_lOOoOl_OoOOIOOO then
+                lOoolOoIoOOOl(o_lIoIl_looIoIoO, {TextColor3 = II_lOOoOl_OoOOIOOO}, 0.15)
             end
         end)
         
-        _ooIolIIO0I000I_oOl0lOI.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_ooIolIIO0I000I_oOl0lOI, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.8}, 0.15)
-            if _ooIolIIO0I000I_oOl0lOI == _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo then
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_ooIolIIO0I000I_oOl0lOI, {000O_IOOIOI_0lOll_I1o10l = Color3._o1o100llllOIOlOO0IloO0(255, 100, 100)}, 0.15)
+        o_lIoIl_looIoIoO.MouseLeave:Connect(function()
+            lOoolOoIoOOOl(o_lIoIl_looIoIoO, {oIo_o_IIll = 0.8}, 0.15)
+            if o_lIoIl_looIoIoO == oIOoOlOOOOIloOI then
+                lOoolOoIoOOOl(o_lIoIl_looIoIoO, {TextColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
             else
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_ooIolIIO0I000I_oOl0lOI, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl}, 0.15)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+                lOoolOoIoOOOl(o_lIoIl_looIoIoO, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub}, 0.15)
             end
         end)
     end
 
-    lI1IOI0__llI00lIOl11OIO0OOOl(_0OOOIoIIOlIOOIOolOI1O)
-    --lI1IOI0__llI00lIOl11OIO0OOOl(SettingsButton)
+    IIO_lIolIOoIIoI(Il_lOllOlIO)
+    --CreateButtonHover(SettingsButton)
     
-    -- 0OlI0OlOO1IIlOIlIOOOI1 state management
-    local IOIO0lIIlo0OOIIlOOII0Oo = false
+    -- Window state management
+    local _OOllOIlIO_ = false
     
     -- [[ FIX: Floating Bubble dengan UIScale ]]
-    local _01I010IlolIIo1l_lIolOOOlOI_0 = nil
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+    local _oIlIIIIOI_l_OolO = nil
     
-    local function lIoo_l00I1o0olllIl1_II()
-        if ((function() return 1 + 1 == 2 end)()) and _01I010IlolIIo1l_lIolOOOlOI_0 then return end
+    local function _llIoIoIO_ooIoII()
+        if _oIlIIIIOI_l_OolO then return end
         
         -- Ambil Gambar Profil User (Headshot)
-        local _IOI00oIoOlooIIlIIlIO0l0OIIO0 = _1o0IIoOllI0_OOllI0II0O.Ill0OOl0OoIIoIIoII_O0IO0olI._oOlIOlOollOIllIO0IO0o0IIIIllIlo
-        local _o0IlIl00lI_lIooIOoIl = Enum.oloIo001IlllllOOlIIOI.lllllOII0IIO_IIoOOllll
-        local Il_1II10OIlI1l10_OOl1IlI = Enum.I1olOolOllIIolol1OIlI1lOOOI._OIllOlIOIll0_I1OlOO0Ol_lol
-        local _l1OoIIII0Oo__0l0oIOOo00ooO, IloI10_oo0IlOllIIOoI = _1o0IIoOllI0_OOllI0II0O:_IlOO0lIIoIOIl1o0lO10Ol_O1OlIIlOOI(_IOI00oIoOlooIIlIIlIO0l0OIIO0, _o0IlIl00lI_lIooIOoIl, Il_1II10OIlI1l10_OOl1IlI)
+        local olOOI_l_oIoIOOI_olo = ll_lOOloOIlllllol.LocalPlayer.UserId
+        local lIIollolIIOO = Enum.ThumbnailType.HeadShot
+        local olIIoOoIolIo = Enum.ThumbnailSize.Size48x48
+        local O__OIloIoOIO, isReady = Players:GetUserThumbnailAsync(olOOI_l_oIoIOOI_olo, lIIollolIIOO, olIIoOoIolIo)
         
         -- Buat Tombol Bulat
-        _01I010IlolIIo1l_lIolOOOlOI_0 = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[85], {
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            _ollII0lllll__oII_l1I1OO_1llool_I = oIOoII_0IIlOII1IOI1lI0_OO0o[86],
-            l0IOIl0IOl0IIlllO1OlIIIIOIOlo = _l1OoIIII0Oo__0l0oIOOo00ooO,
-            _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0), -- Mulai 0
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0.1, 0, 0.1, 0),
-            II_OlIII1_lIlOO0I0oOOO1001lI = llOOlOII_0llI00IOIlO1lOl0I,
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            O_OIooI1IlII0I0IOoIll = 9999
+        _oIlIIIIOI_l_OolO = _OI_olOOlOI(IO_oOOllOOoooIo_[85], {
+            oI_oOOll_oOoOOl = IO_oOOllOOoooIo_[86],
+            Image = O__OIloIoOIO,
+            IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+            IIlolo_Ilo__ = UDim2.fromOffset(0, 0), -- Mulai 0
+            lOoOolOOolool = UDim2.new(0.1, 0, 0.1, 0),
+            O_OoOO_I_oI = _oIIIIlIoool_I,
+            ZIndex = 9999
         })
         
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-        _1lOOlOIIO_0IO_IoOIl00Il(_01I010IlolIIo1l_lIolOOOlOI_0, 100) 
-        ___IoO_1_O1loO01IIol10oOOIllO1(_01I010IlolIIo1l_lIolOOOlOI_0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, 2, 0)
-        _Ol0O_loIlOI0Ol0Io00IO0Il0IIOoll1I(_01I010IlolIIo1l_lIolOOOlOI_0, 10, 0.6)
-        lo_lOl_o00oIlIO11oO1l(_01I010IlolIIo1l_lIolOOOlOI_0, _01I010IlolIIo1l_lIolOOOlOI_0)
+        llOl_IoIII_oIOIIo(_oIlIIIIOI_l_OolO, 100) 
+        lIO__OIIOllOlOOl(_oIlIIIIOI_l_OolO, IoOlIOIOl_oIOIIooII.Theme.Accent, 2, 0)
+        IolOololoIOoOOlI(_oIlIIIIOI_l_OolO, 10, 0.6)
+        _Ilo_oOlIooOOo(_oIlIIIIOI_l_OolO, _oIlIIIIOI_l_OolO)
         
         -- Animasi Bubble Muncul
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_01I010IlolIIo1l_lIolOOOlOI_0, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(50, 50)}, 0.4, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
+        lOoolOoIoOOOl(_oIlIIIIOI_l_OolO, {IIlolo_Ilo__ = UDim2.fromOffset(50, 50)}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
         
         -- Logic Saat Bubble Ditekan (Buka Menu)
-        _01I010IlolIIo1l_lIolOOOlOI_0._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
+        _oIlIIIIOI_l_OolO.MouseButton1Click:Connect(function()
             -- PlaySound("6895079853", 0.1)
             
             -- 1. Nyalakan Blur
-            _OIllIOo0Ilo00Io1O1lo0lIO(true, 8)
+            _lIOlIOlI__l(true, 8)
             
             -- 2. Hilangkan Bubble
-            if _01I010IlolIIo1l_lIolOOOlOI_0 then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_01I010IlolIIo1l_lIolOOOlOI_0, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0)}, 0.3, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo.lIOIlIOIool0llOOOo1lO)
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.25)
-                _01I010IlolIIo1l_lIolOOOlOI_0:OlIIl0oIl11_IOIl1loO0I0loII()
-                _01I010IlolIIo1l_lIolOOOlOI_0 = nil
+            if _oIlIIIIOI_l_OolO then
+                lOoolOoIoOOOl(_oIlIIIIOI_l_OolO, {IIlolo_Ilo__ = UDim2.fromOffset(0, 0)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
+                task.wait(0.25)
+                ToggleButton:Destroy()
+                _oIlIIIIOI_l_OolO = nil
             end
             
-            IOIO0lIIlo0OOIIlOOII0Oo = false
-            _0OOOIoIIOlIOOIOolOI1O.IOlIlll01oI00Ol0lOOI = "─"
+            _OOllOIlIO_ = false
+            Il_lOllOlIO.Text = "─"
             
             -- 3. Munculkan Menu Utama
-            l01OOOOl_OIlOoIloIllOll1_._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = true
+            OlOloollIIoloIolO_l.Visible = true
             
-            -- [PERBAIKAN] Pastikan _I0I0IoI_0Oll0lllO1lll SELALU False agar _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 tidak putus
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            l01OOOOl_OIlOoIloIllOll1_._I0I0IoI_0Oll0lllO1lll = false 
+            -- [PERBAIKAN] Pastikan ClipsDescendants SELALU False agar shadow tidak putus
+            OlOloollIIoloIolO_l.ClipsDescendants = false 
             
             -- 4. Animasi Membesar menggunakan UIScale (Lebih mulus & aman)
-            -- Kita set _OoO1_0O0I__loOI1o00ol ke 0 dulu biar start dari kecil
-            1lIOIlOOIoOlIllOIO0__1OIIlO0._OoO1_0O0I__loOI1o00ol = 0
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(1lIOIlOOIoOlIllOIO0__1OIIlO0, {_OoO1_0O0I__loOI1o00ol = 1}, 0.4, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
+            -- Kita set Scale ke 0 dulu biar start dari kecil
+            IOlOoIOlI_OOI_o.Scale = 0
+            lOoolOoIoOOOl(IOlOoIOlI_OOI_o, {Scale = 1}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
             
-            -- 5. Restore _lO_l_IoIolIo1OOlIllII0O (Animasi transparansi)
-            local _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 = l01OOOOl_OIlOoIloIllOll1_:01lIllI0Il010_lI1Iool("DropShadow")
-            if _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 then 
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_oO0OO0OIOI0IOolIl_o0lIlIO1lI100, {o0loOOIloIlIllOl0l_IIoo1 = 0.6}, 0.4) 
+            -- 5. Restore Shadow (Animasi transparansi)
+            local loOllllOOOo = MainWindow:FindFirstChild("DropShadow")
+            if loOllllOOOo then 
+                lOoolOoIoOOOl(loOllllOOOo, {ImageTransparency = 0.6}, 0.4) 
             end
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
         end)
     end
     
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-    local _l_lIIIolIOI0lIlolIlIoI1O1oI0 = l01OOOOl_OIlOoIloIllOll1_.0IIlOooOIollloIOIII0o_0IIII_lo
+    local _IOoIoIIOolIIIIO = OlOloollIIoloIolO_l.Size
     
-    -- lI101_OlllI000l_1lIOlolIll_ functionality (Floating Bubble lo0Iolo0oo0IOII_00oOOo0ll0__O_O)
-    _0OOOIoIIOlIOOIOolOI1O._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-        IOIO0lIIlo0OOIIlOOII0Oo = true
+    -- Minimize functionality (Floating Bubble Mode)
+    Il_lOllOlIO.MouseButton1Click:Connect(function()
+        _OOllOIlIO_ = true
         -- PlaySound("6895079853", 0.1)
         
         -- 1. Matikan Blur
-        _OIllIOo0Ilo00Io1O1lo0lIO(false)
+        _lIOlIOlI__l(false)
         
-        -- 2. Sembunyikan _lO_l_IoIolIo1OOlIllII0O
-        local _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 = l01OOOOl_OIlOoIloIllOll1_:01lIllI0Il010_lI1Iool("DropShadow")
-        if _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 then _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_oO0OO0OIOI0IOolIl_o0lIlIO1lI100, {o0loOOIloIlIllOl0l_IIoo1 = 1}, 0.2) end
+        -- 2. Sembunyikan Shadow
+        local loOllllOOOo = MainWindow:FindFirstChild("DropShadow")
+        if loOllllOOOo then lOoolOoIoOOOl(loOllllOOOo, {ImageTransparency = 1}, 0.2) end
 
         -- 3. Animasi Mengecil menggunakan UIScale
         -- Kita TIDAK resize frame, tapi mengubah skala-nya. Konten tidak akan bocor.
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(1lIOIlOOIoOlIllOIO0__1OIIlO0, {_OoO1_0O0I__loOI1o00ol = 0}, 0.4, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo.lIOIlIOIool0llOOOo1lO)
+        lOoolOoIoOOOl(IOlOoIOlI_OOI_o, {Scale = 0}, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In)
         
         -- 4. Tunggu animasi selesai
-        _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.delay(0.35, function()
-            if IOIO0lIIlo0OOIIlOOII0Oo then
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                l01OOOOl_OIlOoIloIllOll1_._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = false
-                lIoo_l00I1o0olllIl1_II()
+        task.delay(0.35, function()
+            if _OOllOIlIO_ then
+                OlOloollIIoloIolO_l.Visible = false
+                _llIoIoIO_ooIoII()
             end
         end)
     end)
     
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-    -- _o1I0IIlOolOllIl_I0OlOll functionality with confirmation (FIXED)
-    _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
+    -- Close functionality with confirmation (FIXED)
+    oIOoOlOOOOIloOI.MouseButton1Click:Connect(function()
         -- [FIX] Nyalakan Clipping SEBELUM animasi tutup dimulai
         -- Ini memotong semua tombol/teks agar tidak tertinggal saat window mengecil
-        l01OOOOl_OIlOoIloIllOll1_._I0I0IoI_0Oll0lllO1lll = true 
+        OlOloollIIoloIolO_l.ClipsDescendants = true 
         
-        -- Sembunyikan _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 instan agar tidak aneh
-        local _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 = l01OOOOl_OIlOoIloIllOll1_:01lIllI0Il010_lI1Iool("DropShadow")
-        if (not (function() return false end)()) and _oO0OO0OIOI0IOolIl_o0lIlIO1lI100 then _oO0OO0OIOI0IOolIl_o0lIlIO1lI100.o0loOOIloIlIllOl0l_IIoo1 = 1 end
+        -- Sembunyikan shadow instan agar tidak aneh
+        local loOllllOOOo = MainWindow:FindFirstChild("DropShadow")
+        if loOllllOOOo then loOllllOOOo.ImageTransparency = 1 end
         
         -- Smooth close animation
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(l01OOOOl_OIlOoIloIllOll1_, {
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0), -- Mengecil sampai habis
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1
-        }, 0.4, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo.lIOIlIOIool0llOOOo1lO)
+        lOoolOoIoOOOl(OlOloollIIoloIolO_l, {
+            IIlolo_Ilo__ = UDim2.fromOffset(0, 0), -- Mengecil sampai habis
+            oIo_o_IIll = 1
+        }, 0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In)
         
-        _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.4)
+        task.wait(0.4)
         
-        -- Cleanup Ol1llI1lIl1llIOIlIOIO
-        for _lIo0IoOlOll1lIO0_IoIllIlI, IIollOOI_loOIlIIOIOlIlloo_I in ipairs(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI) do
-            if ((function() return 1 + 1 == 2 end)()) and IIollOOI_loOIlIIOIOlIlloo_I then
-                IIollOOI_loOIlIIOIOlIlloo_I:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
+        -- Cleanup connections
+        for ooIlololllolIOlo, IolIIOOoll in ipairs(IoOlIOIOl_oIOIIooII.Connections) do
+            if IolIIOOoll then
+                connection:Disconnect()
             end
         end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
         
         -- Cleanup blur
-        _OIllIOo0Ilo00Io1O1lo0lIO(false)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+        _lIOlIOlI__l(false)
         
-        -- OlIIl0oIl11_IOIl1loO0I0loII GUI
-        if ((function() return true end)()) and llOOlOII_0llI00IOIlO1lOl0I and llOOlOII_0llI00IOIlO1lOl0I.II_OlIII1_lIlOO0I0oOOO1001lI then
-            llOOlOII_0llI00IOIlO1lOl0I:OlIIl0oIl11_IOIl1loO0I0loII()
+        -- Destroy GUI
+        if _oIIIIlIoool_I and _oIIIIlIoool_I.Parent then
+            ScreenGui:Destroy()
         end
         
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo = true
+        IoOlIOIOl_oIOIIooII.IsDestroyed = true
     end)
     
     
-    -- _00OOll001OoO0O0IOIoll _oolIlolOIOOIlOIooI0IIOlIIll
-    local _1OIol0I110_I_0lIIl0 = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, -48),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 48),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        II_OlIII1_lIlOO0I0oOOO1001lI = l01OOOOl_OIlOoIloIllOll1_
+    -- Content Container
+    local _lloOolOOl_IlolOO = _OI_olOOlOI("Frame", {
+        oIo_o_IIll = 1,
+        IIlolo_Ilo__ = UDim2.new(1, 0, 1, -48),
+        lOoOolOOolool = UDim2.fromOffset(0, 48),
+        O_OoOO_I_oI = OlOloollIIoloIolO_l
     })
     
-    -- _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll _oolIlolOIOOIlOIooI0IIOlIIll
-    local OIl0lOIoOOlo_l0lOOol0lOlO = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(200, 0),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-        II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+    -- Tab Container
+    local _oOlIIoloOIII_ = _OI_olOOlOI("Frame", {
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+        IIlolo_Ilo__ = UDim2.fromOffset(200, 0),
+        lOoOolOOolool = UDim2.fromOffset(0, 0),
+        O_OoOO_I_oI = _lloOolOOl_IlolOO
     })
     
     -- Fix for tab container height
-    local I1O0O_IlIoO1OlIIIllooI0_OOI1 = _1OIol0I110_I_0lIIl0:0IOoloO0oOlOOOll0IOIololIIO1o(oIOoII_0IIlOII1IOI1lI0_OO0o[87]):_lIIIOOoI_0llIOOO1Ol(function()
-        if ((function() local x = 5 return x > 3 end)()) and OIl0lOIoOOlo_l0lOOol0lOlO and OIl0lOIoOOlo_l0lOOol0lOlO.II_OlIII1_lIlOO0I0oOOO1001lI then
-            OIl0lOIoOOlo_l0lOOol0lOlO.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(200, _1OIol0I110_I_0lIIl0.__Ioll10_OOI0olIIIlo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O)
+    local oo_olol_lII = ContentContainer:GetPropertyChangedSignal(IO_oOOllOOoooIo_[87]):Connect(function()
+        if _oOlIIoloOIII_ and _oOlIIoloOIII_.Parent then
+            _oOlIIoloOIII_.Size = UDim2.fromOffset(200, _lloOolOOl_IlolOO.AbsoluteSize.Y)
         end
     end)
     
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, I1O0O_IlIoO1OlIIIllooI0_OOI1)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, oo_olol_lII)
     
-    ___IoO_1_O1loO01IIol10oOOIllO1(OIl0lOIoOOlo_l0lOOol0lOlO, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.6)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+    lIO__OIIOllOlOOl(_oOlIIoloOIII_, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.6)
     
-    -- _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll _oolIlolOIOOIlOIooI0IIOlIIll Gradient
-    local IIOlIIIoIIOo0OIlOIIIIlo1lIO_I_ = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_)
+    -- Tab Container Gradient
+    local OolloOIllIOIoI_ = _OI_olOOlOI("UIGradient", {
+        lOO_lIoI_O_o = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Surface),
+            ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh),
+            ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Surface)
         },
-        _OllIII_OIlIIOll1OlI_1lo = 90,
-        _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.1),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.05),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.15)
+        Rotation = 90,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.1),
+            NumberSequenceKeypoint.new(0.5, 0.05),
+            NumberSequenceKeypoint.new(1, 0.15)
         },
-        II_OlIII1_lIlOO0I0oOOO1001lI = OIl0lOIoOOlo_l0lOOol0lOlO
+        O_OoOO_I_oI = _oOlIIoloOIII_
     })
 
-    -- _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll List
-    local _Oollo0ll_0IlllllOol_lOOOII_oo = _00l00l1l0ooI0I01oOIIO0IIlO011("ScrollingFrame", {
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, -16),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 8),
-        _IOl0IIo_IO0lIIl_IIIoo0llI0 = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-        OIlIl000_lOlI1IIIl0IO = 3,
-        OoolOlo1Il1lO00OoIll = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-        _O1O0_OoIo0lOOl0IllI = 0.7,
-        O1l1IIOoIlIOI0l1o_lIo = Enum.O1l1IIOoIlIOI0l1o_lIo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O,
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        II_OlIII1_lIlOO0I0oOOO1001lI = OIl0lOIoOOlo_l0lOOol0lOlO
+    -- Tab List
+    local O_lOlo_lIOOlIo = _OI_olOOlOI("ScrollingFrame", {
+        oIo_o_IIll = 1,
+        IIlolo_Ilo__ = UDim2.new(1, 0, 1, -16),
+        lOoOolOOolool = UDim2.fromOffset(0, 8),
+        CanvasSize = UDim2.fromOffset(0, 0),
+        ScrollBarThickness = 3,
+        ScrollBarImageColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent,
+        ScrollBarImageTransparency = 0.7,
+        ScrollingDirection = Enum.ScrollingDirection.Y,
+        O_OoOO_I_oI = _oOlIIoloOIII_
     })
     
-    local IIOoolI0OOOlIo0ll0IOlOl = _00l00l1l0ooI0I01oOIIO0IIlO011("UIListLayout", {
-        IoIOlI0II1oIlI_IIIl_I0lIIOIlOol = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 4),
-        _OOolO0OIO_Il0_olII1I0oI1olII = Enum._OOolO0OIO_Il0_olII1I0oI1olII.II10_lIlI0OlOI1lII0Il10Il,
-        II_OlIII1_lIlOO0I0oOOO1001lI = _Oollo0ll_0IlllllOol_lOOOII_oo
+    local _oIIllOOolllo_l = _OI_olOOlOI("UIListLayout", {
+        Padding = UDim.new(0, 4),
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        O_OoOO_I_oI = O_lOlo_lIOOlIo
     })
     
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-    -- IOIOoOoII1oOO1l1_O_Oo0O0lII tab canvas _011IOoIll0OO0IIoII_I
-    IIOoolI0OOOlIo0ll0IOlOl:0IOoloO0oOlOOOll0IOIololIIO1o(oIOoII_0IIlOII1IOI1lI0_OO0o[88]):_lIIIOOoI_0llIOOO1Ol(function()
-        if _Oollo0ll_0IlllllOol_lOOOII_oo and _Oollo0ll_0IlllllOol_lOOOII_oo.II_OlIII1_lIlOO0I0oOOO1001lI then
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            _Oollo0ll_0IlllllOol_lOOOII_oo._IOl0IIo_IO0lIIl_IIIoo0llI0 = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, IIOoolI0OOOlIo0ll0IOlOl._lO_O1I0llIIllOo00lIoI01II._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + 16)
+    -- Update tab canvas size
+    TabLayout:GetPropertyChangedSignal(IO_oOOllOOoooIo_[88]):Connect(function()
+        if O_lOlo_lIOOlIo and O_lOlo_lIOOlIo.Parent then
+            O_lOlo_lIOOlIo.CanvasSize = UDim2.fromOffset(0, _oIIllOOolllo_l.AbsoluteContentSize.Y + 16)
         end
     end)
     
-    -- I0_10Oll_lOlo_II0lIoIllO_l0 _oolIlolOIOOIlOIooI0IIOlIIll
-    local IoIII00IlOl_lO1ololII0IOoOl = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -200, 1, 0),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(200, 0),
-        II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
+    -- Page Container
+    local lOIOIllooOl_ooOII = _OI_olOOlOI("Frame", {
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Background,
+        IIlolo_Ilo__ = UDim2.new(1, -200, 1, 0),
+        lOoOolOOolool = UDim2.fromOffset(200, 0),
+        O_OoOO_I_oI = _lloOolOOl_IlolOO
     })
     
-    -- I0_10Oll_lOlo_II0lIoIllO_l0 _oolIlolOIOOIlOIooI0IIOlIIll Gradient
-    local _O0ll_IOIOoIO0_0I_oI1I1I_00II = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo)
+    -- Page Container Gradient
+    local OoI_OoIlOI = _OI_olOOlOI("UIGradient", {
+        lOO_lIoI_O_o = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Background),
+            ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.Surface),
+            ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Background)
         },
-        _OllIII_OIlIIOll1OlI_1lo = 180,
-        _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.05),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.02),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.08)
+        Rotation = 180,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(0.5, 0.02),
+            NumberSequenceKeypoint.new(1, 0.08)
         },
-        II_OlIII1_lIlOO0I0oOOO1001lI = IoIII00IlOl_lO1ololII0IOoOl
+        O_OoOO_I_oI = lOIOIllooOl_ooOII
     })
     
     -- Auto-update dengan theme changes
-    local OlIllolIl__OloloOlol0 = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-        if ((function() local x = 5 return x > 3 end)()) and _O0ll_IOIOoIO0_0I_oI1I1I_00II and _O0ll_IOIOoIO0_0I_oI1I1I_00II.II_OlIII1_lIlOO0I0oOOO1001lI then
-            _O0ll_IOIOoIO0_0I_oI1I1I_00II._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo),
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_),
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo)
+    local oOooOloo_l = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+        if OoI_OoIlOI and OoI_OoIlOI.Parent then
+            OoI_OoIlOI.Color = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Background),
+                ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.Surface),
+                ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Background)
             }
         end
     end)
     
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, OlIllolIl__OloloOlol0)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, oOooOloo_l)
 
     
-    -- I0_10Oll_lOlo_II0lIoIllO_l0 IoIOlI0II1oIlI_IIIl_I0lIIOIlOol
-    local OlOIOOlOIO1lIo0ol_loO_OI1lO = _00l00l1l0ooI0I01oOIIO0IIlO011(oIOoII_0IIlOII1IOI1lI0_OO0o[89], {
-        0l0OIOOolll0loo_lI00OOI0ooI1 = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 16),
-        IlIO1II0IolI0OIIIOIO_lOIOIOO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 16),
-        IolOII0O1I1IO00OOllllIl0IIol0IO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 16),
-        OOI0lI00IllOIllOoollO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 16),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        II_OlIII1_lIlOO0I0oOOO1001lI = IoIII00IlOl_lO1ololII0IOoOl
+    -- Page Padding
+    local oIOlooOlOooI_lIOl = _OI_olOOlOI(IO_oOOllOOoooIo_[89], {
+        PaddingTop = UDim.new(0, 16),
+        PaddingBottom = UDim.new(0, 16),
+        PaddingLeft = UDim.new(0, 16),
+        PaddingRight = UDim.new(0, 16),
+        O_OoOO_I_oI = lOIOIllooOl_ooOII
     })
     
-    -- _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll management
-    local I0OOo00I0lOlOo0oI0IlOlI0loo1 = {}
-    local _oOIoI0l1IlolO00OIOllIIllOo = nil
+    -- Tab management
+    local IIOIIIl_OoOoO_IOlOo = {}
+    local lool_OlI_ol_Ol__ = nil
     
     -- Make window draggable
-    lo_lOl_o00oIlIO11oO1l(l01OOOOl_OIlOoIloIllOll1_, lo1lI0OII_IooIIlO10O_IllO1o)
+    _Ilo_oOlIooOOo(OlOloollIIoloIolO_l, ___IIIIoloIIl_oIolo)
     
     -- Blur effect
-    _OIllIOo0Ilo00Io1O1lo0lIO(true, 8)
+    _lIOlIOlI__l(true, 8)
     
     -- Enhanced notification system
-    local _loI_llI_OlIlO_0lOIllIollIOI = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 320, 1, 0),
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -336, 0, 16),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        II_OlIII1_lIlOO0I0oOOO1001lI = llOOlOII_0llI00IOIlO1lOl0I
+    local _Oloo_loOOOI = _OI_olOOlOI("Frame", {
+        oIo_o_IIll = 1,
+        IIlolo_Ilo__ = UDim2.new(0, 320, 1, 0),
+        lOoOolOOolool = UDim2.new(1, -336, 0, 16),
+        O_OoOO_I_oI = _oIIIIlIoool_I
     })
     
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-    local 0l0IlO1OI0lIOI1IO_loo0OI = _00l00l1l0ooI0I01oOIIO0IIlO011("UIListLayout", {
-        IoIOlI0II1oIlI_IIIl_I0lIIOIlOol = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 8),
-        _OOolO0OIO_Il0_olII1I0oI1olII = Enum._OOolO0OIO_Il0_olII1I0oI1olII.II10_lIlI0OlOI1lII0Il10Il,
-        OoOl0_I0o0lIOIlO_IO0o1l_0_oO = Enum.OoOl0_I0o0lIOIlO_IO0o1l_0_oO.I00oOOO0OIIO1IIllO1l0IO,
-        II_OlIII1_lIlOO0I0oOOO1001lI = _loI_llI_OlIlO_0lOIllIollIOI
+    local IlIoIlOIl_ = _OI_olOOlOI("UIListLayout", {
+        Padding = UDim.new(0, 8),
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        VerticalAlignment = Enum.VerticalAlignment.Top,
+        O_OoOO_I_oI = _Oloo_loOOOI
     })
     
-    -- Enhanced _0lI0I_lIlOollOoIlII_ Function
-    function _O0I0IoOIIlloool010oIO__:_OOl_IIo0001I1I0Io_I1I_IloI0II01(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-        if not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+    -- Enhanced Notification Function
+    function Nexus:Notify(_oOoOoOlOlIlIllooO)
+        if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
         
-        local lllO010OoIlIoIIooOOOlI1IO = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.lllO010OoIlIoIIooOOOlI1IO or oIOoII_0IIlOII1IOI1lI0_OO0o[90]
-        local _00OOll001OoO0O0IOIoll = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._00OOll001OoO0O0IOIoll or ""
-        local _O0llo_o_o1oIIlloOIl1001OII0Ol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._O0llo_o_o1oIIlloOIl1001OII0Ol or 3
-        local OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0 = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0 or oIOoII_0IIlOII1IOI1lI0_OO0o[91] -- O_IOl0IO1l1ooIOIlllII0IIO1, ll0lOI01l0O111l1IOoI0Illl, _OO01lllI0I0IlI0IOIllll1, IIO_0lllI0OOlOIII0Il1_IIl0OloO1l
-        local _IOOIlOoI_IlllIlo_IIIoI1Illol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOOIlOoI_IlllIlo_IIIoI1Illol
+        local oOIlo_olIl_IIlO = _oOoOoOlOlIlIllooO.Title or IO_oOOllOOoooIo_[90]
+        local olOoOOIIIllloI = _oOoOoOlOlIlIllooO.Content or ""
+        local OIIlolloll_ = _oOoOoOlOlIlIllooO.Duration or 3
+        local __lIoIIlO_OOI = _oOoOoOlOlIlIllooO.Type or IO_oOOllOOoooIo_[91] -- Info, Success, Warning, Error
+        local _OlllIIO_looolo_ = _oOoOoOlOlIlIllooO.Callback
         
-        -- _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ scheme based on type
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-        local _IIOOloIIl_o1I1olOIO = {
-            O_IOl0IO1l1ooIOIlllII0IIO1 = {
-                _lOl1OOOOIIIlIOlII0l0oooIoOII_Il = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                ll0I_lI_I10Illlo_o1lIOlI0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                _OolllI0I0O0Olol_0Io01l_11o = oIOoII_0IIlOII1IOI1lI0_OO0o[92]
+        -- Color scheme based on type
+        local _OlIIIOloIoOO = {
+            Info = {
+                bg = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                accent = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                icon = IO_oOOllOOoooIo_[92]
             },
-            ll0lOI01l0O111l1IOoI0Illl = {
-                _lOl1OOOOIIIlIOlII0l0oooIoOII_Il = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                ll0I_lI_I10Illlo_o1lIOlI0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.ll0lOI01l0O111l1IOoI0Illl,
-                _OolllI0I0O0Olol_0Io01l_11o = oIOoII_0IIlOII1IOI1lI0_OO0o[93]
+            Success = {
+                bg = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                accent = IoOlIOIOl_oIOIIooII.Theme.Success,
+                icon = IO_oOOllOOoooIo_[93]
             },
-            _OO01lllI0I0IlI0IOIllll1 = {
-                _lOl1OOOOIIIlIOlII0l0oooIoOII_Il = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                ll0I_lI_I10Illlo_o1lIOlI0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._OO01lllI0I0IlI0IOIllll1,
-                _OolllI0I0O0Olol_0Io01l_11o = oIOoII_0IIlOII1IOI1lI0_OO0o[94]
+            Warning = {
+                bg = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                accent = IoOlIOIOl_oIOIIooII.Theme.Warning,
+                icon = IO_oOOllOOoooIo_[94]
             },
-            IIO_0lllI0OOlOIII0Il1_IIl0OloO1l = {
-                _lOl1OOOOIIIlIOlII0l0oooIoOII_Il = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                ll0I_lI_I10Illlo_o1lIOlI0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IIO_0lllI0OOlOIII0Il1_IIl0OloO1l,
-                _OolllI0I0O0Olol_0Io01l_11o = oIOoII_0IIlOII1IOI1lI0_OO0o[95]
+            Error = {
+                bg = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                accent = IoOlIOIOl_oIOIIooII.Theme.Error,
+                icon = IO_oOOllOOoooIo_[95]
             }
         }
         
-        local llOOlool00IIllIOIl0_OIOI_o = _IIOOloIIl_o1I1olOIO[OI0llllOOIo_1IIOOoIlI1IOl_Iol0O0] or _IIOOloIIl_o1I1olOIO.O_IOl0IO1l1ooIOIlllII0IIO1
+        local OoOII_oIloOI = _OlIIIOloIoOO[__lIoIIlO_OOI] or _OlIIIOloIoOO.Info
         
         -- State management - FIX: Proper thread handling
-        local 1ll1IlIo0O1OlIO0IlooIOI_o0ll = {
-            0ll0OO1OOOIo0Il0l_0lOII = false,
-            _OO0lIloIolOI00IIo10I_lOoIl00o = nil,
-            _lOI_lI0Oo0ol1IloO0l_lo0IOOloOIO = nil, -- Store thread reference
-            Ol1llI1lIl1llIOIlIOIO = {}
+        local OoOIllolOolIOloI = {
+            isDismissed = false,
+            progressTween = nil,
+            dismissThread = nil, -- Store thread reference
+            _o_lolOllll = {}
         }
         
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-        -- _00l00l1l0ooI0I01oOIIO0IIlO011 notification dengan responsive positioning
-        local 0OoIo0o_0I1l0OoIO1lIIIllooOlO = _loI_llI_OlIlO_0lOIllIollIOI.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo
-        local O_olIIl0I_0lO1_IOl1I0O0lloII = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0OoIo0o_0I1l0OoIO1lIIIllooOlO + 20, 0)
+        -- Create notification dengan responsive positioning
+        local lIIOIolllIoIoooIOo = _Oloo_loOOOI.AbsoluteSize.X
+        local o__OoOoOOoIO = UDim2.fromOffset(lIIOIolllIoIoooIOo + 20, 0)
         
-        local _0lI0I_lIlOollOoIlII_ = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-            _l_lOO0OloOIIIl_II__oo1I0 = llOOlool00IIllIOIl0_OIOI_o._lOl1OOOOIIIlIOlII0l0oooIoOII_Il,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 0),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = O_olIIl0I_0lO1_IOl1I0O0lloII,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.1,
-            II10_lIlI0OlOI1lII0Il10Il = 1,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _loI_llI_OlIlO_0lOIllIollIOI
+        local oIloIOolOOO_ = _OI_olOOlOI("Frame", {
+            IoIOIo_I_IOllllOI = OoOII_oIloOI.bg,
+            IIlolo_Ilo__ = UDim2.new(1, 0, 0, 0),
+            lOoOolOOolool = o__OoOoOOoIO,
+            oIo_o_IIll = 0.1,
+            LayoutOrder = 1,
+            O_OoOO_I_oI = _Oloo_loOOOI
         })
         
-        _1lOOlOIIO_0IO_IoOIl00Il(_0lI0I_lIlOollOoIlII_, 10)
-        ___IoO_1_O1loO01IIol10oOOIllO1(_0lI0I_lIlOollOoIlII_, llOOlool00IIllIOIl0_OIOI_o.ll0I_lI_I10Illlo_o1lIOlI0, 1, 0.3)
-        _Ol0O_loIlOI0Ol0Io00IO0Il0IIOoll1I(_0lI0I_lIlOollOoIlII_, 8, 0.8)
+        llOl_IoIII_oIOIIo(oIloIOolOOO_, 10)
+        lIO__OIIOllOlOOl(oIloIOolOOO_, OoOII_oIloOI.accent, 1, 0.3)
+        IolOololoIOoOOlI(oIloIOolOOO_, 8, 0.8)
         
         -- Gradient overlay
-        local IOO0OIoOlOOIOOOl1__0l0OIl_ = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-            _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_),
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo),
-                _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_)
+        local _loOlO_lOO = _OI_olOOlOI("UIGradient", {
+            lOO_lIoI_O_o = ColorSequence.new{
+                ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Surface),
+                ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh),
+                ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Surface)
             },
-            _OllIII_OIlIIOll1OlI_1lo = 45,
-            _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-                l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.05),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.02),
-                l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.08)
+            Rotation = 45,
+            Transparency = NumberSequence.new{
+                NumberSequenceKeypoint.new(0, 0.05),
+                NumberSequenceKeypoint.new(0.5, 0.02),
+                NumberSequenceKeypoint.new(1, 0.08)
             },
-            II_OlIII1_lIlOO0I0oOOO1001lI = _0lI0I_lIlOollOoIlII_
+            O_OoOO_I_oI = oIloIOolOOO_
         })
         
         -- Progress bar
-        local IlIO0IIlIIIo1IIl101oOoOIIl_010 = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-            _l_lOO0OloOIIIl_II__oo1I0 = llOOlool00IIllIOIl0_OIOI_o.ll0I_lI_I10Illlo_o1lIOlI0,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 3),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 1, -3),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _0lI0I_lIlOollOoIlII_
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+        local IloIOOOll_l = _OI_olOOlOI("Frame", {
+            IoIOIo_I_IOllllOI = OoOII_oIloOI.accent,
+            IIlolo_Ilo__ = UDim2.new(1, 0, 0, 3),
+            lOoOolOOolool = UDim2.new(0, 0, 1, -3),
+            O_OoOO_I_oI = oIloIOolOOO_
         })
         
-        _1lOOlOIIO_0IO_IoOIl00Il(IlIO0IIlIIIo1IIl101oOoOIIl_010, 2)
+        llOl_IoIII_oIOIIo(IloIOOOll_l, 2)
         
-        -- OOOoIOOollOo0OoI0I10IIolO0Io
-        local OOOoIOOollOo0OoI0I10IIolO0Io = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = llOOlool00IIllIOIl0_OIOI_o._OolllI0I0O0Olol_0Io01l_11o,
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-            IOollOOIOoOlo00OlIIl1I = 16,
-            000O_IOOIOI_0lOll_I1o10l = llOOlool00IIllIOIl0_OIOI_o.ll0I_lI_I10Illlo_o1lIOlI0,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(12, 12),
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(20, 20),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _0lI0I_lIlOollOoIlII_
-        })
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        
-        -- lllO010OoIlIoIIooOOOlI1IO
-        local _IoIllIolOOOolOIlOIl_olO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = lllO010OoIlIoIIooOOOlI1IO,
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-            IOollOOIOoOlo00OlIIl1I = 14,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(40, 12),
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -80, 0, 20),
-            0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-            lIllOlI_lI0IIooI00IOloo0IOlOOl = Enum.lIllOlI_lI0IIooI00IOloo0IOlOOl._1O_0OlOo1lIOoIO0IOO_IlI0Ol1OoloII,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _0lI0I_lIlOollOoIlII_
+        -- Icon
+        local _llIoIlOOlllO = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = OoOII_oIloOI.icon,
+            IlIoOollo_lIllII = Enum.Font.GothamBold,
+            TextSize = 16,
+            TextColor3 = OoOII_oIloOI.accent,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.fromOffset(12, 12),
+            IIlolo_Ilo__ = UDim2.fromOffset(20, 20),
+            O_OoOO_I_oI = oIloIOolOOO_
         })
         
-        -- _00OOll001OoO0O0IOIoll
-        local lOIOIIllI0lOl_IlllllIII = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = _00OOll001OoO0O0IOIoll,
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-            IOollOOIOoOlo00OlIIl1I = 12,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(40, 32),
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -80, 0, 16),
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-            lIllOlI_lI0IIooI00IOloo0IOlOOl = Enum.lIllOlI_lI0IIooI00IOloo0IOlOOl._1O_0OlOo1lIOoIO0IOO_IlI0Ol1OoloII,
-            _lO0IlIII1Illo1lO0OoOO = true,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _0lI0I_lIlOollOoIlII_
+        -- Title
+        local OOIlOolIOIOloOIOI = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = oOIlo_olIl_IIlO,
+            IlIoOollo_lIllII = Enum.Font.GothamBold,
+            TextSize = 14,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.fromOffset(40, 12),
+            IIlolo_Ilo__ = UDim2.new(1, -80, 0, 20),
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextTruncate = Enum.TextTruncate.AtEnd,
+            O_OoOO_I_oI = oIloIOolOOO_
         })
         
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        -- _o1I0IIlOolOllIl_I0OlOll _ooIolIIO0I000I_oOl0lOI
-        local _0l_Il1IIoll1lOlIIOo = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-            IOlIlll01oI00Ol0lOOI = oIOoII_0IIlOII1IOI1lI0_OO0o[96],
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-            IOollOOIOoOlo00OlIIl1I = 12,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -32, 0, 8),
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(24, 24),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _0lI0I_lIlOollOoIlII_
+        -- Content
+        local IoIoI_ooOolollII = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = olOoOOIIIllloI,
+            IlIoOollo_lIllII = Enum.Font.Gotham,
+            TextSize = 12,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.fromOffset(40, 32),
+            IIlolo_Ilo__ = UDim2.new(1, -80, 0, 16),
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextTruncate = Enum.TextTruncate.AtEnd,
+            TextWrapped = true,
+            O_OoOO_I_oI = oIloIOolOOO_
         })
         
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-        -- Calculate _l1OoIIII0Oo__0l0oIOOo00ooO height
-        local 0OOOlollO_0lll_Illl_ = 56
-        if ((function() return "a" == "a" end)()) and _00OOll001OoO0O0IOIoll and _00OOll001OoO0O0IOIoll:_IOllllOII0OII_O0oII0IOOI() > 40 then
-            0OOOlollO_0lll_Illl_ = 72
+        -- Close button
+        local _lIOIOOOl_IlOO_II = _OI_olOOlOI("TextButton", {
+            Ioolo_OoIoIIoOIl = IO_oOOllOOoooIo_[96],
+            IlIoOollo_lIllII = Enum.Font.GothamBold,
+            TextSize = 12,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.new(1, -32, 0, 8),
+            IIlolo_Ilo__ = UDim2.fromOffset(24, 24),
+            O_OoOO_I_oI = oIloIOolOOO_
+        })
+        
+        -- Calculate content height
+        local IIllOIl_IIIoOIll = 56
+        if olOoOOIIIllloI and Content:len() > 40 then
+            IIllOIl_IIIoOIll = 72
         end
         
-        -- ll0lOl0IIloOII_lIl01loI0l_lIIo1_ change handler - FIX: Proper cleanup check
-        local lIOlOoIIo_Il1Oo00lIlIOl = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-            if 1ll1IlIo0O1OlIO0IlooIOI_o0ll.0ll0OO1OOOIo0Il0l_0lOII then return end
-            if IOO0OIoOlOOIOOOl1__0l0OIl_ and IOO0OIoOlOOIOOOl1__0l0OIl_.II_OlIII1_lIlOO0I0oOOO1001lI then
-                IOO0OIoOlOOIOOOl1__0l0OIl_._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                    _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_),
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                    _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo),
-                    _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_)
+        -- Theme change handler - FIX: Proper cleanup check
+        local llOOOOOOIoIIOloOOl = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+            if OoOIllolOolIOloI.isDismissed then return end
+            if _loOlO_lOO and _loOlO_lOO.Parent then
+                _loOlO_lOO.Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Surface),
+                    ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh),
+                    ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Surface)
                 }
             end
         end)
-        1ll1IlIo0O1OlIO0IlooIOI_o0ll.Ol1llI1lIl1llIOIlIOIO[#1ll1IlIo0O1OlIO0IlooIOI_o0ll.Ol1llI1lIl1llIOIlIOIO + 1] = lIOlOoIIo_Il1Oo00lIlIOl
+        OoOIllolOolIOloI.connections[#OoOIllolOolIOloI.connections + 1] = llOOOOOOIoIIOloOOl
         
         -- FIX: Proper cleanup function
-        local function _OolI0llIOIIIOIIloI1IOI1()
-            if ((function() return 1 + 1 == 2 end)()) and 1ll1IlIo0O1OlIO0IlooIOI_o0ll.0ll0OO1OOOIo0Il0l_0lOII then return end
-            1ll1IlIo0O1OlIO0IlooIOI_o0ll.0ll0OO1OOOIo0Il0l_0lOII = true
+        local function OIlIIlOIIloOlolllO()
+            if OoOIllolOolIOloI.isDismissed then return end
+            OoOIllolOolIOloI.isDismissed = true
             
-            -- IoII0lI0oOl0OOIol0OlIl tweens
-            if 1ll1IlIo0O1OlIO0IlooIOI_o0ll._OO0lIloIolOI00IIo10I_lOoIl00o then
-                1ll1IlIo0O1OlIO0IlooIOI_o0ll._OO0lIloIolOI00IIo10I_lOoIl00o:IoII0lI0oOl0OOIol0OlIl()
-                1ll1IlIo0O1OlIO0IlooIOI_o0ll._OO0lIloIolOI00IIo10I_lOoIl00o = nil
+            -- Cancel tweens
+            if OoOIllolOolIOloI.progressTween then
+                OoOIllolOolIOloI.progressTween:Cancel()
+                OoOIllolOolIOloI.progressTween = nil
             end
             
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            -- IoII0lI0oOl0OOIol0OlIl dismiss thread - FIX: Only IoIo00II0I1IlIIoIIllolOO0IlOIlolI if it exists and is a thread
-            if (not (function() return false end)()) and 1ll1IlIo0O1OlIO0IlooIOI_o0ll._lOI_lI0Oo0ol1IloO0l_lo0IOOloOIO then
+            -- Cancel dismiss thread - FIX: Only cancel if it exists and is a thread
+            if OoOIllolOolIOloI.dismissThread then
                 pcall(function()
-                    _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.IoIo00II0I1IlIIoIIllolOO0IlOIlolI(1ll1IlIo0O1OlIO0IlooIOI_o0ll._lOI_lI0Oo0ol1IloO0l_lo0IOOloOIO)
+                    task.cancel(OoOIllolOolIOloI.dismissThread)
                 end)
-                1ll1IlIo0O1OlIO0IlooIOI_o0ll._lOI_lI0Oo0ol1IloO0l_lo0IOOloOIO = nil
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+                OoOIllolOolIOloI.dismissThread = nil
             end
             
-            -- _0IIlO0l_00_O0IoI0Ol011O0O1oI all Ol1llI1lIl1llIOIlIOIO
-            for _lIIOIlolIIlII1_Il_IOl01ll0Olll, IIollOOI_loOIlIIOIOlIlloo_I in ipairs(1ll1IlIo0O1OlIO0IlooIOI_o0ll.Ol1llI1lIl1llIOIlIOIO) do
-                if ((function() return 1 + 1 == 2 end)()) and IIollOOI_loOIlIIOIOlIlloo_I and IIollOOI_loOIlIIOIOlIlloo_I.I1I00IlOollllI0IIOOI1lOoI then
+            -- Disconnect all connections
+            for oOIOOOIIOollolOO, IolIIOOoll in ipairs(OoOIllolOolIOloI.connections) do
+                if IolIIOOoll and IolIIOOoll.Connected then
                     pcall(function()
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                        IIollOOI_loOIlIIOIOlIlloo_I:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
+                        connection:Disconnect()
                     end)
                 end
             end
-            1ll1IlIo0O1OlIO0IlooIOI_o0ll.Ol1llI1lIl1llIOIlIOIO = {}
+            OoOIllolOolIOloI.connections = {}
         end
         
         -- FIX: Enhanced dismiss function with proper error handling
-        local function lOIOO1I1O_l0_o_lO0oo_O_0IlOI0oOO()
-            if 1ll1IlIo0O1OlIO0IlooIOI_o0ll.0ll0OO1OOOIo0Il0l_0lOII then return end
+        local function lIoOlOoIOl_O()
+            if OoOIllolOolIOloI.isDismissed then return end
             
-            _OolI0llIOIIIOIIloI1IOI1()
+            OIlIIlOIIloOlolllO()
             
             -- Animate out with error handling
             pcall(function()
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_0lI0I_lIlOollOoIlII_, {
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = O_olIIl0I_0lO1_IOl1I0O0lloII,
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1
-                }, 0.3, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo.lIOIlIOIool0llOOOo1lO)
+                lOoolOoIoOOOl(oIloIOolOOO_, {
+                    lOoOolOOolool = o__OoOoOOoIO,
+                    oIo_o_IIll = 1
+                }, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
                 
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IlIO0IIlIIIo1IIl101oOoOIIl_010, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1}, 0.3)
+                lOoolOoIoOOOl(IloIOOOll_l, {oIo_o_IIll = 1}, 0.3)
             end)
             
-            -- OlIIl0oIl11_IOIl1loO0I0loII after animation with error handling
-            _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.spawn(function()
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.35)
+            -- Destroy after animation with error handling
+            task.spawn(function()
+                task.wait(0.35)
                 pcall(function()
-                    if (not (function() return false end)()) and _0lI0I_lIlOollOoIlII_ and _0lI0I_lIlOollOoIlII_.II_OlIII1_lIlOO0I0oOOO1001lI then
-                        _0lI0I_lIlOollOoIlII_:OlIIl0oIl11_IOIl1loO0I0loII()
+                    if oIloIOolOOO_ and oIloIOolOOO_.Parent then
+                        Notification:Destroy()
                     end
                 end)
             end)
         end
         
         -- Animate notification appearance
-        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_0lI0I_lIlOollOoIlII_, {
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 0OOOlollO_0lll_Illl_),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0)
-        }, 0.4, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O)
+        lOoolOoIoOOOl(oIloIOolOOO_, {
+            IIlolo_Ilo__ = UDim2.new(1, 0, 0, IIllOIl_IIIoOIll),
+            lOoOolOOolool = UDim2.fromOffset(0, 0)
+        }, 0.4, Enum.EasingStyle.Back)
         
         -- Progress bar & auto dismiss - FIX: Store thread properly
-        if ((function() local x = 5 return x > 3 end)()) and _O0llo_o_o1oIIlloOIl1001OII0Ol > 0 then
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-            1ll1IlIo0O1OlIO0IlooIOI_o0ll._OO0lIloIolOI00IIo10I_lOoIl00o = _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IlIO0IIlIIIo1IIl101oOoOIIl_010, {
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0, 3)
-            }, _O0llo_o_o1oIIlloOIl1001OII0Ol)
+        if OIIlolloll_ > 0 then
+            OoOIllolOolIOloI.progressTween = lOoolOoIoOOOl(IloIOOOll_l, {
+                IIlolo_Ilo__ = UDim2.new(0, 0, 0, 3)
+            }, OIIlolloll_)
             
             -- FIX: Properly store dismiss thread
-            1ll1IlIo0O1OlIO0IlooIOI_o0ll._lOI_lI0Oo0ol1IloO0l_lo0IOOloOIO = _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.spawn(function()
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(_O0llo_o_o1oIIlloOIl1001OII0Ol)
-                if ((function() local x = 5 return x > 3 end)()) and not 1ll1IlIo0O1OlIO0IlooIOI_o0ll.0ll0OO1OOOIo0Il0l_0lOII then
-                    lOIOO1I1O_l0_o_lO0oo_O_0IlOI0oOO()
+            OoOIllolOolIOloI.dismissThread = task.spawn(function()
+                task.wait(OIIlolloll_)
+                if not OoOIllolOolIOloI.isDismissed then
+                    lIoOlOoIOl_O()
                 end
             end)
         end
         
-        -- Manual close - FIX: Add to Ol1llI1lIl1llIOIlIOIO array for proper cleanup
-        local 1lOlIOlOIlIolIOlIOOolIlIlIO = _0l_Il1IIoll1lOlIIOo._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-            if ((function() return 1 + 1 == 2 end)()) and _IOOIlOoI_IlllIlo_IIIoI1Illol then
-                pcall(_IOOIlOoI_IlllIlo_IIIoI1Illol)
+        -- Manual close - FIX: Add to connections array for proper cleanup
+        local _IoooO_OlllO = _lIOIOOOl_IlOO_II.MouseButton1Click:Connect(function()
+            if _OlllIIO_looolo_ then
+                pcall(_OlllIIO_looolo_)
             end
-            lOIOO1I1O_l0_o_lO0oo_O_0IlOI0oOO()
+            lIoOlOoIOl_O()
         end)
-        1ll1IlIo0O1OlIO0IlooIOI_o0ll.Ol1llI1lIl1llIOIlIOIO[#1ll1IlIo0O1OlIO0IlooIOI_o0ll.Ol1llI1lIl1llIOIlIOIO + 1] = 1lOlIOlOIlIolIOlIOOolIlIlIO
+        OoOIllolOolIOloI.connections[#OoOIllolOolIOloI.connections + 1] = _IoooO_OlllO
         
-        -- Click notification - FIX: Add to Ol1llI1lIl1llIOIlIOIO array
-        local _OIOIIo_IIol1lIlIOI00lOOIOI0 = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-            IOlIlll01oI00Ol0lOOI = "",
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -32, 1, 0),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            II_OlIII1_lIlOO0I0oOOO1001lI = _0lI0I_lIlOollOoIlII_
+        -- Click notification - FIX: Add to connections array
+        local lloOOIIlOOIlIoooll = _OI_olOOlOI("TextButton", {
+            Ioolo_OoIoIIoOIl = "",
+            oIo_o_IIll = 1,
+            IIlolo_Ilo__ = UDim2.new(1, -32, 1, 0),
+            O_OoOO_I_oI = oIloIOolOOO_
         })
         
-        local _0o0olll00OOOlOlI_oIlIIoI0O_Ool = _OIOIIo_IIol1lIlIOI00lOOIOI0._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-            if _IOOIlOoI_IlllIlo_IIIoI1Illol then
-                pcall(_IOOIlOoI_IlllIlo_IIIoI1Illol)
+        local lI_IoIOlllO = lloOOIIlOOIlIoooll.MouseButton1Click:Connect(function()
+            if _OlllIIO_looolo_ then
+                pcall(_OlllIIO_looolo_)
             end
-            lOIOO1I1O_l0_o_lO0oo_O_0IlOI0oOO()
+            lIoOlOoIOl_O()
         end)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        1ll1IlIo0O1OlIO0IlooIOI_o0ll.Ol1llI1lIl1llIOIlIOIO[#1ll1IlIo0O1OlIO0IlooIOI_o0ll.Ol1llI1lIl1llIOIlIOIO + 1] = _0o0olll00OOOlOlI_oIlIIoI0O_Ool
+        OoOIllolOolIOloI.connections[#OoOIllolOolIOloI.connections + 1] = lI_IoIOlllO
         
-        -- _llIl1llIIIIOlllIlOlII01ol0llI API with error handling
+        -- Return API with error handling
         return {
-            OOI_OIo1II1Io0olIIOOIlIoI0IIo = function()
-                pcall(lOIOO1I1O_l0_o_lO0oo_O_0IlOI0oOO)
+            Dismiss = function()
+                pcall(lIoOlOoIOl_O)
             end,
-            _lO__l_lI0_IIIl0lO_l = function(_0lO_lOIol_lo0Illl1I_)
-                if 1ll1IlIo0O1OlIO0IlooIOI_o0ll.0ll0OO1OOOIo0Il0l_0lOII then return end
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+            SetProgress = function(I_IOOIl_IlIOIooO)
+                if OoOIllolOolIOloI.isDismissed then return end
                 pcall(function()
-                    if IlIO0IIlIIIo1IIl101oOoOIIl_010 and IlIO0IIlIIIo1IIl101oOoOIIl_010.II_OlIII1_lIlOO0I0oOOO1001lI then
-                        if ((function() return "a" == "a" end)()) and 1ll1IlIo0O1OlIO0IlooIOI_o0ll._OO0lIloIolOI00IIo10I_lOoIl00o then
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                            1ll1IlIo0O1OlIO0IlooIOI_o0ll._OO0lIloIolOI00IIo10I_lOoIl00o:IoII0lI0oOl0OOIol0OlIl()
+                    if IloIOOOll_l and IloIOOOll_l.Parent then
+                        if OoOIllolOolIOloI.progressTween then
+                            OoOIllolOolIOloI.progressTween:Cancel()
                         end
-                        1ll1IlIo0O1OlIO0IlooIOI_o0ll._OO0lIloIolOI00IIo10I_lOoIl00o = _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IlIO0IIlIIIo1IIl101oOoOIIl_010, {
-                            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(_0lO_lOIol_lo0Illl1I_, 0, 1), 0, 0, 3)
+                        OoOIllolOolIOloI.progressTween = lOoolOoIoOOOl(IloIOOOll_l, {
+                            IIlolo_Ilo__ = UDim2.new(math.clamp(I_IOOIl_IlIOIooO, 0, 1), 0, 0, 3)
                         }, 0.2)
                     end
                 end)
             end,
-            _O_IOlO0_01lllIlloOIl0IlI = function()
-                return not 1ll1IlIo0O1OlIO0IlooIOI_o0ll.0ll0OO1OOOIo0Il0l_0lOII
+            IIOoOlo_IoOIllloooo = function()
+                return not OoOIllolOolIOloI.isDismissed
             end
         }
     end
     
-    local function _olI_oIlloIl1lIIl_IlOIOllII0Ol0OIo(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-        if type(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO) == oIOoII_0IIlOII1IOI1lI0_OO0o[97] then
-            oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO}
+    local function __I_IloOolOIIIloIO(_oOoOoOlOlIlIllooO)
+        if type(_oOoOoOlOlIlIllooO) == IO_oOOllOOoooIo_[97] then
+            _oOoOoOlOlIlIllooO = {Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO}
         end
         
-        if not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+        if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
         
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        local _ollII0lllll__oII_l1I1OO_1llool_I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._ollII0lllll__oII_l1I1OO_1llool_I or oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[98]
-        local OOOoIOOollOo0OoI0I10IIolO0Io = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.OOOoIOOollOo0OoI0I10IIolO0Io or oIOoII_0IIlOII1IOI1lI0_OO0o[99]
-        local _OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo ~= false
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+        local oI_oOOll_oOoOOl = _oOoOoOlOlIlIllooO.Name or _oOoOoOlOlIlIllooO.Text or IO_oOOllOOoooIo_[98]
+        local _llIoIlOOlllO = _oOoOoOlOlIlIllooO.Icon or IO_oOOllOOoooIo_[99]
+        local IOlooolIlIO_OlOIO_I = _oOoOoOlOlIlIllooO.Visible ~= false
         
-        -- [PERBAIKAN 1] Mengganti .lOlOOo0I1Olllo0olIIIo menjadi ._IIolllOIIl1oOol1IolII0Oll_ll
-        local _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll = {
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            _ollII0lllll__oII_l1I1OO_1llool_I = _ollII0lllll__oII_l1I1OO_1llool_I,
-            OOOoIOOollOo0OoI0I10IIolO0Io = OOOoIOOollOo0OoI0I10IIolO0Io,
-            _OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = _OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo,
-            _lIlO0II00llOI1ol0O_0ollO1lI0ol1 = {},
-            I0_10Oll_lOlo_II0lIoIllO_l0 = nil,
-            _IIolllOIIl1oOol1IolII0Oll_ll = nil 
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+        -- [PERBAIKAN 1] Mengganti .Button menjadi .TabBtn
+        local oooolIOoOo = {
+            oI_oOOll_oOoOOl = oI_oOOll_oOoOOl,
+            _llIoIlOOlllO = _llIoIlOOlllO,
+            IOlooolIlIO_OlOIO_I = IOlooolIlIO_OlOIO_I,
+            Elements = {},
+            Page = nil,
+            TabBtn = nil 
         }
         
-        -- Membuat Tombol _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll (_0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll lOlOOo0I1Olllo0olIIIo)
-        local _oIIlol0oIIl0oloIoIl = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-            IOlIlll01oI00Ol0lOOI = "",
-            _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = _oOIoI0l1IlolO00OIOllIIllOo and 0.8 or 0.3,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -16, 0, 44),
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(8, 0),
-            lO0lIoIIlIOoI0o0oloOIOO = false,
-            _OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = _OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _Oollo0ll_0IlllllOol_lOOOII_oo
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+        -- Membuat Tombol Tab (Tab Button)
+        local OoIlOOoIlloooIo = _OI_olOOlOI("TextButton", {
+            Ioolo_OoIoIIoOIl = "",
+            IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+            oIo_o_IIll = lool_OlI_ol_Ol__ and 0.8 or 0.3,
+            IIlolo_Ilo__ = UDim2.new(1, -16, 0, 44),
+            lOoOolOOolool = UDim2.fromOffset(8, 0),
+            lOoIOlOOloIl_O = false,
+            IOlooolIlIO_OlOIO_I = IOlooolIlIO_OlOIO_I,
+            O_OoOO_I_oI = O_lOlo_lIOOlIo
         })
         
-        _1lOOlOIIO_0IO_IoOIl00Il(_oIIlol0oIIl0oloIoIl, 8)
-        if not _oOIoI0l1IlolO00OIOllIIllOo then
-            ___IoO_1_O1loO01IIol10oOOIllO1(_oIIlol0oIIl0oloIoIl, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, 1, 0.4)
+        llOl_IoIII_oIOIIo(OoIlOOoIlloooIo, 8)
+        if not lool_OlI_ol_Ol__ then
+            lIO__OIIOllOlOOl(OoIlOOoIlloooIo, IoOlIOIOl_oIOIIooII.Theme.Accent, 1, 0.4)
         end
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
         
-        local _IOIl0lOII0IOoI1loIoI = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _oIIlol0oIIl0oloIoIl
+        local oIOIIIIOllOOollIl = _OI_olOOlOI("Frame", {
+            oIo_o_IIll = 1,
+            IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+            O_OoOO_I_oI = OoIlOOoIlloooIo
         })
         
         -- [PERBAIKAN 2] Rename variabel lokal agar jelas ini adalah Objek GUI
-        local 0IoIO1OI0Oo0OOOoOIIOoollO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = OOOoIOOollOo0OoI0I10IIolO0Io,
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-            IOollOOIOoOlo00OlIIl1I = 16,
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            000O_IOOIOI_0lOll_I1o10l = _oOIoI0l1IlolO00OIOllIIllOo and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(12, 0),
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(24, 44),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _IOIl0lOII0IOoI1loIoI
+        local lll__IIlOlOoOII_o = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = _llIoIlOOlllO,
+            IlIoOollo_lIllII = Enum.Font.GothamBold,
+            TextSize = 16,
+            TextColor3 = lool_OlI_ol_Ol__ and IoOlIOIOl_oIOIIooII.Theme.TextSub or IoOlIOIOl_oIOIIooII.Theme.Accent,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.fromOffset(12, 0),
+            IIlolo_Ilo__ = UDim2.fromOffset(24, 44),
+            O_OoOO_I_oI = oIOIIIIOllOOollIl
         })
         
-        local _O0Il1llOllllIIlIlIO00O_0oIII = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = _ollII0lllll__oII_l1I1OO_1llool_I,
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-            IOollOOIOoOlo00OlIIl1I = 14,
-            000O_IOOIOI_0lOll_I1o10l = _oOIoI0l1IlolO00OIOllIIllOo and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(44, 0),
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -56, 1, 0),
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-            lIllOlI_lI0IIooI00IOloo0IOlOOl = Enum.lIllOlI_lI0IIooI00IOloo0IOlOOl._1O_0OlOo1lIOoIO0IOO_IlI0Ol1OoloII,
-            II_OlIII1_lIlOO0I0oOOO1001lI = _IOIl0lOII0IOoI1loIoI
+        local OolloIO_ollO = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = oI_oOOll_oOoOOl,
+            IlIoOollo_lIllII = Enum.Font.GothamMedium,
+            TextSize = 14,
+            TextColor3 = lool_OlI_ol_Ol__ and IoOlIOIOl_oIOIIooII.Theme.TextSub or IoOlIOIOl_oIOIIooII.Theme.Text,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.fromOffset(44, 0),
+            IIlolo_Ilo__ = UDim2.new(1, -56, 1, 0),
+            TextXAlignment = Enum.TextXAlignment.Left,
+            TextTruncate = Enum.TextTruncate.AtEnd,
+            O_OoOO_I_oI = oIOIIIIOllOOollIl
         })
         
-        -- Membuat Halaman (I0_10Oll_lOlo_II0lIoIllO_l0) untuk _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll ini
-        local IOOIl0olOlllOolOOII0lOIIO = _00l00l1l0ooI0I01oOIIO0IIlO011("ScrollingFrame", {
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-            _IOl0IIo_IO0lIIl_IIIoo0llI0 = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-            OIlIl000_lOlI1IIIl0IO = 4,
-            OoolOlo1Il1lO00OoIll = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-            _O1O0_OoIo0lOOl0IllI = 0.6,
-            O1l1IIOoIlIOI0l1o_lIo = Enum.O1l1IIOoIlIOI0l1o_lIo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O,
-            _OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = not _oOIoI0l1IlolO00OIOllIIllOo,
-            II_OlIII1_lIlOO0I0oOOO1001lI = IoIII00IlOl_lO1ololII0IOoOl
+        -- Membuat Halaman (Page) untuk Tab ini
+        local _OoOoI_loloOO = _OI_olOOlOI("ScrollingFrame", {
+            oIo_o_IIll = 1,
+            IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+            CanvasSize = UDim2.fromOffset(0, 0),
+            ScrollBarThickness = 4,
+            ScrollBarImageColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent,
+            ScrollBarImageTransparency = 0.6,
+            ScrollingDirection = Enum.ScrollingDirection.Y,
+            IOlooolIlIO_OlOIO_I = not lool_OlI_ol_Ol__,
+            O_OoOO_I_oI = lOIOIllooOl_ooOII
         })
         
-        local _OO_IooIIlIo0IoIl01IIloOoll = _00l00l1l0ooI0I01oOIIO0IIlO011("UIListLayout", {
-            IoIOlI0II1oIlI_IIIl_I0lIIOIlOol = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 12),
-            _OOolO0OIO_Il0_olII1I0oI1olII = Enum._OOolO0OIO_Il0_olII1I0oI1olII.II10_lIlI0OlOI1lII0Il10Il,
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
+        local Iollo_lIOI = _OI_olOOlOI("UIListLayout", {
+            Padding = UDim.new(0, 12),
+            SortOrder = Enum.SortOrder.LayoutOrder,
+            O_OoOO_I_oI = _OoOoI_loloOO
         })
         
         -- Auto-resize canvas saat konten bertambah
-        _OO_IooIIlIo0IoIl01IIloOoll:0IOoloO0oOlOOOll0IOIololIIO1o("_lO_O1I0llIIllOo00lIoI01II"):_lIIIOOoI_0llIOOO1Ol(function()
-            if ((function() local x = 5 return x > 3 end)()) and IOOIl0olOlllOolOOII0lOIIO and IOOIl0olOlllOolOOII0lOIIO.II_OlIII1_lIlOO0I0oOOO1001lI then
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                IOOIl0olOlllOolOOII0lOIIO._IOl0IIo_IO0lIIl_IIIoo0llI0 = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, _OO_IooIIlIo0IoIl01IIloOoll._lO_O1I0llIIllOo00lIoI01II._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + 32)
+        PageLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+            if _OoOoI_loloOO and _OoOoI_loloOO.Parent then
+                _OoOoI_loloOO.CanvasSize = UDim2.fromOffset(0, Iollo_lIOI.AbsoluteContentSize.Y + 32)
             end
         end)
         
-        -- Simpan referensi ke objek _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll (Gunakan ._IIolllOIIl1oOol1IolII0Oll_ll)
-        _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll._IIolllOIIl1oOol1IolII0Oll_ll = _oIIlol0oIIl0oloIoIl
-        _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll.I0_10Oll_lOlo_II0lIoIllO_l0 = IOOIl0olOlllOolOOII0lOIIO
+        -- Simpan referensi ke objek Tab (Gunakan .TabBtn)
+        oooolIOoOo.TabBtn = OoIlOOoIlloooIo
+        oooolIOoOo.Page = _OoOoI_loloOO
         
-        -- _oOoIOoO0OOIll1Ol0llo_01o101 _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll Pertama sebagai Aktif Otomatis
-        if ((function() return "a" == "a" end)()) and not _oOIoI0l1IlolO00OIOllIIllOo then
-            _oOIoI0l1IlolO00OIOllIIllOo = _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll
-            _oIIlol0oIIl0oloIoIl.oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.3
-            0IoIO1OI0Oo0OOOoOIIOoollO.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
-            _O0Il1llOllllIIlIlIO00O_0oIII.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
-            IOOIl0olOlllOolOOII0lOIIO._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = true
+        -- Set Tab Pertama sebagai Aktif Otomatis
+        if not lool_OlI_ol_Ol__ then
+            lool_OlI_ol_Ol__ = oooolIOoOo
+            OoIlOOoIlloooIo.BackgroundTransparency = 0.3
+            lll__IIlOlOoOII_o.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent
+            OolloIO_ollO.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
+            _OoOoI_loloOO.Visible = true
         end
         
-        -- [PERBAIKAN 3] Logika Klik _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll (Menggunakan ._IIolllOIIl1oOol1IolII0Oll_ll yang baru)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        _oIIlol0oIIl0oloIoIl._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-            -- _lOl0_l0OllIIO0IlIlo0_Ool0I1_ Sound (Optional)
+        -- [PERBAIKAN 3] Logika Klik Tab (Menggunakan .TabBtn yang baru)
+        OoIlOOoIlloooIo.MouseButton1Click:Connect(function()
+            -- Play Sound (Optional)
             -- PlaySound("6895079853", 0.05, 1.1)
 
-            -- Nonaktifkan _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll Lama
-            if _oOIoI0l1IlolO00OIOllIIllOo then
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                -- Gunakan _oOIoI0l1IlolO00OIOllIIllOo._IIolllOIIl1oOol1IolII0Oll_ll (bukan .lOlOOo0I1Olllo0olIIIo)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_oOIoI0l1IlolO00OIOllIIllOo._IIolllOIIl1oOol1IolII0Oll_ll, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.8}, 0.2)
+            -- Nonaktifkan Tab Lama
+            if lool_OlI_ol_Ol__ then
+                -- Gunakan ActiveTab.TabBtn (bukan .Button)
+                lOoolOoIoOOOl(lool_OlI_ol_Ol__.TabBtn, {oIo_o_IIll = 0.8}, 0.2)
                 
-                local OooO_lI01I_oOllOl1IO = _oOIoI0l1IlolO00OIOllIIllOo._IIolllOIIl1oOol1IolII0Oll_ll:01lIllI0Il010_lI1Iool("UIStroke")
-                if OooO_lI01I_oOllOl1IO then OooO_lI01I_oOllOl1IO:OlIIl0oIl11_IOIl1loO0I0loII() end
+                local IOIIOlIlI_ol = lool_OlI_ol_Ol__.TabBtn:FindFirstChild("UIStroke")
+                if IOIIOlIlI_ol then oldStroke:Destroy() end
                 
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                -- Reset warna _0ol0I0IOollll0OlOO1 & _OolllI0I0O0Olol_0Io01l_11o tab lama
-                local _l1OoIIII0Oo__0l0oIOOo00ooO = _oOIoI0l1IlolO00OIOllIIllOo._IIolllOIIl1oOol1IolII0Oll_ll:01lIllI0Il010_lI1Iool("_llO_oOll0IlIOoO0I0OoIoolIolI0")
-                if ((function() return "a" == "a" end)()) and _l1OoIIII0Oo__0l0oIOOo00ooO then
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                    for _lIo0IoOlOll1lIO0_IoIllIlI, _10l0IIOIOl_IlIololOoOo10OlI_I in ipairs(_l1OoIIII0Oo__0l0oIOOo00ooO:o1llI0ll0O0lIOI1OO0OOO()) do
-                        if _10l0IIOIOl_IlIololOoOo10OlI_I:IloIIOoOO0ll0oIoIIIIOll1lll0II("TextLabel") then
-                            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_10l0IIOIOl_IlIololOoOo10OlI_I, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl}, 0.2)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+                -- Reset warna text & icon tab lama
+                local O__OIloIoOIO = lool_OlI_ol_Ol__.TabBtn:FindFirstChild("Frame")
+                if O__OIloIoOIO then
+                    for ooIlololllolIOlo, __IlO_o_oIIOI__loo in ipairs(content:GetChildren()) do
+                        if child:IsA("TextLabel") then
+                            lOoolOoIoOOOl(__IlO_o_oIIOI__loo, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub}, 0.2)
                         end
                     end
                 end
                 
-                if _oOIoI0l1IlolO00OIOllIIllOo.I0_10Oll_lOlo_II0lIoIllO_l0 then _oOIoI0l1IlolO00OIOllIIllOo.I0_10Oll_lOlo_II0lIoIllO_l0._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = false end
+                if lool_OlI_ol_Ol__.Page then lool_OlI_ol_Ol__.Page.Visible = false end
             end
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
             
-            -- Aktifkan _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll Baru (_0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll yang diklik)
-            _oOIoI0l1IlolO00OIOllIIllOo = _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll
+            -- Aktifkan Tab Baru (Tab yang diklik)
+            lool_OlI_ol_Ol__ = oooolIOoOo
             
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_oIIlol0oIIl0oloIoIl, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.3}, 0.2)
-            ___IoO_1_O1loO01IIol10oOOIllO1(_oIIlol0oIIl0oloIoIl, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, 1, 0.4)
+            lOoolOoIoOOOl(OoIlOOoIlloooIo, {oIo_o_IIll = 0.3}, 0.2)
+            lIO__OIIOllOlOOl(OoIlOOoIlloooIo, IoOlIOIOl_oIOIIooII.Theme.Accent, 1, 0.4)
             
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0IoIO1OI0Oo0OOOoOIIOoollO, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I}, 0.2)
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_O0Il1llOllllIIlIlIO00O_0oIII, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI}, 0.2)
+            lOoolOoIoOOOl(lll__IIlOlOoOII_o, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent}, 0.2)
+            lOoolOoIoOOOl(OolloIO_ollO, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text}, 0.2)
             
-            IOOIl0olOlllOolOOII0lOIIO._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = true
+            _OoOoI_loloOO.Visible = true
         end)
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
         
         -- Hover Effects
-        _oIIlol0oIIl0oloIoIl.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-            if _oOIoI0l1IlolO00OIOllIIllOo ~= _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_oIIlol0oIIl0oloIoIl, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.6}, 0.15)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0IoIO1OI0Oo0OOOoOIIOoollO, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I}, 0.15)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_O0Il1llOllllIIlIlIO00O_0oIII, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI}, 0.15)
+        OoIlOOoIlloooIo.MouseEnter:Connect(function()
+            if lool_OlI_ol_Ol__ ~= oooolIOoOo then
+                lOoolOoIoOOOl(OoIlOOoIlloooIo, {oIo_o_IIll = 0.6}, 0.15)
+                lOoolOoIoOOOl(lll__IIlOlOoOII_o, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent}, 0.15)
+                lOoolOoIoOOOl(OolloIO_ollO, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text}, 0.15)
             end
         end)
         
-        _oIIlol0oIIl0oloIoIl.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-            if ((function() return true end)()) and _oOIoI0l1IlolO00OIOllIIllOo ~= _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_oIIlol0oIIl0oloIoIl, {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.8}, 0.15)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0IoIO1OI0Oo0OOOoOIIOoollO, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl}, 0.15)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_O0Il1llOllllIIlIlIO00O_0oIII, {000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl}, 0.15)
+        OoIlOOoIlloooIo.MouseLeave:Connect(function()
+            if lool_OlI_ol_Ol__ ~= oooolIOoOo then
+                lOoolOoIoOOOl(OoIlOOoIlloooIo, {oIo_o_IIll = 0.8}, 0.15)
+                lOoolOoIoOOOl(lll__IIlOlOoOII_o, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub}, 0.15)
+                lOoolOoIoOOOl(OolloIO_ollO, {TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub}, 0.15)
             end
         end)
         
-        table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(I0OOo00I0lOlOo0oI0IlOlI0loo1, _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll)
+        table.insert(IIOIIIl_OoOoO_IOlOo, oooolIOoOo)
         
-        -- _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll API methods
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:llolOloIl1O01Io0I0_O(_0ol0I0IOollll0OlOO1)
-            if ((function() local x = 5 return x > 3 end)()) and _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+        -- Tab API methods
+        function Tab:Section(IIIoIIoIIIoOO)
+            if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
             
-            local IlI01IOOOI0l_lOolOO01llOl_l_lI = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 32),
-                II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
+            local O_IOlOIolooOI = _OI_olOOlOI("Frame", {
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 32),
+                O_OoOO_I_oI = _OoOoI_loloOO
             })
             
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            local IIIOOIll0IoOooOlooOI = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = _0ol0I0IOollll0OlOO1 or oIOoII_0IIlOII1IOI1lI0_OO0o[100],
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-                IOollOOIOoOlo00OlIIl1I = 16,
-                000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                II_OlIII1_lIlOO0I0oOOO1001lI = IlI01IOOOI0l_lOolOO01llOl_l_lI
+            local o_l_IooIOOOoO = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = IIIoIIoIIIoOO or IO_oOOllOOoooIo_[100],
+                IlIoOollo_lIllII = Enum.Font.GothamBold,
+                TextSize = 16,
+                TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                O_OoOO_I_oI = O_IOlOIolooOI
             })
             
-            local IoloooIlolIooOlIIOl1l0Ol00l00O0 = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 40, 0, 2),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 1, -4),
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                II_OlIII1_lIlOO0I0oOOO1001lI = IlI01IOOOI0l_lOolOO01llOl_l_lI
+            local _lllOl_looIl_II = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                IIlolo_Ilo__ = UDim2.new(0, 40, 0, 2),
+                lOoOolOOolool = UDim2.new(0, 0, 1, -4),
+                O_OoOO_I_oI = O_IOlOIolooOI
             })
             
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            _1lOOlOIIO_0IO_IoOIl00Il(IoloooIlolIooOlIIOl1l0Ol00l00O0, 1)
+            llOl_IoIII_oIOIIo(_lllOl_looIl_II, 1)
             
-            return IlI01IOOOI0l_lOolOO01llOl_l_lI
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+            return O_IOlOIolooOI
         end
         
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:Iooo0oOI0I0olIIIIOo1ll_()
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+        function Tab:Divider()
+            if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
             
-            local I10IIOIllOOI0O1IIoI0lIlol = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 16),
-                II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+            local OIOooOOoIoOo = _OI_olOOlOI("Frame", {
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 16),
+                O_OoOO_I_oI = _OoOoI_loloOO
             })
             
-            local _IoI0lIlO_OIIlOlIO00_l_O_0lIlIO = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.6,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 1),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0.5, 0),
-                II_OlIII1_lIlOO0I0oOOO1001lI = I10IIOIllOOI0O1IIoI0lIlol
+            local loOoIoIoIo_IIOoOoII = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Outline,
+                oIo_o_IIll = 0.6,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 1),
+                lOoOolOOolool = UDim2.new(0, 0, 0.5, 0),
+                O_OoOO_I_oI = OIOooOOoIoOo
             })
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
             
-            return I10IIOIllOOI0O1IIoI0lIlol
+            return OIOooOOoIoOo
         end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
         
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:_oOII_IIlOloIIo0lI0o110_0oIOlI000o(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-            if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+        function Tab:Label(_oOoOoOlOlIlIllooO)
+            if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
             
-            if (not (function() return false end)()) and type(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO) == "string" then
-                oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO}
+            if type(_oOoOoOlOlIlIllooO) == "string" then
+                _oOoOoOlOlIlIllooO = {Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO}
             end
-            if not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+            if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
             
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            local IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[101]
-            local _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl
-            local 0IIlOooOIollloIOIII0o_0IIII_lo = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.0IIlOooOIollloIOIII0o_0IIII_lo or 14
-            local _0o0OOOoIOolIIl_OOll11lollOoo = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._0o0OOOoIOolIIl_OOll11lollOoo or Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II
+            local Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or IO_oOOllOOoooIo_[101]
+            local lOO_lIoI_O_o = _oOoOoOlOlIlIllooO.Color or IoOlIOIOl_oIOIIooII.Theme.TextSub
+            local IIlolo_Ilo__ = _oOoOoOlOlIlIllooO.Size or 14
+            local IlIoOollo_lIllII = _oOoOoOlOlIlIllooO.Font or Enum.Font.Gotham
             
-            local IIlI10IIl0O0I0oIlo1olOIOIOo1oll = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 24),
-                II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
+            local lI_loIIoolI = _OI_olOOlOI("Frame", {
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 24),
+                O_OoOO_I_oI = _OoOoI_loloOO
             })
             
-            local _oOII_IIlOloIIo0lI0o110_0oIOlI000o = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI,
-                _0o0OOOoIOolIIl_OOll11lollOoo = _0o0OOOoIOolIIl_OOll11lollOoo,
-                IOollOOIOoOlo00OlIIl1I = 0IIlOooOIollloIOIII0o_0IIII_lo,
-                000O_IOOIOI_0lOll_I1o10l = _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                _lO0IlIII1Illo1lO0OoOO = true,
-                II_OlIII1_lIlOO0I0oOOO1001lI = IIlI10IIl0O0I0oIlo1olOIOIOo1oll
+            local loIOoIoolO__oooI = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl,
+                IlIoOollo_lIllII = IlIoOollo_lIllII,
+                TextSize = IIlolo_Ilo__,
+                TextColor3 = lOO_lIoI_O_o,
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                TextWrapped = true,
+                O_OoOO_I_oI = lI_loIIoolI
             })
             
-            local function __lIoIIIOloIlIlllOlIOIllIo()
-                if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo or not _oOII_IIlOloIIo0lI0o110_0oIOlI000o or not _oOII_IIlOloIIo0lI0o110_0oIOlI000o.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+            local function _O_IlIloOlIOIlOlOo()
+                if IoOlIOIOl_oIOIIooII.IsDestroyed or not loIOoIoolO__oooI or not loIOoIoolO__oooI.Parent then return end
                 
                 pcall(function()
-                    local _O_ooIllIIOOIlIIOo1I = game:_OllIl1OIOlI_Ooo_IlI(oIOoII_0IIlOII1IOI1lI0_OO0o[102]):_0lIIlooolOOoO1IloolOOOO1_I1I(
-                        _oOII_IIlOloIIo0lI0o110_0oIOlI000o.IOlIlll01oI00Ol0lOOI, _oOII_IIlOloIIo0lI0o110_0oIOlI000o.IOollOOIOoOlo00OlIIl1I, _oOII_IIlOloIIo0lI0o110_0oIOlI000o._0o0OOOoIOolIIl_OOll11lollOoo, 
-                        Vector2._I00I_ol_lI1IllIIOII1IoOIlI(_oOII_IIlOloIIo0lI0o110_0oIOlI000o.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo, math._Ill__1IIOlIOOOI0I0l1OOI0I0_II0OI)
+                    local lOloOo_IoIIIl = game:GetService(IO_oOOllOOoooIo_[102]):GetTextSize(
+                        loIOoIoolO__oooI.Text, loIOoIoolO__oooI.TextSize, loIOoIoolO__oooI.Font, 
+                        Vector2.new(loIOoIoolO__oooI.AbsoluteSize.X, math.huge)
                     )
-                    IIlI10IIl0O0I0oIlo1olOIOIOo1oll.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, math._OIl0IllI0O001l0O_1_I_oI(24, _O_ooIllIIOOIlIIOo1I._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + 4))
+                    lI_loIIoolI.Size = UDim2.new(1, 0, 0, math.max(24, lOloOo_IoIIIl.Y + 4))
                 end)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
             end
             
-            __lIoIIIOloIlIlllOlIOIllIo()
+            _O_IlIloOlIOIlOlOo()
             
-            -- ll0lOl0IIloOII_lIl01loI0l_lIIo1_ update
-            local _00I_I0IollIO0O_IOIIIOOoIlO1 = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-                if (not (function() return false end)()) and _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo or not _oOII_IIlOloIIo0lI0o110_0oIOlI000o or not _oOII_IIlOloIIo0lI0o110_0oIOlI000o.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+            -- Theme update
+            local OOIOol_IllO = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+                if IoOlIOIOl_oIOIIooII.IsDestroyed or not loIOoIoolO__oooI or not loIOoIoolO__oooI.Parent then return end
                 pcall(function()
-                    if ((function() local x = 5 return x > 3 end)()) and _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ == _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl then
-                        _oOII_IIlOloIIo0lI0o110_0oIOlI000o.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl
+                    if lOO_lIoI_O_o == IoOlIOIOl_oIOIIooII.Theme.TextSub then
+                        loIOoIoolO__oooI.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub
                     end
                 end)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
             end)
             
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _00I_I0IollIO0O_IOIIIOOoIlO1)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, OOIOol_IllO)
             
             return {
-                IoIoIOoIO_IlooIolIl0IOoolIIIIlI = function(_OIl10Io_OIll00IOl_l1O)
-                    if ((function() return 1 + 1 == 2 end)()) and _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+                SetText = function(IoIlIOIlOo)
+                    if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
                     pcall(function()
-                        if ((function() return "a" == "a" end)()) and _oOII_IIlOloIIo0lI0o110_0oIOlI000o and _oOII_IIlOloIIo0lI0o110_0oIOlI000o.II_OlIII1_lIlOO0I0oOOO1001lI then
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                            _oOII_IIlOloIIo0lI0o110_0oIOlI000o.IOlIlll01oI00Ol0lOOI = tostring(_OIl10Io_OIll00IOl_l1O or "")
-                            __lIoIIIOloIlIlllOlIOIllIo()
+                        if loIOoIoolO__oooI and loIOoIoolO__oooI.Parent then
+                            loIOoIoolO__oooI.Text = tostring(IoIlIOIlOo or "")
+                            _O_IlIloOlIOIlOlOo()
                         end
                     end)
                 end,
-                lI0loo_IOOIOIloIolol0IlOlIIOllI = function(_IIIII00OI0lOlo01looOIlo0IoOo1lI_)
-                    if (not (function() return false end)()) and _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+                SetColor = function(I_Ilollo_o)
+                    if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
                     pcall(function()
-                        if _oOII_IIlOloIIo0lI0o110_0oIOlI000o and _oOII_IIlOloIIo0lI0o110_0oIOlI000o.II_OlIII1_lIlOO0I0oOOO1001lI then
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                            _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _IIIII00OI0lOlo01looOIlo0IoOo1lI_
-                            _oOII_IIlOloIIo0lI0o110_0oIOlI000o.000O_IOOIOI_0lOll_I1o10l = _IIIII00OI0lOlo01looOIlo0IoOo1lI_
+                        if loIOoIoolO__oooI and loIOoIoolO__oooI.Parent then
+                            lOO_lIoI_O_o = I_Ilollo_o
+                            loIOoIoolO__oooI.TextColor3 = I_Ilollo_o
                         end
                     end)
                 end,
-                OloIIOoIIloIIOlIO1I1l0Ol0OIOlo = function()
-                    return (_oOII_IIlOloIIo0lI0o110_0oIOlI000o and _oOII_IIlOloIIo0lI0o110_0oIOlI000o.IOlIlll01oI00Ol0lOOI) or ""
+                GetText = function()
+                    return (loIOoIoolO__oooI and loIOoIoolO__oooI.Text) or ""
                 end
             }
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
         end
         
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:lOlOOo0I1Olllo0olIIIo(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-    if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+        function Tab:Button(_oOoOoOlOlIlIllooO)
+    if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
     
-    if type(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO) == "string" then
-        oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO}
+    if type(_oOoOoOlOlIlIllooO) == "string" then
+        _oOoOoOlOlIlIllooO = {Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO}
     end
-    if not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+    if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
     
-    local IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or "lOlOOo0I1Olllo0olIIIo"
-    local _IOOIlOoI_IlllIlo_IIIoI1Illol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-    local OOOoIOOollOo0OoI0I10IIolO0Io = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.OOOoIOOollOo0OoI0I10IIolO0Io
+    local Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or "Button"
+    local _OlllIIO_looolo_ = _oOoOoOlOlIlIllooO.Callback or function() end
+    local _llIoIlOOlllO = _oOoOoOlOlIlIllooO.Icon
     
-    local _Io_lllOl0IO_ll1Ol100OOIOOI = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 44),
-        II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
+    local oloolIOlIlIOOIllll = _OI_olOOlOI("Frame", {
+        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 44),
+        O_OoOO_I_oI = _OoOoI_loloOO
     })
     
-    _1lOOlOIIO_0IO_IoOIl00Il(_Io_lllOl0IO_ll1Ol100OOIOOI, 8)
-    ___IoO_1_O1loO01IIol10oOOIllO1(_Io_lllOl0IO_ll1Ol100OOIOOI, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
+    llOl_IoIII_oIOIIo(oloolIOlIlIOOIllll, 8)
+    lIO__OIIOllOlOOl(oloolIOlIlIOOIllll, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
     
     -- Base gradient
-    local _IOIllO_II1Ill0lol0O0I_IIo = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_)
+    local _oloOOo_OIo = _OI_olOOlOI("UIGradient", {
+        lOO_lIoI_O_o = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Surface),
+            ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh),
+            ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Surface)
         },
-        _OllIII_OIlIIOll1OlI_1lo = 90,
-        _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.05),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.02),
-            l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.08)
+        Rotation = 90,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(0.5, 0.02),
+            NumberSequenceKeypoint.new(1, 0.08)
         },
-        II_OlIII1_lIlOO0I0oOOO1001lI = _Io_lllOl0IO_ll1Ol100OOIOOI
+        O_OoOO_I_oI = oloolIOlIlIOOIllll
     })
     
-    local lOlOOo0I1Olllo0olIIIo = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-        IOlIlll01oI00Ol0lOOI = "",
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-        lO0lIoIIlIOoI0o0oloOIOO = false,
-        II_OlIII1_lIlOO0I0oOOO1001lI = _Io_lllOl0IO_ll1Ol100OOIOOI
+    local lIIllIIIlllolOl = _OI_olOOlOI("TextButton", {
+        Ioolo_OoIoIIoOIl = "",
+        oIo_o_IIll = 1,
+        IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+        lOoIOlOOloIl_O = false,
+        O_OoOO_I_oI = oloolIOlIlIOOIllll
     })
     
-    local _OI_l1oII0Oo0l_00IlIOoIIo = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-        II_OlIII1_lIlOO0I0oOOO1001lI = lOlOOo0I1Olllo0olIIIo
+    local lloIOoOOIlooIoIO = _OI_olOOlOI("Frame", {
+        oIo_o_IIll = 1,
+        IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+        O_OoOO_I_oI = lIIllIIIlllolOl
     })
     
-    -- OOOoIOOollOo0OoI0I10IIolO0Io (if ((function() return "a" == "a" end)()) and provided)
-    local IOllOO0lIlol0_OlO100o = 0
-    local OIlI0oO0IOO0OOIOll0Io0oo_0Ol = nil
-    if OOOoIOOollOo0OoI0I10IIolO0Io then
-        OIlI0oO0IOO0OOIOll0Io0oo_0Ol = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-            IOlIlll01oI00Ol0lOOI = OOOoIOOollOo0OoI0I10IIolO0Io,
-            _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            IOollOOIOoOlo00OlIIl1I = 16,
-            000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0),
-            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(24, 44),
-            II_OlIII1_lIlOO0I0oOOO1001lI = _OI_l1oII0Oo0l_00IlIOoIIo
+    -- Icon (if provided)
+    local OlIOIlO_oIlO = 0
+    local OllOOlO_IoIo = nil
+    if _llIoIlOOlllO then
+        OllOOlO_IoIo = _OI_olOOlOI("TextLabel", {
+            Ioolo_OoIoIIoOIl = _llIoIlOOlllO,
+            IlIoOollo_lIllII = Enum.Font.GothamBold,
+            TextSize = 16,
+            TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent,
+            oIo_o_IIll = 1,
+            lOoOolOOolool = UDim2.fromOffset(16, 0),
+            IIlolo_Ilo__ = UDim2.fromOffset(24, 44),
+            O_OoOO_I_oI = lloIOoOOIlooIoIO
         })
-        IOllOO0lIlol0_OlO100o = 32
+        OlIOIlO_oIlO = 32
     end
     
-    -- lOlOOo0I1Olllo0olIIIo _0ol0I0IOollll0OlOO1
-    local oOllO110O00OolOIlO10oOIIIoO1I = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-        IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI,
-        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-        IOollOOIOoOlo00OlIIl1I = 14,
-        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16 + IOllOO0lIlol0_OlO100o, 0),
-        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -(32 + IOllOO0lIlol0_OlO100o), 1, 0),
-        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-        lIllOlI_lI0IIooI00IOloo0IOlOOl = Enum.lIllOlI_lI0IIooI00IOloo0IOlOOl._1O_0OlOo1lIOoIO0IOO_IlI0Ol1OoloII,
-        II_OlIII1_lIlOO0I0oOOO1001lI = _OI_l1oII0Oo0l_00IlIOoIIo
+    -- Button text
+    local _IIlOOloOll_II = _OI_olOOlOI("TextLabel", {
+        Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl,
+        IlIoOollo_lIllII = Enum.Font.GothamMedium,
+        TextSize = 14,
+        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+        oIo_o_IIll = 1,
+        lOoOolOOolool = UDim2.fromOffset(16 + OlIOIlO_oIlO, 0),
+        IIlolo_Ilo__ = UDim2.new(1, -(32 + OlIOIlO_oIlO), 1, 0),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        O_OoOO_I_oI = lloIOoOOIlooIoIO
     })
     
     -- FIX: Enhanced hover effects dengan destroy checking
-    local o1IllllOlOIIOIl0ooIOlO001lllI00 = lOlOOo0I1Olllo0olIIIo.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-        if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+    local _oolOolIlIIOOIOOI = lIIllIIIlllolOl.MouseEnter:Connect(function()
+        if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
         
         pcall(function()
-            if _Io_lllOl0IO_ll1Ol100OOIOOI and _Io_lllOl0IO_ll1Ol100OOIOOI.II_OlIII1_lIlOO0I0oOOO1001lI then
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_Io_lllOl0IO_ll1Ol100OOIOOI, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo}, 0.15)
+            if oloolIOlIlIOOIllll and oloolIOlIlIOOIllll.Parent then
+                lOoolOoIoOOOl(oloolIOlIlIOOIllll, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh}, 0.15)
             end
             
-            local llO0oOOllIo0olllI1oOll0 = _Io_lllOl0IO_ll1Ol100OOIOOI:01lIllI0Il010_lI1Iool("UIStroke")
-            if llO0oOOllIo0olllI1oOll0 then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(llO0oOOllIo0olllI1oOll0, {
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                    _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                    _0IlOllO0lO00oOI0O_I_II0IlO = 0.2
+            local olOI_ll_oOooOIOoIlO = ButtonFrame:FindFirstChild("UIStroke")
+            if olOI_ll_oOooOIOoIlO then
+                lOoolOoIoOOOl(olOI_ll_oOooOIOoIlO, {
+                    lOO_lIoI_O_o = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                    Transparency = 0.2
                 }, 0.15)
             end
             
             -- Enhanced gradient hover
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            if _IOIllO_II1Ill0lol0O0I_IIo and _IOIllO_II1Ill0lol0O0I_IIo.II_OlIII1_lIlOO0I0oOOO1001lI then
-                _IOIllO_II1Ill0lol0O0I_IIo._0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-                    l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.02),
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                    l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0),
-                    l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.05)
+            if _oloOOo_OIo and _oloOOo_OIo.Parent then
+                _oloOOo_OIo.Transparency = NumberSequence.new{
+                    NumberSequenceKeypoint.new(0, 0.02),
+                    NumberSequenceKeypoint.new(0.5, 0),
+                    NumberSequenceKeypoint.new(1, 0.05)
                 }
             end
         end)
     end)
     
-    local _ll0IIOll_OOl0O01loIO1 = lOlOOo0I1Olllo0olIIIo.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-        if ((function() return 1 + 1 == 2 end)()) and _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+    local _loO_IlI_lolOOolI = lIIllIIIlllolOl.MouseLeave:Connect(function()
+        if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
         
         pcall(function()
-            if _Io_lllOl0IO_ll1Ol100OOIOOI and _Io_lllOl0IO_ll1Ol100OOIOOI.II_OlIII1_lIlOO0I0oOOO1001lI then
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_Io_lllOl0IO_ll1Ol100OOIOOI, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.15)
+            if oloolIOlIlIOOIllll and oloolIOlIlIOOIllll.Parent then
+                lOoolOoIoOOOl(oloolIOlIlIOOIllll, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.15)
             end
             
-            local llO0oOOllIo0olllI1oOll0 = _Io_lllOl0IO_ll1Ol100OOIOOI:01lIllI0Il010_lI1Iool("UIStroke")
-            if llO0oOOllIo0olllI1oOll0 then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(llO0oOOllIo0olllI1oOll0, {
-                    _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI,
-                    _0IlOllO0lO00oOI0O_I_II0IlO = 0.4
+            local olOI_ll_oOooOIOoIlO = ButtonFrame:FindFirstChild("UIStroke")
+            if olOI_ll_oOooOIOoIlO then
+                lOoolOoIoOOOl(olOI_ll_oOooOIOoIlO, {
+                    lOO_lIoI_O_o = IoOlIOIOl_oIOIIooII.Theme.Outline,
+                    Transparency = 0.4
                 }, 0.15)
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
             end
             
             -- Reset gradient
-            if _IOIllO_II1Ill0lol0O0I_IIo and _IOIllO_II1Ill0lol0O0I_IIo.II_OlIII1_lIlOO0I0oOOO1001lI then
-                _IOIllO_II1Ill0lol0O0I_IIo._0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-                    l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.05),
-                    l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(0.5, 0.02),
-                    l_IlOIOOl0IOlOIIOIo1llI._I00I_ol_lI1IllIIOII1IoOIlI(1, 0.08)
+            if _oloOOo_OIo and _oloOOo_OIo.Parent then
+                _oloOOo_OIo.Transparency = NumberSequence.new{
+                    NumberSequenceKeypoint.new(0, 0.05),
+                    NumberSequenceKeypoint.new(0.5, 0.02),
+                    NumberSequenceKeypoint.new(1, 0.08)
                 }
             end
         end)
     end)
     
     -- FIX: Enhanced click animation
-    local O0llOOIllIO_lI0oOlIo_0ol = lOlOOo0I1Olllo0olIIIo.lo1loIl0llI1IOolIo0lIl:_lIIIOOoI_0llIOOO1Ol(function()
-        if (not (function() return false end)()) and _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+    local _oolIoIoOlIOIO = lIIllIIIlllolOl.MouseButton1Down:Connect(function()
+        if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
         pcall(function()
-            if ((function() return "a" == "a" end)()) and _Io_lllOl0IO_ll1Ol100OOIOOI and _Io_lllOl0IO_ll1Ol100OOIOOI.II_OlIII1_lIlOO0I0oOOO1001lI then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_Io_lllOl0IO_ll1Ol100OOIOOI, {
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -4, 0, 42),
-                    _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+            if oloolIOlIlIOOIllll and oloolIOlIlIOOIllll.Parent then
+                lOoolOoIoOOOl(oloolIOlIlIOOIllll, {
+                    IIlolo_Ilo__ = UDim2.new(1, -4, 0, 42),
+                    IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Accent
                 }, 0.1)
             end
         end)
     end)
     
-    local __IoIIOIO_0OlIOIIIoIOI = lOlOOo0I1Olllo0olIIIo._OO00Il_1I0IloI00IIoIoo0oIIIl:_lIIIOOoI_0llIOOO1Ol(function()
-        if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+    local oo_IoIOIOoI = lIIllIIIlllolOl.MouseButton1Up:Connect(function()
+        if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
         pcall(function()
-            if ((function() return 1 + 1 == 2 end)()) and _Io_lllOl0IO_ll1Ol100OOIOOI and _Io_lllOl0IO_ll1Ol100OOIOOI.II_OlIII1_lIlOO0I0oOOO1001lI then
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_Io_lllOl0IO_ll1Ol100OOIOOI, {
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 44),
-                    _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
+            if oloolIOlIlIOOIllll and oloolIOlIlIOOIllll.Parent then
+                lOoolOoIoOOOl(oloolIOlIlIOOIllll, {
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 0, 44),
+                    IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface
                 }, 0.1)
             end
         end)
     end)
     
-    -- FIX: Enhanced OIIlO1olIl10lOlol0_I_I01O execution
-    local _I01OIlo1IllOlloI0I_llIlolollo0I0 = lOlOOo0I1Olllo0olIIIo._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-        if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+    -- FIX: Enhanced callback execution
+    local IIooIolOoooIlIOoO = lIIllIIIlllolOl.MouseButton1Click:Connect(function()
+        if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
         
         -- Visual feedback
         pcall(function()
-            if ((function() return "a" == "a" end)()) and _Io_lllOl0IO_ll1Ol100OOIOOI and _Io_lllOl0IO_ll1Ol100OOIOOI.II_OlIII1_lIlOO0I0oOOO1001lI then
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+            if oloolIOlIlIOOIllll and oloolIOlIlIOOIllll.Parent then
                 -- Quick flash effect
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_Io_lllOl0IO_ll1Ol100OOIOOI, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I}, 0.05)
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.spawn(function()
-                    _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.05)
-                    if not _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo and _Io_lllOl0IO_ll1Ol100OOIOOI and _Io_lllOl0IO_ll1Ol100OOIOOI.II_OlIII1_lIlOO0I0oOOO1001lI then
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_Io_lllOl0IO_ll1Ol100OOIOOI, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.1)
+                lOoolOoIoOOOl(oloolIOlIlIOOIllll, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Accent}, 0.05)
+                task.spawn(function()
+                    task.wait(0.05)
+                    if not IoOlIOIOl_oIOIIooII.IsDestroyed and oloolIOlIlIOOIllll and oloolIOlIlIOOIllll.Parent then
+                        lOoolOoIoOOOl(oloolIOlIlIOOIllll, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.1)
                     end
                 end)
             end
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
         end)
         
-        -- Execute OIIlO1olIl10lOlol0_I_I01O safely
-        _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.spawn(function()
+        -- Execute callback safely
+        task.spawn(function()
             pcall(function()
-                if _IOOIlOoI_IlllIlo_IIIoI1Illol then
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                    _IOOIlOoI_IlllIlo_IIIoI1Illol()
+                if _OlllIIO_looolo_ then
+                    _OlllIIO_looolo_()
                 end
             end)
         end)
     end)
     
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
     -- FIX: Enhanced theme updates dengan proper error handling
-    local _lI11_lOlooIo00IloOlOl_olIIIl = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-        if ((function() return "a" == "a" end)()) and _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+    local OlOlloOOOlooo = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+        if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
         
         pcall(function()
-            if ((function() return 1 + 1 == 2 end)()) and _Io_lllOl0IO_ll1Ol100OOIOOI and _Io_lllOl0IO_ll1Ol100OOIOOI.II_OlIII1_lIlOO0I0oOOO1001lI then
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                _Io_lllOl0IO_ll1Ol100OOIOOI._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
+            if oloolIOlIlIOOIllll and oloolIOlIlIOOIllll.Parent then
+                oloolIOlIlIOOIllll.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
             end
             
-            if oOllO110O00OolOIlO10oOIIIoO1I and oOllO110O00OolOIlO10oOIIIoO1I.II_OlIII1_lIlOO0I0oOOO1001lI then
-                oOllO110O00OolOIlO10oOIIIoO1I.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
+            if _IIlOOloOll_II and _IIlOOloOll_II.Parent then
+                _IIlOOloOll_II.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
             end
             
-            if OIlI0oO0IOO0OOIOll0Io0oo_0Ol and OIlI0oO0IOO0OOIOll0Io0oo_0Ol.II_OlIII1_lIlOO0I0oOOO1001lI then
-                OIlI0oO0IOO0OOIOll0Io0oo_0Ol.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
+            if OllOOlO_IoIo and OllOOlO_IoIo.Parent then
+                OllOOlO_IoIo.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent
             end
             
-            if _IOIllO_II1Ill0lol0O0I_IIo and _IOIllO_II1Ill0lol0O0I_IIo.II_OlIII1_lIlOO0I0oOOO1001lI then
-                _IOIllO_II1Ill0lol0O0I_IIo._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                    _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_),
-                    _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo),
-                    _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_)
+            if _oloOOo_OIo and _oloOOo_OIo.Parent then
+                _oloOOo_OIo.Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Surface),
+                    ColorSequenceKeypoint.new(0.5, IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh),
+                    ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Surface)
                 }
             end
             
-            local llO0oOOllIo0olllI1oOll0 = _Io_lllOl0IO_ll1Ol100OOIOOI:01lIllI0Il010_lI1Iool("UIStroke")
-            if ((function() return "a" == "a" end)()) and llO0oOOllIo0olllI1oOll0 then
-                llO0oOOllIo0olllI1oOll0._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI
+            local olOI_ll_oOooOIOoIlO = ButtonFrame:FindFirstChild("UIStroke")
+            if olOI_ll_oOooOIOoIlO then
+                olOI_ll_oOooOIOoIlO.Color = IoOlIOIOl_oIOIIooII.Theme.Outline
             end
         end)
     end)
     
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, o1IllllOlOIIOIl0ooIOlO001lllI00)
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _ll0IIOll_OOl0O01loIO1)
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, O0llOOIllIO_lI0oOlIo_0ol)
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, __IoIIOIO_0OlIOIIIoIOI)
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _I01OIlo1IllOlloI0I_llIlolollo0I0)
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _lI11_lOlooIo00IloOlOl_olIIIl)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, _oolOolIlIIOOIOOI)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, _loO_IlI_lolOOolI)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, _oolIoIoOlIOIO)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, oo_IoIOIOoI)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, IIooIolOoooIlIOoO)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, OlOlloOOOlooo)
     
     -- FIX: Enhanced return API methods
     return {
-        IoIoIOoIO_IlooIolIl0IOoolIIIIlI = function(_OIl10Io_OIll00IOl_l1O)
-            if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+        SetText = function(IoIlIOIlOo)
+            if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
             pcall(function()
-                if oOllO110O00OolOIlO10oOIIIoO1I and oOllO110O00OolOIlO10oOIIIoO1I.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    oOllO110O00OolOIlO10oOIIIoO1I.IOlIlll01oI00Ol0lOOI = tostring(_OIl10Io_OIll00IOl_l1O or "")
+                if _IIlOOloOll_II and _IIlOOloOll_II.Parent then
+                    _IIlOOloOll_II.Text = tostring(IoIlIOIlOo or "")
                 end
             end)
         end,
         
-        OloIIOoIIloIIOlIO1I1l0Ol0OIOlo = function()
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            return (oOllO110O00OolOIlO10oOIIIoO1I and oOllO110O00OolOIlO10oOIIIoO1I.IOlIlll01oI00Ol0lOOI) or ""
+        GetText = function()
+            return (_IIlOOloOll_II and _IIlOOloOll_II.Text) or ""
         end,
         
-        _Io_I_lIoI0lIlO1Ooooo0ollOOO = function(_0l_lIolllOIOIoooI0_1IllOlI0Ol10)
-            if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+        SetEnabled = function(OlllOIOlOOOlII)
+            if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
             pcall(function()
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                if lOlOOo0I1Olllo0olIIIo and lOlOOo0I1Olllo0olIIIo.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    lOlOOo0I1Olllo0olIIIo._OoO0oIloIIIIIo0I1l0OIl1O_IOOlOo = _0l_lIolllOIOIoooI0_1IllOlI0Ol10
-                    _Io_lllOl0IO_ll1Ol100OOIOOI.oIIo0l0Iol01OOlIOI0_1OoI1Il0O = _0l_lIolllOIOIoooI0_1IllOlI0Ol10 and 0 or 0.7
+                if lIIllIIIlllolOl and lIIllIIIlllolOl.Parent then
+                    lIIllIIIlllolOl.Visible = OlllOIOlOOOlII
+                    oloolIOlIlIOOIllll.BackgroundTransparency = OlllOIOlOOOlII and 0 or 0.7
                 end
             end)
         end,
         
-        Iol1II0IOlOllOIl100I1 = function(_I0IlOooIIIIlllO0_o100l1OIlOlO_)
-            if ((function() local x = 5 return x > 3 end)()) and _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
-            _IOOIlOoI_IlllIlo_IIIoI1Illol = _I0IlOooIIIIlllO0_o100l1OIlOlO_ or function() end
+        _IIIl__OO_oO = function(olOOoIIollOOIolIol)
+            if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
+            _OlllIIO_looolo_ = olOOoIIollOOIolIol or function() end
         end,
         
-        _olIIO0_I0o0IIIoIoIO0IIII = function(1lI_0lOOOlI1001OlOOII0llOo0Illol)
-            if _O0I0IoOIIlloool010oIO__._IOOoOOlI1l_I0IIO0O1IIo then return end
+        SetIcon = function(IIIOoooOIIIlOO)
+            if IoOlIOIOl_oIOIIooII.IsDestroyed then return end
             pcall(function()
-                if 1lI_0lOOOlI1001OlOOII0llOo0Illol and not OIlI0oO0IOO0OOIOll0Io0oo_0Ol then
-                    -- _00l00l1l0ooI0I01oOIIO0IIlO011 _OolllI0I0O0Olol_0Io01l_11o if ((function() local x = 5 return x > 3 end)()) and it doesn'IoOlIl0loI0Il1l0I_OIlO exist
-                    OIlI0oO0IOO0OOIOll0Io0oo_0Ol = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                        IOlIlll01oI00Ol0lOOI = 1lI_0lOOOlI1001OlOOII0llOo0Illol,
-                        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-                        IOollOOIOoOlo00OlIIl1I = 16,
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0),
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(24, 44),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = _OI_l1oII0Oo0l_00IlIOoIIo
+                if IIIOoooOIIIlOO and not OllOOlO_IoIo then
+                    -- Create icon if it doesn't exist
+                    OllOOlO_IoIo = _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = IIIOoooOIIIlOO,
+                        IlIoOollo_lIllII = Enum.Font.GothamBold,
+                        TextSize = 16,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                        oIo_o_IIll = 1,
+                        lOoOolOOolool = UDim2.fromOffset(16, 0),
+                        IIlolo_Ilo__ = UDim2.fromOffset(24, 44),
+                        O_OoOO_I_oI = lloIOoOOIlooIoIO
                     })
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
                     
-                    -- Adjust _0ol0I0IOollll0OlOO1 position
-                    if (not (function() return false end)()) and oOllO110O00OolOIlO10oOIIIoO1I and oOllO110O00OolOIlO10oOIIIoO1I.II_OlIII1_lIlOO0I0oOOO1001lI then
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                        oOllO110O00OolOIlO10oOIIIoO1I._l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(48, 0)
-                        oOllO110O00OolOIlO10oOIIIoO1I.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -64, 1, 0)
+                    -- Adjust text position
+                    if _IIlOOloOll_II and _IIlOOloOll_II.Parent then
+                        _IIlOOloOll_II.Position = UDim2.fromOffset(48, 0)
+                        _IIlOOloOll_II.Size = UDim2.new(1, -64, 1, 0)
                     end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                elseif 1lI_0lOOOlI1001OlOOII0llOo0Illol and OIlI0oO0IOO0OOIOll0Io0oo_0Ol then
-                    -- IOIOoOoII1oOO1l1_O_Oo0O0lII existing _OolllI0I0O0Olol_0Io01l_11o
-                    OIlI0oO0IOO0OOIOll0Io0oo_0Ol.IOlIlll01oI00Ol0lOOI = 1lI_0lOOOlI1001OlOOII0llOo0Illol
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                elseif not 1lI_0lOOOlI1001OlOOII0llOo0Illol and OIlI0oO0IOO0OOIOll0Io0oo_0Ol then
-                    -- Remove _OolllI0I0O0Olol_0Io01l_11o
-                    OIlI0oO0IOO0OOIOll0Io0oo_0Ol:OlIIl0oIl11_IOIl1loO0I0loII()
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                    OIlI0oO0IOO0OOIOll0Io0oo_0Ol = nil
+                elseif IIIOoooOIIIlOO and OllOOlO_IoIo then
+                    -- Update existing icon
+                    OllOOlO_IoIo.Text = IIIOoooOIIIlOO
+                elseif not IIIOoooOIIIlOO and OllOOlO_IoIo then
+                    -- Remove icon
+                    ButtonIcon:Destroy()
+                    OllOOlO_IoIo = nil
                     
-                    -- Reset _0ol0I0IOollll0OlOO1 position
-                    if ((function() return "a" == "a" end)()) and oOllO110O00OolOIlO10oOIIIoO1I and oOllO110O00OolOIlO10oOIIIoO1I.II_OlIII1_lIlOO0I0oOOO1001lI then
-                        oOllO110O00OolOIlO10oOIIIoO1I._l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0)
-                        oOllO110O00OolOIlO10oOIIIoO1I.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -32, 1, 0)
+                    -- Reset text position
+                    if _IIlOOloOll_II and _IIlOOloOll_II.Parent then
+                        _IIlOOloOll_II.Position = UDim2.fromOffset(16, 0)
+                        _IIlOOloOll_II.Size = UDim2.new(1, -32, 1, 0)
                     end
                 end
             end)
         end,
         
-        _llO_oOll0IlIOoO0I0OoIoolIolI0 = _Io_lllOl0IO_ll1Ol100OOIOOI
+        Frame = oloolIOlIlIOOIllll
     }
 end
 
         
-        -- Enhanced _olI0OollIlO1lIoolO00I with the _I00I_ol_lI1IllIIOII1IoOIlI system
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:_olI0OollIlO1lIoolO00I(0OoooIO_1OOlIIlolIlIooOO0)
-            if ((function() return "a" == "a" end)()) and not IOOIl0olOlllOolOOII0lOIIO or not IOOIl0olOlllOolOOII0lOIIO.II_OlIII1_lIlOO0I0oOOO1001lI then 
-                warn(oIOoII_0IIlOII1IOI1lI0_OO0o[103])
+        -- Enhanced Dropdown with the new system
+        function Tab:Dropdown(lOO_OlOolIO_loo_)
+            if not _OoOoI_loloOO or not _OoOoI_loloOO.Parent then 
+                warn(IO_oOOllOOoooIo_[103])
                 return nil 
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
             end
             
-            -- _00l00l1l0ooI0I01oOIIO0IIlO011 _I00I_ol_lI1IllIIOII1IoOIlI oOolOI00IllIII0oo0_l0l0_IlIO0lIIO table to avoid modifying original
-            local _l0O0lIolIllOl0_OlII00l_ = {}
-            for _0_lOlolIIOlo1O00lIOoI1, _OOllIIO0_II0Ol00IIol1ool in pairs(0OoooIO_1OOlIIlolIlIooOO0) do
-                _l0O0lIolIllOl0_OlII00l_[_0_lOlolIIOlo1O00lIOoI1] = _OOllIIO0_II0Ol00IIol1ool
+            -- Create new config table to avoid modifying original
+            local _IooOOo_oI = {}
+            for _I_IOoIIlOl, loolOoIIlIoloIIo_ll in pairs(lOO_OlOolIO_loo_) do
+                _IooOOo_oI[_I_IOoIIlOl] = loolOoIIlIoloIIo_ll
             end
             
-            -- _oOoIOoO0OOIll1Ol0llo_01o101 lOOolI_0IIl_IlOOlIIllI_0IlI if ((function() local x = 5 return x > 3 end)()) and not specified
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            _l0O0lIolIllOl0_OlII00l_.II_OlIII1_lIlOO0I0oOOO1001lI = _l0O0lIolIllOl0_OlII00l_.II_OlIII1_lIlOO0I0oOOO1001lI or IOOIl0olOlllOolOOII0lOIIO
+            -- Set parent if not specified
+            _IooOOo_oI.Parent = _IooOOo_oI.Parent or _OoOoI_loloOO
             
-            return _O0I0IoOIIlloool010oIO__:OOll_O0OIoOlIIol1lIO_lIoo0lI(_l0O0lIolIllOl0_OlII00l_)
+            return Nexus:CreateModernDropdown(_IooOOo_oI)
         end
 
         
         -- Continue with other components in the next part...
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:_OooO0OO1ll0O0_0OIll_IlO_0o101_OO(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-            if type(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO) == "string" then
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO}
+        function Tab:Toggle(_oOoOoOlOlIlIllooO)
+            if type(_oOoOoOlOlIlIllooO) == "string" then
+                _oOoOoOlOlIlIllooO = {Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO}
             end
-            if ((function() return 1 + 1 == 2 end)()) and not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+            if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
             
-            local IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[104]
-            local _lOI0IOololO1oolIl0I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._lOI0IOololO1oolIl0I or false
-            local _IOOIlOoI_IlllIlo_IIIoI1Illol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-            local Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
+            local Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or IO_oOOllOOoooIo_[104]
+            local IOIOI_OIIOlolooOolo = _oOoOoOlOlIlIllooO.Default or false
+            local _OlllIIO_looolo_ = _oOoOoOlOlIlIllooO.Callback or function() end
+            local _l__lI_Oll_l = _oOoOoOlOlIlIllooO.Flag
             
-            local 0lOI1o__II0ll0l1Ol1l1 = _lOI0IOololO1oolIl0I
+            local lIOoollOool = IOIOI_OIIOlolooOolo
             
-            local 0o0llIlOO0lIIOo_IIOIIlOllII = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 44),
-                II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
+            local I__llolIoOl = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 44),
+                O_OoOO_I_oI = _OoOoI_loloOO
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(0o0llIlOO0lIIOo_IIOIIlOllII, 8)
-            ___IoO_1_O1loO01IIol10oOOIllO1(0o0llIlOO0lIIOo_IIOIIlOllII, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
+            llOl_IoIII_oIOIIo(I__llolIoOl, 8)
+            lIO__OIIOllOlOOl(I__llolIoOl, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
             
-            local ol1OIlOlI1l0lI1l0O00IoIlllIo0_ = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI,
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-                IOollOOIOoOlo00OlIIl1I = 14,
-                000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0),
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -80, 1, 0),
-                0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                II_OlIII1_lIlOO0I0oOOO1001lI = 0o0llIlOO0lIIOo_IIOIIlOllII
+            local _OloIIIoIIoOooI = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl,
+                IlIoOollo_lIllII = Enum.Font.GothamMedium,
+                TextSize = 14,
+                TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                oIo_o_IIll = 1,
+                lOoOolOOolool = UDim2.fromOffset(16, 0),
+                IIlolo_Ilo__ = UDim2.new(1, -80, 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                O_OoOO_I_oI = I__llolIoOl
             })
             
-            -- _OooO0OO1ll0O0_0OIll_IlO_0o101_OO switch container
-            local o0IoloOl_lO_IolllIl_lOl010III = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl, -- Warna II0I0OI1_OOllOI_lOloII_0llO_O Mati
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(44, 6), -- Lebih tipis (Garis)
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -60, 0.5, -3),
-                II_OlIII1_lIlOO0I0oOOO1001lI = 0o0llIlOO0lIIOo_IIOIIlOllII
+            -- Toggle switch container
+            local lIolIllIOI = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest, -- Warna Track Mati
+                IIlolo_Ilo__ = UDim2.fromOffset(44, 6), -- Lebih tipis (Garis)
+                lOoOolOOolool = UDim2.new(1, -60, 0.5, -3),
+                O_OoOO_I_oI = I__llolIoOl
             })
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-            _1lOOlOIIO_0IO_IoOIl00Il(o0IoloOl_lO_IolllIl_lOl010III, 3)
+            llOl_IoIII_oIOIIo(lIolIllIOI, 3)
             
-            local _o1_Ool0lIIIOoOlIolI_Il = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 1, 0), -- Mulai dari 0
-                II_OlIII1_lIlOO0I0oOOO1001lI = o0IoloOl_lO_IolllIl_lOl010III
+            local lOIoOIoIolo = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                IIlolo_Ilo__ = UDim2.new(0, 0, 1, 0), -- Mulai dari 0
+                O_OoOO_I_oI = lIolIllIOI
             })
-            _1lOOlOIIO_0IO_IoOIl00Il(_o1_Ool0lIIIOoOlIolI_Il, 3)
+            llOl_IoIII_oIOIIo(lOIoOIoIolo, 3)
             
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            -- Handle (Kepala _OooO0OO1ll0O0_0OIll_IlO_0o101_OO)
-            local _00Ol1IIl0I0lOOIOl1o1looolI1 = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl, -- Warna mati
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(18, 18),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0ooI0Ol0lO00l0IIlOoIllllI0ll0o01(0, 0.5),
-                OOO0ll1II1oOI1l0lOIOII = Vector2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0.5), -- Ol1OI_IIl10I1IoIIoIl0I0IO_ _0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                II_OlIII1_lIlOO0I0oOOO1001lI = o0IoloOl_lO_IolllIl_lOl010III
+            -- Handle (Kepala Toggle)
+            local _IOIIIOlOoOo = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.TextSub, -- Warna mati
+                IIlolo_Ilo__ = UDim2.fromOffset(18, 18),
+                lOoOolOOolool = UDim2.fromScale(0, 0.5),
+                AnchorPoint = Vector2.new(0, 0.5), -- Center Y
+                O_OoOO_I_oI = lIolIllIOI
             })
-            _1lOOlOIIO_0IO_IoOIl00Il(_00Ol1IIl0I0lOOIOl1o1looolI1, 100) -- Bulat sempurna
+            llOl_IoIII_oIOIIo(_IOIIIOlOoOo, 100) -- Bulat sempurna
             
-            _1lOOlOIIO_0IO_IoOIl00Il(_00Ol1IIl0I0lOOIOl1o1looolI1, 10)
-            _Ol0O_loIlOI0Ol0Io00IO0Il0IIOoll1I(_00Ol1IIl0I0lOOIOl1o1looolI1, 2, 0.8)
+            llOl_IoIII_oIOIIo(_IOIIIOlOoOo, 10)
+            IolOololoIOoOOlI(_IOIIIOlOoOo, 2, 0.8)
             
-            local _01I010IlolIIo1l_lIolOOOlOI_0 = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                IOlIlll01oI00Ol0lOOI = "",
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                II_OlIII1_lIlOO0I0oOOO1001lI = 0o0llIlOO0lIIOo_IIOIIlOllII
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+            local _oIlIIIIOI_l_OolO = _OI_olOOlOI("TextButton", {
+                Ioolo_OoIoIIoOIl = "",
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                O_OoOO_I_oI = I__llolIoOl
             })
             
-            local function Ol_00llolOI_0lIIOI01I1O0O0O010lI(_l_1I1Oo10lIOOllIllOOlOIlo0)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                0lOI1o__II0ll0l1Ol1l1 = _l_1I1Oo10lIOOllIllOOlOIlo0
+            local function loIOIlooIoo(_IloOOlOOIoIOII)
+                lIOoollOool = _IloOOlOOIoIOII
                 
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(o0IoloOl_lO_IolllIl_lOl010III, {
-                    _l_lOO0OloOIIIl_II__oo1I0 = 0lOI1o__II0ll0l1Ol1l1 and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo
+                lOoolOoIoOOOl(lIolIllIOI, {
+                    IoIOIo_I_IOllllOI = lIOoollOool and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh
                 }, 0.2)
                 
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_00Ol1IIl0I0lOOIOl1o1looolI1, {
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0lOI1o__II0ll0l1Ol1l1 and 26 or 2, 2)
-                }, 0.2, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+                lOoolOoIoOOOl(_IOIIIOlOoOo, {
+                    lOoOolOOolool = UDim2.fromOffset(lIOoollOool and 26 or 2, 2)
+                }, 0.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
                 
                 pcall(function()
-                    _IOOIlOoI_IlllIlo_IIIoI1Illol(0lOI1o__II0ll0l1Ol1l1)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                    _OlllIIO_looolo_(lIOoollOool)
                 end)
                 
-                if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                    _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = 0lOI1o__II0ll0l1Ol1l1
+                if _l__lI_Oll_l then
+                    IoOlIOIOl_oIOIIooII.Flags[_l__lI_Oll_l] = lIOoollOool
                 end
             end
             
-            _01I010IlolIIo1l_lIolOOOlOI_0._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-                --PlaySound("6895079853", 0.08, 0lOI1o__II0ll0l1Ol1l1 and 0.9 or 1.1)
-                Ol_00llolOI_0lIIOI01I1O0O0O010lI(not 0lOI1o__II0ll0l1Ol1l1)
+            _oIlIIIIOI_l_OolO.MouseButton1Click:Connect(function()
+                --PlaySound("6895079853", 0.08, CurrentValue and 0.9 or 1.1)
+                loIOIlooIoo(not lIOoollOool)
             end)
             
             -- Hover effect
-            _01I010IlolIIo1l_lIolOOOlOI_0.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0o0llIlOO0lIIOo_IIOIIlOllII, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo}, 0.15)
+            _oIlIIIIOI_l_OolO.MouseEnter:Connect(function()
+                lOoolOoIoOOOl(I__llolIoOl, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh}, 0.15)
             end)
             
-            _01I010IlolIIo1l_lIolOOOlOI_0.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0o0llIlOO0lIIOo_IIOIIlOllII, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.15)
+            _oIlIIIIOI_l_OolO.MouseLeave:Connect(function()
+                lOoolOoIoOOOl(I__llolIoOl, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.15)
             end)
             
-            -- Initialize _OOllIIO0_II0Ol00IIol1ool
-            Ol_00llolOI_0lIIOI01I1O0O0O010lI(0lOI1o__II0ll0l1Ol1l1)
+            -- Initialize value
+            loIOIlooIoo(lIOoollOool)
             
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            -- Register with ll10O1oIl00lllIOloI0l system
-            if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = {
-                    _oOoIOoO0OOIll1Ol0llo_01o101 = Ol_00llolOI_0lIIOI01I1O0O0O010lI,
-                    OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return 0lOI1o__II0ll0l1Ol1l1 end
+            -- Register with flag system
+            if _l__lI_Oll_l then
+                IoOlIOIOl_oIOIIooII.Registry[_l__lI_Oll_l] = {
+                    Set = loIOIlooIoo,
+                    Get = function() return lIOoollOool end
                 }
             end
             
-            -- ll0lOl0IIloOII_lIl01loI0l_lIIo1_ update
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            local lIll_11lI0lOoo1Ooo0loOlO00o = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-                if ((function() return 1 + 1 == 2 end)()) and 0o0llIlOO0lIIOo_IIOIIlOllII and 0o0llIlOO0lIIOo_IIOIIlOllII.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    0o0llIlOO0lIIOo_IIOIIlOllII._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                    ol1OIlOlI1l0lI1l0O00IoIlllIo0_.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
-                    o0IoloOl_lO_IolllIl_lOl010III._l_lOO0OloOIIIl_II__oo1I0 = 0lOI1o__II0ll0l1Ol1l1 and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo
-                    _00Ol1IIl0I0lOOIOl1o1looolI1._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
+            -- Theme update
+            local IloollOOIIOlIolI = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+                if I__llolIoOl and I__llolIoOl.Parent then
+                    I__llolIoOl.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+                    _OloIIIoIIoOooI.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
+                    lIolIllIOI.BackgroundColor3 = lIOoollOool and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh
+                    _IOIIIOlOoOo.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
                 end
             end)
             
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, lIll_11lI0lOoo1Ooo0loOlO00o)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, IloollOOIIOlIolI)
             
             return {
-                _oOoIOoO0OOIll1Ol0llo_01o101 = Ol_00llolOI_0lIIOI01I1O0O0O010lI,
-                OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return 0lOI1o__II0ll0l1Ol1l1 end,
-                IoIoIOoIO_IlooIolIl0IOoolIIIIlI = function(_OIl10Io_OIll00IOl_l1O)
-                    ol1OIlOlI1l0lI1l0O00IoIlllIo0_.IOlIlll01oI00Ol0lOOI = tostring(_OIl10Io_OIll00IOl_l1O or "")
+                Set = loIOIlooIoo,
+                Get = function() return lIOoollOool end,
+                SetText = function(IoIlIOIlOo)
+                    _OloIIIoIIoOooI.Text = tostring(IoIlIOIlOo or "")
                 end
             }
         end
         
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:0I0l0lOllllll0lIll1o1IOlOlol1(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            if ((function() return 1 + 1 == 2 end)()) and not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+        function Tab:Slider(_oOoOoOlOlIlIllooO)
+            if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
             
-            local IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[105]
-            local lIOIIIIIoIlI1OO1lIOl = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.lIOIIIIIoIlI1OO1lIOl or 0
-            local __o0lI01lOloll0lIIlIl = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.__o0lI01lOloll0lIIlIl or 100
-            local _lOI0IOololO1oolIl0I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._lOI0IOololO1oolIl0I or lIOIIIIIoIlI1OO1lIOl
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            local _0lOIo_oOlIIl0llOOlllIIIlIO1I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._0lOIo_oOlIIl0llOOlllIIIlIO1I or 1
-            local Il0lllIIoII_Il000llll0_ll = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.Il0lllIIoII_Il000llll0_ll or ""
-            local _IIIll_l_l1IOo0IllolI_lol_ll0IOl = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IIIll_l_l1IOo0IllolI_lol_ll0IOl or ""
-            local _IOOIlOoI_IlllIlo_IIIoI1Illol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-            local Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
+            local Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or IO_oOOllOOoooIo_[105]
+            local OlOOooIoOIO_OlO_oo = _oOoOoOlOlIlIllooO.Min or 0
+            local I_I_IoooOOOlo_o = _oOoOoOlOlIlIllooO.Max or 100
+            local IOIOI_OIIOlolooOolo = _oOoOoOlOlIlIllooO.Default or OlOOooIoOIO_OlO_oo
+            local IOIolllOOOlI = _oOoOoOlOlIlIllooO.Increment or 1
+            local loOIOOOllIloOoIooo = _oOoOoOlOlIlIllooO.Suffix or ""
+            local _lolOoOlIooOIIlIo = _oOoOoOlOlIlIllooO.Prefix or ""
+            local _OlllIIO_looolo_ = _oOoOoOlOlIlIllooO.Callback or function() end
+            local _l__lI_Oll_l = _oOoOoOlOlIlIllooO.Flag
             
             -- Validate values
-            lIOIIIIIoIlI1OO1lIOl = tonumber(lIOIIIIIoIlI1OO1lIOl) or 0
-            __o0lI01lOloll0lIIlIl = tonumber(__o0lI01lOloll0lIIlIl) or 100
-            _lOI0IOololO1oolIl0I = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(tonumber(_lOI0IOololO1oolIl0I) or lIOIIIIIoIlI1OO1lIOl, lIOIIIIIoIlI1OO1lIOl, __o0lI01lOloll0lIIlIl)
-            _0lOIo_oOlIIl0llOOlllIIIlIO1I = math._OIl0IllI0O001l0O_1_I_oI(tonumber(_0lOIo_oOlIIl0llOOlllIIIlIO1I) or 1, 0.01)
+            OlOOooIoOIO_OlO_oo = tonumber(OlOOooIoOIO_OlO_oo) or 0
+            I_I_IoooOOOlo_o = tonumber(I_I_IoooOOOlo_o) or 100
+            IOIOI_OIIOlolooOolo = math.clamp(tonumber(IOIOI_OIIOlolooOolo) or OlOOooIoOIO_OlO_oo, OlOOooIoOIO_OlO_oo, I_I_IoooOOOlo_o)
+            IOIolllOOOlI = math.max(tonumber(IOIolllOOOlI) or 1, 0.01)
             
-            if lIOIIIIIoIlI1OO1lIOl >= __o0lI01lOloll0lIIlIl then
-                __o0lI01lOloll0lIIlIl = lIOIIIIIoIlI1OO1lIOl + 100
+            if OlOOooIoOIO_OlO_oo >= I_I_IoooOOOlo_o then
+                I_I_IoooOOOlo_o = OlOOooIoOIO_OlO_oo + 100
             end
             
-            local 0lOI1o__II0ll0l1Ol1l1 = _lOI0IOololO1oolIl0I
+            local lIOoollOool = IOIOI_OIIOlolooOolo
             
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            local 0lIo0lI1IolIIl0OIlIIIOl = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 56),
-                II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
+            local Io_oloooII = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 56),
+                O_OoOO_I_oI = _OoOoI_loloOO
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(0lIo0lI1IolIIl0OIlIIIOl, 8)
-            ___IoO_1_O1loO01IIol10oOOIllO1(0lIo0lI1IolIIl0OIlIIIOl, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
+            llOl_IoIII_oIOIIo(Io_oloooII, 8)
+            lIO__OIIOllOlOOl(Io_oloooII, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
             
             -- Header section
-            local _lllIoOo1_IlIOI_ll0lIl1OOll = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 28),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 8),
-                II_OlIII1_lIlOO0I0oOOO1001lI = 0lIo0lI1IolIIl0OIlIIIOl
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+            local l_II_IloloOII = _OI_olOOlOI("Frame", {
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 28),
+                lOoOolOOolool = UDim2.fromOffset(0, 8),
+                O_OoOO_I_oI = Io_oloooII
             })
             
-            local lIIooOll_O0l000ol0oOlIl1oO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI,
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-                IOollOOIOoOlo00OlIIl1I = 14,
-                000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0),
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -120, 1, 0),
-                0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                II_OlIII1_lIlOO0I0oOOO1001lI = _lllIoOo1_IlIOI_ll0lIl1OOll
+            local OOoooIOIlo_loooI = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl,
+                IlIoOollo_lIllII = Enum.Font.GothamMedium,
+                TextSize = 14,
+                TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                oIo_o_IIll = 1,
+                lOoOolOOolool = UDim2.fromOffset(16, 0),
+                IIlolo_Ilo__ = UDim2.new(1, -120, 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                O_OoOO_I_oI = l_II_IloloOII
             })
             
-            -- _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO display
-            local _lIo1I_IllOo_I0IIII0Il = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(80, 20),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -96, 0, 4),
-                II_OlIII1_lIlOO0I0oOOO1001lI = _lllIoOo1_IlIOI_ll0lIl1OOll
+            -- Value display
+            local OIOIO_Iol_o_olIOl_I = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest,
+                IIlolo_Ilo__ = UDim2.fromOffset(80, 20),
+                lOoOolOOolool = UDim2.new(1, -96, 0, 4),
+                O_OoOO_I_oI = l_II_IloloOII
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(_lIo1I_IllOo_I0IIII0Il, 4)
-            ___IoO_1_O1loO01IIol10oOOIllO1(_lIo1I_IllOo_I0IIII0Il, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, 1, 0.6)
+            llOl_IoIII_oIOIIo(OIOIO_Iol_o_olIOl_I, 4)
+            lIO__OIIOllOlOOl(OIOIO_Iol_o_olIOl_I, IoOlIOIOl_oIOIIooII.Theme.Accent, 1, 0.6)
             
-            local _lI1O00_oOO1IOIoloI0O_0lI = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = _IIIll_l_l1IOo0IllolI_lol_ll0IOl .. tostring(0lOI1o__II0ll0l1Ol1l1) .. Il0lllIIoII_Il000llll0_ll,
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-                IOollOOIOoOlo00OlIIl1I = 12,
-                000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                II_OlIII1_lIlOO0I0oOOO1001lI = _lIo1I_IllOo_I0IIII0Il
+            local I_OolOIlIIolO_ = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = _lolOoOlIooOIIlIo .. tostring(lIOoollOool) .. loOIOOOllIloOoIooo,
+                IlIoOollo_lIllII = Enum.Font.GothamMedium,
+                TextSize = 12,
+                TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                O_OoOO_I_oI = OIOIO_Iol_o_olIOl_I
             })
             
-            -- 0I0l0lOllllll0lIll1o1IOlOlol1 track
-            local IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -32, 0, 6),
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 40),
-                II_OlIII1_lIlOO0I0oOOO1001lI = 0lIo0lI1IolIIl0OIlIIIOl
+            -- Slider track
+            local IOOoOIoIOOIIOlOO = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+                IIlolo_Ilo__ = UDim2.new(1, -32, 0, 6),
+                lOoOolOOolool = UDim2.fromOffset(16, 40),
+                O_OoOO_I_oI = Io_oloooII
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO, 3)
+            llOl_IoIII_oIOIIo(IOOoOIoIOOIIOlOO, 3)
             
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            -- 0I0l0lOllllll0lIll1o1IOlOlol1 fill
-            local _IIo0IIlI0__O0OIlIllo1IlIoO = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI((0lOI1o__II0ll0l1Ol1l1 - lIOIIIIIoIlI1OO1lIOl) / (__o0lI01lOloll0lIIlIl - lIOIIIIIoIlI1OO1lIOl), 0, 1, 0),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-                II_OlIII1_lIlOO0I0oOOO1001lI = IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO
+            -- Slider fill
+            local o_OOIooOIOoO = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                IIlolo_Ilo__ = UDim2.new((lIOoollOool - OlOOooIoOIO_OlO_oo) / (I_I_IoooOOOlo_o - OlOOooIoOIO_OlO_oo), 0, 1, 0),
+                lOoOolOOolool = UDim2.fromOffset(0, 0),
+                O_OoOO_I_oI = IOOoOIoIOOIIOlOO
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(_IIo0IIlI0__O0OIlIllo1IlIoO, 3)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+            llOl_IoIII_oIOIIo(o_OOIooOIOoO, 3)
             
-            -- 0I0l0lOllllll0lIll1o1IOlOlol1 1lo0_0lIlI1Il_I_OOIOOI
-            local lOOI0l0OIOlOI0IlloIllOllOI = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 16),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI((0lOI1o__II0ll0l1Ol1l1 - lIOIIIIIoIlI1OO1lIOl) / (__o0lI01lOloll0lIIlIl - lIOIIIIIoIlI1OO1lIOl), -8, 0.5, -8),
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                II_OlIII1_lIlOO0I0oOOO1001lI = IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO
+            -- Slider handle
+            local IIloooo_l_o = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Text,
+                IIlolo_Ilo__ = UDim2.fromOffset(16, 16),
+                lOoOolOOolool = UDim2.new((lIOoollOool - OlOOooIoOIO_OlO_oo) / (I_I_IoooOOOlo_o - OlOOooIoOIO_OlO_oo), -8, 0.5, -8),
+                O_OoOO_I_oI = IOOoOIoIOOIIOlOO
             })
             
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            _1lOOlOIIO_0IO_IoOIl00Il(lOOI0l0OIOlOI0IlloIllOllOI, 8)
-            ___IoO_1_O1loO01IIol10oOOIllO1(lOOI0l0OIOlOI0IlloIllOllOI, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, 2, 0.3)
-            _Ol0O_loIlOI0Ol0Io00IO0Il0IIOoll1I(lOOI0l0OIOlOI0IlloIllOllOI, 4, 0.7)
+            llOl_IoIII_oIOIIo(IIloooo_l_o, 8)
+            lIO__OIIOllOlOOl(IIloooo_l_o, IoOlIOIOl_oIOIIooII.Theme.Accent, 2, 0.3)
+            IolOololoIOoOOlI(IIloooo_l_o, 4, 0.7)
             
             -- Handle glow effect
-            local olIol0oIlIlOlllOI_Io0I_l = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.8,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(24, 24),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(-4, -4),
-                II_OlIII1_lIlOO0I0oOOO1001lI = lOOI0l0OIOlOI0IlloIllOllOI
+            local loOOoO_oIOIooI_ = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                oIo_o_IIll = 0.8,
+                IIlolo_Ilo__ = UDim2.fromOffset(24, 24),
+                lOoOolOOolool = UDim2.fromOffset(-4, -4),
+                O_OoOO_I_oI = IIloooo_l_o
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(olIol0oIlIlOlllOI_Io0I_l, 12)
+            llOl_IoIII_oIOIIo(loOOoO_oIOIooI_, 12)
             
-            -- 0I0l0lOllllll0lIll1o1IOlOlol1 interaction
-            local __oOo00ll1OOOOl1OIIIIIOOlOI1 = false
+            -- Slider interaction
+            local OIOOIllOoIOI = false
             
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-            local function _OlOl0OlO0Iol0IIoOI1olIl(_OOllIIO0_II0Ol00IIol1ool, lo0IoIOO__0IIIIOO0llOIoOOlOIOlI0l)
-                _OOllIIO0_II0Ol00IIol1ool = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(_OOllIIO0_II0Ol00IIol1ool, lIOIIIIIoIlI1OO1lIOl, __o0lI01lOloll0lIIlIl)
+            local function oIlOllooIOO(loolOoIIlIoloIIo_ll, _OIlIIlolOII_IIoOIo)
+                loolOoIIlIoloIIo_ll = math.clamp(loolOoIIlIoloIIo_ll, OlOOooIoOIO_OlO_oo, I_I_IoooOOOlo_o)
                 
                 -- Round to increment
-                if _0lOIo_oOlIIl0llOOlllIIIlIO1I > 0 then
-                    _OOllIIO0_II0Ol00IIol1ool = math.1Olllol1IIlooIIoIlOIl0l1lOOOIl(_OOllIIO0_II0Ol00IIol1ool / _0lOIo_oOlIIl0llOOlllIIIlIO1I) * _0lOIo_oOlIIl0llOOlllIIIlIO1I
+                if IOIolllOOOlI > 0 then
+                    loolOoIIlIoloIIo_ll = math.round(loolOoIIlIoloIIo_ll / IOIolllOOOlI) * IOIolllOOOlI
                 end
                 
-                0lOI1o__II0ll0l1Ol1l1 = _OOllIIO0_II0Ol00IIol1ool
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                local IlIoIIOoIlIo1OIo0Ill0IOl_10l = (_OOllIIO0_II0Ol00IIol1ool - lIOIIIIIoIlI1OO1lIOl) / (__o0lI01lOloll0lIIlIl - lIOIIIIIoIlI1OO1lIOl)
+                lIOoollOool = loolOoIIlIoloIIo_ll
+                local _OIolo_oIOoo = (loolOoIIlIoloIIo_ll - OlOOooIoOIO_OlO_oo) / (I_I_IoooOOOlo_o - OlOOooIoOIO_OlO_oo)
                 
-                -- IOIOoOoII1oOO1l1_O_Oo0O0lII visuals
-                if ((function() return "a" == "a" end)()) and lo0IoIOO__0IIIIOO0llOIoOOlOIOlI0l ~= false then
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_IIo0IIlI0__O0OIlIllo1IlIoO, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(IlIoIIOoIlIo1OIo0Ill0IOl_10l, 0, 1, 0)}, 0.15)
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(lOOI0l0OIOlOI0IlloIllOllOI, {_l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(IlIoIIOoIlIo1OIo0Ill0IOl_10l, -8, 0.5, -8)}, 0.15)
+                -- Update visuals
+                if _OIlIIlolOII_IIoOIo ~= false then
+                    lOoolOoIoOOOl(o_OOIooOIOoO, {IIlolo_Ilo__ = UDim2.new(_OIolo_oIOoo, 0, 1, 0)}, 0.15)
+                    lOoolOoIoOOOl(IIloooo_l_o, {lOoOolOOolool = UDim2.new(_OIolo_oIOoo, -8, 0.5, -8)}, 0.15)
                 else
-                    _IIo0IIlI0__O0OIlIllo1IlIoO.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(IlIoIIOoIlIo1OIo0Ill0IOl_10l, 0, 1, 0)
-                    lOOI0l0OIOlOI0IlloIllOllOI._l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(IlIoIIOoIlIo1OIo0Ill0IOl_10l, -8, 0.5, -8)
+                    o_OOIooOIOoO.Size = UDim2.new(_OIolo_oIOoo, 0, 1, 0)
+                    IIloooo_l_o.Position = UDim2.new(_OIolo_oIOoo, -8, 0.5, -8)
                 end
                 
-                _lI1O00_oOO1IOIoloI0O_0lI.IOlIlll01oI00Ol0lOOI = _IIIll_l_l1IOo0IllolI_lol_ll0IOl .. tostring(_OOllIIO0_II0Ol00IIol1ool) .. Il0lllIIoII_Il000llll0_ll
+                I_OolOIlIIolO_.Text = _lolOoOlIooOIIlIo .. tostring(loolOoIIlIoloIIo_ll) .. loOIOOOllIloOoIooo
                 
                 pcall(function()
-                    _IOOIlOoI_IlllIlo_IIIoI1Illol(_OOllIIO0_II0Ol00IIol1ool)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                    _OlllIIO_looolo_(loolOoIIlIoloIIo_ll)
                 end)
                 
-                if ((function() local x = 5 return x > 3 end)()) and Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                    _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = _OOllIIO0_II0Ol00IIol1ool
+                if _l__lI_Oll_l then
+                    IoOlIOIOl_oIOIIooII.Flags[_l__lI_Oll_l] = loolOoIIlIoloIIo_ll
                 end
             end
             
-            local l0I_Olo0OOlol0IIIIIOlllIOoI0IIl = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                IOlIlll01oI00Ol0lOOI = "",
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                II_OlIII1_lIlOO0I0oOOO1001lI = 0lIo0lI1IolIIl0OIlIIIOl
+            local lIIO_olIOOlIoloIo = _OI_olOOlOI("TextButton", {
+                Ioolo_OoIoIIoOIl = "",
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                O_OoOO_I_oI = Io_oloooII
             })
             
-            local function _0oIIIloO0lI0OOOlOIlII010oO0I(_ol0_llOlO0III0I0l0_)
-                if _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O or
-                   _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._l_l0l10olloIo1ll1OIl0lIIO1l then
+            local function IOOloloOoo(olIlO_OlIlIO)
+                if olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseButton1 or
+                   olIlO_OlIlIO.UserInputType == Enum.UserInputType.Touch then
                     
                     -- [SAFETY CHECK 1] Pastikan elemen slider masih ada
-                    if not IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO or not IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+                    if not IOOoOIoIOOIIOlOO or not IOOoOIoIOOIIOlOO.Parent then return end
 
-                    __oOo00ll1OOOOl1OIIIIIOOlOI1 = true
+                    OIOOIllOoIOI = true
                     -- PlaySound("6895079853", 0.05)
                     
-                    -- Handle glow animation (Cek dulu apakah olIol0oIlIlOlllOI_Io0I_l ada)
-                    if ((function() return true end)()) and olIol0oIlIlOlllOI_Io0I_l then
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(olIol0oIlIlOlllOI_Io0I_l, {
-                            0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(32, 32),
-                            _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(-8, -8),
-                            oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.6
+                    -- Handle glow animation (Cek dulu apakah HandleGlow ada)
+                    if loOOoO_oIOIooI_ then
+                        lOoolOoIoOOOl(loOOoO_oIOIooI_, {
+                            IIlolo_Ilo__ = UDim2.fromOffset(32, 32),
+                            lOoOolOOolool = UDim2.fromOffset(-8, -8),
+                            oIo_o_IIll = 0.6
                         }, 0.15)
                     end
                     
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                    -- Calculate initial _OOllIIO0_II0Ol00IIol1ool
-                    local _o00llIlOII0I_IlIIIIO = _ol0_llOlO0III0I0l0_._l_0Il0_0OI_olIlIllIOoOOI0IOoIo._oIIlOIloI_l0II0I00l00OIOIoo
-                    local _0OoololOoO0lIol1I_lI1O0I = IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO._lloOIIOOlI0lOlOllI_IIOOIl0I._oIIlOIloI_l0II0I00l00OIOIoo
-                    local IlOO0o1I0lIoooII_0ol11o0I = IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo
+                    -- Calculate initial value
+                    local IOoIOIOlloOOlIlI = olIlO_OlIlIO.Position.X
+                    local OIOo_OOIl_lI = IOOoOIoIOOIIOlOO.AbsolutePosition.X
+                    local oOoIoOO_IIlIlolo = IOOoOIoIOOIIOlOO.AbsoluteSize.X
                     
                     -- [SAFETY CHECK 2] Mencegah pembagian dengan nol (jarang terjadi, tapi aman)
-                    if IlOO0o1I0lIoooII_0ol11o0I == 0 then return end
+                    if oOoIoOO_IIlIlolo == 0 then return end
 
-                    local IlIoIIOoIlIo1OIo0Ill0IOl_10l = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0((_o00llIlOII0I_IlIIIIO - _0OoololOoO0lIol1I_lI1O0I) / IlOO0o1I0lIoooII_0ol11o0I, 0, 1)
-                    local _l_1I1Oo10lIOOllIllOOlOIlo0 = lIOIIIIIoIlI1OO1lIOl + (IlIoIIOoIlIo1OIo0Ill0IOl_10l * (__o0lI01lOloll0lIIlIl - lIOIIIIIoIlI1OO1lIOl))
+                    local _OIolo_oIOoo = math.clamp((IOoIOIOlloOOlIlI - OIOo_OOIl_lI) / oOoIoOO_IIlIlolo, 0, 1)
+                    local _IloOOlOOIoIOII = OlOOooIoOIO_OlO_oo + (_OIolo_oIOoo * (I_I_IoooOOOlo_o - OlOOooIoOIO_OlO_oo))
                     
-                    _OlOl0OlO0Iol0IIoOI1olIl(_l_1I1Oo10lIOOllIllOOlOIlo0)
+                    oIlOllooIOO(_IloOOlOOIoIOII)
                 end
             end
             
-            local function _OoollolO00l0loOlIlOIIOI0l1lo(_ol0_llOlO0III0I0l0_)
-                if __oOo00ll1OOOOl1OIIIIIOOlOI1 and (_ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._lI_IoOO11lIoloIloolOoloOIII1oOl or
-                                _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._l_l0l10olloIo1ll1OIl0lIIO1l) then
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+            local function O_IooOIllllOlI(olIlO_OlIlIO)
+                if OIOOIllOoIOI and (olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseMovement or
+                                olIlO_OlIlIO.UserInputType == Enum.UserInputType.Touch) then
                     
-                    -- [SAFETY CHECK 3] PENTING: Cek lagi saat _oIIIoloO0lo01Ol1llOllloO
+                    -- [SAFETY CHECK 3] PENTING: Cek lagi saat dragging
                     -- Jika UI ditutup saat drag, hentikan drag dan return
-                    if ((function() return "a" == "a" end)()) and not IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO or not IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO.II_OlIII1_lIlOO0I0oOOO1001lI then 
-                        __oOo00ll1OOOOl1OIIIIIOOlOI1 = false
+                    if not IOOoOIoIOOIIOlOO or not IOOoOIoIOOIIOlOO.Parent then 
+                        OIOOIllOoIOI = false
                         return 
                     end
 
-                    local _o00llIlOII0I_IlIIIIO = _ol0_llOlO0III0I0l0_._l_0Il0_0OI_olIlIllIOoOOI0IOoIo._oIIlOIloI_l0II0I00l00OIOIoo
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                    local _0OoololOoO0lIol1I_lI1O0I = IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO._lloOIIOOlI0lOlOllI_IIOOIl0I._oIIlOIloI_l0II0I00l00OIOIoo
-                    local IlOO0o1I0lIoooII_0ol11o0I = IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo
+                    local IOoIOIOlloOOlIlI = olIlO_OlIlIO.Position.X
+                    local OIOo_OOIl_lI = IOOoOIoIOOIIOlOO.AbsolutePosition.X
+                    local oOoIoOO_IIlIlolo = IOOoOIoIOOIIOlOO.AbsoluteSize.X
                     
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                    if ((function() return 1 + 1 == 2 end)()) and IlOO0o1I0lIoooII_0ol11o0I == 0 then return end
+                    if oOoIoOO_IIlIlolo == 0 then return end
 
-                    local IlIoIIOoIlIo1OIo0Ill0IOl_10l = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0((_o00llIlOII0I_IlIIIIO - _0OoololOoO0lIol1I_lI1O0I) / IlOO0o1I0lIoooII_0ol11o0I, 0, 1)
-                    local _l_1I1Oo10lIOOllIllOOlOIlo0 = lIOIIIIIoIlI1OO1lIOl + (IlIoIIOoIlIo1OIo0Ill0IOl_10l * (__o0lI01lOloll0lIIlIl - lIOIIIIIoIlI1OO1lIOl))
+                    local _OIolo_oIOoo = math.clamp((IOoIOIOlloOOlIlI - OIOo_OOIl_lI) / oOoIoOO_IIlIlolo, 0, 1)
+                    local _IloOOlOOIoIOII = OlOOooIoOIO_OlO_oo + (_OIolo_oIOoo * (I_I_IoooOOOlo_o - OlOOooIoOIO_OlO_oo))
                     
-                    _OlOl0OlO0Iol0IIoOI1olIl(_l_1I1Oo10lIOOllIllOOlOIlo0, false)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+                    oIlOllooIOO(_IloOOlOOIoIOII, false)
                 end
             end
             
-            local function l0_oOl1llO0l_0IooOoOoO0I0_l1IlO0I1(_ol0_llOlO0III0I0l0_)
-                if _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O or
-                   _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._l_l0l10olloIo1ll1OIl0lIIO1l then
+            local function O_oIlIoooOolo(olIlO_OlIlIO)
+                if olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseButton1 or
+                   olIlO_OlIlIO.UserInputType == Enum.UserInputType.Touch then
                     
-                    __oOo00ll1OOOOl1OIIIIIOOlOI1 = false
+                    OIOOIllOoIOI = false
                     --PlaySound("6895079725", 0.03)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
                     
-                    -- Reset 1lo0_0lIlI1Il_I_OOIOOI glow
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(olIol0oIlIlOlllOI_Io0I_l, {
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(24, 24),
-                        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(-4, -4),
-                        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0.8
+                    -- Reset handle glow
+                    lOoolOoIoOOOl(loOOoO_oIOIooI_, {
+                        IIlolo_Ilo__ = UDim2.fromOffset(24, 24),
+                        lOoOolOOolool = UDim2.fromOffset(-4, -4),
+                        oIo_o_IIll = 0.8
                     }, 0.15)
                 end
             end
             
-            -- _lIIIOOoI_0llIOOO1Ol events
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, l0I_Olo0OOlol0IIIIIOlllIOoI0IIl.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(_0oIIIloO0lI0OOOlOIlII010oO0I))
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, __IIllI01O0I0OolO01ll01o01Ilo_O0o.lolIllIOlII0o1I110_o000OO1I0loOIl:_lIIIOOoI_0llIOOO1Ol(_OoollolO00l0loOlIlOIIOI0l1lo))
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, __IIllI01O0I0OolO01ll01o01Ilo_O0o._Ol1l0o1I0lI_IoIlIo_o1II0l:_lIIIOOoI_0llIOOO1Ol(l0_oOl1llO0l_0IooOoOoO0I0_l1IlO0I1))
+            -- Connect events
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, lIIO_olIOOlIoloIo.InputBegan:Connect(IOOloloOoo))
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, OOOllOIOllO_OoI.InputChanged:Connect(O_IooOIllllOlI))
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, OOOllOIOllO_OoI.InputEnded:Connect(O_oIlIoooOolo))
             
             -- Hover effects
-            l0I_Olo0OOlol0IIIIIOlllIOoI0IIl.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0lIo0lI1IolIIl0OIlIIIOl, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo}, 0.15)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(lOOI0l0OIOlOI0IlloIllOllOI, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(18, 18)}, 0.15)
+            lIIO_olIOOlIoloIo.MouseEnter:Connect(function()
+                lOoolOoIoOOOl(Io_oloooII, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh}, 0.15)
+                lOoolOoIoOOOl(IIloooo_l_o, {IIlolo_Ilo__ = UDim2.fromOffset(18, 18)}, 0.15)
             end)
             
-            l0I_Olo0OOlol0IIIIIOlllIOoI0IIl.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-                if ((function() return 1 + 1 == 2 end)()) and not __oOo00ll1OOOOl1OIIIIIOOlOI1 then
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(0lIo0lI1IolIIl0OIlIIIOl, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.15)
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(lOOI0l0OIOlOI0IlloIllOllOI, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 16)}, 0.15)
+            lIIO_olIOOlIoloIo.MouseLeave:Connect(function()
+                if not OIOOIllOoIOI then
+                    lOoolOoIoOOOl(Io_oloooII, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.15)
+                    lOoolOoIoOOOl(IIloooo_l_o, {IIlolo_Ilo__ = UDim2.fromOffset(16, 16)}, 0.15)
                 end
             end)
             
             -- Initialize
-            _OlOl0OlO0Iol0IIoOI1olIl(0lOI1o__II0ll0l1Ol1l1, false)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+            oIlOllooIOO(lIOoollOool, false)
             
             -- Register
-            if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = {
-                    _oOoIOoO0OOIll1Ol0llo_01o101 = function(_OOllIIO0_II0Ol00IIol1ool) _OlOl0OlO0Iol0IIoOI1olIl(tonumber(_OOllIIO0_II0Ol00IIol1ool) or lIOIIIIIoIlI1OO1lIOl) end,
-                    OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return 0lOI1o__II0ll0l1Ol1l1 end
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+            if _l__lI_Oll_l then
+                IoOlIOIOl_oIOIIooII.Registry[_l__lI_Oll_l] = {
+                    Set = function(loolOoIIlIoloIIo_ll) oIlOllooIOO(tonumber(loolOoIIlIoloIIo_ll) or OlOOooIoOIO_OlO_oo) end,
+                    Get = function() return lIOoollOool end
                 }
             end
             
-            -- ll0lOl0IIloOII_lIl01loI0l_lIIo1_ updates
-            local OolOI_0IOIO0O1OlO_IIllI = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-                if 0lIo0lI1IolIIl0OIlIIIOl and 0lIo0lI1IolIIl0OIlIIIOl.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    0lIo0lI1IolIIl0OIlIIIOl._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-                    lIIooOll_O0l000ol0oOlIl1oO.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
-                    IllOOI1IOlIl0I0O_1lOo0OlIO__OlOIO._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo
-                    _IIo0IIlI0__O0OIlIllo1IlIoO._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
-                    lOOI0l0OIOlOI0IlloIllOllOI._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
-                    _lIo1I_IllOo_I0IIII0Il._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                    _lI1O00_oOO1IOIoloI0O_0lI.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
-                    olIol0oIlIlOlllOI_Io0I_l._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
+            -- Theme updates
+            local olIlool__lIo = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+                if Io_oloooII and Io_oloooII.Parent then
+                    Io_oloooII.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+                    OOoooIOIlo_loooI.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
+                    IOOoOIoIOOIIOlOO.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh
+                    o_OOIooOIOoO.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent
+                    IIloooo_l_o.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
+                    OIOIO_Iol_o_olIOl_I.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest
+                    I_OolOIlIIolO_.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent
+                    loOOoO_oIOIooI_.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent
                 end
             end)
             
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, OolOI_0IOIO0O1OlO_IIllI)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, olIlool__lIo)
             
             return {
-                _oOoIOoO0OOIll1Ol0llo_01o101 = function(_OOllIIO0_II0Ol00IIol1ool) _OlOl0OlO0Iol0IIoOI1olIl(tonumber(_OOllIIO0_II0Ol00IIol1ool) or lIOIIIIIoIlI1OO1lIOl) end,
-                OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return 0lOI1o__II0ll0l1Ol1l1 end,
-                IoIoIOoIO_IlooIolIl0IOoolIIIIlI = function(_OIl10Io_OIll00IOl_l1O) lIIooOll_O0l000ol0oOlIl1oO.IOlIlll01oI00Ol0lOOI = tostring(_OIl10Io_OIll00IOl_l1O or "") end,
-                _IIllO0Ill1lOl0loI0IIoOoII0Il = function(0ol0loIlIlooIOoO_III_I) 
-                    lIOIIIIIoIlI1OO1lIOl = tonumber(0ol0loIlIlooIOoO_III_I) or lIOIIIIIoIlI1OO1lIOl
-                    _OlOl0OlO0Iol0IIoOI1olIl(0lOI1o__II0ll0l1Ol1l1)
+                Set = function(loolOoIIlIoloIIo_ll) oIlOllooIOO(tonumber(loolOoIIlIoloIIo_ll) or OlOOooIoOIO_OlO_oo) end,
+                Get = function() return lIOoollOool end,
+                SetText = function(IoIlIOIlOo) OOoooIOIlo_loooI.Text = tostring(IoIlIOIlOo or "") end,
+                SetMin = function(_lOoolOlIoIO) 
+                    OlOOooIoOIO_OlO_oo = tonumber(_lOoolOlIoIO) or OlOOooIoOIO_OlO_oo
+                    oIlOllooIOO(lIOoollOool)
                 end,
-                o1l0lloOllooIOll01lOOoIIloIlo = function(O0O1oO00_lIolI001loOOll)
-                    __o0lI01lOloll0lIIlIl = tonumber(O0O1oO00_lIolI001loOOll) or __o0lI01lOloll0lIIlIl
-                    _OlOl0OlO0Iol0IIoOI1olIl(0lOI1o__II0ll0l1Ol1l1)
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+                SetMax = function(IoOOoo_ooIllOI_)
+                    I_I_IoooOOOlo_o = tonumber(IoOOoo_ooIllOI_) or I_I_IoooOOOlo_o
+                    oIlOllooIOO(lIOoollOool)
                 end
             }
         end
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
         
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:_0lo0llll1Ol00_IIl1llI_oIO1Olo(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-            if not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+        function Tab:TextBox(_oOoOoOlOlIlIllooO)
+            if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
             
-            local IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or "_0lo0llll1Ol00_IIl1llI_oIO1Olo"
-            local __lloOlI1olO1oOlOOlI_l1_ = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.__lloOlI1olO1oOlOOlI_l1_ or oIOoII_0IIlOII1IOI1lI0_OO0o[106]
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            local _lOI0IOololO1oolIl0I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._lOI0IOololO1oolIl0I or ""
-            local _I_IOOlIoOIOIoI01lloOO0I0l = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._I_IOOlIoOIOIoI01lloOO0I0l or false
-            local _o010lIIOIIolIl_oo0O = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._o010lIIOIIolIl_oo0O or false
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            local _IOOIlOoI_IlllIlo_IIIoI1Illol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-            local Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
+            local Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or "TextBox"
+            local OloIoIlIlOIolOIlOII = _oOoOoOlOlIlIllooO.Placeholder or IO_oOOllOOoooIo_[106]
+            local IOIOI_OIIOlolooOolo = _oOoOoOlOlIlIllooO.Default or ""
+            local oOoO_OoOOool = _oOoOoOlOlIlIllooO.Multiline or false
+            local OOlooooolO = _oOoOoOlOlIlIllooO.Numeric or false
+            local _OlllIIO_looolo_ = _oOoOoOlOlIlIllooO.Callback or function() end
+            local _l__lI_Oll_l = _oOoOoOlOlIlIllooO.Flag
             
-            local 0lOI1o__II0ll0l1Ol1l1 = tostring(_lOI0IOololO1oolIl0I)
+            local lIOoollOool = tostring(IOIOI_OIIOlolooOolo)
             
-            local _IIO1OI_olooOIOOIOIOloOloIl_0O = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, _I_IOOlIoOIOIoI01lloOO0I0l and 80 or 44),
-                II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
+            local IolIlOlOoIoO_lIII = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, oOoO_OoOOool and 80 or 44),
+                O_OoOO_I_oI = _OoOoI_loloOO
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(_IIO1OI_olooOIOOIOIOloOloIl_0O, 8)
-            ___IoO_1_O1loO01IIol10oOOIllO1(_IIO1OI_olooOIOOIOIOloOloIl_0O, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
+            llOl_IoIII_oIOIIo(IolIlOlOoIoO_lIII, 8)
+            lIO__OIIOllOlOOl(IolIlOlOoIoO_lIII, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
             
-            -- _oOII_IIlOloIIo0lI0o110_0oIOlI000o
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-            if IOlIlll01oI00Ol0lOOI and IOlIlll01oI00Ol0lOOI ~= "" then
-                local __OIlIl0oO1I0oo0Oll0lI1loO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                    IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI,
-                    _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-                    IOollOOIOoOlo00OlIIl1I = 12,
-                    000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 4),
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -32, 0, 16),
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                    0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _IIO1OI_olooOIOOIOIOloOloIl_0O
+            -- Label
+            if Ioolo_OoIoIIoOIl and Ioolo_OoIoIIoOIl ~= "" then
+                local OlO___oOOoOoI_lIlOl = _OI_olOOlOI("TextLabel", {
+                    Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl,
+                    IlIoOollo_lIllII = Enum.Font.GothamMedium,
+                    TextSize = 12,
+                    TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+                    oIo_o_IIll = 1,
+                    lOoOolOOolool = UDim2.fromOffset(16, 4),
+                    IIlolo_Ilo__ = UDim2.new(1, -32, 0, 16),
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    O_OoOO_I_oI = IolIlOlOoIoO_lIII
                 })
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
             end
             
-            -- l0ooIOI011_oII0oOooO_ container
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            local _O0lo_oO0IOolIIOIOo_Io = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -16, 0, _I_IOOlIoOIOIoI01lloOO0I0l and 52 or 24),
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(8, IOlIlll01oI00Ol0lOOI and IOlIlll01oI00Ol0lOOI ~= "" and 22 or 10),
-                II_OlIII1_lIlOO0I0oOOO1001lI = _IIO1OI_olooOIOOIOIOloOloIl_0O
+            -- Input container
+            local lOoolIOloIoooIOlIOo = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest,
+                IIlolo_Ilo__ = UDim2.new(1, -16, 0, oOoO_OoOOool and 52 or 24),
+                lOoOolOOolool = UDim2.fromOffset(8, Ioolo_OoIoIIoOIl and Ioolo_OoIoIIoOIl ~= "" and 22 or 10),
+                O_OoOO_I_oI = IolIlOlOoIoO_lIII
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(_O0lo_oO0IOolIIOIOo_Io, 6)
-            ___IoO_1_O1loO01IIol10oOOIllO1(_O0lo_oO0IOolIIOIOo_Io, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.8)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+            llOl_IoIII_oIOIIo(lOoolIOloIoooIOlIOo, 6)
+            lIO__OIIOllOlOOl(lOoolIOloIoooIOlIOo, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.8)
             
-            -- _0lo0llll1Ol00_IIl1llI_oIO1Olo
-            local _0lo0llll1Ol00_IIl1llI_oIO1Olo = _00l00l1l0ooI0I01oOIIO0IIlO011("_0lo0llll1Ol00_IIl1llI_oIO1Olo", {
-                IOlIlll01oI00Ol0lOOI = 0lOI1o__II0ll0l1Ol1l1,
-                1l01IlIOIIOloI0llIIO = __lloOlI1olO1oOlOOlI_l1_,
-                Il_1loIlol000ll_l1loOO0OIO_I = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO,
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-                IOollOOIOoOlo00OlIIl1I = 13,
-                000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(8, 0),
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -16, 1, 0),
-                0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                __1IOOIllIl0ll0I_ll1lI = _I_IOOlIoOIOIoI01lloOO0I0l and Enum.__1IOOIllIl0ll0I_ll1lI.I00oOOO0OIIO1IIllO1l0IO or Enum.__1IOOIllIl0ll0I_ll1lI.Ol1OI_IIl10I1IoIIoIl0I0IO_,
-                _lO0IlIII1Illo1lO0OoOO = _I_IOOlIoOIOIoI01lloOO0I0l,
-                _IllIOIOllIOI0OIIIOoIIllII0IIIl0l = _I_IOOlIoOIOIoI01lloOO0I0l,
-                lIIoIl1IO0IIl1I0oIolIIO1I0Il = false,
-                II_OlIII1_lIlOO0I0oOOO1001lI = _O0lo_oO0IOolIIOIOo_Io
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+            -- TextBox
+            local lIOl_lllOIoI_lIOIlO = _OI_olOOlOI("TextBox", {
+                Ioolo_OoIoIIoOIl = lIOoollOool,
+                PlaceholderText = OloIoIlIlOIolOIlOII,
+                PlaceholderColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted,
+                IlIoOollo_lIllII = Enum.Font.Gotham,
+                TextSize = 13,
+                TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                oIo_o_IIll = 1,
+                lOoOolOOolool = UDim2.fromOffset(8, 0),
+                IIlolo_Ilo__ = UDim2.new(1, -16, 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                TextYAlignment = oOoO_OoOOool and Enum.TextYAlignment.Top or Enum.TextYAlignment.Center,
+                TextWrapped = oOoO_OoOOool,
+                MultiLine = oOoO_OoOOool,
+                ClearTextOnFocus = false,
+                O_OoOO_I_oI = lOoolIOloIoooIOlIOo
             })
             
             -- Add padding for multiline
-            if ((function() local x = 5 return x > 3 end)()) and _I_IOOlIoOIOIoI01lloOO0I0l then
-                local l_1OOllol0loO0l0lIoO_0IIIl01o_I1l = _00l00l1l0ooI0I01oOIIO0IIlO011("UIPadding", {
-                    0l0OIOOolll0loo_lI00OOI0ooI1 = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 4),
-                    IlIO1II0IolI0OIIIOIO_lOIOIOO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 4),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _0lo0llll1Ol00_IIl1llI_oIO1Olo
+            if oOoO_OoOOool then
+                local lOoOoO_OIII_o = _OI_olOOlOI("UIPadding", {
+                    PaddingTop = UDim.new(0, 4),
+                    PaddingBottom = UDim.new(0, 4),
+                    O_OoOO_I_oI = lIOl_lllOIoI_lIOIlO
                 })
             end
             
-            -- _o010lIIOIIolIl_oo0O _ol0_llOlO0III0I0l0_ validation
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            if _o010lIIOIIolIl_oo0O then
-                _0lo0llll1Ol00_IIl1llI_oIO1Olo:0IOoloO0oOlOOOll0IOIololIIO1o("IOlIlll01oI00Ol0lOOI"):_lIIIOOoI_0llIOOO1Ol(function()
-                    local _0ol0I0IOollll0OlOO1 = _0lo0llll1Ol00_IIl1llI_oIO1Olo.IOlIlll01oI00Ol0lOOI
-                    local _OIl10Io_OIll00IOl_l1O = _0ol0I0IOollll0OlOO1:Il0_OOI1Io0ooIOI0IIlI_O_OIO0I0_l0(oIOoII_0IIlOII1IOI1lI0_OO0o[107], "") -- Allow digits, decimal point, minus
+            -- Numeric input validation
+            if OOlooooolO then
+                TextBox:GetPropertyChangedSignal("Text"):Connect(function()
+                    local IIIoIIoIIIoOO = lIOl_lllOIoI_lIOIlO.Text
+                    local IoIlIOIlOo = text:gsub(IO_oOOllOOoooIo_[107], "") -- Allow digits, decimal point, minus
                     
                     -- Ensure only one decimal point and minus at start
-                    local _IloIl0l10O_IOI0lI_0 = 0
-                    local _IOI1IoIlI11lO_00Io0o1oIlOl0 = ""
-                    local _OOoOoIOIloIOOOO_1I0olIIIloo = false
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+                    local oololIoOOOIlol__Io = 0
+                    local II_lOooIlOloI_OlIo = ""
+                    local IIoOIlIlIlooO = false
                     
-                    for _lIIOIlolIIlII1_Il_IOl01ll0Olll = 1, #_OIl10Io_OIll00IOl_l1O do
-                        local 1ooOlO00Io__lIIIoOIll0 = _OIl10Io_OIll00IOl_l1O:looIOlIlI0_II_0I_lOlllIO_(_lIIOIlolIIlII1_Il_IOl01ll0Olll, _lIIOIlolIIlII1_Il_IOl01ll0Olll)
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+                    for oOIOOOIIOollolOO = 1, #IoIlIOIlOo do
+                        local IllIOIooOIoo_I = newText:sub(oOIOOOIIOollolOO, oOIOOOIIOollolOO)
                         
-                        if ((function() return 1 + 1 == 2 end)()) and 1ooOlO00Io__lIIIoOIll0 == oIOoII_0IIlOII1IOI1lI0_OO0o[108] and _IloIl0l10O_IOI0lI_0 == 0 then
-                            _IloIl0l10O_IOI0lI_0 = 1
-                            _IOI1IoIlI11lO_00Io0o1oIlOl0 = _IOI1IoIlI11lO_00Io0o1oIlOl0 .. 1ooOlO00Io__lIIIoOIll0
-                        elseif 1ooOlO00Io__lIIIoOIll0 == oIOoII_0IIlOII1IOI1lI0_OO0o[109] and _lIIOIlolIIlII1_Il_IOl01ll0Olll == 1 and not _OOoOoIOIloIOOOO_1I0olIIIloo then
-                            _OOoOoIOIloIOOOO_1I0olIIIloo = true
-                            _IOI1IoIlI11lO_00Io0o1oIlOl0 = _IOI1IoIlI11lO_00Io0o1oIlOl0 .. 1ooOlO00Io__lIIIoOIll0
-                        elseif 1ooOlO00Io__lIIIoOIll0:OIlIlIolIIlIOIolIlOlIl0(oIOoII_0IIlOII1IOI1lI0_OO0o[110]) then
-                            _IOI1IoIlI11lO_00Io0o1oIlOl0 = _IOI1IoIlI11lO_00Io0o1oIlOl0 .. 1ooOlO00Io__lIIIoOIll0
+                        if IllIOIooOIoo_I == IO_oOOllOOoooIo_[108] and oololIoOOOIlol__Io == 0 then
+                            oololIoOOOIlol__Io = 1
+                            II_lOooIlOloI_OlIo = II_lOooIlOloI_OlIo .. IllIOIooOIoo_I
+                        elseif IllIOIooOIoo_I == IO_oOOllOOoooIo_[109] and oOIOOOIIOollolOO == 1 and not IIoOIlIlIlooO then
+                            IIoOIlIlIlooO = true
+                            II_lOooIlOloI_OlIo = II_lOooIlOloI_OlIo .. IllIOIooOIoo_I
+                        elseif char:match(IO_oOOllOOoooIo_[110]) then
+                            II_lOooIlOloI_OlIo = II_lOooIlOloI_OlIo .. IllIOIooOIoo_I
                         end
                     end
                     
-                    if _IOI1IoIlI11lO_00Io0o1oIlOl0 ~= _0ol0I0IOollll0OlOO1 then
-                        _0lo0llll1Ol00_IIl1llI_oIO1Olo.IOlIlll01oI00Ol0lOOI = _IOI1IoIlI11lO_00Io0o1oIlOl0
+                    if II_lOooIlOloI_OlIo ~= IIIoIIoIIIoOO then
+                        lIOl_lllOIoI_lIOIlO.Text = II_lOooIlOloI_OlIo
                     end
                 end)
             end
             
             -- Focus effects
-            _0lo0llll1Ol00_IIl1llI_oIO1Olo.OoO0I1ll00lIoI0oIIIOIOo:_lIIIOOoI_0llIOOO1Ol(function()
+            lIOl_lllOIoI_lIOIlO.Focused:Connect(function()
                 --PlaySound("6895079853", 0.04)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
                 
-                local llO0oOOllIo0olllI1oOll0 = _O0lo_oO0IOolIIOIOo_Io:01lIllI0Il010_lI1Iool("UIStroke")
-                if llO0oOOllIo0olllI1oOll0 then
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(llO0oOOllIo0olllI1oOll0, {
-                        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                        _0IlOllO0lO00oOI0O_I_II0IlO = 0.3,
-                        _I_I1I1olIO1Il0I1O0IIo = 1.5
+                local olOI_ll_oOooOIOoIlO = InputContainer:FindFirstChild("UIStroke")
+                if olOI_ll_oOooOIOoIlO then
+                    lOoolOoIoOOOl(olOI_ll_oOooOIOoIlO, {
+                        lOO_lIoI_O_o = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                        Transparency = 0.3,
+                        Thickness = 1.5
                     }, 0.2)
                 end
                 
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_O0lo_oO0IOolIIOIOo_Io, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.2)
+                lOoolOoIoOOOl(lOoolIOloIoooIOlIOo, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.2)
             end)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
             
-            _0lo0llll1Ol00_IIl1llI_oIO1Olo._1ol00I0lIOoOoIooIO_1lIIIOO0I:_lIIIOOoI_0llIOOO1Ol(function()
-                local llO0oOOllIo0olllI1oOll0 = _O0lo_oO0IOolIIOIOo_Io:01lIllI0Il010_lI1Iool("UIStroke")
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                if (not (function() return false end)()) and llO0oOOllIo0olllI1oOll0 then
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(llO0oOOllIo0olllI1oOll0, {
-                        _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI,
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                        _0IlOllO0lO00oOI0O_I_II0IlO = 0.8,
-                        _I_I1I1olIO1Il0I1O0IIo = 1
+            lIOl_lllOIoI_lIOIlO.FocusLost:Connect(function()
+                local olOI_ll_oOooOIOoIlO = InputContainer:FindFirstChild("UIStroke")
+                if olOI_ll_oOooOIOoIlO then
+                    lOoolOoIoOOOl(olOI_ll_oOooOIOoIlO, {
+                        lOO_lIoI_O_o = IoOlIOIOl_oIOIIooII.Theme.Outline,
+                        Transparency = 0.8,
+                        Thickness = 1
                     }, 0.2)
                 end
                 
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_O0lo_oO0IOolIIOIOo_Io, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl}, 0.2)
+                lOoolOoIoOOOl(lOoolIOloIoooIOlIOo, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest}, 0.2)
                 
-                -- IOIOoOoII1oOO1l1_O_Oo0O0lII _OOllIIO0_II0Ol00IIol1ool and trigger OIIlO1olIl10lOlol0_I_I01O
-                local _l_1I1Oo10lIOOllIllOOlOIlo0 = _0lo0llll1Ol00_IIl1llI_oIO1Olo.IOlIlll01oI00Ol0lOOI
-                if (not (function() return false end)()) and _o010lIIOIIolIl_oo0O then
-                    _l_1I1Oo10lIOOllIllOOlOIlo0 = tonumber(_l_1I1Oo10lIOOllIllOOlOIlo0) or 0
+                -- Update value and trigger callback
+                local _IloOOlOOIoIOII = lIOl_lllOIoI_lIOIlO.Text
+                if OOlooooolO then
+                    _IloOOlOOIoIOII = tonumber(_IloOOlOOIoIOII) or 0
                 end
                 
-                0lOI1o__II0ll0l1Ol1l1 = _l_1I1Oo10lIOOllIllOOlOIlo0
+                lIOoollOool = _IloOOlOOIoIOII
                 
                 pcall(function()
-                    _IOOIlOoI_IlllIlo_IIIoI1Illol(0lOI1o__II0ll0l1Ol1l1)
+                    _OlllIIO_looolo_(lIOoollOool)
                 end)
                 
-                if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                    _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = 0lOI1o__II0ll0l1Ol1l1
+                if _l__lI_Oll_l then
+                    IoOlIOIOl_oIOIIooII.Flags[_l__lI_Oll_l] = lIOoollOool
                 end
             end)
             
             -- Register
-            if ((function() return "a" == "a" end)()) and Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = {
-                    _oOoIOoO0OOIll1Ol0llo_01o101 = function(_OOllIIO0_II0Ol00IIol1ool)
-                        0lOI1o__II0ll0l1Ol1l1 = _o010lIIOIIolIl_oo0O and (tonumber(_OOllIIO0_II0Ol00IIol1ool) or 0) or tostring(_OOllIIO0_II0Ol00IIol1ool or "")
-                        _0lo0llll1Ol00_IIl1llI_oIO1Olo.IOlIlll01oI00Ol0lOOI = tostring(0lOI1o__II0ll0l1Ol1l1)
+            if _l__lI_Oll_l then
+                IoOlIOIOl_oIOIIooII.Registry[_l__lI_Oll_l] = {
+                    Set = function(loolOoIIlIoloIIo_ll)
+                        lIOoollOool = OOlooooolO and (tonumber(loolOoIIlIoloIIo_ll) or 0) or tostring(loolOoIIlIoloIIo_ll or "")
+                        lIOl_lllOIoI_lIOIlO.Text = tostring(lIOoollOool)
                     end,
-                    OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return 0lOI1o__II0ll0l1Ol1l1 end
+                    Get = function() return lIOoollOool end
                 }
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
             end
             
-            -- ll0lOl0IIloOII_lIl01loI0l_lIIo1_ updates
-            local lIoOIlll0IlO_II0IoIlo0OlI__ll0 = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-                if _IIO1OI_olooOIOOIOIOloOloIl_0O and _IIO1OI_olooOIOOIOIOloOloIl_0O.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    _IIO1OI_olooOIOOIOIOloOloIl_0O._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-                    _O0lo_oO0IOolIIOIOo_Io._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl
-                    _0lo0llll1Ol00_IIl1llI_oIO1Olo.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
-                    _0lo0llll1Ol00_IIl1llI_oIO1Olo.Il_1loIlol000ll_l1loOO0OIO_I = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO
+            -- Theme updates
+            local lOo_IolooO = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+                if IolIlOlOoIoO_lIII and IolIlOlOoIoO_lIII.Parent then
+                    IolIlOlOoIoO_lIII.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+                    lOoolIOloIoooIOlIOo.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest
+                    lIOl_lllOIoI_lIOIlO.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
+                    lIOl_lllOIoI_lIOIlO.PlaceholderColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted
                     
-                    if ((function() local x = 5 return x > 3 end)()) and _IIO1OI_olooOIOOIOIOloOloIl_0O:01lIllI0Il010_lI1Iool("TextLabel") then
-                        _IIO1OI_olooOIOOIOIOloOloIl_0O:01lIllI0Il010_lI1Iool("TextLabel").000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl
+                    if TextBoxFrame:FindFirstChild("TextLabel") then
+                        TextBoxFrame:FindFirstChild("TextLabel").TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub
                     end
                 end
             end)
             
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, lIoOIlll0IlO_II0IoIlo0OlI__ll0)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, lOo_IolooO)
             
             return {
-                _oOoIOoO0OOIll1Ol0llo_01o101 = function(_OOllIIO0_II0Ol00IIol1ool)
-                    0lOI1o__II0ll0l1Ol1l1 = _o010lIIOIIolIl_oo0O and (tonumber(_OOllIIO0_II0Ol00IIol1ool) or 0) or tostring(_OOllIIO0_II0Ol00IIol1ool or "")
-                    _0lo0llll1Ol00_IIl1llI_oIO1Olo.IOlIlll01oI00Ol0lOOI = tostring(0lOI1o__II0ll0l1Ol1l1)
+                Set = function(loolOoIIlIoloIIo_ll)
+                    lIOoollOool = OOlooooolO and (tonumber(loolOoIIlIoloIIo_ll) or 0) or tostring(loolOoIIlIoloIIo_ll or "")
+                    lIOl_lllOIoI_lIOIlO.Text = tostring(lIOoollOool)
                 end,
-                OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return 0lOI1o__II0ll0l1Ol1l1 end,
-                __lol__lO0I01_o0I_00O1 = function(OO0OOIIllIoOol_OOI1Il1I_Il)
-                    _0lo0llll1Ol00_IIl1llI_oIO1Olo.1l01IlIOIIOloI0llIIO = tostring(OO0OOIIllIoOol_OOI1Il1I_Il or "")
+                Get = function() return lIOoollOool end,
+                SetPlaceholder = function(_lIlOloOIoI)
+                    lIOl_lllOIoI_lIOIlO.PlaceholderText = tostring(_lIlOloOIoI or "")
                 end
             }
         end
         
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:OllIIO_0_oII_lIIlO_IOO_lOo0I(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-            if not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+        function Tab:Keybind(_oOoOoOlOlIlIllooO)
+            if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
             
-            local IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[111]
-            local _lOI0IOololO1oolIl0I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._lOI0IOololO1oolIl0I or Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.O0OlOOI_OO_oOl0olOOoOlIOOlloIOOI
-            local _IOOIlOoI_IlllIlo_IIIoI1Illol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-            local Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
-            local lo0Iolo0oo0IOII_00oOOo0ll0__O_O = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.lo0Iolo0oo0IOII_00oOOo0ll0__O_O or "_OooO0OO1ll0O0_0OIll_IlO_0o101_OO" -- _OooO0OO1ll0O0_0OIll_IlO_0o101_OO, Hold, Always
+            local Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or IO_oOOllOOoooIo_[111]
+            local IOIOI_OIIOlolooOolo = _oOoOoOlOlIlIllooO.Default or Enum.KeyCode.F
+            local _OlllIIO_looolo_ = _oOoOoOlOlIlIllooO.Callback or function() end
+            local _l__lI_Oll_l = _oOoOoOlOlIlIllooO.Flag
+            local _OOOOIooIoo_I = _oOoOoOlOlIlIllooO.Mode or "Toggle" -- Toggle, Hold, Always
             
-            local _IlOIllo1II_0_o0lO10IIIllO = _lOI0IOololO1oolIl0I
-            local _lllOIOlIo1l1I0IlIll0Ol_ = false
-            local _O_IOlO0_01lllIlloOIl0IlI = false
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+            local IIOOOIIoIlooO = IOIOI_OIIOlolooOolo
+            local Io_IllOIIIOll_ = false
+            local IIOoOlo_IoOIllloooo = false
             
-            local lolIlollOOlO_I0I0oOIllloIol_l = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 44),
-                II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
-            })
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            
-            _1lOOlOIIO_0IO_IoOIl00Il(lolIlollOOlO_I0I0oOIllloIol_l, 8)
-            ___IoO_1_O1loO01IIol10oOOIllO1(lolIlollOOlO_I0I0oOIllloIol_l, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
-            
-            local _o_lollOl1IIO0O0llIOl1oI1l_ = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI,
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-                IOollOOIOoOlo00OlIIl1I = 14,
-                000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0),
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -120, 1, 0),
-                0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                II_OlIII1_lIlOO0I0oOOO1001lI = lolIlollOOlO_I0I0oOIllloIol_l
+            local oIIoOlOIOOlllI = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 44),
+                O_OoOO_I_oI = _OoOoI_loloOO
             })
             
-            -- lo0Iolo0oo0IOII_00oOOo0ll0__O_O indicator
-            local IIoIlIIlOI0Ol_I_lO0oIIIIloIO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = lo0Iolo0oo0IOII_00oOOo0ll0__O_O,
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-                IOollOOIOoOlo00OlIIl1I = 10,
-                000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -100, 0, 2),
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 60, 0, 12),
-                0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o.Ol1OI_IIl10I1IoIIoIl0I0IO_,
-                II_OlIII1_lIlOO0I0oOOO1001lI = lolIlollOOlO_I0I0oOIllloIol_l
+            llOl_IoIII_oIOIIo(oIIoOlOIOOlllI, 8)
+            lIO__OIIOllOlOOl(oIIoOlOIOOlllI, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
+            
+            local oO_OIl_IlloIool = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl,
+                IlIoOollo_lIllII = Enum.Font.GothamMedium,
+                TextSize = 14,
+                TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                oIo_o_IIll = 1,
+                lOoOolOOolool = UDim2.fromOffset(16, 0),
+                IIlolo_Ilo__ = UDim2.new(1, -120, 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                O_OoOO_I_oI = oIIoOlOIOOlllI
+            })
+            
+            -- Mode indicator
+            local OooIooIOoIOOIOIl_ = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = _OOOOIooIoo_I,
+                IlIoOollo_lIllII = Enum.Font.Gotham,
+                TextSize = 10,
+                TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted,
+                oIo_o_IIll = 1,
+                lOoOolOOolool = UDim2.new(1, -100, 0, 2),
+                IIlolo_Ilo__ = UDim2.new(0, 60, 0, 12),
+                TextXAlignment = Enum.TextXAlignment.Center,
+                O_OoOO_I_oI = oIIoOlOIOOlllI
             })
             
             -- Key display
-            local lIoII01IlI0lo0I_0l1IlIO1Io1lO_lIIo = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(80, 28),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -96, 0.5, -14),
-                II_OlIII1_lIlOO0I0oOOO1001lI = lolIlollOOlO_I0I0oOIllloIol_l
+            local lOO_OOlOlO = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest,
+                IIlolo_Ilo__ = UDim2.fromOffset(80, 28),
+                lOoOolOOolool = UDim2.new(1, -96, 0.5, -14),
+                O_OoOO_I_oI = oIIoOlOIOOlllI
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(lIoII01IlI0lo0I_0l1IlIO1Io1lO_lIIo, 6)
-            ___IoO_1_O1loO01IIol10oOOIllO1(lIoII01IlI0lo0I_0l1IlIO1Io1lO_lIIo, _O_IOlO0_01lllIlloOIl0IlI and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, _O_IOlO0_01lllIlloOIl0IlI and 0.3 or 0.6)
+            llOl_IoIII_oIOIIo(lOO_OOlOlO, 6)
+            lIO__OIIOllOlOOl(lOO_OOlOlO, IIOoOlo_IoOIllloooo and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.Outline, 1, IIOoOlo_IoOIllloooo and 0.3 or 0.6)
             
-            local Ol1Il0_lIll0__lI00I_01llOo1_001Il = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = _lllOIOlIo1l1I0IlIll0Ol_ and oIOoII_0IIlOII1IOI1lI0_OO0o[112] or (_IlOIllo1II_0_o0lO10IIIllO._ollII0lllll__oII_l1I1OO_1llool_I or oIOoII_0IIlOII1IOI1lI0_OO0o[113]),
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-                IOollOOIOoOlo00OlIIl1I = 12,
-                000O_IOOIOI_0lOll_I1o10l = _lllOIOlIo1l1I0IlIll0Ol_ and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._OO01lllI0I0IlI0IOIllll1 or (_O_IOlO0_01lllIlloOIl0IlI and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                II_OlIII1_lIlOO0I0oOOO1001lI = lIoII01IlI0lo0I_0l1IlIO1Io1lO_lIIo
+            local oloI__OO_IllIIo = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = Io_IllOIIIOll_ and IO_oOOllOOoooIo_[112] or (IIOOOIIoIlooO.Name or IO_oOOllOOoooIo_[113]),
+                IlIoOollo_lIllII = Enum.Font.GothamBold,
+                TextSize = 12,
+                TextColor3 = Io_IllOIIIOll_ and IoOlIOIOl_oIOIIooII.Theme.Warning or (IIOoOlo_IoOIllloooo and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.Text),
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                O_OoOO_I_oI = lOO_OOlOlO
             })
             
-            local 0I0lOO0IoOIloll1I_IOO_lIo0IIlOI = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                IOlIlll01oI00Ol0lOOI = "",
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                II_OlIII1_lIlOO0I0oOOO1001lI = lolIlollOOlO_I0I0oOIllloIol_l
+            local oOoIooIlOl_OooloIIO = _OI_olOOlOI("TextButton", {
+                Ioolo_OoIoIIoOIl = "",
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                O_OoOO_I_oI = oIIoOlOIOOlllI
             })
             
             -- Key names mapping
-            local _OlolO0IOOIl1IIlO0OI_IlO_ll = {
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._OIl_0Il1ooO0IIOoIIIlIIlI] = oIOoII_0IIlOII1IOI1lI0_OO0o[114],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._llll_O0I0I0oO000lIoOI_oO] = oIOoII_0IIlOII1IOI1lI0_OO0o[115],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.oIoO_oIIOIIl_Oo0I0ol_oIOOl0I] = oIOoII_0IIlOII1IOI1lI0_OO0o[116],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._1IOo_0o_llOllOll_OlOo0OIO1IIo1] = oIOoII_0IIlOII1IOI1lI0_OO0o[117],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._Ill11IIllIIOlll0lOl] = oIOoII_0IIlOII1IOI1lI0_OO0o[118],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.IOIOOloo0oI_OI0loIlo] = oIOoII_0IIlOII1IOI1lI0_OO0o[119],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.OII1O1IlOO0OII0OOlI0lIlOlIIll01__] = oIOoII_0IIlOII1IOI1lI0_OO0o[120],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.IlIllIOoo0IOllll_llOIl] = oIOoII_0IIlOII1IOI1lI0_OO0o[121],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._OoIlOIIll0lIO_oIIIII] = oIOoII_0IIlOII1IOI1lI0_OO0o[122],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._OIlOIOI0IIOlIl0ol1llOl] = oIOoII_0IIlOII1IOI1lI0_OO0o[123],
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.I0Ol_loloo_O0Ol_1lIllIIO0I] = oIOoII_0IIlOII1IOI1lI0_OO0o[124],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.__IoOIIOoI1OloIOIlIllOIIOIIl] = oIOoII_0IIlOII1IOI1lI0_OO0o[125],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.oloIO0IlOlIIllOl00lo1IIoO0lO0I0] = oIOoII_0IIlOII1IOI1lI0_OO0o[126],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.OloO0o1Ilol1IlOolOl_IO_lo000IIl] = oIOoII_0IIlOII1IOI1lI0_OO0o[127],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.I_I_IlI1oI_o0ooI_lIIOIoloO1OolOI_] = oIOoII_0IIlOII1IOI1lI0_OO0o[128],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.Ol1lIl0IollIlII000lIO00oO0O] = oIOoII_0IIlOII1IOI1lI0_OO0o[129],
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.loOoIIllo1lOOI0lloI0loo0OI0l] = oIOoII_0IIlOII1IOI1lI0_OO0o[130],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._l00OlO1l0_ooIII_I1I] = oIOoII_0IIlOII1IOI1lI0_OO0o[131],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._0ooI_lIlOlIlIl1OIIoII0IlOlOI1lo0] = oIOoII_0IIlOII1IOI1lI0_OO0o[132],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.OOlIO_lO0IIolIIOll0I0lo] = oIOoII_0IIlOII1IOI1lI0_OO0o[133],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._Ilo1lIlO_lI0Ol0IOIOlo0II] = oIOoII_0IIlOII1IOI1lI0_OO0o[134],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._OI_OOIIl_0I_lOI_oIl_oOIlOI0IloloI] = oIOoII_0IIlOII1IOI1lI0_OO0o[135],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._loIlII0oIl_IlOOIIloIoOIl] = oIOoII_0IIlOII1IOI1lI0_OO0o[136],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._0oIloOIIl0I0lo1_l0OO00l1llIoII] = oIOoII_0IIlOII1IOI1lI0_OO0o[137],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0._Ol0lI_IolIIIOlOllOo] = oIOoII_0IIlOII1IOI1lI0_OO0o[138],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.1lIl00lI_O0O0oIl1Il0] = oIOoII_0IIlOII1IOI1lI0_OO0o[139],
-                [Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.O1_O00l1lll0_lOoIoIlOlI_OOoIo1] = oIOoII_0IIlOII1IOI1lI0_OO0o[140]
+            local _l_oOlOloOOl = {
+                [Enum.KeyCode.LeftShift] = IO_oOOllOOoooIo_[114],
+                [Enum.KeyCode.RightShift] = IO_oOOllOOoooIo_[115],
+                [Enum.KeyCode.LeftControl] = IO_oOOllOOoooIo_[116],
+                [Enum.KeyCode.RightControl] = IO_oOOllOOoooIo_[117],
+                [Enum.KeyCode.LeftAlt] = IO_oOOllOOoooIo_[118],
+                [Enum.KeyCode.RightAlt] = IO_oOOllOOoooIo_[119],
+                [Enum.KeyCode.CapsLock] = IO_oOOllOOoooIo_[120],
+                [Enum.KeyCode.One] = IO_oOOllOOoooIo_[121],
+                [Enum.KeyCode.Two] = IO_oOOllOOoooIo_[122],
+                [Enum.KeyCode.Three] = IO_oOOllOOoooIo_[123],
+                [Enum.KeyCode.Four] = IO_oOOllOOoooIo_[124],
+                [Enum.KeyCode.Five] = IO_oOOllOOoooIo_[125],
+                [Enum.KeyCode.Six] = IO_oOOllOOoooIo_[126],
+                [Enum.KeyCode.Seven] = IO_oOOllOOoooIo_[127],
+                [Enum.KeyCode.Eight] = IO_oOOllOOoooIo_[128],
+                [Enum.KeyCode.Nine] = IO_oOOllOOoooIo_[129],
+                [Enum.KeyCode.Zero] = IO_oOOllOOoooIo_[130],
+                [Enum.KeyCode.KeypadOne] = IO_oOOllOOoooIo_[131],
+                [Enum.KeyCode.KeypadTwo] = IO_oOOllOOoooIo_[132],
+                [Enum.KeyCode.KeypadThree] = IO_oOOllOOoooIo_[133],
+                [Enum.KeyCode.KeypadFour] = IO_oOOllOOoooIo_[134],
+                [Enum.KeyCode.KeypadFive] = IO_oOOllOOoooIo_[135],
+                [Enum.KeyCode.KeypadSix] = IO_oOOllOOoooIo_[136],
+                [Enum.KeyCode.KeypadSeven] = IO_oOOllOOoooIo_[137],
+                [Enum.KeyCode.KeypadEight] = IO_oOOllOOoooIo_[138],
+                [Enum.KeyCode.KeypadNine] = IO_oOOllOOoooIo_[139],
+                [Enum.KeyCode.KeypadZero] = IO_oOOllOOoooIo_[140]
             }
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
             
-            local function _l_IlIOlolol_Ool10oIo(_0_lOlolIIOlo1O00lIOoI1)
-                return _OlolO0IOOIl1IIlO0OI_IlO_ll[_0_lOlolIIOlo1O00lIOoI1] or _0_lOlolIIOlo1O00lIOoI1._ollII0lllll__oII_l1I1OO_1llool_I or oIOoII_0IIlOII1IOI1lI0_OO0o[141]
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+            local function I_IIoOIOloOllIOOI(_I_IOoIIlOl)
+                return _l_oOlOloOOl[_I_IOoIIlOl] or _I_IOoIIlOl.Name or IO_oOOllOOoooIo_[141]
             end
             
-            local function _0ollolIlI_OIIoIO0looO0IO0I()
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                Ol1Il0_lIll0__lI00I_01llOo1_001Il.IOlIlll01oI00Ol0lOOI = _lllOIOlIo1l1I0IlIll0Ol_ and "..." or _l_IlIOlolol_Ool10oIo(_IlOIllo1II_0_o0lO10IIIllO)
-                Ol1Il0_lIll0__lI00I_01llOo1_001Il.000O_IOOIOI_0lOll_I1o10l = _lllOIOlIo1l1I0IlIll0Ol_ and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._OO01lllI0I0IlI0IOIllll1 or (_O_IOlO0_01lllIlloOIl0IlI and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI)
+            local function olI_oOoIol()
+                oloI__OO_IllIIo.Text = Io_IllOIIIOll_ and "..." or I_IIoOIOloOllIOOI(IIOOOIIoIlooO)
+                oloI__OO_IllIIo.TextColor3 = Io_IllOIIIOll_ and IoOlIOIOl_oIOIIooII.Theme.Warning or (IIOoOlo_IoOIllloooo and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.Text)
                 
-                local llO0oOOllIo0olllI1oOll0 = lIoII01IlI0lo0I_0l1IlIO1Io1lO_lIIo:01lIllI0Il010_lI1Iool("UIStroke")
-                if ((function() local x = 5 return x > 3 end)()) and llO0oOOllIo0olllI1oOll0 then
-                    llO0oOOllIo0olllI1oOll0._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O_IOlO0_01lllIlloOIl0IlI and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI
-                    llO0oOOllIo0olllI1oOll0._0IlOllO0lO00oOI0O_I_II0IlO = _O_IOlO0_01lllIlloOIl0IlI and 0.3 or 0.6
+                local olOI_ll_oOooOIOoIlO = KeyDisplay:FindFirstChild("UIStroke")
+                if olOI_ll_oOooOIOoIlO then
+                    olOI_ll_oOooOIOoIlO.Color = IIOoOlo_IoOIllloooo and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.Outline
+                    olOI_ll_oOooOIOoIlO.Transparency = IIOoOlo_IoOIllloooo and 0.3 or 0.6
                 end
             end
             
-            -- OllIIO_0_oII_lIIlO_IOO_lOo0I setting
-            0I0lOO0IoOIloll1I_IOO_lIo0IIlOI._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                if _lllOIOlIo1l1I0IlIll0Ol_ then return end
+            -- Keybind setting
+            oOoIooIlOl_OooloIIO.MouseButton1Click:Connect(function()
+                if Io_IllOIIIOll_ then return end
                 
-                _lllOIOlIo1l1I0IlIll0Ol_ = true
+                Io_IllOIIIOll_ = true
                 --PlaySound("6895079853", 0.08)
-                _0ollolIlI_OIIoIO0looO0IO0I()
+                olI_oOoIol()
                 
-                local IIollOOI_loOIlIIOIOlIlloo_I
-                IIollOOI_loOIlIIOIOlIlloo_I = __IIllI01O0I0OolO01ll01o01Ilo_O0o.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(function(_ol0_llOlO0III0I0l0_, llOI11OIloloolIIlOIllI_O)
-                    if ((function() return "a" == "a" end)()) and llOI11OIloloolIIlOIllI_O then return end
+                local IolIIOOoll
+                IolIIOOoll = OOOllOIOllO_OoI.InputBegan:Connect(function(olIlO_OlIlIO, _OlOl_IooO)
+                    if _OlOl_IooO then return end
                     
-                    if (not (function() return false end)()) and _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.1o0_OIIIo1I0OIlIllI0Io1OO then
-                        local _0_lOlolIIOlo1O00lIOoI1 = _ol0_llOlO0III0I0l0_.llI_oO1lloOO1OOIOOlIlI0olOl10Il0
+                    if olIlO_OlIlIO.UserInputType == Enum.UserInputType.Keyboard then
+                        local _I_IOoIIlOl = olIlO_OlIlIO.KeyCode
                         
-                        if _0_lOlolIIOlo1O00lIOoI1 ~= Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0.OooOoOOOI0IlI0lOOlII0Io1IIlIO0llo_ then
-                            _IlOIllo1II_0_o0lO10IIIllO = _0_lOlolIIOlo1O00lIOoI1
-                            _lllOIOlIo1l1I0IlIll0Ol_ = false
+                        if _I_IOoIIlOl ~= Enum.KeyCode.Unknown then
+                            IIOOOIIoIlooO = _I_IOoIIlOl
+                            Io_IllOIIIOll_ = false
                             
-                            _0ollolIlI_OIIoIO0looO0IO0I()
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+                            olI_oOoIol()
                             --PlaySound("6895079725", 0.06)
                             
-                            if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                                _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = _IlOIllo1II_0_o0lO10IIIllO
+                            if _l__lI_Oll_l then
+                                IoOlIOIOl_oIOIIooII.Flags[_l__lI_Oll_l] = IIOOOIIoIlooO
                             end
                             
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                            IIollOOI_loOIlIIOIOlIlloo_I:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
+                            connection:Disconnect()
                         end
                     end
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
                 end)
                 
-                -- Auto-IoIo00II0I1IlIIoIIllolOO0IlOIlolI after 5 seconds
-                _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.spawn(function()
-                    _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(5)
-                    if ((function() return true end)()) and _lllOIOlIo1l1I0IlIll0Ol_ then
-                        _lllOIOlIo1l1I0IlIll0Ol_ = false
-                        _0ollolIlI_OIIoIO0looO0IO0I()
-                        IIollOOI_loOIlIIOIOlIlloo_I:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
+                -- Auto-cancel after 5 seconds
+                task.spawn(function()
+                    task.wait(5)
+                    if Io_IllOIIIOll_ then
+                        Io_IllOIIIOll_ = false
+                        olI_oOoIol()
+                        connection:Disconnect()
                     end
                 end)
             end)
             
             -- Key activation handling
-            local OIlOIO0llOlOIOIlIlI011 = __IIllI01O0I0OolO01ll01o01Ilo_O0o.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(function(_ol0_llOlO0III0I0l0_, llOI11OIloloolIIlOIllI_O)
-                if ((function() local x = 5 return x > 3 end)()) and llOI11OIloloolIIlOIllI_O or _lllOIOlIo1l1I0IlIll0Ol_ then return end
+            local IOlIOoIIloOoo = OOOllOIOllO_OoI.InputBegan:Connect(function(olIlO_OlIlIO, _OlOl_IooO)
+                if _OlOl_IooO or Io_IllOIIIOll_ then return end
                 
-                if ((function() return true end)()) and _ol0_llOlO0III0I0l0_.llI_oO1lloOO1OOIOOlIlI0olOl10Il0 == _IlOIllo1II_0_o0lO10IIIllO then
-                    if ((function() return true end)()) and lo0Iolo0oo0IOII_00oOOo0ll0__O_O == "_OooO0OO1ll0O0_0OIll_IlO_0o101_OO" then
-                        _O_IOlO0_01lllIlloOIl0IlI = not _O_IOlO0_01lllIlloOIl0IlI
-                        _0ollolIlI_OIIoIO0looO0IO0I()
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+                if olIlO_OlIlIO.KeyCode == IIOOOIIoIlooO then
+                    if _OOOOIooIoo_I == "Toggle" then
+                        IIOoOlo_IoOIllloooo = not IIOoOlo_IoOIllloooo
+                        olI_oOoIol()
                         pcall(function()
-                            _IOOIlOoI_IlllIlo_IIIoI1Illol(_O_IOlO0_01lllIlloOIl0IlI, _IlOIllo1II_0_o0lO10IIIllO)
+                            _OlllIIO_looolo_(IIOoOlo_IoOIllloooo, IIOOOIIoIlooO)
                         end)
-                    elseif lo0Iolo0oo0IOII_00oOOo0ll0__O_O == oIOoII_0IIlOII1IOI1lI0_OO0o[142] then
-                        _O_IOlO0_01lllIlloOIl0IlI = true
-                        _0ollolIlI_OIIoIO0looO0IO0I()
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                    elseif _OOOOIooIoo_I == IO_oOOllOOoooIo_[142] then
+                        IIOoOlo_IoOIllloooo = true
+                        olI_oOoIol()
                         pcall(function()
-                            _IOOIlOoI_IlllIlo_IIIoI1Illol(true, _IlOIllo1II_0_o0lO10IIIllO)
+                            _OlllIIO_looolo_(true, IIOOOIIoIlooO)
                         end)
-                    elseif lo0Iolo0oo0IOII_00oOOo0ll0__O_O == oIOoII_0IIlOII1IOI1lI0_OO0o[143] then
+                    elseif _OOOOIooIoo_I == IO_oOOllOOoooIo_[143] then
                         pcall(function()
-                            _IOOIlOoI_IlllIlo_IIIoI1Illol(_IlOIllo1II_0_o0lO10IIIllO)
+                            _OlllIIO_looolo_(IIOOOIIoIlooO)
                         end)
                     end
                 end
             end)
             
-            local _0loIollo1lIl_I0IIlOoIl10Ill0I0 = __IIllI01O0I0OolO01ll01o01Ilo_O0o._Ol1l0o1I0lI_IoIlIo_o1II0l:_lIIIOOoI_0llIOOO1Ol(function(_ol0_llOlO0III0I0l0_, llOI11OIloloolIIlOIllI_O)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                if llOI11OIloloolIIlOIllI_O or _lllOIOlIo1l1I0IlIll0Ol_ then return end
+            local olIOIololOoIolOIOl = OOOllOIOllO_OoI.InputEnded:Connect(function(olIlO_OlIlIO, _OlOl_IooO)
+                if _OlOl_IooO or Io_IllOIIIOll_ then return end
                 
-                if ((function() return "a" == "a" end)()) and _ol0_llOlO0III0I0l0_.llI_oO1lloOO1OOIOOlIlI0olOl10Il0 == _IlOIllo1II_0_o0lO10IIIllO and lo0Iolo0oo0IOII_00oOOo0ll0__O_O == "Hold" then
-                    _O_IOlO0_01lllIlloOIl0IlI = false
-                    _0ollolIlI_OIIoIO0looO0IO0I()
+                if olIlO_OlIlIO.KeyCode == IIOOOIIoIlooO and _OOOOIooIoo_I == "Hold" then
+                    IIOoOlo_IoOIllloooo = false
+                    olI_oOoIol()
                     pcall(function()
-                        _IOOIlOoI_IlllIlo_IIIoI1Illol(false, _IlOIllo1II_0_o0lO10IIIllO)
+                        _OlllIIO_looolo_(false, IIOOOIIoIlooO)
                     end)
                 end
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
             end)
             
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, OIlOIO0llOlOIOIlIlI011)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _0loIollo1lIl_I0IIlOoIl10Ill0I0)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, IOlIOoIIloOoo)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, olIOIololOoIolOIOl)
             
             -- Initialize
-            _0ollolIlI_OIIoIO0looO0IO0I()
+            olI_oOoIol()
             
             -- Register
-            if ((function() return 1 + 1 == 2 end)()) and Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = {
-                    _oOoIOoO0OOIll1Ol0llo_01o101 = function(_0_lOlolIIOlo1O00lIOoI1)
-                        if ((function() return "a" == "a" end)()) and typeof(_0_lOlolIIOlo1O00lIOoI1) == "EnumItem" and _0_lOlolIIOlo1O00lIOoI1.oIIolII_IIlIl0I00_Il1IlllolO_ == Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0 then
-                            _IlOIllo1II_0_o0lO10IIIllO = _0_lOlolIIOlo1O00lIOoI1
-                            _0ollolIlI_OIIoIO0looO0IO0I()
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+            if _l__lI_Oll_l then
+                IoOlIOIOl_oIOIIooII.Registry[_l__lI_Oll_l] = {
+                    Set = function(_I_IOoIIlOl)
+                        if typeof(_I_IOoIIlOl) == "EnumItem" and _I_IOoIIlOl.EnumType == Enum.KeyCode then
+                            IIOOOIIoIlooO = _I_IOoIIlOl
+                            olI_oOoIol()
                         end
                     end,
-                    OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return _IlOIllo1II_0_o0lO10IIIllO end,
-                    0O011llllOI0ollllIl_ll1lOI = function() return _O_IOlO0_01lllIlloOIl0IlI end
+                    Get = function() return IIOOOIIoIlooO end,
+                    GetState = function() return IIOoOlo_IoOIllloooo end
                 }
             end
             
-            -- ll0lOl0IIloOII_lIl01loI0l_lIIo1_ updates
-            local 11I_oOIl0OloIlIOII_IoOlOl0OI0IIO = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                if ((function() return "a" == "a" end)()) and lolIlollOOlO_I0I0oOIllloIol_l and lolIlollOOlO_I0I0oOIllloIol_l.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    lolIlollOOlO_I0I0oOIllloIol_l._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-                    _o_lollOl1IIO0O0llIOl1oI1l_.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
-                    lIoII01IlI0lo0I_0l1IlIO1Io1lO_lIIo._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl
-                    IIoIlIIlOI0Ol_I_lO0oIIIIloIO.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO
-                    _0ollolIlI_OIIoIO0looO0IO0I()
+            -- Theme updates
+            local _oOl____o_llO = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+                if oIIoOlOIOOlllI and oIIoOlOIOOlllI.Parent then
+                    oIIoOlOIOOlllI.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+                    oO_OIl_IlloIool.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
+                    lOO_OOlOlO.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest
+                    OooIooIOoIOOIOIl_.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted
+                    olI_oOoIol()
                 end
             end)
             
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, 11I_oOIl0OloIlIOII_IoOlOl0OI0IIO)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, _oOl____o_llO)
             
             return {
-                _oOoIOoO0OOIll1Ol0llo_01o101 = function(_0_lOlolIIOlo1O00lIOoI1)
-                    if typeof(_0_lOlolIIOlo1O00lIOoI1) == "EnumItem" and _0_lOlolIIOlo1O00lIOoI1.oIIolII_IIlIl0I00_Il1IlllolO_ == Enum.llI_oO1lloOO1OOIOOlIlI0olOl10Il0 then
-                        _IlOIllo1II_0_o0lO10IIIllO = _0_lOlolIIOlo1O00lIOoI1
-                        _0ollolIlI_OIIoIO0looO0IO0I()
+                Set = function(_I_IOoIIlOl)
+                    if typeof(_I_IOoIIlOl) == "EnumItem" and _I_IOoIIlOl.EnumType == Enum.KeyCode then
+                        IIOOOIIoIlooO = _I_IOoIIlOl
+                        olI_oOoIol()
                     end
                 end,
-                OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return _IlOIllo1II_0_o0lO10IIIllO end,
-                0O011llllOI0ollllIl_ll1lOI = function() return _O_IOlO0_01lllIlloOIl0IlI end,
-                0I0llIIoO10IIoloOOOI = function(00loIllIo0lOl1lO010lIll_I0)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                    if (not (function() return false end)()) and 00loIllIo0lOl1lO010lIll_I0 == "_OooO0OO1ll0O0_0OIll_IlO_0o101_OO" or 00loIllIo0lOl1lO010lIll_I0 == "Hold" or 00loIllIo0lOl1lO010lIll_I0 == "Always" then
-                        lo0Iolo0oo0IOII_00oOOo0ll0__O_O = 00loIllIo0lOl1lO010lIll_I0
-                        IIoIlIIlOI0Ol_I_lO0oIIIIloIO.IOlIlll01oI00Ol0lOOI = lo0Iolo0oo0IOII_00oOOo0ll0__O_O
+                Get = function() return IIOOOIIoIlooO end,
+                GetState = function() return IIOoOlo_IoOIllloooo end,
+                SetMode = function(oIllO_oOIo)
+                    if oIllO_oOIo == "Toggle" or oIllO_oOIo == "Hold" or oIllO_oOIo == "Always" then
+                        _OOOOIooIoo_I = oIllO_oOIo
+                        OooIooIOoIOOIOIl_.Text = _OOOOIooIoo_I
                     end
                 end
             }
         end
 
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:I0OlOOollI1IO0IlOIIIlo0(_lolloIoIoIloOo1O_loo00_OOl)
-            local function _oIllllo_l0llOl0IolOI0(lol0lIoOllol_IoIO00l, oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-                if ((function() return true end)()) and type(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO) == "string" then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO} end
-                if (not (function() return false end)()) and not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+        function Tab:Collapsible(llOooOoIIOOlllI)
+            local function ooIoooOIlOl(Illllllolo, _oOoOoOlOlIlIllooO)
+                if type(_oOoOoOlOlIlIllooO) == "string" then _oOoOoOlOlIlIllooO = {Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO} end
+                if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
                 
-                local IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[144]
-                local _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._ol_00IlIIl0O0l0oo0lIII1lo__O1oo or false
+                local Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or IO_oOOllOOoooIo_[144]
+                local oOoI_OlOIoooIloOI_ = _oOoOoOlOlIlIllooO.Open or false
                 
-                local IO10I1oo_oOoI0Il01_0O_oolO0lIO0 = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                    _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 36),
-                    _I0I0IoI_0Oll0lllO1lll = true,
-                    O_OIooI1IlII0I0IOoIll = 1,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = lol0lIoOllol_IoIO00l
+                local lOIIlIIIIolO = _OI_olOOlOI("Frame", {
+                    IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 0, 36),
+                    ooloolOOlIoOolOool = true,
+                    ZIndex = 1,
+                    O_OoOO_I_oI = Illllllolo
                 })
                 
-                _1lOOlOIIO_0IO_IoOIl00Il(IO10I1oo_oOoI0Il01_0O_oolO0lIO0, 8)
-                ___IoO_1_O1loO01IIol10oOOIllO1(IO10I1oo_oOoI0Il01_0O_oolO0lIO0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
+                llOl_IoIII_oIOIIo(lOIIlIIIIolO, 8)
+                lIO__OIIOllOlOOl(lOIIlIIIIolO, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
                 
-                -- Header lOlOOo0I1Olllo0olIIIo (Bagian yang diklik)
-                local O_1IlIOOlOO1lI0IIllo01lol0_lloOOlO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                    IOlIlll01oI00Ol0lOOI = "",
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 36),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = IO10I1oo_oOoI0Il01_0O_oolO0lIO0
+                -- Header Button (Bagian yang diklik)
+                local oIOOo_oIl_IolIllIlI = _OI_olOOlOI("TextButton", {
+                    Ioolo_OoIoIIoOIl = "",
+                    oIo_o_IIll = 1,
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 0, 36),
+                    O_OoOO_I_oI = lOIIlIIIIolO
                 })
                 
-                local lllO010OoIlIoIIooOOOlI1IO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                    IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI,
-                    _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-                    IOollOOIOoOlo00OlIIl1I = 14,
-                    000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 0),
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -40, 1, 0),
-                    0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = O_1IlIOOlOO1lI0IIllo01lol0_lloOOlO
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+                local oOIlo_olIl_IIlO = _OI_olOOlOI("TextLabel", {
+                    Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl,
+                    IlIoOollo_lIllII = Enum.Font.GothamBold,
+                    TextSize = 14,
+                    TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                    oIo_o_IIll = 1,
+                    lOoOolOOolool = UDim2.new(0, 12, 0, 0),
+                    IIlolo_Ilo__ = UDim2.new(1, -40, 1, 0),
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    O_OoOO_I_oI = oIOOo_oIl_IolIllIlI
                 })
                 
-                local _lIIllol0lOII1olIIoIlO0O1IIoOl0O1I = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                    IOlIlll01oI00Ol0lOOI = "▼",
-                    _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-                    IOollOOIOoOlo00OlIIl1I = 12,
-                    000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -32, 0, 0),
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 24, 1, 0),
-                    _OllIII_OIlIIOll1OlI_1lo = _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I and 180 or 0,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = O_1IlIOOlOO1lI0IIllo01lol0_lloOOlO
+                local IlIIOlIoloII_ = _OI_olOOlOI("TextLabel", {
+                    Ioolo_OoIoIIoOIl = "▼",
+                    IlIoOollo_lIllII = Enum.Font.Gotham,
+                    TextSize = 12,
+                    TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+                    oIo_o_IIll = 1,
+                    lOoOolOOolool = UDim2.new(1, -32, 0, 0),
+                    IIlolo_Ilo__ = UDim2.new(0, 24, 1, 0),
+                    Rotation = oOoI_OlOIoooIloOI_ and 180 or 0,
+                    O_OoOO_I_oI = oIOOo_oIl_IolIllIlI
                 })
                 
-                -- _oolIlolOIOOIlOIooI0IIOlIIll untuk isi elemen (lOlOOo0I1Olllo0olIIIo, _OooO0OO1ll0O0_0OIll_IlO_0o101_OO, dll)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                local _1OIol0I110_I_0lIIl0 = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0, 36), -- Di bawah header
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, -36), -- Mengisi sisa ruang
-                    _I0I0IoI_0Oll0lllO1lll = false, 
-                    II_OlIII1_lIlOO0I0oOOO1001lI = IO10I1oo_oOoI0Il01_0O_oolO0lIO0
+                -- Container untuk isi elemen (Button, Toggle, dll)
+                local _lloOolOOl_IlolOO = _OI_olOOlOI("Frame", {
+                    oIo_o_IIll = 1,
+                    lOoOolOOolool = UDim2.new(0, 0, 0, 36), -- Di bawah header
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 1, -36), -- Mengisi sisa ruang
+                    ooloolOOlIoOolOool = false, 
+                    O_OoOO_I_oI = lOIIlIIIIolO
                 })
                 
-                local 0l0llo0OOOlIlo_OlIOllOO00l0 = _00l00l1l0ooI0I01oOIIO0IIlO011("UIListLayout", {
-                    IoIOlI0II1oIlI_IIIl_I0lIIOIlOol = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 8),
-                    _OOolO0OIO_Il0_olII1I0oI1olII = Enum._OOolO0OIO_Il0_olII1I0oI1olII.II10_lIlI0OlOI1lII0Il10Il,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
+                local oIOlloolOloOlolo = _OI_olOOlOI("UIListLayout", {
+                    Padding = UDim.new(0, 8),
+                    SortOrder = Enum.SortOrder.LayoutOrder,
+                    O_OoOO_I_oI = _lloOolOOl_IlolOO
                 })
                 
-                local IIO_Ol1olIOIIIOl0IOlIoIoIIIlIIll1l = _00l00l1l0ooI0I01oOIIO0IIlO011("UIPadding", {
-                    0l0OIOOolll0loo_lI00OOI0ooI1 = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 8),
-                    IlIO1II0IolI0OIIIOIO_lOIOIOO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 8),
-                    IolOII0O1I1IO00OOllllIl0IIol0IO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 8),
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                    OOI0lI00IllOIllOoollO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 8),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
+                local olooollOOOllIIoI = _OI_olOOlOI("UIPadding", {
+                    PaddingTop = UDim.new(0, 8),
+                    PaddingBottom = UDim.new(0, 8),
+                    PaddingLeft = UDim.new(0, 8),
+                    PaddingRight = UDim.new(0, 8),
+                    O_OoOO_I_oI = _lloOolOOl_IlolOO
                 })
                 
                 -- Fungsi Resize Otomatis
-                local function 1lo10_O_OIIll1_0l01ollllllO1()
-                    local 0OOOlollO_0lll_Illl_ = 0l0llo0OOOlIlo_OlIOllOO00l0._lO_O1I0llIIllOo00lIoI01II._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-                    local _10l0I0lo0II00lO_l1OoIOO00 = _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I and (0OOOlollO_0lll_Illl_ + 36 + 16) or 36
+                local function oIIoOOoIOOIllolOl()
+                    local IIllOIl_IIIoOIll = oIOlloolOloOlolo.AbsoluteContentSize.Y
+                    local _IIoIloO_Il = oOoI_OlOIoooIloOI_ and (IIllOIl_IIIoOIll + 36 + 16) or 36
                     
-                    if ((function() return "a" == "a" end)()) and _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then
-                        IO10I1oo_oOoI0Il01_0O_oolO0lIO0.O_OIooI1IlII0I0IOoIll = 5 -- Naikkan prioritas saat buka
+                    if oOoI_OlOIoooIloOI_ then
+                        lOIIlIIIIolO.ZIndex = 5 -- Naikkan prioritas saat buka
                         
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IO10I1oo_oOoI0Il01_0O_oolO0lIO0, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, _10l0I0lo0II00lO_l1OoIOO00)}, 0.3, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.IoIIlIll_lIoOIIIOlIO1Il, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_lIIllol0lOII1olIIoIlO0O1IIoOl0O1I, {_OllIII_OIlIIOll1OlI_1lo = 180, 000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I}, 0.3)
+                        lOoolOoIoOOOl(lOIIlIIIIolO, {IIlolo_Ilo__ = UDim2.new(1, 0, 0, _IIoIloO_Il)}, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+                        lOoolOoIoOOOl(IlIIOlIoloII_, {Rotation = 180, TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent}, 0.3)
                         
-                        _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.delay(0.25, function()
-                            if ((function() local x = 5 return x > 3 end)()) and _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then IO10I1oo_oOoI0Il01_0O_oolO0lIO0._I0I0IoI_0Oll0lllO1lll = false end
+                        task.delay(0.25, function()
+                            if oOoI_OlOIoooIloOI_ then lOIIlIIIIolO.ClipsDescendants = false end
                         end)
                     else
-                        IO10I1oo_oOoI0Il01_0O_oolO0lIO0._I0I0IoI_0Oll0lllO1lll = true
-                        IO10I1oo_oOoI0Il01_0O_oolO0lIO0.O_OIooI1IlII0I0IOoIll = 1
+                        lOIIlIIIIolO.ClipsDescendants = true
+                        lOIIlIIIIolO.ZIndex = 1
                         
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IO10I1oo_oOoI0Il01_0O_oolO0lIO0, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, _10l0I0lo0II00lO_l1OoIOO00)}, 0.3, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.IoIIlIll_lIoOIIIOlIO1Il, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_lIIllol0lOII1olIIoIlO0O1IIoOl0O1I, {_OllIII_OIlIIOll1OlI_1lo = 0, 000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl}, 0.3)
+                        lOoolOoIoOOOl(lOIIlIIIIolO, {IIlolo_Ilo__ = UDim2.new(1, 0, 0, _IIoIloO_Il)}, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+                        lOoolOoIoOOOl(IlIIOlIoloII_, {Rotation = 0, TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub}, 0.3)
                     end
                 end
                 
-                0l0llo0OOOlIlo_OlIOllOO00l0:0IOoloO0oOlOOOll0IOIololIIO1o("_lO_O1I0llIIllOo00lIoI01II"):_lIIIOOoI_0llIOOO1Ol(function()
-                    if ((function() return 1 + 1 == 2 end)()) and _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I then 1lo10_O_OIIll1_0l01ollllllO1() end
+                ContentLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+                    if oOoI_OlOIoooIloOI_ then oIIoOOoIOOIllolOl() end
                 end)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
                 
-                O_1IlIOOlOO1lI0IIllo01lol0_lloOOlO._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-                    _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I = not _0IIO_O11Ol0lO0IlIIl0_IlI01IIl_0I
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                    1lo10_O_OIIll1_0l01ollllllO1()
+                oIOOo_oIl_IolIllIlI.MouseButton1Click:Connect(function()
+                    oOoI_OlOIoooIloOI_ = not oOoI_OlOIoooIloOI_
+                    oIIoOOoIOOIllolOl()
                 end)
                 
                 -- Hover Effects Header
-                O_1IlIOOlOO1lI0IIllo01lol0_lloOOlO.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IO10I1oo_oOoI0Il01_0O_oolO0lIO0, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo}, 0.2)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+                oIOOo_oIl_IolIllIlI.MouseEnter:Connect(function()
+                    lOoolOoIoOOOl(lOIIlIIIIolO, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh}, 0.2)
                 end)
-                O_1IlIOOlOO1lI0IIllo01lol0_lloOOlO.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IO10I1oo_oOoI0Il01_0O_oolO0lIO0, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.2)
+                oIOOo_oIl_IolIllIlI.MouseLeave:Connect(function()
+                    lOoolOoIoOOOl(lOIIlIIIIolO, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.2)
                 end)
                 
                 -- ==========================================================
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
                 -- GROUP API
                 -- ==========================================================
-                local lOlIIolIIlooOO1OlIOll_0o = {}
+                local _oIoIO_oIIlooIlIO_O = {}
                 
-                function lOlIIolIIlooOO1OlIOll_0o:lOlOOo0I1Olllo0olIIIo(0OoooIO_1OOlIIlolIlIooOO0)
-                    if ((function() return "a" == "a" end)()) and type(0OoooIO_1OOlIIlolIlIooOO0) == "string" then 0OoooIO_1OOlIIlolIlIooOO0 = {IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0} end
-                    local IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0.IOlIlll01oI00Ol0lOOI or "lOlOOo0I1Olllo0olIIIo"
-                    local _IOOIlOoI_IlllIlo_IIIoI1Illol = 0OoooIO_1OOlIIlolIlIooOO0._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
+                function Group:Button(lOO_OlOolIO_loo_)
+                    if type(lOO_OlOolIO_loo_) == "string" then lOO_OlOolIO_loo_ = {Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_} end
+                    local Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_.Text or "Button"
+                    local _OlllIIO_looolo_ = lOO_OlOolIO_loo_.Callback or function() end
                     
-                    local 1IOOo_lO1_1OII_o0I0Ilo = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 40),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                        II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
+                    local olOlOlloOoololoOlOI = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+                        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 40),
+                        O_OoOO_I_oI = _lloOolOOl_IlolOO
                     })
-                    _1lOOlOIIO_0IO_IoOIl00Il(1IOOo_lO1_1OII_o0I0Ilo, 6)
+                    llOl_IoIII_oIOIIo(olOlOlloOoololoOlOI, 6)
                     
-                    local OloOIOIOI0OoIIOlll0IlOo0I = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                        IOlIlll01oI00Ol0lOOI = "", oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1, 0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0), II_OlIII1_lIlOO0I0oOOO1001lI = 1IOOo_lO1_1OII_o0I0Ilo
-                    })
-                    
-                    _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                        IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI, _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II, IOollOOIOoOlo00OlIIl1I = 13,
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI, oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0), _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 0),
-                        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl, II_OlIII1_lIlOO0I0oOOO1001lI = 1IOOo_lO1_1OII_o0I0Ilo
+                    local oOIlOooOOOOOIOoooll = _OI_olOOlOI("TextButton", {
+                        Ioolo_OoIoIIoOIl = "", oIo_o_IIll = 1, IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0), O_OoOO_I_oI = olOlOlloOoololoOlOI
                     })
                     
-                    OloOIOIOI0OoIIOlll0IlOo0I.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function() _0lIIIlOoOOlO1OllOllO_l0lol_I01I(1IOOo_lO1_1OII_o0I0Ilo, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl}, 0.15) end)
-                    OloOIOIOI0OoIIOlll0IlOo0I.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function() _0lIIIlOoOOlO1OllOllO_l0lol_I01I(1IOOo_lO1_1OII_o0I0Ilo, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo}, 0.15) end)
-                    OloOIOIOI0OoIIOlll0IlOo0I._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function() pcall(_IOOIlOoI_IlllIlo_IIIoI1Illol) end)
+                    _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl, IlIoOollo_lIllII = Enum.Font.GothamMedium, TextSize = 13,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text, oIo_o_IIll = 1,
+                        IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0), lOoOolOOolool = UDim2.new(0, 12, 0, 0),
+                        TextXAlignment = Enum.TextXAlignment.Left, O_OoOO_I_oI = olOlOlloOoololoOlOI
+                    })
+                    
+                    oOIlOooOOOOOIOoooll.MouseEnter:Connect(function() lOoolOoIoOOOl(olOlOlloOoololoOlOI, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest}, 0.15) end)
+                    oOIlOooOOOOOIOoooll.MouseLeave:Connect(function() lOoolOoIoOOOl(olOlOlloOoololoOlOI, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh}, 0.15) end)
+                    oOIlOooOOOOOIOoooll.MouseButton1Click:Connect(function() pcall(_OlllIIO_looolo_) end)
                     
                     return {
-                        IoIoIOoIO_IlooIolIl0IOoolIIIIlI = function(IoOlIl0loI0Il1l0I_OIlO) end, -- Implement if needed
-                        Iol1II0IOlOllOIl100I1 = function(_llll0oIlOOIIIlO1l0IoIlOI0llO) _IOOIlOoI_IlllIlo_IIIoI1Illol = _llll0oIlOOIIIlO1l0IoIlOI0llO end
+                        SetText = function(l_OoOOoIOoIIlOIl) end, -- Implement if needed
+                        _IIIl__OO_oO = function(IoOOIOOolIIlIl) _OlllIIO_looolo_ = IoOOIOOolIIlIl end
                     }
                 end
 
-                -- [TAMBAHAN] _l0oIlIlOI_0OoIoIIIoIIIol0oIIIl (lllO010OoIlIoIIooOOOlI1IO + _00OOll001OoO0O0IOIoll)
-                function lOlIIolIIlooOO1OlIOll_0o:_l0oIlIlOI_0OoIoIIIoIIIol0oIIIl(0OoooIO_1OOlIIlolIlIooOO0)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                    if ((function() return 1 + 1 == 2 end)()) and type(0OoooIO_1OOlIIlolIlIooOO0) == "string" then 0OoooIO_1OOlIIlolIlIooOO0 = {lllO010OoIlIoIIooOOOlI1IO = 0OoooIO_1OOlIIlolIlIooOO0} end
-                    if not 0OoooIO_1OOlIIlolIlIooOO0 then 0OoooIO_1OOlIIlolIlIooOO0 = {} end
+                -- [TAMBAHAN] Paragraph (Title + Content)
+                function Group:Paragraph(lOO_OlOolIO_loo_)
+                    if type(lOO_OlOolIO_loo_) == "string" then lOO_OlOolIO_loo_ = {oOIlo_olIl_IIlO = lOO_OlOolIO_loo_} end
+                    if not lOO_OlOolIO_loo_ then lOO_OlOolIO_loo_ = {} end
                     
-                    local _l1lIoOo1I0OIlOOOIOI01oIoI0OI = 0OoooIO_1OOlIIlolIlIooOO0.lllO010OoIlIoIIooOOOlI1IO or oIOoII_0IIlOII1IOI1lI0_OO0o[145]
-                    local _lI11lOllIO1o1lOOll1oIO0IIIl = 0OoooIO_1OOlIIlolIlIooOO0._00OOll001OoO0O0IOIoll or 0OoooIO_1OOlIIlolIlIooOO0.__IlIlIolO0IolOOOoOoIl0 or ""
+                    local OOll_lollolOOloOI = lOO_OlOolIO_loo_.Title or IO_oOOllOOoooIo_[145]
+                    local IlOoIIIlo_olo = lOO_OlOolIO_loo_.Content or lOO_OlOolIO_loo_.Desc or ""
                     
-                    -- _llO_oOll0IlIOoO0I0OoIoolIolI0 _oolIlolOIOOIlOIooI0IIOlIIll
-                    local olo_Il_OolIOOOI1l_oI_1_l = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 0), -- Tinggi akan otomatis
-                        0l0Il10lIIlI0oIlolllIll = Enum.0l0Il10lIIlI0oIlolllIll._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O, -- Agar menyesuaikan panjang teks
-                        II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+                    -- Frame Container
+                    local lOIIIlooOlI_lo = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+                        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 0), -- Tinggi akan otomatis
+                        OoollIOIoOlOOOoOoII = Enum.AutomaticSize.Y, -- Agar menyesuaikan panjang teks
+                        O_OoOO_I_oI = _lloOolOOl_IlolOO
                     })
-                    _1lOOlOIIO_0IO_IoOIl00Il(olo_Il_OolIOOOI1l_oI_1_l, 6)
+                    llOl_IoIII_oIOIIo(lOIIIlooOlI_lo, 6)
                     
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                    -- IoIOlI0II1oIlI_IIIl_I0lIIOIlOol agar teks tidak mepet pinggir
-                    _00l00l1l0ooI0I01oOIIO0IIlO011("UIPadding", {
-                        0l0OIOOolll0loo_lI00OOI0ooI1 = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 10),
-                        IlIO1II0IolI0OIIIOIO_lOIOIOO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 10),
-                        IolOII0O1I1IO00OOllllIl0IIol0IO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 12),
-                        OOI0lI00IllOIllOoollO = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 12),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = olo_Il_OolIOOOI1l_oI_1_l
+                    -- Padding agar teks tidak mepet pinggir
+                    _OI_olOOlOI("UIPadding", {
+                        PaddingTop = UDim.new(0, 10),
+                        PaddingBottom = UDim.new(0, 10),
+                        PaddingLeft = UDim.new(0, 12),
+                        PaddingRight = UDim.new(0, 12),
+                        O_OoOO_I_oI = lOIIIlooOlI_lo
                     })
                     
                     -- Layout untuk menyusun Judul dan Isi secara vertikal
-                    local lolo1ll0IlIoIo1lIIIlo0lIO00IIOol_O = _00l00l1l0ooI0I01oOIIO0IIlO011("UIListLayout", {
-                        IoIOlI0II1oIlI_IIIl_I0lIIOIlOol = _lOl1IO1lllIIlII_10l_1Ol_IO._I00I_ol_lI1IllIIOII1IoOIlI(0, 4),
-                        _OOolO0OIO_Il0_olII1I0oI1olII = Enum._OOolO0OIO_Il0_olII1I0oI1olII.II10_lIlI0OlOI1lII0Il10Il,
-                        II_OlIII1_lIlOO0I0oOOO1001lI = olo_Il_OolIOOOI1l_oI_1_l
+                    local lIloloOoloOooI = _OI_olOOlOI("UIListLayout", {
+                        Padding = UDim.new(0, 4),
+                        SortOrder = Enum.SortOrder.LayoutOrder,
+                        O_OoOO_I_oI = lOIIIlooOlI_lo
                     })
                     
-                    -- _oOII_IIlOloIIo0lI0o110_0oIOlI000o Judul
-                    local _OOOl1IIloIloIll0I0loo = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                        IOlIlll01oI00Ol0lOOI = _l1lIoOo1I0OIlOOOIOI01oIoI0OI,
-                        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-                        IOollOOIOoOlo00OlIIl1I = 13,
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 0),
-                        0l0Il10lIIlI0oIlolllIll = Enum.0l0Il10lIIlI0oIlolllIll._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O,
-                        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                        _lO0IlIII1Illo1lO0OoOO = true,
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                        II10_lIlI0OlOI1lII0Il10Il = 1,
-                        II_OlIII1_lIlOO0I0oOOO1001lI = olo_Il_OolIOOOI1l_oI_1_l
+                    -- Label Judul
+                    local oooOI_Oll_IOlI = _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = OOll_lollolOOloOI,
+                        IlIoOollo_lIllII = Enum.Font.GothamBold,
+                        TextSize = 13,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                        oIo_o_IIll = 1,
+                        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 0),
+                        OoollIOIoOlOOOoOoII = Enum.AutomaticSize.Y,
+                        TextXAlignment = Enum.TextXAlignment.Left,
+                        TextWrapped = true,
+                        LayoutOrder = 1,
+                        O_OoOO_I_oI = lOIIIlooOlI_lo
                     })
                     
-                    -- _oOII_IIlOloIIo0lI0o110_0oIOlI000o Isi (_00OOll001OoO0O0IOIoll)
-                    local OOIOO0IolI1Ioooo1IIlIOO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                        IOlIlll01oI00Ol0lOOI = _lI11lOllIO1o1lOOll1oIO0IIIl,
-                        _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II,
-                        IOollOOIOoOlo00OlIIl1I = 12,
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-                        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 0),
-                        0l0Il10lIIlI0oIlolllIll = Enum.0l0Il10lIIlI0oIlolllIll._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O,
-                        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                        _lO0IlIII1Illo1lO0OoOO = true,
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                        II10_lIlI0OlOI1lII0Il10Il = 2,
-                        II_OlIII1_lIlOO0I0oOOO1001lI = olo_Il_OolIOOOI1l_oI_1_l
+                    -- Label Isi (Content)
+                    local IlOIooOlI_lOOO_ = _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = IlOoIIIlo_olo,
+                        IlIoOollo_lIllII = Enum.Font.Gotham,
+                        TextSize = 12,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+                        oIo_o_IIll = 1,
+                        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 0),
+                        OoollIOIoOlOOOoOoII = Enum.AutomaticSize.Y,
+                        TextXAlignment = Enum.TextXAlignment.Left,
+                        TextWrapped = true,
+                        LayoutOrder = 2,
+                        O_OoOO_I_oI = lOIIIlooOlI_lo
                     })
                     
-                    -- _llIl1llIIIIOlllIlOlII01ol0llI API untuk update teks nanti
+                    -- Return API untuk update teks nanti
                     return {
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                        oo_I1o0l01IIl10lOI1lOOIIl1OlO1o = function(IoOlIl0loI0Il1l0I_OIlO) _OOOl1IIloIloIll0I0loo.IOlIlll01oI00Ol0lOOI = tostring(IoOlIl0loI0Il1l0I_OIlO) end,
-                        _IIO_0lIOlO0I_0O1lOIlI_ = function(_llll0oIlOOIIIlO1l0IoIlOI0llO) OOIOO0IolI1Ioooo1IIlIOO.IOlIlll01oI00Ol0lOOI = tostring(_llll0oIlOOIIIlO1l0IoIlOI0llO) end,
-                        0o_10II0oIIOO00II0OOIIllOIlI01lIII = function(_llll0oIlOOIIIlO1l0IoIlOI0llO) OOIOO0IolI1Ioooo1IIlIOO.IOlIlll01oI00Ol0lOOI = tostring(_llll0oIlOOIIIlO1l0IoIlOI0llO) end
+                        SetTitle = function(l_OoOOoIOoIIlOIl) oooOI_Oll_IOlI.Text = tostring(l_OoOOoIOoIIlOIl) end,
+                        SetDesc = function(IoOOIOOolIIlIl) IlOIooOlI_lOOO_.Text = tostring(IoOOIOOolIIlIl) end,
+                        SetContent = function(IoOOIOOolIIlIl) IlOIooOlI_lOOO_.Text = tostring(IoOOIOOolIIlIl) end
                     }
                 end
                 
-                function lOlIIolIIlooOO1OlIOll_0o:_OooO0OO1ll0O0_0OIll_IlO_0o101_OO(0OoooIO_1OOlIIlolIlIooOO0)
-                    if type(0OoooIO_1OOlIIlolIlIooOO0) == "string" then 0OoooIO_1OOlIIlolIlIooOO0 = {IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0} end
-                    local IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0.IOlIlll01oI00Ol0lOOI or "_OooO0OO1ll0O0_0OIll_IlO_0o101_OO"
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                    local _lOI0IOololO1oolIl0I = 0OoooIO_1OOlIIlolIlIooOO0._lOI0IOololO1oolIl0I or false
-                    local _IOOIlOoI_IlllIlo_IIIoI1Illol = 0OoooIO_1OOlIIlolIlIooOO0._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-                    local Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = 0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
-                    local l0IO_l0lO1IIoloI00I0lOo01OIoIOI = _lOI0IOololO1oolIl0I
+                function Group:Toggle(lOO_OlOolIO_loo_)
+                    if type(lOO_OlOolIO_loo_) == "string" then lOO_OlOolIO_loo_ = {Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_} end
+                    local Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_.Text or "Toggle"
+                    local IOIOI_OIIOlolooOolo = lOO_OlOolIO_loo_.Default or false
+                    local _OlllIIO_looolo_ = lOO_OlOolIO_loo_.Callback or function() end
+                    local _l__lI_Oll_l = lOO_OlOolIO_loo_.Flag
+                    local IIloIII_ol = IOIOI_OIIOlolooOolo
                     
-                    local 0o0llIlOO0lIIOo_IIOIIlOllII = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 40),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
+                    local I__llolIoOl = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+                        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 40),
+                        O_OoOO_I_oI = _lloOolOOl_IlolOO
                     })
-                    _1lOOlOIIO_0IO_IoOIl00Il(0o0llIlOO0lIIOo_IIOIIlOllII, 6)
+                    llOl_IoIII_oIOIIo(I__llolIoOl, 6)
                     
-                    _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                        IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI, _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II, IOollOOIOoOlo00OlIIl1I = 13,
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI, oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -50, 1, 0), _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 0),
-                        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl, II_OlIII1_lIlOO0I0oOOO1001lI = 0o0llIlOO0lIIOo_IIOIIlOllII
-                    })
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                    
-                    local _00OIOlOoOlI0Il1oIl0O00II1Io1lO = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = l0IO_l0lO1IIoloI00I0lOo01OIoIOI and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 36, 0, 18),
-                        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -48, 0.5, -9),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = 0o0llIlOO0lIIOo_IIOIIlOllII
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                    })
-                    _1lOOlOIIO_0IO_IoOIl00Il(_00OIOlOoOlI0Il1oIl0O00II1Io1lO, 9)
-                    
-                    local _OOlII10O1l0_IoOO0lI = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 14, 0, 14),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, l0IO_l0lO1IIoloI00I0lOo01OIoIOI and 20 or 2, 0.5, -7),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = _00OIOlOoOlI0Il1oIl0O00II1Io1lO
-                    })
-                    _1lOOlOIIO_0IO_IoOIl00Il(_OOlII10O1l0_IoOO0lI, 7)
-                    
-                    local OloOIOIOI0OoIIOlll0IlOo0I = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                        IOlIlll01oI00Ol0lOOI = "", oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1, 0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0), II_OlIII1_lIlOO0I0oOOO1001lI = 0o0llIlOO0lIIOo_IIOIIlOllII
+                    _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl, IlIoOollo_lIllII = Enum.Font.GothamMedium, TextSize = 13,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text, oIo_o_IIll = 1,
+                        IIlolo_Ilo__ = UDim2.new(1, -50, 1, 0), lOoOolOOolool = UDim2.new(0, 12, 0, 0),
+                        TextXAlignment = Enum.TextXAlignment.Left, O_OoOO_I_oI = I__llolIoOl
                     })
                     
-                    local function IOIOoOoII1oOO1l1_O_Oo0O0lII()
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_00OIOlOoOlI0Il1oIl0O00II1Io1lO, {_l_lOO0OloOIIIl_II__oo1I0 = l0IO_l0lO1IIoloI00I0lOo01OIoIOI and _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I or _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.2)
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_OOlII10O1l0_IoOO0lI, {_l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, l0IO_l0lO1IIoloI00I0lOo01OIoIOI and 20 or 2, 0.5, -7)}, 0.2, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.IoIIlIll_lIoOIIIOlIO1Il, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
-                        pcall(_IOOIlOoI_IlllIlo_IIIoI1Illol, l0IO_l0lO1IIoloI00I0lOo01OIoIOI)
-                        if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = l0IO_l0lO1IIoloI00I0lOo01OIoIOI end
+                    local Il_lIloIIIOOOOlOlOo = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IIloIII_ol and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.Surface,
+                        IIlolo_Ilo__ = UDim2.new(0, 36, 0, 18),
+                        lOoOolOOolool = UDim2.new(1, -48, 0.5, -9),
+                        O_OoOO_I_oI = I__llolIoOl
+                    })
+                    llOl_IoIII_oIOIIo(Il_lIloIIIOOOOlOlOo, 9)
+                    
+                    local OOlolIol_IOlIl = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Text,
+                        IIlolo_Ilo__ = UDim2.new(0, 14, 0, 14),
+                        lOoOolOOolool = UDim2.new(0, IIloIII_ol and 20 or 2, 0.5, -7),
+                        O_OoOO_I_oI = Il_lIloIIIOOOOlOlOo
+                    })
+                    llOl_IoIII_oIOIIo(OOlolIol_IOlIl, 7)
+                    
+                    local oOIlOooOOOOOIOoooll = _OI_olOOlOI("TextButton", {
+                        Ioolo_OoIoIIoOIl = "", oIo_o_IIll = 1, IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0), O_OoOO_I_oI = I__llolIoOl
+                    })
+                    
+                    local function oloOl_oIlIloIIOloo()
+                        lOoolOoIoOOOl(Il_lIloIIIOOOOlOlOo, {IoIOIo_I_IOllllOI = IIloIII_ol and IoOlIOIOl_oIOIIooII.Theme.Accent or IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.2)
+                        lOoolOoIoOOOl(OOlolIol_IOlIl, {lOoOolOOolool = UDim2.new(0, IIloIII_ol and 20 or 2, 0.5, -7)}, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+                        pcall(_OlllIIO_looolo_, IIloIII_ol)
+                        if _l__lI_Oll_l then IoOlIOIOl_oIOIIooII.Flags[_l__lI_Oll_l] = IIloIII_ol end
                     end
                     
-                    OloOIOIOI0OoIIOlll0IlOo0I._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-                        l0IO_l0lO1IIoloI00I0lOo01OIoIOI = not l0IO_l0lO1IIoloI00I0lOo01OIoIOI
-                        IOIOoOoII1oOO1l1_O_Oo0O0lII()
+                    oOIlOooOOOOOIOoooll.MouseButton1Click:Connect(function()
+                        IIloIII_ol = not IIloIII_ol
+                        oloOl_oIlIloIIOloo()
                     end)
                     
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                    if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                        _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = {
-                            _oOoIOoO0OOIll1Ol0llo_01o101 = function(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI) l0IO_l0lO1IIoloI00I0lOo01OIoIOI = _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI; IOIOoOoII1oOO1l1_O_Oo0O0lII() end,
-                            OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return l0IO_l0lO1IIoloI00I0lOo01OIoIOI end
+                    if _l__lI_Oll_l then
+                        IoOlIOIOl_oIOIIooII.Registry[_l__lI_Oll_l] = {
+                            Set = function(_lIoOOolIlOoII) IIloIII_ol = _lIoOOolIlOoII; oloOl_oIlIloIIOloo() end,
+                            Get = function() return IIloIII_ol end
                         }
                     end
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
                     
                     -- Trigger default jika true
-                    if _lOI0IOololO1oolIl0I then pcall(_IOOIlOoI_IlllIlo_IIIoI1Illol, true) end
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+                    if IOIOI_OIIOlolooOolo then pcall(_OlllIIO_looolo_, true) end
                     
                     return {
-                        _oOoIOoO0OOIll1Ol0llo_01o101 = function(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI) l0IO_l0lO1IIoloI00I0lOo01OIoIOI = _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI; IOIOoOoII1oOO1l1_O_Oo0O0lII() end,
-                        OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return l0IO_l0lO1IIoloI00I0lOo01OIoIOI end
+                        Set = function(_lIoOOolIlOoII) IIloIII_ol = _lIoOOolIlOoII; oloOl_oIlIloIIOloo() end,
+                        Get = function() return IIloIII_ol end
                     }
                 end
                 
-                function lOlIIolIIlooOO1OlIOll_0o:0I0l0lOllllll0lIll1o1IOlOlol1(0OoooIO_1OOlIIlolIlIooOO0)
-                    local IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0.IOlIlll01oI00Ol0lOOI or "0I0l0lOllllll0lIll1o1IOlOlol1"
-                    local lIOIIIIIoIlI1OO1lIOl, __o0lI01lOloll0lIIlIl = 0OoooIO_1OOlIIlolIlIooOO0.lIOIIIIIoIlI1OO1lIOl or 0, 0OoooIO_1OOlIIlolIlIooOO0.__o0lI01lOloll0lIIlIl or 100
-                    local _lOI0IOololO1oolIl0I = 0OoooIO_1OOlIIlolIlIooOO0._lOI0IOololO1oolIl0I or lIOIIIIIoIlI1OO1lIOl
-                    local _IOOIlOoI_IlllIlo_IIIoI1Illol = 0OoooIO_1OOlIIlolIlIooOO0._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                    local Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = 0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
-                    local _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(_lOI0IOololO1oolIl0I, lIOIIIIIoIlI1OO1lIOl, __o0lI01lOloll0lIIlIl)
+                function Group:Slider(lOO_OlOolIO_loo_)
+                    local Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_.Text or "Slider"
+                    local OlOOooIoOIO_OlO_oo, I_I_IoooOOOlo_o = lOO_OlOolIO_loo_.Min or 0, lOO_OlOolIO_loo_.Max or 100
+                    local IOIOI_OIIOlolooOolo = lOO_OlOolIO_loo_.Default or OlOOooIoOIO_OlO_oo
+                    local _OlllIIO_looolo_ = lOO_OlOolIO_loo_.Callback or function() end
+                    local _l__lI_Oll_l = lOO_OlOolIO_loo_.Flag
+                    local looI_oI_II = math.clamp(IOIOI_OIIOlolooOolo, OlOOooIoOIO_OlO_oo, I_I_IoooOOOlo_o)
                     
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                    local 0lIo0lI1IolIIl0OIlIIIOl = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 50),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
+                    local Io_oloooII = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+                        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 50),
+                        O_OoOO_I_oI = _lloOolOOl_IlolOO
                     })
-                    _1lOOlOIIO_0IO_IoOIl00Il(0lIo0lI1IolIIl0OIlIIIOl, 6)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                    llOl_IoIII_oIOIIo(Io_oloooII, 6)
                     
-                    _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                        IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI, _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II, IOollOOIOoOlo00OlIIl1I = 13,
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI, oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 8), 0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -24, 0, 14),
-                        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl, II_OlIII1_lIlOO0I0oOOO1001lI = 0lIo0lI1IolIIl0OIlIIIOl
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                    _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl, IlIoOollo_lIllII = Enum.Font.GothamMedium, TextSize = 13,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text, oIo_o_IIll = 1,
+                        lOoOolOOolool = UDim2.new(0, 12, 0, 8), IIlolo_Ilo__ = UDim2.new(1, -24, 0, 14),
+                        TextXAlignment = Enum.TextXAlignment.Left, O_OoOO_I_oI = Io_oloooII
                     })
                     
-                    local lIlllI0Ilo_OoIlO1l_IlII1 = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                        IOlIlll01oI00Ol0lOOI = tostring(_ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO), _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll, IOollOOIOoOlo00OlIIl1I = 12,
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -12, 0, 8), 0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0, 14),
-                        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o.O00l0IIOOl__Io0llIlIl1loO, II_OlIII1_lIlOO0I0oOOO1001lI = 0lIo0lI1IolIIl0OIlIIIOl
+                    local _oIolIIOOOO = _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = tostring(looI_oI_II), IlIoOollo_lIllII = Enum.Font.GothamBold, TextSize = 12,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent, oIo_o_IIll = 1,
+                        lOoOolOOolool = UDim2.new(1, -12, 0, 8), IIlolo_Ilo__ = UDim2.new(0, 0, 0, 14),
+                        TextXAlignment = Enum.TextXAlignment.Right, O_OoOO_I_oI = Io_oloooII
                     })
                     
-                    local II0I0OI1_OOllOI_lOloII_0llO_O = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -24, 0, 4), _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 32),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = 0lIo0lI1IolIIl0OIlIIIOl
+                    local _IllOOlIOlOollooO_ = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                        IIlolo_Ilo__ = UDim2.new(1, -24, 0, 4), lOoOolOOolool = UDim2.new(0, 12, 0, 32),
+                        O_OoOO_I_oI = Io_oloooII
                     })
-                    _1lOOlOIIO_0IO_IoOIl00Il(II0I0OI1_OOllOI_lOloII_0llO_O, 2)
+                    llOl_IoIII_oIOIIo(_IllOOlIOlOollooO_, 2)
                     
-                    local O10_0OI010lO0IIO_0ol = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI((_ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO - lIOIIIIIoIlI1OO1lIOl)/(__o0lI01lOloll0lIIlIl - lIOIIIIIoIlI1OO1lIOl), 0, 1, 0),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = II0I0OI1_OOllOI_lOloII_0llO_O
+                    local OIIIlIOOOlIOOIOoI = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Accent,
+                        IIlolo_Ilo__ = UDim2.new((looI_oI_II - OlOOooIoOIO_OlO_oo)/(I_I_IoooOOOlo_o - OlOOooIoOIO_OlO_oo), 0, 1, 0),
+                        O_OoOO_I_oI = _IllOOlIOlOollooO_
                     })
-                    _1lOOlOIIO_0IO_IoOIl00Il(O10_0OI010lO0IIO_0ol, 2)
+                    llOl_IoIII_oIOIIo(OIIIlIOOOlIOOIOoI, 2)
                     
-                    local OloOIOIOI0OoIIOlll0IlOo0I = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {IOlIlll01oI00Ol0lOOI="", oIIo0l0Iol01OOlIOI0_1OoI1Il0O=1, 0IIlOooOIollloIOIII0o_0IIII_lo=UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1,0,1,0), II_OlIII1_lIlOO0I0oOOO1001lI=0lIo0lI1IolIIl0OIlIIIOl})
-                    local __oOo00ll1OOOOl1OIIIIIOOlOI1 = false
+                    local oOIlOooOOOOOIOoooll = _OI_olOOlOI("TextButton", {Ioolo_OoIoIIoOIl="", oIo_o_IIll=1, IIlolo_Ilo__=UDim2.new(1,0,1,0), O_OoOO_I_oI=Io_oloooII})
+                    local OIOOIllOoIOI = false
                     
-                    local function IOIOoOoII1oOO1l1_O_Oo0O0lII(_ol0_llOlO0III0I0l0_)
-                        local _IIoOIoI0Illol001I1OO0OIIl = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0((_ol0_llOlO0III0I0l0_._l_0Il0_0OI_olIlIllIOoOOI0IOoIo._oIIlOIloI_l0II0I00l00OIOIoo - II0I0OI1_OOllOI_lOloII_0llO_O._lloOIIOOlI0lOlOllI_IIOOIl0I._oIIlOIloI_l0II0I00l00OIOIoo) / II0I0OI1_OOllOI_lOloII_0llO_O.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo, 0, 1)
-                        _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO = math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(lIOIIIIIoIlI1OO1lIOl + ((__o0lI01lOloll0lIIlIl - lIOIIIIIoIlI1OO1lIOl) * _IIoOIoI0Illol001I1OO0OIIl))
-                        lIlllI0Ilo_OoIlO1l_IlII1.IOlIlll01oI00Ol0lOOI = tostring(_ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO)
-                        O10_0OI010lO0IIO_0ol.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(_IIoOIoI0Illol001I1OO0OIIl, 0, 1, 0)
-                        pcall(_IOOIlOoI_IlllIlo_IIIoI1Illol, _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO)
-                        if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO end
+                    local function oloOl_oIlIloIIOloo(olIlO_OlIlIO)
+                        local OllOOIIlOOlIolOoIOl = math.clamp((olIlO_OlIlIO.Position.X - _IllOOlIOlOollooO_.AbsolutePosition.X) / _IllOOlIOlOollooO_.AbsoluteSize.X, 0, 1)
+                        looI_oI_II = math.floor(OlOOooIoOIO_OlO_oo + ((I_I_IoooOOOlo_o - OlOOooIoOIO_OlO_oo) * OllOOIIlOOlIolOoIOl))
+                        _oIolIIOOOO.Text = tostring(looI_oI_II)
+                        OIIIlIOOOlIOOIOoI.Size = UDim2.new(OllOOIIlOOlIolOoIOl, 0, 1, 0)
+                        pcall(_OlllIIO_looolo_, looI_oI_II)
+                        if _l__lI_Oll_l then IoOlIOIOl_oIOIIooII.Flags[_l__lI_Oll_l] = looI_oI_II end
                     end
                     
-                    OloOIOIOI0OoIIOlll0IlOo0I.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(function(_lIIOIlolIIlII1_Il_IOl01ll0Olll) if _lIIOIlolIIlII1_Il_IOl01ll0Olll._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O then __oOo00ll1OOOOl1OIIIIIOOlOI1=true; IOIOoOoII1oOO1l1_O_Oo0O0lII(_lIIOIlolIIlII1_Il_IOl01ll0Olll) end end)
-                    __IIllI01O0I0OolO01ll01o01Ilo_O0o._Ol1l0o1I0lI_IoIlIo_o1II0l:_lIIIOOoI_0llIOOO1Ol(function(_lIIOIlolIIlII1_Il_IOl01ll0Olll) if _lIIOIlolIIlII1_Il_IOl01ll0Olll._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O then __oOo00ll1OOOOl1OIIIIIOOlOI1=false end end)
-                    __IIllI01O0I0OolO01ll01o01Ilo_O0o.lolIllIOlII0o1I110_o000OO1I0loOIl:_lIIIOOoI_0llIOOO1Ol(function(_lIIOIlolIIlII1_Il_IOl01ll0Olll) if __oOo00ll1OOOOl1OIIIIIOOlOI1 and _lIIOIlolIIlII1_Il_IOl01ll0Olll._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._lI_IoOO11lIoloIloolOoloOIII1oOl then IOIOoOoII1oOO1l1_O_Oo0O0lII(_lIIOIlolIIlII1_Il_IOl01ll0Olll) end end)
+                    oOIlOooOOOOOIOoooll.InputBegan:Connect(function(oOIOOOIIOollolOO) if oOIOOOIIOollolOO.UserInputType == Enum.UserInputType.MouseButton1 then OIOOIllOoIOI=true; oloOl_oIlIloIIOloo(oOIOOOIIOollolOO) end end)
+                    OOOllOIOllO_OoI.InputEnded:Connect(function(oOIOOOIIOollolOO) if oOIOOOIIOollolOO.UserInputType == Enum.UserInputType.MouseButton1 then OIOOIllOoIOI=false end end)
+                    OOOllOIOllO_OoI.InputChanged:Connect(function(oOIOOOIIOollolOO) if OIOOIllOoIOI and oOIOOOIIOollolOO.UserInputType == Enum.UserInputType.MouseMovement then oloOl_oIlIloIIOloo(oOIOOOIIOollolOO) end end)
                     
-                    if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                        _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = { _oOoIOoO0OOIll1Ol0llo_01o101 = function(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI) _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI, lIOIIIIIoIlI1OO1lIOl, __o0lI01lOloll0lIIlIl); lIlllI0Ilo_OoIlO1l_IlII1.IOlIlll01oI00Ol0lOOI=tostring(_ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO); O10_0OI010lO0IIO_0ol.0IIlOooOIollloIOIII0o_0IIII_lo=UDim2._I00I_ol_lI1IllIIOII1IoOIlI((_ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO-lIOIIIIIoIlI1OO1lIOl)/(__o0lI01lOloll0lIIlIl-lIOIIIIIoIlI1OO1lIOl),0,1,0) end }
+                    if _l__lI_Oll_l then
+                        IoOlIOIOl_oIOIIooII.Registry[_l__lI_Oll_l] = { Set = function(_lIoOOolIlOoII) looI_oI_II = math.clamp(_lIoOOolIlOoII, OlOOooIoOIO_OlO_oo, I_I_IoooOOOlo_o); _oIolIIOOOO.Text=tostring(looI_oI_II); OIIIlIOOOlIOOIOoI.Size=UDim2.new((looI_oI_II-OlOOooIoOIO_OlO_oo)/(I_I_IoooOOOlo_o-OlOOooIoOIO_OlO_oo),0,1,0) end }
                     end
                     
-                    return {_oOoIOoO0OOIll1Ol0llo_01o101 = function(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI) _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI, lIOIIIIIoIlI1OO1lIOl, __o0lI01lOloll0lIIlIl); lIlllI0Ilo_OoIlO1l_IlII1.IOlIlll01oI00Ol0lOOI=tostring(_ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO); O10_0OI010lO0IIO_0ol.0IIlOooOIollloIOIII0o_0IIII_lo=UDim2._I00I_ol_lI1IllIIOII1IoOIlI((_ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO-lIOIIIIIoIlI1OO1lIOl)/(__o0lI01lOloll0lIIlIl-lIOIIIIIoIlI1OO1lIOl),0,1,0) end}
+                    return {Set = function(_lIoOOolIlOoII) looI_oI_II = math.clamp(_lIoOOolIlOoII, OlOOooIoOIO_OlO_oo, I_I_IoooOOOlo_o); _oIolIIOOOO.Text=tostring(looI_oI_II); OIIIlIOOOlIOOIOoI.Size=UDim2.new((looI_oI_II-OlOOooIoOIO_OlO_oo)/(I_I_IoooOOOlo_o-OlOOooIoOIO_OlO_oo),0,1,0) end}
                 end
                 
-                function lOlIIolIIlooOO1OlIOll_0o:l0ooIOI011_oII0oOooO_(0OoooIO_1OOlIIlolIlIooOO0)
-                    if not 0OoooIO_1OOlIIlolIlIooOO0 then 0OoooIO_1OOlIIlolIlIooOO0 = {} end
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                    local IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[146]
-                    local __lloOlI1olO1oOlOOlI_l1_ = 0OoooIO_1OOlIIlolIlIooOO0.__lloOlI1olO1oOlOOlI_l1_ or oIOoII_0IIlOII1IOI1lI0_OO0o[147]
-                    local _ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO = 0OoooIO_1OOlIIlolIlIooOO0._ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO or ""
-                    local _IOOIlOoI_IlllIlo_IIIoI1Illol = 0OoooIO_1OOlIIlolIlIooOO0._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-                    local Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = 0OoooIO_1OOlIIlolIlIooOO0.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
+                function Group:Input(lOO_OlOolIO_loo_)
+                    if not lOO_OlOolIO_loo_ then lOO_OlOolIO_loo_ = {} end
+                    local Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_.Text or IO_oOOllOOoooIo_[146]
+                    local OloIoIlIlOIolOIlOII = lOO_OlOolIO_loo_.Placeholder or IO_oOOllOOoooIo_[147]
+                    local looI_oI_II = lOO_OlOolIO_loo_.Value or ""
+                    local _OlllIIO_looolo_ = lOO_OlOolIO_loo_.Callback or function() end
+                    local _l__lI_Oll_l = lOO_OlOolIO_loo_.Flag
                     
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                    local l_ooIO0l0OIll0lIllOoIIO_1I = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 50),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                        II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0
+                    local IolIIIo_oll = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+                        IIlolo_Ilo__ = UDim2.new(1, 0, 0, 50),
+                        O_OoOO_I_oI = _lloOolOOl_IlolOO
                     })
-                    _1lOOlOIIO_0IO_IoOIl00Il(l_ooIO0l0OIll0lIllOoIIO_1I, 6)
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+                    llOl_IoIII_oIOIIo(IolIIIo_oll, 6)
                     
-                    _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                        IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI, _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II, IOollOOIOoOlo00OlIIl1I = 13,
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI, oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 8), 0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -24, 0, 14),
-                        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl, II_OlIII1_lIlOO0I0oOOO1001lI = l_ooIO0l0OIll0lIllOoIIO_1I
+                    _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl, IlIoOollo_lIllII = Enum.Font.GothamMedium, TextSize = 13,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text, oIo_o_IIll = 1,
+                        lOoOolOOolool = UDim2.new(0, 12, 0, 8), IIlolo_Ilo__ = UDim2.new(1, -24, 0, 14),
+                        TextXAlignment = Enum.TextXAlignment.Left, O_OoOO_I_oI = IolIIIo_oll
                     })
                     
-                    local _O0lo_oO0IOolIIOIOo_Io = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                        _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -24, 0, 24), _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 12, 0, 24),
-                        II_OlIII1_lIlOO0I0oOOO1001lI = l_ooIO0l0OIll0lIllOoIIO_1I
+                    local lOoolIOloIoooIOlIOo = _OI_olOOlOI("Frame", {
+                        IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                        IIlolo_Ilo__ = UDim2.new(1, -24, 0, 24), lOoOolOOolool = UDim2.new(0, 12, 0, 24),
+                        O_OoOO_I_oI = IolIIIo_oll
                     })
-                    _1lOOlOIIO_0IO_IoOIl00Il(_O0lo_oO0IOolIIOIOo_Io, 4)
-                    ___IoO_1_O1loO01IIol10oOOIllO1(_O0lo_oO0IOolIIOIOo_Io, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.5)
+                    llOl_IoIII_oIOIIo(lOoolIOloIoooIOlIOo, 4)
+                    lIO__OIIOllOlOOl(lOoolIOloIoooIOlIOo, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.5)
                     
-                    local 0Il1l01OIIll1IllOOOO0Ol10llOo = _00l00l1l0ooI0I01oOIIO0IIlO011("_0lo0llll1Ol00_IIl1llI_oIO1Olo", {
-                        IOlIlll01oI00Ol0lOOI = tostring(_ooooOllIIOI0IlOoIIOO1lOlllIlIOIlO), 1l01IlIOIIOloI0llIIO = __lloOlI1olO1oOlOOlI_l1_, _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II, IOollOOIOoOlo00OlIIl1I = 12,
-                        000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI, Il_1loIlol000ll_l1loOO0OIO_I = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlOoIlIlIIIlOOl01I_oIlolOO, oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -8, 1, 0), _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 4, 0, 0),
-                        0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl, II_OlIII1_lIlOO0I0oOOO1001lI = _O0lo_oO0IOolIIOIOo_Io
+                    local lIIIoO_oI_OlIOIol = _OI_olOOlOI("TextBox", {
+                        Ioolo_OoIoIIoOIl = tostring(looI_oI_II), PlaceholderText = OloIoIlIlOIolOIlOII, IlIoOollo_lIllII = Enum.Font.Gotham, TextSize = 12,
+                        TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text, PlaceholderColor3 = IoOlIOIOl_oIOIIooII.Theme.TextMuted, oIo_o_IIll = 1,
+                        IIlolo_Ilo__ = UDim2.new(1, -8, 1, 0), lOoOolOOolool = UDim2.new(0, 4, 0, 0),
+                        TextXAlignment = Enum.TextXAlignment.Left, O_OoOO_I_oI = lOoolIOloIoooIOlIOo
                     })
                     
-                    0Il1l01OIIll1IllOOOO0Ol10llOo._1ol00I0lIOoOoIooIO_1lIIIOO0I:_lIIIOOoI_0llIOOO1Ol(function()
-                        pcall(_IOOIlOoI_IlllIlo_IIIoI1Illol, 0Il1l01OIIll1IllOOOO0Ol10llOo.IOlIlll01oI00Ol0lOOI)
-                        if (not (function() return false end)()) and Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = 0Il1l01OIIll1IllOOOO0Ol10llOo.IOlIlll01oI00Ol0lOOI end
-                        _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_O0lo_oO0IOolIIOIOo_Io, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.2)
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+                    lIIIoO_oI_OlIOIol.FocusLost:Connect(function()
+                        pcall(_OlllIIO_looolo_, lIIIoO_oI_OlIOIol.Text)
+                        if _l__lI_Oll_l then IoOlIOIOl_oIOIIooII.Flags[_l__lI_Oll_l] = lIIIoO_oI_OlIOIol.Text end
+                        lOoolOoIoOOOl(lOoolIOloIoooIOlIOo, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.2)
                     end)
-                    0Il1l01OIIll1IllOOOO0Ol10llOo.OoO0I1ll00lIoI0oIIIOIOo:_lIIIOOoI_0llIOOO1Ol(function() _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_O0lo_oO0IOolIIOIOo_Io, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0_I1lll1l0lOlO01IOlIl}, 0.2) end)
+                    lIIIoO_oI_OlIOIol.Focused:Connect(function() lOoolOoIoOOOl(lOoolIOloIoooIOlIOo, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHighest}, 0.2) end)
                     
-                    if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = {_oOoIOoO0OOIll1Ol0llo_01o101=function(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI) 0Il1l01OIIll1IllOOOO0Ol10llOo.IOlIlll01oI00Ol0lOOI=tostring(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI) end, OIOl10lO_llolOlllIoIIIIOoO_IIlOl=function() return 0Il1l01OIIll1IllOOOO0Ol10llOo.IOlIlll01oI00Ol0lOOI end} end
-                    return {_oOoIOoO0OOIll1Ol0llo_01o101=function(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI) 0Il1l01OIIll1IllOOOO0Ol10llOo.IOlIlll01oI00Ol0lOOI=tostring(_IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI) end, OIOl10lO_llolOlllIoIIIIOoO_IIlOl=function() return 0Il1l01OIIll1IllOOOO0Ol10llOo.IOlIlll01oI00Ol0lOOI end}
+                    if _l__lI_Oll_l then IoOlIOIOl_oIOIIooII.Registry[_l__lI_Oll_l] = {Set=function(_lIoOOolIlOoII) lIIIoO_oI_OlIOIol.Text=tostring(_lIoOOolIlOoII) end, Get=function() return lIIIoO_oI_OlIOIol.Text end} end
+                    return {Set=function(_lIoOOolIlOoII) lIIIoO_oI_OlIOIol.Text=tostring(_lIoOOolIlOoII) end, Get=function() return lIIIoO_oI_OlIOIol.Text end}
                 end
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
                 
-                function lOlIIolIIlooOO1OlIOll_0o:_olI0OollIlO1lIoolO00I(0OoooIO_1OOlIIlolIlIooOO0)
-                    if ((function() local x = 5 return x > 3 end)()) and not _1OIol0I110_I_0lIIl0 or not _1OIol0I110_I_0lIIl0.II_OlIII1_lIlOO0I0oOOO1001lI then return nil end
+                function Group:Dropdown(lOO_OlOolIO_loo_)
+                    if not _lloOolOOl_IlolOO or not _lloOolOOl_IlolOO.Parent then return nil end
                     
-                    -- _oOoIOoO0OOIll1Ol0llo_01o101 lOOolI_0IIl_IlOOlIIllI_0IlI ke _1OIol0I110_I_0lIIl0 kalo belum ada
-                    0OoooIO_1OOlIIlolIlIooOO0.II_OlIII1_lIlOO0I0oOOO1001lI = 0OoooIO_1OOlIIlolIlIooOO0.II_OlIII1_lIlOO0I0oOOO1001lI or _1OIol0I110_I_0lIIl0
+                    -- Set parent ke ContentContainer kalo belum ada
+                    lOO_OlOolIO_loo_.Parent = lOO_OlOolIO_loo_.Parent or _lloOolOOl_IlolOO
                     
-                    return _O0I0IoOIIlloool010oIO__:OOll_O0OIoOlIIol1lIO_lIoo0lI(0OoooIO_1OOlIIlolIlIooOO0)
+                    return Nexus:CreateModernDropdown(lOO_OlOolIO_loo_)
                 end
 
                 
-                function lOlIIolIIlooOO1OlIOll_0o:_oOII_IIlOloIIo0lI0o110_0oIOlI000o(0OoooIO_1OOlIIlolIlIooOO0)
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                    if type(0OoooIO_1OOlIIlolIlIooOO0) == "string" then 0OoooIO_1OOlIIlolIlIooOO0 = {IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0} end
-                    local IIlI10IIl0O0I0oIlo1olOIOIOo1oll = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1, 0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 24), II_OlIII1_lIlOO0I0oOOO1001lI = _1OIol0I110_I_0lIIl0})
-                    _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                        IOlIlll01oI00Ol0lOOI = 0OoooIO_1OOlIIlolIlIooOO0.IOlIlll01oI00Ol0lOOI, _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._11loIIIllIO1ll0loOlo__II, IOollOOIOoOlo00OlIIl1I = 12, 000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl, oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -16, 1, 0), _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 16, 0, 0), 0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl, _lO0IlIII1Illo1lO0OoOO = true, II_OlIII1_lIlOO0I0oOOO1001lI = IIlI10IIl0O0I0oIlo1olOIOIOo1oll
+                function Group:Label(lOO_OlOolIO_loo_)
+                    if type(lOO_OlOolIO_loo_) == "string" then lOO_OlOolIO_loo_ = {Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_} end
+                    local lI_loIIoolI = _OI_olOOlOI("Frame", {oIo_o_IIll = 1, IIlolo_Ilo__ = UDim2.new(1, 0, 0, 24), O_OoOO_I_oI = _lloOolOOl_IlolOO})
+                    _OI_olOOlOI("TextLabel", {
+                        Ioolo_OoIoIIoOIl = lOO_OlOolIO_loo_.Text, IlIoOollo_lIllII = Enum.Font.Gotham, TextSize = 12, TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub, oIo_o_IIll = 1,
+                        IIlolo_Ilo__ = UDim2.new(1, -16, 1, 0), lOoOolOOolool = UDim2.new(0, 16, 0, 0), TextXAlignment = Enum.TextXAlignment.Left, TextWrapped = true, O_OoOO_I_oI = lI_loIIoolI
                     })
                 end
                 
                 -- [[ KUNCI UTAMA NESTING ]]
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                -- Kita tambahkan fungsi I0OlOOollI1IO0IlOIIIlo0 ke dalam lOlIIolIIlooOO1OlIOll_0o itu sendiri
-                function lOlIIolIIlooOO1OlIOll_0o:I0OlOOollI1IO0IlOIIIlo0(_O1o0I0ooIo_IOIlOOIll_Ol)
+                -- Kita tambahkan fungsi Collapsible ke dalam Group itu sendiri
+                function Group:Collapsible(OooOO_l_lllIOOo)
                     -- Panggil fungsi pembangun rekursif ini lagi,
-                    -- TAPI II_OlIII1_lIlOO0I0oOOO1001lI-nya sekarang adalah _1OIol0I110_I_0lIIl0 milik I0OlOOollI1IO0IlOIIIlo0 ini
-                    return _oIllllo_l0llOl0IolOI0(_1OIol0I110_I_0lIIl0, _O1o0I0ooIo_IOIlOOIll_Ol)
+                    -- TAPI Parent-nya sekarang adalah ContentContainer milik Collapsible ini
+                    return ooIoooOIlOl(_lloOolOOl_IlolOO, OooOO_l_lllIOOo)
                 end
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
                 
-                return lOlIIolIIlooOO1OlIOll_0o
+                return _oIoIO_oIIlooIlIO_O
             end
             
-            -- Panggilan pertama (II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO utama)
-            return _oIllllo_l0llOl0IolOI0(IOOIl0olOlllOolOOII0lOIIO, _lolloIoIoIloOo1O_loo00_OOl)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+            -- Panggilan pertama (Parent = TabPage utama)
+            return ooIoooOIlOl(_OoOoI_loloOO, llOooOoIIOOlllI)
         end
         
-        function _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll:ll00lIIoIo0lI0Iol_IOo_O_llo0(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
-            if not oOolOI00IllIII0oo0_l0l0_IlIO0lIIO then oOolOI00IllIII0oo0_l0l0_IlIO0lIIO = {} end
+        function Tab:ColorPicker(_oOoOoOlOlIlIllooO)
+            if not _oOoOoOlOlIlIllooO then _oOoOoOlOlIlIllooO = {} end
             
-            local IOlIlll01oI00Ol0lOOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.IOlIlll01oI00Ol0lOOI or oIOoII_0IIlOII1IOI1lI0_OO0o[148]
-            local _lOI0IOololO1oolIl0I = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._lOI0IOololO1oolIl0I or Color3._o1o100llllOIOlOO0IloO0(255, 255, 255)
-            local _IOOIlOoI_IlllIlo_IIIoI1Illol = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO._IOOIlOoI_IlllIlo_IIIoI1Illol or function() end
-            local Ol_IooO0OOO_ll0I1Il00O1looIl0lOI = oOolOI00IllIII0oo0_l0l0_IlIO0lIIO.Ol_IooO0OOO_ll0I1Il00O1looIl0lOI
+            local Ioolo_OoIoIIoOIl = _oOoOoOlOlIlIllooO.Text or IO_oOOllOOoooIo_[148]
+            local IOIOI_OIIOlolooOolo = _oOoOoOlOlIlIllooO.Default or Color3.fromRGB(255, 255, 255)
+            local _OlllIIO_looolo_ = _oOoOoOlOlIlIllooO.Callback or function() end
+            local _l__lI_Oll_l = _oOoOoOlOlIlIllooO.Flag
             
-            local OO0o1IlOoOII_IOIoIllIl = _lOI0IOololO1oolIl0I
+            local ooo_llIlIooIooIl = IOIOI_OIIOlolooOolo
             
-            local _lIOlIloollI0_IOOI01llllll0oIo = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 44),
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                II_OlIII1_lIlOO0I0oOOO1001lI = IOOIl0olOlllOolOOII0lOIIO
+            local lIOIollIIoO = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 0, 44),
+                O_OoOO_I_oI = _OoOoI_loloOO
             })
             
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            _1lOOlOIIO_0IO_IoOIl00Il(_lIOlIloollI0_IOOI01llllll0oIo, 8)
-            ___IoO_1_O1loO01IIol10oOOIllO1(_lIOlIloollI0_IOOI01llllll0oIo, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
+            llOl_IoIII_oIOIIo(lIOIollIIoO, 8)
+            lIO__OIIOllOlOOl(lIOIollIIoO, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
             
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            local II_oII0oO0lOloIOlI0olO1Il01o = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                IOlIlll01oI00Ol0lOOI = IOlIlll01oI00Ol0lOOI,
-                _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._OlOo_lI_llIo_0Ol0ooI1II,
-                IOollOOIOoOlo00OlIIl1I = 14,
-                000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0),
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -80, 1, 0),
-                0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                II_OlIII1_lIlOO0I0oOOO1001lI = _lIOlIloollI0_IOOI01llllll0oIo
+            local OlOl_Io_oIOOIloOl = _OI_olOOlOI("TextLabel", {
+                Ioolo_OoIoIIoOIl = Ioolo_OoIoIIoOIl,
+                IlIoOollo_lIllII = Enum.Font.GothamMedium,
+                TextSize = 14,
+                TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                oIo_o_IIll = 1,
+                lOoOolOOolool = UDim2.fromOffset(16, 0),
+                IIlolo_Ilo__ = UDim2.new(1, -80, 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                O_OoOO_I_oI = lIOIollIIoO
             })
             
-            -- _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ preview
-            local _OOOIOllI0IOo__IO0IO01Ol_O01IOIl = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                _l_lOO0OloOIIIl_II__oo1I0 = OO0o1IlOoOII_IOIoIllIl,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(48, 28),
-                _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -64, 0.5, -14),
-                II_OlIII1_lIlOO0I0oOOO1001lI = _lIOlIloollI0_IOOI01llllll0oIo
+            -- Color preview
+            local olIlIIIOoOo = _OI_olOOlOI("Frame", {
+                IoIOIo_I_IOllllOI = ooo_llIlIooIooIl,
+                IIlolo_Ilo__ = UDim2.fromOffset(48, 28),
+                lOoOolOOolool = UDim2.new(1, -64, 0.5, -14),
+                O_OoOO_I_oI = lIOIollIIoO
             })
             
-            _1lOOlOIIO_0IO_IoOIl00Il(_OOOIOllI0IOo__IO0IO01Ol_O01IOIl, 6)
-            ___IoO_1_O1loO01IIol10oOOIllO1(_OOOIOllI0IOo__IO0IO01Ol_O01IOIl, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
+            llOl_IoIII_oIOIIo(olIlIIIOoOo, 6)
+            lIO__OIIOllOlOOl(olIlIIIOoOo, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
             
-            local 0I10IIIl1I0lollOIIIlIlIolIl0Oo0_ = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                IOlIlll01oI00Ol0lOOI = "",
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                II_OlIII1_lIlOO0I0oOOO1001lI = _lIOlIloollI0_IOOI01llllll0oIo
+            local O_oIO_II_OolO = _OI_olOOlOI("TextButton", {
+                Ioolo_OoIoIIoOIl = "",
+                oIo_o_IIll = 1,
+                IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                O_OoOO_I_oI = lIOIollIIoO
             })
             
-            -- _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ picker popup
-            local OlOlOol01l0OOlIIl0I0 = false
-            local IIOI_I0IIlOlIl1I10IO1l0IOoo00 = nil
+            -- Color picker popup
+            local O_lOOIIOIOOolIo = false
+            local OollIolOOlOlOl__o = nil
             
-            local function OlI0IoIIIIO10loOII0lIIOI10Iol1_ol(_IIIII00OI0lOlo01looOIlo0IoOo1lI_)
-                OO0o1IlOoOII_IOIoIllIl = _IIIII00OI0lOlo01looOIlo0IoOo1lI_
-                _OOOIOllI0IOo__IO0IO01Ol_O01IOIl._l_lOO0OloOIIIl_II__oo1I0 = _IIIII00OI0lOlo01looOIlo0IoOo1lI_
+            local function loOoOlO_OoI(I_Ilollo_o)
+                ooo_llIlIooIooIl = I_Ilollo_o
+                olIlIIIOoOo.BackgroundColor3 = I_Ilollo_o
                 
                 pcall(function()
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                    _IOOIlOoI_IlllIlo_IIIoI1Illol(_IIIII00OI0lOlo01looOIlo0IoOo1lI_)
+                    _OlllIIO_looolo_(I_Ilollo_o)
                 end)
                 
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                    _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = _IIIII00OI0lOlo01looOIlo0IoOo1lI_
+                if _l__lI_Oll_l then
+                    IoOlIOIOl_oIOIIooII.Flags[_l__lI_Oll_l] = I_Ilollo_o
                 end
             end
             
-            0I10IIIl1I0lollOIIIlIlIolIl0Oo0_._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
-                if OlOlOol01l0OOlIIl0I0 then return end
+            O_oIO_II_OolO.MouseButton1Click:Connect(function()
+                if O_lOOIIOIOOolIo then return end
                 
-                OlOlOol01l0OOlIIl0I0 = true
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+                O_lOOIIOIOOolIo = true
                 --PlaySound("6895079853", 0.08)
                 
-                -- _00l00l1l0ooI0I01oOIIO0IIlO011 II0llIIOI0lIllOOlO1I1o picker popup
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                IIOI_I0IIlOlIl1I10IO1l0IOoo00 = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                    _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_,
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(280, 320),
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0.5, -140, 0.5, -160),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = llOOlOII_0llI00IOIlO1lOl0I
+                -- Create color picker popup
+                OollIolOOlOlOl__o = _OI_olOOlOI("Frame", {
+                    IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface,
+                    IIlolo_Ilo__ = UDim2.fromOffset(280, 320),
+                    lOoOolOOolool = UDim2.new(0.5, -140, 0.5, -160),
+                    O_OoOO_I_oI = _oIIIIlIoool_I
                 })
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
                 
-                _1lOOlOIIO_0IO_IoOIl00Il(IIOI_I0IIlOlIl1I10IO1l0IOoo00, 12)
-                ___IoO_1_O1loO01IIol10oOOIllO1(IIOI_I0IIlOlIl1I10IO1l0IOoo00, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I, 2, 0.4)
-                _Ol0O_loIlOI0Ol0Io00IO0Il0IIOoll1I(IIOI_I0IIlOlIl1I10IO1l0IOoo00, 16, 0.8)
+                llOl_IoIII_oIOIIo(OollIolOOlOlOl__o, 12)
+                lIO__OIIOllOlOOl(OollIolOOlOlOl__o, IoOlIOIOl_oIOIIooII.Theme.Accent, 2, 0.4)
+                IolOololoIOoOOlI(OollIolOOlOlOl__o, 16, 0.8)
                 
                 -- Header
-                local _IOOIOIOooOOlll1_I00Ioll_Oo_ = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                    _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 40),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = IIOI_I0IIlOlIl1I10IO1l0IOoo00
+                local ooOlOIoOOllOOIOOo = _OI_olOOlOI("Frame", {
+                    IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 0, 40),
+                    O_OoOO_I_oI = OollIolOOlOlOl__o
                 })
                 
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-                _1lOOlOIIO_0IO_IoOIl00Il(_IOOIOIOooOOlll1_I00Ioll_Oo_, 12)
+                llOl_IoIII_oIOIIo(ooOlOIoOOllOOIOOo, 12)
                 
-                local _0lollOO0OlOlOI0olIo1lO = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                    _l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo,
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0, 12),
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 1, -12),
-                    _IOOo0I0o0olIOI0ll0Iool_001l_oOol = 0,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _IOOIOIOooOOlll1_I00Ioll_Oo_
+                local oIloOlIOlII = _OI_olOOlOI("Frame", {
+                    IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh,
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 0, 12),
+                    lOoOolOOolool = UDim2.new(0, 0, 1, -12),
+                    BorderSizePixel = 0,
+                    O_OoOO_I_oI = ooOlOIoOOllOOIOOo
                 })
                 
-                local I0l_1lIOOIlIlIIIOO0lollO = _00l00l1l0ooI0I01oOIIO0IIlO011("TextLabel", {
-                    IOlIlll01oI00Ol0lOOI = "_IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ Picker",
-                    _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-                    IOollOOIOoOlo00OlIIl1I = 16,
-                    000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI,
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 0),
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -80, 1, 0),
-                    0IOIOI0IOlIII_OlOo0oI0Io_I0I1o = Enum.0IOIOI0IOlIII_OlOo0oI0Io_I0I1o._lOOO__lolII00I_IIIIOl,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _IOOIOIOooOOlll1_I00Ioll_Oo_
+                local lIollIoloO = _OI_olOOlOI("TextLabel", {
+                    Ioolo_OoIoIIoOIl = "Color Picker",
+                    IlIoOollo_lIllII = Enum.Font.GothamBold,
+                    TextSize = 16,
+                    TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text,
+                    oIo_o_IIll = 1,
+                    lOoOolOOolool = UDim2.fromOffset(16, 0),
+                    IIlolo_Ilo__ = UDim2.new(1, -80, 1, 0),
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    O_OoOO_I_oI = ooOlOIoOOllOOIOOo
                 })
                 
-                -- _o1I0IIlOolOllIl_I0OlOll _ooIolIIO0I000I_oOl0lOI
-                local _l1lOOIII00I01ooIII00___ = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                    IOlIlll01oI00Ol0lOOI = "✕",
-                    _0o0OOOoIOolIIl_OOll11lollOoo = Enum._0o0OOOoIOolIIl_OOll11lollOoo._Il0I0oI0oIIOol1o0lll,
-                    IOollOOIOoOlo00OlIIl1I = 14,
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                    000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl,
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(32, 32),
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, -40, 0, 4),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _IOOIOIOooOOlll1_I00Ioll_Oo_
+                -- Close button
+                local lolloIOOlI_lIlIo = _OI_olOOlOI("TextButton", {
+                    Ioolo_OoIoIIoOIl = "✕",
+                    IlIoOollo_lIllII = Enum.Font.GothamBold,
+                    TextSize = 14,
+                    TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub,
+                    oIo_o_IIll = 1,
+                    IIlolo_Ilo__ = UDim2.fromOffset(32, 32),
+                    lOoOolOOolool = UDim2.new(1, -40, 0, 4),
+                    O_OoOO_I_oI = ooOlOIoOOllOOIOOo
                 })
                 
                 -- HSV conversion functions
-                local function _oIlllllo1l0IlIO0OlIIlllOoOo_O0oI(oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo)
-                    oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo = oo0_oIlllll01OIllIIll / 255, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO / 255, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo / 255
-                    local _OIl0IllI0O001l0O_1_I_oI, l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I = math._OIl0IllI0O001l0O_1_I_oI(oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo), math.l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I(oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo)
-                    local O1II1OloIoO0II_llI1OIO10II, _ll1OlIOI_ooOlOIII0Ol0lI0, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI
-                    _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI = _OIl0IllI0O001l0O_1_I_oI
+                local function IOoOOOoloOII(oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo)
+                    oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo = oOoOlooIlolIollIo / 255, looIOOllIol / 255, lIlOOIlOoOo / 255
+                    local looOloO_IOO, IIIolOlllI = math.max(oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo), math.min(oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo)
+                    local OoIO_OOllIIlIoI, llOoIlIOII, _lIoOOolIlOoII
+                    _lIoOOolIlOoII = looOloO_IOO
                     
-                    local IollIoIlIo0IlI0oOI0lO1 = _OIl0IllI0O001l0O_1_I_oI - l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I
-                    if ((function() local x = 5 return x > 3 end)()) and _OIl0IllI0O001l0O_1_I_oI == 0 then
-                        _ll1OlIOI_ooOlOIII0Ol0lI0 = 0
+                    local IlI_lOlOlolOlo = looOloO_IOO - IIIolOlllI
+                    if looOloO_IOO == 0 then
+                        llOoIlIOII = 0
                     else
-                        _ll1OlIOI_ooOlOIII0Ol0lI0 = IollIoIlIo0IlI0oOI0lO1 / _OIl0IllI0O001l0O_1_I_oI
+                        llOoIlIOII = IlI_lOlOlolOlo / looOloO_IOO
                     end
                     
-                    if _OIl0IllI0O001l0O_1_I_oI == l_IoI1OoIIIO0l0Ooo1OIl0l11looo_I then
-                        O1II1OloIoO0II_llI1OIO10II = 0
+                    if looOloO_IOO == IIIolOlllI then
+                        OoIO_OOllIIlIoI = 0
                     else
-                        if _OIl0IllI0O001l0O_1_I_oI == oo0_oIlllll01OIllIIll then
-                            O1II1OloIoO0II_llI1OIO10II = (_1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO - _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo) / IollIoIlIo0IlI0oOI0lO1
-                            if ((function() return 1 + 1 == 2 end)()) and _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO < _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo then O1II1OloIoO0II_llI1OIO10II = O1II1OloIoO0II_llI1OIO10II + 6 end
-                        elseif _OIl0IllI0O001l0O_1_I_oI == _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO then
-                            O1II1OloIoO0II_llI1OIO10II = (_oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo - oo0_oIlllll01OIllIIll) / IollIoIlIo0IlI0oOI0lO1 + 2
-                        elseif _OIl0IllI0O001l0O_1_I_oI == _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo then
-                            O1II1OloIoO0II_llI1OIO10II = (oo0_oIlllll01OIllIIll - _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO) / IollIoIlIo0IlI0oOI0lO1 + 4
+                        if looOloO_IOO == oOoOlooIlolIollIo then
+                            OoIO_OOllIIlIoI = (looIOOllIol - lIlOOIlOoOo) / IlI_lOlOlolOlo
+                            if looIOOllIol < lIlOOIlOoOo then OoIO_OOllIIlIoI = OoIO_OOllIIlIoI + 6 end
+                        elseif looOloO_IOO == looIOOllIol then
+                            OoIO_OOllIIlIoI = (lIlOOIlOoOo - oOoOlooIlolIollIo) / IlI_lOlOlolOlo + 2
+                        elseif looOloO_IOO == lIlOOIlOoOo then
+                            OoIO_OOllIIlIoI = (oOoOlooIlolIollIo - looIOOllIol) / IlI_lOlOlolOlo + 4
                         end
-                        O1II1OloIoO0II_llI1OIO10II = O1II1OloIoO0II_llI1OIO10II / 6
+                        OoIO_OOllIIlIoI = OoIO_OOllIIlIoI / 6
                     end
                     
-                    return O1II1OloIoO0II_llI1OIO10II, _ll1OlIOI_ooOlOIII0Ol0lI0, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+                    return OoIO_OOllIIlIoI, llOoIlIOII, _lIoOOolIlOoII
                 end
                 
-                local function _lIoIIl01lOloOI1I_IIII0(O1II1OloIoO0II_llI1OIO10II, _ll1OlIOI_ooOlOIII0Ol0lI0, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI)
-                    local oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo
-                    local _lIIOIlolIIlII1_Il_IOl01ll0Olll = math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(O1II1OloIoO0II_llI1OIO10II * 6)
-                    local _oO1_OoOI0IllIIIlIl_olIOOII = O1II1OloIoO0II_llI1OIO10II * 6 - _lIIOIlolIIlII1_Il_IOl01ll0Olll
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                    local _Iol0001lI1O1lIOllOI_1olooO = _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI * (1 - _ll1OlIOI_ooOlOIII0Ol0lI0)
-                    local IIOlOIoll0Ill_lO_oooll0IoIl_ = _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI * (1 - _oO1_OoOI0IllIIIlIl_olIOOII * _ll1OlIOI_ooOlOIII0Ol0lI0)
-                    local IoOlIl0loI0Il1l0I_OIlO = _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI * (1 - (1 - _oO1_OoOI0IllIIIlIl_olIOOII) * _ll1OlIOI_ooOlOIII0Ol0lI0)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+                local function _oOlo_ooOIOOlII(OoIO_OOllIIlIoI, llOoIlIOII, _lIoOOolIlOoII)
+                    local oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo
+                    local oOIOOOIIOollolOO = math.floor(OoIO_OOllIIlIoI * 6)
+                    local oIIOOIooOOII = OoIO_OOllIIlIoI * 6 - oOIOOOIIOollolOO
+                    local lO_lO_IIlOO = _lIoOOolIlOoII * (1 - llOoIlIOII)
+                    local IOlIOIl_l_lOo = _lIoOOolIlOoII * (1 - oIIOOIooOOII * llOoIlIOII)
+                    local l_OoOOoIOoIIlOIl = _lIoOOolIlOoII * (1 - (1 - oIIOOIooOOII) * llOoIlIOII)
                     
-                    _lIIOIlolIIlII1_Il_IOl01ll0Olll = _lIIOIlolIIlII1_Il_IOl01ll0Olll % 6
+                    oOIOOOIIOollolOO = oOIOOOIIOollolOO % 6
                     
-                    if _lIIOIlolIIlII1_Il_IOl01ll0Olll == 0 then
-                        oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo = _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI, IoOlIl0loI0Il1l0I_OIlO, _Iol0001lI1O1lIOllOI_1olooO
-                    elseif _lIIOIlolIIlII1_Il_IOl01ll0Olll == 1 then
-                        oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo = IIOlOIoll0Ill_lO_oooll0IoIl_, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI, _Iol0001lI1O1lIOllOI_1olooO
-                    elseif _lIIOIlolIIlII1_Il_IOl01ll0Olll == 2 then
-                        oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo = _Iol0001lI1O1lIOllOI_1olooO, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI, IoOlIl0loI0Il1l0I_OIlO
-                    elseif _lIIOIlolIIlII1_Il_IOl01ll0Olll == 3 then
-                        oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo = _Iol0001lI1O1lIOllOI_1olooO, IIOlOIoll0Ill_lO_oooll0IoIl_, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI
-                    elseif _lIIOIlolIIlII1_Il_IOl01ll0Olll == 4 then
-                        oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo = IoOlIl0loI0Il1l0I_OIlO, _Iol0001lI1O1lIOllOI_1olooO, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI
-                    elseif _lIIOIlolIIlII1_Il_IOl01ll0Olll == 5 then
-                        oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo = _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI, _Iol0001lI1O1lIOllOI_1olooO, IIOlOIoll0Ill_lO_oooll0IoIl_
+                    if oOIOOOIIOollolOO == 0 then
+                        oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo = _lIoOOolIlOoII, l_OoOOoIOoIIlOIl, lO_lO_IIlOO
+                    elseif oOIOOOIIOollolOO == 1 then
+                        oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo = IOlIOIl_l_lOo, _lIoOOolIlOoII, lO_lO_IIlOO
+                    elseif oOIOOOIIOollolOO == 2 then
+                        oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo = lO_lO_IIlOO, _lIoOOolIlOoII, l_OoOOoIOoIIlOIl
+                    elseif oOIOOOIIOollolOO == 3 then
+                        oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo = lO_lO_IIlOO, IOlIOIl_l_lOo, _lIoOOolIlOoII
+                    elseif oOIOOOIIOollolOO == 4 then
+                        oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo = l_OoOOoIOoIIlOIl, lO_lO_IIlOO, _lIoOOolIlOoII
+                    elseif oOIOOOIIOollolOO == 5 then
+                        oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo = _lIoOOolIlOoII, lO_lO_IIlOO, IOlIOIl_l_lOo
                     end
                     
-                    return math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(oo0_oIlllll01OIllIIll * 255), math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(_1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO * 255), math.o0oO0oOllIlOIlOOl_Ol0oo10IOoIo_(_oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo * 255)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                    return math.floor(oOoOlooIlolIollIo * 255), math.floor(looIOOllIol * 255), math.floor(lIlOOIlOoOo * 255)
                 end
                 
-                -- OIOl10lO_llolOlllIoIIIIOoO_IIlOl _IoIl0I0IlIlOO_IO1IIO0lloo1lOl0IO HSV
-                local O1II1OloIoO0II_llI1OIO10II, _ll1OlIOI_ooOlOIII0Ol0lI0, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI = _oIlllllo1l0IlIO0OlIIlllOoOo_O0oI(OO0o1IlOoOII_IOIoIllIl.IOI00lIIOlI0_l0IOOol10O1l * 255, OO0o1IlOoOII_IOIoIllIl.o00lOIIIoO0IlOlIoloI000IoOll0I_0I * 255, OO0o1IlOoOII_IOIoIllIl._IlIo0lOo0_0lIO0I0o0lIll * 255)
+                -- Get current HSV
+                local OoIO_OOllIIlIoI, llOoIlIOII, _lIoOOolIlOoII = IOoOOOoloOII(ooo_llIlIooIooIl.R * 255, ooo_llIlIooIooIl.G * 255, ooo_llIlIooIooIl.B * 255)
                 
-                -- _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ wheel
-                local _10O_OlIloO0O1OloIO0oO = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                    _l_lOO0OloOIIIl_II__oo1I0 = Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 1, 1),
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(200, 200),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 56),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = IIOI_I0IIlOlIl1I10IO1l0IOoo00
+                -- Color wheel
+                local oIlIooOlO_OOlloIo = _OI_olOOlOI("Frame", {
+                    IoIOIo_I_IOllllOI = Color3.new(1, 1, 1),
+                    IIlolo_Ilo__ = UDim2.fromOffset(200, 200),
+                    lOoOolOOolool = UDim2.fromOffset(16, 56),
+                    O_OoOO_I_oI = OollIolOOlOlOl__o
                 })
                 
-                _1lOOlOIIO_0IO_IoOIl00Il(_10O_OlIloO0O1OloIO0oO, 8)
+                llOl_IoIII_oIOIIo(oIlIooOlO_OOlloIo, 8)
                 
                 -- Hue bar
-                local IOll0llO00lIII0IIIlI0_o01lIoIIO0O = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-                    _l_lOO0OloOIIIl_II__oo1I0 = Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0),
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(24, 200),
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(232, 56),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = IIOI_I0IIlOlIl1I10IO1l0IOoo00
+                local OlIOOlloIO = _OI_olOOlOI("Frame", {
+                    IoIOIo_I_IOllllOI = Color3.new(1, 0, 0),
+                    IIlolo_Ilo__ = UDim2.fromOffset(24, 200),
+                    lOoOolOOolool = UDim2.fromOffset(232, 56),
+                    O_OoOO_I_oI = OollIolOOlOlOl__o
                 })
                 
-                _1lOOlOIIO_0IO_IoOIl00Il(IOll0llO00lIII0IIIlI0_o01lIoIIO0O, 4)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                llOl_IoIII_oIOIIo(OlIOOlloIO, 4)
                 
                 -- Hue gradient
-                local _O0IIIlll_l0oO000OlOIOOl10olll = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                    _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0)),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.17, Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 1, 0)),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.33, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0, 1, 0)),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.5, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0, 1, 1)),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.67, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 1)),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0.83, Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1)),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 0))
+                local lOoIlI_loOoIoIIOoo = _OI_olOOlOI("UIGradient", {
+                    lOO_lIoI_O_o = ColorSequence.new{
+                        ColorSequenceKeypoint.new(0, Color3.new(1, 0, 0)),
+                        ColorSequenceKeypoint.new(0.17, Color3.new(1, 1, 0)),
+                        ColorSequenceKeypoint.new(0.33, Color3.new(0, 1, 0)),
+                        ColorSequenceKeypoint.new(0.5, Color3.new(0, 1, 1)),
+                        ColorSequenceKeypoint.new(0.67, Color3.new(0, 0, 1)),
+                        ColorSequenceKeypoint.new(0.83, Color3.new(1, 0, 1)),
+                        ColorSequenceKeypoint.new(1, Color3.new(1, 0, 0))
                     },
-                    _OllIII_OIlIIOll1OlI_1lo = 90,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = IOll0llO00lIII0IIIlI0_o01lIoIIO0O
+                    Rotation = 90,
+                    O_OoOO_I_oI = OlIOOlloIO
                 })
                 
-                -- _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ preview in picker
-                local IollIoII1lOOOIIl1o_0O = _00l00l1l0ooI0I01oOIIO0IIlO011("_llO_oOll0IlIOoO0I0OoIoolIolI0", {
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                    _l_lOO0OloOIIIl_II__oo1I0 = OO0o1IlOoOII_IOIoIllIl,
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(200, 32),
-                    _l_0Il0_0OI_olIlIllIOoOOI0IOoIo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(16, 272),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = IIOI_I0IIlOlIl1I10IO1l0IOoo00
+                -- Color preview in picker
+                local OOlllIIloo = _OI_olOOlOI("Frame", {
+                    IoIOIo_I_IOllllOI = ooo_llIlIooIooIl,
+                    IIlolo_Ilo__ = UDim2.fromOffset(200, 32),
+                    lOoOolOOolool = UDim2.fromOffset(16, 272),
+                    O_OoOO_I_oI = OollIolOOlOlOl__o
                 })
                 
-                _1lOOlOIIO_0IO_IoOIl00Il(IollIoII1lOOOIIl1o_0O, 6)
-                ___IoO_1_O1loO01IIol10oOOIllO1(IollIoII1lOOOIIl1o_0O, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI, 1, 0.4)
+                llOl_IoIII_oIOIIo(OOlllIIloo, 6)
+                lIO__OIIOllOlOOl(OOlllIIloo, IoOlIOIOl_oIOIIooII.Theme.Outline, 1, 0.4)
                 
-                -- IOIOoOoII1oOO1l1_O_Oo0O0lII II0llIIOI0lIllOOlO1I1o function
-                local function _OOIlO1OoIIllOlIOlol_lO0OooIoI()
-                    local oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo = _lIoIIl01lOloOI1I_IIII0(O1II1OloIoO0II_llI1OIO10II, _ll1OlIOI_ooOlOIII0Ol0lI0, _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI)
-                    local _IIIII00OI0lOlo01looOIlo0IoOo1lI_ = Color3._o1o100llllOIOlOO0IloO0(oo0_oIlllll01OIllIIll, _1IIOoOOlO00oIo1OOoOIlO1lIII0lllOO, _oOOoOoOlOOIIOO0lOIO0O1O0OIllIIlo)
-                    IollIoII1lOOOIIl1o_0O._l_lOO0OloOIIIl_II__oo1I0 = _IIIII00OI0lOlo01looOIlo0IoOo1lI_
-                    OlI0IoIIIIO10loOII0lIIOI10Iol1_ol(_IIIII00OI0lOlo01looOIlo0IoOo1lI_)
+                -- Update color function
+                local function _OIIIOOIOIoll()
+                    local oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo = _oOlo_ooOIOOlII(OoIO_OOllIIlIoI, llOoIlIOII, _lIoOOolIlOoII)
+                    local I_Ilollo_o = Color3.fromRGB(oOoOlooIlolIollIo, looIOOllIol, lIlOOIlOoOo)
+                    OOlllIIloo.BackgroundColor3 = I_Ilollo_o
+                    loOoOlO_OoI(I_Ilollo_o)
                 end
                 
                 -- Hue slider interaction
-                local 0lll0IIollI_0O_IO00Ill00oI = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                    IOlIlll01oI00Ol0lOOI = "",
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = IOll0llO00lIII0IIIlI0_o01lIoIIO0O
+                local _Io_oOlIlIOoIoOoOO = _OI_olOOlOI("TextButton", {
+                    Ioolo_OoIoIIoOIl = "",
+                    oIo_o_IIll = 1,
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                    O_OoOO_I_oI = OlIOOlloIO
                 })
                 
-                local _lIIIlO0II11l_IOOI01_Io0_ololl = false
+                local IO_lOOoOo_oo = false
                 
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                0lll0IIollI_0O_IO00Ill00oI.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(function(_ol0_llOlO0III0I0l0_)
-                    if _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O then
-                        -- [SAFETY 1] Cek apakah IOll0llO00lIII0IIIlI0_o01lIoIIO0O ada
-                        if ((function() local x = 5 return x > 3 end)()) and not IOll0llO00lIII0IIIlI0_o01lIoIIO0O or not IOll0llO00lIII0IIIlI0_o01lIoIIO0O.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+                _Io_oOlIlIOoIoOoOO.InputBegan:Connect(function(olIlO_OlIlIO)
+                    if olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseButton1 then
+                        -- [SAFETY 1] Cek apakah HueBar ada
+                        if not OlIOOlloIO or not OlIOOlloIO.Parent then return end
 
-                        _lIIIlO0II11l_IOOI01_Io0_ololl = true
+                        IO_lOOoOo_oo = true
                         
                         -- Definisi variabel koneksi dulu agar bisa saling akses
-                        local _IO0l0OOlO00I0IIO1olIIo, lIlI0lOIlO_IIO_lIlOO1IOlOl
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
+                        local lIOoO_OOIoI_oI, IOOlIOloOoOII
                         
-                        local function _OoOo1ollll0IIIl0l0IOO()
+                        local function lOOoOOlllo()
                             -- [SAFETY 2] Cek lagi saat update berjalan
-                            if ((function() return true end)()) and not IOll0llO00lIII0IIIlI0_o01lIoIIO0O or not IOll0llO00lIII0IIIlI0_o01lIoIIO0O.II_OlIII1_lIlOO0I0oOOO1001lI then
+                            if not OlIOOlloIO or not OlIOOlloIO.Parent then
                                 -- Jika bar hilang saat drag, putuskan koneksi paksa
-                                if ((function() local x = 5 return x > 3 end)()) and _IO0l0OOlO00I0IIO1olIIo then _IO0l0OOlO00I0IIO1olIIo:_0IIlO0l_00_O0IoI0Ol011O0O1oI() end
-                                if ((function() return true end)()) and lIlI0lOIlO_IIO_lIlOO1IOlOl then lIlI0lOIlO_IIO_lIlOO1IOlOl:_0IIlO0l_00_O0IoI0Ol011O0O1oI() end
-                                _lIIIlO0II11l_IOOI01_Io0_ololl = false
+                                if lIOoO_OOIoI_oI then moveConnection:Disconnect() end
+                                if IOOlIOloOoOII then releaseConnection:Disconnect() end
+                                IO_lOOoOo_oo = false
                                 return
                             end
 
-                            local _oIIOOIOIl0I0_1Ol_00I0ll = __IIllI01O0I0OolO01ll01o01Ilo_O0o:_1OOIlI0lo0IllIll1IoO0ll_oO()._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                            local 0OOl1IIlolIllO00IoO0_l0l0O_OOI = _oIIOOIOIl0I0_1Ol_00I0ll - IOll0llO00lIII0IIIlI0_o01lIoIIO0O._lloOIIOOlI0lOlOllI_IIOOIl0I._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
+                            local O_lIIOollooo = UserInputService:GetMouseLocation().Y
+                            local looooIIl_Il_ool = O_lIIOollooo - OlIOOlloIO.AbsolutePosition.Y
                             
                             -- [SAFETY 3] Hindari pembagian dengan nol
-                            local _I0l_OO00l1O0lIO0l01oOIII = IOll0llO00lIII0IIIlI0_o01lIoIIO0O.__Ioll10_OOI0olIIIlo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-                            if _I0l_OO00l1O0lIO0l01oOIII == 0 then return end
+                            local lloI_IOlOllloOOOo_ = OlIOOlloIO.AbsoluteSize.Y
+                            if lloI_IOlOllloOOOo_ == 0 then return end
 
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-                            local IlIoIIOoIlIo1OIo0Ill0IOl_10l = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(0OOl1IIlolIllO00IoO0_l0l0O_OOI / _I0l_OO00l1O0lIO0l01oOIII, 0, 1)
-                            O1II1OloIoO0II_llI1OIO10II = IlIoIIOoIlIo1OIo0Ill0IOl_10l
-                            _OOIlO1OoIIllOlIOlol_lO0OooIoI()
+                            local _OIolo_oIOoo = math.clamp(looooIIl_Il_ool / lloI_IOlOllloOOOo_, 0, 1)
+                            OoIO_OOllIIlIoI = _OIolo_oIOoo
+                            _OIIIOOIOIoll()
                         end
                         
-                        _OoOo1ollll0IIIl0l0IOO()
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
+                        lOOoOOlllo()
                         
-                        _IO0l0OOlO00I0IIO1olIIo = __IIllI01O0I0OolO01ll01o01Ilo_O0o.lolIllIOlII0o1I110_o000OO1I0loOIl:_lIIIOOoI_0llIOOO1Ol(function(1IIIIIlII_I_oOlOl_IIolOlI)
-                            if ((function() return true end)()) and 1IIIIIlII_I_oOlOl_IIolOlI._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._lI_IoOO11lIoloIloolOoloOIII1oOl and _lIIIlO0II11l_IOOI01_Io0_ololl then
-                                _OoOo1ollll0IIIl0l0IOO()
+                        lIOoO_OOIoI_oI = OOOllOIOllO_OoI.InputChanged:Connect(function(OoOI_OoIlIIloO_llOo)
+                            if OoOI_OoIlIIloO_llOo.UserInputType == Enum.UserInputType.MouseMovement and IO_lOOoOo_oo then
+                                lOOoOOlllo()
                             end
                         end)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
                         
-                        lIlI0lOIlO_IIO_lIlOO1IOlOl = __IIllI01O0I0OolO01ll01o01Ilo_O0o._Ol1l0o1I0lI_IoIlIo_o1II0l:_lIIIOOoI_0llIOOO1Ol(function(1IIIIIlII_I_oOlOl_IIolOlI)
-                            if 1IIIIIlII_I_oOlOl_IIolOlI._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O then
-                                _lIIIlO0II11l_IOOI01_Io0_ololl = false
+                        IOOlIOloOoOII = OOOllOIOllO_OoI.InputEnded:Connect(function(OoOI_OoIlIIloO_llOo)
+                            if OoOI_OoIlIIloO_llOo.UserInputType == Enum.UserInputType.MouseButton1 then
+                                IO_lOOoOo_oo = false
                                 
                                 -- Putuskan koneksi agar memori bersih
-                                if _IO0l0OOlO00I0IIO1olIIo then _IO0l0OOlO00I0IIO1olIIo:_0IIlO0l_00_O0IoI0Ol011O0O1oI() end
-                                if (not (function() return false end)()) and lIlI0lOIlO_IIO_lIlOO1IOlOl then lIlI0lOIlO_IIO_lIlOO1IOlOl:_0IIlO0l_00_O0IoI0Ol011O0O1oI() end
+                                if lIOoO_OOIoI_oI then moveConnection:Disconnect() end
+                                if IOOlIOloOoOII then releaseConnection:Disconnect() end
                             end
                         end)
                     end
                 end)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
                 
-                -- _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ wheel interaction
-                local oIIolIIo00I1lIO00OIIl_II0IOo = _00l00l1l0ooI0I01oOIIO0IIlO011("TextButton", {
-                    IOlIlll01oI00Ol0lOOI = "",
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1,
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(1, 0, 1, 0),
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _10O_OlIloO0O1OloIO0oO
+                -- Color wheel interaction
+                local oIoOoolloOIolIo = _OI_olOOlOI("TextButton", {
+                    Ioolo_OoIoIIoOIl = "",
+                    oIo_o_IIll = 1,
+                    IIlolo_Ilo__ = UDim2.new(1, 0, 1, 0),
+                    O_OoOO_I_oI = oIlIooOlO_OOlloIo
                 })
                 
-                local O1lIOI1__III_IIol11OI_10o1lI = false
+                local olIOolOlIooI = false
                 
-                oIIolIIo00I1lIO00OIIl_II0IOo.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(function(_ol0_llOlO0III0I0l0_)
-                    if _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O then
-                        O1lIOI1__III_IIol11OI_10o1lI = true
+                oIoOoolloOIolIo.InputBegan:Connect(function(olIlO_OlIlIO)
+                    if olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseButton1 then
+                        olIOolOlIooI = true
                         
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                        local function 00IO_IIIooOII0oOO1o1_l()
-                            local _1IOIl_lOllIIllOollOo0oII1lI = __IIllI01O0I0OolO01ll01o01Ilo_O0o:_1OOIlI0lo0IllIll1IoO0ll_oO()
-                            local _0_Ol1ol_oloIIoIlOOlIlOI0_IOl = _1IOIl_lOllIIllOollOo0oII1lI._oIIlOIloI_l0II0I00l00OIOIoo - _10O_OlIloO0O1OloIO0oO._lloOIIOOlI0lOlOllI_IIOOIl0I._oIIlOIloI_l0II0I00l00OIOIoo
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                            local 0OOl1IIlolIllO00IoO0_l0l0O_OOI = _1IOIl_lOllIIllOollOo0oII1lI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O - _10O_OlIloO0O1OloIO0oO._lloOIIOOlI0lOlOllI_IIOOIl0I._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O
-                            _ll1OlIOI_ooOlOIII0Ol0lI0 = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(_0_Ol1ol_oloIIoIlOOlIlOI0_IOl / _10O_OlIloO0O1OloIO0oO.__Ioll10_OOI0olIIIlo._oIIlOIloI_l0II0I00l00OIOIoo, 0, 1)
-                            _IO0lO01l1ol00_1OlIlOIoIIOl1lI1OI = math.O1_oO0IIIlIo_lOOIIIllolOl_1OO0IlI0(1 - (0OOl1IIlolIllO00IoO0_l0l0O_OOI / _10O_OlIloO0O1OloIO0oO.__Ioll10_OOI0olIIIlo._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O), 0, 1)
-                            _OOIlO1OoIIllOlIOlol_lO0OooIoI()
+                        local function _OlIollOIloI()
+                            local OlOIl_oOoOlI = UserInputService:GetMouseLocation()
+                            local Oo__OlIlOOoOlolI = OlOIl_oOoOlI.X - oIlIooOlO_OOlloIo.AbsolutePosition.X
+                            local looooIIl_Il_ool = OlOIl_oOoOlI.Y - oIlIooOlO_OOlloIo.AbsolutePosition.Y
+                            llOoIlIOII = math.clamp(Oo__OlIlOOoOlolI / oIlIooOlO_OOlloIo.AbsoluteSize.X, 0, 1)
+                            _lIoOOolIlOoII = math.clamp(1 - (looooIIl_Il_ool / oIlIooOlO_OOlloIo.AbsoluteSize.Y), 0, 1)
+                            _OIIIOOIOIoll()
                         end
                         
-                        00IO_IIIooOII0oOO1o1_l()
+                        _OlIollOIloI()
                         
-                        local _IO0l0OOlO00I0IIO1olIIo = __IIllI01O0I0OolO01ll01o01Ilo_O0o.lolIllIOlII0o1I110_o000OO1I0loOIl:_lIIIOOoI_0llIOOO1Ol(function(1IIIIIlII_I_oOlOl_IIolOlI)
-                            if ((function() return true end)()) and 1IIIIIlII_I_oOlOl_IIolOlI._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO._lI_IoOO11lIoloIloolOoloOIII1oOl and O1lIOI1__III_IIol11OI_10o1lI then
-                                00IO_IIIooOII0oOO1o1_l()
-                            end
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                        end)
-                        
-                        local lIlI0lOIlO_IIO_lIlOO1IOlOl = __IIllI01O0I0OolO01ll01o01Ilo_O0o._Ol1l0o1I0lI_IoIlIo_o1II0l:_lIIIOOoI_0llIOOO1Ol(function(1IIIIIlII_I_oOlOl_IIolOlI)
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                            if 1IIIIIlII_I_oOlOl_IIolOlI._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O then
-                                O1lIOI1__III_IIol11OI_10o1lI = false
-                                _IO0l0OOlO00I0IIO1olIIo:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
-                                lIlI0lOIlO_IIO_lIlOO1IOlOl:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
+                        local lIOoO_OOIoI_oI = OOOllOIOllO_OoI.InputChanged:Connect(function(OoOI_OoIlIIloO_llOo)
+                            if OoOI_OoIlIIloO_llOo.UserInputType == Enum.UserInputType.MouseMovement and olIOolOlIooI then
+                                _OlIollOIloI()
                             end
                         end)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+                        
+                        local IOOlIOloOoOII = OOOllOIOllO_OoI.InputEnded:Connect(function(OoOI_OoIlIIloO_llOo)
+                            if OoOI_OoIlIIloO_llOo.UserInputType == Enum.UserInputType.MouseButton1 then
+                                olIOolOlIooI = false
+                                moveConnection:Disconnect()
+                                releaseConnection:Disconnect()
+                            end
+                        end)
                     end
                 end)
                 
-                -- IOIOoOoII1oOO1l1_O_Oo0O0lII II0llIIOI0lIllOOlO1I1o wheel gradient based on hue
-                local function _Iol_I1IlI0I_OOIIO111ll00()
-                    local _IIl0OlI__ll0I0OOIOI0lOIOoo = Color3.oIOlo0loIolOll_ll0l0oIO_0I00_lll0(O1II1OloIoO0II_llI1OIO10II, 1, 1)
-                    _10O_OlIloO0O1OloIO0oO._l_lOO0OloOIIIl_II__oo1I0 = _IIl0OlI__ll0I0OOIOI0lOIOoo
+                -- Update color wheel gradient based on hue
+                local function llIIlOoIOIoOIO_IO()
+                    local IOoIoOIol_lIoOO_ = Color3.fromHSV(OoIO_OOllIIlIoI, 1, 1)
+                    oIlIooOlO_OOlloIo.BackgroundColor3 = IOoIoOIol_lIoOO_
                 end
                 
-                -- _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ wheel gradients for saturation and _OOllIIO0_II0Ol00IIol1ool
-                local IlOo0O_OlIlOoIOI_1oOI0I0Il0 = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-                    _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, Color3._I00I_ol_lI1IllIIOII1IoOIlI(1, 1, 1)),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0))
+                -- Color wheel gradients for saturation and value
+                local looIIlOOo_O = _OI_olOOlOI("UIGradient", {
+                    lOO_lIoI_O_o = ColorSequence.new{
+                        ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
+                        ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
                     },
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                    _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, 0),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, 1)
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
+                    Transparency = NumberSequence.new{
+                        ColorSequenceKeypoint.new(0, 0),
+                        ColorSequenceKeypoint.new(1, 1)
                     },
-                    _OllIII_OIlIIOll1OlI_1lo = 0,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _10O_OlIloO0O1OloIO0oO
+                    Rotation = 0,
+                    O_OoOO_I_oI = oIlIooOlO_OOlloIo
                 })
                 
-                local I0oIoOllI00IoIl_o1ollOllII0OlIlllI = _00l00l1l0ooI0I01oOIIO0IIlO011("UIGradient", {
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                    _IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0)),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, Color3._I00I_ol_lI1IllIIOII1IoOIlI(0, 0, 0))
+                local _oO__OloooIloOlloI = _OI_olOOlOI("UIGradient", {
+                    lOO_lIoI_O_o = ColorSequence.new{
+                        ColorSequenceKeypoint.new(0, Color3.new(0, 0, 0)),
+                        ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))
                     },
-                    _0IlOllO0lO00oOI0O_I_II0IlO = _IIIIOo1llO1I_IIO1O_O._I00I_ol_lI1IllIIOII1IoOIlI{
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, 1),
-                        _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, 0)
+                    Transparency = NumberSequence.new{
+                        ColorSequenceKeypoint.new(0, 1),
+                        ColorSequenceKeypoint.new(1, 0)
                     },
-                    _OllIII_OIlIIOll1OlI_1lo = 90,
-                    II_OlIII1_lIlOO0I0oOOO1001lI = _10O_OlIloO0O1OloIO0oO
+                    Rotation = 90,
+                    O_OoOO_I_oI = oIlIooOlO_OOlloIo
                 })
                 
-                _Iol_I1IlI0I_OOIIO111ll00()
+                llIIlOoIOIoOIO_IO()
                 
-                -- _o1I0IIlOolOllIl_I0OlOll picker
-                local function _0IoI1IlI0OIIlIIIOoOlIlIOOO()
-                    OlOlOol01l0OOlIIl0I0 = false
-                    _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IIOI_I0IIlOlIl1I10IO1l0IOoo00, {
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-                        0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-                        oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1
+                -- Close picker
+                local function lolIloOooo()
+                    O_lOOIIOIOOolIo = false
+                    lOoolOoIoOOOl(OollIolOOlOlOl__o, {
+                        IIlolo_Ilo__ = UDim2.fromOffset(0, 0),
+                        oIo_o_IIll = 1
                     }, 0.2)
-                    _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.2)
-                    if IIOI_I0IIlOlIl1I10IO1l0IOoo00 then
-                        IIOI_I0IIlOlIl1I10IO1l0IOoo00:OlIIl0oIl11_IOIl1loO0I0loII()
-                        IIOI_I0IIlOlIl1I10IO1l0IOoo00 = nil
+                    task.wait(0.2)
+                    if OollIolOOlOlOl__o then
+                        ColorPickerFrame:Destroy()
+                        OollIolOOlOlOl__o = nil
                     end
                 end
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
                 
-                _l1lOOIII00I01ooIII00___._IIloO1_I1Il00lll0IIll_0llI1l:_lIIIOOoI_0llIOOO1Ol(function()
+                lolloIOOlI_lIlIo.MouseButton1Click:Connect(function()
                     --PlaySound("6895079725", 0.06)
-                    _0IoI1IlI0OIIlIIIOoOlIlIOOO()
+                    lolIloOooo()
                 end)
                 
                 -- Click outside to close
-                local _I1lllOoOo0IOloOllO00II1IOIoI0IOl
-                _I1lllOoOo0IOloOllO00II1IOIoI0IOl = __IIllI01O0I0OolO01ll01o01Ilo_O0o.OOI1I01OIOl0lll0OOlIIl1llII:_lIIIOOoI_0llIOOO1Ol(function(_ol0_llOlO0III0I0l0_)
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-                    if _ol0_llOlO0III0I0l0_._I_O0oOIlIll_OI0loI1oIOoO == Enum._I_O0oOIlIll_OI0loI1oIOoO.lOloOl_IOloI0IIIOloo_o0o0O then
-                        local _1IOIl_lOllIIllOollOo0oII1lI = __IIllI01O0I0OolO01ll01o01Ilo_O0o:_1OOIlI0lo0IllIll1IoO0ll_oO()
-                        local Ollo1ll_00O0IOoIIlIIlOIOl = IIOI_I0IIlOlIl1I10IO1l0IOoo00._lloOIIOOlI0lOlOllI_IIOOIl0I
-                        local _loOIlIlo0olIIOOll0OI__llIlOO0 = IIOI_I0IIlOlIl1I10IO1l0IOoo00.__Ioll10_OOI0olIIIlo
+                local lIlI__llllOlIIoooo
+                lIlI__llllOlIIoooo = OOOllOIOllO_OoI.InputBegan:Connect(function(olIlO_OlIlIO)
+                    if olIlO_OlIlIO.UserInputType == Enum.UserInputType.MouseButton1 then
+                        local OlOIl_oOoOlI = UserInputService:GetMouseLocation()
+                        local I_lOOoo_IOl = OollIolOOlOlOl__o.AbsolutePosition
+                        local IIolIOOIIo_lOollOl = OollIolOOlOlOl__o.AbsoluteSize
                         
-                        if _1IOIl_lOllIIllOollOo0oII1lI._oIIlOIloI_l0II0I00l00OIOIoo < Ollo1ll_00O0IOoIIlIIlOIOl._oIIlOIloI_l0II0I00l00OIOIoo or _1IOIl_lOllIIllOollOo0oII1lI._oIIlOIloI_l0II0I00l00OIOIoo > Ollo1ll_00O0IOoIIlIIlOIOl._oIIlOIloI_l0II0I00l00OIOIoo + _loOIlIlo0olIIOOll0OI__llIlOO0._oIIlOIloI_l0II0I00l00OIOIoo or
-                           _1IOIl_lOllIIllOollOo0oII1lI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O < Ollo1ll_00O0IOoIIlIIlOIOl._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O or _1IOIl_lOllIIllOollOo0oII1lI._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O > Ollo1ll_00O0IOoIIlIIlOIOl._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O + _loOIlIlo0olIIOOll0OI__llIlOO0._0_O0lOIIOllIIIoIIIl0l1lolIOlI_1O then
-                            _0IoI1IlI0OIIlIIIOoOlIlIOOO()
-                            _I1lllOoOo0IOloOllO00II1IOIoI0IOl:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
+                        if OlOIl_oOoOlI.X < I_lOOoo_IOl.X or OlOIl_oOoOlI.X > I_lOOoo_IOl.X + IIolIOOIIo_lOollOl.X or
+                           OlOIl_oOoOlI.Y < I_lOOoo_IOl.Y or OlOIl_oOoOlI.Y > I_lOOoo_IOl.Y + IIolIOOIIo_lOollOl.Y then
+                            lolIloOooo()
+                            OutsideClickConnection:Disconnect()
                         end
                     end
                 end)
                 
                 -- Animate picker open
-                IIOI_I0IIlOlIl1I10IO1l0IOoo00.0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0)
-                IIOI_I0IIlOlIl1I10IO1l0IOoo00.oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(IIOI_I0IIlOlIl1I10IO1l0IOoo00, {
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(280, 320),
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                    oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 0
-                }, 0.2, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
+                OollIolOOlOlOl__o.Size = UDim2.fromOffset(0, 0)
+                OollIolOOlOlOl__o.BackgroundTransparency = 1
+                lOoolOoIoOOOl(OollIolOOlOlOl__o, {
+                    IIlolo_Ilo__ = UDim2.fromOffset(280, 320),
+                    oIo_o_IIll = 0
+                }, 0.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
                 
-                -- Initial II0llIIOI0lIllOOlO1I1o wheel update
-                _Iol_I1IlI0I_OOIIO111ll00()
+                -- Initial color wheel update
+                llIIlOoIOIoOIO_IO()
             end)
             
             -- Hover effects
-            0I10IIIl1I0lollOIIIlIlIolIl0Oo0_.OlIIOlIoIllII0loI_llI:_lIIIOOoI_0llIOOO1Ol(function()
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_lIOlIloollI0_IOOI01llllll0oIo, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo}, 0.15)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_OOOIOllI0IOo__IO0IO01Ol_O01IOIl, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(52, 32)}, 0.15)
+            O_oIO_II_OolO.MouseEnter:Connect(function()
+                lOoolOoIoOOOl(lIOIollIIoO, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh}, 0.15)
+                lOoolOoIoOOOl(olIlIIIOoOo, {IIlolo_Ilo__ = UDim2.fromOffset(52, 32)}, 0.15)
             end)
             
-            0I10IIIl1I0lollOIIIlIlIolIl0Oo0_.looo0I_OOOIl10loOol11lOlll:_lIIIOOoI_0llIOOO1Ol(function()
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_lIOlIloollI0_IOOI01llllll0oIo, {_l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_}, 0.15)
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(_OOOIOllI0IOo__IO0IO01Ol_O01IOIl, {0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(48, 28)}, 0.15)
+            O_oIO_II_OolO.MouseLeave:Connect(function()
+                lOoolOoIoOOOl(lIOIollIIoO, {IoIOIo_I_IOllllOI = IoOlIOIOl_oIOIIooII.Theme.Surface}, 0.15)
+                lOoolOoIoOOOl(olIlIIIOoOo, {IIlolo_Ilo__ = UDim2.fromOffset(48, 28)}, 0.15)
             end)
             
             -- Register
-            if Ol_IooO0OOO_ll0I1Il00O1looIl0lOI then
-                _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[Ol_IooO0OOO_ll0I1Il00O1looIl0lOI] = {
-                    _oOoIOoO0OOIll1Ol0llo_01o101 = function(II0llIIOI0lIllOOlO1I1o)
-                        if ((function() local x = 5 return x > 3 end)()) and typeof(II0llIIOI0lIllOOlO1I1o) == "Color3" then
-                            OlI0IoIIIIO10loOII0lIIOI10Iol1_ol(II0llIIOI0lIllOOlO1I1o)
+            if _l__lI_Oll_l then
+                IoOlIOIOl_oIOIIooII.Registry[_l__lI_Oll_l] = {
+                    Set = function(ol_ooIlOlOo)
+                        if typeof(ol_ooIlOlOo) == "Color3" then
+                            loOoOlO_OoI(ol_ooIlOlOo)
                         end
                     end,
-                    OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return OO0o1IlOoOII_IOIoIllIl end
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
+                    Get = function() return ooo_llIlIooIooIl end
                 }
             end
             
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-            -- ll0lOl0IIloOII_lIl01loI0l_lIIo1_ updates
-            local _lllooIIlOlOIIlo1llOlIoOIOlIolOIIO = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-                if ((function() local x = 5 return x > 3 end)()) and _lIOlIloollI0_IOOI01llllll0oIo and _lIOlIloollI0_IOOI01llllll0oIo.II_OlIII1_lIlOO0I0oOOO1001lI then
-                    _lIOlIloollI0_IOOI01llllll0oIo._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-                    II_oII0oO0lOloIOlI0olO1Il01o.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
+            -- Theme updates
+            local _olIlIIIIIOo = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+                if lIOIollIIoO and lIOIollIIoO.Parent then
+                    lIOIollIIoO.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+                    OlOl_Io_oIOOIloOl.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
                 end
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
             end)
             
-            table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, _lllooIIlOlOIIlo1llOlIoOIOlIolOIIO)
+            table.insert(IoOlIOIOl_oIOIIooII.Connections, _olIlIIIIIOo)
             
             return {
-                _oOoIOoO0OOIll1Ol0llo_01o101 = function(II0llIIOI0lIllOOlO1I1o)
-                    if ((function() return "a" == "a" end)()) and typeof(II0llIIOI0lIllOOlO1I1o) == "Color3" then
-                        OlI0IoIIIIO10loOII0lIIOI10Iol1_ol(II0llIIOI0lIllOOlO1I1o)
+                Set = function(ol_ooIlOlOo)
+                    if typeof(ol_ooIlOlOo) == "Color3" then
+                        loOoOlO_OoI(ol_ooIlOlOo)
                     end
                 end,
-                OIOl10lO_llolOlllIoIIIIOoO_IIlOl = function() return OO0o1IlOoOII_IOIoIllIl end,
-                IoIoIOoIO_IlooIolIl0IOoolIIIIlI = function(_OIl10Io_OIll00IOl_l1O)
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
-                    II_oII0oO0lOloIOlI0olO1Il01o.IOlIlll01oI00Ol0lOOI = tostring(_OIl10Io_OIll00IOl_l1O or "")
+                Get = function() return ooo_llIlIooIooIl end,
+                SetText = function(IoIlIOIlOo)
+                    OlOl_Io_oIOOIloOl.Text = tostring(IoIlIOIlOo or "")
                 end
             }
         end
 
         
-do local _Oo111oIo0IO10OOOOOl0OIOoO = {} end
         
-        -- _llIl1llIIIIOlllIlOlII01ol0llI _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll API
-        return _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll
+        -- Return Tab API
+        return oooolIOoOo
     end
     
-    -- 0OlI0OlOO1IIlOIlIOOOI1 ll0lOl0IIloOII_lIl01loI0l_lIIo1_ Updates
-    local IllI1OI000IolOoolllOllOO_olIO0 = _O0I0IoOIIlloool010oIO__._Ol00llIOO_Ol10IIIIO._l0OOIllO0Ol1OIOIlOll:_lIIIOOoI_0llIOOO1Ol(function()
-        if ((function() return 1 + 1 == 2 end)()) and not l01OOOOl_OIlOoIloIllOll1_ or not l01OOOOl_OIlOoIloIllOll1_.II_OlIII1_lIlOO0I0oOOO1001lI then return end
+    -- Window Theme Updates
+    local IIlOOloIlO_oo_O = IoOlIOIOl_oIOIIooII.ThemeChanged.Event:Connect(function()
+        if not OlOloollIIoloIolO_l or not OlOloollIIoloIolO_l.Parent then return end
         
-        -- IOIOoOoII1oOO1l1_O_Oo0O0lII window colors
-        l01OOOOl_OIlOoIloIllOll1_._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo
-        lo1lI0OII_IooIIlO10O_IllO1o._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-        _110Il1lI10OO1llIlo_0I0._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-        0IIIOIl_ll_l_00_l1I0I0I_0l.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.IOlIlll01oI00Ol0lOOI
-        __IIoOIOOo1o0lIoOllloooloIolOIl_l.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl
-        OIl0lOIoOOlo_l0lOOol0lOlO._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IOl0IoIl0IIOlolIOIOl_O_
-        IoIII00IlOl_lO1ololII0IOoOl._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IllOoOII10IIl0IO0IlIIo
-        oI1lOloI0lIll_IlllIOl01O10oOIo.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._IlIIo0III00lIIol_IIl11llOo00I
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
+        -- Update window colors
+        OlOloollIIoloIolO_l.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Background
+        ___IIIIoloIIl_oIolo.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+        OoooooOOoI_IoOo_OOo.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+        oooIooIIlOlIO.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Text
+        loOloIIOOIlIO.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub
+        _oOlIIoloOIII_.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Surface
+        lOIOIllooOl_ooOII.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.Background
+        _IooOOOlO_O.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.Accent
         
-        -- IOIOoOoII1oOO1l1_O_Oo0O0lII gradients
-        _Oooo1lIll00lOOlIOol0llOll0lO10II._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _I0o1IIIlIoIOllI0O0IlOolOI0IlOooII._I00I_ol_lI1IllIIOII1IoOIlI{
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(0, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.0OOolllIlI0o0lloOllO),
-            _o_I_I00Il10OIOl__II0ol0._I00I_ol_lI1IllIIOII1IoOIlI(1, _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._ollOOIIO_lIOlIO1oO0O01o0o00l00ll)
+        -- Update gradients
+        loOOoOIoIIllo.Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, IoOlIOIOl_oIOIIooII.Theme.Gradient1),
+            ColorSequenceKeypoint.new(1, IoOlIOIOl_oIOIIooII.Theme.Gradient2)
         }
         
-        -- IOIOoOoII1oOO1l1_O_Oo0O0lII control buttons
-        _0OOOIoIIOlIOOIOolOI1O.000O_IOOIOI_0lOll_I1o10l = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0IIOIoIoolollIOOOllIlOl
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
-        _0OOOIoIIOlIOOIOolOI1O._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo
-        _OoIl1IOIIOlo0OOol_IOoIIl0I1IOlo._l_lOO0OloOIIIl_II__oo1I0 = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_.oI0IlIoII0lllOOIOI0_l_0ollOloIo
+        -- Update control buttons
+        Il_lOllOlIO.TextColor3 = IoOlIOIOl_oIOIIooII.Theme.TextSub
+        Il_lOllOlIO.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh
+        oIOoOlOOOOIloOI.BackgroundColor3 = IoOlIOIOl_oIOIIooII.Theme.SurfaceHigh
         
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
-        -- IOIOoOoII1oOO1l1_O_Oo0O0lII strokes
-        local _0O0olllOo0lOoo0OI1lIolIlOI1I = l01OOOOl_OIlOoIloIllOll1_:01lIllI0Il010_lI1Iool("UIStroke")
-        if ((function() return "a" == "a" end)()) and _0O0olllOo0lOoo0OI1lIolIlOI1I then
-            _0O0olllOo0lOoo0OI1lIolIlOI1I._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI
+        -- Update strokes
+        local ll_IolIolol = MainWindow:FindFirstChild("UIStroke")
+        if ll_IolIolol then
+            ll_IolIolol.Color = IoOlIOIOl_oIOIIooII.Theme.Outline
         end
         
-        local _lO0IlIl00Il0_Ol1IOIOloolIlI = OIl0lOIoOOlo_l0lOOol0lOlO:01lIllI0Il010_lI1Iool("UIStroke")
-        if _lO0IlIl00Il0_Ol1IOIOloolIlI then
-            _lO0IlIl00Il0_Ol1IOIOloolIlI._IOl1IIOIlI__0oOOlOlIII_olIO_1llO_ = _O0I0IoOIIlloool010oIO__.ll0lOl0IIloOII_lIl01loI0l_lIIo1_._0OIlIOoIollO0O0I0lI1OI
+        local oIIloOllIooOl = TabContainer:FindFirstChild("UIStroke")
+        if oIIloOllIooOl then
+            oIIloOllIooOl.Color = IoOlIOIOl_oIOIIooII.Theme.Outline
         end
     end)
     
-    table.lIoOl_olIOlI__II1l_IOlIIlO0l_O(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI, IllI1OI000IolOoolllOllOO_olIO0)
+    table.insert(IoOlIOIOl_oIOIIooII.Connections, IIlOOloIlO_oo_O)
     
-    -- 📍 SEKARANG WINDOWAPI BISA MENGGUNAKAN _olI_oIlloIl1lIIl_IlOIOllII0Ol0OIo
-    local _ll_lOoI_0lI0_1_lIol00lIlll_Ol = {
-        oo_I1o0l01IIl10lOI1lOOIIl1OlO1o = function(oOIllO00lOI0IO1IIIollOoOlO1OIOIl)
-            0IIIOIl_ll_l_00_l1I0I0I_0l.IOlIlll01oI00Ol0lOOI = tostring(oOIllO00lOI0IO1IIIollOoOlO1OIOIl or "")
+    -- 📍 SEKARANG WINDOWAPI BISA MENGGUNAKAN CreateTab
+    local OIIO_OoOlOIOo_lO = {
+        SetTitle = function(IlooOl_lOOoIIIIO)
+            oooIooIIlOlIO.Text = tostring(IlooOl_lOOoIIIIO or "")
         end,
-        OlIolOIIII00O_0lO0_ll0l = function(_1lllOl_0lIoo1oI10lll0)
-            __IIoOIOOo1o0lIoOllloooloIolOIl_l.IOlIlll01oI00Ol0lOOI = tostring(_1lllOl_0lIoo1oI10lll0 or "")
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
+        SetSubtitle = function(I_IlIlO_Ill___IoIlO)
+            loOloIIOOIlIO.Text = tostring(I_IlIlO_Ill___IoIlO or "")
         end,
-        _olIIO0_I0o0IIIoIoIO0IIII = function(1lI_0lOOOlI1001OlOOII0llOo0Illol)
-            oI1lOloI0lIll_IlllIOl01O10oOIo.IOlIlll01oI00Ol0lOOI = tostring(1lI_0lOOOlI1001OlOOII0llOo0Illol or "🚀")
+        SetIcon = function(IIIOoooOIIIlOO)
+            _IooOOOlO_O.Text = tostring(IIIOoooOIIIlOO or "🚀")
         end,
-        _0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll = function(_OIIl11_llllol_0l0_OIOloIIOOIOlOO, oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
+        oooolIOoOo = function(lO_Oo_lIllI, _oOoOoOlOlIlIllooO)
             -- Cek apakah dipanggil dengan titik dua (:) atau titik (.)
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-            -- Jika _OIIl11_llllol_0l0_OIOloIIOOIOlOO adalah tabel _ll_lOoI_0lI0_1_lIol00lIlll_Ol (punya fungsi oo_I1o0l01IIl10lOI1lOOIIl1OlO1o), maka argumen asli ada di 'oOolOI00IllIII0oo0_l0l0_IlIO0lIIO'
-            if type(_OIIl11_llllol_0l0_OIOloIIOOIOlOO) == "table" and _OIIl11_llllol_0l0_OIOloIIOOIOlOO.oo_I1o0l01IIl10lOI1lOOIIl1OlO1o then
-                return _olI_oIlloIl1lIIl_IlOIOllII0Ol0OIo(oOolOI00IllIII0oo0_l0l0_IlIO0lIIO)
+            -- Jika self adalah tabel WindowAPI (punya fungsi SetTitle), maka argumen asli ada di 'config'
+            if type(lO_Oo_lIllI) == "table" and lO_Oo_lIllI.SetTitle then
+                return __I_IloOolOIIIloIO(_oOoOoOlOlIlIllooO)
             else
-                -- Jika dipanggil dengan titik (0OlI0OlOO1IIlOIlIOOOI1._0oOlIOIo0Il_IO_IoOOOOIoIoI1IIOll), maka '_OIIl11_llllol_0l0_OIOloIIOOIOlOO' adalah oOolOI00IllIII0oo0_l0l0_IlIO0lIIO-nya
-                return _olI_oIlloIl1lIIl_IlOIOllII0Ol0OIo(_OIIl11_llllol_0l0_OIOloIIOOIOlOO)
-if false then _IIOIlOOOlIIoOII0Olo = 0.03650964840874027 end
+                -- Jika dipanggil dengan titik (Window.Tab), maka 'self' adalah config-nya
+                return __I_IloOolOIIIloIO(lO_Oo_lIllI)
             end
         end,
-        _OOl_IIo0001I1I0Io_I1I_IloI0II01 = _O0I0IoOIIlloool010oIO__._OOl_IIo0001I1I0Io_I1I_IloI0II01,
-local lll10II0IoO_olo_0l0O00IIoI0lI_ = 87
-        llO0IOI01I1l0lOIIolII_IIoO0lo_ = _O0I0IoOIIlloool010oIO__.llO0IOI01I1l0lOIIolII_IIoO0lo_,
-        IloIII0llOOIo00l0II0lIo0OOOlIl = _O0I0IoOIIlloool010oIO__.IloIII0llOOIo00l0II0lIo0OOOlIl,
-        Oo0lo_llIl0looIII0Ill__lOIlll = _O0I0IoOIIlloool010oIO__.Oo0lo_llIl0looIII0Ill__lOIlll,
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-        _OO0IIOoOO0olI_OIOOIIIIIO_lIlIOO0 = _O0I0IoOIIlloool010oIO__._OO0IIOoOO0olI_OIOOIIIIIO_lIlIOO0,
-        OlIIl0oIl11_IOIl1loO0I0loII = function()
-            for _lIo0IoOlOll1lIO0_IoIllIlI, IIollOOI_loOIlIIOIOlIlloo_I in pairs(_O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI) do
-                if IIollOOI_loOIlIIOIOlIlloo_I and typeof(IIollOOI_loOIlIIOIOlIlloo_I) == oIOoII_0IIlOII1IOI1lI0_OO0o[149] then
-                    IIollOOI_loOIlIIOIOlIlloo_I:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
-                elseif IIollOOI_loOIlIIOIOlIlloo_I and IIollOOI_loOIlIIOIOlIlloo_I._0IIlO0l_00_O0IoI0Ol011O0O1oI then
-                    IIollOOI_loOIlIIOIOlIlloo_I:_0IIlO0l_00_O0IoI0Ol011O0O1oI()
+        Notify = IoOlIOIOl_oIOIIooII.Notify,
+        SetTheme = IoOlIOIOl_oIOIIooII.SetTheme,
+        SaveConfig = IoOlIOIOl_oIOIIooII.SaveConfig,
+        LoadConfig = IoOlIOIOl_oIOIIooII.LoadConfig,
+        GetConfigs = IoOlIOIOl_oIOIIooII.GetConfigs,
+        Destroy = function()
+            for ooIlololllolIOlo, IolIIOOoll in pairs(IoOlIOIOl_oIOIIooII.Connections) do
+                if IolIIOOoll and typeof(IolIIOOoll) == IO_oOOllOOoooIo_[149] then
+                    connection:Disconnect()
+                elseif IolIIOOoll and IolIIOOoll.Disconnect then
+                    connection:Disconnect()
                 end
             end
             
-            -- _o1I0IIlOolOllIl_I0OlOll window with animation
-            _0lIIIlOoOOlO1OllOllO_l0lol_I01I(l01OOOOl_OIlOoIloIllOll1_, {
-                0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._0O0O1llII0OlO01IIOIllll0lOIIIlIol(0, 0),
-                oIIo0l0Iol01OOlIOI0_1OoI1Il0O = 1
-            }, 0.3, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II._lOOOooIOloI_OIO0l0oIl1ool_O, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo.lIOIlIOIool0llOOOo1lO)
+            -- Close window with animation
+            lOoolOoIoOOOl(OlOloollIIoloIolO_l, {
+                IIlolo_Ilo__ = UDim2.fromOffset(0, 0),
+                oIo_o_IIll = 1
+            }, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In)
             
-            _I_IOIIl1IoIlIOI1lIIIIoOoO1ll.wait(0.3)
+            task.wait(0.3)
             
-            if llOOlOII_0llI00IOIlO1lOl0I and llOOlOII_0llI00IOIlO1lOl0I.II_OlIII1_lIlOO0I0oOOO1001lI then
-                llOOlOII_0llI00IOIlO1lOl0I:OlIIl0oIl11_IOIl1loO0I0loII()
+            if _oIIIIlIoool_I and _oIIIIlIoool_I.Parent then
+                ScreenGui:Destroy()
             end
             
-            _O0I0IoOIIlloool010oIO__._IIlOIloOolooIo_OlIoO_oOI = {}
-            _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_ = {}
-local IO0IlIIoO0I_loO0l10lOoOIOIo = function(1lll0lOoIOolIIIl010oIlOl0) return o0oIOl_1IlIOlIll1II1lo_ end
-            _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il = {}
+            IoOlIOIOl_oIOIIooII.Connections = {}
+            IoOlIOIOl_oIOIIooII.Registry = {}
+            IoOlIOIOl_oIOIIooII.Flags = {}
         end,
-        lI101_OlllI000l_1lIOlolIll_ = function()
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-            if ((function() return true end)()) and _o1OOI10lIIOIlIIIOoOOlIIooOI then
-                _o1OOI10lIIOIlIIIOoOOlIIooOI = false
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(l01OOOOl_OIlOoIloIllOll1_, {
-local _l0O0lolIo1OOoO1OIlIIOI0Ioo0olIl1 = {0.5048026630345109, 0.44484681776355284}
-                    0IIlOooOIollloIOIII0o_0IIII_lo = I_Ool0o1OI0101_I_1l_OIlI
-                }, 0.3, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.IoIIlIll_lIoOIIIOlIO1Il, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
-                _0OOOIoIIOlIOOIOolOI1O.IOlIlll01oI00Ol0lOOI = oIOoII_0IIlOII1IOI1lI0_OO0o[150]
+        Minimize = function()
+            if _oIooIOlllOlIoOoII then
+                _oIooIOlllOlIoOoII = false
+                lOoolOoIoOOOl(OlOloollIIoloIolO_l, {
+                    IIlolo_Ilo__ = OIllO_OoOO
+                }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+                Il_lOllOlIO.Text = IO_oOOllOOoooIo_[150]
             else
-                _o1OOI10lIIOIlIIIOoOOlIIooOI = true
-                _0lIIIlOoOOlO1OllOllO_l0lol_I01I(l01OOOOl_OIlOoIloIllOll1_, {
-local II0l0OIlo0Il0IOOIol0_oOIOOIlOOl0II = "u2hna"
-                    0IIlOooOIollloIOIII0o_0IIII_lo = UDim2._I00I_ol_lI1IllIIOII1IoOIlI(0, I_Ool0o1OI0101_I_1l_OIlI._oIIlOIloI_l0II0I00l00OIOIoo._oIIO_1l00lII_lOOOOIoo0l, 0, 40)
-                }, 0.3, Enum._I0IlOIloO1_IO_llIllIIl1olIOO0II.IoIIlIll_lIoOIIIOlIO1Il, Enum._0l1_1IolllOOoIIool0IlllO1lOIoo._oI1o00oO1IlIII_I10l0oOooOO)
-                _0OOOIoIIOlIOOIOolOI1O.IOlIlll01oI00Ol0lOOI = oIOoII_0IIlOII1IOI1lI0_OO0o[151]
+                _oIooIOlllOlIoOoII = true
+                lOoolOoIoOOOl(OlOloollIIoloIolO_l, {
+                    IIlolo_Ilo__ = UDim2.new(0, OIllO_OoOO.X.Offset, 0, 40)
+                }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+                Il_lOllOlIO.Text = IO_oOOllOOoooIo_[151]
             end
         end,
-        0_1oOlllO1O0lI1OoOIOOllIlI0I = function(ll10O1oIl00lllIOloI0l)
-            return _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[ll10O1oIl00lllIOloI0l]
+        GetFlag = function(I_lIolo_l_oIloIo_)
+            return IoOlIOIOl_oIOIIooII.Flags[I_lIolo_l_oIloIo_]
         end,
-        _l0IIl0lOOlIllOoloO_oIoOI = function(ll10O1oIl00lllIOloI0l, _OOllIIO0_II0Ol00IIol1ool)
-            if _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[ll10O1oIl00lllIOloI0l] and _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[ll10O1oIl00lllIOloI0l]._oOoIOoO0OOIll1Ol0llo_01o101 then
-                _O0I0IoOIIlloool010oIO__._lllo0I0IlIOOo10lIlO_[ll10O1oIl00lllIOloI0l]._oOoIOoO0OOIll1Ol0llo_01o101(_OOllIIO0_II0Ol00IIol1ool)
+        SetFlag = function(I_lIolo_l_oIloIo_, loolOoIIlIoloIIo_ll)
+            if IoOlIOIOl_oIOIIooII.Registry[I_lIolo_l_oIloIo_] and IoOlIOIOl_oIOIIooII.Registry[I_lIolo_l_oIloIo_].Set then
+                IoOlIOIOl_oIOIIooII.Registry[I_lIolo_l_oIloIo_].Set(loolOoIIlIoloIIo_ll)
             else
-                _O0I0IoOIIlloool010oIO__._I0lllllOO0_0llIlIlIO0l0IooOOO0Il[ll10O1oIl00lllIOloI0l] = _OOllIIO0_II0Ol00IIol1ool
+                IoOlIOIOl_oIOIIooII.Flags[I_lIolo_l_oIloIo_] = loolOoIIlIoloIIo_ll
             end
 
-            _O0I0IoOIIlloool010oIO__:_lIO0OO0l00OoOI0IlIIOloI0IlI00OII()
+            Nexus:_ScheduleAutoSave()
         end
     }
-local lIO01llllOOIOOll0lI_ol0O1 = function() return nil end
 
     
-    return _ll_lOoI_0lI0_1_lIol00lIlll_Ol
+    return OIIO_OoOlOIOo_lO
 end
 
--- Export _O0I0IoOIIlloool010oIO__
-return _O0I0IoOIIlloool010oIO__
+-- Export Nexus
+return IoOlIOIOl_oIOIIooII
