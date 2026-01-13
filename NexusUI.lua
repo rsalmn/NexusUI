@@ -3103,140 +3103,273 @@ end
         
         -- Continue with other components in the next part...
         function Tab:Toggle(config)
-            if type(config) == "string" then
-                config = {Text = config}
+    if Nexus.IsDestroyed then return end
+    
+    if type(config) == "string" then
+        config = {Text = config}
+    end
+    if not config then config = {} end
+    
+    local Text = config.Text or "Toggle"
+    local Default = config.Default or false
+    local Callback = config.Callback or function() end
+    local Flag = config.Flag
+    
+    local CurrentValue = Default
+    
+    local ToggleFrame = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.new(1, 0, 0, 44),
+        Parent = TabPage
+    })
+    
+    AddCorner(ToggleFrame, 8)
+    AddStroke(ToggleFrame, Nexus.Theme.Outline, 1, 0.4)
+    
+    local ToggleText = Create("TextLabel", {
+        Text = Text,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.Text,
+        BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(16, 0),
+        Size = UDim2.new(1, -80, 1, 0),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        Parent = ToggleFrame
+    })
+    
+    -- FIX: Enhanced Toggle switch container
+    local SwitchContainer = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.SurfaceHigh,
+        Size = UDim2.fromOffset(44, 24), -- Lebih besar untuk better UX
+        Position = UDim2.new(1, -60, 0.5, -12),
+        Parent = ToggleFrame
+    })
+    AddCorner(SwitchContainer, 12)
+    
+    -- FIX: Enhanced switch fill dengan gradient
+    local SwitchFill = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Accent,
+        Size = UDim2.new(0, 0, 1, 0),
+        Position = UDim2.fromOffset(0, 0),
+        Parent = SwitchContainer
+    })
+    AddCorner(SwitchFill, 12)
+    
+    -- Optional: Add gradient to fill
+    local SwitchGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Accent),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.Accent)
+        },
+        Rotation = 45,
+        Parent = SwitchFill
+    })
+    
+    -- FIX: Enhanced Handle (Kepala Toggle)
+    local SwitchHandle = Create("Frame", {
+        BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+        Size = UDim2.fromOffset(20, 20),
+        Position = UDim2.fromOffset(2, 2),
+        Parent = SwitchContainer
+    })
+    AddCorner(SwitchHandle, 100) -- Bulat sempurna
+    
+    -- Enhanced shadow untuk handle
+    local HandleShadow = Create("Frame", {
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+        BackgroundTransparency = 0.3,
+        Size = UDim2.new(1, 2, 1, 2),
+        Position = UDim2.fromOffset(1, 1),
+        ZIndex = -1,
+        Parent = SwitchHandle
+    })
+    AddCorner(HandleShadow, 100)
+    
+    local ToggleButton = Create("TextButton", {
+        Text = "",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 1, 0),
+        AutoButtonColor = false,
+        Parent = ToggleFrame
+    })
+    
+    -- FIX: Enhanced UpdateToggle function
+    local function UpdateToggle(newValue, skipCallback)
+        if Nexus.IsDestroyed then return end
+        
+        CurrentValue = newValue
+        
+        pcall(function()
+            -- Update container background
+            Tween(SwitchContainer, {
+                BackgroundColor3 = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh
+            }, 0.25)
+            
+            -- Update fill width
+            Tween(SwitchFill, {
+                Size = UDim2.new(CurrentValue and 1 or 0, 0, 1, 0)
+            }, 0.25)
+            
+            -- Move handle with enhanced easing
+            Tween(SwitchHandle, {
+                Position = UDim2.fromOffset(CurrentValue and 22 or 2, 2),
+                BackgroundColor3 = CurrentValue and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(200, 200, 200)
+            }, 0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+            
+            -- Update shadow
+            Tween(HandleShadow, {
+                BackgroundTransparency = CurrentValue and 0.2 or 0.4
+            }, 0.25)
+            
+            -- Update stroke color
+            local stroke = ToggleFrame:FindFirstChild("UIStroke")
+            if stroke then
+                Tween(stroke, {
+                    Color = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.Outline,
+                    Transparency = CurrentValue and 0.2 or 0.4
+                }, 0.25)
             end
-            if not config then config = {} end
-            
-            local Text = config.Text or "Toggle"
-            local Default = config.Default or false
-            local Callback = config.Callback or function() end
-            local Flag = config.Flag
-            
-            local CurrentValue = Default
-            
-            local ToggleFrame = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Surface,
-                Size = UDim2.new(1, 0, 0, 44),
-                Parent = TabPage
-            })
-            
-            AddCorner(ToggleFrame, 8)
-            AddStroke(ToggleFrame, Nexus.Theme.Outline, 1, 0.4)
-            
-            local ToggleText = Create("TextLabel", {
-                Text = Text,
-                Font = Enum.Font.GothamMedium,
-                TextSize = 14,
-                TextColor3 = Nexus.Theme.Text,
-                BackgroundTransparency = 1,
-                Position = UDim2.fromOffset(16, 0),
-                Size = UDim2.new(1, -80, 1, 0),
-                TextXAlignment = Enum.TextXAlignment.Left,
-                Parent = ToggleFrame
-            })
-            
-            -- Toggle switch container
-            local SwitchContainer = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.SurfaceHighest, -- Warna Track Mati
-                Size = UDim2.fromOffset(44, 6), -- Lebih tipis (Garis)
-                Position = UDim2.new(1, -60, 0.5, -3),
-                Parent = ToggleFrame
-            })
-            AddCorner(SwitchContainer, 3)
-            
-            local SwitchFill = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Accent,
-                Size = UDim2.new(0, 0, 1, 0), -- Mulai dari 0
-                Parent = SwitchContainer
-            })
-            AddCorner(SwitchFill, 3)
-            
-            -- Handle (Kepala Toggle)
-            local SwitchHandle = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.TextSub, -- Warna mati
-                Size = UDim2.fromOffset(18, 18),
-                Position = UDim2.fromScale(0, 0.5),
-                AnchorPoint = Vector2.new(0, 0.5), -- Center Y
-                Parent = SwitchContainer
-            })
-            AddCorner(SwitchHandle, 100) -- Bulat sempurna
-            
-            AddCorner(SwitchHandle, 10)
-            AddShadow(SwitchHandle, 2, 0.8)
-            
-            local ToggleButton = Create("TextButton", {
-                Text = "",
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 1, 0),
-                Parent = ToggleFrame
-            })
-            
-            local function UpdateToggle(newValue)
-                CurrentValue = newValue
-                
-                Tween(SwitchContainer, {
-                    BackgroundColor3 = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh
-                }, 0.2)
-                
-                Tween(SwitchHandle, {
-                    Position = UDim2.fromOffset(CurrentValue and 26 or 2, 2)
-                }, 0.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
-                
+        end)
+        
+        -- Execute callback safely
+        if not skipCallback then
+            task.spawn(function()
                 pcall(function()
-                    Callback(CurrentValue)
+                    if Callback then
+                        Callback(CurrentValue)
+                    end
                 end)
-                
-                if Flag then
-                    Nexus.Flags[Flag] = CurrentValue
+            end)
+        end
+        
+        -- Update flag
+        if Flag then
+            Nexus.Flags[Flag] = CurrentValue
+        end
+    end
+    
+    -- FIX: Enhanced toggle click with animation
+    local toggleClickConnection = ToggleButton.MouseButton1Click:Connect(function()
+        if Nexus.IsDestroyed then return end
+        
+        -- Visual feedback - quick scale animation
+        pcall(function()
+            Tween(SwitchHandle, {Size = UDim2.fromOffset(18, 18)}, 0.1)
+            task.spawn(function()
+                task.wait(0.1)
+                if not Nexus.IsDestroyed then
+                    Tween(SwitchHandle, {Size = UDim2.fromOffset(20, 20)}, 0.1)
                 end
+            end)
+        end)
+        
+        UpdateToggle(not CurrentValue)
+    end)
+    
+    -- FIX: Enhanced hover effects
+    local toggleEnterConnection = ToggleButton.MouseEnter:Connect(function()
+        if Nexus.IsDestroyed then return end
+        pcall(function()
+            Tween(ToggleFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
+            Tween(SwitchContainer, {Size = UDim2.fromOffset(46, 26)}, 0.15)
+        end)
+    end)
+    
+    local toggleLeaveConnection = ToggleButton.MouseLeave:Connect(function()
+        if Nexus.IsDestroyed then return end
+        pcall(function()
+            Tween(ToggleFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.15)
+            Tween(SwitchContainer, {Size = UDim2.fromOffset(44, 24)}, 0.15)
+        end)
+    end)
+    
+    -- Initialize value
+    UpdateToggle(CurrentValue, true) -- Skip callback on init
+    
+    -- Register with flag system
+    if Flag then
+        Nexus.Registry[Flag] = {
+            Set = function(value) UpdateToggle(value) end,
+            Get = function() return CurrentValue end
+        }
+    end
+    
+    -- FIX: Enhanced theme update
+    local toggleThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
+        if Nexus.IsDestroyed then return end
+        
+        pcall(function()
+            if ToggleFrame and ToggleFrame.Parent then
+                ToggleFrame.BackgroundColor3 = Nexus.Theme.Surface
             end
             
-            ToggleButton.MouseButton1Click:Connect(function()
-                --PlaySound("6895079853", 0.08, CurrentValue and 0.9 or 1.1)
-                UpdateToggle(not CurrentValue)
-            end)
+            if ToggleText and ToggleText.Parent then
+                ToggleText.TextColor3 = Nexus.Theme.Text
+            end
             
-            -- Hover effect
-            ToggleButton.MouseEnter:Connect(function()
-                Tween(ToggleFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
-            end)
+            if SwitchContainer and SwitchContainer.Parent then
+                SwitchContainer.BackgroundColor3 = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh
+            end
             
-            ToggleButton.MouseLeave:Connect(function()
-                Tween(ToggleFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.15)
-            end)
+            if SwitchFill and SwitchFill.Parent then
+                SwitchFill.BackgroundColor3 = Nexus.Theme.Accent
+            end
             
-            -- Initialize value
-            UpdateToggle(CurrentValue)
-            
-            -- Register with flag system
-            if Flag then
-                Nexus.Registry[Flag] = {
-                    Set = UpdateToggle,
-                    Get = function() return CurrentValue end
+            if SwitchGradient and SwitchGradient.Parent then
+                SwitchGradient.Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Accent),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Accent)
                 }
             end
             
-            -- Theme update
-            local toggleThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
-                if ToggleFrame and ToggleFrame.Parent then
-                    ToggleFrame.BackgroundColor3 = Nexus.Theme.Surface
-                    ToggleText.TextColor3 = Nexus.Theme.Text
-                    SwitchContainer.BackgroundColor3 = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.SurfaceHigh
-                    SwitchHandle.BackgroundColor3 = Nexus.Theme.Text
-                end
-            end)
-            
-            table.insert(Nexus.Connections, toggleThemeConnection)
-            
-            return {
-                Set = UpdateToggle,
-                Get = function() return CurrentValue end,
-                SetText = function(newText)
+            local stroke = ToggleFrame:FindFirstChild("UIStroke")
+            if stroke then
+                stroke.Color = CurrentValue and Nexus.Theme.Accent or Nexus.Theme.Outline
+            end
+        end)
+    end)
+    
+    table.insert(Nexus.Connections, toggleClickConnection)
+    table.insert(Nexus.Connections, toggleEnterConnection)
+    table.insert(Nexus.Connections, toggleLeaveConnection)
+    table.insert(Nexus.Connections, toggleThemeConnection)
+    
+    -- FIX: Enhanced return API
+    return {
+        Set = function(value)
+            if Nexus.IsDestroyed then return end
+            UpdateToggle(value)
+        end,
+        
+        Get = function()
+            return CurrentValue
+        end,
+        
+        SetText = function(newText)
+            if Nexus.IsDestroyed then return end
+            pcall(function()
+                if ToggleText and ToggleText.Parent then
                     ToggleText.Text = tostring(newText or "")
                 end
-            }
-        end
+            end)
+        end,
+        
+        SetCallback = function(newCallback)
+            if Nexus.IsDestroyed then return end
+            Callback = newCallback or function() end
+        end,
+        
+        Toggle = function()
+            if Nexus.IsDestroyed then return end
+            UpdateToggle(not CurrentValue)
+        end,
+        
+        Frame = ToggleFrame
+    }
+end
+
         
         function Tab:Slider(config)
             if not config then config = {} end
