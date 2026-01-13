@@ -2646,57 +2646,56 @@ function Nexus:Window(config)
         
         -- Tab API methods
         function Tab:Section(text)
-    if Nexus.IsDestroyed then return end
-    
-    local SectionFrame = Create("Frame", {
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 0, 32),
-        Parent = TabPage
-    })
-    
-    local SectionLabel = Create("TextLabel", {
-        Text = text or "Section",
-        Font = Enum.Font.GothamBold,
-        TextSize = 16,
-        TextColor3 = Nexus.Theme.Text,
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 1, 0),
-        TextXAlignment = Enum.TextXAlignment.Left,
-        Parent = SectionFrame
-    })
-    
-    local SectionLine = Create("Frame", {
-        BackgroundColor3 = Nexus.Theme.Accent,
-        Size = UDim2.new(0, 40, 0, 2),
-        Position = UDim2.new(0, 0, 1, -4),
-        Parent = SectionFrame
-    })
-    
-    AddCorner(SectionLine, 1)
-    
-    return SectionFrame
-end
-
-function Tab:Divider()
-    if Nexus.IsDestroyed then return end
-    
-    local DividerFrame = Create("Frame", {
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 0, 16),
-        Parent = TabPage
-    })
-    
-    local DividerLine = Create("Frame", {
-        BackgroundColor3 = Nexus.Theme.Outline,
-        BackgroundTransparency = 0.6,
-        Size = UDim2.new(1, 0, 0, 1),
-        Position = UDim2.new(0, 0, 0.5, 0),
-        Parent = DividerFrame
-    })
-    
-    return DividerFrame
-end
-
+            if Nexus.IsDestroyed then return end
+            
+            local SectionFrame = Create("Frame", {
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1, 0, 0, 32),
+                Parent = TabPage
+            })
+            
+            local SectionLabel = Create("TextLabel", {
+                Text = text or "Section",
+                Font = Enum.Font.GothamBold,
+                TextSize = 16,
+                TextColor3 = Nexus.Theme.Text,
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1, 0, 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                Parent = SectionFrame
+            })
+            
+            local SectionLine = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Accent,
+                Size = UDim2.new(0, 40, 0, 2),
+                Position = UDim2.new(0, 0, 1, -4),
+                Parent = SectionFrame
+            })
+            
+            AddCorner(SectionLine, 1)
+            
+            return SectionFrame
+        end
+        
+        function Tab:Divider()
+            if Nexus.IsDestroyed then return end
+            
+            local DividerFrame = Create("Frame", {
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1, 0, 0, 16),
+                Parent = TabPage
+            })
+            
+            local DividerLine = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Outline,
+                BackgroundTransparency = 0.6,
+                Size = UDim2.new(1, 0, 0, 1),
+                Position = UDim2.new(0, 0, 0.5, 0),
+                Parent = DividerFrame
+            })
+            
+            return DividerFrame
+        end
         
         function Tab:Label(config)
             if Nexus.IsDestroyed then return end
@@ -2779,188 +2778,308 @@ end
                 end
             }
         end
-
         
         function Tab:Button(config)
-            if type(config) == "string" then
-                config = {Text = config}
+    if Nexus.IsDestroyed then return end
+    
+    if type(config) == "string" then
+        config = {Text = config}
+    end
+    if not config then config = {} end
+    
+    local Text = config.Text or "Button"
+    local Callback = config.Callback or function() end
+    local Icon = config.Icon
+    
+    local ButtonFrame = Create("Frame", {
+        BackgroundColor3 = Nexus.Theme.Surface,
+        Size = UDim2.new(1, 0, 0, 44),
+        Parent = TabPage
+    })
+    
+    AddCorner(ButtonFrame, 8)
+    AddStroke(ButtonFrame, Nexus.Theme.Outline, 1, 0.4)
+    
+    -- Base gradient
+    local ButtonGradient = Create("UIGradient", {
+        Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+            ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+            ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+        },
+        Rotation = 90,
+        Transparency = NumberSequence.new{
+            NumberSequenceKeypoint.new(0, 0.05),
+            NumberSequenceKeypoint.new(0.5, 0.02),
+            NumberSequenceKeypoint.new(1, 0.08)
+        },
+        Parent = ButtonFrame
+    })
+    
+    local Button = Create("TextButton", {
+        Text = "",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 1, 0),
+        AutoButtonColor = false,
+        Parent = ButtonFrame
+    })
+    
+    local ButtonContent = Create("Frame", {
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 1, 0),
+        Parent = Button
+    })
+    
+    -- Icon (if provided)
+    local iconSize = 0
+    local ButtonIcon = nil
+    if Icon then
+        ButtonIcon = Create("TextLabel", {
+            Text = Icon,
+            Font = Enum.Font.GothamBold,
+            TextSize = 16,
+            TextColor3 = Nexus.Theme.Accent,
+            BackgroundTransparency = 1,
+            Position = UDim2.fromOffset(16, 0),
+            Size = UDim2.fromOffset(24, 44),
+            Parent = ButtonContent
+        })
+        iconSize = 32
+    end
+    
+    -- Button text
+    local ButtonText = Create("TextLabel", {
+        Text = Text,
+        Font = Enum.Font.GothamMedium,
+        TextSize = 14,
+        TextColor3 = Nexus.Theme.Text,
+        BackgroundTransparency = 1,
+        Position = UDim2.fromOffset(16 + iconSize, 0),
+        Size = UDim2.new(1, -(32 + iconSize), 1, 0),
+        TextXAlignment = Enum.TextXAlignment.Left,
+        TextTruncate = Enum.TextTruncate.AtEnd,
+        Parent = ButtonContent
+    })
+    
+    -- FIX: Enhanced hover effects dengan destroy checking
+    local buttonEnterConnection = Button.MouseEnter:Connect(function()
+        if Nexus.IsDestroyed then return end
+        
+        pcall(function()
+            if ButtonFrame and ButtonFrame.Parent then
+                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
             end
-            if not config then config = {} end
             
-            local Text = config.Text or "Button"
-            local Callback = config.Callback or function() end
-            local Icon = config.Icon
+            local stroke = ButtonFrame:FindFirstChild("UIStroke")
+            if stroke then
+                Tween(stroke, {
+                    Color = Nexus.Theme.Accent,
+                    Transparency = 0.2
+                }, 0.15)
+            end
             
-            local ButtonFrame = Create("Frame", {
-                BackgroundColor3 = Nexus.Theme.Surface,
-                Size = UDim2.new(1, 0, 0, 44),
-                Parent = TabPage
-            })
+            -- Enhanced gradient hover
+            if ButtonGradient and ButtonGradient.Parent then
+                ButtonGradient.Transparency = NumberSequence.new{
+                    NumberSequenceKeypoint.new(0, 0.02),
+                    NumberSequenceKeypoint.new(0.5, 0),
+                    NumberSequenceKeypoint.new(1, 0.05)
+                }
+            end
+        end)
+    end)
+    
+    local buttonLeaveConnection = Button.MouseLeave:Connect(function()
+        if Nexus.IsDestroyed then return end
+        
+        pcall(function()
+            if ButtonFrame and ButtonFrame.Parent then
+                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.15)
+            end
             
-            AddCorner(ButtonFrame, 8)
-            AddStroke(ButtonFrame, Nexus.Theme.Outline, 1, 0.4)
+            local stroke = ButtonFrame:FindFirstChild("UIStroke")
+            if stroke then
+                Tween(stroke, {
+                    Color = Nexus.Theme.Outline,
+                    Transparency = 0.4
+                }, 0.15)
+            end
             
-            -- Base gradient
-            local ButtonGradient = Create("UIGradient", {
-                Color = ColorSequence.new{
-                    ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
-                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
-                    ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-                },
-                Rotation = 90,
-                Transparency = NumberSequence.new{
+            -- Reset gradient
+            if ButtonGradient and ButtonGradient.Parent then
+                ButtonGradient.Transparency = NumberSequence.new{
                     NumberSequenceKeypoint.new(0, 0.05),
                     NumberSequenceKeypoint.new(0.5, 0.02),
                     NumberSequenceKeypoint.new(1, 0.08)
-                },
-                Parent = ButtonFrame
-            })
-            
-            -- Hover state enhancement
-            ButtonFrame.MouseEnter:Connect(function()
-                if ButtonGradient then
-                    ButtonGradient.Transparency = NumberSequence.new{
-                        NumberSequenceKeypoint.new(0, 0.02),
-                        NumberSequenceKeypoint.new(0.5, 0),
-                        NumberSequenceKeypoint.new(1, 0.05)
-                    }
+                }
+            end
+        end)
+    end)
+    
+    -- FIX: Enhanced click animation
+    local buttonDownConnection = Button.MouseButton1Down:Connect(function()
+        if Nexus.IsDestroyed then return end
+        pcall(function()
+            if ButtonFrame and ButtonFrame.Parent then
+                Tween(ButtonFrame, {
+                    Size = UDim2.new(1, -4, 0, 42),
+                    BackgroundColor3 = Nexus.Theme.Accent
+                }, 0.1)
+            end
+        end)
+    end)
+    
+    local buttonUpConnection = Button.MouseButton1Up:Connect(function()
+        if Nexus.IsDestroyed then return end
+        pcall(function()
+            if ButtonFrame and ButtonFrame.Parent then
+                Tween(ButtonFrame, {
+                    Size = UDim2.new(1, 0, 0, 44),
+                    BackgroundColor3 = Nexus.Theme.Surface
+                }, 0.1)
+            end
+        end)
+    end)
+    
+    -- FIX: Enhanced callback execution
+    local buttonClickConnection = Button.MouseButton1Click:Connect(function()
+        if Nexus.IsDestroyed then return end
+        
+        -- Visual feedback
+        pcall(function()
+            if ButtonFrame and ButtonFrame.Parent then
+                -- Quick flash effect
+                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Accent}, 0.05)
+                task.spawn(function()
+                    task.wait(0.05)
+                    if not Nexus.IsDestroyed and ButtonFrame and ButtonFrame.Parent then
+                        Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.1)
+                    end
+                end)
+            end
+        end)
+        
+        -- Execute callback safely
+        task.spawn(function()
+            pcall(function()
+                if Callback then
+                    Callback()
                 end
             end)
-            
-            ButtonFrame.MouseLeave:Connect(function()
-                if ButtonGradient then
-                    ButtonGradient.Transparency = NumberSequence.new{
-                        NumberSequenceKeypoint.new(0, 0.05),
-                        NumberSequenceKeypoint.new(0.5, 0.02),
-                        NumberSequenceKeypoint.new(1, 0.08)
-                    }
-                end
-            end)
-            
-            -- Theme update connection
-            local buttonGradientConnection = Nexus.ThemeChanged.Event:Connect(function()
-                if ButtonGradient and ButtonGradient.Parent then
-                    ButtonGradient.Color = ColorSequence.new{
-                        ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
-                        ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
-                        ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-                    }
-                end
-            end)
-            
-            table.insert(Nexus.Connections, buttonGradientConnection)
-
-            
-            local Button = Create("TextButton", {
-                Text = "",
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 1, 0),
-                AutoButtonColor = false,
-                Parent = ButtonFrame
-            })
-            
-            local ButtonContent = Create("Frame", {
-                BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 1, 0),
-                Parent = Button
-            })
-            
-            -- Icon (if provided)
-            local iconSize = 0
-            if Icon then
-                local ButtonIcon = Create("TextLabel", {
-                    Text = Icon,
-                    Font = Enum.Font.GothamBold,
-                    TextSize = 16,
-                    TextColor3 = Nexus.Theme.Accent,
-                    BackgroundTransparency = 1,
-                    Position = UDim2.fromOffset(16, 0),
-                    Size = UDim2.fromOffset(24, 44),
-                    Parent = ButtonContent
-                })
-                iconSize = 32
+        end)
+    end)
+    
+    -- FIX: Enhanced theme updates dengan proper error handling
+    local buttonThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
+        if Nexus.IsDestroyed then return end
+        
+        pcall(function()
+            if ButtonFrame and ButtonFrame.Parent then
+                ButtonFrame.BackgroundColor3 = Nexus.Theme.Surface
             end
             
-            -- Button text
-            local ButtonText = Create("TextLabel", {
-                Text = Text,
-                Font = Enum.Font.GothamMedium,
-                TextSize = 14,
-                TextColor3 = Nexus.Theme.Text,
-                BackgroundTransparency = 1,
-                Position = UDim2.fromOffset(16 + iconSize, 0),
-                Size = UDim2.new(1, -(32 + iconSize), 1, 0),
-                TextXAlignment = Enum.TextXAlignment.Left,
-                TextTruncate = Enum.TextTruncate.AtEnd,
-                Parent = ButtonContent
-            })
+            if ButtonText and ButtonText.Parent then
+                ButtonText.TextColor3 = Nexus.Theme.Text
+            end
             
-            -- Hover effects
-            Button.MouseEnter:Connect(function()
-                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
-                
-                local stroke = ButtonFrame:FindFirstChild("UIStroke")
-                if stroke then
-                    Tween(stroke, {
-                        Color = Nexus.Theme.Accent,
-                        Transparency = 0.2
-                    }, 0.15)
+            if ButtonIcon and ButtonIcon.Parent then
+                ButtonIcon.TextColor3 = Nexus.Theme.Accent
+            end
+            
+            if ButtonGradient and ButtonGradient.Parent then
+                ButtonGradient.Color = ColorSequence.new{
+                    ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+                    ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+                    ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+                }
+            end
+            
+            local stroke = ButtonFrame:FindFirstChild("UIStroke")
+            if stroke then
+                stroke.Color = Nexus.Theme.Outline
+            end
+        end)
+    end)
+    
+    table.insert(Nexus.Connections, buttonEnterConnection)
+    table.insert(Nexus.Connections, buttonLeaveConnection)
+    table.insert(Nexus.Connections, buttonDownConnection)
+    table.insert(Nexus.Connections, buttonUpConnection)
+    table.insert(Nexus.Connections, buttonClickConnection)
+    table.insert(Nexus.Connections, buttonThemeConnection)
+    
+    -- FIX: Enhanced return API methods
+    return {
+        SetText = function(newText)
+            if Nexus.IsDestroyed then return end
+            pcall(function()
+                if ButtonText and ButtonText.Parent then
+                    ButtonText.Text = tostring(newText or "")
                 end
             end)
-            
-            Button.MouseLeave:Connect(function()
-                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.15)
-                
-                local stroke = ButtonFrame:FindFirstChild("UIStroke")
-                if stroke then
-                    Tween(stroke, {
-                        Color = Nexus.Theme.Outline,
-                        Transparency = 0.4
-                    }, 0.15)
+        end,
+        
+        GetText = function()
+            return (ButtonText and ButtonText.Text) or ""
+        end,
+        
+        SetEnabled = function(enabled)
+            if Nexus.IsDestroyed then return end
+            pcall(function()
+                if Button and Button.Parent then
+                    Button.Visible = enabled
+                    ButtonFrame.BackgroundTransparency = enabled and 0 or 0.7
                 end
             end)
-            
-            -- Click animation
-            Button.MouseButton1Down:Connect(function()
-                Tween(ButtonFrame, {Size = UDim2.new(1, -4, 0, 42)}, 0.1)
-            end)
-            
-            Button.MouseButton1Up:Connect(function()
-                Tween(ButtonFrame, {Size = UDim2.new(1, 0, 0, 44)}, 0.1)
-            end)
-            
-            -- Callback
-            Button.MouseButton1Click:Connect(function()
-                ----PlaySound("6895079853", 0.1)
-                pcall(Callback)
-            end)
-            
-            -- Theme updates
-            local buttonThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
-                if ButtonFrame and ButtonFrame.Parent then
-                    ButtonFrame.BackgroundColor3 = Nexus.Theme.Surface
-                    ButtonText.TextColor3 = Nexus.Theme.Text
+        end,
+        
+        SetCallback = function(newCallback)
+            if Nexus.IsDestroyed then return end
+            Callback = newCallback or function() end
+        end,
+        
+        SetIcon = function(newIcon)
+            if Nexus.IsDestroyed then return end
+            pcall(function()
+                if newIcon and not ButtonIcon then
+                    -- Create icon if it doesn't exist
+                    ButtonIcon = Create("TextLabel", {
+                        Text = newIcon,
+                        Font = Enum.Font.GothamBold,
+                        TextSize = 16,
+                        TextColor3 = Nexus.Theme.Accent,
+                        BackgroundTransparency = 1,
+                        Position = UDim2.fromOffset(16, 0),
+                        Size = UDim2.fromOffset(24, 44),
+                        Parent = ButtonContent
+                    })
                     
-                    if Icon then
-                        ButtonContent:FindFirstChild("TextLabel").TextColor3 = Nexus.Theme.Accent
+                    -- Adjust text position
+                    if ButtonText and ButtonText.Parent then
+                        ButtonText.Position = UDim2.fromOffset(48, 0)
+                        ButtonText.Size = UDim2.new(1, -64, 1, 0)
+                    end
+                elseif newIcon and ButtonIcon then
+                    -- Update existing icon
+                    ButtonIcon.Text = newIcon
+                elseif not newIcon and ButtonIcon then
+                    -- Remove icon
+                    ButtonIcon:Destroy()
+                    ButtonIcon = nil
+                    
+                    -- Reset text position
+                    if ButtonText and ButtonText.Parent then
+                        ButtonText.Position = UDim2.fromOffset(16, 0)
+                        ButtonText.Size = UDim2.new(1, -32, 1, 0)
                     end
                 end
             end)
-            
-            table.insert(Nexus.Connections, buttonThemeConnection)
-            
-            return {
-                SetText = function(newText)
-                    ButtonText.Text = tostring(newText or "")
-                end,
-                GetText = function()
-                    return ButtonText.Text
-                end,
-                SetEnabled = function(enabled)
-                    Button.Visible = enabled
-                end
-            }
-        end
+        end,
+        
+        Frame = ButtonFrame
+    }
+end
+
         
         -- Enhanced Dropdown with the new system
         function Tab:Dropdown(cfg)
