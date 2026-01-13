@@ -1,199 +1,3 @@
-local IolIOIlloOOO_OoIlIOolOolI = nil or 0.16033579641999818
--- ulpa6jh5me
-local IolIOIlloOOO_OoIlIOolOolI = nil or 0.16033579641999818
-local function _lOOIolOooOoOoIOoIolOo() end
--- ulpa6jh5me
--- Hidden key generation
-local _k = (function()
-    local _t = {}
-    _t[1] = string.char(0x35)
-    _t[2] = string.char(0x4f)
-    _t[3] = string.char(0x54)
-    _t[4] = string.char(0x4e)
-    _t[5] = string.char(0x58)
-    _t[6] = string.char(0x57)
-    _t[7] = string.char(0x55)
-    _t[8] = string.char(0x6c)
-    _t[9] = string.char(0x31)
-    _t[10] = string.char(0x79)
-    _t[11] = string.char(0x6d)
-    _t[12] = string.char(0x65)
-    _t[13] = string.char(0x45)
-    _t[14] = string.char(0x56)
-    _t[15] = string.char(0x45)
-    _t[16] = string.char(0x4c)
-    return table.concat(_t)
-end)()
-
--- Decryption function
-local function _d(_s)
-    local _r = {}
-    for _i = 1, #_s do
-        local _c = string.byte(_s, _i)
-        local _kc = string.byte(_k, ((_i - 1) % #_k) + 1)
-        _r[_i] = string.char(bit32.bxor(_c, _kc))
-    end
-    return table.concat(_r)
-end
-
--- Encrypted strings table
-local __strings = {
-    [1] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x77\x18\x04\x09\x20\x32\x65\x38\x5a\x6f\x33\x2b\x2c\x77\x26\x09\x43\x0f\x04\x06\x20\x6c"),
-    [2] = _d("\x61\x38\x31\x2b\x36\x04\x30\x1e\x47\x10\x0e\x00"),
-    [3] = _d("\x60\x3c\x31\x3c\x11\x39\x25\x19\x45\x2a\x08\x17\x33\x3f\x26\x29"),
-    [4] = _d("\x67\x3a\x3a\x1d\x3d\x25\x23\x05\x52\x1c"),
-    [5] = _d("\x7d\x3b\x20\x3e\x0b\x32\x27\x1a\x58\x1a\x08"),
-    [6] = _d("\x65\x23\x35\x37\x3d\x25\x26"),
-    [7] = _d("\x76\x20\x26\x2b\x1f\x22\x3c"),
-    [8] = _d("\x79\x26\x33\x26\x2c\x3e\x3b\x0b"),
-    [9] = _d("\x66\x3b\x35\x3a\x2b"),
-    [10] = _d("\x66\x20\x21\x20\x3c\x04\x30\x1e\x47\x10\x0e\x00"),
-    [11] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x77\x18\x04\x09\x20\x32\x65\x38\x5a\x6f\x37\x3c\x3d\x36\x21\x09\x11"),
-    [12] = _d("\x7c\x21\x27\x3a\x39\x39\x36\x09"),
-    [13] = _d("\x60\x06\x17\x21\x2a\x39\x30\x1e"),
-    [14] = _d("\x60\x06\x07\x3a\x2a\x38\x3e\x09"),
-    [15] = _d("\x7c\x22\x35\x29\x3d\x1b\x34\x0e\x54\x15"),
-    [16] = _d("\x71\x3d\x3b\x3e\x0b\x3f\x34\x08\x5e\x0e"),
-    [17] = _d("\x47\x2d\x2c\x2f\x2b\x24\x30\x18\x58\x1d\x57\x4a\x6a\x60\x75\x7d\x01\x7d\x62\x7f\x61\x6e\x66"),
-    [18] = _d("\x6e\x01\x31\x36\x2d\x24\x00\x25\x6c\x59\x39\x12\x20\x33\x2b\x6c\x70\x3d\x26\x21\x2a\x6d\x75\x05\x5f\x0a\x19\x45\x2c\x25\x65\x22\x5a\x3b\x74\x07\x36\x24\x21\x0d\x5f\x1a\x08"),
-    [19] = _d("\x6e\x01\x31\x36\x2d\x24\x00\x25\x6c\x59\x39\x12\x20\x33\x2b\x6c\x76\x3d\x31\x2f\x2c\x32\x75\x2a\x50\x10\x01\x00\x21\x6c"),
-    [20] = _d("\x77\x23\x21\x3c\x1d\x31\x33\x09\x52\x0d"),
-    [21] = _d("\x7b\x2a\x2c\x3b\x2b\x15\x39\x19\x43"),
-    [22] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x73\x15\x18\x17\x65\x33\x23\x2a\x50\x2c\x20\x6e\x36\x38\x21\x4c\x42\x0c\x1d\x15\x2a\x24\x31\x29\x51\x6f\x3d\x20\x78\x23\x3d\x05\x42\x59\x08\x0b\x33\x3f\x37\x23\x5b\x22\x31\x20\x2c"),
-    [23] = _d("\x7b\x2a\x2c\x3b\x2b\x14\x3a\x02\x57\x10\x0a"),
-    [24] = _d(""),
-    [25] = _d("\x76\x20\x38\x21\x2a\x64"),
-    [26] = _d("\x70\x21\x21\x23\x11\x23\x30\x01"),
-    [27] = _d("\x1a"),
-    [28] = _d("\x1b\x25\x27\x21\x36"),
-    [29] = _d("\x41\x2e\x36\x22\x3d"),
-    [30] = _d("\x70\x21\x21\x23\x76\x1c\x30\x15\x72\x16\x09\x00"),
-    [31] = _d("\x1d\x14\x0a\x61\x04\x0a\x7e\x45\x14\x57\x07\x16\x2a\x38\x61"),
-    [32] = _d("\x77\x26\x3a\x2a\x39\x35\x39\x09\x74\x0f\x08\x0b\x31"),
-    [33] = _d("\x71\x3d\x3b\x3e\x3c\x38\x22\x02"),
-    [34] = _d("\x7b\x20\x74\x01\x28\x23\x3c\x03\x5f\x0a"),
-    [35] = _d("\x66\x2a\x38\x2b\x3b\x23\x75\x03\x41\x0d\x04\x0a\x2b\x78\x6b\x62"),
-    [36] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x72\x0b\x08\x04\x31\x33\x08\x23\x51\x2a\x26\x20\x1c\x25\x3a\x1c\x55\x16\x1a\x0b\x7f\x76\x15\x2d\x47\x2a\x3a\x3a\x78\x3e\x26\x4c\x43\x1c\x1c\x10\x2c\x24\x20\x28"),
-    [37] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x72\x0b\x08\x04\x31\x33\x08\x23\x51\x2a\x26\x20\x1c\x25\x3a\x1c\x55\x16\x1a\x0b\x7f\x76\x0a\x3c\x41\x26\x3b\x20\x2b\x77\x26\x04\x5e\x0c\x01\x01\x65\x34\x20\x6c\x54\x6f\x3a\x21\x36\x7a\x30\x01\x41\x0d\x14\x45\x31\x37\x27\x20\x50"),
-    [38] = _d("\x73\x3d\x35\x23\x3d"),
-    [39] = _d("\x71\x3d\x3b\x3e\x3c\x38\x22\x02\x6e"),
-    [40] = _d("\x61\x2a\x2c\x3a\x1a\x22\x21\x18\x5e\x17"),
-    [41] = _d("\x77\x3a\x20\x3a\x37\x39"),
-    [42] = _d("\x60\x06\x13\x3c\x39\x33\x3c\x09\x5f\x0d"),
-    [43] = _d("\x76\x20\x3a\x3a\x3d\x39\x21"),
-    [44] = _d("\x61\x2a\x2c\x3a\x14\x36\x37\x09\x5d"),
-    [45] = _d("\x66\x2a\x38\x2b\x3b\x23\x30\x08\x65\x1c\x15\x11"),
-    [46] = _d("\x74\x3d\x26\x21\x2f"),
-    [47] = _d("\x89"),
-    [48] = _d("\x66\x2c\x26\x2b\x3d\x39\x12\x19\x58"),
-    [49] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x72\x0b\x08\x04\x31\x33\x08\x23\x51\x2a\x26\x20\x1c\x25\x3a\x1c\x55\x16\x1a\x0b\x7f\x76\x0b\x23\x15\x1c\x37\x3c\x3d\x32\x3b\x2b\x44\x10\x4d\x03\x2a\x23\x2b\x28\x19\x6f\x24\x2f\x36\x32\x39\x4c\x5c\x18\x14\x45\x26\x3a\x2c\x3c"),
-    [50] = _d("\x71\x3d\x3b\x3e\x3c\x38\x22\x02\x61\x18\x03\x00\x29\x09"),
-    [51] = _d("\x76\x23\x3b\x3d\x3d\x15\x20\x18\x45\x16\x03"),
-    [52] = _d("\x76\x23\x3b\x3d\x3d"),
-    [53] = _d("\x26"),
-    [54] = _d("\x71\x20\x3a\x2b"),
-    [55] = _d("\xe2"),
-    [56] = _d("\x76\x2e\x3a\x2d\x3d\x3b"),
-    [57] = _d("\x61\x2a\x2c\x3a\x1a\x38\x2d"),
-    [58] = _d("\x66\x2a\x35\x3c\x3b\x3f"),
-    [59] = _d("\x66\x2a\x35\x3c\x3b\x3f\x7b\x42\x1f"),
-    [60] = _d("\x66\x2c\x26\x21\x34\x3b\x3c\x02\x56\x3f\x1f\x04\x28\x33"),
-    [61] = _d("\x7a\x3f\x20\x27\x37\x39\x26"),
-    [62] = _d("\x60\x06\x18\x27\x2b\x23\x19\x0d\x48\x16\x18\x11"),
-    [63] = _d("\x7a\x3f\x20\x27\x37\x39\x0a"),
-    [64] = _d("\x61\x2a\x2c\x3a"),
-    [65] = _d("\x76\x27\x31\x2d\x33\x35\x3a\x14"),
-    [66] = _d("\x15\x26\x20\x2b\x35\x24\x75\x1f\x54\x15\x08\x06\x31\x33\x21"),
-    [67] = _d("\x87"),
-    [68] = _d("\x76\x23\x3d\x3e\x2b\x13\x30\x1f\x52\x1c\x03\x01\x24\x38\x31\x3f"),
-    [69] = _d("\x66\x26\x2e\x2b"),
-    [70] = _d("\x72\x3a\x3d\x01\x3a\x3d\x30\x0f\x45"),
-    [71] = _d("\x7b\x2a\x2c\x3b\x2b\x77\x1d\x19\x53"),
-    [72] = _d("\x70\x21\x3c\x2f\x36\x34\x30\x08\x11\x2c\x24\x45\x09\x3f\x27\x3e\x54\x3d\x2d"),
-    [73] = _d("\x7b\x2a\x2c\x3b\x2b\x02\x1c\x33"),
-    [74] = _d("\x65\x23\x35\x37\x3d\x25\x12\x19\x58"),
-    [75] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x77\x18\x04\x09\x20\x32\x65\x38\x5a\x6f\x37\x3c\x3d\x36\x21\x09\x11\x2a\x0e\x17\x20\x33\x2b\x0b\x40\x26"),
-    [76] = _d("\x7b"),
-    [77] = _d("\x71\x2e\x20\x2f\x78\x07\x3c\x02\x56"),
-    [78] = _d("\x10\x07\x6e\x6b\x15\x6d\x70\x3f"),
-    [79] = _d("\x08\xcf\x74\x6b\x3c\x77\x13\x3c\x62\x59\x11\x45\x78\xb7\x65\x69\x51\x22\x27\x6e\x24\x77\x68\x09\x11\x5c\x09\x45\x39\x76\x60\x3f"),
-    [80] = _d("\x60\x06\x07\x2d\x39\x3b\x30"),
-    [81] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x77\x18\x04\x09\x20\x32\x65\x38\x5a\x6f\x37\x3c\x3d\x36\x21\x09\x11\x14\x0c\x0c\x2b\x76\x32\x25\x5b\x2b\x3b\x39"),
-    [82] = _d("\x08\xcf"),
-    [83] = _d("\x35"),
-    [84] = _d("\x47\x2d\x2c\x2f\x2b\x24\x30\x18\x58\x1d\x57\x4a\x6a\x6f\x7d\x74\x03\x79\x61\x77\x6e\x60\x64"),
-    [85] = _d("\x7c\x22\x35\x29\x3d\x15\x20\x18\x45\x16\x03"),
-    [86] = _d("\x7b\x2a\x2c\x3b\x2b\x03\x3a\x0b\x56\x15\x08"),
-    [87] = _d("\x74\x2d\x27\x21\x34\x22\x21\x09\x62\x10\x17\x00"),
-    [88] = _d("\x74\x2d\x27\x21\x34\x22\x21\x09\x72\x16\x03\x11\x20\x38\x31\x1f\x5c\x35\x31"),
-    [89] = _d("\x60\x06\x04\x2f\x3c\x33\x3c\x02\x56"),
-    [90] = _d("\x7b\x20\x20\x27\x3e\x3e\x36\x0d\x45\x10\x02\x0b"),
-    [91] = _d("\x7c\x21\x32\x21"),
-    [92] = _d("\x0c\x40"),
-    [93] = _d("\x30"),
-    [94] = _d("\x95\x40"),
-    [95] = _d("\x79"),
-    [96] = _d("\x20"),
-    [97] = _d("\x46\x3b\x26\x27\x36\x30"),
-    [98] = _d("\x61\x2e\x36"),
-    [99] = _d("\x08\x8b"),
-    [100] = _d("\x66\x2a\x37\x3a\x31\x38\x3b"),
-    [101] = _d("\x79\x2e\x36\x2b\x34"),
-    [102] = _d("\x61\x2a\x2c\x3a\x0b\x32\x27\x1a\x58\x1a\x08"),
-    [103] = _d("\x6e\x01\x31\x36\x2d\x24\x08\x4c\x65\x18\x0f\x5f\x01\x24\x2a\x3c\x51\x20\x23\x20\x78\x7a\x75\x38\x50\x1b\x3d\x04\x22\x33\x65\x25\x46\x6f\x3a\x21\x2c\x77\x34\x1a\x50\x10\x01\x04\x27\x3a\x20"),
-    [104] = _d("\x61\x20\x33\x29\x34\x32"),
-    [105] = _d("\x66\x23\x3d\x2a\x3d\x25"),
-    [106] = _d("\x70\x21\x20\x2b\x2a\x77\x21\x09\x49\x0d\x43\x4b\x6b"),
-    [107] = _d("\x6e\x11\x71\x2a\x7d\x79\x70\x41\x6c"),
-    [108] = _d("\x1b"),
-    [109] = _d("\x18"),
-    [110] = _d("\x10\x2b"),
-    [111] = _d("\x7e\x2a\x2d\x2c\x31\x39\x31"),
-    [112] = _d("\x1b\x61\x7a"),
-    [113] = _d("\x7b\x20\x3a\x2b"),
-    [114] = _d("\x79\x1c\x3c\x27\x3e\x23"),
-    [115] = _d("\x67\x1c\x3c\x27\x3e\x23"),
-    [116] = _d("\x79\x0c\x20\x3c\x34"),
-    [117] = _d("\x67\x0c\x20\x3c\x34"),
-    [118] = _d("\x79\x0e\x38\x3a"),
-    [119] = _d("\x67\x0e\x38\x3a"),
-    [120] = _d("\x76\x2e\x24\x3d"),
-    [121] = _d("\x04"),
-    [122] = _d("\x07"),
-    [123] = _d("\x06"),
-    [124] = _d("\x01"),
-    [125] = _d("\x00"),
-    [126] = _d("\x03"),
-    [127] = _d("\x02"),
-    [128] = _d("\x0d"),
-    [129] = _d("\x0c"),
-    [130] = _d("\x05"),
-    [131] = _d("\x7b\x3a\x39\x7f"),
-    [132] = _d("\x7b\x3a\x39\x7c"),
-    [133] = _d("\x7b\x3a\x39\x7d"),
-    [134] = _d("\x7b\x3a\x39\x7a"),
-    [135] = _d("\x7b\x3a\x39\x7b"),
-    [136] = _d("\x7b\x3a\x39\x78"),
-    [137] = _d("\x7b\x3a\x39\x79"),
-    [138] = _d("\x7b\x3a\x39\x76"),
-    [139] = _d("\x7b\x3a\x39\x77"),
-    [140] = _d("\x7b\x3a\x39\x7e"),
-    [141] = _d("\x60\x21\x3f\x20\x37\x20\x3b"),
-    [142] = _d("\x7d\x20\x38\x2a"),
-    [143] = _d("\x74\x23\x23\x2f\x21\x24"),
-    [144] = _d("\x76\x20\x38\x22\x39\x27\x26\x05\x53\x15\x08"),
-    [145] = _d("\x65\x2e\x26\x2f\x3f\x25\x34\x1c\x59"),
-    [146] = _d("\x7c\x21\x24\x3b\x2c"),
-    [147] = _d("\x63\x2e\x38\x3b\x3d\x79\x7b\x42"),
-    [148] = _d("\x76\x20\x38\x21\x2a\x77\x05\x05\x52\x12\x08\x17"),
-    [149] = _d("\x67\x0d\x0c\x1d\x3b\x25\x3c\x1c\x45\x3a\x02\x0b\x2b\x33\x26\x38\x5c\x20\x3a"),
-    [150] = _d("\x27"),
-    [151] = _d("\x94"),
-}
-
--- Obfuscated with Lua-njingObfuscator
--- https://github.com/rsalmn/Lua-njingObfuscator
-
 --[[ 
     NEXUS UI (v4.0 - Enhanced Edition)
     ✨ New Features: Modern Dropdown, Error Prevention, Performance Boost
@@ -234,7 +38,7 @@ local function GetService(serviceName)
         end)
         
         if not success then
-            warn(__strings[1], serviceName)
+            warn("[Nexus] Failed to get service:", serviceName)
         end
         
         Services[serviceName] = success and service or nil
@@ -244,15 +48,15 @@ local function GetService(serviceName)
 end
 
 
-local TweenService = GetService(__strings[2])
-local UserInputService = GetService(__strings[3])
-local RunService = GetService(__strings[4])
-local HttpService = GetService(__strings[5])
-local Players = GetService(__strings[6])
-local CoreGui = GetService(__strings[7])
-local Lighting = GetService(__strings[8])
-local Stats = GetService(__strings[9])
-local SoundService = GetService(__strings[10])
+local TweenService = GetService("TweenService")
+local UserInputService = GetService("UserInputService")
+local RunService = GetService("RunService")
+local HttpService = GetService("HttpService")
+local Players = GetService("Players")
+local CoreGui = GetService("CoreGui")
+local Lighting = GetService("Lighting")
+local Stats = GetService("Stats")
+local SoundService = GetService("SoundService")
 
 --// Enhanced Helpers with error handling
 local function SafeCreate(class, props, children)
@@ -261,7 +65,7 @@ local function SafeCreate(class, props, children)
     end)
     
     if not success then
-        warn(__strings[11] .. tostring(class))
+        warn("[Nexus] Failed to create " .. tostring(class))
         return nil
     end
     
@@ -275,7 +79,7 @@ local function SafeCreate(class, props, children)
     
     if children then
         for _, child in pairs(children) do
-            if child and typeof(child) == __strings[12] then
+            if child and typeof(child) == "Instance" then
                 child.Parent = inst
             end
         end
@@ -290,7 +94,7 @@ end
 
 local function AddCorner(parent, radius)
     if not parent or not parent.Parent then return end
-    return Create(__strings[13], {
+    return Create("UICorner", {
         CornerRadius = UDim.new(0, radius or 8),
         Parent = parent
     })
@@ -298,7 +102,7 @@ end
 
 local function AddStroke(parent, color, thickness, transparency)
     if not parent or not parent.Parent then return end
-    return Create(__strings[14], {
+    return Create("UIStroke", {
         Color = color or Nexus.Theme.Outline,
         Thickness = thickness or 1,
         Transparency = transparency or 0.6,
@@ -310,13 +114,13 @@ end
 local function AddShadow(parent, size, transparency)
     if not parent or not parent.Parent then return end
     
-    local shadow = Create(__strings[15], {
-        Name = __strings[16],
+    local shadow = Create("ImageLabel", {
+        Name = "DropShadow",
         BackgroundTransparency = 1,
         Position = UDim2.fromOffset(-size, -size),
         Size = UDim2.new(1, size * 2, 1, size * 2),
         ZIndex = parent.ZIndex - 1,
-        Image = __strings[17],
+        Image = "rbxassetid://6014261993",
         ImageColor3 = Nexus.Theme.Shadow,
         ImageTransparency = transparency or 0.8,
         ScaleType = Enum.ScaleType.Slice,
@@ -336,7 +140,7 @@ local function Tween(inst, props, time, style, direction, callback)
     end
     
     if typeof(inst) ~= "Instance" then
-        warn(__strings[18])
+        warn("[NexusUI] Tween Error: inst is not Instance")
         return
     end
 
@@ -358,7 +162,7 @@ local function Tween(inst, props, time, style, direction, callback)
     end)
 
     if not ok then
-        warn(__strings[19], err)
+        warn("[NexusUI] Tween Create Failed:", err)
         return
     end
 
@@ -381,7 +185,7 @@ local function MakeDraggable(gui, handle)
     local startPos = nil
     
     local function onInputBegan(input)
-        if ((function() return true end)()) and input.UserInputType == Enum.UserInputType.MouseButton1 or 
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or 
            input.UserInputType == Enum.UserInputType.Touch then
             
             dragging = true
@@ -427,14 +231,14 @@ local function InitializeBlur()
     if BlurEffect then return end
     
     local success = pcall(function()
-        BlurEffect = Instance.new(__strings[20])
-        BlurEffect.Name = __strings[21]
+        BlurEffect = Instance.new("BlurEffect")
+        BlurEffect.Name = "NexusBlur"
         BlurEffect.Size = 0
         BlurEffect.Parent = Lighting
     end)
     
-    if ((function() return true end)()) and not success then
-        warn(__strings[22])
+    if not success then
+        warn("[Nexus] Blur effect not supported in this environment")
     end
 end
 
@@ -448,11 +252,11 @@ local function SetBlur(enabled, intensity)
 end
 
 
-local CONFIG_FOLDER = __strings[23]
+local CONFIG_FOLDER = "NexusConfig"
 local CONFIG_VERSION = 2
 
 function Nexus:SaveConfig(name)
-    if not name or name == __strings[24] then return false end
+    if not name or name == "" then return false end
 
     if not isfolder(CONFIG_FOLDER) then
         makefolder(CONFIG_FOLDER)
@@ -465,14 +269,14 @@ function Nexus:SaveConfig(name)
     }
 
     for flag, value in pairs(self.Flags) do
-        if typeof(value) == __strings[25] then
+        if typeof(value) == "Color3" then
             data.Flags[flag] = {
                 Type = "Color3",
                 R = value.R,
                 G = value.G,
                 B = value.B
             }
-        elseif typeof(value) == __strings[26] then
+        elseif typeof(value) == "EnumItem" then
             data.Flags[flag] = {
                 Type = "EnumItem",
                 Enum = tostring(value.EnumType),
@@ -489,7 +293,7 @@ function Nexus:SaveConfig(name)
     local ok, json = pcall(HttpService.JSONEncode, HttpService, data)
     if not ok then return false end
 
-    writefile(CONFIG_FOLDER .. __strings[27] .. name .. __strings[28], json)
+    writefile(CONFIG_FOLDER .. "/" .. name .. ".json", json)
     return true
 end
 
@@ -509,12 +313,12 @@ function Nexus:LoadConfig(name)
     for flag, info in pairs(flags) do
         local value = info
 
-        if typeof(info) == __strings[29] and info.Type then
+        if typeof(info) == "table" and info.Type then
             if info.Type == "Color3" then
                 value = Color3.new(info.R, info.G, info.B)
             elseif info.Type == "EnumItem" then
                 local enumType = info.Enum or info.EnumType
-                if enumType == __strings[30] then
+                if enumType == "Enum.KeyCode" then
                     value = Enum.KeyCode[info.Name]
                 end
             else
@@ -541,7 +345,7 @@ function Nexus:GetConfigs()
 
     local list = {}
     for _, file in ipairs(listfiles(CONFIG_FOLDER)) do
-        local name = file:match(__strings[31])
+        local name = file:match("([^/\\]+)%.json$")
         if name then
             table.insert(list, name)
         end
@@ -613,7 +417,7 @@ function Nexus:Destroy()
 end
 
 --// Enhanced Theme System
-Nexus.ThemeChanged = Instance.new(__strings[32])
+Nexus.ThemeChanged = Instance.new("BindableEvent")
 
 local function UpdateThemeColors()
     -- Add subtle transparency and glow effects
@@ -733,26 +537,26 @@ UpdateThemeColors()
 function Nexus:CreateModernDropdown(config)
     -- Config validation
     local cfg = {
-        Text = config.Text or __strings[33],
+        Text = config.Text or "Dropdown",
         Parent = config.Parent,
-        Options = config.Options or {__strings[34]},
+        Options = config.Options or {"No Options"},
         Default = config.Default,
         MultiSelect = config.MultiSelect or false,
         Search = config.Search or false,
         MaxVisible = config.MaxVisible or 6,
-        Placeholder = config.Placeholder or __strings[35],
+        Placeholder = config.Placeholder or "Select option...",
         Description = config.Description,
         Callback = config.Callback or function() end,
         Flag = config.Flag
     }
 
     -- Validation
-    if ((function() return 1 + 1 == 2 end)()) and not cfg.Parent then
-        error(__strings[36])
+    if not cfg.Parent then
+        error("[Nexus] CreateModernDropdown: Parent is required")
     end
     
     if type(cfg.Options) ~= "table" or #cfg.Options == 0 then
-        warn(__strings[37])
+        warn("[Nexus] CreateModernDropdown: Options should be a non-empty table")
         cfg.Options = {"No Options"}
     end
 
@@ -768,16 +572,16 @@ function Nexus:CreateModernDropdown(config)
     }
 
     -- Create main container
-    local Container = Create(__strings[38], {
-        Name = __strings[39] .. cfg.Text,
+    local Container = Create("Frame", {
+        Name = "Dropdown_" .. cfg.Text,
         Size = UDim2.new(1, 0, 0, 36),
         BackgroundTransparency = 1,
         Parent = cfg.Parent
     })
 
     -- Create dropdown button
-    local DropdownButton = Create(__strings[40], {
-        Name = __strings[41],
+    local DropdownButton = Create("TextButton", {
+        Name = "Button",
         Size = UDim2.new(1, 0, 1, 0),
         BackgroundColor3 = Nexus.Theme.Surface,
         BorderSizePixel = 0,
@@ -791,7 +595,7 @@ function Nexus:CreateModernDropdown(config)
     AddStroke(DropdownButton, Nexus.Theme.Outline, 1, 0.7)
 
     -- Gradient background
-    local ButtonGradient = Create(__strings[42], {
+    local ButtonGradient = Create("UIGradient", {
         Color = ColorSequence.new({
             ColorSequenceKeypoint.new(0, Color3.new(1, 1, 1)),
             ColorSequenceKeypoint.new(1, Color3.new(0.95, 0.95, 0.95))
@@ -803,7 +607,7 @@ function Nexus:CreateModernDropdown(config)
 
     -- Button content frame
     local ButtonContent = Create("Frame", {
-        Name = __strings[43],
+        Name = "Content",
         Size = UDim2.new(1, -24, 1, 0),
         Position = UDim2.new(0, 12, 0, 0),
         BackgroundTransparency = 1,
@@ -811,8 +615,8 @@ function Nexus:CreateModernDropdown(config)
     })
 
     -- Selected text display
-    local SelectedText = Create(__strings[44], {
-        Name = __strings[45],
+    local SelectedText = Create("TextLabel", {
+        Name = "SelectedText",
         Size = UDim2.new(1, -24, 1, 0),
         BackgroundTransparency = 1,
         Text = cfg.Placeholder,
@@ -826,11 +630,11 @@ function Nexus:CreateModernDropdown(config)
 
     -- Dropdown arrow
     local Arrow = Create("TextLabel", {
-        Name = __strings[46],
+        Name = "Arrow",
         Size = UDim2.new(0, 20, 1, 0),
         Position = UDim2.new(1, -20, 0, 0),
         BackgroundTransparency = 1,
-        Text = __strings[47],
+        Text = "▼",
         TextColor3 = Nexus.Theme.TextSub,
         TextSize = 12,
         Font = Enum.Font.GothamBold,
@@ -840,15 +644,15 @@ function Nexus:CreateModernDropdown(config)
     })
 
     -- Get root ScreenGui for panel
-    local screenGui = Container:FindFirstAncestorOfClass(__strings[48])
+    local screenGui = Container:FindFirstAncestorOfClass("ScreenGui")
     if not screenGui then
-        warn(__strings[49])
+        warn("[Nexus] CreateModernDropdown: No ScreenGui found, panel may clip")
         screenGui = Container
     end
 
     -- Create dropdown panel (initially hidden) - parented to ScreenGui
     local Panel = Create("Frame", {
-        Name = __strings[50] .. cfg.Text,
+        Name = "DropdownPanel_" .. cfg.Text,
         Size = UDim2.fromOffset(0, 0),
         Position = UDim2.fromOffset(0, 0),
         AnchorPoint = Vector2.new(0, 0),
@@ -876,7 +680,7 @@ function Nexus:CreateModernDropdown(config)
         )
         
         -- Update width to match button
-        if ((function() return true end)()) and DropdownState.IsOpen then
+        if DropdownState.IsOpen then
             Panel.Size = UDim2.fromOffset(buttonSize.X, Panel.Size.Y.Offset)
         end
     end
@@ -889,7 +693,7 @@ function Nexus:CreateModernDropdown(config)
     local CloseDropdown
 
     CloseButtonFrame = Create("Frame", {
-        Name = __strings[51],
+        Name = "CloseButton",
         Size = UDim2.new(1, -16, 0, 28),
         Position = UDim2.new(0, 8, 0, 4),
         BackgroundColor3 = Nexus.Theme.SurfaceHigh,
@@ -900,7 +704,7 @@ function Nexus:CreateModernDropdown(config)
     AddCorner(CloseButtonFrame, 6)
 
     local CloseButton = Create("TextButton", {
-        Name = __strings[52],
+        Name = "Close",
         Size = UDim2.new(1, 0, 1, 0),
         BackgroundTransparency = 1,
         Text = "",
@@ -910,12 +714,12 @@ function Nexus:CreateModernDropdown(config)
     -- Different styling for MultiSelect vs Single Select
     local closeIcon, closeText, closeColor
     if cfg.MultiSelect then
-        closeIcon = __strings[53]  -- Checkmark untuk confirm selection
-        closeText = __strings[54]
+        closeIcon = "✓"  -- Checkmark untuk confirm selection
+        closeText = "Done"
         closeColor = Nexus.Theme.Accent
     else
-        closeIcon = __strings[55]  -- X untuk cancel
-        closeText = __strings[56] 
+        closeIcon = "×"  -- X untuk cancel
+        closeText = "Cancel" 
         closeColor = Nexus.Theme.TextSub
     end
 
@@ -981,14 +785,14 @@ function Nexus:CreateModernDropdown(config)
     local OptionsOffset = CloseButtonHeight + 8 -- Start from close button
         
     if cfg.Search then
-        SearchBox = Create(__strings[57], {
-            Name = __strings[58],
+        SearchBox = Create("TextBox", {
+            Name = "Search",
             Size = UDim2.new(1, -16, 0, 32),
             Position = UDim2.new(0, 8, 0, OptionsOffset),
             BackgroundColor3 = Nexus.Theme.SurfaceHigh,
             BorderSizePixel = 0,
             Text = "",
-            PlaceholderText = __strings[59],
+            PlaceholderText = "Search...",
             PlaceholderColor3 = Nexus.Theme.TextMuted,
             TextColor3 = Nexus.Theme.Text,
             TextSize = 13,
@@ -1004,8 +808,8 @@ function Nexus:CreateModernDropdown(config)
     end
 
     -- Options container with scrolling - UPDATED POSITION
-    local OptionsContainer = Create(__strings[60], {
-        Name = __strings[61],
+    local OptionsContainer = Create("ScrollingFrame", {
+        Name = "Options",
         Size = UDim2.new(1, 0, 1, -OptionsOffset - 8), -- Account for close button
         Position = UDim2.new(0, 0, 0, OptionsOffset),
         BackgroundTransparency = 1,
@@ -1020,7 +824,7 @@ function Nexus:CreateModernDropdown(config)
     })
 
     -- Options list layout
-    local OptionsLayout = Create(__strings[62], {
+    local OptionsLayout = Create("UIListLayout", {
         SortOrder = Enum.SortOrder.LayoutOrder,
         Padding = UDim.new(0, 2),
         Parent = OptionsContainer
@@ -1042,7 +846,7 @@ function Nexus:CreateModernDropdown(config)
         end
 
         local OptionItem = Create("TextButton", {
-            Name = __strings[63] .. index,
+            Name = "Option_" .. index,
             Size = UDim2.new(1, -8, 0, 28),
             BackgroundColor3 = isSelected and Nexus.Theme.Accent or Color3.new(0, 0, 0),
             BackgroundTransparency = isSelected and 0.1 or 1,
@@ -1057,7 +861,7 @@ function Nexus:CreateModernDropdown(config)
 
         -- Option text dengan warna yang benar
         local OptionText = Create("TextLabel", {
-            Name = __strings[64],
+            Name = "Text",
             Size = UDim2.new(1, cfg.MultiSelect and -28 or -12, 1, 0),
             Position = UDim2.new(0, 12, 0, 0),
             BackgroundTransparency = 1,
@@ -1074,7 +878,7 @@ function Nexus:CreateModernDropdown(config)
         local Checkbox = nil
         if cfg.MultiSelect then
             Checkbox = Create("Frame", {
-                Name = __strings[65],
+                Name = "Checkbox",
                 Size = UDim2.new(0, 16, 0, 16),
                 Position = UDim2.new(1, -24, 0.5, -8),
                 BackgroundColor3 = isSelected and Nexus.Theme.Accent or Nexus.Theme.Surface,
@@ -1106,7 +910,7 @@ function Nexus:CreateModernDropdown(config)
             
             -- Re-check selected state (penting untuk real-time update)
             local currentlySelected = false
-            if (not (function() return false end)()) and cfg.MultiSelect then
+            if cfg.MultiSelect then
                 currentlySelected = table.find(DropdownState.Selected, text) ~= nil
             else
                 currentlySelected = DropdownState.Selected == text
@@ -1221,7 +1025,7 @@ function Nexus:CreateModernDropdown(config)
     function RefreshOptions()
         -- Clear existing options
         for _, data in pairs(OptionItems) do
-            if ((function() return true end)()) and data.Item and data.Item.Parent then
+            if data.Item and data.Item.Parent then
                 data.Item:Destroy()
             end
         end
@@ -1254,7 +1058,7 @@ function Nexus:CreateModernDropdown(config)
                 SelectedText.Text = DropdownState.Selected[1]
                 SelectedText.TextColor3 = Nexus.Theme.Text
             else
-                SelectedText.Text = #DropdownState.Selected .. __strings[66]
+                SelectedText.Text = #DropdownState.Selected .. " items selected"
                 SelectedText.TextColor3 = Nexus.Theme.Text
             end
         else
@@ -1351,7 +1155,7 @@ function Nexus:CreateModernDropdown(config)
             local searchText = SearchBox.Text
             
             -- Cancel previous debounce
-            if (not (function() return false end)()) and DropdownState.SearchDebounce then
+            if DropdownState.SearchDebounce then
                 task.cancel(DropdownState.SearchDebounce)
             end
             
@@ -1378,7 +1182,7 @@ function Nexus:CreateModernDropdown(config)
 
     -- Button click handling
     table.insert(Nexus.Connections, DropdownButton.Activated:Connect(function()
-        if ((function() return 1 + 1 == 2 end)()) and DropdownState.IsOpen then
+        if DropdownState.IsOpen then
             CloseDropdown()
         else
             OpenDropdown()
@@ -1399,7 +1203,7 @@ function Nexus:CreateModernDropdown(config)
             
             -- Check if clicking on dropdown panel
             local onPanel = false
-            if ((function() return 1 + 1 == 2 end)()) and Panel and Panel.Visible then
+            if Panel and Panel.Visible then
                 local panelPos = Panel.AbsolutePosition
                 local panelSize = Panel.AbsoluteSize
                 onPanel = (mouseX >= panelPos.X and mouseX <= panelPos.X + panelSize.X and
@@ -1417,7 +1221,7 @@ function Nexus:CreateModernDropdown(config)
     table.insert(Nexus.Connections, UserInputService.InputBegan:Connect(function(input)
         if not DropdownState.IsOpen then return end
         
-        if ((function() return true end)()) and input.KeyCode == Enum.KeyCode.Escape then
+        if input.KeyCode == Enum.KeyCode.Escape then
             CloseDropdown()
         elseif input.KeyCode == Enum.KeyCode.Return then
             if DropdownState.FilteredOptions[DropdownState.HoveredIndex] then
@@ -1444,7 +1248,7 @@ function Nexus:CreateModernDropdown(config)
                 if current:IsA("Frame") and current:FindFirstChildOfClass("TextButton") then
                     local hasArrow = false
                     for _, child in ipairs(current:GetDescendants()) do
-                        if ((function() return true end)()) and child:IsA("TextLabel") and (child.Text == "▼" or child.Text == __strings[67]) then
+                        if child:IsA("TextLabel") and (child.Text == "▼" or child.Text == "▲") then
                             hasArrow = true
                             break
                         end
@@ -1463,8 +1267,8 @@ function Nexus:CreateModernDropdown(config)
         
         if collapsibleFrame then
             -- Monitor ClipsDescendants changes
-            local clipsConnection = collapsibleFrame:GetPropertyChangedSignal(__strings[68]):Connect(function()
-                if ((function() return true end)()) and collapsibleFrame.ClipsDescendants == true and DropdownState.IsOpen then
+            local clipsConnection = collapsibleFrame:GetPropertyChangedSignal("ClipsDescendants"):Connect(function()
+                if collapsibleFrame.ClipsDescendants == true and DropdownState.IsOpen then
                     task.wait(0.05) -- Small delay untuk smooth transition
                     if DropdownState.IsOpen then
                         CloseDropdown()
@@ -1475,7 +1279,7 @@ function Nexus:CreateModernDropdown(config)
             
             -- Monitor Size changes (collapsible animation)
             local lastHeight = collapsibleFrame.Size.Y.Offset
-            local sizeConnection = collapsibleFrame:GetPropertyChangedSignal(__strings[69]):Connect(function()
+            local sizeConnection = collapsibleFrame:GetPropertyChangedSignal("Size"):Connect(function()
                 local currentHeight = collapsibleFrame.Size.Y.Offset
                 -- Jika height berkurang signifikan (closing animation)
                 if currentHeight < lastHeight - 10 and DropdownState.IsOpen then
@@ -1501,14 +1305,14 @@ function Nexus:CreateModernDropdown(config)
             local checkParent = Container
             
             while checkParent and checkParent ~= screenGui do
-                if checkParent:IsA(__strings[70]) then
+                if checkParent:IsA("GuiObject") then
                     if not checkParent.Visible then
                         isVisible = false
                         break
                     end
                     
                     -- Check clipping
-                    if (not (function() return false end)()) and checkParent.ClipsDescendants then
+                    if checkParent.ClipsDescendants then
                         local btnBottom = DropdownButton.AbsolutePosition.Y + DropdownButton.AbsoluteSize.Y
                         local parentTop = checkParent.AbsolutePosition.Y
                         local parentBottom = parentTop + checkParent.AbsoluteSize.Y
@@ -1556,7 +1360,7 @@ function Nexus:CreateModernDropdown(config)
         end,
         
         SetValue = function(self, value)
-            if ((function() return true end)()) and cfg.MultiSelect then
+            if cfg.MultiSelect then
                 DropdownState.Selected = type(value) == "table" and value or {}
             else
                 DropdownState.Selected = value
@@ -1614,8 +1418,8 @@ function Nexus:Window(config)
     -- Enhanced validation
     if not config then config = {} end
     
-    local Title = config.Title or __strings[71]
-    local Subtitle = config.Subtitle or __strings[72]
+    local Title = config.Title or "Nexus Hub"
+    local Subtitle = config.Subtitle or "Enhanced UI Library"
     local BaseSize = config.Size or {600, 380}
     local MinSize = config.MinSize or {350, 220}
 
@@ -1645,15 +1449,15 @@ function Nexus:Window(config)
 
     -- Create ScreenGui with better error handling
     local ScreenGui = Create("ScreenGui", {
-        Name = __strings[73] .. HttpService:GenerateGUID(false):sub(1, 8),
-        Parent = (RunService:IsStudio() and Players.LocalPlayer:WaitForChild(__strings[74])) or CoreGui,
+        Name = "NexusUI_" .. HttpService:GenerateGUID(false):sub(1, 8),
+        Parent = (RunService:IsStudio() and Players.LocalPlayer:WaitForChild("PlayerGui")) or CoreGui,
         ResetOnSpawn = false,
         ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
         IgnoreGuiInset = true
     })
     
     if not ScreenGui then
-        warn(__strings[75])
+        warn("[Nexus] Failed to create ScreenGui")
         return nil
     end
 
@@ -1701,7 +1505,7 @@ function Nexus:Window(config)
         })
         
         local Logo = Create("TextLabel", {
-            Text = __strings[76],
+            Text = "N",
             Font = Enum.Font.GothamBold,
             TextSize = 72,
             TextColor3 = Nexus.Theme.Accent,
@@ -1746,7 +1550,7 @@ function Nexus:Window(config)
             end
             
             -- Logo border animation
-            if (not (function() return false end)()) and not checkDestroyed() then
+            if not checkDestroyed() then
                 Tween(LogoContainer:FindFirstChild("UIStroke"), {Transparency = 0}, 0.6)
                 task.wait(0.2)
             end
@@ -1868,14 +1672,14 @@ function Nexus:Window(config)
             local ping = 0
             
             pcall(function()
-                ping = Stats.Network.ServerStatsItem[__strings[77]]:GetValue()
+                ping = Stats.Network.ServerStatsItem["Data Ping"]:GetValue()
             end)
             
-            local time = os.date(__strings[78])
+            local time = os.date("%H:%M:%S")
             local playerCount = #Players:GetPlayers()
             
             pcall(function()
-                WatermarkText.Text = string.format(__strings[79], 
+                WatermarkText.Text = string.format("🚀 %d FPS | 📡 %dms | 👥 %d | %s", 
                     fps, math.floor(ping), playerCount, time)
             end)
         end
@@ -1896,7 +1700,7 @@ function Nexus:Window(config)
                     WatermarkText.TextColor3 = Nexus.Theme.Text
                     
                     local strokeElement = WatermarkFrame:FindFirstChild("UIStroke")
-                    if ((function() return true end)()) and strokeElement then
+                    if strokeElement then
                         strokeElement.Color = Nexus.Theme.Accent
                     end
                 end
@@ -1917,13 +1721,13 @@ function Nexus:Window(config)
     })
     
     -- Kita gunakan UIScale untuk animasi resize yang lebih aman dan mulus
-    local MainScale = Create(__strings[80], {
+    local MainScale = Create("UIScale", {
         Parent = MainWindow,
         Scale = 1
     })
     
     if not MainWindow then
-        warn(__strings[81])
+        warn("[Nexus] Failed to create main window")
         return nil
     end
     
@@ -1995,7 +1799,7 @@ function Nexus:Window(config)
 
     -- App Icon
     local AppIcon = Create("TextLabel", {
-        Text = __strings[82],
+        Text = "🚀",
         Font = Enum.Font.GothamBold,
         TextSize = 20,
         TextColor3 = Nexus.Theme.Accent,
@@ -2043,7 +1847,7 @@ function Nexus:Window(config)
     
     -- Minimize Button
     local MinimizeButton = Create("TextButton", {
-        Text = __strings[83],
+        Text = "─",
         Font = Enum.Font.GothamBold,
         TextSize = 14,
         TextColor3 = Nexus.Theme.TextSub,
@@ -2075,7 +1879,7 @@ function Nexus:Window(config)
         Size = UDim2.fromOffset(16, 16), -- Ukuran Icon
         Position = UDim2.fromScale(0.5, 0.5),
         AnchorPoint = Vector2.new(0.5, 0.5),
-        Image = __strings[84], -- Icon X Modern (Lucide)
+        Image = "rbxassetid://9886659671", -- Icon X Modern (Lucide)
         ImageColor3 = Color3.fromRGB(255, 100, 100), -- Warna Merah
         Parent = CloseButton
     })
@@ -2102,7 +1906,7 @@ function Nexus:Window(config)
         
         button.MouseLeave:Connect(function()
             Tween(button, {BackgroundTransparency = 0.8}, 0.15)
-            if ((function() return true end)()) and button == CloseButton then
+            if button == CloseButton then
                 Tween(button, {TextColor3 = Color3.fromRGB(255, 100, 100)}, 0.15)
             else
                 Tween(button, {TextColor3 = Nexus.Theme.TextSub}, 0.15)
@@ -2129,8 +1933,8 @@ function Nexus:Window(config)
         local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
         
         -- Buat Tombol Bulat
-        ToggleButton = Create(__strings[85], {
-            Name = __strings[86],
+        ToggleButton = Create("ImageButton", {
+            Name = "NexusToggle",
             Image = content,
             BackgroundColor3 = Nexus.Theme.Surface,
             Size = UDim2.fromOffset(0, 0), -- Mulai 0
@@ -2240,7 +2044,7 @@ function Nexus:Window(config)
         SetBlur(false)
         
         -- Destroy GUI
-        if (not (function() return false end)()) and ScreenGui and ScreenGui.Parent then
+        if ScreenGui and ScreenGui.Parent then
             ScreenGui:Destroy()
         end
         
@@ -2265,7 +2069,7 @@ function Nexus:Window(config)
     })
     
     -- Fix for tab container height
-    local tabContainerHeightConnection = ContentContainer:GetPropertyChangedSignal(__strings[87]):Connect(function()
+    local tabContainerHeightConnection = ContentContainer:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
         if TabContainer and TabContainer.Parent then
             TabContainer.Size = UDim2.fromOffset(200, ContentContainer.AbsoluteSize.Y)
         end
@@ -2311,7 +2115,7 @@ function Nexus:Window(config)
     })
     
     -- Update tab canvas size
-    TabLayout:GetPropertyChangedSignal(__strings[88]):Connect(function()
+    TabLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
         if TabList and TabList.Parent then
             TabList.CanvasSize = UDim2.fromOffset(0, TabLayout.AbsoluteContentSize.Y + 16)
         end
@@ -2356,7 +2160,7 @@ function Nexus:Window(config)
 
     
     -- Page Padding
-    local PagePadding = Create(__strings[89], {
+    local PagePadding = Create("UIPadding", {
         PaddingTop = UDim.new(0, 16),
         PaddingBottom = UDim.new(0, 16),
         PaddingLeft = UDim.new(0, 16),
@@ -2391,12 +2195,12 @@ function Nexus:Window(config)
     
     -- Enhanced Notification Function
     function Nexus:Notify(config)
-        if ((function() return 1 + 1 == 2 end)()) and not config then config = {} end
+        if not config then config = {} end
         
-        local Title = config.Title or __strings[90]
+        local Title = config.Title or "Notification"
         local Content = config.Content or ""
         local Duration = config.Duration or 3
-        local Type = config.Type or __strings[91] -- Info, Success, Warning, Error
+        local Type = config.Type or "Info" -- Info, Success, Warning, Error
         local Callback = config.Callback
         
         -- Color scheme based on type
@@ -2404,22 +2208,22 @@ function Nexus:Window(config)
             Info = {
                 bg = Nexus.Theme.Surface,
                 accent = Nexus.Theme.Accent,
-                icon = __strings[92]
+                icon = "ℹ️"
             },
             Success = {
                 bg = Nexus.Theme.Surface,
                 accent = Nexus.Theme.Success,
-                icon = __strings[93]
+                icon = "✅"
             },
             Warning = {
                 bg = Nexus.Theme.Surface,
                 accent = Nexus.Theme.Warning,
-                icon = __strings[94]
+                icon = "⚠️"
             },
             Error = {
                 bg = Nexus.Theme.Surface,
                 accent = Nexus.Theme.Error,
-                icon = __strings[95]
+                icon = "❌"
             }
         }
         
@@ -2519,7 +2323,7 @@ function Nexus:Window(config)
         
         -- Close button
         local CloseBtn = Create("TextButton", {
-            Text = __strings[96],
+            Text = "✕",
             Font = Enum.Font.GothamBold,
             TextSize = 12,
             TextColor3 = Nexus.Theme.TextMuted,
@@ -2550,7 +2354,7 @@ function Nexus:Window(config)
         
         -- FIX: Proper cleanup function
         local function CleanupNotification()
-            if ((function() return true end)()) and NotificationState.isDismissed then return end
+            if NotificationState.isDismissed then return end
             NotificationState.isDismissed = true
             
             -- Cancel tweens
@@ -2569,7 +2373,7 @@ function Nexus:Window(config)
             
             -- Disconnect all connections
             for i, connection in ipairs(NotificationState.connections) do
-                if ((function() return true end)()) and connection and connection.Connected then
+                if connection and connection.Connected then
                     pcall(function()
                         connection:Disconnect()
                     end)
@@ -2659,7 +2463,7 @@ function Nexus:Window(config)
             SetProgress = function(progress)
                 if NotificationState.isDismissed then return end
                 pcall(function()
-                    if ((function() return 1 + 1 == 2 end)()) and ProgressBar and ProgressBar.Parent then
+                    if ProgressBar and ProgressBar.Parent then
                         if NotificationState.progressTween then
                             NotificationState.progressTween:Cancel()
                         end
@@ -2676,14 +2480,14 @@ function Nexus:Window(config)
     end
     
     local function CreateTab(config)
-        if type(config) == __strings[97] then
+        if type(config) == "string" then
             config = {Text = config}
         end
         
         if not config then config = {} end
         
-        local Name = config.Name or config.Text or __strings[98]
-        local Icon = config.Icon or __strings[99]
+        local Name = config.Name or config.Text or "Tab"
+        local Icon = config.Icon or "📄"
         local Visible = config.Visible ~= false
         
         -- [PERBAIKAN 1] Mengganti .Button menjadi .TabBtn
@@ -2794,7 +2598,7 @@ function Nexus:Window(config)
                 Tween(ActiveTab.TabBtn, {BackgroundTransparency = 0.8}, 0.2)
                 
                 local oldStroke = ActiveTab.TabBtn:FindFirstChild("UIStroke")
-                if ((function() return true end)()) and oldStroke then oldStroke:Destroy() end
+                if oldStroke then oldStroke:Destroy() end
                 
                 -- Reset warna text & icon tab lama
                 local content = ActiveTab.TabBtn:FindFirstChild("Frame")
@@ -2823,7 +2627,7 @@ function Nexus:Window(config)
         
         -- Hover Effects
         TabButton.MouseEnter:Connect(function()
-            if ((function() return 1 + 1 == 2 end)()) and ActiveTab ~= Tab then
+            if ActiveTab ~= Tab then
                 Tween(TabButton, {BackgroundTransparency = 0.6}, 0.15)
                 Tween(TabIconObj, {TextColor3 = Nexus.Theme.Accent}, 0.15)
                 Tween(TabNameObj, {TextColor3 = Nexus.Theme.Text}, 0.15)
@@ -2851,7 +2655,7 @@ function Nexus:Window(config)
             })
             
             local SectionLabel = Create("TextLabel", {
-                Text = text or __strings[100],
+                Text = text or "Section",
                 Font = Enum.Font.GothamBold,
                 TextSize = 16,
                 TextColor3 = Nexus.Theme.Text,
@@ -2901,7 +2705,7 @@ function Nexus:Window(config)
             end
             if not config then config = {} end
             
-            local Text = config.Text or __strings[101]
+            local Text = config.Text or "Label"
             local Color = config.Color or Nexus.Theme.TextSub
             local Size = config.Size or 14
             local Font = config.Font or Enum.Font.Gotham
@@ -2928,7 +2732,7 @@ function Nexus:Window(config)
                 if Nexus.IsDestroyed or not Label or not Label.Parent then return end
                 
                 pcall(function()
-                    local textSize = game:GetService(__strings[102]):GetTextSize(
+                    local textSize = game:GetService("TextService"):GetTextSize(
                         Label.Text, Label.TextSize, Label.Font, 
                         Vector2.new(Label.AbsoluteSize.X, math.huge)
                     )
@@ -2940,7 +2744,7 @@ function Nexus:Window(config)
             
             -- Theme update
             local labelThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
-                if (not (function() return false end)()) and Nexus.IsDestroyed or not Label or not Label.Parent then return end
+                if Nexus.IsDestroyed or not Label or not Label.Parent then return end
                 pcall(function()
                     if Color == Nexus.Theme.TextSub then
                         Label.TextColor3 = Nexus.Theme.TextSub
@@ -2961,7 +2765,7 @@ function Nexus:Window(config)
                     end)
                 end,
                 SetColor = function(newColor)
-                    if ((function() return 1 + 1 == 2 end)()) and Nexus.IsDestroyed then return end
+                    if Nexus.IsDestroyed then return end
                     pcall(function()
                         if Label and Label.Parent then
                             Color = newColor
@@ -2981,7 +2785,7 @@ function Nexus:Window(config)
     if type(config) == "string" then
         config = {Text = config}
     end
-    if ((function() return true end)()) and not config then config = {} end
+    if not config then config = {} end
     
     local Text = config.Text or "Button"
     local Callback = config.Callback or function() end
@@ -3143,7 +2947,7 @@ function Nexus:Window(config)
         
         -- Visual feedback
         pcall(function()
-            if ((function() return 1 + 1 == 2 end)()) and ButtonFrame and ButtonFrame.Parent then
+            if ButtonFrame and ButtonFrame.Parent then
                 -- Quick flash effect
                 Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Accent}, 0.05)
                 task.spawn(function()
@@ -3170,7 +2974,7 @@ function Nexus:Window(config)
         if Nexus.IsDestroyed then return end
         
         pcall(function()
-            if (not (function() return false end)()) and ButtonFrame and ButtonFrame.Parent then
+            if ButtonFrame and ButtonFrame.Parent then
                 ButtonFrame.BackgroundColor3 = Nexus.Theme.Surface
             end
             
@@ -3191,7 +2995,7 @@ function Nexus:Window(config)
             end
             
             local stroke = ButtonFrame:FindFirstChild("UIStroke")
-            if ((function() return 1 + 1 == 2 end)()) and stroke then
+            if stroke then
                 stroke.Color = Nexus.Theme.Outline
             end
         end)
@@ -3238,7 +3042,7 @@ function Nexus:Window(config)
             if Nexus.IsDestroyed then return end
             pcall(function()
                 if newIcon and not ButtonIcon then
-                    -- Create icon if (not (function() return false end)()) and it doesn't exist
+                    -- Create icon if it doesn't exist
                     ButtonIcon = Create("TextLabel", {
                         Text = newIcon,
                         Font = Enum.Font.GothamBold,
@@ -3280,7 +3084,7 @@ end
         -- Enhanced Dropdown with the new system
         function Tab:Dropdown(cfg)
             if not TabPage or not TabPage.Parent then 
-                warn(__strings[103])
+                warn("[Nexus] Tab:Dropdown - TabPage is not available")
                 return nil 
             end
             
@@ -3290,7 +3094,7 @@ end
                 dropdownConfig[key] = value
             end
             
-            -- Set parent if (not (function() return false end)()) and not specified
+            -- Set parent if not specified
             dropdownConfig.Parent = dropdownConfig.Parent or TabPage
             
             return Nexus:CreateModernDropdown(dropdownConfig)
@@ -3304,7 +3108,7 @@ end
             end
             if not config then config = {} end
             
-            local Text = config.Text or __strings[104]
+            local Text = config.Text or "Toggle"
             local Default = config.Default or false
             local Callback = config.Callback or function() end
             local Flag = config.Flag
@@ -3437,7 +3241,7 @@ end
         function Tab:Slider(config)
             if not config then config = {} end
             
-            local Text = config.Text or __strings[105]
+            local Text = config.Text or "Slider"
             local Min = config.Min or 0
             local Max = config.Max or 100
             local Default = config.Default or Min
@@ -3598,7 +3402,7 @@ end
                    input.UserInputType == Enum.UserInputType.Touch then
                     
                     -- [SAFETY CHECK 1] Pastikan elemen slider masih ada
-                    if (not (function() return false end)()) and not SliderTrack or not SliderTrack.Parent then return end
+                    if not SliderTrack or not SliderTrack.Parent then return end
 
                     Dragging = true
                     -- PlaySound("6895079853", 0.05)
@@ -3633,7 +3437,7 @@ end
                     
                     -- [SAFETY CHECK 3] PENTING: Cek lagi saat dragging
                     -- Jika UI ditutup saat drag, hentikan drag dan return
-                    if ((function() return true end)()) and not SliderTrack or not SliderTrack.Parent then 
+                    if not SliderTrack or not SliderTrack.Parent then 
                         Dragging = false
                         return 
                     end
@@ -3731,7 +3535,7 @@ end
             if not config then config = {} end
             
             local Text = config.Text or "TextBox"
-            local Placeholder = config.Placeholder or __strings[106]
+            local Placeholder = config.Placeholder or "Enter text..."
             local Default = config.Default or ""
             local Multiline = config.Multiline or false
             local Numeric = config.Numeric or false
@@ -3807,7 +3611,7 @@ end
             if Numeric then
                 TextBox:GetPropertyChangedSignal("Text"):Connect(function()
                     local text = TextBox.Text
-                    local newText = text:gsub(__strings[107], "") -- Allow digits, decimal point, minus
+                    local newText = text:gsub("[^%d%.%-]", "") -- Allow digits, decimal point, minus
                     
                     -- Ensure only one decimal point and minus at start
                     local decimalCount = 0
@@ -3817,13 +3621,13 @@ end
                     for i = 1, #newText do
                         local char = newText:sub(i, i)
                         
-                        if char == __strings[108] and decimalCount == 0 then
+                        if char == "." and decimalCount == 0 then
                             decimalCount = 1
                             result = result .. char
-                        elseif char == __strings[109] and i == 1 and not minusAdded then
+                        elseif char == "-" and i == 1 and not minusAdded then
                             minusAdded = true
                             result = result .. char
-                        elseif char:match(__strings[110]) then
+                        elseif char:match("%d") then
                             result = result .. char
                         end
                     end
@@ -3921,7 +3725,7 @@ end
         function Tab:Keybind(config)
             if not config then config = {} end
             
-            local Text = config.Text or __strings[111]
+            local Text = config.Text or "Keybind"
             local Default = config.Default or Enum.KeyCode.F
             local Callback = config.Callback or function() end
             local Flag = config.Flag
@@ -3977,7 +3781,7 @@ end
             AddStroke(KeyDisplay, IsActive and Nexus.Theme.Accent or Nexus.Theme.Outline, 1, IsActive and 0.3 or 0.6)
             
             local KeyLabel = Create("TextLabel", {
-                Text = IsBinding and __strings[112] or (CurrentKey.Name or __strings[113]),
+                Text = IsBinding and "..." or (CurrentKey.Name or "None"),
                 Font = Enum.Font.GothamBold,
                 TextSize = 12,
                 TextColor3 = IsBinding and Nexus.Theme.Warning or (IsActive and Nexus.Theme.Accent or Nexus.Theme.Text),
@@ -3995,37 +3799,37 @@ end
             
             -- Key names mapping
             local KeyNames = {
-                [Enum.KeyCode.LeftShift] = __strings[114],
-                [Enum.KeyCode.RightShift] = __strings[115],
-                [Enum.KeyCode.LeftControl] = __strings[116],
-                [Enum.KeyCode.RightControl] = __strings[117],
-                [Enum.KeyCode.LeftAlt] = __strings[118],
-                [Enum.KeyCode.RightAlt] = __strings[119],
-                [Enum.KeyCode.CapsLock] = __strings[120],
-                [Enum.KeyCode.One] = __strings[121],
-                [Enum.KeyCode.Two] = __strings[122],
-                [Enum.KeyCode.Three] = __strings[123],
-                [Enum.KeyCode.Four] = __strings[124],
-                [Enum.KeyCode.Five] = __strings[125],
-                [Enum.KeyCode.Six] = __strings[126],
-                [Enum.KeyCode.Seven] = __strings[127],
-                [Enum.KeyCode.Eight] = __strings[128],
-                [Enum.KeyCode.Nine] = __strings[129],
-                [Enum.KeyCode.Zero] = __strings[130],
-                [Enum.KeyCode.KeypadOne] = __strings[131],
-                [Enum.KeyCode.KeypadTwo] = __strings[132],
-                [Enum.KeyCode.KeypadThree] = __strings[133],
-                [Enum.KeyCode.KeypadFour] = __strings[134],
-                [Enum.KeyCode.KeypadFive] = __strings[135],
-                [Enum.KeyCode.KeypadSix] = __strings[136],
-                [Enum.KeyCode.KeypadSeven] = __strings[137],
-                [Enum.KeyCode.KeypadEight] = __strings[138],
-                [Enum.KeyCode.KeypadNine] = __strings[139],
-                [Enum.KeyCode.KeypadZero] = __strings[140]
+                [Enum.KeyCode.LeftShift] = "LShift",
+                [Enum.KeyCode.RightShift] = "RShift",
+                [Enum.KeyCode.LeftControl] = "LCtrl",
+                [Enum.KeyCode.RightControl] = "RCtrl",
+                [Enum.KeyCode.LeftAlt] = "LAlt",
+                [Enum.KeyCode.RightAlt] = "RAlt",
+                [Enum.KeyCode.CapsLock] = "Caps",
+                [Enum.KeyCode.One] = "1",
+                [Enum.KeyCode.Two] = "2",
+                [Enum.KeyCode.Three] = "3",
+                [Enum.KeyCode.Four] = "4",
+                [Enum.KeyCode.Five] = "5",
+                [Enum.KeyCode.Six] = "6",
+                [Enum.KeyCode.Seven] = "7",
+                [Enum.KeyCode.Eight] = "8",
+                [Enum.KeyCode.Nine] = "9",
+                [Enum.KeyCode.Zero] = "0",
+                [Enum.KeyCode.KeypadOne] = "Num1",
+                [Enum.KeyCode.KeypadTwo] = "Num2",
+                [Enum.KeyCode.KeypadThree] = "Num3",
+                [Enum.KeyCode.KeypadFour] = "Num4",
+                [Enum.KeyCode.KeypadFive] = "Num5",
+                [Enum.KeyCode.KeypadSix] = "Num6",
+                [Enum.KeyCode.KeypadSeven] = "Num7",
+                [Enum.KeyCode.KeypadEight] = "Num8",
+                [Enum.KeyCode.KeypadNine] = "Num9",
+                [Enum.KeyCode.KeypadZero] = "Num0"
             }
             
             local function GetKeyName(key)
-                return KeyNames[key] or key.Name or __strings[141]
+                return KeyNames[key] or key.Name or "Unknown"
             end
             
             local function UpdateKeyDisplay()
@@ -4054,7 +3858,7 @@ end
                     if input.UserInputType == Enum.UserInputType.Keyboard then
                         local key = input.KeyCode
                         
-                        if ((function() return true end)()) and key ~= Enum.KeyCode.Unknown then
+                        if key ~= Enum.KeyCode.Unknown then
                             CurrentKey = key
                             IsBinding = false
                             
@@ -4092,13 +3896,13 @@ end
                         pcall(function()
                             Callback(IsActive, CurrentKey)
                         end)
-                    elseif Mode == __strings[142] then
+                    elseif Mode == "Hold" then
                         IsActive = true
                         UpdateKeyDisplay()
                         pcall(function()
                             Callback(true, CurrentKey)
                         end)
-                    elseif Mode == __strings[143] then
+                    elseif Mode == "Always" then
                         pcall(function()
                             Callback(CurrentKey)
                         end)
@@ -4125,7 +3929,7 @@ end
             UpdateKeyDisplay()
             
             -- Register
-            if ((function() return 1 + 1 == 2 end)()) and Flag then
+            if Flag then
                 Nexus.Registry[Flag] = {
                     Set = function(key)
                         if typeof(key) == "EnumItem" and key.EnumType == Enum.KeyCode then
@@ -4161,7 +3965,7 @@ end
                 Get = function() return CurrentKey end,
                 GetState = function() return IsActive end,
                 SetMode = function(newMode)
-                    if (not (function() return false end)()) and newMode == "Toggle" or newMode == "Hold" or newMode == "Always" then
+                    if newMode == "Toggle" or newMode == "Hold" or newMode == "Always" then
                         Mode = newMode
                         ModeLabel.Text = Mode
                     end
@@ -4174,7 +3978,7 @@ end
                 if type(config) == "string" then config = {Text = config} end
                 if not config then config = {} end
                 
-                local Text = config.Text or __strings[144]
+                local Text = config.Text or "Collapsible"
                 local IsOpen = config.Open or false
                 
                 local CollapsibleFrame = Create("Frame", {
@@ -4323,10 +4127,10 @@ end
 
                 -- [TAMBAHAN] Paragraph (Title + Content)
                 function Group:Paragraph(cfg)
-                    if ((function() return true end)()) and type(cfg) == "string" then cfg = {Title = cfg} end
+                    if type(cfg) == "string" then cfg = {Title = cfg} end
                     if not cfg then cfg = {} end
                     
-                    local TitleText = cfg.Title or __strings[145]
+                    local TitleText = cfg.Title or "Paragraph"
                     local ContentText = cfg.Content or cfg.Desc or ""
                     
                     -- Frame Container
@@ -4446,7 +4250,7 @@ end
                         Update()
                     end)
                     
-                    if ((function() return true end)()) and Flag then
+                    if Flag then
                         Nexus.Registry[Flag] = {
                             Set = function(v) Toggled = v; Update() end,
                             Get = function() return Toggled end
@@ -4530,8 +4334,8 @@ end
                 
                 function Group:Input(cfg)
                     if not cfg then cfg = {} end
-                    local Text = cfg.Text or __strings[146]
-                    local Placeholder = cfg.Placeholder or __strings[147]
+                    local Text = cfg.Text or "Input"
+                    local Placeholder = cfg.Placeholder or "Value..."
                     local Value = cfg.Value or ""
                     local Callback = cfg.Callback or function() end
                     local Flag = cfg.Flag
@@ -4567,7 +4371,7 @@ end
                     
                     Box.FocusLost:Connect(function()
                         pcall(Callback, Box.Text)
-                        if ((function() return 1 + 1 == 2 end)()) and Flag then Nexus.Flags[Flag] = Box.Text end
+                        if Flag then Nexus.Flags[Flag] = Box.Text end
                         Tween(InputContainer, {BackgroundColor3 = Nexus.Theme.Surface}, 0.2)
                     end)
                     Box.Focused:Connect(function() Tween(InputContainer, {BackgroundColor3 = Nexus.Theme.SurfaceHighest}, 0.2) end)
@@ -4613,7 +4417,7 @@ end
         function Tab:ColorPicker(config)
             if not config then config = {} end
             
-            local Text = config.Text or __strings[148]
+            local Text = config.Text or "Color Picker"
             local Default = config.Default or Color3.fromRGB(255, 255, 255)
             local Callback = config.Callback or function() end
             local Flag = config.Flag
@@ -4749,7 +4553,7 @@ end
                         s = d / max
                     end
                     
-                    if (not (function() return false end)()) and max == min then
+                    if max == min then
                         h = 0
                     else
                         if max == r then
@@ -4875,7 +4679,7 @@ end
                             if not HueBar or not HueBar.Parent then
                                 -- Jika bar hilang saat drag, putuskan koneksi paksa
                                 if moveConnection then moveConnection:Disconnect() end
-                                if ((function() return true end)()) and releaseConnection then releaseConnection:Disconnect() end
+                                if releaseConnection then releaseConnection:Disconnect() end
                                 HueDragging = false
                                 return
                             end
@@ -5154,7 +4958,7 @@ end
         GetConfigs = Nexus.GetConfigs,
         Destroy = function()
             for _, connection in pairs(Nexus.Connections) do
-                if ((function() return 1 + 1 == 2 end)()) and connection and typeof(connection) == __strings[149] then
+                if connection and typeof(connection) == "RBXScriptConnection" then
                     connection:Disconnect()
                 elseif connection and connection.Disconnect then
                     connection:Disconnect()
@@ -5183,13 +4987,13 @@ end
                 Tween(MainWindow, {
                     Size = WindowSize
                 }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-                MinimizeButton.Text = __strings[150]
+                MinimizeButton.Text = "−"
             else
                 WindowMinimized = true
                 Tween(MainWindow, {
                     Size = UDim2.new(0, WindowSize.X.Offset, 0, 40)
                 }, 0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
-                MinimizeButton.Text = __strings[151]
+                MinimizeButton.Text = "□"
             end
         end,
         GetFlag = function(flag)
