@@ -60,23 +60,23 @@ local SoundService = GetService("SoundService")
 
 local FontScale = 1
 local function GetScaledFontSize(baseSize)
+    local Camera = workspace.CurrentCamera  -- ✅ Define di dalam function
     local Viewport = Camera.ViewportSize
     local IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
     
     if IsMobile then
-        -- Mobile: Scale font berdasarkan lebar layar
         local screenWidth = Viewport.X
         if screenWidth < 400 then
-            FontScale = 0.85  -- Small phones
+            FontScale = 0.85
         elseif screenWidth < 600 then
-            FontScale = 0.9   -- Medium phones
+            FontScale = 0.9
         elseif screenWidth < 800 then
-            FontScale = 0.95  -- Large phones
+            FontScale = 0.95
         else
-            FontScale = 1     -- Tablets
+            FontScale = 1
         end
     else
-        FontScale = 1  -- Desktop: normal size
+        FontScale = 1
     end
     
     return math.floor(baseSize * FontScale)
