@@ -326,7 +326,7 @@ function Nexus:SaveConfig(name)
     return true
 end
 
-function Nexus:LoadConfig(name)
+function Nexus:LoadConfig(name, options)
     local path = CONFIG_FOLDER .. "/" .. name .. ".json"
     if not isfile(path) then return false end
 
@@ -335,13 +335,19 @@ function Nexus:LoadConfig(name)
     end)
     if not ok or not data then return false end
 
-    -- backward compatibility (old configs)
-    local flags = data.Flags or data.flags or data
+    -- Options untuk kontrol loading behavior
+    if not options then options = {} end
+    local triggerCallbacks = options.TriggerCallbacks ~= false -- Default: true
+    local silent = not triggerCallbacks
 
+    local flags = data.Flags or data.flags or data
     local applied = 0
+    local deferred = {} -- Untuk dropdown yang butuh delay
+    
     for flag, info in pairs(flags) do
         local value = info
-
+        
+        -- Parse value types
         if typeof(info) == "table" and info.Type then
             if info.Type == "Color3" then
                 value = Color3.new(info.R, info.G, info.B)
@@ -356,17 +362,40 @@ function Nexus:LoadConfig(name)
         end
 
         if self.Registry[flag] and self.Registry[flag].Set then
-            pcall(self.Registry[flag].Set, value)
+            -- 🔥 KEY FIX: Pass silent parameter
+            local success = pcall(function()
+                self.Registry[flag].Set(value, silent)
+            end)
+            
+            if success then
+                applied += 1
+                
+                -- 🔥 DEFER CALLBACK: Dropdown butuh delay agar UI sudah ready
+                if triggerCallbacks and self.Registry[flag].TriggerCallback then
+                    table.insert(deferred, function()
+                        pcall(self.Registry[flag].TriggerCallback)
+                    end)
+                end
+            end
         else
             self.Flags[flag] = value
+            applied += 1
         end
+    end
 
-        applied += 1
+    -- 🔥 TRIGGER DEFERRED CALLBACKS: Execute setelah semua UI ready
+    if #deferred > 0 then
+        task.spawn(function()
+            task.wait(0.1) -- Small delay untuk UI rendering
+            for _, callback in ipairs(deferred) do
+                pcall(callback)
+            end
+        end)
     end
 
     self.AutoSave.ActiveConfig = name
-
-    return true
+    
+    return true, applied
 end
 
 function Nexus:GetConfigs()
@@ -984,9 +1013,12 @@ function Nexus:CreateModernDropdown(config)
                 end
                 
                 UpdateSelectedDisplay()
-                RefreshOptions() -- Penting: refresh untuk update visual
+                RefreshOptions()
                 
-                pcall(cfg.Callback, DropdownState.Selected)
+                -- ✅ FIX: Always trigger callback on click
+                pcall(function()
+                    cfg.Callback(DropdownState.Selected)
+                end)
                 
                 if cfg.Flag then
                     Nexus.Flags[cfg.Flag] = DropdownState.Selected
@@ -995,10 +1027,13 @@ function Nexus:CreateModernDropdown(config)
             else
                 DropdownState.Selected = text
                 UpdateSelectedDisplay()
-                RefreshOptions() -- Penting: refresh sebelum close
+                RefreshOptions()
                 CloseDropdown()
                 
-                pcall(cfg.Callback, text)
+                -- ✅ FIX: Trigger callback
+                pcall(function()
+                    cfg.Callback(text)
+                end)
                 
                 if cfg.Flag then
                     Nexus.Flags[cfg.Flag] = text
@@ -1388,14 +1423,31 @@ function Nexus:CreateModernDropdown(config)
             RefreshOptions()
         end,
         
-        SetValue = function(self, value)
+        SetValue = function(self, value, silent)
+            -- silent parameter: jika true, tidak trigger callback (untuk internal updates)
+            -- jika false/nil, trigger callback (untuk load config)
+            
             if cfg.MultiSelect then
                 DropdownState.Selected = type(value) == "table" and value or {}
             else
                 DropdownState.Selected = value
             end
+            
             UpdateSelectedDisplay()
             RefreshOptions()
+            
+            -- 🔥 KEY FIX: Trigger callback saat load config
+            if not silent then
+                pcall(function()
+                    cfg.Callback(DropdownState.Selected)
+                end)
+                
+                -- Update flag
+                if cfg.Flag then
+                    Nexus.Flags[cfg.Flag] = DropdownState.Selected
+                    Nexus:_ScheduleAutoSave()
+                end
+            end
         end,
         
         GetValue = function(self)
@@ -1432,7 +1484,16 @@ function Nexus:CreateModernDropdown(config)
     if cfg.Flag then
         Nexus.Registry[cfg.Flag] = {
             Get = function() return DropdownState.Selected end,
-            Set = function(value) DropdownAPI:SetValue(value) end
+            Set = function(value, silent)
+                -- Default silent = false, jadi callback ter-trigger
+                DropdownAPI:SetValue(value, silent == true)
+            end,
+            -- Tambahan: method untuk force trigger callback
+            TriggerCallback = function()
+                pcall(function()
+                    cfg.Callback(DropdownState.Selected)
+                end)
+            end
         }
         Nexus.Flags[cfg.Flag] = DropdownState.Selected
     end
@@ -2107,7 +2168,7 @@ function Nexus:Window(config)
     
     -- Tab Container
     local IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
-    local tabWidth = IsMobile and 160 or 200  -- Lebih kecil di mobile
+    local tabWidth = IsMobile and 140 or 200  -- Lebih kecil di mobile
     
     local TabContainer = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.Surface,
@@ -2172,8 +2233,8 @@ function Nexus:Window(config)
     -- Page Container
     local PageContainer = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.Background,
-        Size = UDim2.new(1, -200, 1, 0),
-        Position = UDim2.fromOffset(200, 0),
+        Size = UDim2.new(1, -tabWidth, 1, 0),  -- Dynamic
+        Position = UDim2.fromOffset(tabWidth, 0),
         Parent = ContentContainer
     })
     
@@ -2579,7 +2640,7 @@ function Nexus:Window(config)
             TextColor3 = ActiveTab and Nexus.Theme.TextSub or Nexus.Theme.Accent,
             BackgroundTransparency = 1,
             Position = UDim2.fromOffset(12, 0),
-            Size = UDim2.fromOffset(24, 44),
+            Size = UDim2.fromOffset(IsMobile and 20 or 24, 44),
             Parent = TabContent
         })
         
