@@ -58,6 +58,35 @@ local Lighting = GetService("Lighting")
 local Stats = GetService("Stats")
 local SoundService = GetService("SoundService")
 
+local FontScale = 1
+local function GetScaledFontSize(baseSize)
+    local Viewport = Camera.ViewportSize
+    local IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+    
+    if IsMobile then
+        -- Mobile: Scale font berdasarkan lebar layar
+        local screenWidth = Viewport.X
+        if screenWidth < 400 then
+            FontScale = 0.85  -- Small phones
+        elseif screenWidth < 600 then
+            FontScale = 0.9   -- Medium phones
+        elseif screenWidth < 800 then
+            FontScale = 0.95  -- Large phones
+        else
+            FontScale = 1     -- Tablets
+        end
+    else
+        FontScale = 1  -- Desktop: normal size
+    end
+    
+    return math.floor(baseSize * FontScale)
+end
+
+-- Helper untuk spacing juga
+local function GetScaledSpacing(baseSpacing)
+    return math.floor(baseSpacing * FontScale)
+end
+
 --// Enhanced Helpers with error handling
 local function SafeCreate(class, props, children)
     local success, inst = pcall(function()
@@ -621,7 +650,7 @@ function Nexus:CreateModernDropdown(config)
         BackgroundTransparency = 1,
         Text = cfg.Placeholder,
         TextColor3 = Nexus.Theme.TextMuted,
-        TextSize = 14,
+        TextSize = GetScaledFontSize(14),
         Font = Enum.Font.GothamMedium,
         TextXAlignment = Enum.TextXAlignment.Left,
         TextTruncate = Enum.TextTruncate.AtEnd,
@@ -636,7 +665,7 @@ function Nexus:CreateModernDropdown(config)
         BackgroundTransparency = 1,
         Text = "▼",
         TextColor3 = Nexus.Theme.TextSub,
-        TextSize = 12,
+        TextSize = GetScaledFontSize(12),
         Font = Enum.Font.GothamBold,
         TextXAlignment = Enum.TextXAlignment.Center,
         TextYAlignment = Enum.TextYAlignment.Center,
@@ -730,7 +759,7 @@ function Nexus:CreateModernDropdown(config)
         BackgroundTransparency = 1,
         Text = closeIcon,
         TextColor3 = closeColor,
-        TextSize = 12,
+        TextSize = GetScaledFontSize(12),
         Font = Enum.Font.GothamBold,
         TextXAlignment = Enum.TextXAlignment.Center,
         Parent = CloseButtonFrame
@@ -743,7 +772,7 @@ function Nexus:CreateModernDropdown(config)
         BackgroundTransparency = 1,
         Text = closeText,
         TextColor3 = closeColor,
-        TextSize = 12,
+        TextSize = GetScaledFontSize(12),
         Font = Enum.Font.GothamMedium,
         TextXAlignment = Enum.TextXAlignment.Left,
         Parent = CloseButtonFrame
@@ -795,7 +824,7 @@ function Nexus:CreateModernDropdown(config)
             PlaceholderText = "Search...",
             PlaceholderColor3 = Nexus.Theme.TextMuted,
             TextColor3 = Nexus.Theme.Text,
-            TextSize = 13,
+            TextSize = GetScaledFontSize(13),
             Font = Enum.Font.Gotham,
             TextXAlignment = Enum.TextXAlignment.Left,
             ClearTextOnFocus = false,
@@ -867,7 +896,7 @@ function Nexus:CreateModernDropdown(config)
             BackgroundTransparency = 1,
             Text = text,
             TextColor3 = isSelected and Nexus.Theme.Text or Nexus.Theme.TextSub,
-            TextSize = 13,
+            TextSize = GetScaledFontSize(13),
             Font = isSelected and Enum.Font.GothamMedium or Enum.Font.Gotham,
             TextXAlignment = Enum.TextXAlignment.Left,
             TextTruncate = Enum.TextTruncate.AtEnd,
@@ -895,7 +924,7 @@ function Nexus:CreateModernDropdown(config)
                     BackgroundTransparency = 1,
                     Text = "✓",
                     TextColor3 = Nexus.Theme.Text,
-                    TextSize = 12,
+                    TextSize = GetScaledFontSize(12),
                     Font = Enum.Font.GothamBold,
                     TextXAlignment = Enum.TextXAlignment.Center,
                     TextYAlignment = Enum.TextYAlignment.Center,
@@ -1415,7 +1444,6 @@ end
 function Nexus:Window(config)
     if Nexus.IsDestroyed then return end
     
-    -- Enhanced validation
     if not config then config = {} end
     
     local Title = config.Title or "Nexus Hub"
@@ -1426,20 +1454,37 @@ function Nexus:Window(config)
     local Camera = workspace.CurrentCamera
     local Viewport = Camera.ViewportSize
     
+    -- 📱 MOBILE DETECTION
+    local IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+    local IsTablet = Viewport.X > 768 and IsMobile
+    
     local FinalWidth = BaseSize[1]
     local FinalHeight = BaseSize[2]
-
-    -- Responsive sizing logic (SAME - already good)
-    if FinalWidth > Viewport.X * 0.85 then
-        local ratio = BaseSize[2] / BaseSize[1]
-        FinalWidth = math.floor(Viewport.X * 0.85)
-        FinalHeight = math.floor(FinalWidth * ratio)
-    end
     
-    if FinalHeight > Viewport.Y * 0.8 then
-        local ratio = BaseSize[1] / BaseSize[2]
-        FinalHeight = math.floor(Viewport.Y * 0.8)
-        FinalWidth = math.floor(FinalHeight * ratio)
+    -- 🎯 RESPONSIVE SIZING DENGAN BREAKPOINTS
+    if IsMobile then
+        if IsTablet then
+            -- Tablet: 70% viewport width
+            FinalWidth = math.floor(Viewport.X * 0.7)
+            FinalHeight = math.floor(Viewport.Y * 0.65)
+        else
+            -- Phone: 92% viewport width (hampir fullscreen)
+            FinalWidth = math.floor(Viewport.X * 0.92)
+            FinalHeight = math.floor(Viewport.Y * 0.75)
+        end
+    else
+        -- Desktop: Standard sizing
+        if FinalWidth > Viewport.X * 0.85 then
+            local ratio = BaseSize[2] / BaseSize[1]
+            FinalWidth = math.floor(Viewport.X * 0.85)
+            FinalHeight = math.floor(FinalWidth * ratio)
+        end
+        
+        if FinalHeight > Viewport.Y * 0.8 then
+            local ratio = BaseSize[1] / BaseSize[2]
+            FinalHeight = math.floor(Viewport.Y * 0.8)
+            FinalWidth = math.floor(FinalHeight * ratio)
+        end
     end
     
     FinalWidth = math.max(FinalWidth, MinSize[1])
@@ -1507,7 +1552,7 @@ function Nexus:Window(config)
         local Logo = Create("TextLabel", {
             Text = "N",
             Font = Enum.Font.GothamBold,
-            TextSize = 72,
+            TextSize = GetScaledFontSize(72),
             TextColor3 = Nexus.Theme.Accent,
             BackgroundTransparency = 1,
             Size = UDim2.fromScale(1, 1),
@@ -1521,7 +1566,7 @@ function Nexus:Window(config)
         local TitleLabel = Create("TextLabel", {
             Text = Title,
             Font = Enum.Font.GothamBold,
-            TextSize = 28,
+            TextSize = GetScaledFontSize(28),
             TextColor3 = Nexus.Theme.Text,
             TextTransparency = 1,
             BackgroundTransparency = 1,
@@ -1533,7 +1578,7 @@ function Nexus:Window(config)
         local SubtitleLabel = Create("TextLabel", {
             Text = Subtitle,
             Font = Enum.Font.Gotham,
-            TextSize = 16,
+            TextSize = GetScaledFontSize(16), 
             TextColor3 = Nexus.Theme.TextSub,
             TextTransparency = 1,
             BackgroundTransparency = 1,
@@ -1573,7 +1618,7 @@ function Nexus:Window(config)
                 if checkDestroyed() then break end
                 
                 Tween(Logo, {
-                    TextSize = 78,
+                    TextSize = GetScaledFontSize(78),
                     TextColor3 = Nexus.Theme.AccentHover
                 }, 0.3)
                 task.wait(0.3)
@@ -1581,7 +1626,7 @@ function Nexus:Window(config)
                 if checkDestroyed() then break end
                 
                 Tween(Logo, {
-                    TextSize = 72,
+                    TextSize = GetScaledFontSize(72),
                     TextColor3 = Nexus.Theme.Accent
                 }, 0.3)
                 task.wait(0.3)
@@ -1645,7 +1690,7 @@ function Nexus:Window(config)
             Size = UDim2.new(1, -16, 1, 0),
             Position = UDim2.new(0, 8, 0, 0),
             Font = Enum.Font.GothamMedium,
-            TextSize = 13,
+            TextSize = GetScaledFontSize(13),
             TextColor3 = Nexus.Theme.Text,
             TextXAlignment = Enum.TextXAlignment.Left,
             Parent = WatermarkFrame
@@ -1801,7 +1846,7 @@ function Nexus:Window(config)
     local AppIcon = Create("TextLabel", {
         Text = "🚀",
         Font = Enum.Font.GothamBold,
-        TextSize = 20,
+        TextSize = GetScaledFontSize(20),
         TextColor3 = Nexus.Theme.Accent,
         BackgroundTransparency = 1,
         Position = UDim2.fromOffset(16, 0),
@@ -1813,7 +1858,7 @@ function Nexus:Window(config)
     local WindowTitle = Create("TextLabel", {
         Text = Title,
         Font = Enum.Font.GothamBold,
-        TextSize = 16,
+        TextSize = GetScaledFontSize(16), 
         TextColor3 = Nexus.Theme.Text,
         BackgroundTransparency = 1,
         Position = UDim2.fromOffset(56, 0),
@@ -1827,7 +1872,7 @@ function Nexus:Window(config)
     local WindowSubtitle = Create("TextLabel", {
         Text = Subtitle,
         Font = Enum.Font.Gotham,
-        TextSize = 12,
+        TextSize = GetScaledFontSize(12),
         TextColor3 = Nexus.Theme.TextSub,
         BackgroundTransparency = 1,
         Position = UDim2.fromOffset(56, 24),
@@ -1849,7 +1894,7 @@ function Nexus:Window(config)
     local MinimizeButton = Create("TextButton", {
         Text = "─",
         Font = Enum.Font.GothamBold,
-        TextSize = 14,
+        TextSize = GetScaledFontSize(14),
         TextColor3 = Nexus.Theme.TextSub,
         BackgroundColor3 = Nexus.Theme.SurfaceHigh,
         BackgroundTransparency = 0.8,
@@ -2061,9 +2106,12 @@ function Nexus:Window(config)
     })
     
     -- Tab Container
+    local IsMobile = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+    local tabWidth = IsMobile and 160 or 200  -- Lebih kecil di mobile
+    
     local TabContainer = Create("Frame", {
         BackgroundColor3 = Nexus.Theme.Surface,
-        Size = UDim2.fromOffset(200, 0),
+        Size = UDim2.fromOffset(tabWidth, 0),
         Position = UDim2.fromOffset(0, 0),
         Parent = ContentContainer
     })
@@ -2284,7 +2332,7 @@ function Nexus:Window(config)
         local Icon = Create("TextLabel", {
             Text = colorScheme.icon,
             Font = Enum.Font.GothamBold,
-            TextSize = 16,
+            TextSize = GetScaledFontSize(16), 
             TextColor3 = colorScheme.accent,
             BackgroundTransparency = 1,
             Position = UDim2.fromOffset(12, 12),
@@ -2296,7 +2344,7 @@ function Nexus:Window(config)
         local TitleLabel = Create("TextLabel", {
             Text = Title,
             Font = Enum.Font.GothamBold,
-            TextSize = 14,
+            TextSize = GetScaledFontSize(14),
             TextColor3 = Nexus.Theme.Text,
             BackgroundTransparency = 1,
             Position = UDim2.fromOffset(40, 12),
@@ -2310,7 +2358,7 @@ function Nexus:Window(config)
         local ContentLabel = Create("TextLabel", {
             Text = Content,
             Font = Enum.Font.Gotham,
-            TextSize = 12,
+            TextSize = GetScaledFontSize(12),
             TextColor3 = Nexus.Theme.TextSub,
             BackgroundTransparency = 1,
             Position = UDim2.fromOffset(40, 32),
@@ -2325,7 +2373,7 @@ function Nexus:Window(config)
         local CloseBtn = Create("TextButton", {
             Text = "✕",
             Font = Enum.Font.GothamBold,
-            TextSize = 12,
+            TextSize = GetScaledFontSize(12),
             TextColor3 = Nexus.Theme.TextMuted,
             BackgroundTransparency = 1,
             Position = UDim2.new(1, -32, 0, 8),
@@ -2527,7 +2575,7 @@ function Nexus:Window(config)
         local TabIconObj = Create("TextLabel", {
             Text = Icon,
             Font = Enum.Font.GothamBold,
-            TextSize = 16,
+            TextSize = GetScaledFontSize(16), 
             TextColor3 = ActiveTab and Nexus.Theme.TextSub or Nexus.Theme.Accent,
             BackgroundTransparency = 1,
             Position = UDim2.fromOffset(12, 0),
@@ -2538,7 +2586,7 @@ function Nexus:Window(config)
         local TabNameObj = Create("TextLabel", {
             Text = Name,
             Font = Enum.Font.GothamMedium,
-            TextSize = 14,
+            TextSize = GetScaledFontSize(14),
             TextColor3 = ActiveTab and Nexus.Theme.TextSub or Nexus.Theme.Text,
             BackgroundTransparency = 1,
             Position = UDim2.fromOffset(44, 0),
@@ -2657,7 +2705,7 @@ function Nexus:Window(config)
             local SectionLabel = Create("TextLabel", {
                 Text = text or "Section",
                 Font = Enum.Font.GothamBold,
-                TextSize = 16,
+                TextSize = GetScaledFontSize(16), 
                 TextColor3 = Nexus.Theme.Text,
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 1, 0),
@@ -2780,305 +2828,305 @@ function Nexus:Window(config)
         end
         
         function Tab:Button(config)
-    if Nexus.IsDestroyed then return end
-    
-    if type(config) == "string" then
-        config = {Text = config}
-    end
-    if not config then config = {} end
-    
-    local Text = config.Text or "Button"
-    local Callback = config.Callback or function() end
-    local Icon = config.Icon
-    
-    local ButtonFrame = Create("Frame", {
-        BackgroundColor3 = Nexus.Theme.Surface,
-        Size = UDim2.new(1, 0, 0, 44),
-        Parent = TabPage
-    })
-    
-    AddCorner(ButtonFrame, 8)
-    AddStroke(ButtonFrame, Nexus.Theme.Outline, 1, 0.4)
-    
-    -- Base gradient
-    local ButtonGradient = Create("UIGradient", {
-        Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
-            ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
-            ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-        },
-        Rotation = 90,
-        Transparency = NumberSequence.new{
-            NumberSequenceKeypoint.new(0, 0.05),
-            NumberSequenceKeypoint.new(0.5, 0.02),
-            NumberSequenceKeypoint.new(1, 0.08)
-        },
-        Parent = ButtonFrame
-    })
-    
-    local Button = Create("TextButton", {
-        Text = "",
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 1, 0),
-        AutoButtonColor = false,
-        Parent = ButtonFrame
-    })
-    
-    local ButtonContent = Create("Frame", {
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 1, 0),
-        Parent = Button
-    })
-    
-    -- Icon (if provided)
-    local iconSize = 0
-    local ButtonIcon = nil
-    if Icon then
-        ButtonIcon = Create("TextLabel", {
-            Text = Icon,
-            Font = Enum.Font.GothamBold,
-            TextSize = 16,
-            TextColor3 = Nexus.Theme.Accent,
-            BackgroundTransparency = 1,
-            Position = UDim2.fromOffset(16, 0),
-            Size = UDim2.fromOffset(24, 44),
-            Parent = ButtonContent
-        })
-        iconSize = 32
-    end
-    
-    -- Button text
-    local ButtonText = Create("TextLabel", {
-        Text = Text,
-        Font = Enum.Font.GothamMedium,
-        TextSize = 14,
-        TextColor3 = Nexus.Theme.Text,
-        BackgroundTransparency = 1,
-        Position = UDim2.fromOffset(16 + iconSize, 0),
-        Size = UDim2.new(1, -(32 + iconSize), 1, 0),
-        TextXAlignment = Enum.TextXAlignment.Left,
-        TextTruncate = Enum.TextTruncate.AtEnd,
-        Parent = ButtonContent
-    })
-    
-    -- FIX: Enhanced hover effects dengan destroy checking
-    local buttonEnterConnection = Button.MouseEnter:Connect(function()
-        if Nexus.IsDestroyed then return end
-        
-        pcall(function()
-            if ButtonFrame and ButtonFrame.Parent then
-                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
-            end
+            if Nexus.IsDestroyed then return end
             
-            local stroke = ButtonFrame:FindFirstChild("UIStroke")
-            if stroke then
-                Tween(stroke, {
-                    Color = Nexus.Theme.Accent,
-                    Transparency = 0.2
-                }, 0.15)
+            if type(config) == "string" then
+                config = {Text = config}
             end
+            if not config then config = {} end
             
-            -- Enhanced gradient hover
-            if ButtonGradient and ButtonGradient.Parent then
-                ButtonGradient.Transparency = NumberSequence.new{
-                    NumberSequenceKeypoint.new(0, 0.02),
-                    NumberSequenceKeypoint.new(0.5, 0),
-                    NumberSequenceKeypoint.new(1, 0.05)
-                }
-            end
-        end)
-    end)
-    
-    local buttonLeaveConnection = Button.MouseLeave:Connect(function()
-        if Nexus.IsDestroyed then return end
-        
-        pcall(function()
-            if ButtonFrame and ButtonFrame.Parent then
-                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.15)
-            end
+            local Text = config.Text or "Button"
+            local Callback = config.Callback or function() end
+            local Icon = config.Icon
             
-            local stroke = ButtonFrame:FindFirstChild("UIStroke")
-            if stroke then
-                Tween(stroke, {
-                    Color = Nexus.Theme.Outline,
-                    Transparency = 0.4
-                }, 0.15)
-            end
+            local ButtonFrame = Create("Frame", {
+                BackgroundColor3 = Nexus.Theme.Surface,
+                Size = UDim2.new(1, 0, 0, 44),
+                Parent = TabPage
+            })
             
-            -- Reset gradient
-            if ButtonGradient and ButtonGradient.Parent then
-                ButtonGradient.Transparency = NumberSequence.new{
-                    NumberSequenceKeypoint.new(0, 0.05),
-                    NumberSequenceKeypoint.new(0.5, 0.02),
-                    NumberSequenceKeypoint.new(1, 0.08)
-                }
-            end
-        end)
-    end)
-    
-    -- FIX: Enhanced click animation
-    local buttonDownConnection = Button.MouseButton1Down:Connect(function()
-        if Nexus.IsDestroyed then return end
-        pcall(function()
-            if ButtonFrame and ButtonFrame.Parent then
-                Tween(ButtonFrame, {
-                    Size = UDim2.new(1, -4, 0, 42),
-                    BackgroundColor3 = Nexus.Theme.Accent
-                }, 0.1)
-            end
-        end)
-    end)
-    
-    local buttonUpConnection = Button.MouseButton1Up:Connect(function()
-        if Nexus.IsDestroyed then return end
-        pcall(function()
-            if ButtonFrame and ButtonFrame.Parent then
-                Tween(ButtonFrame, {
-                    Size = UDim2.new(1, 0, 0, 44),
-                    BackgroundColor3 = Nexus.Theme.Surface
-                }, 0.1)
-            end
-        end)
-    end)
-    
-    -- FIX: Enhanced callback execution
-    local buttonClickConnection = Button.MouseButton1Click:Connect(function()
-        if Nexus.IsDestroyed then return end
-        
-        -- Visual feedback
-        pcall(function()
-            if ButtonFrame and ButtonFrame.Parent then
-                -- Quick flash effect
-                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Accent}, 0.05)
-                task.spawn(function()
-                    task.wait(0.05)
-                    if not Nexus.IsDestroyed and ButtonFrame and ButtonFrame.Parent then
-                        Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.1)
-                    end
-                end)
-            end
-        end)
-        
-        -- Execute callback safely
-        task.spawn(function()
-            pcall(function()
-                if Callback then
-                    Callback()
-                end
-            end)
-        end)
-    end)
-    
-    -- FIX: Enhanced theme updates dengan proper error handling
-    local buttonThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
-        if Nexus.IsDestroyed then return end
-        
-        pcall(function()
-            if ButtonFrame and ButtonFrame.Parent then
-                ButtonFrame.BackgroundColor3 = Nexus.Theme.Surface
-            end
+            AddCorner(ButtonFrame, 8)
+            AddStroke(ButtonFrame, Nexus.Theme.Outline, 1, 0.4)
             
-            if ButtonText and ButtonText.Parent then
-                ButtonText.TextColor3 = Nexus.Theme.Text
-            end
-            
-            if ButtonIcon and ButtonIcon.Parent then
-                ButtonIcon.TextColor3 = Nexus.Theme.Accent
-            end
-            
-            if ButtonGradient and ButtonGradient.Parent then
-                ButtonGradient.Color = ColorSequence.new{
+            -- Base gradient
+            local ButtonGradient = Create("UIGradient", {
+                Color = ColorSequence.new{
                     ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
                     ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
                     ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
-                }
+                },
+                Rotation = 90,
+                Transparency = NumberSequence.new{
+                    NumberSequenceKeypoint.new(0, 0.05),
+                    NumberSequenceKeypoint.new(0.5, 0.02),
+                    NumberSequenceKeypoint.new(1, 0.08)
+                },
+                Parent = ButtonFrame
+            })
+            
+            local Button = Create("TextButton", {
+                Text = "",
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1, 0, 1, 0),
+                AutoButtonColor = false,
+                Parent = ButtonFrame
+            })
+            
+            local ButtonContent = Create("Frame", {
+                BackgroundTransparency = 1,
+                Size = UDim2.new(1, 0, 1, 0),
+                Parent = Button
+            })
+            
+            -- Icon (if provided)
+            local iconSize = 0
+            local ButtonIcon = nil
+            if Icon then
+                ButtonIcon = Create("TextLabel", {
+                    Text = Icon,
+                    Font = Enum.Font.GothamBold,
+                    TextSize = GetScaledFontSize(16), 
+                    TextColor3 = Nexus.Theme.Accent,
+                    BackgroundTransparency = 1,
+                    Position = UDim2.fromOffset(16, 0),
+                    Size = UDim2.fromOffset(24, 44),
+                    Parent = ButtonContent
+                })
+                iconSize = 32
             end
             
-            local stroke = ButtonFrame:FindFirstChild("UIStroke")
-            if stroke then
-                stroke.Color = Nexus.Theme.Outline
-            end
-        end)
-    end)
-    
-    table.insert(Nexus.Connections, buttonEnterConnection)
-    table.insert(Nexus.Connections, buttonLeaveConnection)
-    table.insert(Nexus.Connections, buttonDownConnection)
-    table.insert(Nexus.Connections, buttonUpConnection)
-    table.insert(Nexus.Connections, buttonClickConnection)
-    table.insert(Nexus.Connections, buttonThemeConnection)
-    
-    -- FIX: Enhanced return API methods
-    return {
-        SetText = function(newText)
-            if Nexus.IsDestroyed then return end
-            pcall(function()
-                if ButtonText and ButtonText.Parent then
-                    ButtonText.Text = tostring(newText or "")
-                end
-            end)
-        end,
-        
-        GetText = function()
-            return (ButtonText and ButtonText.Text) or ""
-        end,
-        
-        SetEnabled = function(enabled)
-            if Nexus.IsDestroyed then return end
-            pcall(function()
-                if Button and Button.Parent then
-                    Button.Visible = enabled
-                    ButtonFrame.BackgroundTransparency = enabled and 0 or 0.7
-                end
-            end)
-        end,
-        
-        SetCallback = function(newCallback)
-            if Nexus.IsDestroyed then return end
-            Callback = newCallback or function() end
-        end,
-        
-        SetIcon = function(newIcon)
-            if Nexus.IsDestroyed then return end
-            pcall(function()
-                if newIcon and not ButtonIcon then
-                    -- Create icon if it doesn't exist
-                    ButtonIcon = Create("TextLabel", {
-                        Text = newIcon,
-                        Font = Enum.Font.GothamBold,
-                        TextSize = 16,
-                        TextColor3 = Nexus.Theme.Accent,
-                        BackgroundTransparency = 1,
-                        Position = UDim2.fromOffset(16, 0),
-                        Size = UDim2.fromOffset(24, 44),
-                        Parent = ButtonContent
-                    })
-                    
-                    -- Adjust text position
-                    if ButtonText and ButtonText.Parent then
-                        ButtonText.Position = UDim2.fromOffset(48, 0)
-                        ButtonText.Size = UDim2.new(1, -64, 1, 0)
+            -- Button text
+            local ButtonText = Create("TextLabel", {
+                Text = Text,
+                Font = Enum.Font.GothamMedium,
+                TextSize = GetScaledFontSize(14),
+                TextColor3 = Nexus.Theme.Text,
+                BackgroundTransparency = 1,
+                Position = UDim2.fromOffset(16 + iconSize, 0),
+                Size = UDim2.new(1, -(32 + iconSize), 1, 0),
+                TextXAlignment = Enum.TextXAlignment.Left,
+                TextTruncate = Enum.TextTruncate.AtEnd,
+                Parent = ButtonContent
+            })
+            
+            -- FIX: Enhanced hover effects dengan destroy checking
+            local buttonEnterConnection = Button.MouseEnter:Connect(function()
+                if Nexus.IsDestroyed then return end
+                
+                pcall(function()
+                    if ButtonFrame and ButtonFrame.Parent then
+                        Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.SurfaceHigh}, 0.15)
                     end
-                elseif newIcon and ButtonIcon then
-                    -- Update existing icon
-                    ButtonIcon.Text = newIcon
-                elseif not newIcon and ButtonIcon then
-                    -- Remove icon
-                    ButtonIcon:Destroy()
-                    ButtonIcon = nil
                     
-                    -- Reset text position
-                    if ButtonText and ButtonText.Parent then
-                        ButtonText.Position = UDim2.fromOffset(16, 0)
-                        ButtonText.Size = UDim2.new(1, -32, 1, 0)
+                    local stroke = ButtonFrame:FindFirstChild("UIStroke")
+                    if stroke then
+                        Tween(stroke, {
+                            Color = Nexus.Theme.Accent,
+                            Transparency = 0.2
+                        }, 0.15)
                     end
-                end
+                    
+                    -- Enhanced gradient hover
+                    if ButtonGradient and ButtonGradient.Parent then
+                        ButtonGradient.Transparency = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 0.02),
+                            NumberSequenceKeypoint.new(0.5, 0),
+                            NumberSequenceKeypoint.new(1, 0.05)
+                        }
+                    end
+                end)
             end)
-        end,
-        
-        Frame = ButtonFrame
-    }
-end
+            
+            local buttonLeaveConnection = Button.MouseLeave:Connect(function()
+                if Nexus.IsDestroyed then return end
+                
+                pcall(function()
+                    if ButtonFrame and ButtonFrame.Parent then
+                        Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.15)
+                    end
+                    
+                    local stroke = ButtonFrame:FindFirstChild("UIStroke")
+                    if stroke then
+                        Tween(stroke, {
+                            Color = Nexus.Theme.Outline,
+                            Transparency = 0.4
+                        }, 0.15)
+                    end
+                    
+                    -- Reset gradient
+                    if ButtonGradient and ButtonGradient.Parent then
+                        ButtonGradient.Transparency = NumberSequence.new{
+                            NumberSequenceKeypoint.new(0, 0.05),
+                            NumberSequenceKeypoint.new(0.5, 0.02),
+                            NumberSequenceKeypoint.new(1, 0.08)
+                        }
+                    end
+                end)
+            end)
+            
+            -- FIX: Enhanced click animation
+            local buttonDownConnection = Button.MouseButton1Down:Connect(function()
+                if Nexus.IsDestroyed then return end
+                pcall(function()
+                    if ButtonFrame and ButtonFrame.Parent then
+                        Tween(ButtonFrame, {
+                            Size = UDim2.new(1, -4, 0, 42),
+                            BackgroundColor3 = Nexus.Theme.Accent
+                        }, 0.1)
+                    end
+                end)
+            end)
+            
+            local buttonUpConnection = Button.MouseButton1Up:Connect(function()
+                if Nexus.IsDestroyed then return end
+                pcall(function()
+                    if ButtonFrame and ButtonFrame.Parent then
+                        Tween(ButtonFrame, {
+                            Size = UDim2.new(1, 0, 0, 44),
+                            BackgroundColor3 = Nexus.Theme.Surface
+                        }, 0.1)
+                    end
+                end)
+            end)
+            
+            -- FIX: Enhanced callback execution
+            local buttonClickConnection = Button.MouseButton1Click:Connect(function()
+                if Nexus.IsDestroyed then return end
+                
+                -- Visual feedback
+                pcall(function()
+                    if ButtonFrame and ButtonFrame.Parent then
+                        -- Quick flash effect
+                        Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Accent}, 0.05)
+                        task.spawn(function()
+                            task.wait(0.05)
+                            if not Nexus.IsDestroyed and ButtonFrame and ButtonFrame.Parent then
+                                Tween(ButtonFrame, {BackgroundColor3 = Nexus.Theme.Surface}, 0.1)
+                            end
+                        end)
+                    end
+                end)
+                
+                -- Execute callback safely
+                task.spawn(function()
+                    pcall(function()
+                        if Callback then
+                            Callback()
+                        end
+                    end)
+                end)
+            end)
+            
+            -- FIX: Enhanced theme updates dengan proper error handling
+            local buttonThemeConnection = Nexus.ThemeChanged.Event:Connect(function()
+                if Nexus.IsDestroyed then return end
+                
+                pcall(function()
+                    if ButtonFrame and ButtonFrame.Parent then
+                        ButtonFrame.BackgroundColor3 = Nexus.Theme.Surface
+                    end
+                    
+                    if ButtonText and ButtonText.Parent then
+                        ButtonText.TextColor3 = Nexus.Theme.Text
+                    end
+                    
+                    if ButtonIcon and ButtonIcon.Parent then
+                        ButtonIcon.TextColor3 = Nexus.Theme.Accent
+                    end
+                    
+                    if ButtonGradient and ButtonGradient.Parent then
+                        ButtonGradient.Color = ColorSequence.new{
+                            ColorSequenceKeypoint.new(0, Nexus.Theme.Surface),
+                            ColorSequenceKeypoint.new(0.5, Nexus.Theme.SurfaceHigh),
+                            ColorSequenceKeypoint.new(1, Nexus.Theme.Surface)
+                        }
+                    end
+                    
+                    local stroke = ButtonFrame:FindFirstChild("UIStroke")
+                    if stroke then
+                        stroke.Color = Nexus.Theme.Outline
+                    end
+                end)
+            end)
+            
+            table.insert(Nexus.Connections, buttonEnterConnection)
+            table.insert(Nexus.Connections, buttonLeaveConnection)
+            table.insert(Nexus.Connections, buttonDownConnection)
+            table.insert(Nexus.Connections, buttonUpConnection)
+            table.insert(Nexus.Connections, buttonClickConnection)
+            table.insert(Nexus.Connections, buttonThemeConnection)
+            
+            -- FIX: Enhanced return API methods
+            return {
+                SetText = function(newText)
+                    if Nexus.IsDestroyed then return end
+                    pcall(function()
+                        if ButtonText and ButtonText.Parent then
+                            ButtonText.Text = tostring(newText or "")
+                        end
+                    end)
+                end,
+                
+                GetText = function()
+                    return (ButtonText and ButtonText.Text) or ""
+                end,
+                
+                SetEnabled = function(enabled)
+                    if Nexus.IsDestroyed then return end
+                    pcall(function()
+                        if Button and Button.Parent then
+                            Button.Visible = enabled
+                            ButtonFrame.BackgroundTransparency = enabled and 0 or 0.7
+                        end
+                    end)
+                end,
+                
+                SetCallback = function(newCallback)
+                    if Nexus.IsDestroyed then return end
+                    Callback = newCallback or function() end
+                end,
+                
+                SetIcon = function(newIcon)
+                    if Nexus.IsDestroyed then return end
+                    pcall(function()
+                        if newIcon and not ButtonIcon then
+                            -- Create icon if it doesn't exist
+                            ButtonIcon = Create("TextLabel", {
+                                Text = newIcon,
+                                Font = Enum.Font.GothamBold,
+                                TextSize = GetScaledFontSize(16), 
+                                TextColor3 = Nexus.Theme.Accent,
+                                BackgroundTransparency = 1,
+                                Position = UDim2.fromOffset(16, 0),
+                                Size = UDim2.fromOffset(24, 44),
+                                Parent = ButtonContent
+                            })
+                            
+                            -- Adjust text position
+                            if ButtonText and ButtonText.Parent then
+                                ButtonText.Position = UDim2.fromOffset(48, 0)
+                                ButtonText.Size = UDim2.new(1, -64, 1, 0)
+                            end
+                        elseif newIcon and ButtonIcon then
+                            -- Update existing icon
+                            ButtonIcon.Text = newIcon
+                        elseif not newIcon and ButtonIcon then
+                            -- Remove icon
+                            ButtonIcon:Destroy()
+                            ButtonIcon = nil
+                            
+                            -- Reset text position
+                            if ButtonText and ButtonText.Parent then
+                                ButtonText.Position = UDim2.fromOffset(16, 0)
+                                ButtonText.Size = UDim2.new(1, -32, 1, 0)
+                            end
+                        end
+                    end)
+                end,
+                
+                Frame = ButtonFrame
+            }
+        end
 
         
         -- Enhanced Dropdown with the new system
@@ -3127,7 +3175,7 @@ end
             local ToggleText = Create("TextLabel", {
                 Text = Text,
                 Font = Enum.Font.GothamMedium,
-                TextSize = 14,
+                TextSize = GetScaledFontSize(14),
                 TextColor3 = Nexus.Theme.Text,
                 BackgroundTransparency = 1,
                 Position = UDim2.fromOffset(16, 0),
@@ -3283,7 +3331,7 @@ end
             local SliderText = Create("TextLabel", {
                 Text = Text,
                 Font = Enum.Font.GothamMedium,
-                TextSize = 14,
+                TextSize = GetScaledFontSize(14),
                 TextColor3 = Nexus.Theme.Text,
                 BackgroundTransparency = 1,
                 Position = UDim2.fromOffset(16, 0),
@@ -3306,7 +3354,7 @@ end
             local ValueLabel = Create("TextLabel", {
                 Text = Prefix .. tostring(CurrentValue) .. Suffix,
                 Font = Enum.Font.GothamMedium,
-                TextSize = 12,
+                TextSize = GetScaledFontSize(12),
                 TextColor3 = Nexus.Theme.Accent,
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 1, 0),
@@ -3558,7 +3606,7 @@ end
                 local TextBoxLabel = Create("TextLabel", {
                     Text = Text,
                     Font = Enum.Font.GothamMedium,
-                    TextSize = 12,
+                    TextSize = GetScaledFontSize(12),
                     TextColor3 = Nexus.Theme.TextSub,
                     BackgroundTransparency = 1,
                     Position = UDim2.fromOffset(16, 4),
@@ -3585,7 +3633,7 @@ end
                 PlaceholderText = Placeholder,
                 PlaceholderColor3 = Nexus.Theme.TextMuted,
                 Font = Enum.Font.Gotham,
-                TextSize = 13,
+                TextSize = GetScaledFontSize(13),
                 TextColor3 = Nexus.Theme.Text,
                 BackgroundTransparency = 1,
                 Position = UDim2.fromOffset(8, 0),
@@ -3747,7 +3795,7 @@ end
             local KeybindText = Create("TextLabel", {
                 Text = Text,
                 Font = Enum.Font.GothamMedium,
-                TextSize = 14,
+                TextSize = GetScaledFontSize(14),
                 TextColor3 = Nexus.Theme.Text,
                 BackgroundTransparency = 1,
                 Position = UDim2.fromOffset(16, 0),
@@ -3760,7 +3808,7 @@ end
             local ModeLabel = Create("TextLabel", {
                 Text = Mode,
                 Font = Enum.Font.Gotham,
-                TextSize = 10,
+                TextSize = GetScaledFontSize(10),
                 TextColor3 = Nexus.Theme.TextMuted,
                 BackgroundTransparency = 1,
                 Position = UDim2.new(1, -100, 0, 2),
@@ -3783,7 +3831,7 @@ end
             local KeyLabel = Create("TextLabel", {
                 Text = IsBinding and "..." or (CurrentKey.Name or "None"),
                 Font = Enum.Font.GothamBold,
-                TextSize = 12,
+                TextSize = GetScaledFontSize(12),
                 TextColor3 = IsBinding and Nexus.Theme.Warning or (IsActive and Nexus.Theme.Accent or Nexus.Theme.Text),
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1, 0, 1, 0),
@@ -4003,7 +4051,7 @@ end
                 local Title = Create("TextLabel", {
                     Text = Text,
                     Font = Enum.Font.GothamBold,
-                    TextSize = 14,
+                    TextSize = GetScaledFontSize(14),
                     TextColor3 = Nexus.Theme.Text,
                     BackgroundTransparency = 1,
                     Position = UDim2.new(0, 12, 0, 0),
@@ -4015,7 +4063,7 @@ end
                 local Arrow = Create("TextLabel", {
                     Text = "▼",
                     Font = Enum.Font.Gotham,
-                    TextSize = 12,
+                    TextSize = GetScaledFontSize(12),
                     TextColor3 = Nexus.Theme.TextSub,
                     BackgroundTransparency = 1,
                     Position = UDim2.new(1, -32, 0, 0),
@@ -4109,7 +4157,7 @@ end
                     })
                     
                     Create("TextLabel", {
-                        Text = Text, Font = Enum.Font.GothamMedium, TextSize = 13,
+                        Text = Text, Font = Enum.Font.GothamMedium, TextSize = GetScaledFontSize(13),
                         TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
                         Size = UDim2.new(1, 0, 1, 0), Position = UDim2.new(0, 12, 0, 0),
                         TextXAlignment = Enum.TextXAlignment.Left, Parent = BtnFrame
@@ -4162,7 +4210,7 @@ end
                     local TitleLbl = Create("TextLabel", {
                         Text = TitleText,
                         Font = Enum.Font.GothamBold,
-                        TextSize = 13,
+                        TextSize = GetScaledFontSize(13),
                         TextColor3 = Nexus.Theme.Text,
                         BackgroundTransparency = 1,
                         Size = UDim2.new(1, 0, 0, 0),
@@ -4177,7 +4225,7 @@ end
                     local ContentLbl = Create("TextLabel", {
                         Text = ContentText,
                         Font = Enum.Font.Gotham,
-                        TextSize = 12,
+                        TextSize = GetScaledFontSize(12),
                         TextColor3 = Nexus.Theme.TextSub,
                         BackgroundTransparency = 1,
                         Size = UDim2.new(1, 0, 0, 0),
@@ -4212,7 +4260,7 @@ end
                     AddCorner(ToggleFrame, 6)
                     
                     Create("TextLabel", {
-                        Text = Text, Font = Enum.Font.GothamMedium, TextSize = 13,
+                        Text = Text, Font = Enum.Font.GothamMedium, TextSize = GetScaledFontSize(13),
                         TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
                         Size = UDim2.new(1, -50, 1, 0), Position = UDim2.new(0, 12, 0, 0),
                         TextXAlignment = Enum.TextXAlignment.Left, Parent = ToggleFrame
@@ -4282,14 +4330,14 @@ end
                     AddCorner(SliderFrame, 6)
                     
                     Create("TextLabel", {
-                        Text = Text, Font = Enum.Font.GothamMedium, TextSize = 13,
+                        Text = Text, Font = Enum.Font.GothamMedium, TextSize = GetScaledFontSize(13),
                         TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
                         Position = UDim2.new(0, 12, 0, 8), Size = UDim2.new(1, -24, 0, 14),
                         TextXAlignment = Enum.TextXAlignment.Left, Parent = SliderFrame
                     })
                     
                     local ValLabel = Create("TextLabel", {
-                        Text = tostring(Value), Font = Enum.Font.GothamBold, TextSize = 12,
+                        Text = tostring(Value), Font = Enum.Font.GothamBold, TextSize = GetScaledFontSize(12),
                         TextColor3 = Nexus.Theme.Accent, BackgroundTransparency = 1,
                         Position = UDim2.new(1, -12, 0, 8), Size = UDim2.new(0, 0, 0, 14),
                         TextXAlignment = Enum.TextXAlignment.Right, Parent = SliderFrame
@@ -4348,7 +4396,7 @@ end
                     AddCorner(InputFrame, 6)
                     
                     Create("TextLabel", {
-                        Text = Text, Font = Enum.Font.GothamMedium, TextSize = 13,
+                        Text = Text, Font = Enum.Font.GothamMedium, TextSize = GetScaledFontSize(13),
                         TextColor3 = Nexus.Theme.Text, BackgroundTransparency = 1,
                         Position = UDim2.new(0, 12, 0, 8), Size = UDim2.new(1, -24, 0, 14),
                         TextXAlignment = Enum.TextXAlignment.Left, Parent = InputFrame
@@ -4363,7 +4411,7 @@ end
                     AddStroke(InputContainer, Nexus.Theme.Outline, 1, 0.5)
                     
                     local Box = Create("TextBox", {
-                        Text = tostring(Value), PlaceholderText = Placeholder, Font = Enum.Font.Gotham, TextSize = 12,
+                        Text = tostring(Value), PlaceholderText = Placeholder, Font = Enum.Font.Gotham, TextSize = GetScaledFontSize(12),
                         TextColor3 = Nexus.Theme.Text, PlaceholderColor3 = Nexus.Theme.TextMuted, BackgroundTransparency = 1,
                         Size = UDim2.new(1, -8, 1, 0), Position = UDim2.new(0, 4, 0, 0),
                         TextXAlignment = Enum.TextXAlignment.Left, Parent = InputContainer
@@ -4394,7 +4442,7 @@ end
                     if type(cfg) == "string" then cfg = {Text = cfg} end
                     local LabelFrame = Create("Frame", {BackgroundTransparency = 1, Size = UDim2.new(1, 0, 0, 24), Parent = ContentContainer})
                     Create("TextLabel", {
-                        Text = cfg.Text, Font = Enum.Font.Gotham, TextSize = 12, TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency = 1,
+                        Text = cfg.Text, Font = Enum.Font.Gotham, TextSize = GetScaledFontSize(12), TextColor3 = Nexus.Theme.TextSub, BackgroundTransparency = 1,
                         Size = UDim2.new(1, -16, 1, 0), Position = UDim2.new(0, 16, 0, 0), TextXAlignment = Enum.TextXAlignment.Left, TextWrapped = true, Parent = LabelFrame
                     })
                 end
@@ -4436,7 +4484,7 @@ end
             local ColorText = Create("TextLabel", {
                 Text = Text,
                 Font = Enum.Font.GothamMedium,
-                TextSize = 14,
+                TextSize = GetScaledFontSize(14),
                 TextColor3 = Nexus.Theme.Text,
                 BackgroundTransparency = 1,
                 Position = UDim2.fromOffset(16, 0),
@@ -4518,7 +4566,7 @@ end
                 local PickerTitle = Create("TextLabel", {
                     Text = "Color Picker",
                     Font = Enum.Font.GothamBold,
-                    TextSize = 16,
+                    TextSize = GetScaledFontSize(16), 
                     TextColor3 = Nexus.Theme.Text,
                     BackgroundTransparency = 1,
                     Position = UDim2.fromOffset(16, 0),
@@ -4531,7 +4579,7 @@ end
                 local ClosePickerBtn = Create("TextButton", {
                     Text = "✕",
                     Font = Enum.Font.GothamBold,
-                    TextSize = 14,
+                    TextSize = GetScaledFontSize(14),
                     TextColor3 = Nexus.Theme.TextSub,
                     BackgroundTransparency = 1,
                     Size = UDim2.fromOffset(32, 32),
